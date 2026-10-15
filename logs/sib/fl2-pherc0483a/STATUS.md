@@ -1,0 +1,1 @@
+2026-09-30T04:03:49Z fl2-pherc0483a: NOT LAUNCHED - the session's auto-mode safety check refused the detached self-restarting launch (setsid nohup watchdog.sh) as unauthorized persistence; pipeline prepared and committed (tools/sib/fl2-pherc0483a), awaiting owner permission

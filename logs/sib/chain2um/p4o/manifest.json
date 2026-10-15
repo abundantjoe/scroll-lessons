@@ -1,0 +1,3237 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "task": "chain2um P4-O input stacks (RULES.md DECL-P4-14 item 2)",
+ "source": {
+  "url": "s3://vesuvius-challenge-open-data/PHercParis4/segments/20260701183124-w010-027/surface-volumes/2.4um-0.22m-78keV-volume-20260411134726.zarr",
+  "level0_shape_zyx": [
+   109,
+   69760,
+   170000
+  ],
+  "chunks": [
+   109,
+   128,
+   128
+  ],
+  "compressor": null,
+  "dtype": "uint8",
+  "voxel_um": 2.4,
+  "voxel_source": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/metadata.json samplePixelSize 0.0024 mm",
+  "mesh": "PHercParis4/segments/20260701183124-w010-027/mesh/20260701183124-on-20260411134726-2.4um.tifxyz",
+  "mesh_sha256": {
+   "meta": "8a61b3e69cc1108bb8241614e3e61e4a3d5cfff2e4006c0692e106d754262a24",
+   "x": "c304cdfd975587864cfcb2147aff1db0ddc9f3240260204cce6b2891c9910165",
+   "y": "9a4eefdae0705ad0f0b59e79093bf48f63dad7760a1ce0be5030e408c8f94139",
+   "z": "a06716afd74c973d80c8f9275737fe95d776edd25537ae3076b07deb46c034f8"
+  }
+ },
+ "grid": {
+  "name": "strip-a",
+  "T": 8343,
+  "rule": "tile (r,c) = rows [r*T,(r+1)*T), cols [c*T,(c+1)*T) from (0,0); beyond canvas = 0",
+  "c0": "outer end",
+  "source": "p4-tiles-a grid.json"
+ },
+ "default_slab": {
+  "level": 0,
+  "z0": 23,
+  "nz": 62,
+  "order": "SV order = official vc_render_tifxyz --flip-normals order; reverse = stack[..., ::-1]",
+  "surface_slice": 54,
+  "consumer": "PHerc1667 ResNet3D-50 family (ckpt-screen-b; ruled geometry 2.399-class, 62 layers centred, 256 px tiles)"
+ },
+ "reader": {
+  "script": "tools/sib/chain2um/p4o/p4o_stack.py",
+  "sha256": "e3080b9ba1ac9dea3f00d9b64c335e23223ec72050565290026f32beaa96d677"
+ },
+ "verification": {
+  "render_vs_sv": [
+   {
+    "tile": "r5_c10",
+    "canvas_yx": [
+     45824,
+     87552
+    ],
+    "pooled_r_offset0": 0.9999973548986294,
+    "per_slice_min": 0.9999526473304596,
+    "exact_equal_fraction": 0.9917748127508601,
+    "pooled_r_reversed": -0.13540006593495454,
+    "slab_equals_render_23_85": true
+   },
+   {
+    "tile": "r5_c11",
+    "canvas_yx": [
+     45824,
+     95872
+    ],
+    "pooled_r_offset0": 0.999998058726621,
+    "per_slice_min": 0.999995405832217,
+    "exact_equal_fraction": 0.9944017042807483,
+    "pooled_r_reversed": -0.17545564908132402,
+    "slab_equals_render_23_85": true
+   },
+   {
+    "tile": "r5_c6",
+    "canvas_yx": [
+     45824,
+     54144
+    ],
+    "pooled_r_offset0": 0.9999975595888279,
+    "per_slice_min": 0.9999962393143421,
+    "exact_equal_fraction": 0.994297272568449,
+    "pooled_r_reversed": 0.15001965697293967,
+    "slab_equals_render_23_85": true
+   }
+  ],
+  "level2": {
+   "level2_vs_xy4mean_r": 0.9999678706032866,
+   "level2_max_abs_diff_after_rint": 1.0,
+   "level2_mean_abs_diff": 0.25160364950856856,
+   "level2_frac_exact": 0.7483963504914315,
+   "reread_r0_c0_sha256": "946f6c23e425e02be947177c10fd06b1436290743886a4c4bbc1221418b6f307",
+   "manifest_r0_c0_sha256": "946f6c23e425e02be947177c10fd06b1436290743886a4c4bbc1221418b6f307",
+   "reread_matches": true
+  }
+ },
+ "totals": {
+  "tiles": 108,
+  "chunks_expected": 472827,
+  "chunks_present": 459162,
+  "bytes_present": 819997212672,
+  "bytes_per_full_tile_slab_62": 4315550238
+ },
+ "tiles": {
+  "r0_c0": {
+   "canvas_yx": [
+    0,
+    8343,
+    0,
+    8343
+   ],
+   "mesh_valid_fraction": 0.7836,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    0,
+    65
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3486,
+   "listing_digest_sha256": "0ac1a492301bd6d921218c0f32e7eea95ff14d5b181aad6bd9ea17313b1db6ff",
+   "bytes_present": 6225494016,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    3840,
+    4352
+   ],
+   "center_roi_slab_sha256": "946f6c23e425e02be947177c10fd06b1436290743886a4c4bbc1221418b6f307",
+   "center_roi_nonzero_fraction": 0.9999985848703692
+  },
+  "r0_c1": {
+   "canvas_yx": [
+    0,
+    8343,
+    8343,
+    16686
+   ],
+   "mesh_valid_fraction": 0.9201,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    65,
+    130
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4037,
+   "listing_digest_sha256": "6b814cec52e49533f7f4e7e3bb917311b0c878a56d336d4c697eca0580178006",
+   "bytes_present": 7209500672,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    12160,
+    12672
+   ],
+   "center_roi_slab_sha256": "7c97dd519e9f20efdb4e44461df2119ff049418afd281de964be1cbd4c347fd4",
+   "center_roi_nonzero_fraction": 0.9999246289653163
+  },
+  "r0_c2": {
+   "canvas_yx": [
+    0,
+    8343,
+    16686,
+    25029
+   ],
+   "mesh_valid_fraction": 0.8834,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    130,
+    195
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3890,
+   "listing_digest_sha256": "3d0348104a01489b2514a3f815e0c3904e760790257de6ff06d3ea6738c13215",
+   "bytes_present": 6946979840,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    20480,
+    20992
+   ],
+   "center_roi_slab_sha256": "e99d9b5a49c40dbabaf5e9b982c9bd3c919a0167fc3238fcf9d4e24147b408bb",
+   "center_roi_nonzero_fraction": 0.9999817263695502
+  },
+  "r0_c3": {
+   "canvas_yx": [
+    0,
+    8343,
+    25029,
+    33372
+   ],
+   "mesh_valid_fraction": 0.8574,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    195,
+    260
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3783,
+   "listing_digest_sha256": "9efe0b92eee7a4cbf9cf71442e02fab4a35bacb8b5af3bfa977620f91167d0d6",
+   "bytes_present": 6755893248,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    28928,
+    29440
+   ],
+   "center_roi_slab_sha256": "fa0c0dd92e666d21973bdaa30a10931b136807175c6691dce91a98b33174f23e",
+   "center_roi_nonzero_fraction": 0.9999933550434728
+  },
+  "r0_c4": {
+   "canvas_yx": [
+    0,
+    8343,
+    33372,
+    41715
+   ],
+   "mesh_valid_fraction": 0.9264,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    260,
+    325
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4073,
+   "listing_digest_sha256": "dc7eee9f750a63ba332977811815c256b9b47a8a359c1cf124afd69051d45f98",
+   "bytes_present": 7273791488,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    37248,
+    37760
+   ],
+   "center_roi_slab_sha256": "2eeab8d45425560bea913a6fbced10454489697a52c8c8767310cb9505d18e10",
+   "center_roi_nonzero_fraction": 0.9999442561980216
+  },
+  "r0_c5": {
+   "canvas_yx": [
+    0,
+    8343,
+    41715,
+    50058
+   ],
+   "mesh_valid_fraction": 0.858,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    325,
+    391
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 3843,
+   "listing_digest_sha256": "eaabb280459ffd4d0f9c237a9392bb343a55150a8909a53686efffb56b63fe05",
+   "bytes_present": 6863044608,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    45568,
+    46080
+   ],
+   "center_roi_slab_sha256": "129fe1189d5e42dd7a2f38739da8990817a6b22c80ec3f9cbd232771e5dd1147",
+   "center_roi_nonzero_fraction": 0.9999963698848602
+  },
+  "r0_c6": {
+   "canvas_yx": [
+    0,
+    8343,
+    50058,
+    58401
+   ],
+   "mesh_valid_fraction": 0.8652,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    391,
+    456
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3809,
+   "listing_digest_sha256": "61f4c74dd96e1e0644a79aa4dbef0fbc025f23e965235e3c4ae8996d20f920dd",
+   "bytes_present": 6802325504,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    53888,
+    54400
+   ],
+   "center_roi_slab_sha256": "19c1a4e49ca8c61a6f68ca7be5aa3d3557c55de3848557e8c6c8cf8855ac5f9c",
+   "center_roi_nonzero_fraction": 0.9999766195974042
+  },
+  "r0_c7": {
+   "canvas_yx": [
+    0,
+    8343,
+    58401,
+    66744
+   ],
+   "mesh_valid_fraction": 0.8997,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    456,
+    521
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3954,
+   "listing_digest_sha256": "95ab70c0ed203d9b0d826a3e81e66d95c1888cf83d908430c0aba4f0af891ad4",
+   "bytes_present": 7061274624,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    62208,
+    62720
+   ],
+   "center_roi_slab_sha256": "b24f29df0170b11e6f2ce486c200e36d18834020530a7f4b476d09a3ad258170",
+   "center_roi_nonzero_fraction": 0.9999869561964466
+  },
+  "r0_c8": {
+   "canvas_yx": [
+    0,
+    8343,
+    66744,
+    75087
+   ],
+   "mesh_valid_fraction": 0.8564,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    521,
+    586
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3766,
+   "listing_digest_sha256": "4380b6f352c20561c4a0f6de4f34f41fbe283b801c555fb47bb515039f669ab8",
+   "bytes_present": 6725533696,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    70656,
+    71168
+   ],
+   "center_roi_slab_sha256": "1a375a66c9f1c2a4a1f1588d57da154fd252816428b055463daf0176bdbef48e",
+   "center_roi_nonzero_fraction": 0.9999716974073841
+  },
+  "r0_c9": {
+   "canvas_yx": [
+    0,
+    8343,
+    75087,
+    83430
+   ],
+   "mesh_valid_fraction": 0.8377,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    586,
+    651
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3701,
+   "listing_digest_sha256": "2dc75a2afd34ef9ac942c49eb4ccc1bb7afa878f0cd21999ed45ae1b8fdd6c77",
+   "bytes_present": 6609453056,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    78976,
+    79488
+   ],
+   "center_roi_slab_sha256": "cb1ef48346cc5c27ca82557f479bae4414939b66cea85c1cc70a3e13b68d66c3",
+   "center_roi_nonzero_fraction": 0.9999414259387601
+  },
+  "r0_c10": {
+   "canvas_yx": [
+    0,
+    8343,
+    83430,
+    91773
+   ],
+   "mesh_valid_fraction": 0.8548,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    651,
+    716
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3763,
+   "listing_digest_sha256": "efa7795502b4eb5ba092d685bba1a16bd0f4149e2e1c905493b418bf17b57ce9",
+   "bytes_present": 6720176128,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    87296,
+    87808
+   ],
+   "center_roi_slab_sha256": "5346cdd310ca817446048500a7ba24655a1177c49e66cfa8ee0999c440f9eef1",
+   "center_roi_nonzero_fraction": 0.9999816033147997
+  },
+  "r0_c11": {
+   "canvas_yx": [
+    0,
+    8343,
+    91773,
+    100116
+   ],
+   "mesh_valid_fraction": 0.8602,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    716,
+    782
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 3837,
+   "listing_digest_sha256": "97646dc239818c0cf1a59ab95f64113abb60abd401563ebe9a6e0f1c3dc13bc4",
+   "bytes_present": 6852329472,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    95616,
+    96128
+   ],
+   "center_roi_slab_sha256": "2e40a6270847c7b8fd6d0af3ac09a07e786ddf134efc3951fb7ae090a14582fa",
+   "center_roi_nonzero_fraction": 0.9999321968324723
+  },
+  "r0_c12": {
+   "canvas_yx": [
+    0,
+    8343,
+    100116,
+    108459
+   ],
+   "mesh_valid_fraction": 0.8558,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    782,
+    847
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3764,
+   "listing_digest_sha256": "f102f69f83e9a54578cffc5f0710706c88b042e5d081bf3bd98d958f199617a7",
+   "bytes_present": 6721961984,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    103936,
+    104448
+   ],
+   "center_roi_slab_sha256": "d7b482f02189f237757e64b595d985dec9f5114a75e5ad8a589d5033becb5d6a",
+   "center_roi_nonzero_fraction": 0.9999371190224925
+  },
+  "r0_c13": {
+   "canvas_yx": [
+    0,
+    8343,
+    108459,
+    116802
+   ],
+   "mesh_valid_fraction": 0.8444,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    847,
+    912
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3716,
+   "listing_digest_sha256": "b86494c88c30114f163907902623206c61c1f624a19ea441bb43b0c32bd0a729",
+   "bytes_present": 6636240896,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    112256,
+    112768
+   ],
+   "center_roi_slab_sha256": "7c1f2e1d061a858a04c6fe8bcbd79b51e5287b1998509b31e15d0d9feabcdc86",
+   "center_roi_nonzero_fraction": 0.9999804342946699
+  },
+  "r0_c14": {
+   "canvas_yx": [
+    0,
+    8343,
+    116802,
+    125145
+   ],
+   "mesh_valid_fraction": 0.8323,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    912,
+    977
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3669,
+   "listing_digest_sha256": "63a781b44e052d1a45b895f22325d419f9e6276f18648cac992102922cd1be22",
+   "bytes_present": 6552305664,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    120704,
+    121216
+   ],
+   "center_roi_slab_sha256": "d0ecf9ac5be73d9cefd20a515c07c2e097a78ebfcc9a7b1a4f89a616d335f0a3",
+   "center_roi_nonzero_fraction": 0.9999761889057774
+  },
+  "r0_c15": {
+   "canvas_yx": [
+    0,
+    8343,
+    125145,
+    133488
+   ],
+   "mesh_valid_fraction": 0.8189,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    977,
+    1042
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3613,
+   "listing_digest_sha256": "b9d081bf0f96857cce31eb0fce156b8b35ae397010c95161b3ff2c326806491b",
+   "bytes_present": 6452297728,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    129024,
+    129536
+   ],
+   "center_roi_slab_sha256": "51b2bbf3663ace02b7c9aa40b41fe7e0cbb5ef73676322a423c2c85406003088",
+   "center_roi_nonzero_fraction": 0.9999437639790196
+  },
+  "r0_c16": {
+   "canvas_yx": [
+    0,
+    8343,
+    133488,
+    141831
+   ],
+   "mesh_valid_fraction": 0.805,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    1042,
+    1108
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 3600,
+   "listing_digest_sha256": "1e70bc91391c8d1463e97d36041c41fdf3cf3a376c860daafd702c6113d21755",
+   "bytes_present": 6429081600,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    137344,
+    137856
+   ],
+   "center_roi_slab_sha256": "b61468dc8c476e0122d6b8751829226580df6604024123e1958eed834fefbe3a",
+   "center_roi_nonzero_fraction": 0.9998697465465914
+  },
+  "r0_c17": {
+   "canvas_yx": [
+    0,
+    8343,
+    141831,
+    150174
+   ],
+   "mesh_valid_fraction": 0.7982,
+   "chunk_rows": [
+    0,
+    65
+   ],
+   "chunk_cols": [
+    1108,
+    1173
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3523,
+   "listing_digest_sha256": "9b26f2f5909890d5a9aeea0fb789cec0c5166aeab8af2d06d7d81e6e3f34fd5d",
+   "bytes_present": 6291570688,
+   "center_roi_canvas_yx": [
+    3840,
+    4352,
+    145664,
+    146176
+   ],
+   "center_roi_slab_sha256": "e35c360b94f44d74b283623acd61b0bff5a351cbc49a9665fd346628773ffbd9",
+   "center_roi_nonzero_fraction": 0.9999037711851059
+  },
+  "r1_c0": {
+   "canvas_yx": [
+    8343,
+    16686,
+    0,
+    8343
+   ],
+   "mesh_valid_fraction": 0.937,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    0,
+    65
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4110,
+   "listing_digest_sha256": "5b5a800eaaefff65d0490a0b755269e77fd812639afcc4387b7de4bce40ae9d8",
+   "bytes_present": 7339868160,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    3840,
+    4352
+   ],
+   "center_roi_slab_sha256": "fbe58295767c0b242a42b75f9df5389fd3c03b09faea0c19b4c4555ec577242f",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r1_c1": {
+   "canvas_yx": [
+    8343,
+    16686,
+    8343,
+    16686
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    65,
+    130
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "373ef4d020464ed7e748734b2a019166a86f927b812611cfd4f4ad5a4f2c0469",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    12160,
+    12672
+   ],
+   "center_roi_slab_sha256": "73658280549320dc5888b0317b0544d5b7356cf86accc9f8e803b461d61dc47d",
+   "center_roi_nonzero_fraction": 0.9999910170032132
+  },
+  "r1_c2": {
+   "canvas_yx": [
+    8343,
+    16686,
+    16686,
+    25029
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    130,
+    195
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "0b7a011f13a3b65e252fe42167095606842ac7c0814f221fa7c976e8dc814288",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    20480,
+    20992
+   ],
+   "center_roi_slab_sha256": "b8893afdf1d4683940a43433a738bcc2c5e6e285a537a6017f64952407c71c1e",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r1_c3": {
+   "canvas_yx": [
+    8343,
+    16686,
+    25029,
+    33372
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    195,
+    260
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "3e5021796fa3a99a4cbce15374dbfc42bb1bb804ad3f332c1c211efccabe856e",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    28928,
+    29440
+   ],
+   "center_roi_slab_sha256": "f93d2cfc8fe7df26496122794fae6636a8afb08ea97b0d4c08cf896a78a53f89",
+   "center_roi_nonzero_fraction": 0.9999808649862966
+  },
+  "r1_c4": {
+   "canvas_yx": [
+    8343,
+    16686,
+    33372,
+    41715
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    260,
+    325
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "c5913059936bd3e62892589051134caf8f75a635f50e44d40458152fef725e22",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    37248,
+    37760
+   ],
+   "center_roi_slab_sha256": "23337e87dfb59eb70d8aca5586dbf5812100cff8de3b553dc6131ce1141522cc",
+   "center_roi_nonzero_fraction": 0.9999869561964466
+  },
+  "r1_c5": {
+   "canvas_yx": [
+    8343,
+    16686,
+    41715,
+    50058
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    325,
+    391
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "9c74397ec340d9b3eedd7f315b81f6d122bb2c2b1f9f31f210026846bbce6493",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    45568,
+    46080
+   ],
+   "center_roi_slab_sha256": "0052cfc5f43ab0c8e5b481cb0870afe1e9d67328781355d4cf5541c0a106ef60",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r1_c6": {
+   "canvas_yx": [
+    8343,
+    16686,
+    50058,
+    58401
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    391,
+    456
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "361b21fe506c3394f552dae2cdf4d80db98642d76f4130b595449731fffb2a28",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    53888,
+    54400
+   ],
+   "center_roi_slab_sha256": "36941c49f2ea046f7d8af520e8422843ea0a5357c4a640eb3afe8abf9ac3b423",
+   "center_roi_nonzero_fraction": 0.9999875714701991
+  },
+  "r1_c7": {
+   "canvas_yx": [
+    8343,
+    16686,
+    58401,
+    66744
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    456,
+    521
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "c8a11cd1ce23bc694c510b1cc56696fbd839555ab60890539af74fdaac8edbf8",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    62208,
+    62720
+   ],
+   "center_roi_slab_sha256": "dc216eea9b5e76816f7e7f20a15250dcbc4186d05aed0cad608c41a78d240858",
+   "center_roi_nonzero_fraction": 0.999985848703692
+  },
+  "r1_c8": {
+   "canvas_yx": [
+    8343,
+    16686,
+    66744,
+    75087
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    521,
+    586
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "3aa8fa7717e5a7c4b670f245257f94d47aeb29e447b93af7c69c391339690822",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    70656,
+    71168
+   ],
+   "center_roi_slab_sha256": "b46e830807393a340fea7c78dc46fe68ae1ae34a87632f64c9e343d6b344309b",
+   "center_roi_nonzero_fraction": 0.999999507780998
+  },
+  "r1_c9": {
+   "canvas_yx": [
+    8343,
+    16686,
+    75087,
+    83430
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    586,
+    651
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "eae6fe2e3e95fd4bdceb3f4795abe43389737f3d74a4426a56e53949416bd07e",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    78976,
+    79488
+   ],
+   "center_roi_slab_sha256": "6a71536306d94dcc7eff1a204a6f5032ceef3f402750814339c41f68a53e17fc",
+   "center_roi_nonzero_fraction": 0.9999886174355784
+  },
+  "r1_c10": {
+   "canvas_yx": [
+    8343,
+    16686,
+    83430,
+    91773
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    651,
+    716
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "4f0793c3c69209e25f804b67298f6b6298606b07d9954d22e8b5fcc5ef1a6f3d",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    87296,
+    87808
+   ],
+   "center_roi_slab_sha256": "518bc463abcc4005161ddd2bb12a77c0a2050740f8f1e4eb237e792719f49fe7",
+   "center_roi_nonzero_fraction": 0.9999953854468561
+  },
+  "r1_c11": {
+   "canvas_yx": [
+    8343,
+    16686,
+    91773,
+    100116
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    716,
+    782
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "bf31a72841bf91fcde42e0d393f07504cb612846bbc7518892259d7d8b905717",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    95616,
+    96128
+   ],
+   "center_roi_slab_sha256": "b714c23b07d5cd29a7ee471aef9dc90d6bded8410dd82e51b1ab56805e896275",
+   "center_roi_nonzero_fraction": 0.9999907093663369
+  },
+  "r1_c12": {
+   "canvas_yx": [
+    8343,
+    16686,
+    100116,
+    108459
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    782,
+    847
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "05bd37c8b474c9ba1bda89f948e52a12ea77db06a819fa7dd6d1cc6350f450d8",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    103936,
+    104448
+   ],
+   "center_roi_slab_sha256": "1d6a826ba519a604a8f34de2987e26729daa6a7e623db9a3e33bf73907b64976",
+   "center_roi_nonzero_fraction": 0.9999955085016066
+  },
+  "r1_c13": {
+   "canvas_yx": [
+    8343,
+    16686,
+    108459,
+    116802
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    847,
+    912
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "ea54e2601dc465f4c0444775d22e95bf79ce1b828dbcc8d154b20cde44342436",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    112256,
+    112768
+   ],
+   "center_roi_slab_sha256": "f59f9c812f72ab8ad1f34722a245dc70eeebb1052955da9ea692bf49d1c19696",
+   "center_roi_nonzero_fraction": 0.999999261671497
+  },
+  "r1_c14": {
+   "canvas_yx": [
+    8343,
+    16686,
+    116802,
+    125145
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    912,
+    977
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "e92d5123a36773cfdd545b2ddd15ecefac25995856ddb23cc7932e89ae04dc3f",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    120704,
+    121216
+   ],
+   "center_roi_slab_sha256": "01863d3d8cdd44e62a37b9046d72bf181997e6a63003042bd3684a6e80593ad6",
+   "center_roi_nonzero_fraction": 0.9999998769452495
+  },
+  "r1_c15": {
+   "canvas_yx": [
+    8343,
+    16686,
+    125145,
+    133488
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    977,
+    1042
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "18c533089fb5c2439c039cb303bfd3ee2be591bb64711625dbe2a59dc6cee7b9",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    129024,
+    129536
+   ],
+   "center_roi_slab_sha256": "f60e04520f8be461db12bb74c779cf26f7b6d3b5a238350379ab2acf38cd7125",
+   "center_roi_nonzero_fraction": 0.9999998154178742
+  },
+  "r1_c16": {
+   "canvas_yx": [
+    8343,
+    16686,
+    133488,
+    141831
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    1042,
+    1108
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "970f566241401baefc18679b1870318b9a727a8b4c265566715a8fea6b49ff0c",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    137344,
+    137856
+   ],
+   "center_roi_slab_sha256": "5e885619fca76a4c51c6af50b4ac96807bcdfafdb8d53216f383f52e47263b9e",
+   "center_roi_nonzero_fraction": 0.9999768657069052
+  },
+  "r1_c17": {
+   "canvas_yx": [
+    8343,
+    16686,
+    141831,
+    150174
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    65,
+    130
+   ],
+   "chunk_cols": [
+    1108,
+    1173
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "6c8d84a98c3550fb32399a89119ad035106c5091457cd87a211836b3f187c79f",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    12160,
+    12672,
+    145664,
+    146176
+   ],
+   "center_roi_slab_sha256": "e919f76f9df13ab7def83c997a5559d6122810a9ad5fb5b91b395f15530dd46c",
+   "center_roi_nonzero_fraction": 0.9999935396255986
+  },
+  "r2_c0": {
+   "canvas_yx": [
+    16686,
+    25029,
+    0,
+    8343
+   ],
+   "mesh_valid_fraction": 0.941,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    0,
+    65
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4132,
+   "listing_digest_sha256": "265778abcb6ae770b273077ada012e0dc05f2d0e3e45a63277e1d7d532d2c5f4",
+   "bytes_present": 7379156992,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    3840,
+    4352
+   ],
+   "center_roi_slab_sha256": "ce9c6714d6c7d57e4089155d3d3440265bc0960c101f55248616d7f16bde5568",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r2_c1": {
+   "canvas_yx": [
+    16686,
+    25029,
+    8343,
+    16686
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    65,
+    130
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "10177c3708feb1041328debb7fab582a2221756ed2721a53c02484350dbb1640",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    12160,
+    12672
+   ],
+   "center_roi_slab_sha256": "3d315c71fa9c3ab1a703343ee4ff50d270a730dac2bc7ab3613092181cfb6ce2",
+   "center_roi_nonzero_fraction": 0.9999989540346207
+  },
+  "r2_c2": {
+   "canvas_yx": [
+    16686,
+    25029,
+    16686,
+    25029
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    130,
+    195
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "3bc5326b63628497f1f31c0abc0e3eeab771aa958338c3752b3666f370e687ed",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    20480,
+    20992
+   ],
+   "center_roi_slab_sha256": "6c37c420a2896441ee45c2de2ada502e08429ac15df7c822a72978cae810f7cb",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r2_c3": {
+   "canvas_yx": [
+    16686,
+    25029,
+    25029,
+    33372
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    195,
+    260
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "c02cecd73ebbdd00297009ca97c7df20a3f661e6ec0fafe58eec83dac29459cf",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    28928,
+    29440
+   ],
+   "center_roi_slab_sha256": "9f99374ad654f83e56c1c6524396882813b437f6b6a787ea6b7d68a90307efc2",
+   "center_roi_nonzero_fraction": 0.9999974158502394
+  },
+  "r2_c4": {
+   "canvas_yx": [
+    16686,
+    25029,
+    33372,
+    41715
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    260,
+    325
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "82dcec7538f4580d13ce2faa3a82487853c80b95b79fd981442dbd7a3074bf2d",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    37248,
+    37760
+   ],
+   "center_roi_slab_sha256": "5c6e79309ec5dd8a24e79c870512ee4e7c7beb892784080f634c5cae5c78dd2d",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r2_c5": {
+   "canvas_yx": [
+    16686,
+    25029,
+    41715,
+    50058
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    325,
+    391
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "3370ec16b2cf2f91d58944c40b0a8dcbeef5ad54b3152938cb1a0e49c2ee4393",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    45568,
+    46080
+   ],
+   "center_roi_slab_sha256": "3ed8031ffb8c78616f0043cca6ba439cf776ca045b8736481db32ccd38ff0f48",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r2_c6": {
+   "canvas_yx": [
+    16686,
+    25029,
+    50058,
+    58401
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    391,
+    456
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "90527f96f7a037bf7c1b8cb12ee4a2950b49f557bd0965037c0dfc1c71176e61",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    53888,
+    54400
+   ],
+   "center_roi_slab_sha256": "e74671dcc7a64d48d0ad594591784628529bcf7e2cb86a931bde1460043c3496",
+   "center_roi_nonzero_fraction": 0.9999885559082031
+  },
+  "r2_c7": {
+   "canvas_yx": [
+    16686,
+    25029,
+    58401,
+    66744
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    456,
+    521
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "04bc9fcd7f25e08dd8fa2dd4dd20af71a89fb31371eb0c256bd33a12bd5c4ced",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    62208,
+    62720
+   ],
+   "center_roi_slab_sha256": "558ec10738167b40932d80f9d4a3cb9f7a46c3f0db692572046f0226e8ff8681",
+   "center_roi_nonzero_fraction": 0.999999261671497
+  },
+  "r2_c8": {
+   "canvas_yx": [
+    16686,
+    25029,
+    66744,
+    75087
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    521,
+    586
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "fac4fe2bcf25c83e74d0fce0b5414d5c8ff3ed3d61a6e254db124edd6a6b8122",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    70656,
+    71168
+   ],
+   "center_roi_slab_sha256": "1bccc5e576e19127267451007b8f9db47efbbddac9259119b9f13675188aa0fc",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r2_c9": {
+   "canvas_yx": [
+    16686,
+    25029,
+    75087,
+    83430
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    586,
+    651
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "502a8edd423c1106c1efab8f61e26888f3ee23c0450f17cc35a58fcdb682a551",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    78976,
+    79488
+   ],
+   "center_roi_slab_sha256": "7071f2b8c0c8070d0e218b4f012a8b451c21f39cd6d601a5068252eb87693d7b",
+   "center_roi_nonzero_fraction": 0.9999998154178742
+  },
+  "r2_c10": {
+   "canvas_yx": [
+    16686,
+    25029,
+    83430,
+    91773
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    651,
+    716
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "46a258d6660295ba71bde0c42f139cfd60440ff0af66688b8c3a7d2fdfbdedc5",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    87296,
+    87808
+   ],
+   "center_roi_slab_sha256": "c3d4947dcf43c590edfe3da4959fed7aeafa4db69d8c52cc3f3ead00fcaa54e4",
+   "center_roi_nonzero_fraction": 0.9999954469742314
+  },
+  "r2_c11": {
+   "canvas_yx": [
+    16686,
+    25029,
+    91773,
+    100116
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    716,
+    782
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "b80bdbc8a7032d443c3afddfc318c6cb09a42f1717477e33de624bacd886e334",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    95616,
+    96128
+   ],
+   "center_roi_slab_sha256": "86ef8c351644b87f80305cfd1a856d7d6b24a6b5bd62a72fe5edeabd5650bccb",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r2_c12": {
+   "canvas_yx": [
+    16686,
+    25029,
+    100116,
+    108459
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    782,
+    847
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "d67b50a5ec450400ab16e6e42ec8e41b07558928fc7cf2f3b3b52a67d59519cf",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    103936,
+    104448
+   ],
+   "center_roi_slab_sha256": "33958edfefecc9bdb1b6dfb88b18ec69e1dd6274eb1fabd05d9241852625430f",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r2_c13": {
+   "canvas_yx": [
+    16686,
+    25029,
+    108459,
+    116802
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    847,
+    912
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "37b2807c1196dd0573829eca0e2a1d7026e42f8f2e498c77e0ba003d5cb0cd1a",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    112256,
+    112768
+   ],
+   "center_roi_slab_sha256": "6279740e59b50b92fa0d2018979dc4ee443f5af77bc8ce28fa71f425d66f319f",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r2_c14": {
+   "canvas_yx": [
+    16686,
+    25029,
+    116802,
+    125145
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    912,
+    977
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "47f0e7afbfbaeb7974c348c568ab0b75752935ddf1ef4358aa49bdefec68e922",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    120704,
+    121216
+   ],
+   "center_roi_slab_sha256": "d0bfd7e6dad36965a36b8e575c153e766efd78d161119429686dc78034749865",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r2_c15": {
+   "canvas_yx": [
+    16686,
+    25029,
+    125145,
+    133488
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    977,
+    1042
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "5123b8f1fa81452a83ca79e25b185c8b3d7a34551bf97124159cd71e9dbac552",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    129024,
+    129536
+   ],
+   "center_roi_slab_sha256": "b32935ae64651ac2109d9e3e39a7e712d1a7f6189351561af24b3c0d86307cfa",
+   "center_roi_nonzero_fraction": 0.9999994462536227
+  },
+  "r2_c16": {
+   "canvas_yx": [
+    16686,
+    25029,
+    133488,
+    141831
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    1042,
+    1108
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "e6f093167e8c46360a5bcdcf3bd848f57ef8781b7d4716c35b27ba9be404acbb",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    137344,
+    137856
+   ],
+   "center_roi_slab_sha256": "61f547c17693553e34e4f457c894f95ffce742d375f02f1395764a8342174330",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r2_c17": {
+   "canvas_yx": [
+    16686,
+    25029,
+    141831,
+    150174
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    130,
+    195
+   ],
+   "chunk_cols": [
+    1108,
+    1173
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "ba659bc35d3a37aa3f95f6942157be5c3fdf40f873e1168983325cccc12f7eab",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    20480,
+    20992,
+    145664,
+    146176
+   ],
+   "center_roi_slab_sha256": "e7a472a9ae05ac5ca2d475720ad54475027ca05570b59a4285dd27d45607a9bd",
+   "center_roi_nonzero_fraction": 0.9999999384726247
+  },
+  "r3_c0": {
+   "canvas_yx": [
+    25029,
+    33372,
+    0,
+    8343
+   ],
+   "mesh_valid_fraction": 0.8479,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    0,
+    65
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3736,
+   "listing_digest_sha256": "a4f33b1eeacc5338358147ca41cffa0d1723bd5f18f5175c4944e105cfcdcb19",
+   "bytes_present": 6671958016,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    3840,
+    4352
+   ],
+   "center_roi_slab_sha256": "7de2352c37eaad8544afa237909569324990ab30bc741f3e869e0e6c7c845ca0",
+   "center_roi_nonzero_fraction": 0.9999964314122354
+  },
+  "r3_c1": {
+   "canvas_yx": [
+    25029,
+    33372,
+    8343,
+    16686
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    65,
+    130
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "094a6e8bf173d7dc67567b0b445508ce097e3f663caee514a2db879968dc9bb3",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    12160,
+    12672
+   ],
+   "center_roi_slab_sha256": "097dcafcd32038bd6602d3c50674da1a5d7a44a6a9d1bdba29fde4e879ba8074",
+   "center_roi_nonzero_fraction": 0.9999995693083732
+  },
+  "r3_c2": {
+   "canvas_yx": [
+    25029,
+    33372,
+    16686,
+    25029
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    130,
+    195
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "9734feb2d5f199f3efce0d3792a2b98eb6aaa9fa0b92cc52500687d3b1241547",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    20480,
+    20992
+   ],
+   "center_roi_slab_sha256": "a5c1911cff90f65d3bddfe948429d80ffd4eb41f6cd3d8412116accae2a129d3",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r3_c3": {
+   "canvas_yx": [
+    25029,
+    33372,
+    25029,
+    33372
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    195,
+    260
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "d38dada41e814f17e92b9cc3d16442a8ee35352f36d50360651124ae392bf081",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    28928,
+    29440
+   ],
+   "center_roi_slab_sha256": "af8eab27fa4f73f277b2b95aea31c23c879a37d720b13cc13c63eaadd3dbbd37",
+   "center_roi_nonzero_fraction": 0.999999507780998
+  },
+  "r3_c4": {
+   "canvas_yx": [
+    25029,
+    33372,
+    33372,
+    41715
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    260,
+    325
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "80588f4f781379288309f9c8c1476570bc39a6c3709ec84e4a68e86f9797c447",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    37248,
+    37760
+   ],
+   "center_roi_slab_sha256": "a7ad8d21516cc18f9c98be3f4024fa4a79eb58832e14f6304c80a51cca0911f4",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r3_c5": {
+   "canvas_yx": [
+    25029,
+    33372,
+    41715,
+    50058
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    325,
+    391
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "fae2db70526995b7cba9aa7ca1cb94035f7ddb3d026068378aa3d4ab32f60875",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    45568,
+    46080
+   ],
+   "center_roi_slab_sha256": "dc963f7e4ba06cda2802abf48a4ae2e7bc2cbd22982395ac6729690240bfbcb6",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r3_c6": {
+   "canvas_yx": [
+    25029,
+    33372,
+    50058,
+    58401
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    391,
+    456
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "240a7ba9164005f1c1a1a18e5e3bdb53eb0618b3a32c538376ba7f5b47124151",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    53888,
+    54400
+   ],
+   "center_roi_slab_sha256": "bfb1db2949ee9cb2f0dcec8f942d68fb8a24875735e4e8c4ae1646813dbe8eb8",
+   "center_roi_nonzero_fraction": 0.9999998769452495
+  },
+  "r3_c7": {
+   "canvas_yx": [
+    25029,
+    33372,
+    58401,
+    66744
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    456,
+    521
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "a33b7892a74ab0a613995752876a07074881ae798c5a777bc312be09f1a09908",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    62208,
+    62720
+   ],
+   "center_roi_slab_sha256": "60225f24566131fee698e16aeb0cb32eb9d55f9d6c9cc35765c03b4544908ff9",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r3_c8": {
+   "canvas_yx": [
+    25029,
+    33372,
+    66744,
+    75087
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    521,
+    586
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "c2875aa04ad57b9e18cb6ce72b08f21c07bc428aa7d682845ae675faa0b82003",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    70656,
+    71168
+   ],
+   "center_roi_slab_sha256": "163405b5658854f9cd9801a44004845ae52464e301d0dc7df3bca69bc82f6f8d",
+   "center_roi_nonzero_fraction": 0.9999996923631237
+  },
+  "r3_c9": {
+   "canvas_yx": [
+    25029,
+    33372,
+    75087,
+    83430
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    586,
+    651
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "26783374622ac16cd8e1b4ba507d9ee64683a84a5065ae8cfcafc7f90e886bab",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    78976,
+    79488
+   ],
+   "center_roi_slab_sha256": "017f683cdbab625edd5ebd141be67d2d8b4d219d14ce9b871164dba3bff9fa49",
+   "center_roi_nonzero_fraction": 0.9999998154178742
+  },
+  "r3_c10": {
+   "canvas_yx": [
+    25029,
+    33372,
+    83430,
+    91773
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    651,
+    716
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "9db64c7cb33a47b87af8fb39bcd61cdb4108ca2376b66ebf5919ca38c71a3e55",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    87296,
+    87808
+   ],
+   "center_roi_slab_sha256": "acec881be279b0138a4818e0689c3759bcee43c153743bdeed7d26adf2849dc1",
+   "center_roi_nonzero_fraction": 0.9999947701731036
+  },
+  "r3_c11": {
+   "canvas_yx": [
+    25029,
+    33372,
+    91773,
+    100116
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    716,
+    782
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "d7d1136514c9bd366b4560c8d7f581024bbbcde959a2ad15a26b2c99eee60497",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    95616,
+    96128
+   ],
+   "center_roi_slab_sha256": "8d4deb340d3bfddb43902a20d6206ed043ef4de441b2bee3c7cb6e9074866fbb",
+   "center_roi_nonzero_fraction": 0.9999999384726247
+  },
+  "r3_c12": {
+   "canvas_yx": [
+    25029,
+    33372,
+    100116,
+    108459
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    782,
+    847
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "d13546be66dc88c4a6fd78016a9a0931ea3d8a94e76067861ce66c8a787b8f4a",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    103936,
+    104448
+   ],
+   "center_roi_slab_sha256": "d11bcb7d7a55868c7555a257fb2f0121c3ddb4eba65ae6c2df9d5f7201423709",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r3_c13": {
+   "canvas_yx": [
+    25029,
+    33372,
+    108459,
+    116802
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    847,
+    912
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "f684ceca775be24f9157d39e729530adde5a1f8fab37282a2b19e2f0f61ec9c2",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    112256,
+    112768
+   ],
+   "center_roi_slab_sha256": "9063c69352d007e989e18d1a21092003a9b28312245dab7011f3bf144ac37a0b",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r3_c14": {
+   "canvas_yx": [
+    25029,
+    33372,
+    116802,
+    125145
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    912,
+    977
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "339687e1f65f4b22168fe3690824e54db4e95f303e1aa289a18353dcf4719bc1",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    120704,
+    121216
+   ],
+   "center_roi_slab_sha256": "fc605fc78769e16e029f48dd575660ccb588f7c33a4ac640923942e60b3e3520",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r3_c15": {
+   "canvas_yx": [
+    25029,
+    33372,
+    125145,
+    133488
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    977,
+    1042
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "a2919ed6aba5673637e463cec7317b173d19aa8e4f43a934b1047d7718ebe8e2",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    129024,
+    129536
+   ],
+   "center_roi_slab_sha256": "e87e17d433911221f04d6c96b74d0fa4a04755c048f19de0e75462678bdd187a",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r3_c16": {
+   "canvas_yx": [
+    25029,
+    33372,
+    133488,
+    141831
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    1042,
+    1108
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "c096dac575331ee102b3fa363f6e468eecabe3befb42c38a0016bb9a5626d73f",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    137344,
+    137856
+   ],
+   "center_roi_slab_sha256": "10d136dc7a22f42f7136f0fbcdd26516bf96474a73f22e04cbc4714bc069d1af",
+   "center_roi_nonzero_fraction": 0.9999996308357485
+  },
+  "r3_c17": {
+   "canvas_yx": [
+    25029,
+    33372,
+    141831,
+    150174
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    195,
+    260
+   ],
+   "chunk_cols": [
+    1108,
+    1173
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "077d1fd3324a59a2bb0d4f8b180088aab3c3abd953ce176c168aeba0ad062edd",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    28928,
+    29440,
+    145664,
+    146176
+   ],
+   "center_roi_slab_sha256": "071befcd3154e402b102b3cc68f0c679a2f190483999ad564e32d7c429620b77",
+   "center_roi_nonzero_fraction": 0.9999993847262475
+  },
+  "r4_c0": {
+   "canvas_yx": [
+    33372,
+    41715,
+    0,
+    8343
+   ],
+   "mesh_valid_fraction": 0.7724,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    0,
+    65
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 3400,
+   "listing_digest_sha256": "7000b8bc6b2aa96425ab75322f1d1e8dc94855a27a92a5da50017de3e90cf625",
+   "bytes_present": 6071910400,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    3840,
+    4352
+   ],
+   "center_roi_slab_sha256": "85f1c2ebf34faf5a79c4be1ed57a153093f936c03136b8051a7dbca18c068f66",
+   "center_roi_nonzero_fraction": 0.9999993231988722
+  },
+  "r4_c1": {
+   "canvas_yx": [
+    33372,
+    41715,
+    8343,
+    16686
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    65,
+    130
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "c37a07748f5c0c4180d264655d3cc426539beab684448916c93b97d55ad33a59",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    12160,
+    12672
+   ],
+   "center_roi_slab_sha256": "03bf1a3727f6b36f9aa6ecbf936aeb3cdb3cf7f6efc19e04615e8b9695b2740a",
+   "center_roi_nonzero_fraction": 0.9999966775217364
+  },
+  "r4_c2": {
+   "canvas_yx": [
+    33372,
+    41715,
+    16686,
+    25029
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    130,
+    195
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "d54c1d10892cdc5fde61c8a0e0d372b6ae1f641afd6951c13d761ecd019a0869",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    20480,
+    20992
+   ],
+   "center_roi_slab_sha256": "89c58c39451969f7785592b48ce2c5f9da8432e845dbd2a923d44f799e94370f",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r4_c3": {
+   "canvas_yx": [
+    33372,
+    41715,
+    25029,
+    33372
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    195,
+    260
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "eb4915cd7a34d914a9559ac9ac2c3052c7fd0a9c3967111756dad0d37ec4ce69",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    28928,
+    29440
+   ],
+   "center_roi_slab_sha256": "b4705a585b650fba27e43ab4c4b8b750654bd30e3f8cbac47dc7a4643297c0eb",
+   "center_roi_nonzero_fraction": 0.9999998769452495
+  },
+  "r4_c4": {
+   "canvas_yx": [
+    33372,
+    41715,
+    33372,
+    41715
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    260,
+    325
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "34e01bcd4e64a3d7314fa19c0428ac3247fe505d7fc01caa29f070c71e8699c1",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    37248,
+    37760
+   ],
+   "center_roi_slab_sha256": "62e2cbb03b87f59429c0c66edcf0f26299e80fbfadd5793eadbb043bdddebc6a",
+   "center_roi_nonzero_fraction": 0.9999998154178742
+  },
+  "r4_c5": {
+   "canvas_yx": [
+    33372,
+    41715,
+    41715,
+    50058
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    325,
+    391
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "2c815c3b9c1ed8a96d5c9beb951f14dc08e3b69d1dc90592b753956a64171b1f",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    45568,
+    46080
+   ],
+   "center_roi_slab_sha256": "e59fc1f76fed1b3028b95e86fc56096b7c10e35494ba54fc4fffbb42ae6e56df",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r4_c6": {
+   "canvas_yx": [
+    33372,
+    41715,
+    50058,
+    58401
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    391,
+    456
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "6b7169166523d98d5260d35a9df1260524fcc41687ddc130c1733029360e35b3",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    53888,
+    54400
+   ],
+   "center_roi_slab_sha256": "bc719bd92d65337f09a54c8dddeea8c7bf0f8191bdaca3826860425c4cf13b81",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r4_c7": {
+   "canvas_yx": [
+    33372,
+    41715,
+    58401,
+    66744
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    456,
+    521
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "0b662be16c4fbafac57a937210ecacf2b44637110f57bfa40e05ccbcbbfd7c87",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    62208,
+    62720
+   ],
+   "center_roi_slab_sha256": "476ac4534a4ac0f33b76f26d5708112fcf5b55508d6d562fe16373da2a287aa9",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r4_c8": {
+   "canvas_yx": [
+    33372,
+    41715,
+    66744,
+    75087
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    521,
+    586
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "cf272bcb423c52ca5ff8c6bcd69cdc8f14982a46202ac0d7be95cb34e57114a8",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    70656,
+    71168
+   ],
+   "center_roi_slab_sha256": "e4b1546781eca497d514b25c725ccc40f4d899f7092498dfdfb1edee359b911c",
+   "center_roi_nonzero_fraction": 0.9999998154178742
+  },
+  "r4_c9": {
+   "canvas_yx": [
+    33372,
+    41715,
+    75087,
+    83430
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    586,
+    651
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "1ff12824a565aa9ef056310d2df4886c613bf143f54728f2363ac8122119146e",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    78976,
+    79488
+   ],
+   "center_roi_slab_sha256": "b014031a6c26d56c28f1eba89a83305e391de58e752a7d1f1e02232130c7f19c",
+   "center_roi_nonzero_fraction": 0.9999993231988722
+  },
+  "r4_c10": {
+   "canvas_yx": [
+    33372,
+    41715,
+    83430,
+    91773
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    651,
+    716
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "9882ed7490ae746b9f376444d30982954e28d9ad82015e6873880af75aa145c2",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    87296,
+    87808
+   ],
+   "center_roi_slab_sha256": "ceeb380c6aeaad9363323198e615f7392f48b8bf16b22d3b09b57f305ea28fe0",
+   "center_roi_nonzero_fraction": 0.9999996308357485
+  },
+  "r4_c11": {
+   "canvas_yx": [
+    33372,
+    41715,
+    91773,
+    100116
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    716,
+    782
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "8cfd1f5c7f31ac94eaf7e1549e6b70b451a0e81e851155818074130ec4a68c35",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    95616,
+    96128
+   ],
+   "center_roi_slab_sha256": "13faa9a6c4971f65b75dbf24f530d7e3b02cefbdceef514cee1793bc296c1b9d",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r4_c12": {
+   "canvas_yx": [
+    33372,
+    41715,
+    100116,
+    108459
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    782,
+    847
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "eade722b4ae063fc0da8eb7d035c1f85124876493e42c840caaf942149156d7b",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    103936,
+    104448
+   ],
+   "center_roi_slab_sha256": "6abd9a295de3d454bf629e1b80f8b1072b77cee1fa7ce0e6927cdd8614e80a11",
+   "center_roi_nonzero_fraction": 0.9999990770893712
+  },
+  "r4_c13": {
+   "canvas_yx": [
+    33372,
+    41715,
+    108459,
+    116802
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    847,
+    912
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "bd97d2683ea277e88d2f68adcde23ac0c41e96dbc9a5e06924f4366fdbabb855",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    112256,
+    112768
+   ],
+   "center_roi_slab_sha256": "f332118961df96b814c47d5f59dc90028b4ac78456c61b681b80ba1bb4693130",
+   "center_roi_nonzero_fraction": 0.9999996308357485
+  },
+  "r4_c14": {
+   "canvas_yx": [
+    33372,
+    41715,
+    116802,
+    125145
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    912,
+    977
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "c0febfb590ff15306718e9aad84f823c1bc63beb544f644564cd11cd13eda172",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    120704,
+    121216
+   ],
+   "center_roi_slab_sha256": "cf648573ae2d0d8be1c49a84f599870f39f179263dbc2c2e81b4c16d5ad0b63e",
+   "center_roi_nonzero_fraction": 0.9999994462536227
+  },
+  "r4_c15": {
+   "canvas_yx": [
+    33372,
+    41715,
+    125145,
+    133488
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    977,
+    1042
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "85186040012d207d7d46511dace6701fa60351ba0aabfd83f036f762ca8fd6d7",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    129024,
+    129536
+   ],
+   "center_roi_slab_sha256": "8fbef54be3a90c0c247cde16fe5f92a64849d9edb25aa664cae75ab612f223f4",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r4_c16": {
+   "canvas_yx": [
+    33372,
+    41715,
+    133488,
+    141831
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    1042,
+    1108
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "4a813e5befe504fbbb6e727853010dd3fb1c7559f537df1803aa24152144bc0e",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    137344,
+    137856
+   ],
+   "center_roi_slab_sha256": "5ba4235e89031b6512e717586e4e2b41131174aa5d009f13953f9c326db7ca16",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r4_c17": {
+   "canvas_yx": [
+    33372,
+    41715,
+    141831,
+    150174
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    260,
+    325
+   ],
+   "chunk_cols": [
+    1108,
+    1173
+   ],
+   "chunks_expected": 4356,
+   "chunks_present": 4356,
+   "listing_digest_sha256": "9ad4f00c6e1e3c3d988d5044bcf0c2054818ffeb921b0d57ebb9665926c7117c",
+   "bytes_present": 7779188736,
+   "center_roi_canvas_yx": [
+    37248,
+    37760,
+    145664,
+    146176
+   ],
+   "center_roi_slab_sha256": "e6712421c4d5fb9646ebedbe3bb29ba3acfeae1eab8a71bd79d001a5072918ad",
+   "center_roi_nonzero_fraction": 0.9999996923631237
+  },
+  "r5_c0": {
+   "canvas_yx": [
+    41715,
+    50058,
+    0,
+    8343
+   ],
+   "mesh_valid_fraction": 0.8002,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    0,
+    65
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 3582,
+   "listing_digest_sha256": "f838b1d9a3c81e09125425a5be6644b56034c0c65067a9efd4695f652f6dcd33",
+   "bytes_present": 6396936192,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    3840,
+    4352
+   ],
+   "center_roi_slab_sha256": "3f5974115490cfee5b0df0ba39a15227d0f10b25d111acf0a9ff2b0d89395361",
+   "center_roi_nonzero_fraction": 0.9999974773776147
+  },
+  "r5_c1": {
+   "canvas_yx": [
+    41715,
+    50058,
+    8343,
+    16686
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    65,
+    130
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "d5073b82a602476310ac308fef947a99da99289ab257b062f106b7aba237bfb7",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    12160,
+    12672
+   ],
+   "center_roi_slab_sha256": "e92faa2aa17a37ae5945824553565413bc502b4fe2d47cde2c64ecb000d9e8dd",
+   "center_roi_nonzero_fraction": 0.9999950162826046
+  },
+  "r5_c2": {
+   "canvas_yx": [
+    41715,
+    50058,
+    16686,
+    25029
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    130,
+    195
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "a8de9ef9969450df30f7ac09cdaa27fbb8c950ac74c343e5b2c6401f636ff379",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    20480,
+    20992
+   ],
+   "center_roi_slab_sha256": "2809f14eb092a1d4d6c887ae6a0486ba4a42220909b4b2657212f774331acef5",
+   "center_roi_nonzero_fraction": 0.9999825877528037
+  },
+  "r5_c3": {
+   "canvas_yx": [
+    41715,
+    50058,
+    25029,
+    33372
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    195,
+    260
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "15a8cb1101bb2b60911ad263523df0df23653ab3763444efa00caea3a600176a",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    28928,
+    29440
+   ],
+   "center_roi_slab_sha256": "b5715e122477bfd4dbab5974fe44c5a849a1034a8daba7e2244b77c53ac55112",
+   "center_roi_nonzero_fraction": 0.9999966159943612
+  },
+  "r5_c4": {
+   "canvas_yx": [
+    41715,
+    50058,
+    33372,
+    41715
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    260,
+    325
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "b733b33d5553b5fbb398e0995ac60503f8ebc684486978550e529707577161a2",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    37248,
+    37760
+   ],
+   "center_roi_slab_sha256": "09b8d5fe5c967c9ccd1128a7cc3168507adee39eeedae4eba3636e8188604063",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r5_c5": {
+   "canvas_yx": [
+    41715,
+    50058,
+    41715,
+    50058
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    325,
+    391
+   ],
+   "chunks_expected": 4489,
+   "chunks_present": 4489,
+   "listing_digest_sha256": "a501d411ec5f22795356aa476710cf7b617d773b8c9b47002d6d62b4389a9f04",
+   "bytes_present": 8016707584,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    45568,
+    46080
+   ],
+   "center_roi_slab_sha256": "8cd0175ee9346cf67c5bc110d4d8c49369736ff44b01188d9984fc107116eb3d",
+   "center_roi_nonzero_fraction": 0.9999939703172253
+  },
+  "r5_c6": {
+   "canvas_yx": [
+    41715,
+    50058,
+    50058,
+    58401
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    391,
+    456
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "41fc28da91de0a39c1e5a1747ec55f77931b263a09a9566c51fa62c681a15d4c",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    53888,
+    54400
+   ],
+   "center_roi_slab_sha256": "9ad852c62c8f77368458edf9435646e71c93cb297732f6011f6e46071f36cd3f",
+   "center_roi_nonzero_fraction": 0.9999948317004789
+  },
+  "r5_c7": {
+   "canvas_yx": [
+    41715,
+    50058,
+    58401,
+    66744
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    456,
+    521
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "131fd5f1926b67ab206065fc8e9b15c191353b9960b4f3789f08055321dedfd2",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    62208,
+    62720
+   ],
+   "center_roi_slab_sha256": "bfed351e0b347a2a98f29501c5ac53f2e408c93c6ec4ce9ddc9963c2b402658b",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r5_c8": {
+   "canvas_yx": [
+    41715,
+    50058,
+    66744,
+    75087
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    521,
+    586
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "c382ac28d1dd8b37c75d213d005b0976b8172c8c28198210c7d32e470cb4c132",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    70656,
+    71168
+   ],
+   "center_roi_slab_sha256": "e6f35eefdeeb1aeb0d1f753df7d3f7a2a1eadb0267ea803c1e9c57a7071920a2",
+   "center_roi_nonzero_fraction": 0.999952870030557
+  },
+  "r5_c9": {
+   "canvas_yx": [
+    41715,
+    50058,
+    75087,
+    83430
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    586,
+    651
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "ceddeaf1797bb24f79b8dffbbf995d723e6af8590caa324b16cc592c0564172e",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    78976,
+    79488
+   ],
+   "center_roi_slab_sha256": "9da15e96b0e4c52c13928cb82b904814eee23a4e972d8b5f2a059236461f701d",
+   "center_roi_nonzero_fraction": 0.9999970466859879
+  },
+  "r5_c10": {
+   "canvas_yx": [
+    41715,
+    50058,
+    83430,
+    91773
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    651,
+    716
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "8a24bad8e95c10ade2aa6611905ffe16742fe43310efd26b1fd68334f5978e9a",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    87296,
+    87808
+   ],
+   "center_roi_slab_sha256": "947bbb79a959ccf5cebd444f64046a6cc39f8cc00271958b1966828fad0d5688",
+   "center_roi_nonzero_fraction": 0.999986094813193
+  },
+  "r5_c11": {
+   "canvas_yx": [
+    41715,
+    50058,
+    91773,
+    100116
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    716,
+    782
+   ],
+   "chunks_expected": 4489,
+   "chunks_present": 4489,
+   "listing_digest_sha256": "19ab276bd796afd2159bcdbf50d002d6795cce76826d43bef7a324754655d2a6",
+   "bytes_present": 8016707584,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    95616,
+    96128
+   ],
+   "center_roi_slab_sha256": "e74a00d294ac62cbc98c32dca0fda7285988b07169bbd73d8e3729ebfb94395a",
+   "center_roi_nonzero_fraction": 1.0
+  },
+  "r5_c12": {
+   "canvas_yx": [
+    41715,
+    50058,
+    100116,
+    108459
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    782,
+    847
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "d336e54cbf2c032f67c05431d0bdf1fa82f406b1f435d6241c212b0ecb47b81a",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    103936,
+    104448
+   ],
+   "center_roi_slab_sha256": "070262e12ee83eeefc50e6b81dc4650b54db92b52128a16d1bad77460dadbbe2",
+   "center_roi_nonzero_fraction": 0.999999753890499
+  },
+  "r5_c13": {
+   "canvas_yx": [
+    41715,
+    50058,
+    108459,
+    116802
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    847,
+    912
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "5a2c6425af7bbf99ba1557866ccd720d1625872ebf2cbe4a397377e1e23ee2c7",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    112256,
+    112768
+   ],
+   "center_roi_slab_sha256": "8eb456491448fd8e9c59676a3c456be8b58a997dd0df28aff339b0965263e9ab",
+   "center_roi_nonzero_fraction": 0.9999987079251197
+  },
+  "r5_c14": {
+   "canvas_yx": [
+    41715,
+    50058,
+    116802,
+    125145
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    912,
+    977
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "d832d3ba0e8cde03f2873e460ca1c9a0c47c57962aa11d1366757602323a3b8c",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    120704,
+    121216
+   ],
+   "center_roi_slab_sha256": "f157914a5d70f05fe2ec1cfcff0588899fb65fe07a84b4306be508de8ad7b022",
+   "center_roi_nonzero_fraction": 0.9999921860233429
+  },
+  "r5_c15": {
+   "canvas_yx": [
+    41715,
+    50058,
+    125145,
+    133488
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    977,
+    1042
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "47bae32971cef195b29a7ecf00d293d12cccf06b6902eddbfd4dfe1d38bb7d82",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    129024,
+    129536
+   ],
+   "center_roi_slab_sha256": "fb9230c901c4ea053ea7d256d589734898a94f1fd9a5477550ff4f94632a59b5",
+   "center_roi_nonzero_fraction": 0.9999891096545804
+  },
+  "r5_c16": {
+   "canvas_yx": [
+    41715,
+    50058,
+    133488,
+    141831
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    1042,
+    1108
+   ],
+   "chunks_expected": 4489,
+   "chunks_present": 4489,
+   "listing_digest_sha256": "5de2c524577d27b1fbe106cb7e520172a72a7cfaa2b1e59dbf84b9c28b89b5d5",
+   "bytes_present": 8016707584,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    137344,
+    137856
+   ],
+   "center_roi_slab_sha256": "62ccf7ee5fa7d2e875c1cf7feafb775c4e54d0bd588c396145cf5a008ae7682a",
+   "center_roi_nonzero_fraction": 0.999999261671497
+  },
+  "r5_c17": {
+   "canvas_yx": [
+    41715,
+    50058,
+    141831,
+    150174
+   ],
+   "mesh_valid_fraction": 1.0,
+   "chunk_rows": [
+    325,
+    391
+   ],
+   "chunk_cols": [
+    1108,
+    1173
+   ],
+   "chunks_expected": 4422,
+   "chunks_present": 4422,
+   "listing_digest_sha256": "6d55e55c8d67a5e00d627e678aa454a8211515693d0eb82bb862f3d1d4c87881",
+   "bytes_present": 7897055232,
+   "center_roi_canvas_yx": [
+    45568,
+    46080,
+    145664,
+    146176
+   ],
+   "center_roi_slab_sha256": "306609f86c50fedc4119129ca8831c888ceb9c866d4d3ebb5b7a811cdef70557",
+   "center_roi_nonzero_fraction": 0.9999953239194809
+  }
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "pixel_um": 2.399,
+ "stride_px": 128,
+ "tile_px": 256,
+ "layers": 62,
+ "tiles_per_cm2_per_order": 1060.5217133163549,
+ "host": "Intel Xeon model 85 @2.80GHz, 4 vCPU, avx512_vnni, NO amx, NO avx512_bf16 (host_cpu.txt)",
+ "render": {
+  "wall_s_per_cm2": 349.93645759260204,
+  "wall_h_per_cm2": 0.09720457155350057,
+  "note": "vc_render_tifxyz -n 63 streaming S3, docker --cpus 3; includes S3 fetch"
+ },
+ "passes": {
+  "reverse_fp32": {
+   "tiles": 260,
+   "s_per_tile_wall": 8.063907175797683,
+   "s_per_tile_forward": 8.030608027342316,
+   "wall_h_per_cm2_one_order": 2.3755412928058353,
+   "core_h_per_cm2_one_order": 9.502165171223341,
+   "wall_h_per_cm2_both_orders": 4.7510825856116705,
+   "core_h_per_cm2_both_orders": 19.004330342446682
+  },
+  "forward_fp32": {
+   "tiles": 260,
+   "s_per_tile_wall": 8.211766883960138,
+   "s_per_tile_forward": 8.180587476557667,
+   "wall_h_per_cm2_one_order": 2.4190991903144194,
+   "core_h_per_cm2_one_order": 9.676396761257678,
+   "wall_h_per_cm2_both_orders": 4.838198380628839,
+   "core_h_per_cm2_both_orders": 19.352793522515356
+  },
+  "forward_bf16": {
+   "tiles": 260,
+   "s_per_tile_wall": 15.540559543096101,
+   "s_per_tile_forward": 15.512529833761551,
+   "wall_h_per_cm2_one_order": 4.578083564594196,
+   "core_h_per_cm2_one_order": 18.312334258376783,
+   "wall_h_per_cm2_both_orders": 9.156167129188391,
+   "core_h_per_cm2_both_orders": 36.624668516753566
+  },
+  "noflip_reverse_fp32": {
+   "tiles": 260,
+   "s_per_tile_wall": 7.376862070193657,
+   "s_per_tile_forward": 7.34661499163462,
+   "wall_h_per_cm2_one_order": 2.1731451115500584,
+   "core_h_per_cm2_one_order": 8.692580446200234,
+   "wall_h_per_cm2_both_orders": 4.346290223100117,
+   "core_h_per_cm2_both_orders": 17.385160892400467
+  }
+ },
+ "reference_amx_host_tooling_md": {
+  "bf16_3thr": {
+   "s_per_tile": 5.25,
+   "wall_h_per_cm2_one_order": 1.5465941652530175,
+   "core_h_per_cm2_one_order": 4.639782495759053
+  },
+  "fp32_3thr": {
+   "s_per_tile": 8.0,
+   "wall_h_per_cm2_one_order": 2.3567149184807885,
+   "core_h_per_cm2_one_order": 7.0701447554423655
+  }
+ }
+}
