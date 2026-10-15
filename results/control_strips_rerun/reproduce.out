@@ -1,0 +1,75 @@
+input checksums OK (segment, letter boxes, umbilicus)
+OK hybrid_3d2d-seed42_step-075000.pth
+OK hybrid_3d2d-seed43_step-075000.pth
+OK dense_native_016000.safetensors
+OK train_dense_native.json
+wrote /dev/shm/repro/work/ckpt/dense_native-016000.rebuilt.pth
+weights ready in /dev/shm/repro/work/ckpt
+2026-10-14T23:03:27Z start
+{"source": "/dev/shm/repro/pherc343-first-letters/outputs/concat_w047-w048_R5B2_z9500-11000.tifxyz", "outward_majority": 0.9974, "plain": 19, "fill": 10}
+2026-10-14T23:54:16Z plain arms done
+2026-10-15T00:14:00Z fill arms done
+{
+ "decisions": {
+  "Z13_sees_ink": false,
+  "Z20_sees_ink": true,
+  "Z13_margin_artifact": false,
+  "P13_padding_fixes": false,
+  "D8_no_ink_arm_works": true
+ },
+ "exploratory": {
+  "F13_sees_ink": true,
+  "F13_fixes_bar_R0.7_r0.8": false,
+  "fill_no_ink_floor_f055": 0.013771044397181584,
+  "fill_no_ink_floor_f055_all": 0.007560370613555118
+ },
+ "recall": {
+  "Z13": [
+   0.386,
+   [
+    0.25661720837835006,
+    0.4925439872878339
+   ]
+  ],
+  "Z20": [
+   0.625,
+   [
+    0.495468287274342,
+    0.7192843893739337
+   ]
+  ],
+  "P13": [
+   0.517,
+   [
+    0.3973176641599924,
+    0.6161670560401523
+   ]
+  ],
+  "D8": [
+   0.002,
+   [
+    0.0,
+    0.006482018059513589
+   ]
+  ],
+  "F13": [
+   0.646,
+   [
+    0.4992617251409116,
+    0.7680357067042742
+   ]
+  ],
+  "FD8": [
+   0.032,
+   [
+    0.0011139593083243757,
+    0.0766451281688323
+   ]
+  ],
+  "REF": [
+   1.0,
+   null
+  ]
+ }
+}
+2026-10-15T00:14:14Z done

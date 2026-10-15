@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stripqc"
+version = "0.1.0"
+description = "The blank-margin bug in villa ink inference on thin strips, its partial reflect-fill fix, and a positive-control-first validation kit"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "tifffile>=2023.1", "zarr>=2.16,<3", "pillow>=9"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+figures = ["matplotlib>=3.7"]
+
+[tool.setuptools]
+packages = ["stripqc"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,155 @@
+"""Generate BRANCH_INDEX.md from a read-only inventory (inventory.json: repos -> branches with last commit sha/date,
+ahead/behind vs the default branch, changed top-level dirs). Confidentiality: for PRIVATE repos the raw commit
+messages are not reproduced (confidentiality rules, see README); each branch gets a neutral purpose category.
+
+  BRANCH_INDEX_WITHHOLD='<full branch names>' python branch_index.py inventory.json [more.json ...] --out BRANCH_INDEX.md
+         [--release-sha SHA|self --release-date ...] [--not-indexed TEXT]
+
+Branch names to withhold are given as exact names in BRANCH_INDEX_WITHHOLD, kept outside the repository; with private
+repositories in the inventory the script refuses to run without it.
+
+Inventories come from branch_inventory.py (GitHub API) or branch_inventory_git.py (git only; adds fork fields).
+"""
+import argparse
+import collections
+import json
+import os
+import re
+
+ap = argparse.ArgumentParser()
+ap.add_argument('inventory', nargs='+')
+ap.add_argument('--out', required=True)
+ap.add_argument('--not-indexed', default='')
+ap.add_argument('--release-sha', default='')
+ap.add_argument('--release-date', default='')
+a = ap.parse_args()
+inv = {}
+for f in a.inventory:
+    inv.update(json.load(open(f)))
+STATUSES = ['RELEASE HOME', 'DEFAULT', 'MERGED', 'SUPERSEDED', 'UNIQUE-VALUE', 'UPSTREAM-COPY', 'ABANDONED', 'UNKNOWN']
+EARLIER = {'tifxyz-dist', 'handcheck', 'flatcheck'}
+
+
+WITHHELD = set(os.environ.get('BRANCH_INDEX_WITHHOLD', '').split())   # exact full branch names, kept outside the repository
+if any(v['private'] for v in inv.values()) and not WITHHELD:
+    ap.error('set BRANCH_INDEX_WITHHOLD (exact branch names to withhold; the list is kept outside the repository)')
+
+
+def shown_name(repo, n):
+    """Private repositories: some branch names are withheld for confidentiality."""
+    if not inv[repo]['private'] or n not in WITHHELD:
+        return n
+    return n.split('-sib-')[0] + '-sib-(name withheld)' if '-sib-' in n else '(name withheld)'
+
+
+def classify(repo, b, default):
+    n = b['branch']
+    if n == default:
+        if repo == 'dominion':
+            return 'RELEASE HOME', 'default branch: the Dominion release (experiment map, stripqc, lessons)'
+        if repo in EARLIER:
+            return 'DEFAULT', 'default branch: an earlier public Progress Prize tool release (September 2026)'
+        if b.get('upstream_contained') is not None:
+            return 'DEFAULT', 'default branch of a fork of ScrollPrize/villa'
+        return 'DEFAULT', 'default branch'
+    if 'own_commits' in b:   # fork inventory (branch_inventory_git.py --upstream)
+        if b['own_commits']:
+            return 'UNIQUE-VALUE', f"fork branch with {b['own_commits']} commit(s) by this project not in any upstream branch"
+        where = 'still in a current upstream branch' if b['upstream_contained'] else 'no longer in a current upstream branch'
+        return 'UPSTREAM-COPY', f'copied from upstream ScrollPrize/villa at fork time; commits by others ({where})'
+    if b['ahead'] is None:
+        why = 'compare API did not return (unrelated history or size limit); branch kept as is'
+        if repo == 'dominion' and n.endswith('-data'):
+            why = 'data offload archive with its own history (large binary batches); ' + why
+        elif repo == 'dominion' and n.endswith('-trainer-ckpt'):
+            why = 'model-training resume state with its own history (checkpoint storage); ' + why
+        return 'UNKNOWN', why
+    if b['ahead'] == 0:
+        return 'MERGED', 'fully contained in the default branch'
+    if repo == 'dominion':
+        if n == 'claude/gifted-bell-gavnl5':
+            return 'UNIQUE-VALUE', 'project research log and records (private); reusable parts consolidated into main'
+        if n.endswith('-data'):
+            return 'UNIQUE-VALUE', 'data offload archive'
+        if '-sib-' in n:
+            lane = n.split('-sib-')[1]
+            return 'ABANDONED', 'worker branch of the stopped multi-session fleet (lane: ' + ('withheld' if n in WITHHELD else lane) + ')'
+        lane = n.replace('claude/gifted-bell-gavnl5-', '')
+        return 'ABANDONED', 'worker branch (lane: ' + ('withheld' if n in WITHHELD else lane) + ')'
+    if repo == 'PHerc0268':
+        if n.startswith('spiral/'):
+            return 'UNIQUE-VALUE', ('spiral-fit unit' if n in WITHHELD else f'spiral-fit unit {n[7:]}') + ': fit configs, meshes and logs (geometry data; fleet stopped 2026-10-14)'
+        if n == 'claude/gifted-bell-gavnl5':
+            return 'SUPERSEDED', 'source of every tool in this release (tools/fl); its PHerc0268 images and per-strip records stay private'
+    if repo == 'PARIS-4' or v_private(repo):
+        return 'UNIQUE-VALUE', 'research branch (private)'
+    return 'UNIQUE-VALUE', 'research branch'
+
+
+n_withheld = sum(1 for v in inv.values() if v['private'] for b in v['branches'] if b['branch'] in WITHHELD)
+lines = ['# Branch index (all repositories of this project)', '',
+         'Generated by `scripts/branch_index.py` from read-only inventories taken 2026-10-14/15. **Preparing this release',
+         'deleted, force-pushed or rewrote no branch**; this index is the archive. Private repositories stay private. Their',
+         f'commit messages and changed directories are not reproduced, and {n_withheld} branch names are withheld (see README).', '',
+         'Status: **RELEASE HOME** / **DEFAULT** = default branch; **MERGED** = fully contained in the default branch;',
+         '**SUPERSEDED** = its reusable content is consolidated into this release; **UNIQUE-VALUE** = holds content found',
+         'nowhere else (kept); **UPSTREAM-COPY** = branch of a fork that holds only other people\'s upstream work;',
+         '**ABANDONED** = stopped worker branch, kept for the record; **UNKNOWN** = compare API failed.',
+         '"ahead/behind" are counts against the repository\'s default branch at inventory time; for private repositories the',
+         'date and ahead/behind of non-default branches are not shown. Repositories the session',
+         'could not reach through the GitHub API were inventoried read-only through git (`scripts/branch_inventory_git.py`);',
+         'for the villa fork, "by this project" means a commit author address of this account.',
+         'After the inventory, each of the 119 other dominion branches received README commits: its README was replaced with',
+         'a description of that branch\'s experiment, the previous README was kept as `README_HERCULES.md` (its provenance',
+         'line shortened to remove personal information) and a banner was added. The two branches with their own unrelated',
+         'history (the data offload archive and the trainer checkpoint store) had no README and received one. The research',
+         'log also received record commits. Nothing else changed; the "last commit" column shows each head before these',
+         'commits. The release itself is published as one commit in the separate public repository',
+         'abundantjoe/dominion-release, created after these inventories and not counted here; `main` of the private dominion',
+         'repository holds the same tree. In private repositories, only the default branches, the research-log branches',
+         '(`claude/gifted-bell-gavnl5`) and branches that a published experiment cites are named; other names are withheld.'] + (
+         ['', a.not_indexed] if a.not_indexed else []) + ['']
+summary = collections.Counter()
+
+
+def v_private(repo):
+    return bool(inv[repo]['private'])
+
+
+
+per_repo = {}
+for repo, v in inv.items():
+    def order(b):   # withheld names go last, ordered by SHA, so their position does not hint at the name
+        hidden = shown_name(repo, b['branch']) != b['branch']
+        return (b['branch'] != v['default'], hidden, b['sha'] if hidden else b['branch'])
+    rows = sorted(v['branches'], key=order)
+    c = collections.Counter()
+    body = ['| branch | last commit | date (UTC) | ahead / behind | top-level dirs changed | status | purpose |', '|---|---|---|---|---|---|---|']
+    for b in rows:
+        st, why = classify(repo, b, v['default'])
+        c[st] += 1
+        summary[st] += 1
+        home = repo == 'dominion' and b['branch'] == v['default'] and a.release_sha
+        sha = (a.release_sha if home else b['sha'])[:9]
+        sha_cell = 'same tree as this release' if sha == 'self' else f'`{sha}`'
+        date = '-' if sha == 'self' else ((a.release_date if home and a.release_date else b['date']) or '')[:16].replace('T', ' ')
+        ab = '-' if b['ahead'] is None else f"{b['ahead']} / {b['behind']}"
+        if v['private'] and b['branch'] != v['default']:
+            date = ab = '-'   # private repositories: no date or commit count for any non-default branch
+        # private repositories: directory names are withheld like commit messages
+        dirs = 'withheld (private)' if v['private'] else (', '.join(f'{d} ({n})' for d, n in (b.get('top_dirs') or [])[:4]) or '-')
+        msg = '' if v['private'] or not b.get('msg') else f" Last commit: \"{b['msg'][:100]}\""
+        body.append(f"| `{shown_name(repo, b['branch'])}` | {sha_cell} | {date} | {ab} | {dirs} | {st} | {why}.{msg} |")
+    per_repo[repo] = (v, c, body)
+lines += ['## Summary', '', '| repository | visibility | branches | ' + ' | '.join(STATUSES) + ' |',
+          '|---|---|---|' + '---|' * len(STATUSES)]
+for repo, (v, c, _) in per_repo.items():
+    lines.append(f"| {repo} | {'private' if v['private'] else 'public'} | {len(v['branches'])} | " +
+                 ' | '.join(str(c.get(k, 0)) for k in STATUSES) + ' |')
+lines.append(f"| **total** | | **{sum(len(v['branches']) for v in inv.values())}** | " +
+             ' | '.join(str(summary.get(k, 0)) for k in STATUSES) + ' |')
+lines.append('')
+for repo, (v, c, body) in per_repo.items():
+    lines += [f"## {repo} ({'private' if v['private'] else 'public'}; default `{v['default']}`; {len(v['branches'])} branches)", ''] + body + ['']
+open(a.out, 'w').write('\n'.join(lines) + '\n')
+print(json.dumps(dict(total=sum(len(v['branches']) for v in inv.values()), by_status=dict(summary))))
