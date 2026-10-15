@@ -1,0 +1,155 @@
+{
+  "$comment": "Provenance: Project HERCULES | owner the owner | [id removed]",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hercules.invalid/schemas/reader_output_block.schema.json",
+  "title": "HERCULES reader output, block variant (DECL-P4-17)",
+  "description": "One reader's namings for a batch of display items. Each item shows one window twice (LEFT and RIGHT panels); the scorer alone knows which panel is the text order. Coordinates are displayed-image pixels, pixel centres at integers. Malformed outputs are discarded, never repaired. Code-level checks beyond this schema (hercules.scorer.schema): ch must be exactly one character after Unicode NFC; x, y and box values must be finite; item ids must be unique. Block variant (DECL-P4-17): each side may also carry 'lines' (integer >= 0) and 'marks' (non-letter pen marks: kind, x, y, box, conf); used only for batches built with brief variant 'block'.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "items"
+  ],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  },
+  "$defs": {
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "left",
+        "right"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "left": {
+          "$ref": "#/$defs/side"
+        },
+        "right": {
+          "$ref": "#/$defs/side"
+        }
+      }
+    },
+    "side": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rows",
+        "letters"
+      ],
+      "properties": {
+        "rows": {
+          "enum": [
+            "Y",
+            "N"
+          ]
+        },
+        "letters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/letter"
+          }
+        },
+        "lines": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "marks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/mark"
+          }
+        }
+      }
+    },
+    "letter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ch",
+        "x",
+        "y",
+        "box",
+        "conf"
+      ],
+      "properties": {
+        "ch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "box": {
+          "$comment": "[x0, y0, x1, y1] in displayed-image pixels",
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        },
+        "conf": {
+          "enum": [
+            "firm",
+            "tentative"
+          ]
+        }
+      }
+    },
+    "mark": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "x",
+        "y",
+        "box",
+        "conf"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "dash",
+            "curve",
+            "flourish",
+            "endmark",
+            "other"
+          ]
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "box": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        },
+        "conf": {
+          "enum": [
+            "firm",
+            "tentative"
+          ]
+        }
+      }
+    }
+  }
+}
