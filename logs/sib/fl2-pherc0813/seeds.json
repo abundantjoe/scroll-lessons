@@ -1,0 +1,84 @@
+{
+ "rule": "PASS 2 seeds for PHerc0813 (tools/fl/BRIEF_PASS.md: auto-grow up to 4 segments seeded in the OUTER third of the\nscroll radius). Numbers only; no image is viewed.\n\nMethod (fixed before any growth):\n- Read the organizer surface-m7 L0 prediction (level 4 = 16x) from the open bucket, anonymously.\n- For every level-4 z slice with surface voxels (>= 128), the centre is the centroid of the surface voxels and the\n  radius R is the 99th percentile of their distance to it; centre and R are median-filtered over 9 slices.\n  The bucket has no umbilicus for PHerc0813, so the surface-voxel centroid is the centre.\n- Usable z: slices whose surface-voxel count is >= 50 % of the median. It is split into 4 equal bins; bin k gets\n  azimuth target 45 + 90 k degrees and radius-fraction target 5/6 (middle of the outer third).\n- In each bin, the level-4 surface voxel with r/R in [0.70, 0.95] nearest (in (r/R, angle) space) to the target\n  is taken. It is refined at level 0 to the nearest voxel >= 128 in its 192^3 chunk. The seed must still have\n  r/R >= 2/3 at level 0.\nUsage: seeds.py OUT_JSON\n",
+ "voxel_um_metadata_json": 9.362,
+ "surface": "vesuvius-challenge-open-data/PHerc0813/representations/predictions/surfaces/20250821151723-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+ "level4_shape": [
+  1063,
+  497,
+  497
+ ],
+ "usable_z_level0": [
+  1152,
+  16896
+ ],
+ "seeds": [
+  {
+   "k": 0,
+   "ok": true,
+   "x": 5336,
+   "y": 5623,
+   "z": 3129,
+   "value": 255,
+   "r_frac": 0.8352,
+   "angle_deg": 43.9,
+   "z_frac": 0.1257,
+   "R_vox_level0": 3247.2,
+   "centre_level0": [
+    3381.3,
+    3742.9
+   ],
+   "refine_dist_vox": 1.4
+  },
+  {
+   "k": 1,
+   "ok": true,
+   "x": 1928,
+   "y": 6136,
+   "z": 7112,
+   "value": 255,
+   "r_frac": 0.834,
+   "angle_deg": 140.5,
+   "z_frac": 0.3789,
+   "R_vox_level0": 3477.7,
+   "centre_level0": [
+    4166.9,
+    4291.9
+   ],
+   "refine_dist_vox": 0.0
+  },
+  {
+   "k": 2,
+   "ok": true,
+   "x": 2344,
+   "y": 1736,
+   "z": 11000,
+   "value": 255,
+   "r_frac": 0.8273,
+   "angle_deg": -136.0,
+   "z_frac": 0.6261,
+   "R_vox_level0": 3060.7,
+   "centre_level0": [
+    4166.9,
+    3493.4
+   ],
+   "refine_dist_vox": 0.0
+  },
+  {
+   "k": 3,
+   "ok": true,
+   "x": 4807,
+   "y": 1800,
+   "z": 14936,
+   "value": 255,
+   "r_frac": 0.8294,
+   "angle_deg": -45.2,
+   "z_frac": 0.8764,
+   "R_vox_level0": 2963.4,
+   "centre_level0": [
+    3076.3,
+    3545.4
+   ],
+   "refine_dist_vox": 1.0
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "task": "ktlb4p-prep",
+ "sample": "PHerc0500P2",
+ "sample_type": "fragment",
+ "volumes": {
+  "v9": "20250820143440-9.362um (JULY)",
+  "ref": "20250526151718-2.215um",
+  "mesh_origin": "20250528085330-4.317um"
+ },
+ "n_segments": 46,
+ "n_refmaps": 46,
+ "human_label_sets": 1,
+ "frame": {
+  "meshes_over_5pct_zero_9um": 14,
+  "max_zero_9um": 0.146,
+  "max_outside": 0.001
+ },
+ "registration": {
+  "attempt1": {
+   "model": "affine",
+   "median_r": 0.8343105717640731,
+   "rms9": 0.823053691539678,
+   "ctrl_drop": 0.7417206898231912,
+   "verdict": "FAIL"
+  },
+  "attempt2": {
+   "model": "affine + linear RBF field (smoothing 0.1)",
+   "median_r": 0.9291141373068948,
+   "rms9": 0.3966071497244383,
+   "ctrl_drop": 0.8992651963588314,
+   "ctrl_clear": 15,
+   "verdict": "PASS"
+  },
+  "posthoc_affine_on_attempt2_patches": {
+   "median_r": 0.914880244760298,
+   "rms9": 0.5072198287403705
+  }
+ },
+ "windows": {
+  "lattice_candidates": 1941,
+  "after_window_frame_gate": 1624,
+  "independent": 20,
+  "independent_text": 20,
+  "blank_candidates": 0,
+  "papyrus_units": 27
+ },
+ "blob": {
+  "p500": {
+   "ink_frac": 0.07150223483736257,
+   "comps_per_cm2": 29.183664081520433,
+   "comp_area_mm2_q50": 0.1066490659375,
+   "stroke_width_um": 313.2483040656405
+  }
+ },
+ "handedness": {
+  "text_side_sign_plus1": 20,
+  "nlc_valid": 2,
+  "nlc_valid_disagree": 2,
+  "decision": "FLAG: sources disagree where both valid; read both mirror states"
+ },
+ "seal_estimate": {
+  "independent_text_windows": 20,
+  "letters_per_window": [
+   2,
+   4,
+   7
+  ],
+  "S": [
+   40,
+   80,
+   140
+  ],
+  "note": "estimate only; legibility and mirror state unresolved"
+ }
+}
