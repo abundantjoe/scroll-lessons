@@ -1,0 +1,236 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-26T18:43:31Z",
+ "rule": "RULES.md DECL-P4-14 item 1: eligible only if documentation shows no PHerc. Paris 4 / Scroll 1 data; ambiguous = NOT eligible",
+ "checkpoints": {
+  "PHerc.1667-iteration-0": {
+   "source_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-0/tree/06c306449b39df42c745608ceade243498d24243",
+   "weights_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-0/resolve/06c306449b39df42c745608ceade243498d24243/model.safetensors",
+   "weights_sha256": "62c43b98f55c169ae874c684a59953b5ce1cb45140129107f861501cce3edaef",
+   "last_ckpt_sha256": "212312371c60f93bd1a7d7359c87134390f3aa9b498a6de82753a871f26ebbed",
+   "card_sha256": "b7f406cdc51a7874ca3f786961f744286221c890f307e043255c41577e962a78",
+   "config_sha256": "8fdb5c7903cc3dce2c37a93b028028582fef9134b6a826870e3bfab544f5be79",
+   "quoted_training_statement": [
+    "Trained on segment l_2 with (cross-segment baseline; no l_2 labels) (20,075 tiles).",
+    "Training segment(s): `500p2a + 658 + 20250910185200 + 20250919125754*`",
+    "Training label: `(cross-segment baseline; no l_2 labels)`",
+    "Encoder init: `r3d50_KM_200ep.pth` (Kinetics-700), conv1 summed across RGB",
+    "Cross-segment baseline (no l_2 labels in training). Trained on 500p2a, 658, 20250910185200, and 20250919125754-auto_grown_20250919055754487_inp_hr. l_2 inference uses reverse_layers=True to match the training-segment convention.",
+    "Family table: \"All six share the architecture, hyperparameters, and a fixed step budget of 12,396 optimizer steps; the only thing that varies between rows is the supervising label (or, for ink0, the training segments).\""
+   ],
+   "config_json": {
+    "train_segment": "500p2a + 658 + 20250910185200 + 20250919125754*",
+    "train_inklabels": "(cross-segment baseline; no l_2 labels)"
+   },
+   "initialisation": {
+    "documented": "Kinetics-700 video ResNet3D-50 (r3d50_KM_200ep.pth); no scroll-trained initialisation is documented",
+    "corroboration": "last.ckpt hyper_parameters.pretrained_path basename r3d50_KM_200ep.pth (logs/sib/ckpt-screen-b/runs.jsonl inspect_lastckpt_hparams)",
+    "scroll1_exposure_via_init": "none documented"
+   },
+   "segment_scroll_attribution": {
+    "500p2a": "metadata.json base_path '500p2a'; reverse_layers True",
+    "658": "metadata.json base_path '343P' (original_path train_scrolls/658); reverse_layers True",
+    "20250910185200": "metadata.json base_path '9b' (original_path new_traces9b/david_9b); layer_range [1,108]",
+    "20250919125754-auto_grown_20250919055754487_inp_hr": "metadata.json base_path '9b'; train_resnet3d_3d_decoder.py '2um_dataset/9b_2um'"
+   },
+   "scrolls": [
+    "PHerc0009B",
+    "PHerc0343P",
+    "PHerc0500P2"
+   ],
+   "paris4_scroll1_in_documentation": false,
+   "disclosures": [
+    "segment ids are named in the card; their scrolls come from villa code (PHerc0500P2, PHerc0343P, PHerc0009B); none is Scroll 1 / Paris 4",
+    "the family README preview/figures were never downloaded",
+    "card headline line reads \"Trained on segment l_2 with (cross-segment baseline; no l_2 labels)\"; the card body and config.json give the training segments as 500p2a + 658 + 20250910185200 + 20250919125754*, which is what is used here"
+   ],
+   "eligible": true,
+   "eligibility_basis": "card and config name only PHerc0009B, PHerc0343P, PHerc0500P2 training data and a Kinetics-700 initialisation; no Paris 4 / Scroll 1 data is documented"
+  },
+  "PHerc.1667-iteration-1": {
+   "source_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-1/tree/f2012ce96ddebcae6888246370c28d458a4d45dd",
+   "weights_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-1/resolve/f2012ce96ddebcae6888246370c28d458a4d45dd/model.safetensors",
+   "weights_sha256": "75e4009673b2c419c23cb388474c87357c226058598f1e2d7cba4e71d22e0fcb",
+   "last_ckpt_sha256": "04274e174463a7feecac912abab2ef62844cecbf93e5de25d3f1e2b971938d0b",
+   "card_sha256": "c872ad88cc4defc7ec69ed7cf6c8a62b413ff6d042e3d96ed52ecf79531ffecb",
+   "config_sha256": "885c280718577acceb58162089cd3801bfdf81f8274fea7e38e6706bdcf3e165",
+   "quoted_training_statement": [
+    "Trained on segment l_2 with l_2_inklabels.png (3,396 tiles).",
+    "Training segment(s): `l_2`",
+    "Training label: `l_2_inklabels.png`",
+    "Encoder init: `r3d50_KM_200ep.pth` (Kinetics-700), conv1 summed across RGB",
+    "Family table: \"All six share the architecture, hyperparameters, and a fixed step budget of 12,396 optimizer steps; the only thing that varies between rows is the supervising label (or, for ink0, the training segments).\""
+   ],
+   "config_json": {
+    "train_segment": "l_2",
+    "train_inklabels": "l_2_inklabels.png"
+   },
+   "initialisation": {
+    "documented": "Kinetics-700 video ResNet3D-50 (r3d50_KM_200ep.pth); no scroll-trained initialisation is documented",
+    "corroboration": "last.ckpt hyper_parameters.pretrained_path basename r3d50_KM_200ep.pth (logs/sib/ckpt-screen-b/runs.jsonl inspect_lastckpt_hparams)",
+    "scroll1_exposure_via_init": "none documented"
+   },
+   "segment_scroll_attribution": {
+    "l_2": "repo name PHerc.1667; train_resnet3d_3d_decoder.py and inference_resnet3d_3d_decoder.py base_path '2um_dataset/s4_2um' (Scroll 4 = PHerc. 1667)"
+   },
+   "scrolls": [
+    "PHerc1667"
+   ],
+   "paris4_scroll1_in_documentation": false,
+   "disclosures": [
+    "label derivation (how l_2_inklabels*.png were made) is not documented; no Scroll 1 data is named anywhere",
+    "the family README preview/figures were never downloaded"
+   ],
+   "eligible": true,
+   "eligibility_basis": "card and config name only PHerc1667 training data and a Kinetics-700 initialisation; no Paris 4 / Scroll 1 data is documented"
+  },
+  "PHerc.1667-iteration-2": {
+   "source_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-2/tree/bf6053ca28863ca8fb87860803c0392945290fc6",
+   "weights_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-2/resolve/bf6053ca28863ca8fb87860803c0392945290fc6/model.safetensors",
+   "weights_sha256": "485ce6e12cca19071c5746d95327d9aa6f2fd04ea1a2acc95c9530d3ee895b71",
+   "last_ckpt_sha256": "2f7dd5fbf352eb8e96070b572b53e695ce2592ece684454e0d1c4c5b5dc3c4f5",
+   "card_sha256": "7ec327edb9eb9f7c1ce7fd1421399bef88b5d328643dacb55dd98b426677487b",
+   "config_sha256": "36bb9c4ee2bc049a6cf78feaa4adea5112752f2042067b657710bb71a1bd6bc0",
+   "quoted_training_statement": [
+    "Trained on segment l_2 with l_2_inklabels2.png (8,970 tiles).",
+    "Training segment(s): `l_2`",
+    "Training label: `l_2_inklabels2.png`",
+    "Encoder init: `r3d50_KM_200ep.pth` (Kinetics-700), conv1 summed across RGB",
+    "Family table: \"All six share the architecture, hyperparameters, and a fixed step budget of 12,396 optimizer steps; the only thing that varies between rows is the supervising label (or, for ink0, the training segments).\""
+   ],
+   "config_json": {
+    "train_segment": "l_2",
+    "train_inklabels": "l_2_inklabels2.png"
+   },
+   "initialisation": {
+    "documented": "Kinetics-700 video ResNet3D-50 (r3d50_KM_200ep.pth); no scroll-trained initialisation is documented",
+    "corroboration": "last.ckpt hyper_parameters.pretrained_path basename r3d50_KM_200ep.pth (logs/sib/ckpt-screen-b/runs.jsonl inspect_lastckpt_hparams)",
+    "scroll1_exposure_via_init": "none documented"
+   },
+   "segment_scroll_attribution": {
+    "l_2": "repo name PHerc.1667; train_resnet3d_3d_decoder.py and inference_resnet3d_3d_decoder.py base_path '2um_dataset/s4_2um' (Scroll 4 = PHerc. 1667)"
+   },
+   "scrolls": [
+    "PHerc1667"
+   ],
+   "paris4_scroll1_in_documentation": false,
+   "disclosures": [
+    "label derivation (how l_2_inklabels*.png were made) is not documented; no Scroll 1 data is named anywhere",
+    "the family README preview/figures were never downloaded"
+   ],
+   "eligible": true,
+   "eligibility_basis": "card and config name only PHerc1667 training data and a Kinetics-700 initialisation; no Paris 4 / Scroll 1 data is documented"
+  },
+  "PHerc.1667-iteration-3": {
+   "source_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-3/tree/ecb158ec66244f55339be33d6299c8d60a466f50",
+   "weights_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-3/resolve/ecb158ec66244f55339be33d6299c8d60a466f50/model.safetensors",
+   "weights_sha256": "f9b5b8982dd62c7551ba7fe260b9db6c9746cc7d14580877691f558b1875abae",
+   "last_ckpt_sha256": "a2ab8d85b29377e31928962ae750a7c65fd87bbdd43fe61c375af4693ac88f8a",
+   "card_sha256": "318214605e47ad65518a906d0a1421314bba9e32c4263e33e2c8e25cfd97e7a4",
+   "config_sha256": "e6d2edf4a1f52b5b6672ed31cdb04a412b8540aea59073cf2ab0146f17da28d2",
+   "quoted_training_statement": [
+    "Trained on segment l_2 with l_2_inklabels3.png (15,286 tiles).",
+    "Training segment(s): `l_2`",
+    "Training label: `l_2_inklabels3.png`",
+    "Encoder init: `r3d50_KM_200ep.pth` (Kinetics-700), conv1 summed across RGB",
+    "Family table: \"All six share the architecture, hyperparameters, and a fixed step budget of 12,396 optimizer steps; the only thing that varies between rows is the supervising label (or, for ink0, the training segments).\""
+   ],
+   "config_json": {
+    "train_segment": "l_2",
+    "train_inklabels": "l_2_inklabels3.png"
+   },
+   "initialisation": {
+    "documented": "Kinetics-700 video ResNet3D-50 (r3d50_KM_200ep.pth); no scroll-trained initialisation is documented",
+    "corroboration": "last.ckpt hyper_parameters.pretrained_path basename r3d50_KM_200ep.pth (logs/sib/ckpt-screen-b/runs.jsonl inspect_lastckpt_hparams)",
+    "scroll1_exposure_via_init": "none documented"
+   },
+   "segment_scroll_attribution": {
+    "l_2": "repo name PHerc.1667; train_resnet3d_3d_decoder.py and inference_resnet3d_3d_decoder.py base_path '2um_dataset/s4_2um' (Scroll 4 = PHerc. 1667)"
+   },
+   "scrolls": [
+    "PHerc1667"
+   ],
+   "paris4_scroll1_in_documentation": false,
+   "disclosures": [
+    "label derivation (how l_2_inklabels*.png were made) is not documented; no Scroll 1 data is named anywhere",
+    "the family README preview/figures were never downloaded"
+   ],
+   "eligible": true,
+   "eligibility_basis": "card and config name only PHerc1667 training data and a Kinetics-700 initialisation; no Paris 4 / Scroll 1 data is documented"
+  },
+  "PHerc.1667-iteration-4": {
+   "source_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-4/tree/9ff9913da0f2f8374784dd4d4196fdcf62ba6883",
+   "weights_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-4/resolve/9ff9913da0f2f8374784dd4d4196fdcf62ba6883/model.safetensors",
+   "weights_sha256": "a1612b1fc97dea039aec3a1d06ff65fe0ee217b91dbe6db9785eb2e5befb3ffe",
+   "last_ckpt_sha256": "300a72217200d8e056f6823ef5f401e6ce2ebe34048619be885cf4a916c60473",
+   "card_sha256": "5b5e1f7798c9b43355f43161717f9ceb6d8e074e4c726ff67012ea0d70475ed3",
+   "config_sha256": "46dd83a3d5cef7e52b62bf8b879d902a3a090c8e6be1b19954719caee1b7b79a",
+   "quoted_training_statement": [
+    "Trained on segment l_2 with l_2_inklabels4.png (24,773 tiles).",
+    "Training segment(s): `l_2`",
+    "Training label: `l_2_inklabels4.png`",
+    "Encoder init: `r3d50_KM_200ep.pth` (Kinetics-700), conv1 summed across RGB",
+    "Family table: \"All six share the architecture, hyperparameters, and a fixed step budget of 12,396 optimizer steps; the only thing that varies between rows is the supervising label (or, for ink0, the training segments).\""
+   ],
+   "config_json": {
+    "train_segment": "l_2",
+    "train_inklabels": "l_2_inklabels4.png"
+   },
+   "initialisation": {
+    "documented": "Kinetics-700 video ResNet3D-50 (r3d50_KM_200ep.pth); no scroll-trained initialisation is documented",
+    "corroboration": "last.ckpt hyper_parameters.pretrained_path basename r3d50_KM_200ep.pth (logs/sib/ckpt-screen-b/runs.jsonl inspect_lastckpt_hparams)",
+    "scroll1_exposure_via_init": "none documented"
+   },
+   "segment_scroll_attribution": {
+    "l_2": "repo name PHerc.1667; train_resnet3d_3d_decoder.py and inference_resnet3d_3d_decoder.py base_path '2um_dataset/s4_2um' (Scroll 4 = PHerc. 1667)"
+   },
+   "scrolls": [
+    "PHerc1667"
+   ],
+   "paris4_scroll1_in_documentation": false,
+   "disclosures": [
+    "label derivation (how l_2_inklabels*.png were made) is not documented; no Scroll 1 data is named anywhere",
+    "the family README preview/figures were never downloaded"
+   ],
+   "eligible": true,
+   "eligibility_basis": "card and config name only PHerc1667 training data and a Kinetics-700 initialisation; no Paris 4 / Scroll 1 data is documented"
+  },
+  "PHerc.1667-iteration-5": {
+   "source_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-5/tree/6288ba60115ce827018926bcb0ea8e5696f33d3b",
+   "weights_url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-5/resolve/6288ba60115ce827018926bcb0ea8e5696f33d3b/model.safetensors",
+   "weights_sha256": "9920d4338e51d38b241cbf48392610be0519e4e19c2e9d987ccfc2e78bd3301b",
+   "last_ckpt_sha256": "2c99b5ef73331363a9c42296fbea8a114c73fa5eedcddd6d0b33a0924b14685f",
+   "card_sha256": "197fb980175f5d52408d719e700d41e39a17fa819ebf4839b3445d357657b396",
+   "config_sha256": "941f69c2487b51bc9eb9fc638cc6c4b4af2d30e25ccd45044751ce7eaabcd35e",
+   "quoted_training_statement": [
+    "Trained on segment l_2 with l_2_inklabels5.png (33,061 tiles).",
+    "Training segment(s): `l_2`",
+    "Training label: `l_2_inklabels5.png`",
+    "Encoder init: `r3d50_KM_200ep.pth` (Kinetics-700), conv1 summed across RGB",
+    "Family table: \"All six share the architecture, hyperparameters, and a fixed step budget of 12,396 optimizer steps; the only thing that varies between rows is the supervising label (or, for ink0, the training segments).\""
+   ],
+   "config_json": {
+    "train_segment": "l_2",
+    "train_inklabels": "l_2_inklabels5.png"
+   },
+   "initialisation": {
+    "documented": "Kinetics-700 video ResNet3D-50 (r3d50_KM_200ep.pth); no scroll-trained initialisation is documented",
+    "corroboration": "last.ckpt hyper_parameters.pretrained_path basename r3d50_KM_200ep.pth (logs/sib/ckpt-screen-b/runs.jsonl inspect_lastckpt_hparams)",
+    "scroll1_exposure_via_init": "none documented"
+   },
+   "segment_scroll_attribution": {
+    "l_2": "repo name PHerc.1667; train_resnet3d_3d_decoder.py and inference_resnet3d_3d_decoder.py base_path '2um_dataset/s4_2um' (Scroll 4 = PHerc. 1667)"
+   },
+   "scrolls": [
+    "PHerc1667"
+   ],
+   "paris4_scroll1_in_documentation": false,
+   "disclosures": [
+    "label derivation (how l_2_inklabels*.png were made) is not documented; no Scroll 1 data is named anywhere",
+    "the family README preview/figures were never downloaded"
+   ],
+   "eligible": true,
+   "eligibility_basis": "card and config name only PHerc1667 training data and a Kinetics-700 initialisation; no Paris 4 / Scroll 1 data is documented"
+  }
+ }
+}
