@@ -1,0 +1,2726 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-5 E1 as amended by DECL-P4-5-A1; sibling task p4-tiles-b",
+ "segment": "20260623141924-w010-027",
+ "material": "official surface volume PHercParis4/segments/20260623141924-w010-027/surface-volumes/1.129um-0.23m-78keV-volume-20260608103018-L1.zarr (raw CT, no model)",
+ "level_used": 3,
+ "level_inplane_um": 18.064,
+ "slab": {
+  "n_slices": 116,
+  "centre_index": 58,
+  "centre_rule": "n//2 (builder.raw_slab_means convention)",
+  "slices": [
+   35,
+   81
+  ],
+  "count": 47,
+  "half_width_um": 51.934,
+  "depth_step_um": 2.258
+ },
+ "px_per_mm": 443.62218589724114,
+ "T_px": 8872,
+ "tile_grid_rows_cols": [
+  6,
+  21
+ ],
+ "display": {
+  "values": "per-tile linear 1-99 % stretch over mesh-valid px with slab mean > 0 (builder.linear_window_ct); px with slab mean 0 and px outside mesh-valid written as 0",
+  "downscale": "cv2.resize INTER_AREA to 1068 x 1068 from the level-3 crop",
+  "px_per_mm": 53.4,
+  "encoder": "builder.png_bytes; chunks IHDR/IDAT/IEND only",
+  "amendment": "DECL-P4-5-A1"
+ },
+ "eligibility": ">= 50 % mesh-valid AND frac_mesh_points_outside_1129_volume < 0.5 (4096-point subsample, default_rng(20260926 + 1000 r + c), volume L0 zyx (59969, 36006, 32354))",
+ "tiles_total": 126,
+ "tiles_eligible": 60,
+ "ineligible_ge50_valid_but_outside": [
+  "r0_c0",
+  "r0_c1",
+  "r0_c2",
+  "r0_c3",
+  "r0_c4",
+  "r0_c5",
+  "r0_c6",
+  "r0_c7",
+  "r0_c8",
+  "r0_c9",
+  "r0_c10",
+  "r0_c11",
+  "r0_c12",
+  "r0_c13",
+  "r0_c14",
+  "r0_c15",
+  "r0_c16",
+  "r0_c17",
+  "r0_c18",
+  "r0_c19",
+  "r1_c0",
+  "r1_c1",
+  "r1_c2",
+  "r1_c3",
+  "r1_c4",
+  "r1_c5",
+  "r1_c6",
+  "r1_c7",
+  "r1_c8",
+  "r1_c9",
+  "r1_c10",
+  "r1_c11",
+  "r1_c12",
+  "r1_c13",
+  "r1_c14",
+  "r1_c15",
+  "r1_c16",
+  "r1_c17",
+  "r1_c18",
+  "r1_c19"
+ ],
+ "inputs": [
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/surface-volumes/1.129um-0.23m-78keV-volume-20260608103018-L1.zarr/.zattrs",
+   "bytes": 3451,
+   "sha256": "053c0f94a8ee6d676fd558757c657fb444fe245c99a8c38b9bd10f77fc8ce938",
+   "secs": 0.2
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/surface-volumes/1.129um-0.23m-78keV-volume-20260608103018-L1.zarr/.zgroup",
+   "bytes": 19,
+   "sha256": "2b31f1f542fb152b20ff3afe0da0ed76e15b34cd4320854e2d1e6d8671b29d85",
+   "secs": 0.1
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/surface-volumes/1.129um-0.23m-78keV-volume-20260608103018-L1.zarr/0/.zarray",
+   "bytes": 209,
+   "sha256": "3c659ed615d83ecef51c3016da6c4eb0f9ff33698eff058cb711b7f14fff05d5",
+   "secs": 0.1
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/surface-volumes/1.129um-0.23m-78keV-volume-20260608103018-L1.zarr/3/.zarray",
+   "bytes": 207,
+   "sha256": "a01a1383e0520ac041fa59cd04e8daa64fe83abc4c80941f752d02f190f9d77e",
+   "secs": 0.1
+  },
+  {
+   "key": "PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/metadata.json",
+   "bytes": 158775,
+   "sha256": "acd47f1093d8917b1642198e3f0f5de3bff3d86222e630600a225bb46ba715ca",
+   "secs": 0.1
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260608103018-1.129um.tifxyz/meta.json",
+   "bytes": 412,
+   "sha256": "e89b33ff638a44a2402f102a671c8a531d7f02e0dd92003ffeecee93e2f0bcca",
+   "secs": 0.1
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260608103018-1.129um.tifxyz/x.tif",
+   "bytes": 345137134,
+   "sha256": "0c3d3219c90fff09cee2f5c89f9890b9759af7ef79cc98deb95fd862601960e6",
+   "secs": 12.6
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260608103018-1.129um.tifxyz/y.tif",
+   "bytes": 345137134,
+   "sha256": "0bf629b93b0e2055228e4def6bb8fcbb8ef4a56d473b7100aae9fffc74ade5d9",
+   "secs": 10.5
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260608103018-1.129um.tifxyz/z.tif",
+   "bytes": 345137134,
+   "sha256": "3b045716840dc6bcc8f8beac9df438511c6ce525db5c0c1acd7467607738f624",
+   "secs": 11.1
+  }
+ ],
+ "chunk_manifest_sha256": "9408f0143af148f4b3be4d5604b4e2778dfb1b64f603c0ac5f7e2712bb752ec8",
+ "chunk_check": {
+  "needed_and_present": 4648,
+  "sha256_all_match_e1_chunk_manifest": true,
+  "e1_chunk_manifest_sha256": "9408f0143af148f4b3be4d5604b4e2778dfb1b64f603c0ac5f7e2712bb752ec8",
+  "secs": 119.9
+ },
+ "supersedes": "logs/sib/p4-tiles-b/e1/manifest.json tiles (never to be read)",
+ "viewing": "no image, tile or CT pixel was opened, displayed or described by the builder",
+ "tiles": [
+  {
+   "r": 2,
+   "c": 0,
+   "valid_fraction": 0.8794288837700558,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    0,
+    8872
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    0,
+    1109
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c0.png",
+   "png_sha256": "4ecccdc014f99049f18afdc6134d41bc09d694d4021bc6e128946a7519697f7c",
+   "png_bytes": 731272,
+   "superseded_e1_png_sha256": "cd006c3dc5fb8e30d87a2adf5684c60b1091221125561f383ad6124f9ef3a585",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0005777755180335295,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.914894104003906,
+    "old_stretch_p99": 112.8723373413086,
+    "new_stretch_p1": 40.10638427734375,
+    "new_stretch_p99": 112.8723373413086,
+    "slab_mean_mean_valid_pos": 74.72294616699219,
+    "slab_mean_std_valid_pos": 17.016508102416992,
+    "n_valid_px_level3": 1081735,
+    "n_valid_pos_px_level3": 1081110
+   }
+  },
+  {
+   "r": 2,
+   "c": 1,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    8872,
+    17744
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    1109,
+    2218
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c1.png",
+   "png_sha256": "51be1f55e6d2ea92576e5451eba9a10fe6a6b672ca66810dfd7f69762832d18b",
+   "png_bytes": 797901,
+   "superseded_e1_png_sha256": "2b1a00e56b4c9429cc78587b2cfba8ce1a41f9089ca0f0278e2a206a4ac6bc62",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.007780427537298324,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 20.106382369995117,
+    "old_stretch_p99": 113.14893341064453,
+    "new_stretch_p1": 37.191490173339844,
+    "new_stretch_p99": 113.19149017333984,
+    "slab_mean_mean_valid_pos": 73.35736083984375,
+    "slab_mean_std_valid_pos": 18.522918701171875,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1220312
+   }
+  },
+  {
+   "r": 2,
+   "c": 2,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    17744,
+    26616
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    2218,
+    3327
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c2.png",
+   "png_sha256": "1e0165c7fc57e721aaf00fd9a3803a096ca46aaeafed5128671914b269408d14",
+   "png_bytes": 817044,
+   "superseded_e1_png_sha256": "1e0165c7fc57e721aaf00fd9a3803a096ca46aaeafed5128671914b269408d14",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 41.808509826660156,
+    "old_stretch_p99": 112.34042358398438,
+    "new_stretch_p1": 41.808509826660156,
+    "new_stretch_p99": 112.34042358398438,
+    "slab_mean_mean_valid_pos": 75.76815032958984,
+    "slab_mean_std_valid_pos": 16.22714614868164,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 2,
+   "c": 3,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    26616,
+    35488
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    3327,
+    4436
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c3.png",
+   "png_sha256": "5cb870c1b6a15f69daa5fdf22c9a5290279dae8d7374d844e993b2d2286c342c",
+   "png_bytes": 807927,
+   "superseded_e1_png_sha256": "13439c8ba2369cadcddd2bb0b33954bb99154fea5b10bcd2e515fe4647e8e9b9",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0035621332470377213,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 36.04255294799805,
+    "old_stretch_p99": 112.85106658935547,
+    "new_stretch_p1": 37.787235260009766,
+    "new_stretch_p99": 112.8723373413086,
+    "slab_mean_mean_valid_pos": 73.29398345947266,
+    "slab_mean_std_valid_pos": 17.98052215576172,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1225500
+   }
+  },
+  {
+   "r": 2,
+   "c": 4,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    35488,
+    44360
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    4436,
+    5545
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c4.png",
+   "png_sha256": "ec270524a7a9a8dbef7cd95e6152ce00ffb554f1196ef65eec61daf908513cf0",
+   "png_bytes": 809652,
+   "superseded_e1_png_sha256": "1b28b2817ee633de9725ca4b0a6e029cfd0a8b6dbde7f31b44c0e9d86f22a093",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0009106572099251878,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.446807861328125,
+    "old_stretch_p99": 111.17021179199219,
+    "new_stretch_p1": 39.72340393066406,
+    "new_stretch_p99": 111.17021179199219,
+    "slab_mean_mean_valid_pos": 72.9910659790039,
+    "slab_mean_std_valid_pos": 17.045984268188477,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1228761
+   }
+  },
+  {
+   "r": 2,
+   "c": 5,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    44360,
+    53232
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    5545,
+    6654
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c5.png",
+   "png_sha256": "e23b851d2372aa6b31a020f1f14ad0729193d65f826baef63da77c2faa55ec89",
+   "png_bytes": 820095,
+   "superseded_e1_png_sha256": "79c75919b9135d5fdb5c2bf2e5f860a82fefb3a511f8f374088a21e7a8d9112e",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.00014472944943453878,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 41.65957260131836,
+    "old_stretch_p99": 112.46808624267578,
+    "new_stretch_p1": 41.70212936401367,
+    "new_stretch_p99": 112.46808624267578,
+    "slab_mean_mean_valid_pos": 76.14356231689453,
+    "slab_mean_std_valid_pos": 16.236995697021484,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229703
+   }
+  },
+  {
+   "r": 2,
+   "c": 6,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    53232,
+    62104
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    6654,
+    7763
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c6.png",
+   "png_sha256": "f5eb510212f1f5ab2c1bc7cc216f6a02a5ca3ca626e3867c157e3d6d884099c1",
+   "png_bytes": 812599,
+   "superseded_e1_png_sha256": "d1977b2e007686740fd3fc5a18961e2af2bee76c89ae85ab83b741c979caddef",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 4.95982944691397e-05,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.74468231201172,
+    "old_stretch_p99": 113.59574127197266,
+    "new_stretch_p1": 39.76595687866211,
+    "new_stretch_p99": 113.59574127197266,
+    "slab_mean_mean_valid_pos": 76.67704010009766,
+    "slab_mean_std_valid_pos": 16.984710693359375,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229820
+   }
+  },
+  {
+   "r": 2,
+   "c": 7,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    62104,
+    70976
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    7763,
+    8872
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c7.png",
+   "png_sha256": "5dcad429c85e9b6ea15367f948bf091a93b4ede56f9390a850cdc1c944593bf4",
+   "png_bytes": 808764,
+   "superseded_e1_png_sha256": "5dcad429c85e9b6ea15367f948bf091a93b4ede56f9390a850cdc1c944593bf4",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 40.36170196533203,
+    "old_stretch_p99": 114.34042358398438,
+    "new_stretch_p1": 40.36170196533203,
+    "new_stretch_p99": 114.34042358398438,
+    "slab_mean_mean_valid_pos": 76.55728149414062,
+    "slab_mean_std_valid_pos": 17.102964401245117,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 2,
+   "c": 8,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    70976,
+    79848
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    8872,
+    9981
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c8.png",
+   "png_sha256": "313fdcd1bf66bd92c44452e074916af1f571bb9a22ee0a711b0e5433d07837b8",
+   "png_bytes": 821546,
+   "superseded_e1_png_sha256": "313fdcd1bf66bd92c44452e074916af1f571bb9a22ee0a711b0e5433d07837b8",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 43.1489372253418,
+    "old_stretch_p99": 114.40425872802734,
+    "new_stretch_p1": 43.1489372253418,
+    "new_stretch_p99": 114.40425872802734,
+    "slab_mean_mean_valid_pos": 78.62747192382812,
+    "slab_mean_std_valid_pos": 16.062219619750977,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 2,
+   "c": 9,
+   "valid_fraction": 0.9996328404943242,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    79848,
+    88720
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    9981,
+    11090
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c9.png",
+   "png_sha256": "29038caf6d3d46a2386e67e5e92d309abc311da48a65e8d7419aee44d8a8a453",
+   "png_bytes": 837422,
+   "superseded_e1_png_sha256": "29038caf6d3d46a2386e67e5e92d309abc311da48a65e8d7419aee44d8a8a453",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 3.416308970983336e-05,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.51063919067383,
+    "old_stretch_p99": 114.0,
+    "new_stretch_p1": 39.51063919067383,
+    "new_stretch_p99": 114.0,
+    "slab_mean_mean_valid_pos": 75.58019256591797,
+    "slab_mean_std_valid_pos": 16.95675277709961,
+    "n_valid_px_level3": 1229397,
+    "n_valid_pos_px_level3": 1229355
+   }
+  },
+  {
+   "r": 2,
+   "c": 10,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    88720,
+    97592
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    11090,
+    12199
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c10.png",
+   "png_sha256": "29ecd29fa89f861e28878dab9d0df8b65da666f2c378ac0397467182e82ee658",
+   "png_bytes": 835377,
+   "superseded_e1_png_sha256": "29ecd29fa89f861e28878dab9d0df8b65da666f2c378ac0397467182e82ee658",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.085105895996094,
+    "old_stretch_p99": 114.65957641601562,
+    "new_stretch_p1": 39.085105895996094,
+    "new_stretch_p99": 114.65957641601562,
+    "slab_mean_mean_valid_pos": 76.3093032836914,
+    "slab_mean_std_valid_pos": 16.905893325805664,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 2,
+   "c": 11,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    97592,
+    106464
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    12199,
+    13308
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c11.png",
+   "png_sha256": "2df9e69bbdac9e77d95588490eb8ff9b6d54b96badf83fbe5614ac632f771c08",
+   "png_bytes": 828506,
+   "superseded_e1_png_sha256": "2df9e69bbdac9e77d95588490eb8ff9b6d54b96badf83fbe5614ac632f771c08",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.23404312133789,
+    "old_stretch_p99": 114.06382751464844,
+    "new_stretch_p1": 39.23404312133789,
+    "new_stretch_p99": 114.06382751464844,
+    "slab_mean_mean_valid_pos": 75.78117370605469,
+    "slab_mean_std_valid_pos": 17.201583862304688,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 2,
+   "c": 12,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    106464,
+    115336
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    13308,
+    14417
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c12.png",
+   "png_sha256": "71d71b0cc409674a5d5c1d6cd895ca5b9609972e3585d0a5098fa30f711cb1a8",
+   "png_bytes": 823456,
+   "superseded_e1_png_sha256": "71d71b0cc409674a5d5c1d6cd895ca5b9609972e3585d0a5098fa30f711cb1a8",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.191490173339844,
+    "old_stretch_p99": 114.04255676269531,
+    "new_stretch_p1": 39.191490173339844,
+    "new_stretch_p99": 114.04255676269531,
+    "slab_mean_mean_valid_pos": 75.13615417480469,
+    "slab_mean_std_valid_pos": 17.64406967163086,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 2,
+   "c": 13,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    115336,
+    124208
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    14417,
+    15526
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c13.png",
+   "png_sha256": "63e8421182e87ff81fe3b377b9783905601538bd8f7494150f7b4b117923f3d6",
+   "png_bytes": 831244,
+   "superseded_e1_png_sha256": "63e8421182e87ff81fe3b377b9783905601538bd8f7494150f7b4b117923f3d6",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 40.38298034667969,
+    "old_stretch_p99": 114.80850982666016,
+    "new_stretch_p1": 40.38298034667969,
+    "new_stretch_p99": 114.80850982666016,
+    "slab_mean_mean_valid_pos": 75.8240737915039,
+    "slab_mean_std_valid_pos": 17.265085220336914,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 2,
+   "c": 14,
+   "valid_fraction": 0.9996328404943242,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    124208,
+    133080
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    15526,
+    16635
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c14.png",
+   "png_sha256": "a7c9289bf9af21ed71b08e32a297111bb9027c44c82a0bd5c423cfa701ed5dc1",
+   "png_bytes": 839507,
+   "superseded_e1_png_sha256": "a7c9289bf9af21ed71b08e32a297111bb9027c44c82a0bd5c423cfa701ed5dc1",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 3.334908603169465e-05,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.46808624267578,
+    "old_stretch_p99": 116.23403930664062,
+    "new_stretch_p1": 39.46808624267578,
+    "new_stretch_p99": 116.23403930664062,
+    "slab_mean_mean_valid_pos": 74.66710662841797,
+    "slab_mean_std_valid_pos": 17.906051635742188,
+    "n_valid_px_level3": 1229419,
+    "n_valid_pos_px_level3": 1229378
+   }
+  },
+  {
+   "r": 2,
+   "c": 15,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    133080,
+    141952
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    16635,
+    17744
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c15.png",
+   "png_sha256": "8890cb87b2f523c944c84b38e2fced2adc904cfe0a1323548c6a0b14d42b36ac",
+   "png_bytes": 828954,
+   "superseded_e1_png_sha256": "8890cb87b2f523c944c84b38e2fced2adc904cfe0a1323548c6a0b14d42b36ac",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 38.914894104003906,
+    "old_stretch_p99": 114.72340393066406,
+    "new_stretch_p1": 38.914894104003906,
+    "new_stretch_p99": 114.72340393066406,
+    "slab_mean_mean_valid_pos": 73.1994857788086,
+    "slab_mean_std_valid_pos": 17.95008087158203,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 2,
+   "c": 16,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    141952,
+    150824
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    17744,
+    18853
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c16.png",
+   "png_sha256": "014453e517ae4264b0a9c9939604cf6528ee105115226788894230469ee765c6",
+   "png_bytes": 833196,
+   "superseded_e1_png_sha256": "014453e517ae4264b0a9c9939604cf6528ee105115226788894230469ee765c6",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.61701965332031,
+    "old_stretch_p99": 114.48936462402344,
+    "new_stretch_p1": 39.61701965332031,
+    "new_stretch_p99": 114.48936462402344,
+    "slab_mean_mean_valid_pos": 73.32901763916016,
+    "slab_mean_std_valid_pos": 17.82208251953125,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 2,
+   "c": 17,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    150824,
+    159696
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    18853,
+    19962
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c17.png",
+   "png_sha256": "0c3503cf11145928dd2aa4ab0cb42a9654bcd29c0d0773c383df37255c0572ac",
+   "png_bytes": 835076,
+   "superseded_e1_png_sha256": "0c3503cf11145928dd2aa4ab0cb42a9654bcd29c0d0773c383df37255c0572ac",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.191490173339844,
+    "old_stretch_p99": 114.34042358398438,
+    "new_stretch_p1": 39.191490173339844,
+    "new_stretch_p99": 114.34042358398438,
+    "slab_mean_mean_valid_pos": 72.64655303955078,
+    "slab_mean_std_valid_pos": 18.11175537109375,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 2,
+   "c": 18,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    159696,
+    168568
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    19962,
+    21071
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c18.png",
+   "png_sha256": "0e49a80dee1dd699a87fac9f84f83402b0bd172a444530b4a87c2595cf1e42c9",
+   "png_bytes": 833316,
+   "superseded_e1_png_sha256": "0e49a80dee1dd699a87fac9f84f83402b0bd172a444530b4a87c2595cf1e42c9",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.36170196533203,
+    "old_stretch_p99": 115.38298034667969,
+    "new_stretch_p1": 39.36170196533203,
+    "new_stretch_p99": 115.38298034667969,
+    "slab_mean_mean_valid_pos": 72.9103775024414,
+    "slab_mean_std_valid_pos": 18.591276168823242,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 2,
+   "c": 19,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    17744,
+    26616
+   ],
+   "canvas_cols": [
+    168568,
+    177440
+   ],
+   "level3_rows": [
+    2218,
+    3327
+   ],
+   "level3_cols": [
+    21071,
+    22180
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r2_c19.png",
+   "png_sha256": "6694a2a0753dd7476ca74209627dd78736cc3e06c8b91c22edcad4ad339a83e4",
+   "png_bytes": 826593,
+   "superseded_e1_png_sha256": "6694a2a0753dd7476ca74209627dd78736cc3e06c8b91c22edcad4ad339a83e4",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.021278381347656,
+    "old_stretch_p99": 113.63829803466797,
+    "new_stretch_p1": 39.021278381347656,
+    "new_stretch_p99": 113.63829803466797,
+    "slab_mean_mean_valid_pos": 69.46722412109375,
+    "slab_mean_std_valid_pos": 18.396339416503906,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 3,
+   "c": 0,
+   "valid_fraction": 0.8014543683494582,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    0,
+    8872
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    0,
+    1109
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c0.png",
+   "png_sha256": "ab7d78b7b067f111051b7b20056068774126aa310f569488839a94df0d2b0093",
+   "png_bytes": 661921,
+   "superseded_e1_png_sha256": "eb3b018a09c67067c261e6f16dd396e01fff5a455fc1d55cc37ead8145517e6e",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0009101202941606195,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 42.04255294799805,
+    "old_stretch_p99": 117.93617248535156,
+    "new_stretch_p1": 42.34042739868164,
+    "new_stretch_p99": 117.93617248535156,
+    "slab_mean_mean_valid_pos": 82.05281829833984,
+    "slab_mean_std_valid_pos": 16.91716194152832,
+    "n_valid_px_level3": 985584,
+    "n_valid_pos_px_level3": 984687
+   }
+  },
+  {
+   "r": 3,
+   "c": 1,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.146484375,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    8872,
+    17744
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    1109,
+    2218
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c1.png",
+   "png_sha256": "dbe1f7d11c0b6ef44d27d2f99eadcce7ce6772fb74f437775976a6699dab86cc",
+   "png_bytes": 596395,
+   "superseded_e1_png_sha256": "f3f799a38c127092d7df0a72dd0a61cec6038dd6a13f421196aea72196b53998",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.146484375,
+    "frac_valid_zero_slab": 0.23052067639064266,
+    "frac_valid_in_absent_chunk": 0.07535037942695269,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 115.34042358398438,
+    "new_stretch_p1": 31.446807861328125,
+    "new_stretch_p99": 116.72340393066406,
+    "slab_mean_mean_valid_pos": 79.89441680908203,
+    "slab_mean_std_valid_pos": 18.87103271484375,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 946368
+   }
+  },
+  {
+   "r": 3,
+   "c": 2,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    17744,
+    26616
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    2218,
+    3327
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c2.png",
+   "png_sha256": "edf2bbfe5dba50d988104f3ff222d9924d5bdb4fa7c58f27c65ecacae8bdc746",
+   "png_bytes": 797651,
+   "superseded_e1_png_sha256": "edf2bbfe5dba50d988104f3ff222d9924d5bdb4fa7c58f27c65ecacae8bdc746",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 41.74468231201172,
+    "old_stretch_p99": 118.0851058959961,
+    "new_stretch_p1": 41.74468231201172,
+    "new_stretch_p99": 118.0851058959961,
+    "slab_mean_mean_valid_pos": 81.9002914428711,
+    "slab_mean_std_valid_pos": 17.34193229675293,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 3,
+   "c": 3,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.102294921875,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    26616,
+    35488
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    3327,
+    4436
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c3.png",
+   "png_sha256": "d684033b9dccaf4ffa972fb1c18cb7a71843e65b990073298f970811f251f10d",
+   "png_bytes": 616608,
+   "superseded_e1_png_sha256": "f9cc65df9ba47531945459a19a151a1e7614a17c3dc8db0eef1bc0bf2215aa9e",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.102294921875,
+    "frac_valid_zero_slab": 0.2047710306932134,
+    "frac_valid_in_absent_chunk": 0.07535037942695269,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 116.27659606933594,
+    "new_stretch_p1": 33.787235260009766,
+    "new_stretch_p99": 117.42552947998047,
+    "slab_mean_mean_valid_pos": 80.52086639404297,
+    "slab_mean_std_valid_pos": 18.650005340576172,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 978037
+   }
+  },
+  {
+   "r": 3,
+   "c": 4,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.06640625,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    35488,
+    44360
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    4436,
+    5545
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c4.png",
+   "png_sha256": "ab8e8b0e1fad62e7bc3e417e908bf92b5274ab768d8a2bf8f67b65d80bd5d2fb",
+   "png_bytes": 646945,
+   "superseded_e1_png_sha256": "ee6b93cd9ba204137f328af8eb236e3d06e494b4249685609d81001908f554f1",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.06640625,
+    "frac_valid_zero_slab": 0.16499807704973082,
+    "frac_valid_in_absent_chunk": 0.07535037942695269,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 115.25531768798828,
+    "new_stretch_p1": 35.89361572265625,
+    "new_stretch_p99": 116.27659606933594,
+    "slab_mean_mean_valid_pos": 75.62677001953125,
+    "slab_mean_std_valid_pos": 19.46098518371582,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1026953
+   }
+  },
+  {
+   "r": 3,
+   "c": 5,
+   "valid_fraction": 0.9996328404943242,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    44360,
+    53232
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    5545,
+    6654
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c5.png",
+   "png_sha256": "9885651ec7e2af2102e03dc1c27c99e16efa0333d681b38766c8827851340c69",
+   "png_bytes": 787398,
+   "superseded_e1_png_sha256": "36399fb2ca511c43fda515efb960bbf1c89d1bb04ce5af4f038f860f361f8190",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.01552820796460177,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 117.38298034667969,
+    "new_stretch_p1": 41.25531768798828,
+    "new_stretch_p99": 117.46808624267578,
+    "slab_mean_mean_valid_pos": 79.49607849121094,
+    "slab_mean_std_valid_pos": 18.009002685546875,
+    "n_valid_px_level3": 1229440,
+    "n_valid_pos_px_level3": 1210349
+   }
+  },
+  {
+   "r": 3,
+   "c": 6,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.032958984375,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    53232,
+    62104
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    6654,
+    7763
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c6.png",
+   "png_sha256": "03b25faccf2b80020c4764ceaff4f9b1da2857618614f529fc0c2e3312ae9e45",
+   "png_bytes": 650021,
+   "superseded_e1_png_sha256": "9c4f912cf38322def6c1206320fa4830474d5a9f4174c3ea12f5fc9e8101ecbb",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.032958984375,
+    "frac_valid_zero_slab": 0.15671922730735738,
+    "frac_valid_in_absent_chunk": 0.04870715134228434,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 115.65957641601562,
+    "new_stretch_p1": 33.574466705322266,
+    "new_stretch_p99": 116.51063537597656,
+    "slab_mean_mean_valid_pos": 79.98170471191406,
+    "slab_mean_std_valid_pos": 18.694543838500977,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1037135
+   }
+  },
+  {
+   "r": 3,
+   "c": 7,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0009765625,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    62104,
+    70976
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    7763,
+    8872
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c7.png",
+   "png_sha256": "3e31f0c187b01859e2a8f196c5f9ad9dc01de6843b72d5f8fca5af8b067f390f",
+   "png_bytes": 673989,
+   "superseded_e1_png_sha256": "8db3aa1c701c89f71c4017506dce97ef7b0721e71ba8f1d420e48b4edaaa1967",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0009765625,
+    "frac_valid_zero_slab": 0.13333322492176072,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 116.06382751464844,
+    "new_stretch_p1": 33.82978820800781,
+    "new_stretch_p99": 116.85106658935547,
+    "slab_mean_mean_valid_pos": 76.88601684570312,
+    "slab_mean_std_valid_pos": 19.86013412475586,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1065897
+   }
+  },
+  {
+   "r": 3,
+   "c": 8,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    70976,
+    79848
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    8872,
+    9981
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c8.png",
+   "png_sha256": "0bad01098a32fdce1b75996e184cffdee4e55aa81a22230ac406211799346e1f",
+   "png_bytes": 821759,
+   "superseded_e1_png_sha256": "0bad01098a32fdce1b75996e184cffdee4e55aa81a22230ac406211799346e1f",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 46.12765884399414,
+    "old_stretch_p99": 118.65957641601562,
+    "new_stretch_p1": 46.12765884399414,
+    "new_stretch_p99": 118.65957641601562,
+    "slab_mean_mean_valid_pos": 84.14260864257812,
+    "slab_mean_std_valid_pos": 16.146472930908203,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 3,
+   "c": 9,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    79848,
+    88720
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    9981,
+    11090
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c9.png",
+   "png_sha256": "27078a85be9d16d30280e3c48a6c0729ca07b1b1064df28bc1fa9b2a05b5cd92",
+   "png_bytes": 704745,
+   "superseded_e1_png_sha256": "097009c9c22468a266a2677bac7c17172317122fc07d2c52288873e31adca1b0",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.1127344840679708,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 117.97872161865234,
+    "new_stretch_p1": 28.404254913330078,
+    "new_stretch_p99": 118.8723373413086,
+    "slab_mean_mean_valid_pos": 80.1893310546875,
+    "slab_mean_std_valid_pos": 18.70827865600586,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1091231
+   }
+  },
+  {
+   "r": 3,
+   "c": 10,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    88720,
+    97592
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    11090,
+    12199
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c10.png",
+   "png_sha256": "e677738355a7fdc350f81f29af9d59e85c3e8b948efb70ad62f19b374cb28b2a",
+   "png_bytes": 726147,
+   "superseded_e1_png_sha256": "701a837c2dd6e14318cb84e29e6a642d50b7d01cee5ea4b0914aec4d9c79b5c7",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.09515554756923637,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 118.89361572265625,
+    "new_stretch_p1": 34.51063919067383,
+    "new_stretch_p99": 119.57447052001953,
+    "slab_mean_mean_valid_pos": 81.37860107421875,
+    "slab_mean_std_valid_pos": 18.396547317504883,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1112851
+   }
+  },
+  {
+   "r": 3,
+   "c": 11,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    97592,
+    106464
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    12199,
+    13308
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c11.png",
+   "png_sha256": "05590c31ffb66bca2acff75cee82d6c9ad647796b259f2c39b462ff124fc4add",
+   "png_bytes": 737134,
+   "superseded_e1_png_sha256": "e15e4beb436dfc3724dc39256ec24ea66ed00ccbbcdfb72715ba039d16a0b17b",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.07714811432976036,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 117.97872161865234,
+    "new_stretch_p1": 35.0,
+    "new_stretch_p99": 118.46808624267578,
+    "slab_mean_mean_valid_pos": 79.77114868164062,
+    "slab_mean_std_valid_pos": 18.768068313598633,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1134998
+   }
+  },
+  {
+   "r": 3,
+   "c": 12,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    106464,
+    115336
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    13308,
+    14417
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c12.png",
+   "png_sha256": "ccfc7752d4291333196d99e9ae1780b38c9394c64a2053e878b531186c0ecc12",
+   "png_bytes": 746703,
+   "superseded_e1_png_sha256": "92c9bffde400d58cbc6b8531e1e784edeea37f1dbbd8b7f18909baacd096e042",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.059890347114883474,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 117.51063537597656,
+    "new_stretch_p1": 36.10638427734375,
+    "new_stretch_p99": 117.8723373413086,
+    "slab_mean_mean_valid_pos": 78.4264907836914,
+    "slab_mean_std_valid_pos": 18.791196823120117,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1156223
+   }
+  },
+  {
+   "r": 3,
+   "c": 13,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    115336,
+    124208
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    14417,
+    15526
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c13.png",
+   "png_sha256": "9353d3115b188311ff13473d8ed7f4700e6631469c696ff6a8cff4aeac21046e",
+   "png_bytes": 768385,
+   "superseded_e1_png_sha256": "3f6d6c89bac440d8a3efb2dc184ae92257d91a118575be2c0501d46bc4baba92",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.04428395917979056,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 118.63829803466797,
+    "new_stretch_p1": 38.89361572265625,
+    "new_stretch_p99": 118.93617248535156,
+    "slab_mean_mean_valid_pos": 79.64454650878906,
+    "slab_mean_std_valid_pos": 18.621625900268555,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1175417
+   }
+  },
+  {
+   "r": 3,
+   "c": 14,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    124208,
+    133080
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    15526,
+    16635
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c14.png",
+   "png_sha256": "d8293874ce902da4e6b2c80dacc717c4e5a14d630ccec7cf8c8e3f87dcb8e5f2",
+   "png_bytes": 799438,
+   "superseded_e1_png_sha256": "4e4f75aa10375368e625b107ec7df566da1306972ba76857af8517e1c52f1a37",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.030399689075609755,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 118.82978820800781,
+    "new_stretch_p1": 40.95744705200195,
+    "new_stretch_p99": 119.04255676269531,
+    "slab_mean_mean_valid_pos": 79.6904525756836,
+    "slab_mean_std_valid_pos": 18.54266357421875,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1192493
+   }
+  },
+  {
+   "r": 3,
+   "c": 15,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    133080,
+    141952
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    16635,
+    17744
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c15.png",
+   "png_sha256": "4aa789e012192cfe8c60f65b8451915397992b3d8ea00671173ea276f1576876",
+   "png_bytes": 799917,
+   "superseded_e1_png_sha256": "94ef319e1dc85b9b117b857502683d3e74c6312f1fcd5b2a5057eda863f86132",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.013916793575963853,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 118.7872314453125,
+    "new_stretch_p1": 40.82978820800781,
+    "new_stretch_p99": 118.8723373413086,
+    "slab_mean_mean_valid_pos": 79.22166442871094,
+    "slab_mean_std_valid_pos": 18.648473739624023,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1212765
+   }
+  },
+  {
+   "r": 3,
+   "c": 16,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    141952,
+    150824
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    17744,
+    18853
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c16.png",
+   "png_sha256": "76150025f2ff0c78f36305d25c833ff030194ad0b812c594b6ed07cb876164bb",
+   "png_bytes": 818867,
+   "superseded_e1_png_sha256": "e6ab24b3c8a3cc1487170b0b600974216c1e9fbb176e6995d5f2ecdd5d8cc48a",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.00276774744873691,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 38.59574508666992,
+    "old_stretch_p99": 118.44680786132812,
+    "new_stretch_p1": 40.25531768798828,
+    "new_stretch_p99": 118.46808624267578,
+    "slab_mean_mean_valid_pos": 80.20853424072266,
+    "slab_mean_std_valid_pos": 17.890649795532227,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1226477
+   }
+  },
+  {
+   "r": 3,
+   "c": 17,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    150824,
+    159696
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    18853,
+    19962
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c17.png",
+   "png_sha256": "47d22648ac9fc296570006f3401993808f186e48db2566751587c12bb502ec18",
+   "png_bytes": 830809,
+   "superseded_e1_png_sha256": "47d22648ac9fc296570006f3401993808f186e48db2566751587c12bb502ec18",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 41.29787063598633,
+    "old_stretch_p99": 120.0,
+    "new_stretch_p1": 41.29787063598633,
+    "new_stretch_p99": 120.0,
+    "slab_mean_mean_valid_pos": 80.12904357910156,
+    "slab_mean_std_valid_pos": 18.410234451293945,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 3,
+   "c": 18,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    159696,
+    168568
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    19962,
+    21071
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c18.png",
+   "png_sha256": "50d1083b3f04dc502f60d0ccb26f050fa930f906d802a05933daee63f4f19af3",
+   "png_bytes": 829122,
+   "superseded_e1_png_sha256": "50d1083b3f04dc502f60d0ccb26f050fa930f906d802a05933daee63f4f19af3",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 40.978721618652344,
+    "old_stretch_p99": 121.79148712158104,
+    "new_stretch_p1": 40.978721618652344,
+    "new_stretch_p99": 121.79148712158104,
+    "slab_mean_mean_valid_pos": 82.35310363769531,
+    "slab_mean_std_valid_pos": 18.847412109375,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 3,
+   "c": 19,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    26616,
+    35488
+   ],
+   "canvas_cols": [
+    168568,
+    177440
+   ],
+   "level3_rows": [
+    3327,
+    4436
+   ],
+   "level3_cols": [
+    21071,
+    22180
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r3_c19.png",
+   "png_sha256": "33a55a16e878bbf69e50a146822c0efa0c256a9e28f7fd28e0365fbf31ea085e",
+   "png_bytes": 834932,
+   "superseded_e1_png_sha256": "33a55a16e878bbf69e50a146822c0efa0c256a9e28f7fd28e0365fbf31ea085e",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 41.89361572265625,
+    "old_stretch_p99": 119.97872161865234,
+    "new_stretch_p1": 41.89361572265625,
+    "new_stretch_p99": 119.97872161865234,
+    "slab_mean_mean_valid_pos": 80.43131256103516,
+    "slab_mean_std_valid_pos": 17.834964752197266,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 4,
+   "c": 0,
+   "valid_fraction": 0.8060513578142926,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    0,
+    8872
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    0,
+    1109
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c0.png",
+   "png_sha256": "3517fb849958f2a2b5a4a241d8fe9f47f784fcf15787fa8958f5512a1b521bf3",
+   "png_bytes": 674787,
+   "superseded_e1_png_sha256": "a00f54a77f3dc3f2ad1b29d737b23b01b950546a4cbe824ad6dc5c0679d46824",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0005405797919978054,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 41.38298034667969,
+    "old_stretch_p99": 114.19149017333984,
+    "new_stretch_p1": 41.574466705322266,
+    "new_stretch_p99": 114.19149017333984,
+    "slab_mean_mean_valid_pos": 77.33330535888672,
+    "slab_mean_std_valid_pos": 16.056293487548828,
+    "n_valid_px_level3": 991528,
+    "n_valid_pos_px_level3": 990992
+   }
+  },
+  {
+   "r": 4,
+   "c": 1,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0361328125,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    8872,
+    17744
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    1109,
+    2218
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c1.png",
+   "png_sha256": "508ab916cf8e38bf5aae50c5716de3270336e9b9a5cd4128b11b6ab750635d07",
+   "png_bytes": 678523,
+   "superseded_e1_png_sha256": "aac5058046c034ce6828fa64e92a27969bd58fc2f2ec01d2937657b79bde1ab4",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0361328125,
+    "frac_valid_zero_slab": 0.14461805654368187,
+    "frac_valid_in_absent_chunk": 0.057865760996389085,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 111.68085479736328,
+    "new_stretch_p1": 36.95744705200195,
+    "new_stretch_p99": 112.51063537597656,
+    "slab_mean_mean_valid_pos": 74.68704223632812,
+    "slab_mean_std_valid_pos": 17.57150650024414,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1052018
+   }
+  },
+  {
+   "r": 4,
+   "c": 2,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    17744,
+    26616
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    2218,
+    3327
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c2.png",
+   "png_sha256": "621883a85560aa62807484d1d638543ff89cf0d741e93eae23e636c1259a8dd2",
+   "png_bytes": 804480,
+   "superseded_e1_png_sha256": "621883a85560aa62807484d1d638543ff89cf0d741e93eae23e636c1259a8dd2",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 42.70212936401367,
+    "old_stretch_p99": 113.59574127197266,
+    "new_stretch_p1": 42.70212936401367,
+    "new_stretch_p99": 113.59574127197266,
+    "slab_mean_mean_valid_pos": 76.38194274902344,
+    "slab_mean_std_valid_pos": 15.978048324584961,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 4,
+   "c": 3,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.01171875,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    26616,
+    35488
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    3327,
+    4436
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c3.png",
+   "png_sha256": "ca93fbe7129767988416d1e30deb216daf0c94a20a7d5090b05553140591c2de",
+   "png_bytes": 692019,
+   "superseded_e1_png_sha256": "1dce278cef95c8d52bc7e19fdf53150e1c8a584b50bc3e143c2c3255893c1623",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.01171875,
+    "frac_valid_zero_slab": 0.11775610811127256,
+    "frac_valid_in_absent_chunk": 0.01790091886938655,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 112.06382751464844,
+    "new_stretch_p1": 36.29787063598633,
+    "new_stretch_p99": 112.74468231201172,
+    "slab_mean_mean_valid_pos": 73.22777557373047,
+    "slab_mean_std_valid_pos": 17.905372619628906,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1085055
+   }
+  },
+  {
+   "r": 4,
+   "c": 4,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.004638671875,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    35488,
+    44360
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    4436,
+    5545
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c4.png",
+   "png_sha256": "c0fc44ec90f8b9e6b7e6ff61f11944f446c00a13d5c45507e3b880dd0fd2882b",
+   "png_bytes": 703972,
+   "superseded_e1_png_sha256": "fd7589da4203b281dc1d2b9e2072fff5825ddbe7844a55619f8c73f1a0667753",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.004638671875,
+    "frac_valid_zero_slab": 0.09446035835987385,
+    "frac_valid_in_absent_chunk": 0.004579304827052373,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 110.1276626586914,
+    "new_stretch_p1": 33.82978820800781,
+    "new_stretch_p99": 110.7021255493164,
+    "slab_mean_mean_valid_pos": 72.06278991699219,
+    "slab_mean_std_valid_pos": 17.093496322631836,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1113706
+   }
+  },
+  {
+   "r": 4,
+   "c": 5,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    44360,
+    53232
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    5545,
+    6654
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c5.png",
+   "png_sha256": "086fd45b03d9eec9ee282ba8e5e1eb79ea0684755ea3064292eebf06cbe52b69",
+   "png_bytes": 812604,
+   "superseded_e1_png_sha256": "086fd45b03d9eec9ee282ba8e5e1eb79ea0684755ea3064292eebf06cbe52b69",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 42.319149017333984,
+    "old_stretch_p99": 112.8127655029287,
+    "new_stretch_p1": 42.319149017333984,
+    "new_stretch_p99": 112.8127655029287,
+    "slab_mean_mean_valid_pos": 75.3683853149414,
+    "slab_mean_std_valid_pos": 16.280750274658203,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 4,
+   "c": 6,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.000732421875,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    53232,
+    62104
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    6654,
+    7763
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c6.png",
+   "png_sha256": "720134956b1d5a8c7a9c3188e309e71584ff5e2f9a6168094c86d5f92e4b21b7",
+   "png_bytes": 721950,
+   "superseded_e1_png_sha256": "94db1b221ff2da28cc501d13d8700e9a1aa133b9f6540418afbaaa3b5434cb80",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.000732421875,
+    "frac_valid_zero_slab": 0.07792461221858049,
+    "frac_valid_in_absent_chunk": 0.004579304827052373,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 111.76596069335938,
+    "new_stretch_p1": 36.17021179199219,
+    "new_stretch_p99": 112.2127685546875,
+    "slab_mean_mean_valid_pos": 74.48240661621094,
+    "slab_mean_std_valid_pos": 17.079593658447266,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1134043
+   }
+  },
+  {
+   "r": 4,
+   "c": 7,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    62104,
+    70976
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    7763,
+    8872
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c7.png",
+   "png_sha256": "882ce2da02a9e748c2a0e13c823e1e38246234119754bde1dc64a7e9c5a72ef8",
+   "png_bytes": 743849,
+   "superseded_e1_png_sha256": "b25f569fc46a1406368aeb45277d8f9e2df57c97be927b82e3377de827086ca5",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.059104092184528424,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 112.38298034667969,
+    "new_stretch_p1": 36.191490173339844,
+    "new_stretch_p99": 112.72340393066406,
+    "slab_mean_mean_valid_pos": 75.04302978515625,
+    "slab_mean_std_valid_pos": 17.17916488647461,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1157190
+   }
+  },
+  {
+   "r": 4,
+   "c": 8,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    70976,
+    79848
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    8872,
+    9981
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c8.png",
+   "png_sha256": "3e1d05b48f51be86b709495db9ddcd2e42777244d2e8e950b5c0f56d6b0fa41b",
+   "png_bytes": 813006,
+   "superseded_e1_png_sha256": "3e1d05b48f51be86b709495db9ddcd2e42777244d2e8e950b5c0f56d6b0fa41b",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 43.0638313293457,
+    "old_stretch_p99": 115.57447052001953,
+    "new_stretch_p1": 43.0638313293457,
+    "new_stretch_p99": 115.57447052001953,
+    "slab_mean_mean_valid_pos": 78.79183959960938,
+    "slab_mean_std_valid_pos": 16.06795310974121,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 4,
+   "c": 9,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    79848,
+    88720
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    9981,
+    11090
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c9.png",
+   "png_sha256": "4247aaafbe030eb303fef5c4ae7c009d4700b402bbaf63bc16a0ddc04be3cd53",
+   "png_bytes": 771575,
+   "superseded_e1_png_sha256": "e91960535d920d661838593d2d90305e50c0701291f9f32f4ce96de31cee97f2",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.04669557461250316,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 112.82978820800781,
+    "new_stretch_p1": 36.95744705200195,
+    "new_stretch_p99": 113.14893341064453,
+    "slab_mean_mean_valid_pos": 75.4728012084961,
+    "slab_mean_std_valid_pos": 16.834808349609375,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1172451
+   }
+  },
+  {
+   "r": 4,
+   "c": 10,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    88720,
+    97592
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    11090,
+    12199
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c10.png",
+   "png_sha256": "597ee7d16c47df0f9ad2deaaf6144f36bf2bb657d74be5fbf8ed1ef338cb4d85",
+   "png_bytes": 775651,
+   "superseded_e1_png_sha256": "b0d1a5364be0d020e10c45ff95a9035e773405be88a6a0aac005f26f11b9df45",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.038634632131076097,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 114.02127838134766,
+    "new_stretch_p1": 37.808509826660156,
+    "new_stretch_p99": 114.25531768798828,
+    "slab_mean_mean_valid_pos": 75.8843994140625,
+    "slab_mean_std_valid_pos": 16.714786529541016,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1182365
+   }
+  },
+  {
+   "r": 4,
+   "c": 11,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    97592,
+    106464
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    12199,
+    13308
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c11.png",
+   "png_sha256": "7b176cd8e71f9b0eb7fd6145118310bab34726441867956df57be95a3e09766f",
+   "png_bytes": 785789,
+   "superseded_e1_png_sha256": "d0e7d139cf3d2e54c3d698dc15acd6d2806666fa862c0bf19e5e52a0df6ecb0a",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.03157622566736131,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 114.14893341064453,
+    "new_stretch_p1": 40.978721618652344,
+    "new_stretch_p99": 114.35212669372658,
+    "slab_mean_mean_valid_pos": 76.0904312133789,
+    "slab_mean_std_valid_pos": 16.33957290649414,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1191046
+   }
+  },
+  {
+   "r": 4,
+   "c": 12,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    106464,
+    115336
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    13308,
+    14417
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c12.png",
+   "png_sha256": "573b3744b3d767603691ea6c71ba87e16329e295109909450a22258842830317",
+   "png_bytes": 779219,
+   "superseded_e1_png_sha256": "164d7279a8c0455967223aac6c845a32ae6524d59795e4b3b04ace8c0b8f4c7b",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.024199089180172717,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 114.61701965332031,
+    "new_stretch_p1": 39.319149017333984,
+    "new_stretch_p99": 114.74468231201172,
+    "slab_mean_mean_valid_pos": 76.10191345214844,
+    "slab_mean_std_valid_pos": 16.898193359375,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1200119
+   }
+  },
+  {
+   "r": 4,
+   "c": 13,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    115336,
+    124208
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    14417,
+    15526
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c13.png",
+   "png_sha256": "90373951c2ccdd94f3b1eb4a62a5619ee75348890bea5950500aad0e45a2a4ba",
+   "png_bytes": 798073,
+   "superseded_e1_png_sha256": "7359a863435f2e5189019d98b06ac8146dfd61770d5f95ec4b51260c037af153",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.010531913250143713,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 0.0,
+    "old_stretch_p99": 114.53191375732422,
+    "new_stretch_p1": 40.27659606933594,
+    "new_stretch_p99": 114.59574127197266,
+    "slab_mean_mean_valid_pos": 76.09415435791016,
+    "slab_mean_std_valid_pos": 16.773286819458008,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1216928
+   }
+  },
+  {
+   "r": 4,
+   "c": 14,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    124208,
+    133080
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    15526,
+    16635
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c14.png",
+   "png_sha256": "ec9b96ce6d1dd845af7420c0b18c577aba8732f08fcfcf7b45d631ef30608e82",
+   "png_bytes": 832139,
+   "superseded_e1_png_sha256": "120153ac93169027e97f66a2e1a9d0067e138a0c95daa841ce47b7f1ef6be508",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0013033781317054252,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 40.021278381347656,
+    "old_stretch_p99": 114.06382751464844,
+    "new_stretch_p1": 40.51063919067383,
+    "new_stretch_p99": 114.06382751464844,
+    "slab_mean_mean_valid_pos": 74.1285629272461,
+    "slab_mean_std_valid_pos": 16.78624725341797,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1228278
+   }
+  },
+  {
+   "r": 4,
+   "c": 15,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    133080,
+    141952
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    16635,
+    17744
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c15.png",
+   "png_sha256": "38b0e408daeeeabda0228340c4ae8b5531490fc04ae8933cefae76145cfc1ce0",
+   "png_bytes": 811964,
+   "superseded_e1_png_sha256": "38b0e408daeeeabda0228340c4ae8b5531490fc04ae8933cefae76145cfc1ce0",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.65957260131836,
+    "old_stretch_p99": 113.0851058959961,
+    "new_stretch_p1": 39.65957260131836,
+    "new_stretch_p99": 113.0851058959961,
+    "slab_mean_mean_valid_pos": 72.7383041381836,
+    "slab_mean_std_valid_pos": 16.870697021484375,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 4,
+   "c": 16,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    141952,
+    150824
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    17744,
+    18853
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c16.png",
+   "png_sha256": "66202625b2b782f66b1241bd686b8669c780e3a3552044b8a8d9e18d77188d73",
+   "png_bytes": 815276,
+   "superseded_e1_png_sha256": "66202625b2b782f66b1241bd686b8669c780e3a3552044b8a8d9e18d77188d73",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 38.8510627746582,
+    "old_stretch_p99": 112.9148941040039,
+    "new_stretch_p1": 38.8510627746582,
+    "new_stretch_p99": 112.9148941040039,
+    "slab_mean_mean_valid_pos": 71.60673522949219,
+    "slab_mean_std_valid_pos": 17.682580947875977,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 4,
+   "c": 17,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    150824,
+    159696
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    18853,
+    19962
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c17.png",
+   "png_sha256": "a790ade7a90f78cd39b0fe08625fe5b245bcd8160ac1abec52a74b72240a2d5e",
+   "png_bytes": 823736,
+   "superseded_e1_png_sha256": "a790ade7a90f78cd39b0fe08625fe5b245bcd8160ac1abec52a74b72240a2d5e",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 39.04255294799805,
+    "old_stretch_p99": 115.17021179199219,
+    "new_stretch_p1": 39.04255294799805,
+    "new_stretch_p99": 115.17021179199219,
+    "slab_mean_mean_valid_pos": 73.37300872802734,
+    "slab_mean_std_valid_pos": 17.94326400756836,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 4,
+   "c": 18,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    159696,
+    168568
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    19962,
+    21071
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c18.png",
+   "png_sha256": "b31f92f33edbeb8d4b0656d3791b6da23da97d92a7c08776b4dfa2a9f961b989",
+   "png_bytes": 813658,
+   "superseded_e1_png_sha256": "b31f92f33edbeb8d4b0656d3791b6da23da97d92a7c08776b4dfa2a9f961b989",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 38.25531768798828,
+    "old_stretch_p99": 115.93617248535156,
+    "new_stretch_p1": 38.25531768798828,
+    "new_stretch_p99": 115.93617248535156,
+    "slab_mean_mean_valid_pos": 70.99270629882812,
+    "slab_mean_std_valid_pos": 19.433116912841797,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  },
+  {
+   "r": 4,
+   "c": 19,
+   "valid_fraction": 1.0,
+   "frac_outside": 0.0,
+   "canvas_rows": [
+    35488,
+    44360
+   ],
+   "canvas_cols": [
+    168568,
+    177440
+   ],
+   "level3_rows": [
+    4436,
+    5545
+   ],
+   "level3_cols": [
+    21071,
+    22180
+   ],
+   "level3_shape": [
+    1109,
+    1109
+   ],
+   "file": "tiles/20260623141924-w010-027_r4_c19.png",
+   "png_sha256": "19b965838d8f6a696efe8604f9a404b8a2c39c070c7595a79e06e2d5af01e6c7",
+   "png_bytes": 808130,
+   "superseded_e1_png_sha256": "19b965838d8f6a696efe8604f9a404b8a2c39c070c7595a79e06e2d5af01e6c7",
+   "stats": {
+    "frac_mesh_points_outside_1129_volume": 0.0,
+    "frac_valid_zero_slab": 0.0,
+    "frac_valid_in_absent_chunk": 0.0,
+    "old_stretch_p1": 37.0638313293457,
+    "old_stretch_p99": 113.0851058959961,
+    "new_stretch_p1": 37.0638313293457,
+    "new_stretch_p99": 113.0851058959961,
+    "slab_mean_mean_valid_pos": 68.3510513305664,
+    "slab_mean_std_valid_pos": 18.813753128051758,
+    "n_valid_px_level3": 1229881,
+    "n_valid_pos_px_level3": 1229881
+   }
+  }
+ ],
+ "utc": "2026-09-26T17:46:26Z"
+}

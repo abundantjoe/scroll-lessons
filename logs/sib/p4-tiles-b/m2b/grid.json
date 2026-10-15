@@ -1,0 +1,438 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-4 item 1 M2b and item 2; sibling task p4-tiles-b (P4-D)",
+ "segment": "20260623142658-w028-037",
+ "mesh_frame": "20260608103018 (1.129 um) L0 voxels, xyz",
+ "grid_shape": [
+  4928,
+  18776
+ ],
+ "grid_vertices": 92528128,
+ "minus1_count_x_y_z": [
+  5934456,
+  5934456,
+  5934456
+ ],
+ "minus1_all_three_agree": true,
+ "nonfinite_count": 0,
+ "mesh_valid_vertices": 86593672,
+ "mesh_valid_fraction": 0.9358632220463814,
+ "canvas_shape": [
+  49280,
+  187760
+ ],
+ "canvas_per_grid_scale_rows_cols": [
+  10.0,
+  10.0
+ ],
+ "canvas_level": "L1 (x2 of L0; .zattrs dataset 1 scale [2.0, 2.0, 2.0])",
+ "canvas_level_check": "mesh scale 0.05 => 20 L0 voxels per grid step = 10 L1 px; canvas/grid measured = 10.000000",
+ "edge_len_L0vx_along_cols": {
+  "n": 86583867,
+  "p01": 18.727803535461426,
+  "p05": 19.36969566345215,
+  "p25": 19.794097900390625,
+  "median": 19.962656021118164,
+  "p75": 20.121599197387695,
+  "p95": 20.44134521484375,
+  "p99": 20.85158920288086
+ },
+ "edge_len_L0vx_along_rows": {
+  "n": 86574023,
+  "p01": 18.24282455444336,
+  "p05": 19.136001586914062,
+  "p25": 19.75963592529297,
+  "median": 19.984704971313477,
+  "p75": 20.157119750976562,
+  "p95": 20.476491928100586,
+  "p99": 20.818641662597656
+ },
+ "edge_len_L0vx_both": {
+  "n": 173157890,
+  "p01": 18.46077537536621,
+  "p05": 19.254783630371094,
+  "p25": 19.77911949157715,
+  "median": 19.973011016845703,
+  "p75": 20.139209747314453,
+  "p95": 20.461772918701172,
+  "p99": 20.835203170776367
+ },
+ "voxel_mm": 0.001129,
+ "voxel_mm_source": "volume 20260608103018 metadata.json tomo.acquisition.detector.samplePixelSize (mm)",
+ "median_edge_mm": 0.0225495294380188,
+ "px_per_mm": 443.46823411489333,
+ "px_per_mm_cols_only": 443.69826921967604,
+ "px_per_mm_rows_only": 443.2087408001265,
+ "px_per_mm_nominal_L1": 442.8697962798937,
+ "formula": "px_per_mm = (canvas px per grid step) / (median 3-D edge length of valid row+col grid edges in L0 voxels x voxel_mm)",
+ "T_px": 8869,
+ "T_formula": "T = round(20 mm x px_per_mm)",
+ "display_scale": 0.1204194384936295,
+ "display_px_per_mm": 53.4,
+ "canvas_mask_rule": "canvas px (i, j) -> grid (floor(i / s), floor(j / s)) (nearest neighbour); canvas px outside the canvas extent count as not mesh-valid",
+ "area_cm2_from_meta": 438.01659516526394,
+ "mesh_meta_1129": {
+  "area_vx2": 34363918559.442535,
+  "bbox": [
+   [
+    16935.173828125,
+    10977.501953125,
+    -322.3619384765625
+   ],
+   [
+    35371.9453125,
+    39645.8359375,
+    84836.5859375
+   ]
+  ],
+  "format": "tifxyz",
+  "scale": [
+   0.05000000074505806,
+   0.05000000074505806
+  ],
+  "type": "seg",
+  "uuid": "out"
+ },
+ "mesh_meta_24": {
+  "area_vx2": 7609230695.87501,
+  "bbox": [
+   [
+    13924.3173828125,
+    10498.03515625,
+    27951.712890625
+   ],
+   [
+    22610.4453125,
+    23940.0703125,
+    68056.6875
+   ]
+  ],
+  "format": "tifxyz",
+  "scale": [
+   0.05000000074505806,
+   0.05000000074505806
+  ],
+  "type": "seg",
+  "uuid": "out"
+ },
+ "prediction_tiff": {
+  "shape": [
+   49280,
+   187760
+  ],
+  "dtype": "uint8",
+  "compression": 32946,
+  "predictor": 1,
+  "tiled": true,
+  "tile": [
+   1024,
+   1024
+  ],
+  "n_tiles": 9016,
+  "image_description": "{\"shape\": [49280, 187760], \"software\": \"optimized_inference\"}",
+  "zlib_decode_matches_tifffile_on_tiles": [
+   true,
+   true,
+   true
+  ]
+ },
+ "tile_grid_rows_cols": [
+  6,
+  22
+ ],
+ "tiles_total": 132,
+ "tiles_read_eligible": 106,
+ "tile_valid_fraction_matrix": [
+  [
+   0.681112,
+   0.914262,
+   0.818922,
+   0.817173,
+   0.872167,
+   0.748098,
+   0.892956,
+   0.744651,
+   0.883311,
+   0.760477,
+   0.856292,
+   0.773045,
+   0.828021,
+   0.778115,
+   0.805183,
+   0.76493,
+   0.799054,
+   0.74173,
+   0.805568,
+   0.716082,
+   0.807196,
+   0.00699
+  ],
+  [
+   0.932825,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.967345,
+   0.0
+  ],
+  [
+   0.887592,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.990647,
+   0.022066
+  ],
+  [
+   0.775788,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.123659
+  ],
+  [
+   0.7966,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.137194
+  ],
+  [
+   0.375449,
+   0.487723,
+   0.434314,
+   0.510709,
+   0.445327,
+   0.487082,
+   0.462825,
+   0.453296,
+   0.485333,
+   0.430836,
+   0.486975,
+   0.426806,
+   0.48277,
+   0.42133,
+   0.484394,
+   0.42874,
+   0.484438,
+   0.439748,
+   0.474739,
+   0.439698,
+   0.455209,
+   0.040415
+  ]
+ ],
+ "edge_tile_rule": "tiles extending past the canvas are zero-padded to T x T; padded px are not mesh-valid and count in the T^2 denominator",
+ "frame_20260411134726": {
+  "method": "same UV on the segment's official 20260411134726 tifxyz (bilinear), pixel-centre-aligned map i24 = (i + 0.5) * h24 / h1129 - 0.5 (same for j), verified in uv_check.json; falls back to the published affine transform.json (1.129 um L0 xyz -> 2.4 um xyz) where a bilinear corner is invalid",
+  "uv_map": {
+   "a_i": 0.4707792207792208,
+   "b_i": -0.26461038961038963,
+   "a_j": 0.4708138048572646,
+   "b_j": -0.26459309757136773,
+   "grid_24": [
+    2320,
+    8840
+   ]
+  },
+  "points_total": 434176,
+  "points_via_affine_fallback": 242,
+  "same_uv_vs_affine_dist_vx24_all_saved_points": {
+   "n": 433934,
+   "p01": 0.0005303161816744697,
+   "p05": 0.0009842186669210334,
+   "p25": 0.0022771833707800424,
+   "median": 0.004944423019850025,
+   "p75": 0.08508136002526875,
+   "p95": 0.4953764676679444,
+   "p99": 1.1031600877464087,
+   "max": 9.583368874524993
+  },
+  "affine_matrix": [
+   [
+    0.4707666920759728,
+    0.006083857284656546,
+    0.00019751752464569616,
+    5805.340302081483
+   ],
+   [
+    -0.006080253073916825,
+    0.4708290918191928,
+    -0.0010790959797848665,
+    5493.890163950601
+   ],
+   [
+    -0.00017625872950265966,
+    0.001261388797834728,
+    0.47074242543448375,
+    28084.05307481582
+   ]
+  ]
+ },
+ "all_vertices_note": "not saved: all valid 1.129 um vertices are 86593672 (x 12 B = 1.04 GB float32 xyz per frame), over the 90 MB per-file limit; p4-excl can read them from the official tifxyz (sha256 in fetch)",
+ "fetch": [
+  {
+   "key": "PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/metadata.json",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/metadata.json",
+   "bytes": 158775,
+   "sha256": "acd47f1093d8917b1642198e3f0f5de3bff3d86222e630600a225bb46ba715ca",
+   "secs": 0,
+   "utc": "2026-09-26T05:58:24Z"
+  },
+  {
+   "key": "PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/.zattrs",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/.zattrs",
+   "bytes": 3018,
+   "sha256": "97e968dbbf11cc856dc57648aaaa9e6cade5e6575472dcfdeac7cfa50f546dd9",
+   "secs": 1,
+   "utc": "2026-09-26T05:58:25Z"
+  },
+  {
+   "key": "PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/transform.json",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/transform.json",
+   "bytes": 3053,
+   "sha256": "2291a626dd3a2712984ec7eaa00bcf6f636b10936c9c36d57efc7228f649d1ad",
+   "secs": 0,
+   "utc": "2026-09-26T05:58:25Z"
+  },
+  {
+   "key": "PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260608103018-1.129um.tifxyz/meta.json",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260608103018-1.129um.tifxyz/meta.json",
+   "bytes": 411,
+   "sha256": "7b60c4094de5c856fc17958c27cd50ab56e1b21fd31f965a0ed9fca62e921a20",
+   "secs": 1,
+   "utc": "2026-09-26T05:58:26Z"
+  },
+  {
+   "key": "PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260608103018-1.129um.tifxyz/x.tif",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260608103018-1.129um.tifxyz/x.tif",
+   "bytes": 370112646,
+   "sha256": "169dc4d78808cad2553e5911df4dd5152705ad3e7e73c3c54ff81cb6752f1a04",
+   "secs": 11,
+   "utc": "2026-09-26T05:58:37Z"
+  },
+  {
+   "key": "PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260608103018-1.129um.tifxyz/y.tif",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260608103018-1.129um.tifxyz/y.tif",
+   "bytes": 370112646,
+   "sha256": "d127a8dcb439c9dd827ad134b555e005d4ccdda0003454b4c98acb116b2044fd",
+   "secs": 9,
+   "utc": "2026-09-26T05:58:46Z"
+  },
+  {
+   "key": "PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260608103018-1.129um.tifxyz/z.tif",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260608103018-1.129um.tifxyz/z.tif",
+   "bytes": 370112646,
+   "sha256": "26a025bbf90f7b9c2d6219ccc2919b946ee341262b07b86e9dd0a15c9a168324",
+   "secs": 10,
+   "utc": "2026-09-26T05:58:56Z"
+  },
+  {
+   "key": "PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260411134726-2.4um.tifxyz/meta.json",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260411134726-2.4um.tifxyz/meta.json",
+   "bytes": 403,
+   "sha256": "2f6bba107a68518c1aafd64283f7a4a4bb024c8662cd6e3855a8a75aa128979f",
+   "secs": 0,
+   "utc": "2026-09-26T05:58:56Z"
+  },
+  {
+   "key": "PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260411134726-2.4um.tifxyz/x.tif",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260411134726-2.4um.tifxyz/x.tif",
+   "bytes": 82035334,
+   "sha256": "170e9d58cabc8096a218ea931ff851a36c4f80491a3620d75e34072238f1c04e",
+   "secs": 3,
+   "utc": "2026-09-26T05:58:59Z"
+  },
+  {
+   "key": "PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260411134726-2.4um.tifxyz/y.tif",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260411134726-2.4um.tifxyz/y.tif",
+   "bytes": 82035334,
+   "sha256": "16d5597f4f84eb275cd6603f1257e28c7d9ea317e725b2b409378e9b2ecaf7ee",
+   "secs": 2,
+   "utc": "2026-09-26T05:59:01Z"
+  },
+  {
+   "key": "PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260411134726-2.4um.tifxyz/z.tif",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260411134726-2.4um.tifxyz/z.tif",
+   "bytes": 82035334,
+   "sha256": "7589c7e1bf557ea46b0b4cc32a4d2137d6a52cb21ea92101c61b62603a770798",
+   "secs": 2,
+   "utc": "2026-09-26T05:59:03Z"
+  },
+  {
+   "key": "PHercParis4/segments/20260623142658-w028-037/ink-detection/PHercParis4-20260623142658-1.129um-0.23m-78keV-volume-20260608103018-L1-20260709123958-mrg20736-1um-s1z2-tile256-stride128.tif",
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/segments/20260623142658-w028-037/ink-detection/PHercParis4-20260623142658-1.129um-0.23m-78keV-volume-20260608103018-L1-20260709123958-mrg20736-1um-s1z2-tile256-stride128.tif",
+   "bytes": 1175621159,
+   "sha256": "51243509489ef578eae21d83abdaca4da72f95034d3d27e4b5770ff637314650",
+   "secs": 28,
+   "utc": "2026-09-26T05:59:31Z"
+  }
+ ],
+ "utc": "2026-09-26T06:02:33Z"
+}

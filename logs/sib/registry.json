@@ -1,0 +1,140 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "authority": "owner direct message 2026-09-25 ~18:22Z (compute creation allowed); sibling sessions are builders/trainers only (no seals, scoring, reading or viewing)",
+ "environment": "env Winner (anthropic_cloud, 4 vCPU AMX, no GPU)",
+ "sessions": [
+  {
+   "task": "amx",
+   "session": "session_011QbqZBB9k19oh47SD3cfdu",
+   "branch": "claude/gifted-bell-gavnl5-sib-amx",
+   "created_utc": "2026-09-25T18:21:36Z",
+   "goal": "AMX bf16/int8 profile of the base model, encoder/decoder split, cached-feature prototype, amx_gate code + tests, DECL-AMX-1 proposal"
+  },
+  {
+   "task": "tracer",
+   "session": "session_0186WKVwnaMbrHB2LUw9XEsR",
+   "branch": "claude/gifted-bell-gavnl5-sib-tracer",
+   "created_utc": "2026-09-25T18:22:02Z",
+   "goal": "VC3D build, rejection-gated tracer (build c) with unit tests, 1203 dev runs (never the T0 test set)"
+  },
+  {
+   "task": "reg0841",
+   "session": "session_01B1Mcm7zVXx9qcDKviUHsYP",
+   "branch": "claude/gifted-bell-gavnl5-sib-reg0841",
+   "created_utc": "2026-09-25T18:22:25Z",
+   "goal": "PHerc0841 9.366 <-> 2.403 um affine (CT only, J exclusion), bars r >= 0.85, RMS <= 1.5 vox"
+  },
+  {
+   "task": "pairs0139",
+   "session": "session_014Td5Vx7px6vmGbqMe8cS9i",
+   "branch": "claude/gifted-bell-gavnl5-sib-pairs0139",
+   "created_utc": "2026-09-25T18:23:02Z",
+   "goal": "DECL-D2 training pairs on PHerc0139 minus clean controls and neighbours"
+  },
+  {
+   "task": "pairs0814",
+   "session": "session_018vpsU55LqA4PAQN5JbLdf8",
+   "branch": "claude/gifted-bell-gavnl5-sib-pairs0814",
+   "created_utc": "2026-09-25T18:23:45Z",
+   "goal": "protocol check 0814/0500P2/0332/1451; DECL-D2 pairs on PHerc0814"
+  },
+  {
+   "task": "flat1",
+   "session": "session_012PajoPBSZpmnByzzncGKCk",
+   "branch": "claude/gifted-bell-gavnl5-sib-flat1",
+   "created_utc": "2026-09-25T18:23:48Z",
+   "goal": "FLAT-1 flattening benchmark (vc_flatten, SLIM, ARAP) on 0139 bank meshes"
+  },
+  {
+   "task": "chain2um",
+   "session": "session_011RrWfZz5Z3dvqRAoeXDScd",
+   "branch": "claude/gifted-bell-gavnl5-sib-chain2um",
+   "created_utc": "2026-09-25T18:24:25Z",
+   "goal": "2.4 um truth chain on CPU (ink_canonical_2um), 0139 control reproduction, fp32/bf16 cost per cm^2"
+  },
+  {
+   "task": "factory",
+   "session": "session_01JT3cQbn5E1SRMxgGgc2mRj",
+   "branch": "claude/gifted-bell-gavnl5-sib-factory",
+   "created_utc": "2026-09-25T18:25:07Z",
+   "goal": "package factory + mechanical verifier, DRY RUN on a 0139 bank mesh"
+  },
+  {
+   "task": "regrescan",
+   "session": "session_01USRhAAo5Prm8JPQWJDzRaq",
+   "branch": "claude/gifted-bell-gavnl5-sib-regrescan",
+   "created_utc": "2026-09-25T18:26:49Z",
+   "goal": "CT-only affines 1203 and 0846A eligible <-> 2.403 um rescans (no ink model; I11)"
+  },
+  {
+   "task": "reg0009b",
+   "session": "session_01HH7JrwbTkn9dwNmok9D3bx",
+   "branch": "claude/gifted-bell-gavnl5-sib-reg0009b",
+   "created_utc": "2026-09-25T18:27:22Z",
+   "goal": "KTLB-M prep: 0009B per-segment label registration, papyrus units, window counts (no ink model)"
+  },
+  {
+   "task": "census",
+   "session": "session_01FkYMAaqXwtCQvWWKzL2Gvv",
+   "branch": "claude/gifted-bell-gavnl5-sib-census",
+   "created_utc": "2026-09-25T18:27:55Z",
+   "goal": "census plan for 11 JULY eligible volumes: m7/normal-grid inventory, centroids, seeds, sync plan, tractability"
+  },
+  {
+   "task": "trainer",
+   "session": "session_019ijhigb9YTs2Pe7ncpxL4f",
+   "branch": "claude/gifted-bell-gavnl5-sib-trainer",
+   "created_utc": "2026-09-25T18:30:43Z",
+   "goal": "D2 trainer (flags, determinism, 3-D patch registry, reclaim-safe checkpoint shards), throughput, DECL-D2-A1 proposal"
+  },
+  {
+   "task": "devloop",
+   "session": "session_012gt8p9faXQS7nhLGGXwX6x",
+   "branch": "claude/gifted-bell-gavnl5-sib-devloop",
+   "created_utc": "2026-09-25T18:31:02Z",
+   "goal": "DEV-LOOP harness: DEV window registry, sigma_eq evaluator, base baseline"
+  },
+  {
+   "task": "tribunal",
+   "session": "session_01YUHdkQ6ZFAJMnFeavch5Xc",
+   "branch": "claude/gifted-bell-gavnl5-sib-tribunal",
+   "created_utc": "2026-09-25T18:31:21Z",
+   "goal": "planted-fault suite, canary/bait/mirror builders, batch-validity scorer, empirical-null builder"
+  },
+  {
+   "task": "contam",
+   "session": "session_01KAiaxjWZt8XTCBErVPhvEL",
+   "branch": "claude/gifted-bell-gavnl5-sib-contam",
+   "created_utc": "2026-09-25T18:31:38Z",
+   "goal": "KD-tree contamination, fold/shell certificates, FL-09 certificate, 0139 papyrus units"
+  },
+  {
+   "task": "sg",
+   "session": "session_016Rn6suY4vut5JeJTdMMZ8p",
+   "branch": "claude/gifted-bell-gavnl5-sib-sg",
+   "created_utc": "2026-09-25T18:31:58Z",
+   "goal": "SG battery as mechanical code (discovery rule, R rectangle, items 1-7, 11, 14)"
+  },
+  {
+   "task": "handed",
+   "session": "session_01AzryPCp51bY9mCGLY8nFwg",
+   "branch": "claude/gifted-bell-gavnl5-sib-handed",
+   "created_utc": "2026-09-25T18:32:39Z",
+   "goal": "geometric handedness rule, synthetic glyph tests, per-volume table"
+  },
+  {
+   "task": "readcal2",
+   "session": "session_016xXtTKGSN5FYrQWH7tzHeH",
+   "branch": "claude/gifted-bell-gavnl5-sib-readcal2",
+   "created_utc": "2026-09-25T19:28:00Z",
+   "goal": "READCAL-2 reader-acuity programme: exemplar/placebo sheets, multi-scale and row-first displays, fresh bank windows (0139 clean, 0814), REF ladder builder, scoring plan, DECL-READCAL2 proposal"
+  },
+  {
+   "task": "pairs0814b",
+   "session": "session_01NfS4bhpLVnt2ShveEY6pYF",
+   "branch": "claude/gifted-bell-gavnl5-sib-pairs0814b",
+   "created_utc": "2026-09-25T19:38:03Z",
+   "goal": "split of PHerc0814 D2 pair stage B (segments per pairs0814 HANDOVER.md), unchanged pairs0814 code"
+  }
+ ]
+}

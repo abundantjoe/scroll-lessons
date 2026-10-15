@@ -1,0 +1,50 @@
+{"utc":"2026-09-26T00:27:19Z","run":"fetch","cmd":"tools/sib/p4-tiles-b/fetch.sh","status":"started"}
+{"utc":"2026-09-26T00:29:44Z","run":"fetch","status":"done","files":6,"log":"sha256s in grid.json fetch and manifest.json"}
+{"utc":"2026-09-26T00:29:44Z","run":"tile","cmd":"python3 tools/sib/p4-tiles-b/tile_w028_037.py <dl> logs/sib/p4-tiles-b 4","status":"started"}
+{"utc":"2026-09-26T00:31:10Z","run":"tile","status":"done","tiles_total":198,"read_eligible":171,"secs":71.1,"px_per_mm":415.0389822320533,"T_px":8301}
+{"utc":"2026-09-26T00:32:15Z","run":"report","status":"done","note":"downloads deleted; REPORT.md written"}
+{"utc":"2026-09-26T05:58:24Z","run":"m2b-fetch","cmd":"tools/sib/p4-tiles-b/fetch_m2b.sh","status":"started","governed_by":"DECL-P4-4"}
+{"utc":"2026-09-26T06:01:33Z","run":"m2b-fetch","status":"done","files":12}
+{"utc":"2026-09-26T06:01:33Z","run":"m2b-uvcheck","cmd":"python3 tools/sib/p4-tiles-b/verify_uv_m2b.py <dl> logs/sib/p4-tiles-b/m2b/uv_check.json","status":"done","result":"same-UV pixel-centre map: median 0.005 vx24, p95 0.55, max 3.36 vs affine"}
+{"utc":"2026-09-26T06:01:33Z","run":"m2b-tile","cmd":"python3 tools/sib/p4-tiles-b/tile_m2b.py <dl> logs/sib/p4-tiles-b/m2b logs/sib/p4-tiles-b/m2b/uv_check.json 4","status":"started"}
+{"utc":"2026-09-26T06:03:51Z","run":"m2b-tile","status":"done","tiles_total":132,"read_eligible":106,"secs":103.1,"px_per_mm":443.46823411489333,"T_px":8869}
+{"utc":"2026-09-26T06:04:51Z","run":"m2b-zero-coverage","cmd":"zero_frac_m2b.py + coverage_m2b.py","status":"done","all_zero_tiles":21,"r":0.998}
+{"utc":"2026-09-26T06:05:50Z","run":"m2b-report","status":"done","note":"large downloads deleted; REPORT.md written"}
+{"utc": "2026-09-26T10:11:20Z", "run": "e1-job", "status": "started", "governed_by": "DECL-P4-5 E1"}
+{"utc": "2026-09-26T10:11:53Z", "run": "e1-fetch-small", "files": 9}
+{"utc":"2026-09-26T10:15:04Z","run":"e1-job","status":"aborted-and-restarted","note":"first start stopped by the builder after fetch-small (self-check fix); no tile or commit existed"}
+{"utc": "2026-09-26T10:15:04Z", "run": "e1-job", "status": "started", "governed_by": "DECL-P4-5 E1"}
+{"utc": "2026-09-26T10:15:31Z", "run": "e1-fetch-small", "files": 9}
+{"utc": "2026-09-26T10:16:03Z", "run": "e1-job", "status": "FAILED", "error": "ValueError(\"unsupported format character 'm' (0x6d) at index 8\")"}
+{"utc":"2026-09-26T10:16:50Z","run":"e1-job","status":"restart","note":"attempt 2 failed at grid dict (format string bug), before any chunk or tile; fixed"}
+{"utc": "2026-09-26T10:16:50Z", "run": "e1-job", "status": "started", "governed_by": "DECL-P4-5 E1"}
+{"utc": "2026-09-26T10:17:25Z", "run": "e1-fetch-small", "files": 9}
+{"utc": "2026-09-26T10:17:55Z", "run": "e1-grid", "px_per_mm": 443.62218589724114, "T": 8872, "tiles": 126, "ge50": 100, "eligible": 60}
+{"utc": "2026-09-26T10:17:57Z", "run": "e1-chunks", "done": 0, "of": 4648, "secs": 0}
+{"utc": "2026-09-26T10:18:08Z", "run": "e1-chunks", "done": 500, "of": 4648, "secs": 12}
+{"utc": "2026-09-26T10:18:20Z", "run": "e1-chunks", "done": 1000, "of": 4648, "secs": 23}
+{"utc": "2026-09-26T10:18:31Z", "run": "e1-chunks", "done": 1500, "of": 4648, "secs": 34}
+{"utc": "2026-09-26T10:18:42Z", "run": "e1-chunks", "done": 2000, "of": 4648, "secs": 46}
+{"utc": "2026-09-26T10:18:54Z", "run": "e1-chunks", "done": 2500, "of": 4648, "secs": 57}
+{"utc": "2026-09-26T10:19:05Z", "run": "e1-chunks", "done": 3000, "of": 4648, "secs": 68}
+{"utc": "2026-09-26T10:19:16Z", "run": "e1-chunks", "done": 3500, "of": 4648, "secs": 80}
+{"utc": "2026-09-26T10:19:27Z", "run": "e1-chunks", "done": 4000, "of": 4648, "secs": 91}
+{"utc": "2026-09-26T10:19:39Z", "run": "e1-chunks", "done": 4500, "of": 4648, "secs": 102}
+{"utc": "2026-09-26T10:19:42Z", "run": "e1-chunks", "status": "done", "n": 4648, "secs": 106}
+{"utc": "2026-09-26T10:19:54Z", "run": "e1-push", "msg": "p4-tiles-b E1 (DECL-P4-5): grid, chunk manifest, first 40 raw-CT tiles of 20260623141924-w010-027", "commit": "96fc8a9"}
+{"utc": "2026-09-26T10:19:58Z", "run": "e1-job", "status": "done", "eligible": 60, "secs": 187.7}
+{"utc": "2026-09-26T10:20:02Z", "run": "e1-push", "msg": "p4-tiles-b E1 (DECL-P4-5): remaining raw-CT tiles, manifest, REPORT (60 eligible)", "commit": "d21ef60"}
+{"utc":"2026-09-26T17:43:16Z","run":"e1a1-launch","cmd":"python3 tools/sib/p4-tiles-b/e1a1_job.py <scratch> <repo>","governed_by":"DECL-P4-5-A1"}
+{"utc": "2026-09-26T17:43:26Z", "run": "e1a1-job", "status": "started", "governed_by": "DECL-P4-5-A1"}
+{"utc": "2026-09-26T17:46:12Z", "run": "e1a1-chunks", "n": 4648, "sha_match": true, "secs": 119.9}
+{"utc": "2026-09-26T17:46:26Z", "run": "e1a1-tiles", "status": "done", "n": 60, "changed": 33}
+{"utc": "2026-09-26T17:46:35Z", "run": "e1-push", "msg": "p4-tiles-b E1-A1 (DECL-P4-5-A1): rebuilt 60 raw-CT tiles, manifest, REPORT (33 changed)", "commit": "6135a21"}
+{"utc": "2026-09-26T17:46:40Z", "run": "e1a1-points", "status": "done", "n_aff": 26, "med_dist": 0.005949776403453609, "p95": 0.5190820057211594}
+{"utc": "2026-09-26T17:46:43Z", "run": "e1-push", "msg": "p4-tiles-b E1-A1: tile_points.npz for the E1 (= M2a) grid, both frames", "commit": "fc857c3"}
+{"utc": "2026-09-26T17:46:43Z", "run": "e1a1-job", "status": "done", "secs": 196.8}
+{"utc":"2026-09-26T21:45:06Z","run":"l3e-launch","cmd":"python3 tools/sib/p4-tiles-b/l3e_job.py <scratch> <repo>","governed_by":"DECL-P4-12-A4","unit_tests":"27 passed"}
+{"utc": "2026-09-26T21:45:12Z", "run": "l3e-job", "status": "started", "governed_by": "DECL-P4-12-A4 (A3 method)"}
+{"utc": "2026-09-26T21:45:24Z", "run": "e1-push", "msg": "p4-tiles-b L3E (DECL-P4-12-A4): calibration selection (seed, 24 control tiles, 960 chunks), recorded before any number", "commit": "67a1e40"}
+{"utc": "2026-09-26T21:45:38Z", "run": "l3e-calib", "verdict": "STOP", "d_star_um": null, "z": 1.122056508974964, "centroid": 89.25051653959822, "chunks": 826}
+{"utc": "2026-09-26T21:45:39Z", "run": "e1-push", "msg": "p4-tiles-b L3E: calib_1129.json, verdict STOP", "commit": "96c8811"}
+{"utc": "2026-09-26T21:45:39Z", "run": "l3e-job", "status": "stopped", "reason": "calibration STOP"}

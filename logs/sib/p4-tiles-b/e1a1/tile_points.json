@@ -1,0 +1,98 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "segment": "20260623141924-w010-027",
+ "grid": "E1 = P4-D M2a grid (logs/sib/p4-tiles-b/e1/grid.json)",
+ "file": "tile_points.npz",
+ "tiles": 60,
+ "keys": {
+  "r<r>_c<c>": "float32 (n,3) xyz, 20260608103018 L0 voxels (mesh own frame)",
+  "r<r>_c<c>__f20260411134726": "float32 (n,3) xyz, 20260411134726 voxels",
+  "r<r>_c<c>__f20260411134726_src": "uint8 (n,) 0 = same-UV 2.4 um mesh, 1 = affine fallback",
+  "r<r>_c<c>__grid_ij": "int32 (n,2) 1.129 um grid row, col",
+  "r<r>_c<c>__n_valid_vertices": "int64 (1,) valid vertices in the tile before subsampling"
+ },
+ "selection": "valid 1.129 um grid vertices whose canvas position (gi*10, gj*10) lies in the tile; if > 4096, 4096 drawn by numpy default_rng(20260926 + 1000 r + c), sorted (same draw as frac_outside)",
+ "frame_20260411134726": {
+  "method": "same UV on the segment's official 20260411134726 tifxyz (bilinear), pixel-centre map i24 = (i + 0.5) * h24 / h1129 - 0.5 (same for j); affine fallback (transform.json) where a bilinear corner is invalid",
+  "uv_map": {
+   "a_i": 0.4707853403141361,
+   "b_i": -0.26460732984293195,
+   "a_j": 0.47083563918096294,
+   "b_j": -0.26458218040951853,
+   "grid_24": [
+    2248,
+    8508
+   ]
+  },
+  "points_via_affine_fallback": 26,
+  "same_uv_vs_affine_dist_vx24": {
+   "n": 245734,
+   "p01": 0.0005183954158933807,
+   "p05": 0.0009723398625763385,
+   "p25": 0.0023377299217559886,
+   "median": 0.005949776403453609,
+   "p75": 0.09034677921189987,
+   "p95": 0.5190820057211594,
+   "p99": 1.214056720340874,
+   "max": 7.599514620251436
+  }
+ },
+ "frac_outside_reproduced": true,
+ "inputs": [
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260608103018-1.129um.tifxyz/meta.json",
+   "bytes": 412,
+   "sha256": "e89b33ff638a44a2402f102a671c8a531d7f02e0dd92003ffeecee93e2f0bcca",
+   "secs": 0.5
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260608103018-1.129um.tifxyz/x.tif",
+   "bytes": 345137134,
+   "sha256": "0c3d3219c90fff09cee2f5c89f9890b9759af7ef79cc98deb95fd862601960e6",
+   "secs": 10.1
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260608103018-1.129um.tifxyz/y.tif",
+   "bytes": 345137134,
+   "sha256": "0bf629b93b0e2055228e4def6bb8fcbb8ef4a56d473b7100aae9fffc74ade5d9",
+   "secs": 10.4
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260608103018-1.129um.tifxyz/z.tif",
+   "bytes": 345137134,
+   "sha256": "3b045716840dc6bcc8f8beac9df438511c6ce525db5c0c1acd7467607738f624",
+   "secs": 10.3
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260411134726-2.4um.tifxyz/meta.json",
+   "bytes": 404,
+   "sha256": "2ef44ee4292ca235428750595612654a264c3dade46f7e4bb8c00be6c79faf87",
+   "secs": 0.1
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260411134726-2.4um.tifxyz/x.tif",
+   "bytes": 76504070,
+   "sha256": "4ff0c66c7c91d71c5ee6939b5aa46fb75176a5ccc80aa19cbe380085255083de",
+   "secs": 1.9
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260411134726-2.4um.tifxyz/y.tif",
+   "bytes": 76504070,
+   "sha256": "af4cdfacb4e5f0fbef5eacde48aeb2f6d067ccc8171252b86690de7a988c2f0d",
+   "secs": 2.1
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260411134726-2.4um.tifxyz/z.tif",
+   "bytes": 76504070,
+   "sha256": "8afccc713f42e97d45dbceb50fe89eaace6500f7556fdb7234049f8e34007177",
+   "secs": 2.1
+  },
+  {
+   "key": "PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/transform.json",
+   "bytes": 3053,
+   "sha256": "2291a626dd3a2712984ec7eaa00bcf6f636b10936c9c36d57efc7228f649d1ad",
+   "secs": 0.1
+  }
+ ],
+ "utc": "2026-09-26T17:46:40Z"
+}
