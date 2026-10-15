@@ -1,0 +1,69 @@
+{
+ "segment": "20230929220926",
+ "pitch_um": 2.4,
+ "registration": {
+  "corr_zone": 0.37825122475624084,
+  "scale_label_to_canvas": 3.2381562499999985,
+  "offset_canvas_y": 80.0,
+  "offset_canvas_x": 173.33333333333334,
+  "residual_scale": 0.9824999999999996,
+  "grid_um": 32.0
+ },
+ "xsplit_canvas": 44200,
+ "n_candidates": 77,
+ "crops": [
+  {
+   "name": "held1",
+   "kind": "held",
+   "y0": 12400,
+   "x0": 50840,
+   "side": 6250,
+   "label_density": 0.2843,
+   "local_offset": [
+    -40,
+    -24
+   ],
+   "local_reg_corr": 0.726
+  },
+  {
+   "name": "held2",
+   "kind": "held",
+   "y0": 4960,
+   "x0": 66960,
+   "side": 6250,
+   "label_density": 0.2665,
+   "local_offset": [
+    400,
+    0
+   ],
+   "local_reg_corr": 0.691
+  },
+  {
+   "name": "held3",
+   "kind": "held",
+   "y0": 6200,
+   "x0": 58280,
+   "side": 6250,
+   "label_density": 0.2512,
+   "local_offset": [
+    168,
+    120
+   ],
+   "local_reg_corr": 0.642
+  },
+  {
+   "name": "held4",
+   "kind": "held",
+   "y0": 6200,
+   "x0": 17360,
+   "side": 6250,
+   "label_density": 0.1981,
+   "local_offset": [
+    -216,
+    -520
+   ],
+   "local_reg_corr": 0.411
+  }
+ ],
+ "rule": "all held-out: the densest non-overlapping windows"
+}

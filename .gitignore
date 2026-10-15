@@ -1,0 +1,21 @@
+.venv/
+external/
+/data/
+cache/
+*.zarr/
+*.tif
+*.tiff
+*.npy
+*.pth
+*.ckpt
+__pycache__/
+review_sheets/**/*.png
+!review_sheets/**/index.md
+
+# release: figures and released weights are tracked
+!docs/figures/*.png
+!models/*.pt
+archive/review_sheets/calibration/
+archive/review_sheets/s1_current/
+*.egg-info/
+.pytest_cache/

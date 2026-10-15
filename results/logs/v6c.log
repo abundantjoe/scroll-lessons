@@ -1,0 +1,92 @@
+v6c training dirs: data/s1/20231005123336/derived/train,data/s1/20230929220926/derived/held1,data/s1/20230929220926/derived/held2,data/s1/20230929220926/derived/held3,data/s1/20230929220926/derived/held4,data/s1/20231012184424/derived/held1,data/s1/20231012184424/derived/held2,data/s1/20231012184424/derived/held3
+params 270817 dirs 8 steps 12000
+lr 0.0003 wd 0.0001
+validation crop data/s1/20231012184424/derived/held4
+/home/user/megara/scripts/s1_v5.py:46: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  net.train(); x, y = batch(); opt.zero_grad(); l = loss_fn(net(x), y); l.backward(); opt.step(); hist.append(float(l))
+step 0 train 0.7403 val 0.7392 2s
+step 250 train 0.5026 val 0.6547 255s
+step 500 train 0.4147 val 1.2067 509s
+step 750 train 0.3834 val 0.6958 761s
+step 1000 train 0.3548 val 0.7142 1016s
+step 1250 train 0.3332 val 1.0029 1269s
+step 1500 train 0.3072 val 0.8396 1522s
+step 1750 train 0.2958 val 0.8716 1776s
+step 2000 train 0.2790 val 0.9180 2027s
+step 2250 train 0.2725 val 0.7426 2280s
+step 2500 train 0.2632 val 0.8072 2534s
+step 2750 train 0.2425 val 0.9918 2787s
+step 3000 train 0.2332 val 1.0018 3042s
+step 3250 train 0.2279 val 0.9471 3295s
+step 3500 train 0.2168 val 0.8940 3542s
+step 3750 train 0.2123 val 1.1454 3787s
+step 4000 train 0.2017 val 1.1329 4031s
+step 4250 train 0.1942 val 1.2841 4285s
+step 4500 train 0.1877 val 1.1596 4540s
+step 4750 train 0.1904 val 1.1668 4795s
+step 5000 train 0.1736 val 1.1046 5050s
+step 5250 train 0.1746 val 1.1404 5307s
+step 5500 train 0.1690 val 1.1285 5561s
+step 5750 train 0.1632 val 1.4604 5817s
+step 6000 train 0.1574 val 1.1631 6070s
+step 6250 train 0.1546 val 1.2976 6325s
+step 6500 train 0.1530 val 1.1555 6579s
+step 6750 train 0.1493 val 1.6541 6833s
+step 7000 train 0.1469 val 1.4097 7088s
+step 7250 train 0.1420 val 1.3895 7343s
+step 7500 train 0.1403 val 1.2605 7598s
+step 7750 train 0.1464 val 1.3798 7853s
+step 8000 train 0.1327 val 1.5018 8109s
+step 8250 train 0.1267 val 1.3215 8363s
+step 8500 train 0.1226 val 1.3055 8617s
+step 8750 train 0.1307 val 1.5040 8871s
+step 9000 train 0.1193 val 1.7213 9127s
+step 9250 train 0.1195 val 2.0573 9381s
+step 9500 train 0.1228 val 1.6201 9636s
+step 9750 train 0.1209 val 1.5268 9891s
+step 10000 train 0.1169 val 1.4644 10145s
+step 10250 train 0.1205 val 1.4555 10399s
+step 10500 train 0.1088 val 1.5600 10652s
+step 10750 train 0.1118 val 1.4808 10905s
+step 11000 train 0.1051 val 1.4855 11158s
+step 11250 train 0.1085 val 1.5377 11405s
+step 11500 train 0.1079 val 1.4959 11651s
+step 11750 train 0.1032 val 1.5466 11894s
+step 12000 train 0.1008 val 1.6797 12137s
+data/s1/20231005123336/derived/held1 v6c written
+top {'auc_px': 0.8073244206742782, 'auc_letter': 0.9901423877327492, 'n_letters': 15}
+bot {'auc_px': 0.8073244206742782, 'auc_letter': 0.9901960784313726, 'n_letters': 15}
+data/s1/20231005123336/derived/held2 v6c written
+top {'auc_px': 0.8992976738244794, 'auc_letter': 1.0, 'n_letters': 13}
+bot {'auc_px': 0.8992976738244794, 'auc_letter': 0.9983361064891847, 'n_letters': 13}
+data/s1/20231005123336/derived/held3 v6c written
+top {'auc_px': 0.7256153567027414, 'auc_letter': 0.9427480916030534, 'n_letters': 13}
+bot {'auc_px': 0.7256153567027414, 'auc_letter': 0.9358490566037736, 'n_letters': 13}
+data/s1/20231210121321/derived/held1 v6c written
+top {'auc_px': 0.7667727711977214, 'auc_letter': None, 'n_letters': 12}
+bot {'auc_px': 0.7667727711977214, 'auc_letter': None, 'n_letters': 12}
+data/s1/20231210121321/derived/held2 v6c written
+top {'auc_px': 0.7448392384963012, 'auc_letter': 1.0, 'n_letters': 13}
+bot {'auc_px': 0.7448392384963012, 'auc_letter': 1.0, 'n_letters': 13}
+data/s1/20231210121321/derived/held3 v6c written
+top {'auc_px': 0.8237092550591044, 'auc_letter': None, 'n_letters': 16}
+bot {'auc_px': 0.8237092550591044, 'auc_letter': None, 'n_letters': 16}
+data/s1/20231210121321/derived/held4 v6c written
+top {'auc_px': 0.7254511636816456, 'auc_letter': 0.9911504424778761, 'n_letters': 15}
+bot {'auc_px': 0.7254511636816456, 'auc_letter': 1.0, 'n_letters': 15}
+20231005123336:held1 v6c {'stroke_auc': 0.8898, 'n_ink': 202, 'n_blank': 761}
+20231005123336:held2 v6c {'stroke_auc': 0.9796, 'n_ink': 175, 'n_blank': 744}
+20231005123336:held3 v6c {'stroke_auc': 0.8145, 'n_ink': 115, 'n_blank': 630}
+20231210121321:held1 v6c {'stroke_auc': 0.8647, 'n_ink': 74, 'n_blank': 305}
+20231210121321:held2 v6c {'stroke_auc': 0.9048, 'n_ink': 71, 'n_blank': 359}
+20231210121321:held3 v6c {'stroke_auc': 0.8627, 'n_ink': 37, 'n_blank': 406}
+20231210121321:held4 v6c {'stroke_auc': 0.8009, 'n_ink': 49, 'n_blank': 272}
+20231005123336:held1 v6c {'L': 0.9034, 'n_ink': 202, 'n_blank': 761, 'n_paired': 165}
+20231005123336:held2 v6c {'L': 0.9965, 'n_ink': 175, 'n_blank': 744, 'n_paired': 166}
+20231005123336:held3 v6c {'L': 0.8071, 'n_ink': 115, 'n_blank': 630, 'n_paired': 99}
+20231210121321:held1 v6c {'L': 0.9594, 'n_ink': 74, 'n_blank': 305, 'n_paired': 49}
+20231210121321:held2 v6c {'L': 0.9726, 'n_ink': 71, 'n_blank': 359, 'n_paired': 60}
+20231210121321:held3 v6c {'L': 0.7229, 'n_ink': 37, 'n_blank': 406, 'n_paired': 25}
+20231210121321:held4 v6c {'L': 0.8108, 'n_ink': 49, 'n_blank': 272, 'n_paired': 38}
+V6C_JUDGED

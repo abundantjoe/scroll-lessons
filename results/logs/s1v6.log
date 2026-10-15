@@ -1,0 +1,25 @@
+training dirs: data/s1/20231005123336/derived/train,data/s1/20230929220926/derived/held1,data/s1/20230929220926/derived/held2,data/s1/20230929220926/derived/held3,data/s1/20230929220926/derived/held4,data/s1/20231012184424/derived/held1,data/s1/20231012184424/derived/held2,data/s1/20231012184424/derived/held3
+params 270817 dirs 8 steps 12000
+lr 0.0003 wd 0.0001
+validation crop data/s1/20231012184424/derived/held4
+/home/user/megara/scripts/s1_v5.py:45: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  net.train(); x, y = batch(); opt.zero_grad(); l = loss_fn(net(x), y); l.backward(); opt.step(); hist.append(float(l))
+step 0 train 0.6935 val 0.6002 2s
+step 250 train 0.3707 val 0.1702 196s
+step 500 train 0.2193 val 0.0518 392s
+step 750 train 0.1919 val 0.0478 588s
+step 1000 train 0.1666 val 0.0391 777s
+step 1250 train 0.1388 val 0.0253 972s
+step 1500 train 0.1145 val 0.0220 1170s
+step 1750 train 0.1185 val 0.0386 1497s
+step 2000 train 0.1009 val 0.0353 2094s
+step 2250 train 0.0898 val 0.0354 2834s
+step 2500 train 0.0854 val 0.0358 3658s
+step 2750 train 0.0755 val 0.0283 4272s
+step 3000 train 0.0726 val 0.0355 4873s
+step 3250 train 0.0760 val 0.0332 5734s
+step 3500 train 0.0672 val 0.0351 6399s
+step 3750 train 0.0601 val 0.0309 7258s
+step 4000 train 0.0656 val 0.0230 7647s
+step 4250 train 0.0509 val 0.0130 8744s

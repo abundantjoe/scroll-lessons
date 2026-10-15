@@ -1,0 +1,54 @@
+GP-R1 training dirs: data/s1/20231005123336/derived/train,data/s1/20230929220926/derived/held1,data/s1/20230929220926/derived/held2,data/s1/20230929220926/derived/held3,data/s1/20230929220926/derived/held4,data/s1/20231012184424/derived/held1,data/s1/20231012184424/derived/held2,data/s1/20231012184424/derived/held3,data/s1/20231012184424/derived/held5,data/s1/20231012184424/derived/held6,data/s1/20231012184424/derived/held7,data/s1/20231012184424/derived/held8,data/s1/20231012184424/derived/held9,data/s1/20231012184424/derived/held10,data/s1/20231012184424/derived/held11
+GP-R train: 15 crops, stack ds8_x.npy depth 22, patch 128, batch 8
+parameters 488937
+validation crop data/s1/20231012184424/derived/held4
+/home/user/megara/scripts/gpr.py:132: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l = losses(net(x), y); l.backward(); opt.step(); hist.append(float(l))
+step 0 train 1.2049 val_auc 0.5088 6s
+step 250 train 0.9790 val_auc 0.6291 509s
+step 500 train 0.8317 val_auc 0.6029 1012s
+step 750 train 0.7626 val_auc 0.6302 1507s
+step 1000 train 0.7203 val_auc 0.6694 1998s
+step 1250 train 0.6748 val_auc 0.6481 2489s
+step 1500 train 0.6532 val_auc 0.6897 2993s
+step 1750 train 0.6327 val_auc 0.6575 3493s
+step 2000 train 0.6082 val_auc 0.6683 4155s
+step 2250 train 0.6003 val_auc 0.6561 4811s
+step 2500 train 0.5711 val_auc 0.6839 5351s
+step 2750 train 0.5640 val_auc 0.6662 5839s
+step 3000 train 0.5195 val_auc 0.6897 6339s
+step 3250 train 0.5190 val_auc 0.6960 6835s
+step 3500 train 0.5094 val_auc 0.6975 7330s
+step 3750 train 0.5087 val_auc 0.6796 7830s
+step 4000 train 0.4846 val_auc 0.6944 8334s
+GPR_TRAIN_DONE best_val_auc 0.6975
+data/s1/20231005123336/derived/held1 gpr1 written (8-fold TTA)
+bot {'auc_px': 0.8438462132357188, 'auc_letter': 0.9726177437020811, 'n_letters': 15}
+data/s1/20231005123336/derived/held2 gpr1 written (8-fold TTA)
+bot {'auc_px': 0.9228565285912108, 'auc_letter': 1.0, 'n_letters': 13}
+data/s1/20231005123336/derived/held3 gpr1 written (8-fold TTA)
+bot {'auc_px': 0.7880288975016256, 'auc_letter': 0.982824427480916, 'n_letters': 13}
+data/s1/20231210121321/derived/held1 gpr1 written (8-fold TTA)
+bot {'auc_px': 0.8547275638444323, 'auc_letter': None, 'n_letters': 12}
+data/s1/20231210121321/derived/held2 gpr1 written (8-fold TTA)
+bot {'auc_px': 0.8027679373972378, 'auc_letter': 1.0, 'n_letters': 13}
+data/s1/20231210121321/derived/held3 gpr1 written (8-fold TTA)
+bot {'auc_px': 0.8146960191511283, 'auc_letter': None, 'n_letters': 16}
+data/s1/20231210121321/derived/held4 gpr1 written (8-fold TTA)
+bot {'auc_px': 0.766476043614756, 'auc_letter': 1.0, 'n_letters': 15}
+20231005123336:held1 gpr1 {'stroke_auc': 0.9242, 'n_ink': 202, 'n_blank': 761}
+20231005123336:held2 gpr1 {'stroke_auc': 0.9901, 'n_ink': 175, 'n_blank': 744}
+20231005123336:held3 gpr1 {'stroke_auc': 0.8987, 'n_ink': 115, 'n_blank': 630}
+20231210121321:held1 gpr1 {'stroke_auc': 0.978, 'n_ink': 74, 'n_blank': 305}
+20231210121321:held2 gpr1 {'stroke_auc': 0.9611, 'n_ink': 71, 'n_blank': 359}
+20231210121321:held3 gpr1 {'stroke_auc': 0.8754, 'n_ink': 37, 'n_blank': 406}
+20231210121321:held4 gpr1 {'stroke_auc': 0.81, 'n_ink': 49, 'n_blank': 272}
+20231005123336:held1 gpr1 {'L': 0.91, 'n_ink': 202, 'n_blank': 761, 'n_paired': 165}
+20231005123336:held2 gpr1 {'L': 0.9951, 'n_ink': 175, 'n_blank': 744, 'n_paired': 166}
+20231005123336:held3 gpr1 {'L': 0.9231, 'n_ink': 115, 'n_blank': 630, 'n_paired': 99}
+20231210121321:held1 gpr1 {'L': 1.0, 'n_ink': 74, 'n_blank': 305, 'n_paired': 49}
+20231210121321:held2 gpr1 {'L': 0.9789, 'n_ink': 71, 'n_blank': 359, 'n_paired': 60}
+20231210121321:held3 gpr1 {'L': 0.7068, 'n_ink': 37, 'n_blank': 406, 'n_paired': 25}
+20231210121321:held4 gpr1 {'L': 0.8733, 'n_ink': 49, 'n_blank': 272, 'n_paired': 38}
+GPR1_JUDGED

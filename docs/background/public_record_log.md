@@ -1,0 +1,2 @@
+# Public record log (weekly)
+- 2026-09-16: prize page text as saved 2026-09-11 in the brief (23 eligible scrolls, nobody has found ink). metadata.min.json (2026-09-15) confirms PHerc0846A 20260319102732 and PHerc1203 20260319130212 at 2.403 µm; PHerc0846A and PHerc1203 have no published segments. Weekly search of scrollprize.org / villa issues / HF for "First Letters", "topography", "crackle" is due Monday 2026-09-21.
