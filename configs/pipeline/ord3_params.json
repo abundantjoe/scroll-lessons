@@ -1,0 +1,137 @@
+{
+ "declaration": "DECL-E2E-2",
+ "vox_um": 8.64,
+ "dy": 4,
+ "n_avg": 8,
+ "sigma_u": 3.0,
+ "tube": 64,
+ "tensor": {
+  "half_res": true,
+  "grad_sigma_half": [
+   1,
+   1,
+   1
+  ],
+  "smooth_sigma_half": [
+   2,
+   4,
+   4
+  ],
+  "coh3_min": 0.3,
+  "s_max": 1.0,
+  "dense_s_smooth": 4.0
+ },
+ "fields": {
+  "ridge_sigma": 4.0,
+  "flank_d": 22.0,
+  "g_min": 0.02,
+  "void_pct": 2,
+  "void_dilate": 4,
+  "tau": "median + 3 MAD of positive in-tube Rs on the seed row, fixed per block",
+  "gate": "adaptive",
+  "g_min_adaptive": 0.08,
+  "flank_offsets": "4,6,...,22",
+  "ridge_sigmas": [
+   2.5,
+   4.0
+  ]
+ },
+ "twins": {
+  "search": 44,
+  "exclusion": 6,
+  "min_rs_frac": 0.5
+ },
+ "delta": {
+  "rule": "min(delta_max, floor(0.5*d_comp) - 1 - |dy*s|)",
+  "delta_max_raw": 4,
+  "delta_max_means": 12,
+  "open_side_dcomp": 44
+ },
+ "solver": {
+  "lambda_y": 1.0,
+  "sigma_y": 2.0,
+  "T_y": 4.0,
+  "unary_cap": 3.0,
+  "void_cost": 1.0,
+  "pair": [
+   0.0,
+   0.5,
+   2.0
+  ],
+  "jacobi_passes": 1,
+  "lambda_y_seed": 0.0
+ },
+ "status": {
+  "anchored_rs_frac": 0.5,
+  "margin_min": 0.0,
+  "separation": 4,
+  "G_y_sections": 56,
+  "G_u_vox": 132,
+  "reanchor_cells": 8,
+  "reanchor_tol": 2,
+  "unresolved_sections": 8
+ },
+ "I4": {
+  "half": 16,
+  "null": "twin-swap per row",
+  "threshold": "null p95",
+  "power_min": 0.8,
+  "margin_for_power": 0.5,
+  "memory_alpha": 0.25,
+  "terminate_after_fails": 2
+ },
+ "means_variant": {
+  "dy": 32,
+  "pred": "previous increment / 32, |32 s| <= 12",
+  "tilt_correction": false
+ },
+ "phantom": {
+  "Y": 384,
+  "Z": 1024,
+  "X": 2048,
+  "seed": 0,
+  "n_hops": 40,
+  "spacing_p10_50_90": [
+   11,
+   17.5,
+   40
+  ],
+  "abs_ny_p10_50_90": [
+   0.074,
+   0.322,
+   0.708
+  ],
+  "rho_median": 72
+ },
+ "pilotA": {
+  "wall_min": 30,
+  "cpus": 4,
+  "rss_gb_max": 3.0,
+  "band_cache": "/work/e2e/PHerc0268_5820",
+  "seed_surface": "logs/unr/e2e/PHerc0268_y5820/surface.npz",
+  "seed_row_y": 5820,
+  "window_origin_zx": [
+   1312,
+   544
+  ]
+ },
+ "pass_a": {
+  "V1_at_dy4": true,
+  "real_hop_detection_min": 0.9,
+  "identifiable_frac_min_at_p90_tilt": 0.8,
+  "control_false_alarm_max": 0.1
+ },
+ "amendments": [
+  "DECL-E2E-2-A1",
+  "DECL-E2E-2-A2",
+  "DECL-E2E-2-A3",
+  "DECL-E2E-2-A4"
+ ],
+ "n_tensor": 12,
+ "hop_test": {
+  "n_place": 20,
+  "window_vox": 232,
+  "margin_cells": 100,
+  "detect_rule": ">=50% of seed-anchored window cells flagged within 2 rows"
+ }
+}

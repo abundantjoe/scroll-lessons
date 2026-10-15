@@ -1,0 +1,3348 @@
+{
+ "src": "s3://vesuvius-challenge-open-data/PHerc0268/volumes/20251110183117-8.640um-1.2m-116keV-masked.zarr/3",
+ "vox_um": 69.12,
+ "params": {
+  "sd": 1.2,
+  "si": 5.0,
+  "erode": 14,
+  "tukey_mm": 0.5,
+  "coh_min": 0.3,
+  "max_voters": 300000
+ },
+ "slab": 16,
+ "image_centre": [
+  759.0,
+  759.0
+ ],
+ "shape": [
+  1855,
+  1519,
+  1519
+ ],
+ "slabs": [
+  {
+   "n_slices": 16,
+   "mask_area_vox": 0,
+   "status": "no mask",
+   "z0": 0,
+   "z1": 16,
+   "z_mid": 7.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 0,
+   "status": "no mask",
+   "z0": 16,
+   "z1": 32,
+   "z_mid": 23.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 54588,
+   "mask_centroid": [
+    689.67,
+    853.02
+   ],
+   "debris_frac": 0.0404,
+   "null_thr": {
+    "coh_p99_null": 0.54,
+    "coh_p50_real": 0.413,
+    "contrast_p30": 9.891799891192932e-06
+   },
+   "admissible_frac_of_mask": 0.2429,
+   "centre": [
+    763.7,
+    752.86
+   ],
+   "n_voters": 13262,
+   "median_resid_mm": 0.256,
+   "inlier_frac_1mm": 0.7356,
+   "conditioning": 0.11,
+   "multistart_spread_mm": 0.0348,
+   "dist_to_image_centre_mm": 0.534,
+   "dist_to_mask_centroid_mm": 8.608,
+   "half_first_last_mm": 0.2728,
+   "half_centres": [
+    [
+     759.84,
+     754.22
+    ],
+    [
+     763.73,
+     753.57
+    ]
+   ],
+   "split_half_mm": 0.1501,
+   "sectors_fitted": 9,
+   "sector_coverage_0p5mm": 0.5556,
+   "sector_median_miss_mm": 0.1279,
+   "sectors_conditioned": 2,
+   "n_clusters_ge25pct": 2,
+   "cluster_centres": [
+    [
+     608.15,
+     751.67,
+     1
+    ],
+    [
+     768.56,
+     912.79,
+     1
+    ]
+   ],
+   "band_miss_mm": {
+    "1": 0.6429,
+    "2": 0.0753
+   },
+   "R_adm_vox": 219.8,
+   "residual_frac_gt1mm": 0.2644,
+   "secondary_centres": [
+    {
+     "centre": [
+      762.9,
+      861.85
+     ],
+     "frac_voters": 0.1635,
+     "conditioning": 0.0938,
+     "inlier_frac_1mm": 0.1305,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     763.7,
+     752.86
+    ],
+    "median_resid_mm": 0.256
+   },
+   "metric_model": {
+    "centre": [
+     756.52,
+     758.02
+    ],
+    "aspect_s": 0.96,
+    "phi_deg": 144.0,
+    "median_resid_mm": 0.2597,
+    "inlier_frac_1mm": 0.7241,
+    "improvement": -0.015,
+    "split_half_centre_mm": 0.0649,
+    "split_half_s": [
+     0.958,
+     0.963
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 0,
+   "confidence": 0.2711,
+   "multi_centre": true,
+   "status": "ok",
+   "z0": 32,
+   "z1": 48,
+   "z_mid": 39.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 8748,
+   "mask_centroid": [
+    636.21,
+    625.58
+   ],
+   "debris_frac": 0.2369,
+   "null_thr": {
+    "coh_p99_null": 0.473,
+    "coh_p50_real": 0.851,
+    "contrast_p30": 0.004840769339352846
+   },
+   "admissible_frac_of_mask": 0.1676,
+   "centre": [
+    646.52,
+    641.51
+   ],
+   "n_voters": 1466,
+   "median_resid_mm": 0.1801,
+   "inlier_frac_1mm": 0.852,
+   "conditioning": 0.1006,
+   "multistart_spread_mm": 0.0219,
+   "dist_to_image_centre_mm": 9.524,
+   "dist_to_mask_centroid_mm": 3.104,
+   "half_first_last_mm": 4.8681,
+   "half_centres": [
+    [
+     673.03,
+     651.72
+    ],
+    [
+     618.39,
+     607.28
+    ]
+   ],
+   "split_half_mm": 0.0411,
+   "sectors_fitted": 4,
+   "sector_coverage_0p5mm": 0.75,
+   "sector_median_miss_mm": 0.321,
+   "sectors_conditioned": 0,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "2": 0.321
+   },
+   "R_adm_vox": 60.9,
+   "residual_frac_gt1mm": 0.3936,
+   "secondary_centres": [
+    {
+     "centre": [
+      680.41,
+      623.02
+     ],
+     "frac_voters": 0.1119,
+     "conditioning": 0.4678,
+     "inlier_frac_1mm": 1.0,
+     "accepted": true
+    },
+    {
+     "centre": [
+      632.0,
+      645.53
+     ],
+     "frac_voters": 0.2817,
+     "conditioning": 0.0393,
+     "inlier_frac_1mm": 0.8789,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     672.98,
+     651.35
+    ],
+    "median_resid_mm": 0.6559
+   },
+   "metric_model": {
+    "centre": [
+     646.52,
+     641.51
+    ],
+    "aspect_s": 0.435,
+    "phi_deg": 54.2,
+    "median_resid_mm": 0.1801,
+    "inlier_frac_1mm": 0.852,
+    "improvement": 0.725,
+    "split_half_centre_mm": 0.2196,
+    "split_half_s": [
+     0.616,
+     0.543
+    ]
+   },
+   "model": "affine_squeeze",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1
+    ],
+    "spread_rel": 0.0,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 0,
+   "confidence": 0.4473,
+   "multi_centre": true,
+   "status": "ok",
+   "z0": 48,
+   "z1": 64,
+   "z_mid": 55.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 1940,
+   "status": "no mask",
+   "z0": 64,
+   "z1": 80,
+   "z_mid": 71.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 126276,
+   "mask_centroid": [
+    724.74,
+    778.23
+   ],
+   "debris_frac": 0.2648,
+   "null_thr": {
+    "coh_p99_null": 0.65,
+    "coh_p50_real": 0.916,
+    "contrast_p30": 0.003104885807260871
+   },
+   "admissible_frac_of_mask": 0.3122,
+   "centre": [
+    422.46,
+    1110.93
+   ],
+   "n_voters": 39420,
+   "median_resid_mm": 0.9857,
+   "inlier_frac_1mm": 0.5015,
+   "conditioning": 0.1953,
+   "multistart_spread_mm": 0.0028,
+   "dist_to_image_centre_mm": 33.658,
+   "dist_to_mask_centroid_mm": 31.07,
+   "half_first_last_mm": 0.0511,
+   "half_centres": [
+    [
+     422.57,
+     1110.56
+    ],
+    [
+     422.21,
+     1111.2
+    ]
+   ],
+   "split_half_mm": 0.0058,
+   "sectors_fitted": 6,
+   "sector_coverage_0p5mm": 0.5,
+   "sector_median_miss_mm": 1.3011,
+   "sectors_conditioned": 0,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "1": 0.0606
+   },
+   "R_adm_vox": 1079.8,
+   "residual_frac_gt1mm": 0.4985,
+   "secondary_centres": [
+    {
+     "centre": [
+      1105.64,
+      440.82
+     ],
+     "frac_voters": 0.4527,
+     "conditioning": 0.1982,
+     "inlier_frac_1mm": 0.7858,
+     "accepted": true
+    }
+   ],
+   "point_model": {
+    "centre": [
+     422.46,
+     1110.93
+    ],
+    "median_resid_mm": 0.9857
+   },
+   "metric_model": {
+    "centre": [
+     422.46,
+     1110.93
+    ],
+    "aspect_s": 1.0,
+    "phi_deg": 0.0,
+    "median_resid_mm": 0.9857,
+    "inlier_frac_1mm": 0.5015,
+    "improvement": -0.0,
+    "split_half_centre_mm": 1.085,
+    "split_half_s": [
+     0.979,
+     1.0
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 0,
+   "confidence": 0.0,
+   "multi_centre": true,
+   "status": "ok",
+   "z0": 80,
+   "z1": 96,
+   "z_mid": 87.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 4620,
+   "mask_centroid": [
+    411.18,
+    602.11
+   ],
+   "debris_frac": 0.1305,
+   "null_thr": {
+    "coh_p99_null": 0.536,
+    "coh_p50_real": 0.529,
+    "contrast_p30": 0.01749839447438717
+   },
+   "admissible_frac_of_mask": 0.1037,
+   "status": "too few admissible voters",
+   "z0": 96,
+   "z1": 112,
+   "z_mid": 103.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 57584,
+   "mask_centroid": [
+    688.44,
+    430.62
+   ],
+   "debris_frac": 0.3938,
+   "null_thr": {
+    "coh_p99_null": 0.579,
+    "coh_p50_real": 0.398,
+    "contrast_p30": 0.005369921680539846
+   },
+   "admissible_frac_of_mask": 0.1209,
+   "centre": [
+    805.87,
+    692.39
+   ],
+   "n_voters": 6962,
+   "median_resid_mm": 3.8699,
+   "inlier_frac_1mm": 0.1353,
+   "conditioning": 0.0572,
+   "multistart_spread_mm": 7.8012,
+   "dist_to_image_centre_mm": 5.629,
+   "dist_to_mask_centroid_mm": 19.831,
+   "half_first_last_mm": 1.0132,
+   "half_centres": [
+    [
+     852.36,
+     772.66
+    ],
+    [
+     862.54,
+     762.12
+    ]
+   ],
+   "split_half_mm": 1.5187,
+   "sectors_fitted": 3,
+   "sector_coverage_0p5mm": 0.0,
+   "sector_median_miss_mm": 3.1395,
+   "sectors_conditioned": 0,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {},
+   "R_adm_vox": 388.7,
+   "residual_frac_gt1mm": 0.8647,
+   "secondary_centres": [
+    {
+     "centre": [
+      504.22,
+      357.58
+     ],
+     "frac_voters": 0.3091,
+     "conditioning": 0.0236,
+     "inlier_frac_1mm": 0.3429,
+     "accepted": false
+    },
+    {
+     "centre": [
+      894.44,
+      802.99
+     ],
+     "frac_voters": 0.5065,
+     "conditioning": 0.0172,
+     "inlier_frac_1mm": 0.3182,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     805.87,
+     692.39
+    ],
+    "median_resid_mm": 3.8699
+   },
+   "metric_model": {
+    "centre": [
+     824.57,
+     447.5
+    ],
+    "aspect_s": 0.275,
+    "phi_deg": 79.2,
+    "median_resid_mm": 0.5806,
+    "inlier_frac_1mm": 0.5737,
+    "improvement": 0.85,
+    "split_half_centre_mm": 1.9461,
+    "split_half_s": [
+     0.25,
+     0.25
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 0,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 112,
+   "z1": 128,
+   "z_mid": 119.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 88668,
+   "mask_centroid": [
+    690.88,
+    446.52
+   ],
+   "debris_frac": 0.3746,
+   "null_thr": {
+    "coh_p99_null": 0.511,
+    "coh_p50_real": 0.367,
+    "contrast_p30": 0.005644853226840496
+   },
+   "admissible_frac_of_mask": 0.1392,
+   "centre": [
+    675.62,
+    442.14
+   ],
+   "n_voters": 12341,
+   "median_resid_mm": 9.0759,
+   "inlier_frac_1mm": 0.078,
+   "conditioning": 0.0329,
+   "multistart_spread_mm": 12.0079,
+   "dist_to_image_centre_mm": 22.647,
+   "dist_to_mask_centroid_mm": 1.097,
+   "half_first_last_mm": 0.8976,
+   "half_centres": [
+    [
+     657.01,
+     433.25
+    ],
+    [
+     644.59,
+     437.04
+    ]
+   ],
+   "split_half_mm": 0.3123,
+   "sectors_fitted": 17,
+   "sector_coverage_0p5mm": 0.0,
+   "sector_median_miss_mm": 4.92,
+   "sectors_conditioned": 0,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 1.82,
+    "1": 6.4528,
+    "2": 12.2744
+   },
+   "R_adm_vox": 306.5,
+   "residual_frac_gt1mm": 0.922,
+   "secondary_centres": [
+    {
+     "centre": [
+      880.03,
+      497.73
+     ],
+     "frac_voters": 0.4591,
+     "conditioning": 0.0457,
+     "inlier_frac_1mm": 0.1659,
+     "accepted": false
+    },
+    {
+     "centre": [
+      541.78,
+      473.94
+     ],
+     "frac_voters": 0.4591,
+     "conditioning": 0.074,
+     "inlier_frac_1mm": 0.1712,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     675.62,
+     442.14
+    ],
+    "median_resid_mm": 9.0759
+   },
+   "metric_model": {
+    "centre": [
+     625.3,
+     450.37
+    ],
+    "aspect_s": 0.376,
+    "phi_deg": 68.3,
+    "median_resid_mm": 2.564,
+    "inlier_frac_1mm": 0.3334,
+    "improvement": 0.717,
+    "split_half_centre_mm": 1.2794,
+    "split_half_s": [
+     0.336,
+     0.367
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": 0.0,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 0,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 128,
+   "z1": 144,
+   "z_mid": 135.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 117608,
+   "mask_centroid": [
+    710.75,
+    454.89
+   ],
+   "debris_frac": 0.4485,
+   "null_thr": {
+    "coh_p99_null": 0.494,
+    "coh_p50_real": 0.29,
+    "contrast_p30": 0.004806399345397949
+   },
+   "admissible_frac_of_mask": 0.1268,
+   "centre": [
+    752.93,
+    540.63
+   ],
+   "n_voters": 14917,
+   "median_resid_mm": 8.6782,
+   "inlier_frac_1mm": 0.0548,
+   "conditioning": 0.076,
+   "multistart_spread_mm": 7.4245,
+   "dist_to_image_centre_mm": 15.099,
+   "dist_to_mask_centroid_mm": 6.605,
+   "half_first_last_mm": 5.9837,
+   "half_centres": [
+    [
+     772.14,
+     559.02
+    ],
+    [
+     793.02,
+     643.04
+    ]
+   ],
+   "split_half_mm": 3.3891,
+   "sectors_fitted": 16,
+   "sector_coverage_0p5mm": 0.0625,
+   "sector_median_miss_mm": 5.8159,
+   "sectors_conditioned": 1,
+   "n_clusters_ge25pct": 1,
+   "cluster_centres": [
+    [
+     909.98,
+     424.02,
+     1
+    ]
+   ],
+   "band_miss_mm": {
+    "0": 3.4632,
+    "1": 8.5438,
+    "2": 7.6885
+   },
+   "R_adm_vox": 362.9,
+   "residual_frac_gt1mm": 0.9452,
+   "secondary_centres": [
+    {
+     "centre": [
+      851.93,
+      689.98
+     ],
+     "frac_voters": 0.8351,
+     "conditioning": 0.0696,
+     "inlier_frac_1mm": 0.1283,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     752.93,
+     540.63
+    ],
+    "median_resid_mm": 8.6782
+   },
+   "metric_model": {
+    "centre": [
+     784.93,
+     526.56
+    ],
+    "aspect_s": 0.275,
+    "phi_deg": 70.5,
+    "median_resid_mm": 2.3781,
+    "inlier_frac_1mm": 0.3664,
+    "improvement": 0.726,
+    "split_half_centre_mm": 3.4169,
+    "split_half_s": [
+     0.415,
+     0.467
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 0,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 144,
+   "z1": 160,
+   "z_mid": 151.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 150796,
+   "mask_centroid": [
+    712.35,
+    471.46
+   ],
+   "debris_frac": 0.3544,
+   "null_thr": {
+    "coh_p99_null": 0.464,
+    "coh_p50_real": 0.326,
+    "contrast_p30": 0.005513494834303856
+   },
+   "admissible_frac_of_mask": 0.1597,
+   "centre": [
+    713.32,
+    504.74
+   ],
+   "n_voters": 24082,
+   "median_resid_mm": 11.2117,
+   "inlier_frac_1mm": 0.0501,
+   "conditioning": 0.0267,
+   "multistart_spread_mm": 11.5158,
+   "dist_to_image_centre_mm": 17.856,
+   "dist_to_mask_centroid_mm": 2.301,
+   "half_first_last_mm": 1.6695,
+   "half_centres": [
+    [
+     744.47,
+     585.86
+    ],
+    [
+     734.31,
+     563.96
+    ]
+   ],
+   "split_half_mm": 0.1683,
+   "sectors_fitted": 18,
+   "sector_coverage_0p5mm": 0.0556,
+   "sector_median_miss_mm": 6.2719,
+   "sectors_conditioned": 3,
+   "n_clusters_ge25pct": 3,
+   "cluster_centres": [
+    [
+     938.17,
+     398.07,
+     1
+    ],
+    [
+     1028.83,
+     319.3,
+     1
+    ],
+    [
+     489.75,
+     542.23,
+     1
+    ]
+   ],
+   "band_miss_mm": {
+    "0": 3.2901,
+    "1": 6.879,
+    "2": 14.2188
+   },
+   "R_adm_vox": 392.3,
+   "residual_frac_gt1mm": 0.9499,
+   "secondary_centres": [
+    {
+     "centre": [
+      829.28,
+      553.86
+     ],
+     "frac_voters": 0.8133,
+     "conditioning": 0.2073,
+     "inlier_frac_1mm": 0.0713,
+     "accepted": false
+    },
+    {
+     "centre": [
+      586.76,
+      578.15
+     ],
+     "frac_voters": 0.1117,
+     "conditioning": 0.0263,
+     "inlier_frac_1mm": 0.0316,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     713.32,
+     504.74
+    ],
+    "median_resid_mm": 11.2117
+   },
+   "metric_model": {
+    "centre": [
+     680.91,
+     514.4
+    ],
+    "aspect_s": 0.413,
+    "phi_deg": 69.6,
+    "median_resid_mm": 5.7603,
+    "inlier_frac_1mm": 0.2003,
+    "improvement": 0.486,
+    "split_half_centre_mm": 1.0115,
+    "split_half_s": [
+     0.462,
+     0.402
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": 0.0,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 0,
+   "confidence": 0.0,
+   "multi_centre": true,
+   "status": "ok",
+   "z0": 160,
+   "z1": 176,
+   "z_mid": 167.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 188120,
+   "mask_centroid": [
+    721.45,
+    485.79
+   ],
+   "debris_frac": 0.3606,
+   "null_thr": {
+    "coh_p99_null": 0.435,
+    "coh_p50_real": 0.326,
+    "contrast_p30": 0.005330895539373159
+   },
+   "admissible_frac_of_mask": 0.1578,
+   "centre": [
+    743.18,
+    575.87
+   ],
+   "n_voters": 29677,
+   "median_resid_mm": 11.3185,
+   "inlier_frac_1mm": 0.024,
+   "conditioning": 0.1388,
+   "multistart_spread_mm": 6.2942,
+   "dist_to_image_centre_mm": 12.705,
+   "dist_to_mask_centroid_mm": 6.405,
+   "half_first_last_mm": 3.9999,
+   "half_centres": [
+    [
+     790.98,
+     670.59
+    ],
+    [
+     745.36,
+     634.98
+    ]
+   ],
+   "split_half_mm": 0.7976,
+   "sectors_fitted": 17,
+   "sector_coverage_0p5mm": 0.0,
+   "sector_median_miss_mm": 6.8602,
+   "sectors_conditioned": 0,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 4.6304,
+    "1": 6.6296,
+    "2": 11.8596
+   },
+   "R_adm_vox": 423.6,
+   "residual_frac_gt1mm": 0.976,
+   "secondary_centres": [
+    {
+     "centre": [
+      794.54,
+      531.9
+     ],
+     "frac_voters": 0.9398,
+     "conditioning": 0.0257,
+     "inlier_frac_1mm": 0.0533,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     743.18,
+     575.87
+    ],
+    "median_resid_mm": 11.3185
+   },
+   "metric_model": {
+    "centre": [
+     794.13,
+     577.16
+    ],
+    "aspect_s": 0.431,
+    "phi_deg": 75.4,
+    "median_resid_mm": 5.1784,
+    "inlier_frac_1mm": 0.1833,
+    "improvement": 0.542,
+    "split_half_centre_mm": 1.2401,
+    "split_half_s": [
+     0.458,
+     0.555
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 0,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 176,
+   "z1": 192,
+   "z_mid": 183.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 240680,
+   "mask_centroid": [
+    734.82,
+    503.45
+   ],
+   "debris_frac": 0.3823,
+   "null_thr": {
+    "coh_p99_null": 0.35,
+    "coh_p50_real": 0.307,
+    "contrast_p30": 0.005140090361237526
+   },
+   "admissible_frac_of_mask": 0.1858,
+   "centre": [
+    663.23,
+    473.73
+   ],
+   "n_voters": 44712,
+   "median_resid_mm": 6.2814,
+   "inlier_frac_1mm": 0.1707,
+   "conditioning": 0.198,
+   "multistart_spread_mm": 6.3374,
+   "dist_to_image_centre_mm": 16.782,
+   "dist_to_mask_centroid_mm": 0.96,
+   "half_first_last_mm": 2.0695,
+   "half_centres": [
+    [
+     741.71,
+     542.68
+    ],
+    [
+     711.79,
+     543.95
+    ]
+   ],
+   "split_half_mm": 0.5935,
+   "sectors_fitted": 27,
+   "sector_coverage_0p5mm": 0.0,
+   "sector_median_miss_mm": 5.6795,
+   "sectors_conditioned": 7,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 2.218,
+    "1": 7.5865,
+    "2": 15.4485
+   },
+   "R_adm_vox": 455.0,
+   "residual_frac_gt1mm": 0.9614,
+   "secondary_centres": [
+    {
+     "centre": [
+      782.9,
+      514.09
+     ],
+     "frac_voters": 0.9502,
+     "conditioning": 0.066,
+     "inlier_frac_1mm": 0.0322,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     736.35,
+     517.26
+    ],
+    "median_resid_mm": 11.0487
+   },
+   "metric_model": {
+    "centre": [
+     663.23,
+     473.73
+    ],
+    "aspect_s": 0.473,
+    "phi_deg": 64.5,
+    "median_resid_mm": 6.2814,
+    "inlier_frac_1mm": 0.1707,
+    "improvement": 0.431,
+    "split_half_centre_mm": 0.1724,
+    "split_half_s": [
+     0.618,
+     0.62
+    ]
+   },
+   "model": "affine_squeeze",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": 0.0,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 0,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 192,
+   "z1": 208,
+   "z_mid": 199.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 274696,
+   "mask_centroid": [
+    745.25,
+    513.49
+   ],
+   "debris_frac": 0.4015,
+   "null_thr": {
+    "coh_p99_null": 0.329,
+    "coh_p50_real": 0.278,
+    "contrast_p30": 0.005041240248829126
+   },
+   "admissible_frac_of_mask": 0.1913,
+   "centre": [
+    773.29,
+    548.42
+   ],
+   "n_voters": 52539,
+   "median_resid_mm": 5.1176,
+   "inlier_frac_1mm": 0.1383,
+   "conditioning": 0.3565,
+   "multistart_spread_mm": 4.8269,
+   "dist_to_image_centre_mm": 15.782,
+   "dist_to_mask_centroid_mm": 1.422,
+   "half_first_last_mm": 1.4967,
+   "half_centres": [
+    [
+     721.77,
+     542.13
+    ],
+    [
+     725.19,
+     520.75
+    ]
+   ],
+   "split_half_mm": 0.1983,
+   "sectors_fitted": 25,
+   "sector_coverage_0p5mm": 0.0,
+   "sector_median_miss_mm": 4.8736,
+   "sectors_conditioned": 4,
+   "n_clusters_ge25pct": 4,
+   "cluster_centres": [
+    [
+     570.19,
+     590.7,
+     1
+    ],
+    [
+     962.97,
+     438.18,
+     1
+    ],
+    [
+     1057.71,
+     564.79,
+     1
+    ],
+    [
+     454.98,
+     546.51,
+     1
+    ]
+   ],
+   "band_miss_mm": {
+    "0": 2.6911,
+    "1": 5.2133,
+    "2": 15.6427
+   },
+   "R_adm_vox": 483.4,
+   "residual_frac_gt1mm": 0.9406,
+   "secondary_centres": [
+    {
+     "centre": [
+      875.14,
+      497.2
+     ],
+     "frac_voters": 0.676,
+     "conditioning": 0.066,
+     "inlier_frac_1mm": 0.0627,
+     "accepted": false
+    },
+    {
+     "centre": [
+      518.24,
+      630.15
+     ],
+     "frac_voters": 0.2382,
+     "conditioning": 0.0911,
+     "inlier_frac_1mm": 0.0791,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     735.94,
+     531.83
+    ],
+    "median_resid_mm": 9.6682
+   },
+   "metric_model": {
+    "centre": [
+     773.29,
+     548.42
+    ],
+    "aspect_s": 0.552,
+    "phi_deg": 79.0,
+    "median_resid_mm": 5.1176,
+    "inlier_frac_1mm": 0.1383,
+    "improvement": 0.471,
+    "split_half_centre_mm": 0.2476,
+    "split_half_s": [
+     0.569,
+     0.579
+    ]
+   },
+   "model": "affine_squeeze",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 2,
+   "confidence": 0.0,
+   "multi_centre": true,
+   "status": "ok",
+   "z0": 208,
+   "z1": 224,
+   "z_mid": 215.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 307512,
+   "mask_centroid": [
+    756.76,
+    525.65
+   ],
+   "debris_frac": 0.3198,
+   "null_thr": {
+    "coh_p99_null": 0.328,
+    "coh_p50_real": 0.258,
+    "contrast_p30": 0.0050093624740839005
+   },
+   "admissible_frac_of_mask": 0.2045,
+   "centre": [
+    768.89,
+    543.11
+   ],
+   "n_voters": 62887,
+   "median_resid_mm": 10.2973,
+   "inlier_frac_1mm": 0.0855,
+   "conditioning": 0.2663,
+   "multistart_spread_mm": 5.0277,
+   "dist_to_image_centre_mm": 14.938,
+   "dist_to_mask_centroid_mm": 1.47,
+   "half_first_last_mm": 1.1102,
+   "half_centres": [
+    [
+     774.84,
+     542.47
+    ],
+    [
+     784.03,
+     555.64
+    ]
+   ],
+   "split_half_mm": 0.1714,
+   "sectors_fitted": 26,
+   "sector_coverage_0p5mm": 0.0769,
+   "sector_median_miss_mm": 6.1456,
+   "sectors_conditioned": 3,
+   "n_clusters_ge25pct": 3,
+   "cluster_centres": [
+    [
+     726.16,
+     401.86,
+     1
+    ],
+    [
+     824.98,
+     302.59,
+     1
+    ],
+    [
+     1029.89,
+     502.54,
+     1
+    ]
+   ],
+   "band_miss_mm": {
+    "0": 2.3702,
+    "1": 5.9624,
+    "2": 12.9295
+   },
+   "R_adm_vox": 483.5,
+   "residual_frac_gt1mm": 0.9145,
+   "secondary_centres": [
+    {
+     "centre": [
+      811.07,
+      575.65
+     ],
+     "frac_voters": 0.8793,
+     "conditioning": 0.2464,
+     "inlier_frac_1mm": 0.0763,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     768.89,
+     543.11
+    ],
+    "median_resid_mm": 10.2973
+   },
+   "metric_model": {
+    "centre": [
+     764.74,
+     545.96
+    ],
+    "aspect_s": 0.607,
+    "phi_deg": 80.9,
+    "median_resid_mm": 6.8507,
+    "inlier_frac_1mm": 0.1262,
+    "improvement": 0.335,
+    "split_half_centre_mm": 0.8159,
+    "split_half_s": [
+     0.604,
+     0.59
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 18,
+   "confidence": 0.0,
+   "multi_centre": true,
+   "status": "ok",
+   "z0": 224,
+   "z1": 240,
+   "z_mid": 231.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 341968,
+   "mask_centroid": [
+    764.03,
+    542.45
+   ],
+   "debris_frac": 0.241,
+   "null_thr": {
+    "coh_p99_null": 0.262,
+    "coh_p50_real": 0.236,
+    "contrast_p30": 0.004849221091717482
+   },
+   "admissible_frac_of_mask": 0.2262,
+   "centre": [
+    770.97,
+    536.6
+   ],
+   "n_voters": 77369,
+   "median_resid_mm": 11.7414,
+   "inlier_frac_1mm": 0.0567,
+   "conditioning": 0.2767,
+   "multistart_spread_mm": 5.3018,
+   "dist_to_image_centre_mm": 15.394,
+   "dist_to_mask_centroid_mm": 0.627,
+   "half_first_last_mm": 0.7591,
+   "half_centres": [
+    [
+     780.76,
+     545.34
+    ],
+    [
+     769.98,
+     543.19
+    ]
+   ],
+   "split_half_mm": 0.4282,
+   "sectors_fitted": 23,
+   "sector_coverage_0p5mm": 0.0435,
+   "sector_median_miss_mm": 7.2048,
+   "sectors_conditioned": 4,
+   "n_clusters_ge25pct": 4,
+   "cluster_centres": [
+    [
+     810.13,
+     357.58,
+     1
+    ],
+    [
+     908.28,
+     647.26,
+     1
+    ],
+    [
+     483.31,
+     439.78,
+     1
+    ],
+    [
+     1000.62,
+     581.05,
+     1
+    ]
+   ],
+   "band_miss_mm": {
+    "0": 3.3957,
+    "1": 7.4131,
+    "2": 13.1603
+   },
+   "R_adm_vox": 514.8,
+   "residual_frac_gt1mm": 0.9433,
+   "secondary_centres": [
+    {
+     "centre": [
+      806.76,
+      549.66
+     ],
+     "frac_voters": 0.9226,
+     "conditioning": 0.2274,
+     "inlier_frac_1mm": 0.0486,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     770.97,
+     536.6
+    ],
+    "median_resid_mm": 11.7414
+   },
+   "metric_model": {
+    "centre": [
+     810.41,
+     512.01
+    ],
+    "aspect_s": 0.564,
+    "phi_deg": 74.5,
+    "median_resid_mm": 7.3084,
+    "inlier_frac_1mm": 0.0911,
+    "improvement": 0.378,
+    "split_half_centre_mm": 1.3784,
+    "split_half_s": [
+     0.491,
+     0.605
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 18,
+   "confidence": 0.0,
+   "multi_centre": true,
+   "status": "ok",
+   "z0": 240,
+   "z1": 256,
+   "z_mid": 247.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 378312,
+   "mask_centroid": [
+    771.21,
+    561.14
+   ],
+   "debris_frac": 0.1808,
+   "null_thr": {
+    "coh_p99_null": 0.243,
+    "coh_p50_real": 0.224,
+    "contrast_p30": 0.0047991336323320866
+   },
+   "admissible_frac_of_mask": 0.2183,
+   "centre": [
+    862.75,
+    573.66
+   ],
+   "n_voters": 82579,
+   "median_resid_mm": 7.4057,
+   "inlier_frac_1mm": 0.1485,
+   "conditioning": 0.3463,
+   "multistart_spread_mm": 4.9329,
+   "dist_to_image_centre_mm": 14.019,
+   "dist_to_mask_centroid_mm": 1.877,
+   "half_first_last_mm": 1.0372,
+   "half_centres": [
+    [
+     806.98,
+     555.08
+    ],
+    [
+     805.16,
+     569.98
+    ]
+   ],
+   "split_half_mm": 0.0595,
+   "sectors_fitted": 26,
+   "sector_coverage_0p5mm": 0.1154,
+   "sector_median_miss_mm": 6.734,
+   "sectors_conditioned": 4,
+   "n_clusters_ge25pct": 4,
+   "cluster_centres": [
+    [
+     686.13,
+     429.08,
+     1
+    ],
+    [
+     772.58,
+     416.1,
+     1
+    ],
+    [
+     939.87,
+     537.26,
+     1
+    ],
+    [
+     499.98,
+     463.47,
+     1
+    ]
+   ],
+   "band_miss_mm": {
+    "0": 4.1047,
+    "1": 6.6798,
+    "2": 13.3146
+   },
+   "R_adm_vox": 549.6,
+   "residual_frac_gt1mm": 0.9428,
+   "secondary_centres": [
+    {
+     "centre": [
+      835.04,
+      583.49
+     ],
+     "frac_voters": 0.9269,
+     "conditioning": 0.299,
+     "inlier_frac_1mm": 0.0414,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     798.34,
+     560.03
+    ],
+    "median_resid_mm": 11.6517
+   },
+   "metric_model": {
+    "centre": [
+     862.75,
+     573.66
+    ],
+    "aspect_s": 0.539,
+    "phi_deg": 63.1,
+    "median_resid_mm": 7.4057,
+    "inlier_frac_1mm": 0.1485,
+    "improvement": 0.364,
+    "split_half_centre_mm": 0.2017,
+    "split_half_s": [
+     0.518,
+     0.512
+    ]
+   },
+   "model": "affine_squeeze",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 18,
+   "confidence": 0.0,
+   "multi_centre": true,
+   "status": "ok",
+   "z0": 256,
+   "z1": 272,
+   "z_mid": 263.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 438420,
+   "mask_centroid": [
+    773.24,
+    581.45
+   ],
+   "debris_frac": 0.1459,
+   "null_thr": {
+    "coh_p99_null": 0.238,
+    "coh_p50_real": 0.253,
+    "contrast_p30": 0.004901879467070103
+   },
+   "admissible_frac_of_mask": 0.2521,
+   "centre": [
+    796.61,
+    598.1
+   ],
+   "n_voters": 110512,
+   "median_resid_mm": 12.4681,
+   "inlier_frac_1mm": 0.0366,
+   "conditioning": 0.4155,
+   "multistart_spread_mm": 5.3896,
+   "dist_to_image_centre_mm": 11.421,
+   "dist_to_mask_centroid_mm": 1.983,
+   "half_first_last_mm": 1.0139,
+   "half_centres": [
+    [
+     811.01,
+     619.81
+    ],
+    [
+     825.39,
+     616.91
+    ]
+   ],
+   "split_half_mm": 0.3637,
+   "sectors_fitted": 30,
+   "sector_coverage_0p5mm": 0.1,
+   "sector_median_miss_mm": 6.0099,
+   "sectors_conditioned": 5,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 2.575,
+    "1": 8.5405,
+    "2": 11.702
+   },
+   "R_adm_vox": 552.9,
+   "residual_frac_gt1mm": 0.9634,
+   "secondary_centres": [
+    {
+     "centre": [
+      837.7,
+      606.89
+     ],
+     "frac_voters": 0.9213,
+     "conditioning": 0.2908,
+     "inlier_frac_1mm": 0.0393,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     796.61,
+     598.1
+    ],
+    "median_resid_mm": 12.4681
+   },
+   "metric_model": {
+    "centre": [
+     826.48,
+     621.22
+    ],
+    "aspect_s": 0.594,
+    "phi_deg": 74.0,
+    "median_resid_mm": 7.7289,
+    "inlier_frac_1mm": 0.086,
+    "improvement": 0.38,
+    "split_half_centre_mm": 1.7908,
+    "split_half_s": [
+     0.596,
+     0.595
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 18,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 272,
+   "z1": 288,
+   "z_mid": 279.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 474516,
+   "mask_centroid": [
+    773.5,
+    584.9
+   ],
+   "debris_frac": 0.191,
+   "null_thr": {
+    "coh_p99_null": 0.255,
+    "coh_p50_real": 0.247,
+    "contrast_p30": 0.005622480995953083
+   },
+   "admissible_frac_of_mask": 0.24,
+   "centre": [
+    780.68,
+    616.57
+   ],
+   "n_voters": 113884,
+   "median_resid_mm": 12.9991,
+   "inlier_frac_1mm": 0.0429,
+   "conditioning": 0.6243,
+   "multistart_spread_mm": 5.691,
+   "dist_to_image_centre_mm": 9.958,
+   "dist_to_mask_centroid_mm": 2.244,
+   "half_first_last_mm": 0.4222,
+   "half_centres": [
+    [
+     791.83,
+     632.04
+    ],
+    [
+     789.47,
+     637.68
+    ]
+   ],
+   "split_half_mm": 0.366,
+   "sectors_fitted": 30,
+   "sector_coverage_0p5mm": 0.0333,
+   "sector_median_miss_mm": 7.3372,
+   "sectors_conditioned": 11,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 6.7792,
+    "1": 10.7475,
+    "2": 12.2183
+   },
+   "R_adm_vox": 544.4,
+   "residual_frac_gt1mm": 0.9571,
+   "secondary_centres": [
+    {
+     "centre": [
+      812.73,
+      600.4
+     ],
+     "frac_voters": 0.9539,
+     "conditioning": 0.3233,
+     "inlier_frac_1mm": 0.0238,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     780.68,
+     616.57
+    ],
+    "median_resid_mm": 12.9991
+   },
+   "metric_model": {
+    "centre": [
+     922.41,
+     600.5
+    ],
+    "aspect_s": 0.522,
+    "phi_deg": 74.2,
+    "median_resid_mm": 7.7179,
+    "inlier_frac_1mm": 0.0864,
+    "improvement": 0.406,
+    "split_half_centre_mm": 1.2745,
+    "split_half_s": [
+     0.564,
+     0.535
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": 0.0,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 34,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 288,
+   "z1": 304,
+   "z_mid": 295.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 516252,
+   "mask_centroid": [
+    772.84,
+    597.08
+   ],
+   "debris_frac": 0.2093,
+   "null_thr": {
+    "coh_p99_null": 0.221,
+    "coh_p50_real": 0.228,
+    "contrast_p30": 0.005719945766031742
+   },
+   "admissible_frac_of_mask": 0.2031,
+   "centre": [
+    771.5,
+    609.61
+   ],
+   "n_voters": 104834,
+   "median_resid_mm": 13.7817,
+   "inlier_frac_1mm": 0.0253,
+   "conditioning": 0.5805,
+   "multistart_spread_mm": 5.8219,
+   "dist_to_image_centre_mm": 10.362,
+   "dist_to_mask_centroid_mm": 0.871,
+   "half_first_last_mm": 0.1975,
+   "half_centres": [
+    [
+     773.95,
+     623.42
+    ],
+    [
+     774.53,
+     620.62
+    ]
+   ],
+   "split_half_mm": 0.083,
+   "sectors_fitted": 30,
+   "sector_coverage_0p5mm": 0.0333,
+   "sector_median_miss_mm": 9.0461,
+   "sectors_conditioned": 11,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 3.4194,
+    "1": 9.1288,
+    "2": 13.4692
+   },
+   "R_adm_vox": 546.7,
+   "residual_frac_gt1mm": 0.9747,
+   "secondary_centres": [
+    {
+     "centre": [
+      845.2,
+      625.64
+     ],
+     "frac_voters": 0.9098,
+     "conditioning": 0.4639,
+     "inlier_frac_1mm": 0.031,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     771.5,
+     609.61
+    ],
+    "median_resid_mm": 13.7817
+   },
+   "metric_model": {
+    "centre": [
+     790.9,
+     684.24
+    ],
+    "aspect_s": 0.502,
+    "phi_deg": 79.1,
+    "median_resid_mm": 7.6178,
+    "inlier_frac_1mm": 0.105,
+    "improvement": 0.447,
+    "split_half_centre_mm": 2.943,
+    "split_half_s": [
+     0.534,
+     0.491
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 34,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 304,
+   "z1": 320,
+   "z_mid": 311.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 589084,
+   "mask_centroid": [
+    767.75,
+    617.77
+   ],
+   "debris_frac": 0.2345,
+   "null_thr": {
+    "coh_p99_null": 0.209,
+    "coh_p50_real": 0.243,
+    "contrast_p30": 0.005749518983066082
+   },
+   "admissible_frac_of_mask": 0.2137,
+   "centre": [
+    770.59,
+    639.54
+   ],
+   "n_voters": 125896,
+   "median_resid_mm": 12.6811,
+   "inlier_frac_1mm": 0.0316,
+   "conditioning": 0.5002,
+   "multistart_spread_mm": 5.6295,
+   "dist_to_image_centre_mm": 8.296,
+   "dist_to_mask_centroid_mm": 1.518,
+   "half_first_last_mm": 0.5842,
+   "half_centres": [
+    [
+     778.07,
+     659.09
+    ],
+    [
+     778.27,
+     667.54
+    ]
+   ],
+   "split_half_mm": 0.4632,
+   "sectors_fitted": 31,
+   "sector_coverage_0p5mm": 0.0,
+   "sector_median_miss_mm": 7.6837,
+   "sectors_conditioned": 17,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 4.6554,
+    "1": 10.7985,
+    "2": 8.1677
+   },
+   "R_adm_vox": 562.3,
+   "residual_frac_gt1mm": 0.9684,
+   "secondary_centres": [
+    {
+     "centre": [
+      805.81,
+      654.16
+     ],
+     "frac_voters": 0.9245,
+     "conditioning": 0.686,
+     "inlier_frac_1mm": 0.0275,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     770.59,
+     639.54
+    ],
+    "median_resid_mm": 12.6811
+   },
+   "metric_model": {
+    "centre": [
+     840.62,
+     649.29
+    ],
+    "aspect_s": 0.619,
+    "phi_deg": 60.5,
+    "median_resid_mm": 11.6011,
+    "inlier_frac_1mm": 0.068,
+    "improvement": 0.085,
+    "split_half_centre_mm": 2.9105,
+    "split_half_s": [
+     0.614,
+     0.619
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 34,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 320,
+   "z1": 336,
+   "z_mid": 327.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 635332,
+   "mask_centroid": [
+    767.45,
+    633.41
+   ],
+   "debris_frac": 0.2673,
+   "null_thr": {
+    "coh_p99_null": 0.175,
+    "coh_p50_real": 0.249,
+    "contrast_p30": 0.006012557074427605
+   },
+   "admissible_frac_of_mask": 0.218,
+   "centre": [
+    769.31,
+    639.73
+   ],
+   "n_voters": 138497,
+   "median_resid_mm": 11.9309,
+   "inlier_frac_1mm": 0.0401,
+   "conditioning": 0.5015,
+   "multistart_spread_mm": 5.666,
+   "dist_to_image_centre_mm": 8.275,
+   "dist_to_mask_centroid_mm": 0.455,
+   "half_first_last_mm": 0.4718,
+   "half_centres": [
+    [
+     772.88,
+     652.69
+    ],
+    [
+     771.39,
+     646.03
+    ]
+   ],
+   "split_half_mm": 0.233,
+   "sectors_fitted": 32,
+   "sector_coverage_0p5mm": 0.0312,
+   "sector_median_miss_mm": 7.8496,
+   "sectors_conditioned": 19,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 4.4838,
+    "1": 9.9451,
+    "2": 8.8183
+   },
+   "R_adm_vox": 568.9,
+   "residual_frac_gt1mm": 0.9599,
+   "secondary_centres": [
+    {
+     "centre": [
+      794.53,
+      614.2
+     ],
+     "frac_voters": 0.9276,
+     "conditioning": 0.3003,
+     "inlier_frac_1mm": 0.0319,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     769.31,
+     639.73
+    ],
+    "median_resid_mm": 11.9309
+   },
+   "metric_model": {
+    "centre": [
+     764.28,
+     582.0
+    ],
+    "aspect_s": 0.584,
+    "phi_deg": 73.2,
+    "median_resid_mm": 10.7228,
+    "inlier_frac_1mm": 0.0961,
+    "improvement": 0.101,
+    "split_half_centre_mm": 2.8683,
+    "split_half_s": [
+     0.608,
+     0.634
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": 0.0,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 34,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 336,
+   "z1": 352,
+   "z_mid": 343.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 678472,
+   "mask_centroid": [
+    763.76,
+    650.37
+   ],
+   "debris_frac": 0.2419,
+   "null_thr": {
+    "coh_p99_null": 0.182,
+    "coh_p50_real": 0.252,
+    "contrast_p30": 0.005850422196090221
+   },
+   "admissible_frac_of_mask": 0.2362,
+   "centre": [
+    757.24,
+    656.28
+   ],
+   "n_voters": 160288,
+   "median_resid_mm": 11.3411,
+   "inlier_frac_1mm": 0.0479,
+   "conditioning": 0.4916,
+   "multistart_spread_mm": 5.2726,
+   "dist_to_image_centre_mm": 7.101,
+   "dist_to_mask_centroid_mm": 0.608,
+   "half_first_last_mm": 0.9494,
+   "half_centres": [
+    [
+     749.32,
+     660.5
+    ],
+    [
+     760.61,
+     668.32
+    ]
+   ],
+   "split_half_mm": 0.3133,
+   "sectors_fitted": 32,
+   "sector_coverage_0p5mm": 0.0,
+   "sector_median_miss_mm": 6.2093,
+   "sectors_conditioned": 13,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 3.8912,
+    "1": 10.3929,
+    "2": 6.191
+   },
+   "R_adm_vox": 582.0,
+   "residual_frac_gt1mm": 0.9521,
+   "secondary_centres": [
+    {
+     "centre": [
+      788.4,
+      634.07
+     ],
+     "frac_voters": 0.916,
+     "conditioning": 0.375,
+     "inlier_frac_1mm": 0.0393,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     757.24,
+     656.28
+    ],
+    "median_resid_mm": 11.3411
+   },
+   "metric_model": {
+    "centre": [
+     767.41,
+     623.13
+    ],
+    "aspect_s": 0.612,
+    "phi_deg": 79.3,
+    "median_resid_mm": 11.4621,
+    "inlier_frac_1mm": 0.0707,
+    "improvement": -0.011,
+    "split_half_centre_mm": 1.0185,
+    "split_half_s": [
+     0.516,
+     0.635
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": null,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 50,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 352,
+   "z1": 368,
+   "z_mid": 359.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 740160,
+   "mask_centroid": [
+    758.83,
+    667.58
+   ],
+   "debris_frac": 0.2082,
+   "null_thr": {
+    "coh_p99_null": 0.17,
+    "coh_p50_real": 0.26,
+    "contrast_p30": 0.005856252275407314
+   },
+   "admissible_frac_of_mask": 0.2516,
+   "centre": [
+    773.17,
+    674.31
+   ],
+   "n_voters": 186260,
+   "median_resid_mm": 10.2579,
+   "inlier_frac_1mm": 0.0564,
+   "conditioning": 0.7229,
+   "multistart_spread_mm": 4.9358,
+   "dist_to_image_centre_mm": 5.935,
+   "dist_to_mask_centroid_mm": 1.095,
+   "half_first_last_mm": 0.4577,
+   "half_centres": [
+    [
+     783.39,
+     682.71
+    ],
+    [
+     777.56,
+     685.84
+    ]
+   ],
+   "split_half_mm": 0.1406,
+   "sectors_fitted": 36,
+   "sector_coverage_0p5mm": 0.0,
+   "sector_median_miss_mm": 6.6734,
+   "sectors_conditioned": 14,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 4.8352,
+    "1": 10.6353,
+    "2": 8.0125
+   },
+   "R_adm_vox": 590.9,
+   "residual_frac_gt1mm": 0.9436,
+   "secondary_centres": [
+    {
+     "centre": [
+      784.97,
+      645.57
+     ],
+     "frac_voters": 0.9411,
+     "conditioning": 0.6598,
+     "inlier_frac_1mm": 0.0386,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     773.17,
+     674.31
+    ],
+    "median_resid_mm": 10.2579
+   },
+   "metric_model": {
+    "centre": [
+     792.15,
+     627.06
+    ],
+    "aspect_s": 0.624,
+    "phi_deg": 75.5,
+    "median_resid_mm": 10.8583,
+    "inlier_frac_1mm": 0.0781,
+    "improvement": -0.059,
+    "split_half_centre_mm": 0.6643,
+    "split_half_s": [
+     0.602,
+     0.58
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": 0.0,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 66,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 368,
+   "z1": 384,
+   "z_mid": 375.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 804700,
+   "mask_centroid": [
+    752.55,
+    688.79
+   ],
+   "debris_frac": 0.2595,
+   "null_thr": {
+    "coh_p99_null": 0.162,
+    "coh_p50_real": 0.256,
+    "contrast_p30": 0.005543604958802462
+   },
+   "admissible_frac_of_mask": 0.2341,
+   "centre": [
+    761.81,
+    706.24
+   ],
+   "n_voters": 188345,
+   "median_resid_mm": 9.5961,
+   "inlier_frac_1mm": 0.0592,
+   "conditioning": 0.6321,
+   "multistart_spread_mm": 4.6926,
+   "dist_to_image_centre_mm": 3.652,
+   "dist_to_mask_centroid_mm": 1.366,
+   "half_first_last_mm": 0.2638,
+   "half_centres": [
+    [
+     767.64,
+     717.44
+    ],
+    [
+     763.98,
+     718.52
+    ]
+   ],
+   "split_half_mm": 0.4643,
+   "sectors_fitted": 36,
+   "sector_coverage_0p5mm": 0.0556,
+   "sector_median_miss_mm": 6.4906,
+   "sectors_conditioned": 13,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 4.2874,
+    "1": 8.6039,
+    "2": 7.3748
+   },
+   "R_adm_vox": 603.1,
+   "residual_frac_gt1mm": 0.9408,
+   "secondary_centres": [
+    {
+     "centre": [
+      796.2,
+      665.8
+     ],
+     "frac_voters": 0.9228,
+     "conditioning": 0.8263,
+     "inlier_frac_1mm": 0.0471,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     761.81,
+     706.24
+    ],
+    "median_resid_mm": 9.5961
+   },
+   "metric_model": {
+    "centre": [
+     768.2,
+     812.84
+    ],
+    "aspect_s": 0.58,
+    "phi_deg": 83.4,
+    "median_resid_mm": 9.2563,
+    "inlier_frac_1mm": 0.0826,
+    "improvement": 0.035,
+    "split_half_centre_mm": 2.9568,
+    "split_half_s": [
+     0.562,
+     0.579
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": 0.0,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 66,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 384,
+   "z1": 400,
+   "z_mid": 391.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 859708,
+   "mask_centroid": [
+    751.07,
+    701.99
+   ],
+   "debris_frac": 0.2851,
+   "null_thr": {
+    "coh_p99_null": 0.159,
+    "coh_p50_real": 0.255,
+    "contrast_p30": 0.005369585007429123
+   },
+   "admissible_frac_of_mask": 0.2316,
+   "centre": [
+    750.86,
+    709.24
+   ],
+   "n_voters": 199114,
+   "median_resid_mm": 8.8508,
+   "inlier_frac_1mm": 0.0748,
+   "conditioning": 0.5446,
+   "multistart_spread_mm": 4.52,
+   "dist_to_image_centre_mm": 3.485,
+   "dist_to_mask_centroid_mm": 0.501,
+   "half_first_last_mm": 0.2476,
+   "half_centres": [
+    [
+     755.14,
+     714.3
+    ],
+    [
+     751.73,
+     715.4
+    ]
+   ],
+   "split_half_mm": 0.1022,
+   "sectors_fitted": 36,
+   "sector_coverage_0p5mm": 0.1111,
+   "sector_median_miss_mm": 6.5927,
+   "sectors_conditioned": 12,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 3.1626,
+    "1": 7.9667,
+    "2": 6.7458
+   },
+   "R_adm_vox": 617.3,
+   "residual_frac_gt1mm": 0.9252,
+   "secondary_centres": [
+    {
+     "centre": [
+      807.04,
+      710.38
+     ],
+     "frac_voters": 0.918,
+     "conditioning": 0.5833,
+     "inlier_frac_1mm": 0.0522,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     750.86,
+     709.24
+    ],
+    "median_resid_mm": 8.8508
+   },
+   "metric_model": {
+    "centre": [
+     703.31,
+     774.73
+    ],
+    "aspect_s": 0.591,
+    "phi_deg": 94.4,
+    "median_resid_mm": 8.3961,
+    "inlier_frac_1mm": 0.0912,
+    "improvement": 0.051,
+    "split_half_centre_mm": 5.6403,
+    "split_half_s": [
+     0.596,
+     0.604
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": 0.0,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 66,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 400,
+   "z1": 416,
+   "z_mid": 407.5
+  },
+  {
+   "n_slices": 16,
+   "mask_area_vox": 897688,
+   "mask_centroid": [
+    750.89,
+    715.0
+   ],
+   "debris_frac": 0.3335,
+   "null_thr": {
+    "coh_p99_null": 0.165,
+    "coh_p50_real": 0.26,
+    "contrast_p30": 0.00512677151709795
+   },
+   "admissible_frac_of_mask": 0.22,
+   "centre": [
+    743.63,
+    726.01
+   ],
+   "n_voters": 197526,
+   "median_resid_mm": 8.4506,
+   "inlier_frac_1mm": 0.0834,
+   "conditioning": 0.7414,
+   "multistart_spread_mm": 4.7854,
+   "dist_to_image_centre_mm": 2.516,
+   "dist_to_mask_centroid_mm": 0.911,
+   "half_first_last_mm": 0.6537,
+   "half_centres": [
+    [
+     738.42,
+     729.16
+    ],
+    [
+     745.96,
+     734.87
+    ]
+   ],
+   "split_half_mm": 0.0598,
+   "sectors_fitted": 35,
+   "sector_coverage_0p5mm": 0.1429,
+   "sector_median_miss_mm": 2.9234,
+   "sectors_conditioned": 15,
+   "n_clusters_ge25pct": 0,
+   "cluster_centres": [],
+   "band_miss_mm": {
+    "0": 1.5234,
+    "1": 2.8384,
+    "2": 6.6597
+   },
+   "R_adm_vox": 626.8,
+   "residual_frac_gt1mm": 0.9166,
+   "secondary_centres": [
+    {
+     "centre": [
+      808.02,
+      712.06
+     ],
+     "frac_voters": 0.9043,
+     "conditioning": 0.7078,
+     "inlier_frac_1mm": 0.0513,
+     "accepted": false
+    }
+   ],
+   "point_model": {
+    "centre": [
+     743.63,
+     726.01
+    ],
+    "median_resid_mm": 8.4506
+   },
+   "metric_model": {
+    "centre": [
+     778.19,
+     732.43
+    ],
+    "aspect_s": 0.603,
+    "phi_deg": 77.8,
+    "median_resid_mm": 8.0713,
+    "inlier_frac_1mm": 0.086,
+    "improvement": 0.045,
+    "split_half_centre_mm": 2.8738,
+    "split_half_s": [
+     0.581,
+     0.583
+    ]
+   },
+   "model": "point",
+   "ray_crossings": {
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    "spread_rel": 0.0,
+    "adjacent_diff_le1_frac": 1.0
+   },
+   "polar_fallbacks": 82,
+   "confidence": 0.0,
+   "multi_centre": false,
+   "status": "ok",
+   "z0": 416,
+   "z1": 432,
+   "z_mid": 423.5
+  }
+ ]
+}

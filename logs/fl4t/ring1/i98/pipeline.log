@@ -1,0 +1,16 @@
+[2026-10-02T17:05:23Z] GP env ok (/opt/hv-ink/bin/python)
+[2026-10-02T17:05:30Z] grow i98 seed (6154.6 7869.5 4744.0) gens 60
+[2026-10-02T17:26:45Z] grow done 1275 s: generated surface 6398602.552480 vx^2 (4.776532 cm^2)
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/fl4/sheetcheck.py", line 7, in <module>
+    i=int(d.rstrip('/').rsplit('_i',1)[1]); s=seeds[i]
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[2026-10-02T17:26:52Z] FAILED: sheetcheck error
+i 98 seed r=1650 R(p10/50/90)=1520/1629/1731 vox  z 3490-5648  |cos(n,radial)| median=0.93 frac>0.8=0.75 frac<0.3=0.06
+GATE {"seed": 98, "median_cos": 0.9279045396710448, "frac_gt08": 0.749497270899167, "R_p10": 1519.6693746681321, "R_p90": 1731.144432275835, "side_cm": 2.03904, "spread_mm_per_cm": 0.8960807525750122, "pass": true}
+[2026-10-02T17:28:04Z] render
+[2026-10-02T17:29:12Z] render ok
+[2026-10-02T17:29:12Z] GP B forward
+[2026-10-02T17:58:56Z] GP B reverse
+[2026-10-02T18:29:49Z] FAILED: GP reverse

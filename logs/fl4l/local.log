@@ -1,0 +1,99 @@
+[2026-10-01T20:28:47Z] env: free 6G before docker
+[2026-10-01T20:30:49Z] model sha mismatch
+[2026-10-01T20:34:22Z] env: free 1G before docker
+GP strict load OK 37959696
+[2026-10-01T20:34:38Z] env OK, free 1G
+[2026-10-01T20:34:46Z] render pherc0268_p4v-01_i1 (free 1G)
+[2026-10-01T20:35:25Z] render pherc0268_p4v-01_i1 FAILED: ds_level=0 ds_scale=1 sA=1 Pg=1 render_scale=1 rendering 4040x4040 at scale 1 crop [4040×4040 from (0,0)] 
+[2026-10-01T20:35:34Z] render pherc0268_p4v-02_i2 (free 1G)
+[2026-10-01T20:37:17Z] render pherc0268_p4v-01_i1 (free 1G)
+[2026-10-01T20:40:12Z] GP B forward pherc0268_p4v-01_i1
+cover pherc0268_p4v-01_i1 forward: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-01T21:35:06Z] GP B reverse pherc0268_p4v-01_i1
+cover pherc0268_p4v-01_i1 reverse: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-01T22:29:46Z] render pherc0268_p4v-02_i2 (free 1G)
+[2026-10-01T22:32:33Z] GP B forward pherc0268_p4v-02_i2
+[2026-10-01T23:14:05Z] docker down: starting via setup_env (restart-proof)
+[2026-10-01T23:14:37Z] render pherc0268_p4v-02_i2 (free 1G)
+[2026-10-01T23:18:09Z] GP B forward pherc0268_p4v-02_i2
+[2026-10-01T23:18:50Z] render pherc0268_p4v-02_i2 (free 3G)
+[2026-10-01T23:21:47Z] GP B forward pherc0268_p4v-02_i2
+[2026-10-01T23:24:44Z] GP B forward pherc0268_p4v-02_i2
+[2026-10-01T23:30:22Z] GP B forward pherc0268_p4v-02_i2
+cover pherc0268_p4v-02_i2 forward: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T00:43:36Z] GP B reverse pherc0268_p4v-02_i2
+cover pherc0268_p4v-02_i2 reverse: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T01:57:25Z] render pherc0268_fl-pherc0211_i4 (free 3G)
+[2026-10-02T02:00:31Z] GP B forward pherc0268_fl-pherc0211_i4
+cover pherc0268_fl-pherc0211_i4 forward: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T03:15:57Z] GP B reverse pherc0268_fl-pherc0211_i4
+cover pherc0268_fl-pherc0211_i4 reverse: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T04:31:10Z] render pherc0268_fl-pherc0257_i5 (free 3G)
+[2026-10-02T04:34:05Z] GP B forward pherc0268_fl-pherc0257_i5
+cover pherc0268_fl-pherc0257_i5 forward: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T05:52:12Z] GP B reverse pherc0268_fl-pherc0257_i5
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/fl4/fl4.py", line 328, in <module>
+    {"list": lambda: cmd_list(a[1], a[2]),
+  File "/home/user/dominion/tools/fl4/fl4.py", line 334, in <lambda>
+    "cover": lambda: cmd_cover(*a[1:8])}[a[0]]()
+                     ^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/fl4/fl4.py", line 284, in cmd_cover
+    p = tifffile.imread(pred_tif)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 1227, in imread
+    with TiffFile(
+         ^^^^^^^^^
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 4359, in __init__
+    fh = FileHandle(file, mode=mode, name=name, offset=offset, size=size)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 13979, in __init__
+    self.open()
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 13999, in open
+    self._fh = open(  # noqa: SIM115
+               ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/work/fl4l/pred/pherc0268_fl-pherc0257_i5_B_forward.tif'
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/fl4/fl4.py", line 328, in <module>
+    {"list": lambda: cmd_list(a[1], a[2]),
+  File "/home/user/dominion/tools/fl4/fl4.py", line 333, in <lambda>
+    "vgrid": lambda: cmd_vgrid(a[1], a[2], a[3], a[4]),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/fl4/fl4.py", line 267, in cmd_vgrid
+    P, V = load_xyz(segdir); p = tifffile.imread(pred_tif)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 1227, in imread
+    with TiffFile(
+         ^^^^^^^^^
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 4359, in __init__
+    fh = FileHandle(file, mode=mode, name=name, offset=offset, size=size)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 13979, in __init__
+    self.open()
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 13999, in open
+    self._fh = open(  # noqa: SIM115
+               ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/work/fl4l/pred/pherc0268_fl-pherc0257_i5_B_forward.tif'
+[2026-10-02T05:55:28Z] GP B reverse pherc0268_fl-pherc0257_i5
+cover pherc0268_fl-pherc0257_i5 reverse: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T07:20:50Z] render pherc0268_fl-pherc0306b_i118 (free 2G)
+[2026-10-02T07:25:39Z] GP B forward pherc0268_fl-pherc0306b_i118
+cover pherc0268_fl-pherc0306b_i118 forward: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T08:53:08Z] GP B reverse pherc0268_fl-pherc0306b_i118
+cover pherc0268_fl-pherc0306b_i118 reverse: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T10:23:11Z] render pherc0268_fl-pherc0257_i117 (free 2G)
+[2026-10-02T10:26:10Z] GP B forward pherc0268_fl-pherc0257_i117
+cover pherc0268_fl-pherc0257_i117 forward: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T11:51:56Z] GP B reverse pherc0268_fl-pherc0257_i117
+cover pherc0268_fl-pherc0257_i117 reverse: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T13:24:12Z] render pherc0268_p4v-02_i114 (free 2G)
+[2026-10-02T13:24:16Z] render pherc0268_p4v-02_i114 FAILED: Error opening remote zarr: HTTP 0 fetching .zgroup: Failed to connect to vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com port 443 via 127.0.0.1 after 0 ms: Could not connect to server 
+[2026-10-02T13:25:41Z] render pherc0268_fl-pherc0257_i101 (free 2G)
+[2026-10-02T13:25:44Z] render pherc0268_fl-pherc0257_i101 FAILED: Error opening remote zarr: HTTP 0 fetching .zgroup: Failed to connect to vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com port 443 via 127.0.0.1 after 0 ms: Could not connect to server 
+[2026-10-02T13:26:39Z] render pherc0268_p4v-02_i98 (free 2G)
+[2026-10-02T13:29:51Z] GP B forward pherc0268_p4v-02_i98
+cover pherc0268_p4v-02_i98 forward: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T14:59:40Z] GP B reverse pherc0268_p4v-02_i98
+cover pherc0268_p4v-02_i98 reverse: 4 cells, 1 window (canvas 4040x4040, T=2315)
+[2026-10-02T16:21:06Z] render pherc0268_fl-pherc0257_i101 (free 2G)
+[2026-10-02T16:24:27Z] GP B forward pherc0268_fl-pherc0257_i101

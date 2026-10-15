@@ -1,0 +1,34 @@
+{
+ "fwd_rev_pearson_0p5mm": 0.982,
+ "controls_rot180_flip": [
+  0.102,
+  0.102
+ ],
+ "frac_gt_thr_fwd": 0.0001,
+ "frac_gt_thr_rev": 0.0,
+ "model": "logs/fl7/global_r1.pt",
+ "heldout": {
+  "shard": "PHerc0343P_20250511003658 (rebuilt 2026-10-10 01:48Z, 600 crops, label frac 0.144)",
+  "global_r1": {
+   "pixel_auc": 0.5793,
+   "pixel_ap": 0.1667,
+   "tile_auc": 0.575
+  },
+  "global_r0_same_shard": {
+   "pixel_auc": 0.5756,
+   "pixel_ap": 0.1644,
+   "tile_auc": 0.582
+  },
+  "global_r0_training_shard": {
+   "pixel_auc": 0.619,
+   "ap": 0.201
+  },
+  "bars": {
+   "auc": 0.9,
+   "ap": 0.5,
+   "tile_auc": 0.85
+  },
+  "pass": false
+ },
+ "secs": 54
+}

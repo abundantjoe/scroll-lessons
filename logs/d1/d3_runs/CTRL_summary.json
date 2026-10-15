@@ -1,0 +1,124 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "arm": "CTRL",
+ "smoke": false,
+ "started_utc": "2026-09-25T12:23:16Z",
+ "finished_utc": "2026-09-25T13:18:28Z",
+ "steps": 2000,
+ "finite_loss_steps": 2000,
+ "loss_first": 0.4599481225013733,
+ "loss_last": 0.4287610650062561,
+ "loss_mean_last50": 0.4359331065416336,
+ "median_s_per_step": 3.107514743001957,
+ "loop_s": 3150.3,
+ "peak_rss_kb": 3972404,
+ "base_checkpoint": {
+  "path": "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth",
+  "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+ },
+ "strict_load": "<All keys matched successfully>",
+ "recipe": {
+  "optimizer": "AdamW",
+  "lr": 2e-05,
+  "weight_decay": 3e-05,
+  "betas": [
+   0.9,
+   0.999
+  ],
+  "schedule": "constant",
+  "grad_clip": 1.0,
+  "batch": 8,
+  "fold_a_per_batch": 0,
+  "replay_per_batch": 8,
+  "precision": "fp32",
+  "seed": 20260925,
+  "z_window": "stack 2..18 (render 7..23) +-2 official jitter",
+  "augmentation": "official default",
+  "threads": {
+   "intra": 3,
+   "interop": 1
+  }
+ },
+ "sampling": {
+  "fold_a_epochs": 0,
+  "replay_epochs": 7
+ },
+ "resumptions": [
+  {
+   "event": "resume",
+   "utc": "2026-09-25T12:25:57Z",
+   "from_step": 1000,
+   "checkpoint_sha256": "c8f6bee6a0db297b578cc4f0255a220cf78e651b041ee1239bef19373cb3f4dd"
+  }
+ ],
+ "checkpoint_events": [
+  {
+   "event": "checkpoint",
+   "step": 250,
+   "mode": "write-then-replace",
+   "used_before_bytes": 1865854237,
+   "utc": "2026-09-25T10:58:12Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 500,
+   "mode": "write-then-replace",
+   "used_before_bytes": 2423315545,
+   "utc": "2026-09-25T11:11:51Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 750,
+   "mode": "write-then-replace",
+   "used_before_bytes": 2302560907,
+   "utc": "2026-09-25T11:25:30Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1000,
+   "mode": "write-then-replace",
+   "used_before_bytes": 2302609073,
+   "utc": "2026-09-25T11:38:22Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1250,
+   "mode": "write-then-replace",
+   "used_before_bytes": 2302661389,
+   "utc": "2026-09-25T12:39:19Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1500,
+   "mode": "write-then-replace",
+   "used_before_bytes": 2302545629,
+   "utc": "2026-09-25T12:52:28Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1750,
+   "mode": "write-then-replace",
+   "used_before_bytes": 2302594005,
+   "utc": "2026-09-25T13:05:14Z"
+  }
+ ],
+ "ckpt_every": 250,
+ "loop_s_note": "loop_s covers the last (resumed) invocation only",
+ "meta": {
+  "arm": "CTRL",
+  "replay_manifest_sha256": "0fc4dd46ed9cbb686f95409d1bd5426fbe1a43ccc58a7c40de372a44b9603ab5",
+  "n_replay": 2643
+ },
+ "checks": {},
+ "train_log": "/work/d3/runs/CTRL/train_log.jsonl",
+ "train_log_sha256": "d8c9e5ce547ad5c2e0bd1f348dd2373688bf7fb2fbad7dae777fa366e78dc7c5",
+ "script": {
+  "path": "/work/d3/scripts/d3_train.py",
+  "sha256": "2943b1b6fb7492433fc1476bb57848d306c705f70ccef575bf701342acf6f52f"
+ },
+ "model_final": {
+  "path": "/work/d3/runs/CTRL/model_final.pth",
+  "sha256": "6b690dda74ba58f11aa4cba2e8bfa1681427050e3352060d76929d76f29597ed",
+  "bytes": 138362335
+ }
+}
