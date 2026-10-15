@@ -1,0 +1,55 @@
+{"tag": "lscpu", "utc_start": "2026-09-26T00:21:08Z", "utc_end": "2026-09-26T00:21:08Z", "command": "lscpu", "exit": 0, "output": "/work/p139c/runlogs/20260926T002108Z_lscpu.log", "output_sha256": "18269c4df3e10f9a7ceccc769e9a0e4351de77618a6c51c2cc178fb979d0c0e1"}
+{"tag": "df", "utc_start": "2026-09-26T00:21:08Z", "utc_end": "2026-09-26T00:21:08Z", "command": "df -h / /tmp", "exit": 0, "output": "/work/p139c/runlogs/20260926T002108Z_df.log", "output_sha256": "834d353139ccdb9d7ad0a866ff45f0ace40ac17a842fc5271402d5f6edb5b95f"}
+{"tag": "free", "utc_start": "2026-09-26T00:21:09Z", "utc_end": "2026-09-26T00:21:09Z", "command": "free -g", "exit": 0, "output": "/work/p139c/runlogs/20260926T002109Z_free.log", "output_sha256": "fbac4818a0cd7d0064397dd54ac029473e2e650cb8ab6d1ef41692d4f62202ce"}
+{"tag": "setup", "utc_start": "2026-09-26T00:21:25Z", "utc_end": "2026-09-26T00:25:56Z", "command": "tools/sib/pairs0139c/setup.sh", "exit": 0, "output": "/work/p139c/runlogs/20260926T002125Z_setup.log", "output_sha256": "95cf90faa33c853429fede4cc4aa9c81f2aa863b9bb451b0992c96e1007982cb"}
+{"tag": "smoke_vc_help", "utc_start": "2026-09-26T05:29:48Z", "utc_end": "2026-09-26T05:29:48Z", "command": "/work/bin/vc vc_render_tifxyz --help", "exit": 0, "output": "/work/p139c/runlogs/20260926T052948Z_smoke_vc_help.log", "output_sha256": "acc6f29cc540900a7af54574ab7a861beed20adf917286cd68275af14d26c44e"}
+{"tag": "smoke_py_import", "utc_start": "2026-09-26T05:29:48Z", "utc_end": "2026-09-26T05:29:49Z", "command": "env PYTHONPATH=src:/work/p139c/smoke/tools /work/p139/py/bin/python -c import hercules.geometry.tifxyz, hercules.pipeline.canvas, sv24, meshfit, fetch; print('imports ok')", "exit": 0, "output": "/work/p139c/runlogs/20260926T052948Z_smoke_py_import.log", "output_sha256": "4683ed95f8f9ece67f82e31ff102902135b306ed5bdc9d5593718fa603e8329d"}
+{"tag": "smoke_fetch_meta", "utc_start": "2026-09-26T05:29:58Z", "utc_end": "2026-09-26T05:29:59Z", "command": "env PYTHONPATH=src:/work/p139c/smoke/tools /work/p139/py/bin/python -c \nfrom fetch import get\nfor k in ['PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/metadata.json','PHerc0139/volumes/20260102150214-2.399um-0.2m-78keV-masked.zarr/metadata.json']:\n    print(k, *get(k))", "exit": 0, "output": "/work/p139c/runlogs/20260926T052958Z_smoke_fetch_meta.log", "output_sha256": "08e811feaec598ddc1dbd1dca4f6e0bec056b022db27d04db8a1ecfce31040b7"}
+{"tag": "smoke_pytest", "utc_start": "2026-09-26T05:29:59Z", "utc_end": "2026-09-26T05:30:01Z", "command": "env PYTHONPATH=/home/user/dominion/src /work/p139/py/bin/python -m pytest -q tests/", "exit": 0, "output": "/work/p139c/runlogs/20260926T052959Z_smoke_pytest.log", "output_sha256": "349608bc561720954b4695249d6be0c62fced44d08ffc726bb83563b6071de42"}
+{"tag": "note", "utc_logged": "2026-09-26T05:30:16Z", "exit": null, "output_sha256": null, "note": "setup waiter (pgrep -f loop) never exited because the pattern matched its own command line; killed by hand at ~05:29Z (exit 144); setup itself had finished OK"}
+{"tag": "note", "utc_logged": "2026-09-26T05:30:16Z", "exit": null, "output_sha256": null, "note": "HANDOVER waiter v1 (5 min, started 00:21Z) killed by hand at ~05:31Z (exit 144; pkill also ended the calling shell); restarted with a 10 min interval per the orchestrator check-in at 05:25Z; HANDOVER.md absent at 05:29Z"}
+{"tag": "note", "utc_logged": "2026-09-26T05:30:16Z", "exit": null, "output_sha256": null, "note": "container not reclaimed between 00:21Z and 05:29Z: dockerd, /work/villa build (7 apps), /work/p139/py intact"}
+{"tag": "wait_handover_v2", "utc_logged": "2026-09-26T11:31:03Z", "command": "tools/sib/pairs0139c/wait_handover.sh", "exit": 3, "output_sha256": null, "note": "timeout 2026-09-26T11:30:43Z; HANDOVER.md absent; pairs0139 tip 3ed0fc11ae7a0d65f30a899ac05e05f7af378aeb; ASK.md written"}
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+[line withheld: prize-candidate detail under review]
+{"tag":"verso_20260701183124-w010-027_r4_c15","lane":"A","utc_start":"2026-10-01T00:19:34Z","utc_end":"2026-10-01T00:28:06Z","command":"OWN_WORK=/work/own /opt/ckb/bin/python tools/p4/infer_verso.py --model /work/own/arm_S1/model_final.pth --summary /work/own/arm_S1/summary.json --tiles 20260701183124-w010-027:4,15 --out /work/own/verso_A --threads 2","exit":0,"output_sha256":"ecb724e2cab7b5ae40b04c37fc270ffde9a13c51e5f7dc298bbfdf1a925584c4"}
+{"tag":"verso_20260701183124-w010-027_r0_c17","lane":"B","utc_start":"2026-10-01T00:19:34Z","utc_end":"2026-10-01T00:35:12Z","command":"OWN_WORK=/work/own /opt/ckb/bin/python tools/p4/infer_verso.py --model /work/own/arm_S1/model_final.pth --summary /work/own/arm_S1/summary.json --tiles 20260701183124-w010-027:0,17 --out /work/own/verso_B --threads 2","exit":0,"output_sha256":"9725e65ef77b8d7609a4bfc87e0433d12fa1796634c5c9225427c018b3a45e01"}
+{"tag":"verso_20260701183124-w010-027_r5_c18","lane":"A","utc_start":"2026-10-01T00:28:08Z","utc_end":"2026-10-01T00:36:09Z","command":"OWN_WORK=/work/own /opt/ckb/bin/python tools/p4/infer_verso.py --model /work/own/arm_S1/model_final.pth --summary /work/own/arm_S1/summary.json --tiles 20260701183124-w010-027:5,18 --out /work/own/verso_A --threads 2","exit":0,"output_sha256":"d53802fcbcaa8dd9f9484869bc40d86fe3b6efeda497a7dc84ae8bef78e61e98"}
+{"tag":"verso_20260701183124-w010-027_r1_c20","lane":"B","utc_start":"2026-10-01T00:35:14Z","utc_end":"2026-10-01T00:38:07Z","command":"OWN_WORK=/work/own /opt/ckb/bin/python tools/p4/infer_verso.py --model /work/own/arm_S1/model_final.pth --summary /work/own/arm_S1/summary.json --tiles 20260701183124-w010-027:1,20 --out /work/own/verso_B --threads 2","exit":0,"output_sha256":"33b5e32ba144994d4b5fe28987265acd72bb92e0f85ba29c510f618bc9aa9c27"}
+{"tag":"fwd_20260701183124-w010-027_r1_c20","lane":"B","utc_start":"2026-10-01T00:38:09Z","utc_end":"2026-10-01T00:41:04Z","command":"OWN_WORK=/work/own /opt/ckb/bin/python tools/sib/own-lead/infer.py --model /work/own/arm_S1/model_final.pth --summary /work/own/arm_S1/summary.json --tiles 20260701183124-w010-027:1,20 --out /work/own/fwdx_B --threads 2","exit":0,"output_sha256":"3d7932cb113e9caa05e215d25a81736e5f34b9bf1c4f0bd06e82f45b8f3756c1"}
+{"tag":"verso_20260701183124-w010-027_r6_c9","lane":"A","utc_start":"2026-10-01T00:36:11Z","utc_end":"2026-10-01T00:43:56Z","command":"OWN_WORK=/work/own /opt/ckb/bin/python tools/p4/infer_verso.py --model /work/own/arm_S1/model_final.pth --summary /work/own/arm_S1/summary.json --tiles 20260701183124-w010-027:6,9 --out /work/own/verso_A --threads 2","exit":0,"output_sha256":"5eeb45b619f77a64392169ca9d62b30b078c6ce58d7a7bcb7a30252892b87953"}
+{"tag":"verso_20260701183124-w010-027_r2_c11","lane":"B","utc_start":"2026-10-01T00:41:06Z","utc_end":"2026-10-01T00:48:58Z","command":"OWN_WORK=/work/own /opt/ckb/bin/python tools/p4/infer_verso.py --model /work/own/arm_S1/model_final.pth --summary /work/own/arm_S1/summary.json --tiles 20260701183124-w010-027:2,11 --out /work/own/verso_B --threads 2","exit":0,"output_sha256":"ec393946bb1d95a1639a77536334982f007b0d7b2a3bd0749d23b0cd5a6116c9"}
+{"tag":"fwd_20260701183124-w010-027_r6_c9","lane":"A","utc_start":"2026-10-01T00:43:58Z","utc_end":"2026-10-01T00:51:55Z","command":"OWN_WORK=/work/own /opt/ckb/bin/python tools/sib/own-lead/infer.py --model /work/own/arm_S1/model_final.pth --summary /work/own/arm_S1/summary.json --tiles 20260701183124-w010-027:6,9 --out /work/own/fwdx_A --threads 2","exit":0,"output_sha256":"d7c5f70ff32e3c805f5063e8e7ec01a809e954cb88ad8881eb1dcc1770b68028"}
+{"tag":"verso_20260701183124-w010-027_r7_c12","lane":"B","utc_start":"2026-10-01T00:49:00Z","utc_end":"2026-10-01T00:57:38Z","command":"OWN_WORK=/work/own /opt/ckb/bin/python tools/p4/infer_verso.py --model /work/own/arm_S1/model_final.pth --summary /work/own/arm_S1/summary.json --tiles 20260701183124-w010-027:7,12 --out /work/own/verso_B --threads 2","exit":0,"output_sha256":"b38d4218af6adf7e68dac77b7990bde0421325a58023a39deafe22638d83f14e"}
