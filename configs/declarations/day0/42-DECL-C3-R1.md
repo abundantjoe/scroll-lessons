@@ -1,0 +1,6 @@
+C3 re-declaration (once), citing C3-RUN1 (VOID: metric definition did not match the one the bars were set on). Declared before any data of the new crop exists: our C2 map of the new crop has never been computed.
+- Data: same w040 inputs as DECL-C3. NEW crop: the 2048 x 2048 px square on the w040 SV canvas, on a 256 px grid, with no overlap with the run-1 crop (x 1152-3199, y 2048-4095), fully inside the render-valid area, with the largest number of supervision-mask pixels (ties: smaller y0, then smaller x0), chosen by code (tools/c3/pick_crop_r1.py, hashed in METRIC-HASH-6) before any map of it is made.
+- Chain: identical to run 1 (official vc_render_tifxyz --flip-normals -n 28 on the crop; C2 with --tta-mirror, both orders; also without TTA).
+- Metrics (code tools/c3/auc_eval.py + src/hercules/metrics/pixel.py, METRIC-HASH-6): render Pearson (pooled and min slice) vs team SV on the new crop; AUC inside the organizers' supervision mask (ink = label 255, blank = label 0 inside the mask, valid pixels), both orders.
+- Bars (unchanged, section 4.C3): pooled Pearson >= 0.999; forward AUC >= 0.987 and reverse AUC < 0.60 under C2 with TTA.
+- Default: FAIL at 24 h past 2026-09-27. An auditor (fresh agent) re-derives the AUCs from the saved maps and labels before the verdict entry.

@@ -1,0 +1,15 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-6 item 2 / DECL-P4-12 item 1 for E2 and C2 (2.4 um); frozen before any per-tile 2.4 um number",
+ "T_mid": 93,
+ "T_hi": 203,
+ "source": "adopted verbatim from p4-l2 logs/sib/p4-l2/l2/thresholds.json (commit c6a7c9b on origin/claude/gifted-bell-gavnl5-sib-p4-l2, sha256 ca715bc12a2955fef582117f166eaf335b351fff82dd29a3a9b1beaea5d09b14), pushed before p4-highz froze its own, per PROTOCOL_2p4.md; control 20260701183125-w028-037 2.4 um SV, level 0, slices 48..60",
+ "p4_highz_own_values": "reported in physics_2p4.json once the 6 % sample is complete (not used for any rule)",
+ "applies_to": [
+  "E2",
+  "C2"
+ ],
+ "n_hi_rule": "sheet-slab (48..60) voxels > T_hi",
+ "tile_value": "clip(255 * (max_sheet - T_mid) / (T_hi - T_mid), 0, 255); 0 outside mesh-valid (tiles are p4-l2's)",
+ "utc": "2026-09-26T18:36:28Z"
+}
