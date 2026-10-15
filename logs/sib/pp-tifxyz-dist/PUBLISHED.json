@@ -1,0 +1,17 @@
+{
+ "repo_url": "https://github.com/abundantjoe/tifxyz-dist",
+ "commit_sha": "dfaa71a77b4de38699ba3bec6eb6665b7d5b7d85",
+ "base_commit": "8f28fd0 (owner Initial commit, LICENSE)",
+ "tests_passed": "25/25",
+ "scrub_ok": true,
+ "about": "Exact, certified distances between tifxyz surfaces and points or other meshes, for train/prediction overlap checks.",
+ "summary": "(1) Public PHerc0172 (Scroll 5) segment meshes on volume 20241024131838 (7.91 um), Vesuvius Challenge open data. (2) Milestone prizes require that training and prediction regions do not overlap; tifxyz-dist proves the clearance between any candidate region and every training segment, so ink results can be shown independent. (3) Exact point-to-triangle distances with no densification, and certified mesh-to-mesh lower/upper bounds with a witness, including edge-to-edge contacts that vertex checks overestimate (5.1 vs 1.0 vox). (4) 25/25 tests; kernel vs independent implementation 2.1e-14; on-surface error 2.7e-12 vox on public w062; nearest-vertex error up to 13.1 vox vs 0.0. Demo, 243 manual x auto-grown pairs: w078 touches all 9 auto-grown segments (0.003-0.139 vox); w066 contacts come only from isolated stray vertices; at a 20 vox margin 225 PASS, 18 FAIL, 0 inconclusive.",
+ "demo_status": "243 of 396 manual x auto_grown pairs frozen in results/; remaining pairs resumable with demo/pairwise.py",
+ "sheet_mismatch": [
+  "Sheet: 'Points on a real organizer surface return at most 1.6e-11 voxel'. Published: 2.7e-12 vox (100 000 points on public PHerc0172 w062; demo/accuracy.py). 1.6e-11 came from the earlier private version on a different mesh; replace it.",
+  "Sheet (2): 'returns the exact minimum distance from any point set or mesh'. Published: exact for point sets; for mesh-to-mesh it is a certified [lower, upper] interval with a witness (exact only after refinement closes the gap). Suggest 'exact distance from any point set, and certified bounds for mesh-to-mesh clearance'.",
+  "Sheet (4): 'The batched method, a per-point loop and brute force agree exactly on curved sheets with holes, folds and a worst-case lattice'. Published: agree to <=1e-6 vox in tests on curved sheets with holes and the lattice (demo/accuracy.py: 0.0 over 4 000 queries); folds are checked against analytic values, not brute force. Suggest 'agree to 1e-6 vox; folds match analytic distances'.",
+  "Sheet: 'The test suite passes' -> state '25/25 tests pass'.",
+  "CITATION_RULES names the post '$335k awarded in July'; its actual title is '$33.5K awarded in July' (URL slug 335k-awarded-in-july). README uses the real title. The post gives no repository link for Josep Carrera's intersection tool."
+ ]
+}
