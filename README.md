@@ -1,4 +1,3 @@
-<p align="center"><img src="figures/dominion_banner.png" alt="Dominion banner: axial CT slice of the scroll PHerc0343 in ember tones under the title DOMINION" width="100%"></p>
 <p align="center"><a href="MASTER_LESSONS.md"><img src="figures/sub_banner.png" alt="Start here: one file holds everything we learned. Download MASTER_LESSONS.md and give it to your AI as context." width="100%"></a></p>
 
 # Scroll Lessons
