@@ -1,0 +1,192 @@
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 32
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 32
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "data": "SYNTHETIC stage-C tree (no real data, no image opened)",
+ "trainer_head_commit": "08d7e42da1bc2a01c55b8ca0659f00c2b2c33935",
+ "code_sha256": {
+  "d2_train.py": "2c94ca54ab7699487868a32090d9646040a8f0ef93598fe0b288c4a7bedb4531",
+  "d2_data.py": "e23ac6e69963d7472af71920c418b8f6df9170a9e5450b1a312e4709c60479a2",
+  "pair_freeze.py": "4e407f53d697db33272a4e3cf623a9b50cbb4ea12431051db3772502e0768f64"
+ },
+ "freeze": {
+  "record_sha256": "7ea3fd2a34ba642f85aefd6c3317660b555a78941de4b82697420d151fbf5bf7",
+  "data_registry_digest": "b2c9dd4407be888d76353c29ca66cf23e25146f42789195c7be08fd50d86141b",
+  "counts": {
+   "after_holdouts": 19,
+   "held_out": 5,
+   "passed": 24
+  },
+  "allow_ids": {
+   "file": "/work/d2null/holdout/freeze/allow_pairs0814u.json",
+   "n": 19,
+   "sha256": "4e77995b345c703177a931a939f46f4990401149ae6b9e58c16e33caea60a475"
+  },
+  "verified_load": {
+   "ink_px": 1065169,
+   "label_rule_mismatch_px": 0,
+   "n_patches": 19,
+   "registry_sha256": "f6f9bb6d17a933d1a738272aa35c8313eb04163083a233e29be93bd79bb5947f",
+   "size_px": 384,
+   "supervised_px": 2064835
+  },
+  "holdout_ids_total": 6
+ },
+ "configs": {
+  "NULL": {
+   "config": "/work/d2null/holdout/cfg_NULL.json",
+   "sha256": "28c3807c67753a265ab0ef7692b6bdaf1ce4a06694b43c1e268370de46b449d3"
+  },
+  "P384": {
+   "config": "/work/d2null/holdout/cfg_P384.json",
+   "sha256": "07b26f18853aa1ed1abadd8f9ddcd5194b5c19860c811a3bd42a9689e649f652"
+  }
+ },
+ "config_allow_sha256_equals_freeze": true,
+ "pool": {
+  "n_pool_total": 24,
+  "n_holdout_listed": 6,
+  "n_holdout_in_pool": 5,
+  "n_loaded_NULL": 19,
+  "n_loaded_P384": 19,
+  "loaded_equals_allowlist": true,
+  "held_out_loaded": []
+ },
+ "derangement": {
+  "n": 19,
+  "perm_sha256": "da517646c58f65bc007207aaaecfc413e5ca10baab97a15f01565f7d2114812a",
+  "matches_trainer": true,
+  "fixed_points": 0,
+  "labels_equal_fresh_allowed_permuted": true,
+  "label_arrays_equal_to_a_held_out_patch": 0,
+  "P384_labels_unpermuted": true
+ },
+ "draws": {
+  "batches": 12,
+  "samples": 384,
+  "all_drawn_allowed_and_not_held": true,
+  "distinct_patches_drawn": 19
+ },
+ "pairing": {
+  "images_equal_every_batch": false,
+  "digest_equal_every_batch": false,
+  "labels_differ_every_batch": true
+ },
+ "tamper_edited_allowlist": "refused: source pairs0814u: allow_ids file changed since the config was made"
+}

@@ -1,0 +1,139 @@
+{
+ "run_A": {
+  "steps": 10,
+  "finite_loss_steps": 10,
+  "losses": [
+   0.6520406827330589,
+   0.5885724052786827,
+   0.5705139189958572,
+   0.5723723247647285,
+   0.5669563189148903,
+   0.5661607086658478,
+   0.5660108774900436,
+   0.567022368311882,
+   0.566644661128521,
+   0.5662112832069397
+  ],
+  "s_per_step": [
+   161.33396664799875,
+   145.8239369740004,
+   148.54503329200088,
+   149.5737995169984,
+   148.9640826549985,
+   149.66994043399973,
+   147.27429476799807,
+   145.46518369499972,
+   151.01654827999664,
+   147.51931586900173
+  ],
+  "median_s_per_step": 148.7545579734997,
+  "median_s_per_step_excl_step1": 148.54503329200088,
+  "peak_rss_kb_ru_maxrss": 9695212,
+  "peak_rss_kb_gnu_time": 9695212,
+  "wall_s": 1505.4,
+  "loop_s": 1495.9,
+  "threads": {
+   "intra": 4,
+   "interop": 1
+  },
+  "checks": {
+   "null_fixed_points": 0,
+   "null_patches_whose_ink_differs_from_own": 96,
+   "rot_margin_full": "per-subtile (edge sub-tiles padded, padding ignored)",
+   "subtiles_per_patch": {
+    "syn": 1
+   }
+  },
+  "derangement": {
+   "rule": "default_rng(seed).permutation over the concatenated role=train patches, redrawn until no fixed point; patch i gets patch perm[i]'s labels",
+   "attempts": 1,
+   "fixed_points": 0,
+   "perm_sha256": "9507b7963eaf771d49b77032f3c3eada63ae1a734c9bd8e2b28b03ab6a487aba",
+   "perm_head": [
+    56,
+    8,
+    68,
+    38,
+    16,
+    47,
+    80,
+    29,
+    81,
+    70
+   ]
+  },
+  "checkpoint_events": [
+   {
+    "event": "checkpoint",
+    "step": 5,
+    "utc": "2026-09-26T05:42:09Z",
+    "local_bytes": 414964028,
+    "seconds": 0.26
+   }
+  ],
+  "model_final_sha256": "1040fb2783cce9f675f8e8d8b2fe8d59b38bb50ed274e0ee912936c4bd61f60f",
+  "sample_digest_final": "16f8a940d0161d4b4ec8f820ebbddcc6ba595920614cbfeaa9804ed4a9620e2b"
+ },
+ "resume": {
+  "crash_after_step": 7,
+  "resumed_from_step": [
+   5
+  ],
+  "resumptions": [
+   {
+    "event": "resume",
+    "utc": "2026-09-26T06:12:00Z",
+    "from_step": 5,
+    "source": "local"
+   }
+  ],
+  "losses_steps_1_7_equal_A": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "losses_after_resume_B": [
+   0.5661607086658478,
+   0.5660108774900436,
+   0.567022368311882,
+   0.566644661128521,
+   0.5662112832069397
+  ],
+  "losses_steps_6_10_A": [
+   0.5661607086658478,
+   0.5660108774900436,
+   0.567022368311882,
+   0.566644661128521,
+   0.5662112832069397
+  ],
+  "final_losses_equal": true,
+  "final_weights_bitwise_equal": true,
+  "final_weights_max_abs_diff": 0.0,
+  "model_final_sha256_A": "1040fb2783cce9f675f8e8d8b2fe8d59b38bb50ed274e0ee912936c4bd61f60f",
+  "model_final_sha256_B": "1040fb2783cce9f675f8e8d8b2fe8d59b38bb50ed274e0ee912936c4bd61f60f",
+  "sample_digest_equal": true,
+  "peak_rss_kb_gnu_time_resume": 9867192
+ },
+ "derangement_independent": {
+  "n_train_patches": 96,
+  "attempts": 1,
+  "perm_sha256": "9507b7963eaf771d49b77032f3c3eada63ae1a734c9bd8e2b28b03ab6a487aba",
+  "matches_trainer_perm_sha256": true,
+  "fixed_points": 0,
+  "is_derangement": true,
+  "is_permutation": true,
+  "labels_equal_fresh_perm": true,
+  "patches_whose_labels_equal_their_own": 0,
+  "images_untouched": true,
+  "cycle_lengths_min": 4,
+  "n_cycles": 5,
+  "pool_ink_frac_before": 0.3803106943766276,
+  "pool_ink_frac_after": 0.3803106943766276,
+  "pool_sup_frac_before": 0.7373466491699219,
+  "pool_sup_frac_after": 0.7373466491699219
+ }
+}

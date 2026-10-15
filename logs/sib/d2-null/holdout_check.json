@@ -1,0 +1,77 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "data": "SYNTHETIC stage-C tree (no real data, no image opened)",
+ "trainer_head_commit": "08d7e42da1bc2a01c55b8ca0659f00c2b2c33935",
+ "code_sha256": {
+  "d2_train.py": "2c94ca54ab7699487868a32090d9646040a8f0ef93598fe0b288c4a7bedb4531",
+  "d2_data.py": "e23ac6e69963d7472af71920c418b8f6df9170a9e5450b1a312e4709c60479a2",
+  "pair_freeze.py": "4e407f53d697db33272a4e3cf623a9b50cbb4ea12431051db3772502e0768f64"
+ },
+ "freeze": {
+  "record_sha256": "7ea3fd2a34ba642f85aefd6c3317660b555a78941de4b82697420d151fbf5bf7",
+  "data_registry_digest": "b2c9dd4407be888d76353c29ca66cf23e25146f42789195c7be08fd50d86141b",
+  "counts": {
+   "after_holdouts": 19,
+   "held_out": 5,
+   "passed": 24
+  },
+  "allow_ids": {
+   "file": "/work/d2null/holdout/freeze/allow_pairs0814u.json",
+   "n": 19,
+   "sha256": "4e77995b345c703177a931a939f46f4990401149ae6b9e58c16e33caea60a475"
+  },
+  "verified_load": {
+   "ink_px": 1065169,
+   "label_rule_mismatch_px": 0,
+   "n_patches": 19,
+   "registry_sha256": "f6f9bb6d17a933d1a738272aa35c8313eb04163083a233e29be93bd79bb5947f",
+   "size_px": 384,
+   "supervised_px": 2064835
+  },
+  "holdout_ids_total": 6
+ },
+ "configs": {
+  "NULL": {
+   "config": "/work/d2null/holdout/cfg_NULL.json",
+   "sha256": "28c3807c67753a265ab0ef7692b6bdaf1ce4a06694b43c1e268370de46b449d3"
+  },
+  "P384": {
+   "config": "/work/d2null/holdout/cfg_P384.json",
+   "sha256": "07b26f18853aa1ed1abadd8f9ddcd5194b5c19860c811a3bd42a9689e649f652"
+  }
+ },
+ "config_allow_sha256_equals_freeze": true,
+ "pool": {
+  "n_pool_total": 24,
+  "n_holdout_listed": 6,
+  "n_holdout_in_pool": 5,
+  "n_loaded_NULL": 19,
+  "n_loaded_P384": 19,
+  "loaded_equals_allowlist": true,
+  "held_out_loaded": []
+ },
+ "derangement": {
+  "n": 19,
+  "perm_sha256": "da517646c58f65bc007207aaaecfc413e5ca10baab97a15f01565f7d2114812a",
+  "matches_trainer": true,
+  "fixed_points": 0,
+  "labels_equal_fresh_allowed_permuted": true,
+  "label_arrays_equal_to_a_held_out_patch": 0,
+  "P384_labels_unpermuted": true
+ },
+ "draws": {
+  "batches": 12,
+  "samples": 384,
+  "all_drawn_allowed_and_not_held": true,
+  "distinct_patches_drawn": 19
+ },
+ "pairing": {
+  "method": "pair_check.py per arm in separate processes, batch draws only",
+  "batches": 12,
+  "images_equal_every_batch": true,
+  "digest_equal_every_batch": true,
+  "labels_differ_every_batch": true,
+  "null_in_process_digest_equals_subprocess": true
+ },
+ "tamper_edited_allowlist": "refused: source pairs0814u: allow_ids file changed since the config was made"
+}

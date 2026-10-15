@@ -1,0 +1,67 @@
+{
+ "amx_gate": null,
+ "arm": "NULL",
+ "base_checkpoint": {
+  "name": "ink_9um hybrid_3d2d seed42 step-075000 (HF scrollprize/ink_9um rev 7109667e)",
+  "path": "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth",
+  "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+ },
+ "batch": 32,
+ "ckpt": {
+  "every": 250,
+  "remote_ref": null,
+  "shard_bytes": 90000000
+ },
+ "deterministic": true,
+ "forward": "full",
+ "label_rule": {
+  "blank_max": 100,
+  "ink_min": 150
+ },
+ "lineage": {
+  "decl": "DECL-D2",
+  "parent": "base",
+  "parent_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+ },
+ "log_every": 50,
+ "micro_batch": 4,
+ "null": true,
+ "optimizer": {
+  "betas": [
+   0.9,
+   0.999
+  ],
+  "grad_clip": 1.0,
+  "lr": 2e-05,
+  "name": "adamw",
+  "schedule": "constant",
+  "weight_decay": 3e-05
+ },
+ "precision": "fp32",
+ "rev": false,
+ "rot24": true,
+ "schema": "hercules-d2-trainer-config/1",
+ "seed": 1,
+ "sources": [
+  {
+   "allow_ids": "/work/d2null/holdout/freeze/allow_pairs0814u.json",
+   "allow_ids_sha256": "4e77995b345c703177a931a939f46f4990401149ae6b9e58c16e33caea60a475",
+   "data_root": "/work/d2null/holdout/tree",
+   "kind": "stagec",
+   "name": "pairs0814u",
+   "path": "/work/d2null/holdout/tree/logs/sib/pairs0814",
+   "role": "train",
+   "sha256": "f6f9bb6d17a933d1a738272aa35c8313eb04163083a233e29be93bd79bb5947f"
+  }
+ ],
+ "steps": 12000,
+ "subtile": true,
+ "threads": 4,
+ "tile": 384,
+ "z": {
+  "centre_offset": 0,
+  "jitter": 2,
+  "stack_depth": 21,
+  "window": 17
+ }
+}
