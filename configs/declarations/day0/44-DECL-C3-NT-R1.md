@@ -1,0 +1,5 @@
+Re-declaration (once) of the C2-NT gate, citing C3-NT-VERDICT (VOID: an undisclosed prior no-TTA map covered the w040 crop).
+- Data: PHerc0139 segment w044 (base-trained; official native9 human labels; volume 20250728140407), which no model map of this project has ever covered. If w044 lacks a team SV or a supervision mask, the next of w035, w041, w039 that has both is used (order fixed now). Crop: the output of tools/c3/pick_crop_seg.py (2048 px, 256 px grid, fully mesh-valid, maximum supervision pixels, ties smaller y0 then x0), run once before any render or model map of the segment exists.
+- Disclosure: C2-NT was chosen after seeing its w040 numbers (0.9968 / 0.99347 / 0.99926 forward on three crops); this gate tests fidelity on another base-trained segment and is never evidence of generalisation.
+- Chain, metrics, bars and consequence as DECL-C3-NT (pooled Pearson >= 0.999; forward AUC >= 0.987; reverse < 0.60; supervision-mask AUC; auditor before the verdict).
+- Default: FAIL at 24 h past 2026-09-27; a second VOID also means FAIL.

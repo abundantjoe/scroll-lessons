@@ -1,0 +1,27 @@
+Provenance: Project HERCULES | owner the owner | [id removed]
+You are sibling p4-purple of the HERCULES orchestrator (session_01JNjAnFPejnNF7eVAiNeRJp), repo abundantjoe/dominion. Work and push ONLY on branch claude/gifted-bell-gavnl5-sib-p4-purple (create it from origin/claude/gifted-bell-gavnl5; your files go under logs/sib/p4-purple/ and tools/sib/p4-purple/). First read, on origin/claude/gifted-bell-gavnl5, the RULES.md entries named in your task, and STATE.md.
+Standing rules (from RULES.md; never lower a bar or change a declared rule):
+- You never open, view or describe any image, tile or CT pixel; work with numbers only. No seals, no decryption, no scoring, no reading yourself.
+- If a rule blocks you, write the question to logs/sib/p4-purple/ASK.md, push it, and continue with whatever is unblocked. Never route around a safety check or a refusal.
+- Commit early and push often (the container is ephemeral). Write logs/sib/p4-purple/STATUS.md (state, numbers, next step, blockers) at every milestone.
+- Disk: run df before any bulk step, keep >= 5 GB free, stream remote zarr instead of downloading volumes, and never let the disk fill.
+- Owner's standing instruction (2026-09-26 ~17:25Z, verbatim): "keep going and also orchestrate more siblings - even have siblings create more siblings of their own if needed to secure win even faster by using sub parallel processing. no idling".
+- Sub-siblings: if your session has a create_session tool and splitting your task would finish it materially sooner, you may create up to 3 sub-siblings (same environment and repo, model opus 5.5) under these same rules, on branches claude/gifted-bell-gavnl5-sib-p4-purple-<x>. Record each one (session id, branch, exact task) in logs/sib/p4-purple/SUBSIBS.md and push that BEFORE it starts. Sub-siblings may not create further siblings.
+- Final report: what was done, numbers, the commit sha, and one closing line: "Integrity: no issues", or the integrity event.
+
+TASK p4-purple: RULES.md DECL-P4-16 items 1, 3 and 4 (read DECL-P4-16, DECL-P4-6, DECL-P4-6-A3, DECL-P4-12-A3, P4-CHANNELS-RESULT-1, OWNER-STANDING-ORDER-2 and logs/p4/HYPOTHESES.md first). The owner asks how a purple, or any CT-faint, title ink could be detected.
+1. Physics table (item 1). Use xraylib or the NIST XCOM tables; cite the source and version.
+   - Compute the linear attenuation mu at 78 and 137 keV, and the refractive decrement delta at 78 keV, for 5, 10 and 20 um layers of every colourant class listed in DECL-P4-16 item 1, with stated densities and stoichiometry. Include Tyrian purple with 0/50/90 % Br loss, and purpurissum as dye on CaCO3.
+   - Compare against carbonised papyrus of density 0.3-1.0 g/cm3.
+   - Predict the contrast in (i) the absorption voxel value and (ii) the Paganin delta/beta = 1000 retrieved value.
+   - Report the contrast-to-noise ratio at 2.4 um. Take the noise from the p4-highz control statistics on origin/claude/gifted-bell-gavnl5-sib-p4-highz; do not re-measure them.
+   - Output logs/sib/p4-purple/colourants.json and COLOURANTS.md.
+2. Dual-energy feasibility (item 3), numbers only:
+   - inventory the 137 keV scan 20260323153942 (voxel size, extent, energy, reconstruction);
+   - measure its overlap with the w010-027 mesh (per-tile fraction; p4-highz reports 14-27 % of r3_c10-c17) and with the w028-037 control strip;
+   - design and test the registration and the two-material decomposition on the control only;
+   - freeze the method and thresholds in logs/sib/p4-purple/DUAL_FREEZE.md. The orchestrator hashes it (METRIC-HASH) before any title-zone number.
+   - NEVER compute any 137 keV or dual-energy number inside w010-027 c9-c19 before that hash is recorded in RULES.md.
+3. Morphology (item 4): design and validate, on the control strip only, micro-relief and indentation features against the labelled known-text regions. The gate is AUC >= 0.70 with a bootstrap CI above 0.60; report the result whatever it is.
+4. Add your hypotheses and blind spots to logs/sib/p4-purple/REGISTER_ADD.md, for merging into the register.
+Stream zarr and never download whole volumes. Keep >= 5 GB free. You may use up to 3 sub-siblings (for example physics table / dual-energy / morphology).

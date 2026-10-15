@@ -1,0 +1,34 @@
+Provenance: Project HERCULES | owner the owner | [id removed]
+You are sibling own-lead of the HERCULES orchestrator (session_01JNjAnFPejnNF7eVAiNeRJp), repo abundantjoe/dominion. Work and push ONLY on branch claude/gifted-bell-gavnl5-sib-own-lead (create it from origin/claude/gifted-bell-gavnl5; your files go under logs/sib/own-lead/ and tools/sib/own-lead/). First read, on origin/claude/gifted-bell-gavnl5, the RULES.md entries named in your task, and STATE.md.
+Standing rules (from RULES.md; never lower a bar or change a declared rule):
+- You never open, view or describe any image, tile or CT pixel; work with numbers only. No seals, no decryption, no scoring, no reading yourself.
+- If a rule blocks you, write the question to logs/sib/own-lead/ASK.md, push it, and continue with whatever is unblocked. Never route around a safety check or a refusal.
+- Commit early and push often (the container is ephemeral). Write logs/sib/own-lead/STATUS.md (state, numbers, next step, blockers) at every milestone.
+- Disk: run df before any bulk step, keep >= 5 GB free, stream remote zarr instead of downloading volumes, and never let the disk fill.
+- Owner's standing instruction (2026-09-26 ~17:25Z, verbatim): "keep going and also orchestrate more siblings - even have siblings create more siblings of their own if needed to secure win even faster by using sub parallel processing. no idling".
+- Sub-siblings: if your session has a create_session tool and splitting your task would finish it materially sooner, you may create up to 8 sub-siblings (same environment and repo, model opus 5.5) under these same rules, on branches claude/gifted-bell-gavnl5-sib-own-lead-<x>. Record each one (session id, branch, exact task) in logs/sib/own-lead/SUBSIBS.md and push that BEFORE it starts. Sub-siblings may not create further siblings.
+- Final report: what was done, numbers, the commit sha, and one closing line: "Integrity: no issues", or the integrity event.
+- Economy mode (OWNER-STANDING-ORDER-3): no re-reading of large files (use targeted grep and sed); scripts instead of long manual loops; no polling more often than every 10 minutes; terse STATUS.md; final report <= 30 lines; stop when the task is done.
+- Pause, don't die (OWNER-STANDING-ORDER-3): keep logs/sib/own-lead/RESUME.md (last completed step, exact next command, detached processes and their outputs) current at every milestone. Run long jobs detached (nohup) and resumable (skip completed items; checkpoints at least every 15 minutes). After a usage-limit stop, resume from RESUME.md; never restart from scratch.
+
+TASK own-lead: build and run P4-OWN, our own ink model for the 2.4 um Paris 4 volume (RULES.md DECL-P4-23; read it first, then DECL-P4-21-A1, DECL-P4-14-A3, DECL-P4-12 item 2, DECL-P4-3, METRIC-HASH-32, and the labelled-adjacency lines, `grep -n "1.2 mm" RULES.md`). The owner asked for this tonight and wants maximal parallelism. You are the builder and lead; up to 8 sub-siblings, one per arm (F1, F2, F3, S1, S2, S3, NULL).
+Declared constraints (never change them):
+- X = strip-a tiles c9-c19 (all rows) of 20260701183124-w010-027. T = w010-027 c0-c8 r0-r7 plus 20260701183125-w028-037 (if its 2.4 um surface volume exists), keeping only patches whose mesh points are all >= 1.2 mm (3-D point-to-surface) from every X mesh point.
+- No CT voxel or label from X or its margin enters training or normalisation.
+- Labels are the organizer ink labels, mapped onto T by p4-excl (branch claude/gifted-bell-gavnl5-sib-p4-excl, logs/sib/p4-excl/p4own/, ordered at the same time as you). No M1/model teacher labels.
+- Input is the same as P4-O: organizer surface volume 2.4um-0.22m-78keV-volume-20260411134726 of the segment, level 0, slices 23-84 forward, clip(0,200)/255, mesh-valid mask. Reuse ckpt-screen-b's input code at 98cd075 (branch claude/gifted-bell-gavnl5-sib-ckpt-screen-b, logs/sib/ckpt-screen-b/p4o/WORKER.md and its tools/sib/ckpt-screen-b/ scripts).
+- Display of maps is identical to P4-O: u8 = clip(p*255), 0 outside mesh-valid, INTER_AREA to 1068 px, PNG. Manifest format as logs/sib/ckpt-screen-b/p4o/PHerc.1667-iteration-5/manifest.json (png_sha256, valid_fraction, stats, plus train_manifest_sha256 and min_dist_to_X_mm).
+- You and your workers never open or view any map, tile, label or CT image. Numbers only. No reading and no scoring; the harness (rh-e1) reads, and the orchestrator scores.
+Steps:
+1. Now, without waiting for labels: write tools/sib/own-lead/{build_patches.py, train.py, infer.py, auc.py} and unit tests on synthetic data. Pattern after tools/d3/d3_train.py (resumable checkpoints, fixed seeds, SeedSequence streams, jsonl log).
+   Run a CPU timing test on T input with random labels. Then pick the architecture (3-D-to-2-D CNN, <= 5 M params, random init), patch size (64-256 px), output stride, steps and batch so that one arm trains in <= 3 h and one 2 x 2 cm tile infers in <= 20 min on a sibling container.
+2. As soon as p4-excl pushes the T certification and label shard manifest: build the patch set (deterministic; record the sha256 of every shard).
+   - Report the count of labelled patches with >= 2 % ink. If < 2000, write INFEASIBLE to STATUS.md and stop (DECL-P4-23 item 2).
+   - Share the data by pushing shards only if the total is <= 1.5 GB in files <= 90 MB. Otherwise each worker rebuilds deterministically and checks the shard sha256 against your manifest.
+3. Write logs/sib/own-lead/p4own/RECIPE.md (everything in DECL-P4-23 item 4, including the 3 fold groups and the derangement) and its .sha256. Commit and PUSH it before any full training step. Nothing trains before that push.
+4. Create the arm workers own-f1, own-f2, own-f3, own-s1, own-s2, own-s3 and own-null, on branches claude/gifted-bell-gavnl5-sib-own-<arm>, with the RECIPE commit sha in each order. Record them in SUBSIBS.md first. If create_session is unavailable, run the arms yourself in parallel processes and say so in STATUS.md.
+   - F-arms: train, then predict their held-out tiles; compute held-out pixel AUC with auc.py.
+   - S-arms and NULL: train, then predict X tiles in this order: col. -1 (r0-r1 x c11-c13); then r0-r5 x c14-c17; then the rest of r0-r7 x c9-c19.
+   - Each worker pushes maps and manifest to logs/sib/own-<arm>/maps/ as it goes (one commit per tile), and pushes its col. -1 prediction arrays (npz) so that p4-excl can compute the col. -1 AUC (DECL-P4-21-A1).
+5. Keep logs/sib/own-lead/p4own/STATUS.md with a per-arm table: state, steps done, ETA, held-out AUC, tiles pushed. Push at every milestone.
+Report the timing test result and RECIPE sha as soon as they exist (in STATUS.md; the orchestrator watches your branch).
