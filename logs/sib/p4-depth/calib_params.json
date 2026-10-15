@@ -1,0 +1,25 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "declaration": "RULES.md DECL-P4-12-A3 item 1 (P4-L3 depth calibration)",
+ "written_utc": "2026-09-26T21:31:11Z",
+ "written_before": "any depth-profile number, any control voxel read by p4-depth, and any L3 tile",
+ "material": "s3://vesuvius-challenge-open-data/PHercParis4/segments/20260701183125-w028-037/surface-volumes/2.4um-0.22m-78keV-volume-20260411134726.zarr (CONTROL only)",
+ "level": 0,
+ "slices": "all 109 slices; .zattrs scale 2.4 um, slice_step 1.0, num_slices 109; mesh surface = slice 54 (p4-l2 params centre_slice 54)",
+ "offset_um": "o(z) = (z - 54) * 2.4 um, z = 0..108, i.e. -129.6 .. +129.6 um; sign of o is the SV slice-index direction (see sign_convention)",
+ "T_hi": "203, frozen p4-l2 thresholds.json (sha256 ca715bc12a2955fef582117f166eaf335b351fff82dd29a3a9b1beaea5d09b14)",
+ "grid": "control canvas tiled with T = 8343 from (0, 0); mesh-valid = p4-l2 canvas_mask rule on the official control tifxyz 20260701183125-on-20260411134726-2.4um (meta.json sha256 da81ed99...); eligible = valid_fraction >= 0.5 (168 tiles per p4-l2 thresholds.json)",
+ "tile_sample": {
+  "n": 24,
+  "rule": "numpy.random.default_rng(seed).choice(n_eligible, 24, replace=False) over the eligible list in (r, c) order (p4-l2 ctl_sample order), sorted",
+  "seed": 20260927
+ },
+ "f_of_o": "f(o) = (number of level-0 voxels in slice z at mesh-valid canvas px of the sampled tiles with value > T_hi) / (number of mesh-valid canvas px of the sampled tiles); pooled over tiles; a missing chunk (404) contributes voxels of value 0 (counted in the denominator). Also stored: per-tile per-slice uint8 histograms (109 x 256), so every number is recomputable.",
+ "peak_rule": "d* = o at argmax_z [f(o) - median_o f(o)] over all 109 offsets (ties: smallest |o|); robust SD = 1.4826 * median_o |f(o) - median_o f(o)| over all 109 offsets; z_peak = (f(d*) - median) / robust SD. PASS iff |d*| <= 100 um AND z_peak >= 3; otherwise STOP (no ink layer, P4-L3 stops). If robust SD == 0, z_peak = +inf when f(d*) > median, else STOP.",
+ "sign_convention": "Both sides reported: side '+' = offsets o > 0 (SV slice index > 54), side '-' = o < 0. The physical meaning is MEASURED, not assumed: (a) SV slice direction vs the mesh normal n = normalize(du x dv) (hercules.geometry.tifxyz.vertex_normals, official C++ grid_normal orientation): the correlation of the SV depth profile with the 2.4 um volume 20260411134726 sampled along +n and along -n at >= 200 mesh vertices of the sampled control tiles (nearest voxel); (b) +n vs outward (away from the scroll axis): hercules.geometry.level_mesh.normal_sign_report against hercules.pipeline.centre.geometric_centre_curve of the control mesh (geometry only). Recto = the surface facing the scroll centre (inward), the writing side of a rolled papyrus; this identification is a convention of papyrology and is reported as such (UNCERTAIN if either (a) or (b) is ambiguous).",
+ "rot90_check": "f(o) recomputed independently on np.rot90 of every slice region and its mask; must equal f(o) exactly (sanity check, identical by symmetry)",
+ "gap_depths": "interpretation (flagged in ASK.md): 'gap depths' = offsets outside the papyrus sheet, operationally the slices whose pooled median voxel value at mesh-valid px is < T_mid (93, p4-l2 thresholds); f(o) at these offsets is reported separately as an off-sheet reference. It does not enter the verdict.",
+ "extra_validation": "per-tile argmax of f_tile(o) - median; fraction of tiles whose own argmax lies within +-5 um of d*; per-row-band (r0-r1, r2-r8) f(o); f(o) on the '+' vs '-' side; all reported, none enters the verdict",
+ "L3_window": "if PASS: slices z with |z - z*| * 2.4 <= 10 um, i.e. z* - 4 .. z* + 4 (9 slices, +-9.6 um), clipped to 0..108",
+ "viewing": "no tile, slice or pixel is ever opened, viewed or described; numbers only"
+}
