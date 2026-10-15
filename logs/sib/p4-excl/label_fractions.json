@@ -1,0 +1,1158 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "strip": "20260701183124-w010-027",
+ "what": "DECL-P4-21 (with DECL-P4-21-A1): organizer ink-label fractions per strip-a tile, numbers only",
+ "labels": "official 20260918 set, ink-labels/2.4um-volume-20260411134726/20260918/{inklabels,supervision}.zarr level 0 (values 0/255; shape = segment tifxyz grid x 20); read in code only, never displayed, saved as an image or described",
+ "labels_sha256": {
+  "20231016151002": {
+   "inklabels": "2494e3e73a69e8a8c3030c2d457634460a9424987c150aa8da13489f24ff9c2b",
+   "supervision": "681ad040f76cba740c76c33147a24587bb9dc06e25c59504e027c39aa16b6df3"
+  },
+  "20230702185753": {
+   "inklabels": "1a7d77d4ea035ca95f928e4ebbd499f6a73d82c3e0bcaffe9f86a2e556a8a4f0",
+   "supervision": "aea6e3cc2bdbe9d265a4f9e307c8ca0c8defc5dadc397ab03df7b807374d1be5"
+  },
+  "20231031143852": {
+   "inklabels": "f08d91c6674fd3852d6556bb5a7b09d7f7a5902bbc33a334f06296ef2545d994",
+   "supervision": "b3390be17097079be16f9954cc3b9f0063f87d670f2eaa019998ce3024e645bd"
+  },
+  "20231106155351": {
+   "inklabels": "f7f2f1acbb90184d90b7626a4922aa89e41c2d1fe7ffcd17f7319746562a397c",
+   "supervision": "01ba65839c9ea2f5db3634dd7d6839dd5374a7de906dcbdff7e21add3276c518"
+  },
+  "20231012184424": {
+   "inklabels": "9e886550ab3a9d19ce1679c1f7d7d363dc4670d518606f9bf5092bb7684d4a0a",
+   "supervision": "199189231f8030240e8a83e3ce155ff2838710f407b4964bc4d4b5e8bdd6647e"
+  },
+  "20231210121321": {
+   "inklabels": "3130836122f79db315fde68ece8aed66ca97b05f9143a9d4e607988c0ffaced3",
+   "supervision": "03e13bf2118e9e57bdf53b85e65ae73b81164eb0766400a4063d018b1a8074a1"
+  },
+  "20231007101619": {
+   "inklabels": "1270c8b7c9c5d83b3fd05b163192d38c4fa5426cfc9ac05ac68fe6a8dd7f945d",
+   "supervision": "18dba29d242a275597854fe58abe174988716238900572fb2a2324faf18826ee"
+  },
+  "20230929220926": {
+   "inklabels": "275bc94efb272e2a5f17969f5272def958a8d36042566702eb59a68b9d02e459",
+   "supervision": "71b91b2c82bb7d1ab3a3403b09ed1a9344de5ceefdf333621cce8b08f266c63c"
+  }
+ },
+ "mapping": {
+  "tolerance_vox": 20.0,
+  "tolerance_mm": 0.047999999999999994,
+  "rule": "tile mesh vertex -> exact closest point on the segment triangulated surface (certified k-NN + ball fallback, tools/sib/p4-excl/uvmap.py, tests 6/6) -> segment UV -> label px round(uv*20)",
+  "sampling": "one sample per strip mesh vertex (20 x 20 strip px cell); fractions are over those samples"
+ },
+ "definitions": {
+  "coverage_fraction": "samples mapped (<= tol) whose label supervision = 255, over all tile samples",
+  "ink_fraction_of_covered": "samples with inklabel = 255 among the covered ones",
+  "any_segment": "covered if any segment covers; ink decided by the nearest covering segment"
+ },
+ "inputs": {
+  "strip_mesh_sha256": {
+   "x.tif": "c304cdfd975587864cfcb2147aff1db0ddc9f3240260204cce6b2891c9910165",
+   "y.tif": "9a4eefdae0705ad0f0b59e79093bf48f63dad7760a1ce0be5030e408c8f94139",
+   "z.tif": "a06716afd74c973d80c8f9275737fe95d776edd25537ae3076b07deb46c034f8"
+  },
+  "grid_json_sha256": "35a319b2a2eb44f69318abe9612d8a3a9995a2d377ded09a8c45d7247cea1f33"
+ },
+ "seconds": 11617.8,
+ "tiles": {
+  "r0_c9": {
+   "r": 0,
+   "c": 9,
+   "n_samples": 146060,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.396501,
+     "coverage_fraction": 0.024291,
+     "ink_fraction_of_covered": 0.304679,
+     "ink_fraction_of_tile": 0.007401,
+     "min_dist_mm": 1e-06
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.875476,
+     "coverage_fraction": 0.196091,
+     "ink_fraction_of_covered": 0.282811,
+     "ink_fraction_of_tile": 0.055457,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.220382,
+    "ink_fraction_of_covered": 0.285222,
+    "ink_fraction_of_tile": 0.062858
+   }
+  },
+  "r0_c10": {
+   "r": 0,
+   "c": 10,
+   "n_samples": 149024,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.822384,
+     "coverage_fraction": 7.4e-05,
+     "ink_fraction_of_covered": 0.0,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.0
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.737861,
+     "coverage_fraction": 0.014937,
+     "ink_fraction_of_covered": 0.106918,
+     "ink_fraction_of_tile": 0.001597,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.015011,
+    "ink_fraction_of_covered": 0.106392,
+    "ink_fraction_of_tile": 0.001597
+   }
+  },
+  "r0_c11": {
+   "r": 0,
+   "c": 11,
+   "n_samples": 149984,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.828348,
+     "coverage_fraction": 0.110818,
+     "ink_fraction_of_covered": 0.303111,
+     "ink_fraction_of_tile": 0.03359,
+     "min_dist_mm": 0.0
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.00102,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.005724
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.110818,
+    "ink_fraction_of_covered": 0.303111,
+    "ink_fraction_of_tile": 0.03359
+   }
+  },
+  "r0_c12": {
+   "r": 0,
+   "c": 12,
+   "n_samples": 149232,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.810148,
+     "coverage_fraction": 0.235553,
+     "ink_fraction_of_covered": 0.190828,
+     "ink_fraction_of_tile": 0.04495,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.235553,
+    "ink_fraction_of_covered": 0.190828,
+    "ink_fraction_of_tile": 0.04495
+   }
+  },
+  "r0_c13": {
+   "r": 0,
+   "c": 13,
+   "n_samples": 147588,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.831253,
+     "coverage_fraction": 0.143657,
+     "ink_fraction_of_covered": 0.340392,
+     "ink_fraction_of_tile": 0.0489,
+     "min_dist_mm": 1e-06
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.143657,
+    "ink_fraction_of_covered": 0.340392,
+    "ink_fraction_of_tile": 0.0489
+   }
+  },
+  "r0_c14": {
+   "r": 0,
+   "c": 14,
+   "n_samples": 145132,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.686733,
+     "coverage_fraction": 0.000972,
+     "ink_fraction_of_covered": 0.595745,
+     "ink_fraction_of_tile": 0.000579,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.000972,
+    "ink_fraction_of_covered": 0.595745,
+    "ink_fraction_of_tile": 0.000579
+   }
+  },
+  "r0_c15": {
+   "r": 0,
+   "c": 15,
+   "n_samples": 142796,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.019503,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 5.9e-05
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r0_c16": {
+   "r": 0,
+   "c": 16,
+   "n_samples": 140372,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r0_c17": {
+   "r": 0,
+   "c": 17,
+   "n_samples": 139224,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r0_c18": {
+   "r": 0,
+   "c": 18,
+   "n_samples": 142136,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r0_c19": {
+   "r": 0,
+   "c": 19,
+   "n_samples": 137040,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r1_c9": {
+   "r": 1,
+   "c": 9,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.681653,
+     "coverage_fraction": 0.099834,
+     "ink_fraction_of_covered": 0.201382,
+     "ink_fraction_of_tile": 0.020105,
+     "min_dist_mm": 0.0
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.92191,
+     "coverage_fraction": 0.098931,
+     "ink_fraction_of_covered": 0.270941,
+     "ink_fraction_of_tile": 0.026804,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.198765,
+    "ink_fraction_of_covered": 0.236004,
+    "ink_fraction_of_tile": 0.046909
+   }
+  },
+  "r1_c10": {
+   "r": 1,
+   "c": 10,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.878371,
+     "coverage_fraction": 0.048065,
+     "ink_fraction_of_covered": 0.161163,
+     "ink_fraction_of_tile": 0.007746,
+     "min_dist_mm": 0.0
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.594304,
+     "coverage_fraction": 0.003272,
+     "ink_fraction_of_covered": 0.112478,
+     "ink_fraction_of_tile": 0.000368,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.051337,
+    "ink_fraction_of_covered": 0.15806,
+    "ink_fraction_of_tile": 0.008114
+   }
+  },
+  "r1_c11": {
+   "r": 1,
+   "c": 11,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.873224,
+     "coverage_fraction": 0.288673,
+     "ink_fraction_of_covered": 0.206626,
+     "ink_fraction_of_tile": 0.059647,
+     "min_dist_mm": 0.0
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.012151,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.000161
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.288673,
+    "ink_fraction_of_covered": 0.206626,
+    "ink_fraction_of_tile": 0.059647
+   }
+  },
+  "r1_c12": {
+   "r": 1,
+   "c": 12,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.87136,
+     "coverage_fraction": 0.186199,
+     "ink_fraction_of_covered": 0.229415,
+     "ink_fraction_of_tile": 0.042717,
+     "min_dist_mm": 0.0
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.001765,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.000381
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.186199,
+    "ink_fraction_of_covered": 0.229415,
+    "ink_fraction_of_tile": 0.042717
+   }
+  },
+  "r1_c13": {
+   "r": 1,
+   "c": 13,
+   "n_samples": 174306,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.860372,
+     "coverage_fraction": 0.051106,
+     "ink_fraction_of_covered": 0.233049,
+     "ink_fraction_of_tile": 0.01191,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.051106,
+    "ink_fraction_of_covered": 0.233049,
+    "ink_fraction_of_tile": 0.01191
+   }
+  },
+  "r1_c14": {
+   "r": 1,
+   "c": 14,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.61051,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r1_c15": {
+   "r": 1,
+   "c": 15,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.027989,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 1.2e-05
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r1_c16": {
+   "r": 1,
+   "c": 16,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r1_c17": {
+   "r": 1,
+   "c": 17,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r1_c18": {
+   "r": 1,
+   "c": 18,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r1_c19": {
+   "r": 1,
+   "c": 19,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r2_c9": {
+   "r": 2,
+   "c": 9,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.712029,
+     "coverage_fraction": 0.055909,
+     "ink_fraction_of_covered": 0.174861,
+     "ink_fraction_of_tile": 0.009776,
+     "min_dist_mm": 0.0
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.89177,
+     "coverage_fraction": 0.050365,
+     "ink_fraction_of_covered": 0.199246,
+     "ink_fraction_of_tile": 0.010035,
+     "min_dist_mm": 0.0
+    },
+    "20231031143852": {
+     "mapped_fraction": 0.0013,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.012081
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.106275,
+    "ink_fraction_of_covered": 0.186418,
+    "ink_fraction_of_tile": 0.019811
+   }
+  },
+  "r2_c10": {
+   "r": 2,
+   "c": 10,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.886847,
+     "coverage_fraction": 0.002076,
+     "ink_fraction_of_covered": 0.108033,
+     "ink_fraction_of_tile": 0.000224,
+     "min_dist_mm": 0.0
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.591636,
+     "coverage_fraction": 0.001346,
+     "ink_fraction_of_covered": 0.294872,
+     "ink_fraction_of_tile": 0.000397,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.003422,
+    "ink_fraction_of_covered": 0.181513,
+    "ink_fraction_of_tile": 0.000621
+   }
+  },
+  "r2_c11": {
+   "r": 2,
+   "c": 11,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.892167,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.0
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.020651,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 3.1e-05
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r2_c12": {
+   "r": 2,
+   "c": 12,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.886738,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r2_c13": {
+   "r": 2,
+   "c": 13,
+   "n_samples": 174306,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.86592,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r2_c14": {
+   "r": 2,
+   "c": 14,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.705421,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 1e-06
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r2_c15": {
+   "r": 2,
+   "c": 15,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.023222,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 8.1e-05
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r2_c16": {
+   "r": 2,
+   "c": 16,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r2_c17": {
+   "r": 2,
+   "c": 17,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r2_c18": {
+   "r": 2,
+   "c": 18,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r2_c19": {
+   "r": 2,
+   "c": 19,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r3_c9": {
+   "r": 3,
+   "c": 9,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.384038,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.0
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.870992,
+     "coverage_fraction": 0.122952,
+     "ink_fraction_of_covered": 0.295744,
+     "ink_fraction_of_tile": 0.036362,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.122952,
+    "ink_fraction_of_covered": 0.295744,
+    "ink_fraction_of_tile": 0.036362
+   }
+  },
+  "r3_c10": {
+   "r": 3,
+   "c": 10,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.392848,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 1e-06
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.424317,
+     "coverage_fraction": 0.006516,
+     "ink_fraction_of_covered": 0.410415,
+     "ink_fraction_of_tile": 0.002674,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.006516,
+    "ink_fraction_of_covered": 0.410415,
+    "ink_fraction_of_tile": 0.002674
+   }
+  },
+  "r3_c11": {
+   "r": 3,
+   "c": 11,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.386856,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.0
+    },
+    "20230702185753": {
+     "mapped_fraction": 0.006625,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.000125
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r3_c12": {
+   "r": 3,
+   "c": 12,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.371053,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r3_c13": {
+   "r": 3,
+   "c": 13,
+   "n_samples": 174306,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.400491,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r3_c14": {
+   "r": 3,
+   "c": 14,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.297149,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r3_c15": {
+   "r": 3,
+   "c": 15,
+   "n_samples": 173889,
+   "segments": {
+    "20231016151002": {
+     "mapped_fraction": 0.019041,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 2.7e-05
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r3_c16": {
+   "r": 3,
+   "c": 16,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r3_c17": {
+   "r": 3,
+   "c": 17,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r3_c18": {
+   "r": 3,
+   "c": 18,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r3_c19": {
+   "r": 3,
+   "c": 19,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r4_c9": {
+   "r": 4,
+   "c": 9,
+   "n_samples": 173889,
+   "segments": {
+    "20230702185753": {
+     "mapped_fraction": 0.934993,
+     "coverage_fraction": 0.00015,
+     "ink_fraction_of_covered": 0.0,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.00015,
+    "ink_fraction_of_covered": 0.0,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r4_c10": {
+   "r": 4,
+   "c": 10,
+   "n_samples": 173889,
+   "segments": {
+    "20230702185753": {
+     "mapped_fraction": 0.343069,
+     "coverage_fraction": 0.000776,
+     "ink_fraction_of_covered": 0.0,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 1e-06
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.000776,
+    "ink_fraction_of_covered": 0.0,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r4_c11": {
+   "r": 4,
+   "c": 11,
+   "n_samples": 173889,
+   "segments": {
+    "20230702185753": {
+     "mapped_fraction": 0.00467,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.000196
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r4_c12": {
+   "r": 4,
+   "c": 12,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r4_c13": {
+   "r": 4,
+   "c": 13,
+   "n_samples": 174306,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r4_c14": {
+   "r": 4,
+   "c": 14,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r4_c15": {
+   "r": 4,
+   "c": 15,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r4_c16": {
+   "r": 4,
+   "c": 16,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r4_c17": {
+   "r": 4,
+   "c": 17,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r4_c18": {
+   "r": 4,
+   "c": 18,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r4_c19": {
+   "r": 4,
+   "c": 19,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r5_c9": {
+   "r": 5,
+   "c": 9,
+   "n_samples": 173889,
+   "segments": {
+    "20230702185753": {
+     "mapped_fraction": 0.630983,
+     "coverage_fraction": 0.02386,
+     "ink_fraction_of_covered": 0.319113,
+     "ink_fraction_of_tile": 0.007614,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.02386,
+    "ink_fraction_of_covered": 0.319113,
+    "ink_fraction_of_tile": 0.007614
+   }
+  },
+  "r5_c10": {
+   "r": 5,
+   "c": 10,
+   "n_samples": 173889,
+   "segments": {
+    "20230702185753": {
+     "mapped_fraction": 0.305753,
+     "coverage_fraction": 0.000178,
+     "ink_fraction_of_covered": 1.0,
+     "ink_fraction_of_tile": 0.000178,
+     "min_dist_mm": 0.0
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.000178,
+    "ink_fraction_of_covered": 1.0,
+    "ink_fraction_of_tile": 0.000178
+   }
+  },
+  "r5_c11": {
+   "r": 5,
+   "c": 11,
+   "n_samples": 173889,
+   "segments": {
+    "20230702185753": {
+     "mapped_fraction": 0.000368,
+     "coverage_fraction": 0.0,
+     "ink_fraction_of_covered": null,
+     "ink_fraction_of_tile": 0.0,
+     "min_dist_mm": 0.025305
+    }
+   },
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r5_c12": {
+   "r": 5,
+   "c": 12,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r5_c13": {
+   "r": 5,
+   "c": 13,
+   "n_samples": 174306,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r5_c14": {
+   "r": 5,
+   "c": 14,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r5_c15": {
+   "r": 5,
+   "c": 15,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r5_c16": {
+   "r": 5,
+   "c": 16,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r5_c17": {
+   "r": 5,
+   "c": 17,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r5_c18": {
+   "r": 5,
+   "c": 18,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  },
+  "r5_c19": {
+   "r": 5,
+   "c": 19,
+   "n_samples": 173889,
+   "segments": {},
+   "any_segment": {
+    "coverage_fraction": 0.0,
+    "ink_fraction_of_covered": null,
+    "ink_fraction_of_tile": 0.0
+   }
+  }
+ }
+}

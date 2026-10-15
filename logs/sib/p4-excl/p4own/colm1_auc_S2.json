@@ -1,0 +1,82 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "arm": "S2",
+ "what": "DECL-P4-23 item 6(c) col. -1 pixel AUC vs organizer ink labels (code only, DECL-P4-21-A1); no X label value written",
+ "arrays_ref": "origin/claude/gifted-bell-gavnl5-sib-own-lead 9449435b6d67ccf14bfb62c23007e79bc059ba81 logs/sib/own-s2/maps/arrays/",
+ "tiles": {
+  "r0_c11": {
+   "present": true,
+   "array_sha256": "29e67f8cdf96b8c0cc4e2539ba7f1ceb214c05e0e8e2822ccb7a8cbedca639e1",
+   "n_blocks_valid": 3742996,
+   "n_blocks_covered": 397209,
+   "coverage_fraction": 0.106121,
+   "n_ink": 119939,
+   "n_noink": 277270,
+   "auc": 0.9628155599863358
+  },
+  "r0_c12": {
+   "present": true,
+   "array_sha256": "04a6196e0110b8039c59c970f15cde13b33138aa25234c618c4db00289ba5ff6",
+   "n_blocks_valid": 3724076,
+   "n_blocks_covered": 847718,
+   "coverage_fraction": 0.227632,
+   "n_ink": 161349,
+   "n_noink": 686369,
+   "auc": 0.9772239137411161
+  },
+  "r0_c13": {
+   "present": true,
+   "array_sha256": "f4878c3b4ae2da900f9dc81ff227431f8b31be4d051f278c6fe926f297e813c7",
+   "n_blocks_valid": 3674396,
+   "n_blocks_covered": 514035,
+   "coverage_fraction": 0.139896,
+   "n_ink": 175893,
+   "n_noink": 338142,
+   "auc": 0.9751590662818297
+  },
+  "r1_c11": {
+   "present": true,
+   "array_sha256": "8ca60b90c84daa3015518d8a6253045403784b448fe95e2099e021b9b687b858",
+   "n_blocks_valid": 4351396,
+   "n_blocks_covered": 1231140,
+   "coverage_fraction": 0.28293,
+   "n_ink": 254408,
+   "n_noink": 976732,
+   "auc": 0.9769517924227396
+  },
+  "r1_c12": {
+   "present": true,
+   "array_sha256": "ad595709513cd7d22726874daf69d35d63d6d7ecad95b8894250623a981390f3",
+   "n_blocks_valid": 4351396,
+   "n_blocks_covered": 785050,
+   "coverage_fraction": 0.180413,
+   "n_ink": 180056,
+   "n_noink": 604994,
+   "auc": 0.9857990826796749
+  },
+  "r1_c13": {
+   "present": true,
+   "array_sha256": "6b826b00f7e0a638918e25ad675c985227a5f0c4bb6dd20d2696c0aff9c9158e",
+   "n_blocks_valid": 4351396,
+   "n_blocks_covered": 214688,
+   "coverage_fraction": 0.049338,
+   "n_ink": 50823,
+   "n_noink": 163865,
+   "auc": 0.970197112030651
+  }
+ },
+ "pooled": {
+  "n_tiles": 6,
+  "n_covered": 3989840,
+  "n_ink": 942468,
+  "auc": 0.9769411165817762
+ },
+ "method": {
+  "grid": "x4 of tile",
+  "score": "mean u8 over valid px of the 4x4 block (>= 8 valid)",
+  "mapping_tolerance_vox": 20.0,
+  "labels": "official 20260918 set, level 0 (sha256 in downloads.jsonl)",
+  "auc": "Mann-Whitney, average ranks"
+ },
+ "seconds": 1251.8
+}

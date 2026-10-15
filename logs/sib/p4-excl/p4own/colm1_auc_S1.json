@@ -1,0 +1,83 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "arm": "S1",
+ "what": "DECL-P4-23 item 6(c) col. -1 pixel AUC vs organizer ink labels (code only, DECL-P4-21-A1); no X label value written",
+ "arrays_ref": "origin/claude/gifted-bell-gavnl5-sib-own-lead 40057dc676d4d255b73fc8ec5e1464b3429ba214 logs/sib/own-s1/maps/arrays/",
+ "tiles": {
+  "r0_c11": {
+   "present": true,
+   "array_sha256": "2617b051a44729aa1435e0e47fd5b664bf4f537b0a8a952a643d2a4a7b9d0a8e",
+   "n_blocks_valid": 3742996,
+   "n_blocks_covered": 397209,
+   "coverage_fraction": 0.106121,
+   "n_ink": 119939,
+   "n_noink": 277270,
+   "auc": 0.9594208218910698
+  },
+  "r0_c12": {
+   "present": true,
+   "array_sha256": "3b01eefb3c1d1135c12c67998c57972f2259e156e6ab092c1ad19a8b8c36e69d",
+   "n_blocks_valid": 3724076,
+   "n_blocks_covered": 847718,
+   "coverage_fraction": 0.227632,
+   "n_ink": 161349,
+   "n_noink": 686369,
+   "auc": 0.9777684928621514
+  },
+  "r0_c13": {
+   "present": true,
+   "array_sha256": "2f54348e8c562801f182ac78a31bda9806d3a10bf2699ccffbfbc9f910e3dbfe",
+   "n_blocks_valid": 3674396,
+   "n_blocks_covered": 514035,
+   "coverage_fraction": 0.139896,
+   "n_ink": 175893,
+   "n_noink": 338142,
+   "auc": 0.9700151516392319
+  },
+  "r1_c11": {
+   "present": true,
+   "array_sha256": "54c472cd5b0786135a2cf9cf897fe48dc1b8be8749599cc3b5458649a60efc05",
+   "n_blocks_valid": 4351396,
+   "n_blocks_covered": 1231140,
+   "coverage_fraction": 0.28293,
+   "n_ink": 254408,
+   "n_noink": 976732,
+   "auc": 0.9824454853319884
+  },
+  "r1_c12": {
+   "present": true,
+   "array_sha256": "3ecea96fa0fe161c5512633a4e224607ce1c4c899524ebbe68362f0a037c872d",
+   "n_blocks_valid": 4351396,
+   "n_blocks_covered": 785050,
+   "coverage_fraction": 0.180413,
+   "n_ink": 180056,
+   "n_noink": 604994,
+   "auc": 0.9870434743727015
+  },
+  "r1_c13": {
+   "present": true,
+   "array_sha256": "3ecb2155a36e747b4660de6f24e565cdf13db9fa849e56fa80289c23a9c0d93d",
+   "n_blocks_valid": 4351396,
+   "n_blocks_covered": 214688,
+   "coverage_fraction": 0.049338,
+   "n_ink": 50823,
+   "n_noink": 163865,
+   "auc": 0.9776033182853049
+  }
+ },
+ "pooled": {
+  "n_tiles": 6,
+  "n_covered": 3989840,
+  "n_ink": 942468,
+  "auc": 0.9780785595269721
+ },
+ "method": {
+  "grid": "x4 of tile",
+  "score": "mean u8 over valid px of the 4x4 block (>= 8 valid)",
+  "mapping_tolerance_vox": 20.0,
+  "labels": "official 20260918 set, level 0 (sha256 in downloads.jsonl)",
+  "auc": "Mann-Whitney, average ranks"
+ },
+ "seconds": 1111.5,
+ "caveat": "Reported, not a bar (DECL-P4-23 item 6(a)/(c)). Interpret next to the NULL arm (label-deranged recipe) on the same pixels, computed with the same code when its arrays exist; a NULL AUC near 0.5 is the control for this value."
+}

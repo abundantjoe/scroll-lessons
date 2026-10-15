@@ -1,0 +1,194 @@
+{
+ "tests": [
+  {
+   "test": "triangle regions",
+   "got": [
+    5.0,
+    5.0,
+    2.0,
+    7.071068,
+    10.0
+   ],
+   "want": [
+    5.0,
+    5.0,
+    2.0,
+    7.071068,
+    10.0
+   ],
+   "pass": true
+  },
+  {
+   "test": "plane heights (cell centre)",
+   "got": [
+    0.0,
+    0.5,
+    1.0,
+    2.0,
+    7.3,
+    100.0,
+    499.9,
+    500.1
+   ],
+   "want": [
+    0.0,
+    0.5,
+    1.0,
+    2.0,
+    7.3,
+    100.0,
+    499.9,
+    500.1
+   ],
+   "pass": true
+  },
+  {
+   "test": "plane min over set",
+   "got": 0.0,
+   "want": 0.0,
+   "pass": true
+  },
+  {
+   "test": "plane far point 3000",
+   "got": [
+    3000.0
+   ],
+   "want": [
+    3000.0
+   ],
+   "pass": true
+  },
+  {
+   "test": "plane set min = 3",
+   "got": 3.0,
+   "want": 3.0,
+   "pass": true
+  },
+  {
+   "test": "beyond plane edge",
+   "got": [
+    50.0
+   ],
+   "want": [
+    50.0
+   ],
+   "pass": true
+  },
+  {
+   "test": "fold: inside V above crease",
+   "got": [
+    70.710678
+   ],
+   "want": [
+    70.710678
+   ],
+   "pass": true
+  },
+  {
+   "test": "fold: below crease",
+   "got": [
+    37.0
+   ],
+   "want": [
+    37.0
+   ],
+   "pass": true
+  },
+  {
+   "test": "fold: wing normal offset 13",
+   "got": [
+    13.0
+   ],
+   "want": [
+    13.0
+   ],
+   "pass": true
+  },
+  {
+   "test": "U fold: between layers",
+   "got": [
+    6.0
+   ],
+   "want": [
+    6.0
+   ],
+   "pass": true
+  },
+  {
+   "test": "U fold: between layers other side",
+   "got": [
+    6.0
+   ],
+   "want": [
+    6.0
+   ],
+   "pass": true
+  },
+  {
+   "test": "hole centre dist to rim",
+   "got": [
+    110.0
+   ],
+   "want": [
+    110.0
+   ],
+   "pass": true
+  },
+  {
+   "test": "random sheet 0: set min == brute min",
+   "got": 12.129133,
+   "want": 12.129133,
+   "pass": true
+  },
+  {
+   "test": "random sheet 1: set min == brute min",
+   "got": 7.819619,
+   "want": 7.819619,
+   "pass": true
+  },
+  {
+   "test": "random sheet 2: set min == brute min",
+   "got": 25.950766,
+   "want": 25.950766,
+   "pass": true
+  },
+  {
+   "test": "random sheet 3: set min == brute min",
+   "got": 7.303015,
+   "want": 7.303015,
+   "pass": true
+  },
+  {
+   "test": "random sheet 4: set min == brute min",
+   "got": 1.997603,
+   "want": 1.997603,
+   "pass": true
+  },
+  {
+   "test": "random sheet 5: set min == brute min",
+   "got": 15.728693,
+   "want": 15.728693,
+   "pass": true
+  },
+  {
+   "test": "random sheets: per-point max |exact - brute| (batched and loop)",
+   "got": 0.0,
+   "want": 0.0,
+   "pass": true
+  },
+  {
+   "test": "lattice: batched == brute",
+   "got": 0.0,
+   "want": 0.0,
+   "pass": true
+  },
+  {
+   "test": "lattice: set min",
+   "got": 0.01,
+   "want": 0.01,
+   "pass": true
+  }
+ ],
+ "pass": 21,
+ "total": 21
+}

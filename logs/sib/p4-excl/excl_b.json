@@ -1,0 +1,4713 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "strip": "w028-037",
+ "version": "v2 (npz points + all-vertex check)",
+ "utc": "2026-09-26T01:15:46Z",
+ "what": "DECL-P4-2 item 1 training-overlap flag: per tile, minimum 3-D point-to-triangulated-surface distance (CORR-RETRACE-RULE form b; exact, no densification) from its points to the meshes of the 8 labelled segments on 20260411134726",
+ "inputs": {
+  "strip": "b",
+  "branch": "claude/gifted-bell-gavnl5-sib-p4-tiles-b",
+  "path": "logs/sib/p4-tiles-b/tile_points.npz",
+  "commit": "380672da0b96851f3d5fa9a9df0b38da432d05b2",
+  "git_blob": "a9f560cf7ee30f84e70e436e814547f9e67b6dec",
+  "sha256": "13530568c7de81b5ca06a3faef62d15d3fc1c1a8925f21fa3f3f606edd5d2391",
+  "n_tiles": 171,
+  "n_points": 700416,
+  "n_points_dropped_invalid": 0,
+  "points_bbox_xyz_vox": [
+   [
+    10685.79,
+    10496.75,
+    12015.49
+   ],
+   [
+    23159.91,
+    24985.48,
+    71961.68
+   ]
+  ],
+  "labelled_meshes": "logs/sib/p4-excl/downloads.jsonl (sha256 of every file) and structures.json"
+ },
+ "voxel_mm": 0.0024,
+ "voxel_source": "volume 20260411134726 metadata.json scan.tomo.acquisition.detector.samplePixelSize = 0.0024 (mm); metadata.json sha256 881bf77fc0f02a91040755da25d54ad958e290a528ec61489e411937112fba4d",
+ "flag_rule": "labelled_adjacent = min_mm < 1.2",
+ "method": "tifxyz grid quads with 4 valid corners -> triangles (a,b,e),(a,e,c); exact point-triangle distance; KD-tree on vertices; candidate set and ball radius from the Lc = Lmax/sqrt(3) vertex covering bound (tools/sib/p4-excl/surfdist.py)",
+ "n_flagged": 138,
+ "timing_s": {
+  "primary_total": 122.6,
+  "primary_per_segment": {
+   "20231016151002": 17.1,
+   "20230702185753": 12.4,
+   "20231031143852": 7.5,
+   "20231106155351": 8.9,
+   "20231012184424": 18.8,
+   "20231210121321": 9.8,
+   "20231007101619": 24.0,
+   "20230929220926": 23.5
+  },
+  "total": 2258.1
+ },
+ "tiles": {
+  "r0_c0": {
+   "min_vox": 0.0031,
+   "min_mm": 8e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.880238,
+    "20230702185753": 1.506264,
+    "20231031143852": 15.727459,
+    "20231106155351": 15.653868,
+    "20231012184424": 0.00069,
+    "20231210121321": 0.002633,
+    "20231007101619": 8e-06,
+    "20230929220926": 0.002507
+   },
+   "all_vertex": {
+    "n_vertices": 112028,
+    "npz_points_subset": true,
+    "min_vox": 0.0025,
+    "min_mm": 6e-06,
+    "segment": "20230929220926",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c1": {
+   "min_vox": 0.0017,
+   "min_mm": 4e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 2.23207,
+    "20230702185753": 1.817976,
+    "20231031143852": 14.35356,
+    "20231106155351": 14.078436,
+    "20231012184424": 0.179276,
+    "20231210121321": 0.000297,
+    "20231007101619": 4e-06,
+    "20230929220926": 0.59302
+   },
+   "all_vertex": {
+    "n_vertices": 160142,
+    "npz_points_subset": true,
+    "min_vox": 0.0435,
+    "min_mm": 0.000104,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c2": {
+   "min_vox": 0.0057,
+   "min_mm": 1.4e-05,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 2.028807,
+    "20230702185753": 1.712381,
+    "20231031143852": 14.661488,
+    "20231106155351": 14.586511,
+    "20231012184424": 0.000266,
+    "20231210121321": 0.001835,
+    "20231007101619": 1.4e-05,
+    "20230929220926": 0.006842
+   },
+   "all_vertex": {
+    "n_vertices": 141590,
+    "npz_points_subset": true,
+    "min_vox": 0.0032,
+    "min_mm": 8e-06,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c3": {
+   "min_vox": 0.004,
+   "min_mm": 1e-05,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.769665,
+    "20230702185753": 1.400321,
+    "20231031143852": 14.725598,
+    "20231106155351": 14.494249,
+    "20231012184424": 0.099274,
+    "20231210121321": 1.1e-05,
+    "20231007101619": 1e-05,
+    "20230929220926": 0.729286
+   },
+   "all_vertex": {
+    "n_vertices": 143682,
+    "npz_points_subset": true,
+    "min_vox": 0.0031,
+    "min_mm": 7e-06,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c4": {
+   "min_vox": 0.0034,
+   "min_mm": 8e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 2.062683,
+    "20230702185753": 1.537145,
+    "20231031143852": 14.620878,
+    "20231106155351": 14.447965,
+    "20231012184424": 0.001256,
+    "20231210121321": 8e-06,
+    "20231007101619": 1.4e-05,
+    "20230929220926": 0.007488
+   },
+   "all_vertex": {
+    "n_vertices": 151954,
+    "npz_points_subset": true,
+    "min_vox": 0.0066,
+    "min_mm": 1.6e-05,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c5": {
+   "min_vox": 0.0003,
+   "min_mm": 1e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.645099,
+    "20230702185753": 1.294413,
+    "20231031143852": 15.485122,
+    "20231106155351": 15.452447,
+    "20231012184424": 0.002112,
+    "20231210121321": 1.2e-05,
+    "20231007101619": 1e-06,
+    "20230929220926": 0.362096
+   },
+   "all_vertex": {
+    "n_vertices": 129294,
+    "npz_points_subset": true,
+    "min_vox": 0.0013,
+    "min_mm": 3e-06,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c6": {
+   "min_vox": 0.0068,
+   "min_mm": 1.6e-05,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.954253,
+    "20230702185753": 1.437124,
+    "20231031143852": 14.894309,
+    "20231106155351": 14.713797,
+    "20231012184424": 0.002019,
+    "20231210121321": 1.6e-05,
+    "20231007101619": 0.000164,
+    "20230929220926": 0.782377
+   },
+   "all_vertex": {
+    "n_vertices": 154854,
+    "npz_points_subset": true,
+    "min_vox": 0.0141,
+    "min_mm": 3.4e-05,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c7": {
+   "min_vox": 0.0004,
+   "min_mm": 1e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.507928,
+    "20230702185753": 1.129528,
+    "20231031143852": 16.216144,
+    "20231106155351": 16.139252,
+    "20231012184424": 2.5e-05,
+    "20231210121321": 1e-06,
+    "20231007101619": 0.001107,
+    "20230929220926": 0.267318
+   },
+   "all_vertex": {
+    "n_vertices": 124302,
+    "npz_points_subset": true,
+    "min_vox": 0.041,
+    "min_mm": 9.8e-05,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c8": {
+   "min_vox": 0.0024,
+   "min_mm": 6e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.799754,
+    "20230702185753": 1.321331,
+    "20231031143852": 15.103274,
+    "20231106155351": 14.913856,
+    "20231012184424": 6e-06,
+    "20231210121321": 0.000903,
+    "20231007101619": 0.046384,
+    "20230929220926": 0.901708
+   },
+   "all_vertex": {
+    "n_vertices": 152238,
+    "npz_points_subset": true,
+    "min_vox": 0.0119,
+    "min_mm": 2.9e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c9": {
+   "min_vox": 0.004,
+   "min_mm": 9e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.300409,
+    "20230702185753": 0.948929,
+    "20231031143852": 16.05141,
+    "20231106155351": 15.916888,
+    "20231012184424": 9e-06,
+    "20231210121321": 0.003271,
+    "20231007101619": 0.002006,
+    "20230929220926": 0.539897
+   },
+   "all_vertex": {
+    "n_vertices": 124934,
+    "npz_points_subset": true,
+    "min_vox": 0.0461,
+    "min_mm": 0.000111,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c10": {
+   "min_vox": 0.0004,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.587134,
+    "20230702185753": 1.105816,
+    "20231031143852": 15.347879,
+    "20231106155351": 15.16013,
+    "20231012184424": 1e-06,
+    "20231210121321": 0.049277,
+    "20231007101619": 0.203248,
+    "20230929220926": 1.081744
+   },
+   "all_vertex": {
+    "n_vertices": 146998,
+    "npz_points_subset": true,
+    "min_vox": 0.3489,
+    "min_mm": 0.000837,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c11": {
+   "min_vox": 0.0011,
+   "min_mm": 3e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.142988,
+    "20230702185753": 0.794498,
+    "20231031143852": 15.901274,
+    "20231106155351": 15.831026,
+    "20231012184424": 3e-06,
+    "20231210121321": 0.111177,
+    "20231007101619": 0.001362,
+    "20230929220926": 0.724666
+   },
+   "all_vertex": {
+    "n_vertices": 125414,
+    "npz_points_subset": true,
+    "min_vox": 0.2064,
+    "min_mm": 0.000495,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c12": {
+   "min_vox": 0.0006,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.499087,
+    "20230702185753": 0.977184,
+    "20231031143852": 15.687082,
+    "20231106155351": 15.508212,
+    "20231012184424": 1e-06,
+    "20231210121321": 0.137486,
+    "20231007101619": 0.309772,
+    "20230929220926": 1.293238
+   },
+   "all_vertex": {
+    "n_vertices": 140982,
+    "npz_points_subset": true,
+    "min_vox": 0.301,
+    "min_mm": 0.000722,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c13": {
+   "min_vox": 0.0038,
+   "min_mm": 9e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.013745,
+    "20230702185753": 0.71224,
+    "20231031143852": 16.147953,
+    "20231106155351": 16.067316,
+    "20231012184424": 9e-06,
+    "20231210121321": 0.222028,
+    "20231007101619": 0.03356,
+    "20230929220926": 0.813631
+   },
+   "all_vertex": {
+    "n_vertices": 123530,
+    "npz_points_subset": true,
+    "min_vox": 0.1649,
+    "min_mm": 0.000396,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c14": {
+   "min_vox": 0.0021,
+   "min_mm": 5e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.241518,
+    "20230702185753": 0.799164,
+    "20231031143852": 16.089077,
+    "20231106155351": 15.894245,
+    "20231012184424": 5e-06,
+    "20231210121321": 0.205855,
+    "20231007101619": 0.399202,
+    "20230929220926": 1.398748
+   },
+   "all_vertex": {
+    "n_vertices": 134962,
+    "npz_points_subset": true,
+    "min_vox": 0.2012,
+    "min_mm": 0.000483,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c15": {
+   "min_vox": 0.0016,
+   "min_mm": 4e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.925442,
+    "20230702185753": 0.597621,
+    "20231031143852": 16.599049,
+    "20231106155351": 16.531452,
+    "20231012184424": 4e-06,
+    "20231210121321": 0.363934,
+    "20231007101619": 0.184393,
+    "20230929220926": 1.029583
+   },
+   "all_vertex": {
+    "n_vertices": 118546,
+    "npz_points_subset": true,
+    "min_vox": 0.3886,
+    "min_mm": 0.000933,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c16": {
+   "min_vox": 0.9988,
+   "min_mm": 0.002397,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.119441,
+    "20230702185753": 0.579491,
+    "20231031143852": 16.505483,
+    "20231106155351": 16.303035,
+    "20231012184424": 0.002397,
+    "20231210121321": 0.331126,
+    "20231007101619": 0.472361,
+    "20230929220926": 1.479544
+   },
+   "all_vertex": {
+    "n_vertices": 132370,
+    "npz_points_subset": true,
+    "min_vox": 0.0167,
+    "min_mm": 4e-05,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c17": {
+   "min_vox": 0.0549,
+   "min_mm": 0.000132,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.830257,
+    "20230702185753": 0.519913,
+    "20231031143852": 17.496416,
+    "20231106155351": 17.366392,
+    "20231012184424": 0.000132,
+    "20231210121321": 0.454117,
+    "20231007101619": 0.288149,
+    "20230929220926": 1.325707
+   },
+   "all_vertex": {
+    "n_vertices": 112058,
+    "npz_points_subset": true,
+    "min_vox": 0.0549,
+    "min_mm": 0.000132,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c18": {
+   "min_vox": 33.6185,
+   "min_mm": 0.080684,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.024791,
+    "20230702185753": 0.481218,
+    "20231031143852": 16.857027,
+    "20231106155351": 16.671132,
+    "20231012184424": 0.080684,
+    "20231210121321": 0.540322,
+    "20231007101619": 0.456689,
+    "20230929220926": 1.52018
+   },
+   "all_vertex": {
+    "n_vertices": 129226,
+    "npz_points_subset": true,
+    "min_vox": 29.6262,
+    "min_mm": 0.071103,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c19": {
+   "min_vox": 42.2309,
+   "min_mm": 0.101354,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.761753,
+    "20230702185753": 0.458287,
+    "20231031143852": 17.884988,
+    "20231106155351": 17.875331,
+    "20231012184424": 0.101354,
+    "20231210121321": 0.546092,
+    "20231007101619": 0.482121,
+    "20230929220926": 1.577785
+   },
+   "all_vertex": {
+    "n_vertices": 107658,
+    "npz_points_subset": true,
+    "min_vox": 41.0122,
+    "min_mm": 0.098429,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r0_c20": {
+   "min_vox": 66.5878,
+   "min_mm": 0.159811,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.923996,
+    "20230702185753": 0.407115,
+    "20231031143852": 17.082116,
+    "20231106155351": 16.907843,
+    "20231012184424": 0.159811,
+    "20231210121321": 0.647012,
+    "20231007101619": 0.557006,
+    "20230929220926": 1.646934
+   },
+   "all_vertex": {
+    "n_vertices": 109382,
+    "npz_points_subset": true,
+    "min_vox": 61.5499,
+    "min_mm": 0.14772,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c0": {
+   "min_vox": 0.0019,
+   "min_mm": 5e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.86363,
+    "20230702185753": 1.656544,
+    "20231031143852": 1.301085,
+    "20231106155351": 0.961062,
+    "20231012184424": 0.202118,
+    "20231210121321": 0.104571,
+    "20231007101619": 5e-06,
+    "20230929220926": 0.571627
+   },
+   "all_vertex": {
+    "n_vertices": 149702,
+    "npz_points_subset": true,
+    "min_vox": 0.3275,
+    "min_mm": 0.000786,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c1": {
+   "min_vox": 0.0017,
+   "min_mm": 4e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 2.241174,
+    "20230702185753": 1.657659,
+    "20231031143852": 1.253395,
+    "20231106155351": 0.864585,
+    "20231012184424": 0.21638,
+    "20231210121321": 0.000578,
+    "20231007101619": 4e-06,
+    "20230929220926": 0.556968
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0119,
+    "min_mm": 2.9e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c2": {
+   "min_vox": 0.0052,
+   "min_mm": 1.2e-05,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.762405,
+    "20230702185753": 1.55164,
+    "20231031143852": 1.209416,
+    "20231106155351": 0.902863,
+    "20231012184424": 0.132309,
+    "20231210121321": 0.012024,
+    "20231007101619": 1.2e-05,
+    "20230929220926": 0.460103
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.3353,
+    "min_mm": 0.000805,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c3": {
+   "min_vox": 0.0029,
+   "min_mm": 7e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.811918,
+    "20230702185753": 1.575564,
+    "20231031143852": 1.212285,
+    "20231106155351": 0.986354,
+    "20231012184424": 0.135459,
+    "20231210121321": 1.5e-05,
+    "20231007101619": 7e-06,
+    "20230929220926": 0.806009
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.3006,
+    "min_mm": 0.000722,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c4": {
+   "min_vox": 0.0038,
+   "min_mm": 9e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 2.024997,
+    "20230702185753": 1.517851,
+    "20231031143852": 1.113677,
+    "20231106155351": 0.697875,
+    "20231012184424": 0.074103,
+    "20231210121321": 9e-06,
+    "20231007101619": 1.3e-05,
+    "20230929220926": 0.583726
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1137,
+    "min_mm": 0.000273,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c5": {
+   "min_vox": 0.0038,
+   "min_mm": 9e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.649615,
+    "20230702185753": 1.443794,
+    "20231031143852": 1.097716,
+    "20231106155351": 0.797316,
+    "20231012184424": 0.010397,
+    "20231210121321": 9e-06,
+    "20231007101619": 0.000411,
+    "20230929220926": 0.924196
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0073,
+    "min_mm": 1.7e-05,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c6": {
+   "min_vox": 0.0033,
+   "min_mm": 8e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.846295,
+    "20230702185753": 1.41618,
+    "20231031143852": 1.011284,
+    "20231106155351": 0.605515,
+    "20231012184424": 0.001163,
+    "20231210121321": 8e-06,
+    "20231007101619": 9.8e-05,
+    "20230929220926": 0.69641
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0576,
+    "min_mm": 0.000138,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c7": {
+   "min_vox": 0.0004,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.520794,
+    "20230702185753": 1.295182,
+    "20231031143852": 0.969507,
+    "20231106155351": 0.642015,
+    "20231012184424": 1e-06,
+    "20231210121321": 5e-06,
+    "20231007101619": 0.035319,
+    "20230929220926": 0.792793
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1053,
+    "min_mm": 0.000253,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c8": {
+   "min_vox": 0.0045,
+   "min_mm": 1.1e-05,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.601427,
+    "20230702185753": 1.270375,
+    "20231031143852": 0.888019,
+    "20231106155351": 0.50041,
+    "20231012184424": 1.1e-05,
+    "20231210121321": 0.001016,
+    "20231007101619": 0.000753,
+    "20230929220926": 0.950294
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.012,
+    "min_mm": 2.9e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c9": {
+   "min_vox": 0.0006,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.354125,
+    "20230702185753": 1.097218,
+    "20231031143852": 0.808321,
+    "20231106155351": 0.491023,
+    "20231012184424": 1e-06,
+    "20231210121321": 0.032705,
+    "20231007101619": 0.086903,
+    "20230929220926": 0.82043
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1886,
+    "min_mm": 0.000453,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c10": {
+   "min_vox": 0.0037,
+   "min_mm": 9e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.442222,
+    "20230702185753": 1.143449,
+    "20231031143852": 0.749532,
+    "20231106155351": 0.367779,
+    "20231012184424": 9e-06,
+    "20231210121321": 0.030457,
+    "20231007101619": 0.094432,
+    "20230929220926": 1.086501
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.3439,
+    "min_mm": 0.000825,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c11": {
+   "min_vox": 0.0084,
+   "min_mm": 2e-05,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.269472,
+    "20230702185753": 1.001729,
+    "20231031143852": 0.713855,
+    "20231106155351": 0.386594,
+    "20231012184424": 2e-05,
+    "20231210121321": 0.10221,
+    "20231007101619": 0.127236,
+    "20230929220926": 0.947113
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.3168,
+    "min_mm": 0.00076,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c12": {
+   "min_vox": 0.0014,
+   "min_mm": 3e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.285265,
+    "20230702185753": 0.972148,
+    "20231031143852": 0.616081,
+    "20231106155351": 0.230408,
+    "20231012184424": 3e-06,
+    "20231210121321": 0.124052,
+    "20231007101619": 0.243776,
+    "20230929220926": 1.262633
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2122,
+    "min_mm": 0.000509,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c13": {
+   "min_vox": 0.0008,
+   "min_mm": 2e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.200097,
+    "20230702185753": 0.932692,
+    "20231031143852": 0.617138,
+    "20231106155351": 0.268441,
+    "20231012184424": 2e-06,
+    "20231210121321": 0.232652,
+    "20231007101619": 0.288858,
+    "20230929220926": 1.100666
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2657,
+    "min_mm": 0.000638,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c14": {
+   "min_vox": 0.002,
+   "min_mm": 5e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.141602,
+    "20230702185753": 0.83795,
+    "20231031143852": 0.505224,
+    "20231106155351": 0.108674,
+    "20231012184424": 5e-06,
+    "20231210121321": 0.250034,
+    "20231007101619": 0.35676,
+    "20230929220926": 1.491325
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.3604,
+    "min_mm": 0.000865,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c15": {
+   "min_vox": 0.0044,
+   "min_mm": 1.1e-05,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.997563,
+    "20230702185753": 0.789752,
+    "20231031143852": 0.44563,
+    "20231106155351": 0.14966,
+    "20231012184424": 1.1e-05,
+    "20231210121321": 0.344345,
+    "20231007101619": 0.410755,
+    "20230929220926": 1.224056
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1597,
+    "min_mm": 0.000383,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c16": {
+   "min_vox": 0.893,
+   "min_mm": 0.002143,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.884599,
+    "20230702185753": 0.701554,
+    "20231031143852": 0.348201,
+    "20231106155351": 0.019643,
+    "20231012184424": 0.002143,
+    "20231210121321": 0.352912,
+    "20231007101619": 0.441949,
+    "20230929220926": 1.557393
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0572,
+    "min_mm": 0.000137,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c17": {
+   "min_vox": 4.6893,
+   "min_mm": 0.011254,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.827468,
+    "20230702185753": 0.584479,
+    "20231031143852": 0.374337,
+    "20231106155351": 0.031805,
+    "20231012184424": 0.011254,
+    "20231210121321": 0.453725,
+    "20231007101619": 0.596566,
+    "20230929220926": 1.405382
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1667,
+    "min_mm": 0.0004,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c18": {
+   "min_vox": 0.0837,
+   "min_mm": 0.000201,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.893827,
+    "20230702185753": 0.642757,
+    "20231031143852": 0.297491,
+    "20231106155351": 0.000201,
+    "20231012184424": 0.06866,
+    "20231210121321": 0.561743,
+    "20231007101619": 0.525917,
+    "20230929220926": 1.480357
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0118,
+    "min_mm": 2.8e-05,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c19": {
+   "min_vox": 0.0894,
+   "min_mm": 0.000215,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.760201,
+    "20230702185753": 0.512332,
+    "20231031143852": 0.321872,
+    "20231106155351": 0.000215,
+    "20231012184424": 0.125838,
+    "20231210121321": 0.542969,
+    "20231007101619": 0.70733,
+    "20230929220926": 1.509764
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0225,
+    "min_mm": 5.4e-05,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r1_c20": {
+   "min_vox": 0.0174,
+   "min_mm": 4.2e-05,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.903982,
+    "20230702185753": 0.528495,
+    "20231031143852": 0.194771,
+    "20231106155351": 4.2e-05,
+    "20231012184424": 0.180938,
+    "20231210121321": 0.657739,
+    "20231007101619": 0.634755,
+    "20230929220926": 1.598794
+   },
+   "all_vertex": {
+    "n_vertices": 151355,
+    "npz_points_subset": true,
+    "min_vox": 0.0084,
+    "min_mm": 2e-05,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c0": {
+   "min_vox": 0.0088,
+   "min_mm": 2.1e-05,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.624548,
+    "20230702185753": 1.311265,
+    "20231031143852": 1.117235,
+    "20231106155351": 0.783131,
+    "20231012184424": 0.211152,
+    "20231210121321": 0.104964,
+    "20231007101619": 2.1e-05,
+    "20230929220926": 0.397391
+   },
+   "all_vertex": {
+    "n_vertices": 156966,
+    "npz_points_subset": true,
+    "min_vox": 0.3099,
+    "min_mm": 0.000744,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c1": {
+   "min_vox": 0.0,
+   "min_mm": 0.0,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.72261,
+    "20230702185753": 1.466571,
+    "20231031143852": 1.092603,
+    "20231106155351": 0.701104,
+    "20231012184424": 0.247328,
+    "20231210121321": 0.006047,
+    "20231007101619": 0.0,
+    "20230929220926": 0.542926
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0124,
+    "min_mm": 3e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c2": {
+   "min_vox": 0.0034,
+   "min_mm": 8e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.504192,
+    "20230702185753": 1.224691,
+    "20231031143852": 0.947119,
+    "20231106155351": 0.683854,
+    "20231012184424": 0.111204,
+    "20231210121321": 0.004488,
+    "20231007101619": 8e-06,
+    "20230929220926": 0.481514
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.3956,
+    "min_mm": 0.00095,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c3": {
+   "min_vox": 0.0012,
+   "min_mm": 3e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.59612,
+    "20230702185753": 1.327602,
+    "20231031143852": 0.996669,
+    "20231106155351": 0.61822,
+    "20231012184424": 0.075063,
+    "20231210121321": 6.2e-05,
+    "20231007101619": 3e-06,
+    "20230929220926": 0.718487
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0012,
+    "min_mm": 3e-06,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c4": {
+   "min_vox": 0.0047,
+   "min_mm": 1.1e-05,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.411552,
+    "20230702185753": 1.186719,
+    "20231031143852": 0.796721,
+    "20231106155351": 0.561905,
+    "20231012184424": 0.033755,
+    "20231210121321": 1.4e-05,
+    "20231007101619": 1.1e-05,
+    "20230929220926": 0.581892
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0694,
+    "min_mm": 0.000167,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c5": {
+   "min_vox": 0.0002,
+   "min_mm": 0.0,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.394632,
+    "20230702185753": 1.113141,
+    "20231031143852": 0.866983,
+    "20231106155351": 0.589515,
+    "20231012184424": 0.002385,
+    "20231210121321": 0.0,
+    "20231007101619": 8e-05,
+    "20230929220926": 0.671767
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0022,
+    "min_mm": 5e-06,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c6": {
+   "min_vox": 0.0014,
+   "min_mm": 3e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.319948,
+    "20230702185753": 1.089083,
+    "20231031143852": 0.726013,
+    "20231106155351": 0.454098,
+    "20231012184424": 0.000325,
+    "20231210121321": 3e-06,
+    "20231007101619": 1e-05,
+    "20230929220926": 0.801204
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0042,
+    "min_mm": 1e-05,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c7": {
+   "min_vox": 0.0009,
+   "min_mm": 2e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.29338,
+    "20230702185753": 1.011201,
+    "20231031143852": 0.7647,
+    "20231106155351": 0.448566,
+    "20231012184424": 3e-06,
+    "20231210121321": 2e-06,
+    "20231007101619": 0.000376,
+    "20230929220926": 0.670925
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0239,
+    "min_mm": 5.7e-05,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c8": {
+   "min_vox": 0.0002,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.394868,
+    "20230702185753": 1.118723,
+    "20231031143852": 0.754898,
+    "20231106155351": 0.348876,
+    "20231012184424": 1e-06,
+    "20231210121321": 7.2e-05,
+    "20231007101619": 0.05739,
+    "20230929220926": 0.959874
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2349,
+    "min_mm": 0.000564,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c9": {
+   "min_vox": 0.0007,
+   "min_mm": 2e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.107784,
+    "20230702185753": 0.790738,
+    "20231031143852": 0.561834,
+    "20231106155351": 0.353277,
+    "20231012184424": 2e-06,
+    "20231210121321": 0.000613,
+    "20231007101619": 0.139613,
+    "20230929220926": 0.812597
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0558,
+    "min_mm": 0.000134,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c10": {
+   "min_vox": 0.0001,
+   "min_mm": 0.0,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.320174,
+    "20230702185753": 1.010225,
+    "20231031143852": 0.612935,
+    "20231106155351": 0.276714,
+    "20231012184424": 0.0,
+    "20231210121321": 0.034171,
+    "20231007101619": 0.191629,
+    "20230929220926": 1.062064
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.4126,
+    "min_mm": 0.00099,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c11": {
+   "min_vox": 0.0026,
+   "min_mm": 6e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.96998,
+    "20230702185753": 0.676677,
+    "20231031143852": 0.347436,
+    "20231106155351": 0.239151,
+    "20231012184424": 6e-06,
+    "20231210121321": 0.002063,
+    "20231007101619": 0.222915,
+    "20230929220926": 0.982146
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1438,
+    "min_mm": 0.000345,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c12": {
+   "min_vox": 0.0003,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.178545,
+    "20230702185753": 0.883467,
+    "20231031143852": 0.458576,
+    "20231106155351": 0.153841,
+    "20231012184424": 1e-06,
+    "20231210121321": 0.140038,
+    "20231007101619": 0.321283,
+    "20230929220926": 1.167233
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1772,
+    "min_mm": 0.000425,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c13": {
+   "min_vox": 0.0005,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.833304,
+    "20230702185753": 0.498651,
+    "20231031143852": 0.075478,
+    "20231106155351": 0.14722,
+    "20231012184424": 1e-06,
+    "20231210121321": 0.075197,
+    "20231007101619": 0.264469,
+    "20230929220926": 1.051881
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2461,
+    "min_mm": 0.000591,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c14": {
+   "min_vox": 0.0007,
+   "min_mm": 2e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.944933,
+    "20230702185753": 0.704335,
+    "20231031143852": 0.369319,
+    "20231106155351": 0.061441,
+    "20231012184424": 2e-06,
+    "20231210121321": 0.240789,
+    "20231007101619": 0.439864,
+    "20230929220926": 1.386951
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1046,
+    "min_mm": 0.000251,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c15": {
+   "min_vox": 0.007,
+   "min_mm": 1.7e-05,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.727884,
+    "20230702185753": 0.40702,
+    "20231031143852": 0.053054,
+    "20231106155351": 0.002652,
+    "20231012184424": 1.7e-05,
+    "20231210121321": 0.270074,
+    "20231007101619": 0.448827,
+    "20230929220926": 1.269419
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0857,
+    "min_mm": 0.000206,
+    "segment": "20231031143852",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c16": {
+   "min_vox": 0.0082,
+   "min_mm": 2e-05,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.76119,
+    "20230702185753": 0.567586,
+    "20231031143852": 0.240939,
+    "20231106155351": 0.000171,
+    "20231012184424": 2e-05,
+    "20231210121321": 0.346405,
+    "20231007101619": 0.503533,
+    "20230929220926": 1.478448
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0006,
+    "min_mm": 2e-06,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c17": {
+   "min_vox": 0.0363,
+   "min_mm": 8.7e-05,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.660822,
+    "20230702185753": 0.390737,
+    "20231031143852": 0.001593,
+    "20231106155351": 8.7e-05,
+    "20231012184424": 0.00224,
+    "20231210121321": 0.341205,
+    "20231007101619": 0.563401,
+    "20230929220926": 1.399968
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0387,
+    "min_mm": 9.3e-05,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c18": {
+   "min_vox": 0.0065,
+   "min_mm": 1.6e-05,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.664299,
+    "20230702185753": 0.47254,
+    "20231031143852": 0.132227,
+    "20231106155351": 1.6e-05,
+    "20231012184424": 0.057196,
+    "20231210121321": 0.441112,
+    "20231007101619": 0.594917,
+    "20230929220926": 1.488134
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1046,
+    "min_mm": 0.000251,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c19": {
+   "min_vox": 0.0061,
+   "min_mm": 1.5e-05,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.604692,
+    "20230702185753": 0.300432,
+    "20231031143852": 0.001209,
+    "20231106155351": 1.5e-05,
+    "20231012184424": 0.054783,
+    "20231210121321": 0.441598,
+    "20231007101619": 0.630457,
+    "20230929220926": 1.522255
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0648,
+    "min_mm": 0.000156,
+    "segment": "20231031143852",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r2_c20": {
+   "min_vox": 0.0018,
+   "min_mm": 4e-06,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.588164,
+    "20230702185753": 0.402454,
+    "20231031143852": 0.055382,
+    "20231106155351": 4e-06,
+    "20231012184424": 0.119027,
+    "20231210121321": 0.505113,
+    "20231007101619": 0.690677,
+    "20230929220926": 1.587538
+   },
+   "all_vertex": {
+    "n_vertices": 142867,
+    "npz_points_subset": true,
+    "min_vox": 0.3091,
+    "min_mm": 0.000742,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c0": {
+   "min_vox": 0.0037,
+   "min_mm": 9e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.676948,
+    "20230702185753": 1.154411,
+    "20231031143852": 0.986622,
+    "20231106155351": 0.714486,
+    "20231012184424": 0.157455,
+    "20231210121321": 0.036254,
+    "20231007101619": 9e-06,
+    "20230929220926": 0.342907
+   },
+   "all_vertex": {
+    "n_vertices": 137786,
+    "npz_points_subset": true,
+    "min_vox": 0.2977,
+    "min_mm": 0.000715,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c1": {
+   "min_vox": 0.0024,
+   "min_mm": 6e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.575408,
+    "20230702185753": 1.398915,
+    "20231031143852": 0.961137,
+    "20231106155351": 0.660725,
+    "20231012184424": 0.2311,
+    "20231210121321": 0.029024,
+    "20231007101619": 6e-06,
+    "20230929220926": 0.605226
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2107,
+    "min_mm": 0.000506,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c2": {
+   "min_vox": 0.0005,
+   "min_mm": 1e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.58007,
+    "20230702185753": 1.042437,
+    "20231031143852": 0.843033,
+    "20231106155351": 0.587741,
+    "20231012184424": 0.035148,
+    "20231210121321": 5.4e-05,
+    "20231007101619": 1e-06,
+    "20230929220926": 0.447769
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0078,
+    "min_mm": 1.9e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c3": {
+   "min_vox": 0.0026,
+   "min_mm": 6e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.591419,
+    "20230702185753": 1.077168,
+    "20231031143852": 0.901968,
+    "20231106155351": 0.625642,
+    "20231012184424": 0.07548,
+    "20231210121321": 0.000127,
+    "20231007101619": 6e-06,
+    "20230929220926": 0.652208
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1686,
+    "min_mm": 0.000405,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c4": {
+   "min_vox": 0.002,
+   "min_mm": 5e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.427186,
+    "20230702185753": 0.919835,
+    "20231031143852": 0.746925,
+    "20231106155351": 0.493767,
+    "20231012184424": 0.002277,
+    "20231210121321": 5e-06,
+    "20231007101619": 9e-06,
+    "20230929220926": 0.617461
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0034,
+    "min_mm": 8e-06,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c5": {
+   "min_vox": 0.0051,
+   "min_mm": 1.2e-05,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.492088,
+    "20230702185753": 0.954363,
+    "20231031143852": 0.801289,
+    "20231106155351": 0.537198,
+    "20231012184424": 5.6e-05,
+    "20231210121321": 1.2e-05,
+    "20231007101619": 0.00029,
+    "20230929220926": 0.555812
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0031,
+    "min_mm": 8e-06,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c6": {
+   "min_vox": 0.0022,
+   "min_mm": 5e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.324776,
+    "20230702185753": 1.108801,
+    "20231031143852": 0.693961,
+    "20231106155351": 0.415351,
+    "20231012184424": 9.1e-05,
+    "20231210121321": 5e-06,
+    "20231007101619": 0.026567,
+    "20230929220926": 0.727271
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1613,
+    "min_mm": 0.000387,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c7": {
+   "min_vox": 0.0028,
+   "min_mm": 7e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.357424,
+    "20230702185753": 0.813735,
+    "20231031143852": 0.676002,
+    "20231106155351": 0.401099,
+    "20231012184424": 7e-06,
+    "20231210121321": 1.9e-05,
+    "20231007101619": 0.002985,
+    "20230929220926": 0.654157
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0271,
+    "min_mm": 6.5e-05,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c8": {
+   "min_vox": 0.0027,
+   "min_mm": 7e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.249891,
+    "20230702185753": 0.963959,
+    "20231031143852": 0.59453,
+    "20231106155351": 0.323846,
+    "20231012184424": 7e-06,
+    "20231210121321": 0.000112,
+    "20231007101619": 0.103187,
+    "20230929220926": 0.857386
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1372,
+    "min_mm": 0.000329,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c9": {
+   "min_vox": 0.0002,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.182898,
+    "20230702185753": 0.735603,
+    "20231031143852": 0.552484,
+    "20231106155351": 0.283498,
+    "20231012184424": 1e-06,
+    "20231210121321": 0.000301,
+    "20231007101619": 0.002409,
+    "20230929220926": 0.809702
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0033,
+    "min_mm": 8e-06,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c10": {
+   "min_vox": 0.0038,
+   "min_mm": 9e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.128717,
+    "20230702185753": 0.837271,
+    "20231031143852": 0.505525,
+    "20231106155351": 0.18834,
+    "20231012184424": 9e-06,
+    "20231210121321": 0.023056,
+    "20231007101619": 0.22645,
+    "20230929220926": 1.024036
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0599,
+    "min_mm": 0.000144,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c11": {
+   "min_vox": 0.0003,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.076928,
+    "20230702185753": 0.642061,
+    "20231031143852": 0.444841,
+    "20231106155351": 0.191876,
+    "20231012184424": 1e-06,
+    "20231210121321": 0.003191,
+    "20231007101619": 0.157886,
+    "20230929220926": 0.95846
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0226,
+    "min_mm": 5.4e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c12": {
+   "min_vox": 0.0004,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 1.021152,
+    "20230702185753": 0.711225,
+    "20231031143852": 0.378284,
+    "20231106155351": 0.090671,
+    "20231012184424": 1e-06,
+    "20231210121321": 0.104839,
+    "20231007101619": 0.310345,
+    "20230929220926": 1.223511
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1399,
+    "min_mm": 0.000336,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c13": {
+   "min_vox": 0.0003,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.988314,
+    "20230702185753": 0.575617,
+    "20231031143852": 0.38124,
+    "20231106155351": 0.091777,
+    "20231012184424": 1e-06,
+    "20231210121321": 0.083371,
+    "20231007101619": 0.249232,
+    "20230929220926": 1.097357
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1499,
+    "min_mm": 0.00036,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c14": {
+   "min_vox": 0.0013,
+   "min_mm": 3e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.925679,
+    "20230702185753": 0.608354,
+    "20231031143852": 0.290215,
+    "20231106155351": 0.001929,
+    "20231012184424": 3e-06,
+    "20231210121321": 0.208286,
+    "20231007101619": 0.389789,
+    "20230929220926": 1.343629
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0712,
+    "min_mm": 0.000171,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c15": {
+   "min_vox": 0.0056,
+   "min_mm": 1.3e-05,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.811235,
+    "20230702185753": 0.521519,
+    "20231031143852": 0.195022,
+    "20231106155351": 0.00049,
+    "20231012184424": 1.3e-05,
+    "20231210121321": 0.170473,
+    "20231007101619": 0.398694,
+    "20230929220926": 1.221307
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0181,
+    "min_mm": 4.3e-05,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c16": {
+   "min_vox": 0.0241,
+   "min_mm": 5.8e-05,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.798509,
+    "20230702185753": 0.523506,
+    "20231031143852": 0.148101,
+    "20231106155351": 5.8e-05,
+    "20231012184424": 0.000173,
+    "20231210121321": 0.39719,
+    "20231007101619": 0.538132,
+    "20230929220926": 1.371979
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0011,
+    "min_mm": 3e-06,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c17": {
+   "min_vox": 0.0293,
+   "min_mm": 7e-05,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.711023,
+    "20230702185753": 0.403707,
+    "20231031143852": 0.069784,
+    "20231106155351": 7e-05,
+    "20231012184424": 0.00353,
+    "20231210121321": 0.28348,
+    "20231007101619": 0.517666,
+    "20230929220926": 1.332191
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0155,
+    "min_mm": 3.7e-05,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c18": {
+   "min_vox": 0.0013,
+   "min_mm": 3e-06,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.710913,
+    "20230702185753": 0.435827,
+    "20231031143852": 0.054938,
+    "20231106155351": 3e-06,
+    "20231012184424": 0.039137,
+    "20231210121321": 0.480016,
+    "20231007101619": 0.605342,
+    "20230929220926": 1.434651
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.173,
+    "min_mm": 0.000415,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c19": {
+   "min_vox": 0.0057,
+   "min_mm": 1.4e-05,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.658007,
+    "20230702185753": 0.298027,
+    "20231031143852": 0.041471,
+    "20231106155351": 1.4e-05,
+    "20231012184424": 0.08236,
+    "20231210121321": 0.340075,
+    "20231007101619": 0.59884,
+    "20230929220926": 1.473342
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1194,
+    "min_mm": 0.000287,
+    "segment": "20231031143852",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r3_c20": {
+   "min_vox": 0.0027,
+   "min_mm": 6e-06,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 0.613398,
+    "20230702185753": 0.328384,
+    "20231031143852": 0.001887,
+    "20231106155351": 6e-06,
+    "20231012184424": 0.123142,
+    "20231210121321": 0.549553,
+    "20231007101619": 0.685859,
+    "20230929220926": 1.540789
+   },
+   "all_vertex": {
+    "n_vertices": 156735,
+    "npz_points_subset": true,
+    "min_vox": 0.0115,
+    "min_mm": 2.8e-05,
+    "segment": "20231031143852",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c0": {
+   "min_vox": 0.0081,
+   "min_mm": 1.9e-05,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 7.533204,
+    "20230702185753": 1.048329,
+    "20231031143852": 0.891453,
+    "20231106155351": 0.672415,
+    "20231012184424": 0.132386,
+    "20231210121321": 0.000851,
+    "20231007101619": 1.9e-05,
+    "20230929220926": 3.631198
+   },
+   "all_vertex": {
+    "n_vertices": 126410,
+    "npz_points_subset": true,
+    "min_vox": 0.0184,
+    "min_mm": 4.4e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c1": {
+   "min_vox": 0.0111,
+   "min_mm": 2.7e-05,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 8.517919,
+    "20230702185753": 1.236387,
+    "20231031143852": 0.955551,
+    "20231106155351": 0.728427,
+    "20231012184424": 0.17734,
+    "20231210121321": 8.1e-05,
+    "20231007101619": 2.7e-05,
+    "20230929220926": 4.334061
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0079,
+    "min_mm": 1.9e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c2": {
+   "min_vox": 0.0018,
+   "min_mm": 4e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 7.467882,
+    "20230702185753": 0.940354,
+    "20231031143852": 0.777215,
+    "20231106155351": 0.535473,
+    "20231012184424": 0.069143,
+    "20231210121321": 0.000158,
+    "20231007101619": 4e-06,
+    "20230929220926": 3.579193
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0282,
+    "min_mm": 6.8e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c3": {
+   "min_vox": 0.0063,
+   "min_mm": 1.5e-05,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 7.563791,
+    "20230702185753": 1.070679,
+    "20231031143852": 0.898564,
+    "20231106155351": 0.659827,
+    "20231012184424": 0.058977,
+    "20231210121321": 1.5e-05,
+    "20231007101619": 2.9e-05,
+    "20230929220926": 3.582543
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0009,
+    "min_mm": 2e-06,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c4": {
+   "min_vox": 0.0006,
+   "min_mm": 1e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 7.280819,
+    "20230702185753": 1.014262,
+    "20231031143852": 0.736624,
+    "20231106155351": 0.506152,
+    "20231012184424": 0.0096,
+    "20231210121321": 1e-06,
+    "20231007101619": 2.2e-05,
+    "20230929220926": 4.102639
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1198,
+    "min_mm": 0.000288,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c5": {
+   "min_vox": 0.007,
+   "min_mm": 1.7e-05,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 7.284735,
+    "20230702185753": 0.877546,
+    "20231031143852": 0.716814,
+    "20231106155351": 0.503333,
+    "20231012184424": 0.000136,
+    "20231210121321": 1.7e-05,
+    "20231007101619": 0.000245,
+    "20230929220926": 3.463282
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0083,
+    "min_mm": 2e-05,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c6": {
+   "min_vox": 0.0015,
+   "min_mm": 4e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 8.187336,
+    "20230702185753": 1.043852,
+    "20231031143852": 0.723719,
+    "20231106155351": 0.48969,
+    "20231012184424": 1.4e-05,
+    "20231210121321": 4e-06,
+    "20231007101619": 1.1e-05,
+    "20230929220926": 4.371853
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0022,
+    "min_mm": 5e-06,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c7": {
+   "min_vox": 0.0009,
+   "min_mm": 2e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 6.997595,
+    "20230702185753": 0.788506,
+    "20231031143852": 0.623563,
+    "20231106155351": 0.387603,
+    "20231012184424": 2e-06,
+    "20231210121321": 8e-06,
+    "20231007101619": 0.003226,
+    "20230929220926": 3.256073
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0628,
+    "min_mm": 0.000151,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c8": {
+   "min_vox": 0.003,
+   "min_mm": 7e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 7.943696,
+    "20230702185753": 0.960408,
+    "20231031143852": 0.618819,
+    "20231106155351": 0.398329,
+    "20231012184424": 7e-06,
+    "20231210121321": 2.9e-05,
+    "20231007101619": 0.015446,
+    "20230929220926": 4.239817
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2013,
+    "min_mm": 0.000483,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c9": {
+   "min_vox": 0.003,
+   "min_mm": 7e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 6.780068,
+    "20230702185753": 0.624964,
+    "20231031143852": 0.461286,
+    "20231106155351": 0.258938,
+    "20231012184424": 7e-06,
+    "20231210121321": 0.000259,
+    "20231007101619": 0.00185,
+    "20230929220926": 3.122007
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0081,
+    "min_mm": 1.9e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c10": {
+   "min_vox": 0.0003,
+   "min_mm": 1e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 7.854249,
+    "20230702185753": 0.852153,
+    "20231031143852": 0.506292,
+    "20231106155351": 0.287101,
+    "20231012184424": 1e-06,
+    "20231210121321": 0.00071,
+    "20231007101619": 0.104843,
+    "20230929220926": 3.358696
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0254,
+    "min_mm": 6.1e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c11": {
+   "min_vox": 0.0056,
+   "min_mm": 1.3e-05,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 6.683779,
+    "20230702185753": 0.552051,
+    "20231031143852": 0.410451,
+    "20231106155351": 0.126999,
+    "20231012184424": 1.3e-05,
+    "20231210121321": 0.02913,
+    "20231007101619": 0.050652,
+    "20230929220926": 3.057295
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.16,
+    "min_mm": 0.000384,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c12": {
+   "min_vox": 0.0058,
+   "min_mm": 1.4e-05,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 7.280971,
+    "20230702185753": 0.682953,
+    "20231031143852": 0.355126,
+    "20231106155351": 0.1363,
+    "20231012184424": 1.4e-05,
+    "20231210121321": 0.051946,
+    "20231007101619": 0.206457,
+    "20230929220926": 3.104944
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2296,
+    "min_mm": 0.000551,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c13": {
+   "min_vox": 0.0013,
+   "min_mm": 3e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 6.388279,
+    "20230702185753": 0.504595,
+    "20231031143852": 0.361278,
+    "20231106155351": 0.088342,
+    "20231012184424": 3e-06,
+    "20231210121321": 0.085467,
+    "20231007101619": 0.262074,
+    "20230929220926": 2.819203
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0155,
+    "min_mm": 3.7e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c14": {
+   "min_vox": 0.0014,
+   "min_mm": 3e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 7.062614,
+    "20230702185753": 0.523125,
+    "20231031143852": 0.245552,
+    "20231106155351": 0.018976,
+    "20231012184424": 3e-06,
+    "20231210121321": 0.197344,
+    "20231007101619": 0.34032,
+    "20230929220926": 3.042889
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2279,
+    "min_mm": 0.000547,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c15": {
+   "min_vox": 0.0029,
+   "min_mm": 7e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 6.129304,
+    "20230702185753": 0.41036,
+    "20231031143852": 0.27111,
+    "20231106155351": 0.018909,
+    "20231012184424": 7e-06,
+    "20231210121321": 0.248889,
+    "20231007101619": 0.419519,
+    "20230929220926": 2.664662
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.3626,
+    "min_mm": 0.00087,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c16": {
+   "min_vox": 0.0315,
+   "min_mm": 7.6e-05,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 7.001677,
+    "20230702185753": 0.497361,
+    "20231031143852": 0.148546,
+    "20231106155351": 7.6e-05,
+    "20231012184424": 0.000177,
+    "20231210121321": 0.242631,
+    "20231007101619": 0.35661,
+    "20230929220926": 3.018187
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0012,
+    "min_mm": 3e-06,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c17": {
+   "min_vox": 0.0012,
+   "min_mm": 3e-06,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 5.928249,
+    "20230702185753": 0.328147,
+    "20231031143852": 0.178331,
+    "20231106155351": 3e-06,
+    "20231012184424": 0.017069,
+    "20231210121321": 0.342563,
+    "20231007101619": 0.517668,
+    "20230929220926": 2.547203
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0022,
+    "min_mm": 5e-06,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c18": {
+   "min_vox": 0.0033,
+   "min_mm": 8e-06,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 6.565989,
+    "20230702185753": 0.430112,
+    "20231031143852": 0.011567,
+    "20231106155351": 8e-06,
+    "20231012184424": 0.000139,
+    "20231210121321": 0.360014,
+    "20231007101619": 0.475406,
+    "20230929220926": 3.50573
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0103,
+    "min_mm": 2.5e-05,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c19": {
+   "min_vox": 0.0003,
+   "min_mm": 1e-06,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 5.599986,
+    "20230702185753": 0.239562,
+    "20231031143852": 0.076596,
+    "20231106155351": 1e-06,
+    "20231012184424": 0.021661,
+    "20231210121321": 0.414363,
+    "20231007101619": 0.577466,
+    "20230929220926": 2.434582
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0867,
+    "min_mm": 0.000208,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r4_c20": {
+   "min_vox": 0.0037,
+   "min_mm": 9e-06,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 6.021238,
+    "20230702185753": 0.283406,
+    "20231031143852": 0.00404,
+    "20231106155351": 9e-06,
+    "20231012184424": 0.047111,
+    "20231210121321": 0.40834,
+    "20231007101619": 0.523519,
+    "20230929220926": 2.885775
+   },
+   "all_vertex": {
+    "n_vertices": 171759,
+    "npz_points_subset": true,
+    "min_vox": 0.0369,
+    "min_mm": 8.9e-05,
+    "segment": "20231031143852",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c0": {
+   "min_vox": 0.0081,
+   "min_mm": 1.9e-05,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 26.610829,
+    "20230702185753": 1.250981,
+    "20231031143852": 0.96351,
+    "20231106155351": 0.678226,
+    "20231012184424": 0.110238,
+    "20231210121321": 0.006959,
+    "20231007101619": 1.9e-05,
+    "20230929220926": 22.795564
+   },
+   "all_vertex": {
+    "n_vertices": 130682,
+    "npz_points_subset": true,
+    "min_vox": 0.0278,
+    "min_mm": 6.7e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c1": {
+   "min_vox": 0.0063,
+   "min_mm": 1.5e-05,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 25.945405,
+    "20230702185753": 1.430863,
+    "20231031143852": 1.254534,
+    "20231106155351": 0.827619,
+    "20231012184424": 0.25295,
+    "20231210121321": 0.039713,
+    "20231007101619": 1.5e-05,
+    "20230929220926": 22.65806
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2037,
+    "min_mm": 0.000489,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c2": {
+   "min_vox": 0.0005,
+   "min_mm": 1e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 26.725446,
+    "20230702185753": 1.233378,
+    "20231031143852": 0.957783,
+    "20231106155351": 0.691267,
+    "20231012184424": 0.074561,
+    "20231210121321": 0.004006,
+    "20231007101619": 1e-06,
+    "20230929220926": 23.173114
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0263,
+    "min_mm": 6.3e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c3": {
+   "min_vox": 0.0032,
+   "min_mm": 8e-06,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 25.882694,
+    "20230702185753": 1.317842,
+    "20231031143852": 1.114287,
+    "20231106155351": 0.684386,
+    "20231012184424": 0.11608,
+    "20231210121321": 2.5e-05,
+    "20231007101619": 8e-06,
+    "20230929220926": 22.674369
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.4246,
+    "min_mm": 0.001019,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c4": {
+   "min_vox": 0.0011,
+   "min_mm": 3e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 26.193027,
+    "20230702185753": 1.168062,
+    "20231031143852": 0.853012,
+    "20231106155351": 0.579129,
+    "20231012184424": 0.026874,
+    "20231210121321": 3e-06,
+    "20231007101619": 3.1e-05,
+    "20230929220926": 23.31907
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1063,
+    "min_mm": 0.000255,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c5": {
+   "min_vox": 0.0004,
+   "min_mm": 1e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 25.818544,
+    "20230702185753": 1.134338,
+    "20231031143852": 0.862617,
+    "20231106155351": 0.583839,
+    "20231012184424": 0.025604,
+    "20231210121321": 1e-06,
+    "20231007101619": 0.000329,
+    "20230929220926": 22.476395
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2247,
+    "min_mm": 0.000539,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c6": {
+   "min_vox": 0.0027,
+   "min_mm": 6e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 25.67739,
+    "20230702185753": 1.252179,
+    "20231031143852": 0.984036,
+    "20231106155351": 0.604681,
+    "20231012184424": 9.3e-05,
+    "20231210121321": 6e-06,
+    "20231007101619": 0.011067,
+    "20230929220926": 22.551453
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0521,
+    "min_mm": 0.000125,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c7": {
+   "min_vox": 0.0023,
+   "min_mm": 6e-06,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 26.304356,
+    "20230702185753": 1.041232,
+    "20231031143852": 0.763496,
+    "20231106155351": 0.480936,
+    "20231012184424": 7e-06,
+    "20231210121321": 6e-06,
+    "20231007101619": 0.075422,
+    "20230929220926": 22.476159
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1147,
+    "min_mm": 0.000275,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c8": {
+   "min_vox": 0.0029,
+   "min_mm": 7e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 25.589803,
+    "20230702185753": 1.130713,
+    "20231031143852": 0.851533,
+    "20231106155351": 0.47493,
+    "20231012184424": 7e-06,
+    "20231210121321": 6.4e-05,
+    "20231007101619": 0.080402,
+    "20230929220926": 22.420557
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.008,
+    "min_mm": 1.9e-05,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c9": {
+   "min_vox": 0.0024,
+   "min_mm": 6e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 26.118306,
+    "20230702185753": 0.849626,
+    "20231031143852": 0.568166,
+    "20231106155351": 0.326248,
+    "20231012184424": 6e-06,
+    "20231210121321": 0.002194,
+    "20231007101619": 0.169011,
+    "20230929220926": 22.359978
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0826,
+    "min_mm": 0.000198,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c10": {
+   "min_vox": 0.0039,
+   "min_mm": 9e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 25.350151,
+    "20230702185753": 0.976217,
+    "20231031143852": 0.714218,
+    "20231106155351": 0.333181,
+    "20231012184424": 9e-06,
+    "20231210121321": 0.012117,
+    "20231007101619": 0.175458,
+    "20230929220926": 22.241376
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1736,
+    "min_mm": 0.000417,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c11": {
+   "min_vox": 0.0017,
+   "min_mm": 4e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 25.887391,
+    "20230702185753": 0.764017,
+    "20231031143852": 0.501871,
+    "20231106155351": 0.257027,
+    "20231012184424": 4e-06,
+    "20231210121321": 0.100902,
+    "20231007101619": 0.271491,
+    "20230929220926": 22.247128
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1584,
+    "min_mm": 0.00038,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c12": {
+   "min_vox": 0.0031,
+   "min_mm": 7e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 25.107757,
+    "20230702185753": 0.801865,
+    "20231031143852": 0.509719,
+    "20231106155351": 0.208111,
+    "20231012184424": 7e-06,
+    "20231210121321": 0.105276,
+    "20231007101619": 0.268796,
+    "20230929220926": 22.039539
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2064,
+    "min_mm": 0.000495,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c13": {
+   "min_vox": 0.0009,
+   "min_mm": 2e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 25.79431,
+    "20230702185753": 0.701876,
+    "20231031143852": 0.439997,
+    "20231106155351": 0.202505,
+    "20231012184424": 2e-06,
+    "20231210121321": 0.176207,
+    "20231007101619": 0.377962,
+    "20230929220926": 22.147749
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0981,
+    "min_mm": 0.000236,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c14": {
+   "min_vox": 0.0019,
+   "min_mm": 5e-06,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 24.887767,
+    "20230702185753": 0.677501,
+    "20231031143852": 0.393927,
+    "20231106155351": 0.104233,
+    "20231012184424": 5e-06,
+    "20231210121321": 0.247211,
+    "20231007101619": 0.361942,
+    "20230929220926": 21.889731
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1604,
+    "min_mm": 0.000385,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c15": {
+   "min_vox": 0.0047,
+   "min_mm": 1.1e-05,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 25.372071,
+    "20230702185753": 0.612776,
+    "20231031143852": 0.389452,
+    "20231106155351": 0.058064,
+    "20231012184424": 1.1e-05,
+    "20231210121321": 0.260475,
+    "20231007101619": 0.440056,
+    "20230929220926": 21.831775
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.374,
+    "min_mm": 0.000898,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c16": {
+   "min_vox": 10.852,
+   "min_mm": 0.026045,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 24.596689,
+    "20230702185753": 0.594909,
+    "20231031143852": 0.30779,
+    "20231106155351": 0.031743,
+    "20231012184424": 0.026045,
+    "20231210121321": 0.340547,
+    "20231007101619": 0.522674,
+    "20230929220926": 21.582396
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7.2129,
+    "min_mm": 0.017311,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c17": {
+   "min_vox": 1.3332,
+   "min_mm": 0.0032,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 25.038122,
+    "20230702185753": 0.51017,
+    "20231031143852": 0.285407,
+    "20231106155351": 0.0032,
+    "20231012184424": 0.027386,
+    "20231210121321": 0.404342,
+    "20231007101619": 0.577859,
+    "20230929220926": 21.387603
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.0092,
+    "min_mm": 2.2e-05,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c18": {
+   "min_vox": 0.0024,
+   "min_mm": 6e-06,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 24.347155,
+    "20230702185753": 0.501015,
+    "20231031143852": 0.207355,
+    "20231106155351": 6e-06,
+    "20231012184424": 0.093168,
+    "20231210121321": 0.497754,
+    "20231007101619": 0.712007,
+    "20230929220926": 21.316085
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.2227,
+    "min_mm": 0.000534,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c19": {
+   "min_vox": 0.0029,
+   "min_mm": 7e-06,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 24.182218,
+    "20230702185753": 0.371166,
+    "20231031143852": 0.210713,
+    "20231106155351": 7e-06,
+    "20231012184424": 0.158034,
+    "20231210121321": 0.458449,
+    "20231007101619": 0.660784,
+    "20230929220926": 21.037902
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 0.1174,
+    "min_mm": 0.000282,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r5_c20": {
+   "min_vox": 0.0015,
+   "min_mm": 4e-06,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 24.138512,
+    "20230702185753": 0.381626,
+    "20231031143852": 0.099816,
+    "20231106155351": 4e-06,
+    "20231012184424": 0.185133,
+    "20231210121321": 0.561762,
+    "20231007101619": 0.793469,
+    "20230929220926": 21.395911
+   },
+   "all_vertex": {
+    "n_vertices": 167771,
+    "npz_points_subset": true,
+    "min_vox": 0.2719,
+    "min_mm": 0.000652,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": true
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c0": {
+   "min_vox": 785.2711,
+   "min_mm": 1.884651,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 44.621727,
+    "20230702185753": 2.852951,
+    "20231031143852": 2.676624,
+    "20231106155351": 2.30637,
+    "20231012184424": 1.982168,
+    "20231210121321": 1.926326,
+    "20231007101619": 1.884651,
+    "20230929220926": 40.997866
+   },
+   "all_vertex": {
+    "n_vertices": 114986,
+    "npz_points_subset": true,
+    "min_vox": 698.198,
+    "min_mm": 1.675675,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r6_c1": {
+   "min_vox": 460.1554,
+   "min_mm": 1.104373,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 43.979624,
+    "20230702185753": 2.862237,
+    "20231031143852": 2.543011,
+    "20231106155351": 2.127325,
+    "20231012184424": 1.471367,
+    "20231210121321": 1.241717,
+    "20231007101619": 1.104373,
+    "20230929220926": 40.214901
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 401.6535,
+    "min_mm": 0.963968,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c2": {
+   "min_vox": 1193.6019,
+   "min_mm": 2.864645,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 45.080567,
+    "20230702185753": 3.513676,
+    "20231031143852": 3.451471,
+    "20231106155351": 3.380681,
+    "20231012184424": 3.210735,
+    "20231210121321": 3.123732,
+    "20231007101619": 2.864645,
+    "20230929220926": 41.842793
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 1185.4011,
+    "min_mm": 2.844963,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r6_c3": {
+   "min_vox": 476.8609,
+   "min_mm": 1.144466,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 43.970278,
+    "20230702185753": 2.741168,
+    "20231031143852": 2.370328,
+    "20231106155351": 2.058183,
+    "20231012184424": 1.434947,
+    "20231210121321": 1.209068,
+    "20231007101619": 1.144466,
+    "20230929220926": 40.179063
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 435.5106,
+    "min_mm": 1.045226,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c4": {
+   "min_vox": 1141.3926,
+   "min_mm": 2.739342,
+   "segment": "20231012184424",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 44.983166,
+    "20230702185753": 3.185916,
+    "20231031143852": 2.964282,
+    "20231106155351": 2.83102,
+    "20231012184424": 2.739342,
+    "20231210121321": 2.748154,
+    "20231007101619": 2.792155,
+    "20230929220926": 41.864538
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 1060.4608,
+    "min_mm": 2.545106,
+    "segment": "20231210121321",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r6_c5": {
+   "min_vox": 449.1707,
+   "min_mm": 1.07801,
+   "segment": "20231007101619",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 43.919025,
+    "20230702185753": 2.685404,
+    "20231031143852": 2.566035,
+    "20231106155351": 2.110451,
+    "20231012184424": 1.34389,
+    "20231210121321": 1.140753,
+    "20231007101619": 1.07801,
+    "20230929220926": 40.173388
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 448.4656,
+    "min_mm": 1.076318,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c6": {
+   "min_vox": 699.8166,
+   "min_mm": 1.67956,
+   "segment": "20231012184424",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 44.137349,
+    "20230702185753": 2.648742,
+    "20231031143852": 2.293637,
+    "20231106155351": 1.967783,
+    "20231012184424": 1.67956,
+    "20231210121321": 1.80325,
+    "20231007101619": 1.815192,
+    "20230929220926": 40.784167
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 608.699,
+    "min_mm": 1.460878,
+    "segment": "20231012184424",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r6_c7": {
+   "min_vox": 540.2476,
+   "min_mm": 1.296594,
+   "segment": "20231012184424",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 44.085143,
+    "20230702185753": 2.545478,
+    "20231031143852": 2.395128,
+    "20231106155351": 1.926247,
+    "20231012184424": 1.296594,
+    "20231210121321": 1.330386,
+    "20231007101619": 1.341344,
+    "20230929220926": 40.431564
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 522.4531,
+    "min_mm": 1.253887,
+    "segment": "20231012184424",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false,
+   "dense_certification": {
+    "dense_min_mm": 1.253468,
+    "lower_bound_mm": 1.24695,
+    "certified_not_adjacent": true,
+    "barycentric_N": 8,
+    "sample_gap_bound_vox": 2.716,
+    "file": "logs/sib/p4-excl/dense_w028-037_r6_c7.json"
+   }
+  },
+  "r6_c8": {
+   "min_vox": 440.0442,
+   "min_mm": 1.056106,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 43.841385,
+    "20230702185753": 2.636162,
+    "20231031143852": 2.271504,
+    "20231106155351": 1.878925,
+    "20231012184424": 1.23023,
+    "20231210121321": 1.056106,
+    "20231007101619": 1.078561,
+    "20230929220926": 40.119774
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 437.4412,
+    "min_mm": 1.049859,
+    "segment": "20231007101619",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c9": {
+   "min_vox": 829.7879,
+   "min_mm": 1.991491,
+   "segment": "20231012184424",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 44.531431,
+    "20230702185753": 2.311146,
+    "20231031143852": 2.207149,
+    "20231106155351": 2.020845,
+    "20231012184424": 1.991491,
+    "20231210121321": 2.103423,
+    "20231007101619": 2.125482,
+    "20230929220926": 41.142595
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 724.5866,
+    "min_mm": 1.739008,
+    "segment": "20231012184424",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r6_c10": {
+   "min_vox": 474.2483,
+   "min_mm": 1.138196,
+   "segment": "20231210121321",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 43.746508,
+    "20230702185753": 2.334477,
+    "20231031143852": 1.953847,
+    "20231106155351": 1.631085,
+    "20231012184424": 1.155556,
+    "20231210121321": 1.138196,
+    "20231007101619": 1.178317,
+    "20230929220926": 40.200986
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 419.177,
+    "min_mm": 1.006025,
+    "segment": "20231210121321",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c11": {
+   "min_vox": 777.0569,
+   "min_mm": 1.864937,
+   "segment": "20231106155351",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 44.397918,
+    "20230702185753": 2.136136,
+    "20231031143852": 2.047075,
+    "20231106155351": 1.864937,
+    "20231012184424": 1.940082,
+    "20231210121321": 2.097071,
+    "20231007101619": 2.188702,
+    "20230929220926": 41.034336
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 765.1917,
+    "min_mm": 1.83646,
+    "segment": "20231106155351",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r6_c12": {
+   "min_vox": 385.1935,
+   "min_mm": 0.924464,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 43.502278,
+    "20230702185753": 2.084448,
+    "20231031143852": 1.793785,
+    "20231106155351": 1.398321,
+    "20231012184424": 0.924464,
+    "20231210121321": 1.002444,
+    "20231007101619": 1.134644,
+    "20230929220926": 39.980106
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 351.3791,
+    "min_mm": 0.84331,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c13": {
+   "min_vox": 718.7445,
+   "min_mm": 1.724987,
+   "segment": "20231106155351",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 44.262474,
+    "20230702185753": 1.962847,
+    "20231031143852": 1.924788,
+    "20231106155351": 1.724987,
+    "20231012184424": 1.866089,
+    "20231210121321": 1.978496,
+    "20231007101619": 2.106519,
+    "20230929220926": 40.909155
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 694.6499,
+    "min_mm": 1.66716,
+    "segment": "20231106155351",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r6_c14": {
+   "min_vox": 284.1167,
+   "min_mm": 0.68188,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 43.31877,
+    "20230702185753": 1.707058,
+    "20231031143852": 1.54931,
+    "20231106155351": 1.137425,
+    "20231012184424": 0.68188,
+    "20231210121321": 0.972576,
+    "20231007101619": 1.155839,
+    "20230929220926": 39.843933
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 270.2384,
+    "min_mm": 0.648572,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c15": {
+   "min_vox": 559.1022,
+   "min_mm": 1.341845,
+   "segment": "20231106155351",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 43.833396,
+    "20230702185753": 1.583639,
+    "20231031143852": 1.491988,
+    "20231106155351": 1.341845,
+    "20231012184424": 1.406365,
+    "20231210121321": 1.620677,
+    "20231007101619": 1.690235,
+    "20230929220926": 40.479327
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 494.898,
+    "min_mm": 1.187755,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c16": {
+   "min_vox": 202.3626,
+   "min_mm": 0.48567,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 42.998201,
+    "20230702185753": 1.471811,
+    "20231031143852": 1.292868,
+    "20231106155351": 0.735545,
+    "20231012184424": 0.48567,
+    "20231210121321": 0.888183,
+    "20231007101619": 1.167299,
+    "20230929220926": 39.570149
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 202.3626,
+    "min_mm": 0.48567,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c17": {
+   "min_vox": 227.7915,
+   "min_mm": 0.5467,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 43.058232,
+    "20230702185753": 1.297952,
+    "20231031143852": 1.09592,
+    "20231106155351": 0.5467,
+    "20231012184424": 0.643513,
+    "20231210121321": 0.900825,
+    "20231007101619": 1.163628,
+    "20230929220926": 39.621072
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 210.8169,
+    "min_mm": 0.505961,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c18": {
+   "min_vox": 160.3984,
+   "min_mm": 0.384956,
+   "segment": "20231012184424",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 42.760758,
+    "20230702185753": 1.430683,
+    "20231031143852": 0.992154,
+    "20231106155351": 0.45602,
+    "20231012184424": 0.384956,
+    "20231210121321": 0.994474,
+    "20231007101619": 1.305084,
+    "20230929220926": 39.351408
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 160.3984,
+    "min_mm": 0.384956,
+    "segment": "20231012184424",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c19": {
+   "min_vox": 61.5886,
+   "min_mm": 0.147813,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 42.536522,
+    "20230702185753": 1.138375,
+    "20231031143852": 0.797649,
+    "20231106155351": 0.147813,
+    "20231012184424": 0.557535,
+    "20231210121321": 0.859271,
+    "20231007101619": 1.122897,
+    "20230929220926": 39.202593
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 39.8995,
+    "min_mm": 0.095759,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r6_c20": {
+   "min_vox": 201.0149,
+   "min_mm": 0.482436,
+   "segment": "20231106155351",
+   "labelled_adjacent": true,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 42.821581,
+    "20230702185753": 1.20734,
+    "20231031143852": 0.843671,
+    "20231106155351": 0.482436,
+    "20231012184424": 0.761693,
+    "20231210121321": 1.35154,
+    "20231007101619": 1.497368,
+    "20230929220926": 39.574137
+   },
+   "all_vertex": {
+    "n_vertices": 163651,
+    "npz_points_subset": true,
+    "min_vox": 118.9567,
+    "min_mm": 0.285496,
+    "segment": "20231106155351",
+    "labelled_adjacent": true,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": true
+  },
+  "r7_c0": {
+   "min_vox": 8176.9194,
+   "min_mm": 19.624607,
+   "segment": "20231031143852",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 61.924735,
+    "20230702185753": 19.735784,
+    "20231031143852": 19.624607,
+    "20231106155351": 19.645787,
+    "20231012184424": 19.655605,
+    "20231210121321": 19.708311,
+    "20231007101619": 19.701718,
+    "20230929220926": 58.884479
+   },
+   "all_vertex": {
+    "n_vertices": 116390,
+    "npz_points_subset": true,
+    "min_vox": 8111.7772,
+    "min_mm": 19.468265,
+    "segment": "20231031143852",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c1": {
+   "min_vox": 7425.5229,
+   "min_mm": 17.821255,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.566132,
+    "20230702185753": 18.72167,
+    "20231031143852": 18.509148,
+    "20231106155351": 18.380613,
+    "20231012184424": 18.098165,
+    "20231210121321": 17.994778,
+    "20231007101619": 17.821255,
+    "20230929220926": 56.196424
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7425.3459,
+    "min_mm": 17.82083,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c2": {
+   "min_vox": 7595.1596,
+   "min_mm": 18.228383,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.691145,
+    "20230702185753": 19.095719,
+    "20231031143852": 18.940451,
+    "20231106155351": 18.789825,
+    "20231012184424": 18.440069,
+    "20231210121321": 18.368523,
+    "20231007101619": 18.228383,
+    "20230929220926": 56.335189
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7528.9309,
+    "min_mm": 18.069434,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c3": {
+   "min_vox": 7502.4682,
+   "min_mm": 18.005924,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.918432,
+    "20230702185753": 18.90302,
+    "20231031143852": 18.750319,
+    "20231106155351": 18.549794,
+    "20231012184424": 18.26457,
+    "20231210121321": 18.17319,
+    "20231007101619": 18.005924,
+    "20230929220926": 56.522891
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7443.5785,
+    "min_mm": 17.864588,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c4": {
+   "min_vox": 7456.547,
+   "min_mm": 17.895713,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.513583,
+    "20230702185753": 18.776504,
+    "20231031143852": 18.555618,
+    "20231106155351": 18.39527,
+    "20231012184424": 18.113404,
+    "20231210121321": 18.022284,
+    "20231007101619": 17.895713,
+    "20230929220926": 56.150971
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7435.981,
+    "min_mm": 17.846354,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c5": {
+   "min_vox": 7940.3641,
+   "min_mm": 19.056874,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 61.357348,
+    "20230702185753": 19.538546,
+    "20231031143852": 19.409987,
+    "20231106155351": 19.404965,
+    "20231012184424": 19.199892,
+    "20231210121321": 19.255116,
+    "20231007101619": 19.056874,
+    "20230929220926": 57.914921
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7921.3755,
+    "min_mm": 19.011301,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c6": {
+   "min_vox": 7417.7021,
+   "min_mm": 17.802485,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.580016,
+    "20230702185753": 18.670047,
+    "20231031143852": 18.462024,
+    "20231106155351": 18.298,
+    "20231012184424": 18.020274,
+    "20231210121321": 17.923805,
+    "20231007101619": 17.802485,
+    "20230929220926": 56.224213
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7412.337,
+    "min_mm": 17.789609,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c7": {
+   "min_vox": 7741.1375,
+   "min_mm": 18.57873,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 60.671718,
+    "20230702185753": 19.032325,
+    "20231031143852": 18.921083,
+    "20231106155351": 18.840702,
+    "20231012184424": 18.621917,
+    "20231210121321": 18.629614,
+    "20231007101619": 18.57873,
+    "20230929220926": 57.430684
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7720.6072,
+    "min_mm": 18.529457,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c8": {
+   "min_vox": 7376.1471,
+   "min_mm": 17.702753,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.451913,
+    "20230702185753": 18.536097,
+    "20231031143852": 18.322898,
+    "20231106155351": 18.189161,
+    "20231012184424": 17.915223,
+    "20231210121321": 17.812004,
+    "20231007101619": 17.702753,
+    "20230929220926": 56.097115
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7362.3357,
+    "min_mm": 17.669606,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c9": {
+   "min_vox": 7653.0095,
+   "min_mm": 18.367223,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 60.17543,
+    "20230702185753": 18.890592,
+    "20231031143852": 18.779459,
+    "20231106155351": 18.675517,
+    "20231012184424": 18.43507,
+    "20231210121321": 18.44072,
+    "20231007101619": 18.367223,
+    "20230929220926": 56.900196
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7651.2178,
+    "min_mm": 18.362923,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c10": {
+   "min_vox": 7294.1198,
+   "min_mm": 17.505888,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.385444,
+    "20230702185753": 18.293175,
+    "20231031143852": 18.071338,
+    "20231106155351": 17.961802,
+    "20231012184424": 17.683091,
+    "20231210121321": 17.606907,
+    "20231007101619": 17.505888,
+    "20230929220926": 56.035292
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7284.5481,
+    "min_mm": 17.482915,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c11": {
+   "min_vox": 7587.323,
+   "min_mm": 18.209575,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.892711,
+    "20230702185753": 18.713765,
+    "20231031143852": 18.599053,
+    "20231106155351": 18.520274,
+    "20231012184424": 18.279518,
+    "20231210121321": 18.280653,
+    "20231007101619": 18.209575,
+    "20230929220926": 56.587881
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7562.6737,
+    "min_mm": 18.150417,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c12": {
+   "min_vox": 7203.0347,
+   "min_mm": 17.287283,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.221489,
+    "20230702185753": 18.079687,
+    "20231031143852": 17.853202,
+    "20231106155351": 17.730311,
+    "20231012184424": 17.461141,
+    "20231210121321": 17.393727,
+    "20231007101619": 17.287283,
+    "20230929220926": 55.886142
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7198.4072,
+    "min_mm": 17.276177,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c13": {
+   "min_vox": 7515.8403,
+   "min_mm": 18.038017,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.699919,
+    "20230702185753": 18.567473,
+    "20231031143852": 18.446713,
+    "20231106155351": 18.360689,
+    "20231012184424": 18.134996,
+    "20231210121321": 18.130722,
+    "20231007101619": 18.038017,
+    "20230929220926": 56.371755
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7423.4785,
+    "min_mm": 17.816348,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c14": {
+   "min_vox": 7093.8897,
+   "min_mm": 17.025335,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.035091,
+    "20230702185753": 17.769429,
+    "20231031143852": 17.550543,
+    "20231106155351": 17.448876,
+    "20231012184424": 17.180525,
+    "20231210121321": 17.113859,
+    "20231007101619": 17.025335,
+    "20230929220926": 55.728228
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7090.5969,
+    "min_mm": 17.017433,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c15": {
+   "min_vox": 7377.9955,
+   "min_mm": 17.707189,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.623045,
+    "20230702185753": 18.190421,
+    "20231031143852": 18.076037,
+    "20231106155351": 17.989327,
+    "20231012184424": 17.759448,
+    "20231210121321": 17.764098,
+    "20231007101619": 17.707189,
+    "20230929220926": 56.335463
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7376.272,
+    "min_mm": 17.703053,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c16": {
+   "min_vox": 7004.6122,
+   "min_mm": 16.811069,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 58.857495,
+    "20230702185753": 17.539619,
+    "20231031143852": 17.32037,
+    "20231106155351": 17.213123,
+    "20231012184424": 16.959089,
+    "20231210121321": 16.902494,
+    "20231007101619": 16.811069,
+    "20230929220926": 55.543831
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7000.5571,
+    "min_mm": 16.801337,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c17": {
+   "min_vox": 7294.1709,
+   "min_mm": 17.50601,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.433463,
+    "20230702185753": 18.021158,
+    "20231031143852": 17.910832,
+    "20231106155351": 17.826784,
+    "20231012184424": 17.584675,
+    "20231210121321": 17.591981,
+    "20231007101619": 17.50601,
+    "20230929220926": 56.170898
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7277.7116,
+    "min_mm": 17.466508,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c18": {
+   "min_vox": 6940.1896,
+   "min_mm": 16.656455,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 58.701309,
+    "20230702185753": 17.329904,
+    "20231031143852": 17.129296,
+    "20231106155351": 17.028346,
+    "20231012184424": 16.81374,
+    "20231210121321": 16.751961,
+    "20231007101619": 16.656455,
+    "20230929220926": 55.391699
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 6899.0138,
+    "min_mm": 16.557633,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c19": {
+   "min_vox": 7233.3357,
+   "min_mm": 17.360006,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 59.703125,
+    "20230702185753": 17.968022,
+    "20231031143852": 17.836943,
+    "20231106155351": 17.698464,
+    "20231012184424": 17.472063,
+    "20231210121321": 17.543181,
+    "20231007101619": 17.360006,
+    "20230929220926": 56.319462
+   },
+   "all_vertex": {
+    "n_vertices": 172225,
+    "npz_points_subset": true,
+    "min_vox": 7194.8145,
+    "min_mm": 17.267555,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r7_c20": {
+   "min_vox": 6788.1551,
+   "min_mm": 16.291572,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 58.405871,
+    "20230702185753": 16.94856,
+    "20231031143852": 16.738954,
+    "20231106155351": 16.650657,
+    "20231012184424": 16.41421,
+    "20231210121321": 16.367673,
+    "20231007101619": 16.291572,
+    "20230929220926": 55.114988
+   },
+   "all_vertex": {
+    "n_vertices": 160715,
+    "npz_points_subset": true,
+    "min_vox": 6787.5559,
+    "min_mm": 16.290134,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r8_c2": {
+   "min_vox": 14190.4939,
+   "min_mm": 34.057185,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 76.004061,
+    "20230702185753": 34.471833,
+    "20231031143852": 34.380249,
+    "20231106155351": 34.297909,
+    "20231012184424": 34.095864,
+    "20231210121321": 34.11078,
+    "20231007101619": 34.057185,
+    "20230929220926": 72.408482
+   },
+   "all_vertex": {
+    "n_vertices": 86171,
+    "npz_points_subset": true,
+    "min_vox": 14187.7455,
+    "min_mm": 34.050589,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r8_c18": {
+   "min_vox": 13836.5801,
+   "min_mm": 33.207792,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 74.893703,
+    "20230702185753": 33.817079,
+    "20231031143852": 33.691945,
+    "20231106155351": 33.586372,
+    "20231012184424": 33.328136,
+    "20231210121321": 33.286923,
+    "20231007101619": 33.207792,
+    "20230929220926": 71.207705
+   },
+   "all_vertex": {
+    "n_vertices": 90443,
+    "npz_points_subset": true,
+    "min_vox": 13819.0916,
+    "min_mm": 33.16582,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  },
+  "r8_c20": {
+   "min_vox": 13725.6433,
+   "min_mm": 32.941544,
+   "segment": "20231007101619",
+   "labelled_adjacent": false,
+   "n_points": 4096,
+   "per_segment_mm": {
+    "20231016151002": 74.576256,
+    "20230702185753": 33.468716,
+    "20231031143852": 33.367912,
+    "20231106155351": 33.259898,
+    "20231012184424": 33.022322,
+    "20231210121321": 33.020077,
+    "20231007101619": 32.941544,
+    "20230929220926": 70.875019
+   },
+   "all_vertex": {
+    "n_vertices": 91281,
+    "npz_points_subset": true,
+    "min_vox": 13677.3874,
+    "min_mm": 32.82573,
+    "segment": "20231007101619",
+    "labelled_adjacent": false,
+    "early_stop": false
+   },
+   "labelled_adjacent_union": false
+  }
+ },
+ "all_vertex_check": {
+  "why": "tile_points.npz holds <= 4096 random vertices of ~1e5 per tile (mean spacing ~130 vox), so its min can exceed the tile surface min; an exclusion should not fail open. This check uses every valid vertex of the tile. Remaining discretisation: tile surface points are within Lc of a tile vertex (strip mesh Lc reported in structures).",
+  "strip_mesh_sha256": {
+   "x.tif": "5cfb0dd25c39bcd6b94c314b9e06e9a1acfb4cd610f10338cb7b2b2d9354d606",
+   "y.tif": "cd631abe22a4205da70afa22eab11d91a59662c3f8788283261ad4c0a1037c05",
+   "z.tif": "6e2681f9298a5311f081ae9afbd16d8a333c8991d57d2c8ddbb761dc565bb86b",
+   "meta.json": "da81ed99c6df18e0e42887c818526e238073eae12961b5338eda926ffb5df241"
+  },
+  "T_px": 8301,
+  "canvas_per_grid": 20,
+  "vertex_rule": "gi*s in [r*T,(r+1)*T) and gj*s in [c*T,(c+1)*T), valid = x,y,z >= 0",
+  "npz_subset_all_tiles": true,
+  "n_vertices_total": 27997739,
+  "early_stop_vox": 0.5,
+  "n_flagged_all_vertex": 139,
+  "flagged_all_vertex_not_npz": [
+   "r6_c15"
+  ],
+  "flagged_npz_not_all_vertex": [],
+  "max_npz_minus_all_vertex_mm": 0.252483,
+  "timing_s": {
+   "total": 2135.4,
+   "per_segment": {
+    "20231016151002": 418.3,
+    "20230702185753": 335.0,
+    "20231031143852": 177.8,
+    "20231106155351": 169.1,
+    "20231012184424": 158.8,
+    "20231210121321": 138.5,
+    "20231007101619": 163.1,
+    "20230929220926": 555.2
+   }
+  }
+ },
+ "n_flagged_union": 139,
+ "flag_note": "labelled_adjacent = npz-point flag (as first tasked); labelled_adjacent_union = npz OR all-vertex (fail-closed; use this)"
+}
