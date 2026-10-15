@@ -1,0 +1,20 @@
+TASK p4-core: DECL-P4-7 item 3 preparation, and an independent cross-check of item 1-2, for windings inward of w010 of PHerc. Paris 4 (the end title is in the innermost windings; the owner suspects the labelling missed inner windings). Read RULES.md DECL-P4-7 and p4-inner's RECON.md/recon.json (origin/claude/gifted-bell-gavnl5-sib-p4-inner logs/sib/p4-inner/).
+p4-inner reports:
+- no mesh inward of w010;
+- the official umbilicus in representations/umbilicus/20260411134726-umbilicus-20260524235033.json;
+- a w000-009 core of radius 0.7-1.6 mm with an inferred pitch of 0.07-0.15 mm (vs ~0.22 mm outside);
+- the 1.129 um footprint covers z 67-135 mm.
+The pitch discrepancy is exactly what DECL-P4-7 must test.
+1. Independent crossing count (DECL-P4-7 items 1-2) on the 2.4 um volume (p4-inner does the 1.129 um volume, so the two are cross-checks):
+   - >= 64 rays x >= 20 z-levels, from the umbilicus to the w010 mesh;
+   - peaks after 20 um smoothing;
+   - synthetic planted-sheet tests with a known count (error <= 1 winding);
+   - report the count distribution, spacing vs w010-w020, and continuity.
+2. Tracing prep: reuse the tracer sibling's VC3D build (origin/claude/gifted-bell-gavnl5-sib-tracer, tools/sib/tracer/). Prepare a 2 x 2 cm core-window trace plan and code, with every item-3 validation metric implemented as code and unit-tested on synthetic spirals:
+   - self-intersection;
+   - winding continuity with w010;
+   - neighbour-distance ratio;
+   - flattening area/angle error (FLAT-2 tooling on sib-flat1);
+   - fibre-orientation coherence.
+   Run a trace only once items 1-2 (yours and p4-inner's) both show papyrus inward of w010.
+3. Push count.json, synthetic_tests.json, trace_plan.md and STATUS.md. You may use up to 3 sub-siblings (e.g. one per z-band).
