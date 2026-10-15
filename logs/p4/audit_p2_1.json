@@ -1,0 +1,827 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "Independent audit of logs/p4/p2_1_score.json (sha256 37203f95af1af5c5fbbbfc990ebabf493557552bb694db79f5b9e4a292e43b87) under RULES.md DECL-P4-2 item 6, DECL-P4-2-A1..A4, METRIC-HASH-19..23, DECL-HARNESS-A1",
+ "audit_utc": "2026-09-26T05:50Z",
+ "verdict": "VALID",
+ "verdict_basis": "Own re-derivation reproduces every scored number; no data predates the declarations; harness, key and material checks pass. No defect found that could change the outcome. Integrity notes (none outcome-changing) and the weak strength of evidence are listed below.",
+ "outcome_reproduced": {
+  "P4_CANDIDATE": true,
+  "crit_a_2of3_ge5": true,
+  "crit_b_agree_ge5": true,
+  "crit_c_gt_n0max": true
+ },
+ "check1_rederive": {
+  "method": "own code: own schema validation, own known-letter filter (normalize_letter), own pair agreement (same kind, centre distance <= 150 px) with Kuhn augmenting-path matching cross-checked against max_matching_size and scipy assignment; p4_phase2/score_p4 not imported",
+  "decryptions": {
+   "purpose": "audit-p4-p2-rederive",
+   "n": 3,
+   "also_used_for": "check 4 answer-equals-heredoc and check 5 geometry"
+  },
+  "sessions": [
+   {
+    "session": 0,
+    "job8": "3582a5da",
+    "job_valid": true,
+    "own_validation_errors": 0,
+    "repo_schema_ok": true,
+    "decrypted_eq_heredoc_json": true,
+    "n_items_in_answer": 6,
+    "n_ids_matching_images": 5,
+    "n_unknown_ids": 1,
+    "n_kind_key_present": 0,
+    "right_nonempty": 0,
+    "pc_present": true,
+    "pc_rows_Y": true,
+    "pc_n_known_letters": 9,
+    "void": false,
+    "used": true
+   },
+   {
+    "session": 1,
+    "job8": "d836fce6",
+    "job_valid": true,
+    "own_validation_errors": 0,
+    "repo_schema_ok": true,
+    "decrypted_eq_heredoc_json": true,
+    "n_items_in_answer": 6,
+    "n_ids_matching_images": 6,
+    "n_unknown_ids": 0,
+    "n_kind_key_present": 0,
+    "right_nonempty": 0,
+    "pc_present": true,
+    "pc_rows_Y": true,
+    "pc_n_known_letters": 14,
+    "void": false,
+    "used": true
+   },
+   {
+    "session": 2,
+    "job8": "22bbbbb4",
+    "job_valid": true,
+    "own_validation_errors": 0,
+    "repo_schema_ok": true,
+    "decrypted_eq_heredoc_json": true,
+    "n_items_in_answer": 6,
+    "n_ids_matching_images": 6,
+    "n_unknown_ids": 0,
+    "n_kind_key_present": 0,
+    "right_nonempty": 0,
+    "pc_present": true,
+    "pc_rows_Y": true,
+    "pc_n_known_letters": 13,
+    "void": false,
+    "used": true
+   }
+  ],
+  "stats": {
+   "sessions": 3,
+   "used": 3,
+   "void_pc": 0,
+   "invalid": 0,
+   "missing_items": 1
+  },
+  "candidate": {
+   "letters_per_reader_by_session": [
+    5,
+    5,
+    5
+   ],
+   "firm_per_reader": [
+    1,
+    1,
+    1
+   ],
+   "rows_Y": 3,
+   "pairwise_agreement": {
+    "s0-s1": 5,
+    "s0-s2": 3,
+    "s1-s2": 3
+   },
+   "best_pair": 5,
+   "n_readers_ge5": 3
+  },
+  "n0_tiles": {
+   "8f30c265": {
+    "n_readers": 2,
+    "letters_per_reader": [
+     0,
+     2
+    ],
+    "rows_Y": 2,
+    "pairwise_agreement": {
+     "s1-s2": 0
+    },
+    "best_pair": 0
+   },
+   "00ec84d8": {
+    "n_readers": 3,
+    "letters_per_reader": [
+     1,
+     1,
+     4
+    ],
+    "rows_Y": 3,
+    "pairwise_agreement": {
+     "s0-s1": 1,
+     "s0-s2": 1,
+     "s1-s2": 1
+    },
+    "best_pair": 1
+   },
+   "85d9f43d": {
+    "n_readers": 3,
+    "letters_per_reader": [
+     2,
+     2,
+     3
+    ],
+    "rows_Y": 3,
+    "pairwise_agreement": {
+     "s0-s1": 2,
+     "s0-s2": 2,
+     "s1-s2": 2
+    },
+    "best_pair": 2
+   },
+   "44bed346": {
+    "n_readers": 3,
+    "letters_per_reader": [
+     4,
+     2,
+     8
+    ],
+    "rows_Y": 3,
+    "pairwise_agreement": {
+     "s0-s1": 2,
+     "s0-s2": 4,
+     "s1-s2": 2
+    },
+    "best_pair": 4
+   }
+  },
+  "n0_best_pair_sorted": [
+   0,
+   1,
+   2,
+   4
+  ],
+  "n0_max": 4,
+  "n0_readers_per_tile_sorted": [
+   2,
+   3,
+   3,
+   3
+  ],
+  "missing_item": {
+   "session": 0,
+   "role": "n0",
+   "tile": "8f30c265 (n0; source w010-027 r2 c2, census 2 letters)",
+   "cause": "reader wrote a mistyped id for its last item (shares the first 9 characters, 21 of 36 characters differ); the other 5 ids match",
+   "handling": "hashed scorer (METRIC-HASH-23) matches ids exactly and drops the item; A3 item 6 voids a session only for a missing control, so the session stays used. Handled as declared.",
+   "counterfactual_recovered": {
+    "uuid8": "8f30c265",
+    "recovered_letters": 0,
+    "pairwise_with_recovered": [
+     0,
+     0,
+     0
+    ],
+    "best_pair_with_recovered": 0,
+    "n0_max_if_recovered": 4,
+    "crit_c_if_recovered": true
+   }
+  },
+  "differences_vs_runner": "none: letters 5,5,5; best pair 5; N0 [0,1,2,4]; readers per N0 tile [2,3,3,3]; N0 max 4; stats 3/3/3/0/0/1/0 all equal"
+ },
+ "check2_timeline": {
+  "records_utc": {
+   "DECL-P4-2-A3": "2026-09-26T05:28:41Z",
+   "METRIC-HASH-22": "2026-09-26T05:28:41Z",
+   "DECL-P4-2-A4": "2026-09-26T05:30:39Z",
+   "METRIC-HASH-23": "2026-09-26T05:30:40Z"
+  },
+  "commits": {
+   "eb426d7 (A3+MH-22)": "2026-09-26T05:28:41Z",
+   "1b9ff5c (A4+MH-23)": "2026-09-26T05:30:40Z"
+  },
+  "phase2_images_birth_range": [
+   "2026-09-26T05:30:57.707Z",
+   "2026-09-26T05:30:59.800Z"
+  ],
+  "phase2_images_mtime_range": [
+   "2026-09-26T05:30:58.083Z",
+   "2026-09-26T05:30:59.987Z"
+  ],
+  "phase2_key_birth": "2026-09-26T05:30:59.998Z",
+  "jobs_created_utc": [
+   "2026-09-26T05:30:59Z",
+   "2026-09-26T05:30:59Z",
+   "2026-09-26T05:30:59Z"
+  ],
+  "jobs_file_birth": "2026-09-26T05:30:59.998Z",
+  "min_lead_s_after_MH23": 17.3,
+  "all_after_declarations": true,
+  "mh23_files_unchanged": {
+   "per_file_sha256_match": 4,
+   "of": 4,
+   "combined_reproduced": true,
+   "combined_formula_note": "MH-22 and MH-23 combined_sha256 reproduce as sha256 of the listed files concatenated in listed order, not the codehash.py path-tab formula used by MH-0..18; MH-19..21 use a third form. Per-file hashes are authoritative and all match. Cosmetic."
+  },
+  "mh22_keysheet_task_sha_match": true,
+  "scoring_deps_unchanged_since_1b9ff5c": true,
+  "tests_rerun": "11 passed",
+  "rules_chain": "OK, 121 entries (append-only since eb426d7 and 1b9ff5c); last entry now METRIC-HASH-24 (DECL-P4-3 added after scoring)",
+  "phase2_answer_decryptions_before_scorer": 0,
+  "first_phase2_decryption": "2026-09-26T05:33:56Z score-p4-phase2 x3, after the last job done_utc 05:33:56Z and after job record valid=True written (05:33:56.039Z < score 05:33:56.670Z)",
+  "auditor_decryptions": {
+   "audit-p4-p2-rederive": 3,
+   "audit-p4-p2-geometry": 3
+  }
+ },
+ "check3_key_material": {
+  "candidate": {
+   "bytes_identical_to_src": true,
+   "src_key_strip_r_c": true,
+   "src_batch": "a2",
+   "src_sha_eq_key_src_sha": true,
+   "src_sha_eq_builder_manifest": true,
+   "builder_manifest_sha": "b079a05b8b4f9d96020aaa1924386c884c522134846553d5c77d346ad1c56981",
+   "builder_tile_file_sha_eq": true,
+   "p2key_matches_select": true,
+   "valid_fraction": 1.0,
+   "in_a2_norm": true,
+   "in_a_norm": null
+  },
+  "candidate_min_mm_excl_a": 5.010876,
+  "candidate_labelled_adjacent": false,
+  "n0": {
+   "seed": 20346622,
+   "seed_eq_jobs": true,
+   "n_pool": 315,
+   "draw_srcs_eq_key": true,
+   "tiles": [
+    {
+     "uuid8": "8f30c265",
+     "rot90cw_equal": true,
+     "src_rot0": true,
+     "src_meta_eq_key": true,
+     "src_not_cand": true,
+     "src_not_in_pool": true,
+     "src_sha_eq_census_key": true,
+     "src_batch": "a2",
+     "strip": "w010-027"
+    },
+    {
+     "uuid8": "00ec84d8",
+     "rot90cw_equal": true,
+     "src_rot0": true,
+     "src_meta_eq_key": true,
+     "src_not_cand": true,
+     "src_not_in_pool": true,
+     "src_sha_eq_census_key": true,
+     "src_batch": "b1",
+     "strip": "w028-037"
+    },
+    {
+     "uuid8": "85d9f43d",
+     "rot90cw_equal": true,
+     "src_rot0": true,
+     "src_meta_eq_key": true,
+     "src_not_cand": true,
+     "src_not_in_pool": true,
+     "src_sha_eq_census_key": true,
+     "src_batch": "b1",
+     "strip": "w028-037"
+    },
+    {
+     "uuid8": "44bed346",
+     "rot90cw_equal": true,
+     "src_rot0": true,
+     "src_meta_eq_key": true,
+     "src_not_cand": true,
+     "src_not_in_pool": true,
+     "src_sha_eq_census_key": true,
+     "src_batch": "b1",
+     "strip": "w028-037"
+    }
+   ]
+  },
+  "pc": {
+   "n": 3,
+   "distinct_srcs": true,
+   "tiles": [
+    {
+     "uuid8": "97a2d370",
+     "session": 0,
+     "bytes_identical_to_src": true,
+     "src_in_pool": true,
+     "src_strip": "w028-037",
+     "src_rot": 0
+    },
+    {
+     "uuid8": "153a7c2f",
+     "session": 1,
+     "bytes_identical_to_src": true,
+     "src_in_pool": true,
+     "src_strip": "w028-037",
+     "src_rot": 0
+    },
+    {
+     "uuid8": "aa9e828e",
+     "session": 2,
+     "bytes_identical_to_src": true,
+     "src_in_pool": true,
+     "src_strip": "w028-037",
+     "src_rot": 0
+    }
+   ],
+   "jobs_pc_eq_key_session": true
+  },
+  "sessions_composition": [
+   {
+    "session": 0,
+    "n_cand": 1,
+    "n_n0": 4,
+    "n_pc": 1,
+    "keysheet_first": true,
+    "image_sha_ok": true
+   },
+   {
+    "session": 1,
+    "n_cand": 1,
+    "n_n0": 4,
+    "n_pc": 1,
+    "keysheet_first": true,
+    "image_sha_ok": true
+   },
+   {
+    "session": 2,
+    "n_cand": 1,
+    "n_n0": 4,
+    "n_pc": 1,
+    "keysheet_first": true,
+    "image_sha_ok": true
+   }
+  ],
+  "reads_scheduled_per_tile": {
+   "n0:44bed346": 3,
+   "cand:4d460ebc": 3,
+   "pc:97a2d370": 1,
+   "n0:00ec84d8": 3,
+   "n0:85d9f43d": 3,
+   "n0:8f30c265": 3,
+   "pc:153a7c2f": 1,
+   "pc:aa9e828e": 1
+  },
+  "selection_rederived": {
+   "a_w010_027": {
+    "p99": 4.0,
+    "thr": 5,
+    "n_pos": 39,
+    "pos_eq_summary": true,
+    "n_labelled_adjacent": 120,
+    "n_flag_mismatch_vs_excl": 0,
+    "n_pos_not_adjacent": 1,
+    "n_cands": 1,
+    "cands_eq_summary": true,
+    "cand_rc": [
+     6,
+     4
+    ],
+    "cand_eq_select": true,
+    "pre_excl_counts_equal": true,
+    "cand_census": {
+     "rows": "Y",
+     "n_letters": 5,
+     "n_firm": 1
+    }
+   },
+   "b1_w028_037": {
+    "p99": 5.579999999999998,
+    "thr": 5.579999999999998,
+    "n_pos": 62,
+    "pos_eq_summary": true,
+    "n_labelled_adjacent": 139,
+    "n_flag_mismatch_vs_excl": 0,
+    "n_pos_in_small_clusters": 8,
+    "n_cands": 0,
+    "pc_pool_eq": true,
+    "n_largest": 15
+   },
+   "union_candidates": 1,
+   "cap_20_binding": false
+  },
+  "png_chunks": "all 8 phase-2 files IHDR/IDAT/IEND only, 1068x1068, 8-bit grey",
+  "excl_a_all_vertex_recheck": {
+   "status": "PENDING (DECL-P4-2-A4 item 2 requires it before any P4 CANDIDATE claim); not present in local refs (p4-excl head 78e4862)",
+   "flip_requires_drop_mm": 3.81,
+   "max_npz_to_all_vertex_drop_observed_excl_b_mm": 0.252,
+   "assessment": "flip implausible but must be run before a claim"
+  }
+ },
+ "check4_harness": {
+  "harness_log_last_row_valid": [
+   true,
+   true,
+   true
+  ],
+  "harness_unread": [
+   0,
+   0,
+   0
+  ],
+  "harness_violations": [
+   0,
+   0,
+   0
+  ],
+  "transcripts": {
+   "3582a5da-7804-4f19-b6da-c0a3bc70fd50": {
+    "agent": "a0eec84a5be091307",
+    "first_prompt_eq_brief": true,
+    "brief_sha_ok": true,
+    "models": [
+     "claude-opus-5-5"
+    ],
+    "tool_names": [
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Bash",
+     "SubagentHandback"
+    ],
+    "n_reads": 7,
+    "reads_eq_images_set": true,
+    "reads_each_once": true,
+    "n_bash": 1,
+    "bash_form_ok": true,
+    "bash_recipient_ok": true,
+    "bash_path_ok": true,
+    "inner_EOF_line": false,
+    "body_is_json_object": true,
+    "n_tool_errors": 0,
+    "handback_is_DONE": [
+     false
+    ]
+   },
+   "d836fce6-2180-4909-976d-4cb977f4eb3d": {
+    "agent": "a4dfd2876bc29de1a",
+    "first_prompt_eq_brief": true,
+    "brief_sha_ok": true,
+    "models": [
+     "claude-opus-5-5"
+    ],
+    "tool_names": [
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Bash",
+     "SubagentHandback"
+    ],
+    "n_reads": 7,
+    "reads_eq_images_set": true,
+    "reads_each_once": true,
+    "n_bash": 1,
+    "bash_form_ok": true,
+    "bash_recipient_ok": true,
+    "bash_path_ok": true,
+    "inner_EOF_line": false,
+    "body_is_json_object": true,
+    "n_tool_errors": 0,
+    "handback_is_DONE": [
+     true
+    ]
+   },
+   "22bbbbb4-f7f6-4acf-9c9d-7bb292716dce": {
+    "agent": "a489c73ec0e12f4d8",
+    "first_prompt_eq_brief": true,
+    "brief_sha_ok": true,
+    "models": [
+     "claude-opus-5-5"
+    ],
+    "tool_names": [
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Read",
+     "Bash",
+     "SubagentHandback"
+    ],
+    "n_reads": 7,
+    "reads_eq_images_set": true,
+    "reads_each_once": true,
+    "n_bash": 1,
+    "bash_form_ok": true,
+    "bash_recipient_ok": true,
+    "bash_path_ok": true,
+    "inner_EOF_line": false,
+    "body_is_json_object": true,
+    "n_tool_errors": 0,
+    "handback_is_DONE": [
+     true
+    ]
+   }
+  },
+  "agent_ids_distinct": true,
+  "agent_ids_in_earlier_agent_map_rows": 0,
+  "agent_map_rows": 174,
+  "brief_role_leak": "none: all 3 briefs share one template (image paths are uuid4 names, key sheet first, frozen task text v2); no role, strip, position or rotation word",
+  "integrity_event": {
+   "session": 0,
+   "what": "hand-back was not the single word DONE (371 chars): it reported the mistyped item id; 0 Greek characters, no letter or position content, so it reveals no answer content",
+   "rule": "DECL-HARNESS-A1: recorded as an integrity event; not a void condition for a reader unless it reveals seal content",
+   "recorded": "not found in RULES.md or logs at audit time; should be recorded",
+   "outcome_effect": "none (the affected N0 read has 0 known letters)"
+  },
+  "note_bash_description_field": "session 0 Bash call also carried the tool description field; command form exact; harmless"
+ },
+ "check5_adversarial": {
+  "candidate_best_pair": {
+   "best_pair_k": 5,
+   "n_pairs_tied_at_best": 1,
+   "n_distinct_kinds_matched": 4,
+   "box_h_mm_median": 3.464,
+   "box_h_mm_min": 3.184,
+   "box_h_mm_max": 4.12,
+   "box_w_mm_median": 3.699,
+   "centre_y_std_mm": 0.145,
+   "centre_x_std_mm": 5.557,
+   "one_row_y_std_lt_1p5": true,
+   "nn_spacing_mm_median": 3.728,
+   "matched_pair_centre_dist_mm_median": 0.15,
+   "matched_pair_centre_dist_mm_max": 0.196,
+   "box_mean_intensity_median": 97.73,
+   "tile_mean_intensity": 63.251,
+   "box_mean_pctile_vs_random_same_size_boxes": 0.921,
+   "box_frac_zero_mean": 0.0,
+   "box_frac_ge150_mean": 0.331
+  },
+  "n0_tile_at_max_4": {
+   "best_pair_k": 4,
+   "n_pairs_tied_at_best": 1,
+   "n_distinct_kinds_matched": 3,
+   "box_h_mm_median": 3.418,
+   "box_h_mm_min": 2.341,
+   "box_h_mm_max": 4.026,
+   "box_w_mm_median": 3.184,
+   "centre_y_std_mm": 4.209,
+   "centre_x_std_mm": 5.439,
+   "one_row_y_std_lt_1p5": false,
+   "nn_spacing_mm_median": 6.935,
+   "matched_pair_centre_dist_mm_median": 0.117,
+   "matched_pair_centre_dist_mm_max": 0.209,
+   "box_mean_intensity_median": 121.912,
+   "tile_mean_intensity": 78.776,
+   "box_mean_pctile_vs_random_same_size_boxes": 0.943,
+   "box_frac_zero_mean": 0.0,
+   "box_frac_ge150_mean": 0.398
+  },
+  "n0_at_max_source": "44bed346: w028-037 r1 c5 (known-text strip), census 13 letters, labelled-adjacent, shown rot 90",
+  "n0_sources": [
+   {
+    "uuid8": "8f30c265",
+    "strip": "w010-027",
+    "census_rows": "Y",
+    "census_letters": 2,
+    "census_positive": false,
+    "labelled_adjacent": true
+   },
+   {
+    "uuid8": "00ec84d8",
+    "strip": "w028-037",
+    "census_rows": "Y",
+    "census_letters": 9,
+    "census_positive": true,
+    "labelled_adjacent": true
+   },
+   {
+    "uuid8": "85d9f43d",
+    "strip": "w028-037",
+    "census_rows": "Y",
+    "census_letters": 7,
+    "census_positive": true,
+    "labelled_adjacent": true
+   },
+   {
+    "uuid8": "44bed346",
+    "strip": "w028-037",
+    "census_rows": "Y",
+    "census_letters": 13,
+    "census_positive": true,
+    "labelled_adjacent": true
+   }
+  ],
+  "candidate_band": {
+   "band_height_mm": 4.401,
+   "band_mean_over_tile_mean": 1.397,
+   "band_mean_pctile_among_all_bands_same_height": 0.998,
+   "box_xcoverage_frac_of_width": 0.971,
+   "frac_of_band_bright_px_inside_box_xranges": 1.0,
+   "band_bright_frac_inside_boxes": 0.262,
+   "band_bright_frac_outside_boxes": 0.001,
+   "n_bright_column_runs": 7,
+   "bright_run_len_mm_median": 0.618,
+   "n_bright_components_ge_0p25mm2": 7,
+   "max_bright_component_width_mm": 5.974,
+   "median_bright_component_width_mm": 3.352
+  },
+  "border": {
+   "all_items": {
+    "n_boxes": 80,
+    "outside_0_1068": 0,
+    "touching_or_crossing_border": 7,
+    "centre_outside_own_box": 0,
+    "box_inverted": 0
+   },
+   "candidate": {
+    "n_boxes": 15,
+    "outside_0_1068": 0,
+    "touching_or_crossing_border": 0,
+    "centre_outside_own_box": 0,
+    "box_inverted": 0
+   }
+  },
+  "candidate_robustness": {
+   "best_pair_r50": 5,
+   "best_pair_r75": 5,
+   "best_pair_r100": 5,
+   "best_pair_r150": 5,
+   "best_pair_r200": 5,
+   "best_pair_ignore_kind": 5,
+   "best_pair_firm_only": 1,
+   "triple_agreement": 3,
+   "kind_permutation": [
+    {
+     "pair": "s0-s1",
+     "obs": 5,
+     "n_distinct_perms": 60,
+     "frac_ge_obs": 0.0167
+    },
+    {
+     "pair": "s0-s2",
+     "obs": 3,
+     "n_distinct_perms": 20,
+     "frac_ge_obs": 0.1
+    },
+    {
+     "pair": "s1-s2",
+     "obs": 3,
+     "n_distinct_perms": 20,
+     "frac_ge_obs": 0.1
+    }
+   ],
+   "cross_tile_pairs": {
+    "n": 52,
+    "max": 1,
+    "mean": 0.1538
+   }
+  },
+  "candidate_image_stats_vs_160_w010_027_census_tiles": {
+   "n_census_w010": 160,
+   "mean": {
+    "cand": 63.2506,
+    "census_median": 46.8638,
+    "census_p5": 36.3017,
+    "census_p95": 75.5197,
+    "cand_pctile": 0.734
+   },
+   "std": {
+    "cand": 62.711,
+    "census_median": 40.9467,
+    "census_p5": 18.1078,
+    "census_p95": 75.1059,
+    "cand_pctile": 0.709
+   },
+   "frac_ge150": {
+    "cand": 0.1292,
+    "census_median": 0.0471,
+    "census_p5": 0.008,
+    "census_p95": 0.1933,
+    "cand_pctile": 0.722
+   },
+   "frac_zero": {
+    "cand": 0.0,
+    "census_median": 0.0,
+    "census_p5": 0.0,
+    "census_p95": 0.1867,
+    "cand_pctile": 0.416
+   },
+   "frac_ge250": {
+    "cand": 0.0,
+    "census_median": 0.0,
+    "census_p5": 0.0,
+    "census_p95": 0.0,
+    "cand_pctile": 0.5
+   },
+   "row_mean_std": {
+    "cand": 27.1421,
+    "census_median": 15.0037,
+    "census_p5": 3.7285,
+    "census_p95": 37.9093,
+    "cand_pctile": 0.753
+   },
+   "col_mean_std": {
+    "cand": 12.9891,
+    "census_median": 11.192,
+    "census_p5": 3.7708,
+    "census_p95": 20.8574,
+    "cand_pctile": 0.609
+   },
+   "aniso_row_over_col": {
+    "cand": 2.0896,
+    "census_median": 1.3652,
+    "census_p5": 0.6079,
+    "census_p95": 2.5461,
+    "cand_pctile": 0.822
+   },
+   "max_adj_row_jump": {
+    "cand": 6.2903,
+    "census_median": 3.1807,
+    "census_p5": 1.3045,
+    "census_p95": 8.9781,
+    "cand_pctile": 0.853
+   },
+   "max_adj_col_jump": {
+    "cand": 2.6751,
+    "census_median": 2.3586,
+    "census_p5": 1.1313,
+    "census_p95": 5.0867,
+    "cand_pctile": 0.591
+   },
+   "n_manifest_tiles": 160,
+   "canvas_mean": {
+    "cand": 63.2514,
+    "census_median": 48.3616,
+    "cand_pctile": 0.709
+   },
+   "canvas_std": {
+    "cand": 62.7371,
+    "census_median": 40.7356,
+    "cand_pctile": 0.703
+   },
+   "canvas_frac_ge_150": {
+    "cand": 0.1293,
+    "census_median": 0.0495,
+    "cand_pctile": 0.716
+   },
+   "canvas_valid_fraction": {
+    "cand": 1.0,
+    "census_median": 1.0,
+    "cand_pctile": 0.584
+   },
+   "canvas_n_mesh_vertices_in_tile": {
+    "cand": 174306.0,
+    "census_median": 173889.0,
+    "cand_pctile": 0.897
+   },
+   "census_mean_positive_median": 68.344,
+   "census_mean_nonpositive_median": 43.752,
+   "census_fge150_positive_median": 0.1584,
+   "census_fge150_nonpositive_median": 0.0295
+  },
+  "candidate_census_neighbourhood": {
+   "positive_cluster_size_4conn": 8,
+   "labelled_adjacent_in_cluster": 7,
+   "tile_above_r5c4": "positive, 10 census letters, labelled-adjacent (min 0.00001 mm)",
+   "diagonals_above": "r5c3 10 letters and r5c5 9 letters, both positive and labelled-adjacent",
+   "same_row_neighbours": "r6c3 rows N 0 letters; r6c5 1 letter"
+  },
+  "null_stats": {
+   "n_null_tiles": 4,
+   "null_p99_linear": 3.94,
+   "agreed_minus_p99": 1.06,
+   "agreed_minus_max": 1,
+   "rank_p_value_floor": 0.2
+  },
+  "non_text_explanations_remaining": [
+   "Correlated same-model salience: the best pair matched 5 of 5 with median centre offset 0.15 mm (max 0.20 mm); all 5 lie on one row spanning 97% of the tile width along the brightest horizontal band of the tile (99.8th percentile of same-height bands), whose bright pixels are split into 7 letter-sized components. Two copies of one model segmenting the same bright band would agree like this whether or not it is writing.",
+   "Weak replication: only 1 of 3 reader pairs reaches 5; the other two pairs agree on 3; 3 letters are shared by all 3 readers; each reader marked only 1 of 5 firm; firm-only agreement is 1.",
+   "Null too small: 4 N0 tiles, rank p >= 0.20; the N0 maximum 4 came from a 90-degree-rotated known-text tile, so rotated text alone produced 4 agreed letters.",
+   "Threshold artefact / winner curse: selected as the only non-adjacent tile at the census cut (5 letters, 1 firm); every phase-2 reader again named exactly 5, which fits a fixed set of 5 salient blobs as well as text.",
+   "Horizontal fibre or sheet structure in the prediction map (row/column anisotropy 2.09, 82nd percentile) cannot be excluded from counts alone. No masked area, no saturation and no row discontinuity beyond the 95th percentile, so an edge, saturated artefact or visible fold is not indicated.",
+   "If it is ink, it is most parsimoniously the edge of the known text: it belongs to an 8-tile positive cluster whose other 7 tiles are labelled-adjacent, and the tile directly above carries 10 census letters on a labelled segment. An isolated title is not indicated. The w010-027 candidate rule has no isolation criterion, so the rule was applied correctly."
+  ],
+  "strength_vs_SG1c": {
+   "null_tiles": "4 of the >= 40 required (10%)",
+   "agreed_minus_P99": "1.06 against a bar of >= 10",
+   "agreed_gt_max_null": "yes, by 1",
+   "judgement": "Weak. It meets the pre-declared DECL-P4-2 item 6 bar at its minimum margin but fails 2 of 3 SG 1c criteria by a wide margin. It is a lead for the pre-declared P4-C test (DECL-P4-3), not evidence of a title."
+  }
+ },
+ "open_actions_before_any_claim": [
+  "run and apply the excl_a all-vertex re-check (DECL-P4-2-A4 item 2)",
+  "record the session-0 hand-back integrity event (DECL-HARNESS-A1)",
+  "report the P4-C result with this outcome (DECL-P4-3)"
+ ]
+}
