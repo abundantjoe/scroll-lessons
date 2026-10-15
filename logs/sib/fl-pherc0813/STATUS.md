@@ -1,0 +1,1 @@
+2026-09-30T04:02:22Z | pipeline launched (nohup run.sh): no organizer segments for PHerc0813 -> 4 auto-grow attempts on surface-m7 L0, gate 0 transverse SI + >=16 cm2, then C2-NT render, ink_9um both/no-TTA, 2 cm tiles
