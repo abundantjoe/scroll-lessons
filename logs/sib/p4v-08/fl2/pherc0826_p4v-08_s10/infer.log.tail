@@ -1,0 +1,20 @@
+  File "/opt/hv-ink/lib/python3.13/site-packages/zarr/core/sync.py", line 116, in _runner
+    return await coro
+           ^^^^^^^^^^
+  File "/opt/hv-ink/lib/python3.13/site-packages/zarr/api/asynchronous.py", line 391, in open
+    store_path = await make_store_path(store, mode=mode, path=path, storage_options=storage_options)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv-ink/lib/python3.13/site-packages/zarr/storage/_common.py", line 482, in make_store_path
+    store = await make_store(store_like, mode=mode, storage_options=storage_options)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv-ink/lib/python3.13/site-packages/zarr/storage/_common.py", line 406, in make_store
+    return await make_store(Path(parsed.path), mode=mode, storage_options=storage_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv-ink/lib/python3.13/site-packages/zarr/storage/_common.py", line 398, in make_store
+    return await LocalStore.open(root=store_like, mode=mode, read_only=_read_only)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv-ink/lib/python3.13/site-packages/zarr/storage/_local.py", line 206, in open
+    await store._open()
+  File "/opt/hv-ink/lib/python3.13/site-packages/zarr/storage/_local.py", line 218, in _open
+    raise FileNotFoundError(f"{self.root} does not exist")
+FileNotFoundError: /work/fl2/render/pherc0826_p4v-08_s10.zarr does not exist
