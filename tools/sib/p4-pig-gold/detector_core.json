@@ -1,0 +1,14 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-10 item 2 (GOLD detector core, fixed before any control or title-strip detector number)",
+ "half_um": 20,
+ "sat": 250,
+ "radius_mm": 0.15,
+ "statistic": "per column over the +-20 um slab: P = max over z in the slab of [v(z) - 0.5 (min v(z-3..z-1) + min v(z+1..z+3))] (thin-layer ridge; flanks read 3 slices beyond the slab); usable = mesh-valid and min_z > 0; B x B block sums (E1/C1 level 0 B=4 -> 9.032 um; E2/C2 level 1 B=2 -> 9.6 um); Z = masked disc mean of P, radius 0.15 mm, NaN where < 50 % usable; Zs = same for Sat = max_z >= 250",
+ "version": 2,
+ "flank_slices": 3,
+ "change_log": [
+  "v1 (dd238a3): P = max 3-slice running mean - column median. Pilot injection at 1 control location (C1 r2_c5, glyph ALPHA, rho_pap 1.5 and 0.5, t = 0.01-1.0 um) with provisional tau 118: 0 of 12 variants recovered; Z_max in the glyph region moved 93 -> <= 101 even at 1 um. Cause (numbers): the published unsharp mask (coeff 4) gives a thin dense layer dark flanking lobes (e.g. slice profile ... 64, 19, 132, 16, 56 ...) that cancel inside a 3-slice mean. v1 was not used for any title-strip number; v1 control outputs are discarded.",
+  "v2: ridge statistic above; chosen on the physics of the published reconstruction chain (Paganin + unsharp) and one pilot control patch (glyph-region mean ridge 39 base vs 61 / 100 / 103 / 116 at t = 0.02 / 0.05 / 0.1 / 0.3 um, rho_pap 1.5); no title-strip data seen. Disclosed as a design iteration on control + simulation."
+ ]
+}
