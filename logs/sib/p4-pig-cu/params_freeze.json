@@ -1,0 +1,19 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "what": "DECL-P4-10 item 2 freeze: sha256 of params and detector code, pushed before any title-strip (E1/E2) number. No E1 or E2 CT number has been computed by this sibling.",
+ "utc": "2026-09-26T18:26:11Z",
+ "sha256": {
+  "logs/sib/p4-pig-cu/params.json": "895ad934dfb285f0d7777fbe1f916550515a07a69dbb35aa011d97ad9419c4e8",
+  "tools/sib/p4-pig-cu/cu.py": "70069837c7514d1d24e13c36b6bc9b6567fcd70a60ef89882d7ee95174271374",
+  "tools/sib/p4-pig-cu/inject.py": "dca359973f9e456ad9d5706a0088dde4dfab09f7101bfba3c37e4abef14636fe",
+  "tools/sib/p4-pig-cu/hz_common.py": "e5846bc2b18948839b5fbacd3820e665a5ed23ae3b256b6b437be9d7edac9204",
+  "logs/sib/p4-pig-cu/t2_control.json": "b517dff2a189a0afa6dfc02159eb35de4c38ef561b84336ef8ad5b73755f45e3",
+  "logs/sib/p4-pig-cu/calib.json": "660174070a8b093026922a179d24cb6c097820b0cccfb7d4c15a311e41a2e7b7"
+ },
+ "pre_freeze_control_only_runs": [
+  "calib_probe (C1, 400 chunks)",
+  "freeze_t2 (C2 level-1, 600 chunks)",
+  "cu.py score C1 on tiles r2 c0-c8 (design of the statistic; see params.design_history)",
+  "inject.py C1 sites 0-1 and C2 site 0 (code check; led to adding S1/S2/F1/F2)"
+ ]
+}

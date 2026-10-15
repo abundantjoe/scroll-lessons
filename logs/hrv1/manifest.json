@@ -1,0 +1,2805 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-HRV-1: owner-requested human-review set HRV-1 (viewing set only; never evidence)",
+ "viewing": "owner-only viewing set (DECL-HRV-1 item 3); never evidence; never read by any LLM reader; no agent opened, displayed or described any image; numbers only",
+ "generated_utc": "2026-09-25T18:17:44Z",
+ "volumes": {
+  "PHerc0800": {
+   "scroll": "PHerc0800",
+   "volume_id": "20250521135224",
+   "metadata_key": "PHerc0800/volumes/20250521135224-8.640um-1.2m-116keV-masked.zarr/metadata.json",
+   "metadata_sha256": "ac77890e679c1916de6bc606e7d3cff77ed1c4d5fdf368968b740383271433b9",
+   "samplePixelSize_mm": 0.00864,
+   "voxel_size_um": 8.64,
+   "protocol": "MAY",
+   "volume_zarr_s3": "s3://vesuvius-challenge-open-data/PHerc0800/volumes/20250521135224-8.640um-1.2m-116keV-masked.zarr/"
+  },
+  "PHerc1447": {
+   "scroll": "PHerc1447",
+   "volume_id": "20250521151220",
+   "metadata_key": "PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json",
+   "metadata_sha256": "eed2a01b2903e28c1ce2b8cde180fd5a0dfa970b488e8aeb10695878fdf1f0b4",
+   "samplePixelSize_mm": 0.00864,
+   "voxel_size_um": 8.64,
+   "protocol": "MAY",
+   "volume_zarr_s3": "s3://vesuvius-challenge-open-data/PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/"
+  }
+ },
+ "files": [
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc0800_20251028213516_RAW_overview.png",
+   "sha256": "8bb37626fae30367253d8ab81b08c0095c0267967eb2c0e79e0ea5195b285e5c",
+   "bytes": 1687368,
+   "scroll": "PHerc0800",
+   "segment": "20251028213516",
+   "segment_dir": "20251028213516-auto_grown_20251028213516907",
+   "volume_id": "20250521135224",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc0800/volumes/20250521135224-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 0,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc0800/segments/20251028213516-auto_grown_20251028213516907/surface-volumes/8.64um-1.2m-116keV-volume-20250521135224.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      2160,
+      2240
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2240,
+     2160
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_HEL_4.320um_1.0m_116keV_binmean_2_PHerc0800_TA_B_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 174,
+    "chunks_total": 306,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 14254080,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521135224.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      2160,
+      2240
+     ],
+     "mean": 64.51611400462963,
+     "std": 76.89941090851705,
+     "frac_zero": 0.5331405009920634
+    },
+    "valid_frac_fullres": 0.47164351851851855,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2240,
+      "height": 2160,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 50.0,
+    "window_hi": 152.0,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 104.84671069237511,
+    "layer_mean_std_valid": 21.358723040608396,
+    "fullres_display": {
+     "shape": [
+      2160,
+      2240
+     ],
+     "mean": 64.51611400462963,
+     "std": 76.89941090851705,
+     "frac_zero": 0.5331405009920634,
+     "valid_frac": 0.47164351851851855,
+     "mean_valid": 136.78999386503068,
+     "std_valid": 51.495327085293354,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      2160,
+      2240
+     ],
+     "image_hw": [
+      2160,
+      2240
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:14:42Z",
+   "seconds": 8.1,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250502180708_RAW_overview.png",
+   "sha256": "a2785d109a3370007a6433a9508f3e59c0e06c7fafbda2e91462c844dba8945e",
+   "bytes": 249380,
+   "scroll": "PHerc1447",
+   "segment": "20250502180708",
+   "segment_dir": "20250502180708-auto_grown_20250502160708188",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 1,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250502180708-auto_grown_20250502160708188/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      2660,
+      3540
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     3540,
+     2660
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_TA_HEL_4.320um_1.0m_116keV_binmean_2_PHerc1447_C_TA_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 66,
+    "chunks_total": 588,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 5406720,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      2660,
+      3540
+     ],
+     "mean": 5.291856123359246,
+     "std": 30.516169993935886,
+     "frac_zero": 0.9671652648570579
+    },
+    "valid_frac_fullres": 0.033172337623720315,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 3540,
+      "height": 2660,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 8.0,
+    "window_hi": 154.8,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 99.88859407614194,
+    "layer_mean_std_valid": 34.226077146667265,
+    "fullres_display": {
+     "shape": [
+      2660,
+      3540
+     ],
+     "mean": 5.291856123359246,
+     "std": 30.516169993935886,
+     "frac_zero": 0.9671652648570579,
+     "valid_frac": 0.033172337623720315,
+     "mean_valid": 159.52617459118207,
+     "std_valid": 58.89206720026874,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      2660,
+      3540
+     ],
+     "image_hw": [
+      2660,
+      3540
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:14:45Z",
+   "seconds": 3.8,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc0800_20251028220042_RAW_overview.png",
+   "sha256": "2856bbb0096b25699aa711cdaa6a0ee1bf71c52c46bc0d718f6d7b0d28450d33",
+   "bytes": 1589210,
+   "scroll": "PHerc0800",
+   "segment": "20251028220042",
+   "segment_dir": "20251028220042-auto_grown_20251028220042762",
+   "volume_id": "20250521135224",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc0800/volumes/20250521135224-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 2,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc0800/segments/20251028220042-auto_grown_20251028220042762/surface-volumes/8.64um-1.2m-116keV-volume-20250521135224.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      2040,
+      2000
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2000,
+     2040
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_HEL_4.320um_1.0m_116keV_binmean_2_PHerc0800_TA_B_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 158,
+    "chunks_total": 256,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 12943360,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521135224.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      2040,
+      2000
+     ],
+     "mean": 73.3200625,
+     "std": 81.73255888750832,
+     "frac_zero": 0.48815539215686277
+    },
+    "valid_frac_fullres": 0.5174509803921569,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2000,
+      "height": 2040,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 44.6,
+    "window_hi": 146.6,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 101.37076420992801,
+    "layer_mean_std_valid": 23.132674892342074,
+    "fullres_display": {
+     "shape": [
+      2040,
+      2000
+     ],
+     "mean": 73.3200625,
+     "std": 81.73255888750832,
+     "frac_zero": 0.48815539215686277,
+     "valid_frac": 0.5174509803921569,
+     "mean_valid": 141.69470206517622,
+     "std_valid": 56.75842959940373,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      2040,
+      2000
+     ],
+     "image_hw": [
+      2040,
+      2000
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:14:53Z",
+   "seconds": 7.2,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250502180748_RAW_overview.png",
+   "sha256": "39e69336856c7d9246555559998f1cdfedda6db346dd355fffa1bc1da9675aeb",
+   "bytes": 1160779,
+   "scroll": "PHerc1447",
+   "segment": "20250502180748",
+   "segment_dir": "20250502180748-auto_grown_20250502160748721",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 3,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250502180748-auto_grown_20250502160748721/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      4120,
+      2240
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2240,
+     4120
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_TA_HEL_4.320um_1.0m_116keV_binmean_2_PHerc1447_C_TA_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 146,
+    "chunks_total": 594,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 11960320,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      4096,
+      2227
+     ],
+     "mean": 23.966991792840705,
+     "std": 59.08821744224038,
+     "frac_zero": 0.8343520659098563
+    },
+    "valid_frac_fullres": 0.16605441660887657,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2227,
+      "height": 4096,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 41.2,
+    "window_hi": 158.6,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 107.62954525433561,
+    "layer_mean_std_valid": 28.968206604590776,
+    "fullres_display": {
+     "shape": [
+      4120,
+      2240
+     ],
+     "mean": 23.967075567787795,
+     "std": 59.27429766398682,
+     "frac_zero": 0.8356733269764216,
+     "valid_frac": 0.16605441660887657,
+     "mean_valid": 144.33265948137762,
+     "std_valid": 61.527998988186766,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "cv2.INTER_AREA",
+     "factor": 0.9941747572815534,
+     "fullres_hw": [
+      4120,
+      2240
+     ],
+     "image_hw": [
+      4096,
+      2227
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:15:00Z",
+   "seconds": 7.3,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc0800_20251028220955_RAW_overview.png",
+   "sha256": "51732690218b8129353e4e9cf4d2e48988ab4a8b6e20bdb6c45f164b44e42fa1",
+   "bytes": 1508546,
+   "scroll": "PHerc0800",
+   "segment": "20251028220955",
+   "segment_dir": "20251028220955-auto_grown_20251028220955262",
+   "volume_id": "20250521135224",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc0800/volumes/20250521135224-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 4,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc0800/segments/20251028220955-auto_grown_20251028220955262/surface-volumes/8.64um-1.2m-116keV-volume-20250521135224.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      2100,
+      2100
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2100,
+     2100
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_HEL_4.320um_1.0m_116keV_binmean_2_PHerc0800_TA_B_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 156,
+    "chunks_total": 289,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 12779520,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521135224.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      2100,
+      2100
+     ],
+     "mean": 64.13780702947845,
+     "std": 79.07537079355826,
+     "frac_zero": 0.5412981859410431
+    },
+    "valid_frac_fullres": 0.4636961451247166,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2100,
+      "height": 2100,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 44.8,
+    "window_hi": 159.4,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 107.09399051298351,
+    "layer_mean_std_valid": 26.107337382833478,
+    "fullres_display": {
+     "shape": [
+      2100,
+      2100
+     ],
+     "mean": 64.13780702947845,
+     "std": 79.07537079355826,
+     "frac_zero": 0.5412981859410431,
+     "valid_frac": 0.4636961451247166,
+     "mean_valid": 138.31861166805223,
+     "std_valid": 56.783388104130815,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      2100,
+      2100
+     ],
+     "image_hw": [
+      2100,
+      2100
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:15:07Z",
+   "seconds": 7.0,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250502182142_RAW_overview.png",
+   "sha256": "8fe6f96faec7a2ff8c1e1f07e79ad270d61d441e258bf5eb14c863948e8ea3f8",
+   "bytes": 2022962,
+   "scroll": "PHerc1447",
+   "segment": "20250502182142",
+   "segment_dir": "20250502182142-auto_grown_20250502161324419",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 5,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250502182142-auto_grown_20250502161324419/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      3760,
+      2560
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2560,
+     3760
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_TA_HEL_4.320um_1.0m_116keV_binmean_2_PHerc1447_C_TA_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 214,
+    "chunks_total": 600,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 17530880,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      3760,
+      2560
+     ],
+     "mean": 38.61679604388298,
+     "std": 71.04716649986963,
+     "frac_zero": 0.7291911153590426
+    },
+    "valid_frac_fullres": 0.2736246052194149,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2560,
+      "height": 3760,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 40.4,
+    "window_hi": 160.4,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 106.85532263067712,
+    "layer_mean_std_valid": 30.43436911855677,
+    "fullres_display": {
+     "shape": [
+      3760,
+      2560
+     ],
+     "mean": 38.61679604388298,
+     "std": 71.04716649986963,
+     "frac_zero": 0.7291911153590426,
+     "valid_frac": 0.2736246052194149,
+     "mean_valid": 141.13056833071292,
+     "std_valid": 63.08493850497834,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      3760,
+      2560
+     ],
+     "image_hw": [
+      3760,
+      2560
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:15:19Z",
+   "seconds": 11.7,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc0800_20251028222030_RAW_overview.png",
+   "sha256": "fb19ff44a13899ac7bfcee469757b216f7cc1157b3b92f2b9ea0561a2a051c7d",
+   "bytes": 2340866,
+   "scroll": "PHerc0800",
+   "segment": "20251028222030",
+   "segment_dir": "20251028222030-auto_grown_20251028222030940",
+   "volume_id": "20250521135224",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc0800/volumes/20250521135224-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 6,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc0800/segments/20251028222030-auto_grown_20251028222030940/surface-volumes/8.64um-1.2m-116keV-volume-20250521135224.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      2580,
+      2580
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2580,
+     2580
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_HEL_4.320um_1.0m_116keV_binmean_2_PHerc0800_TA_B_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 235,
+    "chunks_total": 441,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 19251200,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521135224.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      2580,
+      2580
+     ],
+     "mean": 65.52413406646235,
+     "std": 78.13976812880351,
+     "frac_zero": 0.5344327263986539
+    },
+    "valid_frac_fullres": 0.4703593534042425,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2580,
+      "height": 2580,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 47.6,
+    "window_hi": 148.6,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 102.9685113545626,
+    "layer_mean_std_valid": 21.54896664369479,
+    "fullres_display": {
+     "shape": [
+      2580,
+      2580
+     ],
+     "mean": 65.52413406646235,
+     "std": 78.13976812880351,
+     "frac_zero": 0.5344327263986539,
+     "valid_frac": 0.4703593534042425,
+     "mean_valid": 139.30653997253185,
+     "std_valid": 51.98862069665345,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      2580,
+      2580
+     ],
+     "image_hw": [
+      2580,
+      2580
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:15:29Z",
+   "seconds": 10.3,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250502182456_RAW_overview.png",
+   "sha256": "2d8e48d4d7636e8089ce78d65f144e5a924cd21ee18b15460920547a2dfb8496",
+   "bytes": 1730533,
+   "scroll": "PHerc1447",
+   "segment": "20250502182456",
+   "segment_dir": "20250502182456-auto_grown_20250502161202782",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 7,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250502182456-auto_grown_20250502161202782/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      4720,
+      3240
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     3240,
+     4720
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_TA_HEL_4.320um_1.0m_116keV_binmean_2_PHerc1447_C_TA_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 274,
+    "chunks_total": 962,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 22446080,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      4096,
+      2812
+     ],
+     "mean": 25.70599130817701,
+     "std": 60.01671639113433,
+     "frac_zero": 0.8188038984708392
+    },
+    "valid_frac_fullres": 0.18126673990374556,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2812,
+      "height": 4096,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 39.0,
+    "window_hi": 159.4,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 105.9629903364843,
+    "layer_mean_std_valid": 28.908563791189287,
+    "fullres_display": {
+     "shape": [
+      4720,
+      3240
+     ],
+     "mean": 25.706039247227455,
+     "std": 60.26522891836158,
+     "frac_zero": 0.8206242153170119,
+     "valid_frac": 0.18126673990374556,
+     "mean_valid": 141.81332582512167,
+     "std_valid": 59.75488223724093,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "cv2.INTER_AREA",
+     "factor": 0.8677966101694915,
+     "fullres_hw": [
+      4720,
+      3240
+     ],
+     "image_hw": [
+      4096,
+      2812
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:15:42Z",
+   "seconds": 12.6,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc0800_20251028225813_RAW_overview.png",
+   "sha256": "aa5f24a63bdbbec00a2afdaca2370ef3c8a9f1e9c196a76959e98005f0a0d91e",
+   "bytes": 1790376,
+   "scroll": "PHerc0800",
+   "segment": "20251028225813",
+   "segment_dir": "20251028225813-auto_grown_20251028225813045",
+   "volume_id": "20250521135224",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc0800/volumes/20250521135224-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 8,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc0800/segments/20251028225813-auto_grown_20251028225813045/surface-volumes/8.64um-1.2m-116keV-volume-20250521135224.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      2300,
+      2260
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2260,
+     2300
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_HEL_4.320um_1.0m_116keV_binmean_2_PHerc0800_TA_B_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 185,
+    "chunks_total": 324,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 15155200,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521135224.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      2300,
+      2260
+     ],
+     "mean": 69.57331377452867,
+     "std": 81.8707021713651,
+     "frac_zero": 0.5326179299730666
+    },
+    "valid_frac_fullres": 0.4721238938053097,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2260,
+      "height": 2300,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 48.6,
+    "window_hi": 145.4,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 104.63855401165397,
+    "layer_mean_std_valid": 20.415769037110042,
+    "fullres_display": {
+     "shape": [
+      2300,
+      2260
+     ],
+     "mean": 69.57331377452867,
+     "std": 81.8707021713651,
+     "frac_zero": 0.5326179299730666,
+     "valid_frac": 0.4721238938053097,
+     "mean_valid": 147.3624078073428,
+     "std_valid": 52.287262809771974,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      2300,
+      2260
+     ],
+     "image_hw": [
+      2300,
+      2260
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:15:50Z",
+   "seconds": 8.3,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250502183138_RAW_overview.png",
+   "sha256": "800ca6de81d86c631521de2945fc894e848f45f6961fe87c7bebb438093d22c7",
+   "bytes": 1109545,
+   "scroll": "PHerc1447",
+   "segment": "20250502183138",
+   "segment_dir": "20250502183138-auto_grown_20250502162038685",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 9,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250502183138-auto_grown_20250502162038685/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      3220,
+      2120
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2120,
+     3220
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_TA_HEL_4.320um_1.0m_116keV_binmean_2_PHerc1447_C_TA_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 135,
+    "chunks_total": 442,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 11059200,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      3220,
+      2120
+     ],
+     "mean": 27.868721727411227,
+     "std": 61.81833565218677,
+     "frac_zero": 0.8025139165592406
+    },
+    "valid_frac_fullres": 0.1995611156685808,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2120,
+      "height": 3220,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 42.0,
+    "window_hi": 156.4,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 104.72467840773291,
+    "layer_mean_std_valid": 27.460194870967317,
+    "fullres_display": {
+     "shape": [
+      3220,
+      2120
+     ],
+     "mean": 27.868721727411227,
+     "std": 61.81833565218677,
+     "frac_zero": 0.8025139165592406,
+     "valid_frac": 0.1995611156685808,
+     "mean_valid": 139.65005975259197,
+     "std_valid": 59.49188834196999,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      3220,
+      2120
+     ],
+     "image_hw": [
+      3220,
+      2120
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:15:56Z",
+   "seconds": 6.2,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc0800_20251029010146_RAW_overview.png",
+   "sha256": "7a87a485a450dd16a7b5f60083ca5fe9a42c77308ecc979cd3fb38ca098b4e31",
+   "bytes": 354628,
+   "scroll": "PHerc0800",
+   "segment": "20251029010146",
+   "segment_dir": "20251029010146-auto_grown_20251029010146642",
+   "volume_id": "20250521135224",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc0800/volumes/20250521135224-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 10,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc0800/segments/20251029010146-auto_grown_20251029010146642/surface-volumes/8.64um-1.2m-116keV-volume-20250521135224.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      980,
+      980
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     980,
+     980
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_HEL_4.320um_1.0m_116keV_binmean_2_PHerc0800_TA_B_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 43,
+    "chunks_total": 64,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 3522560,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521135224.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      980,
+      980
+     ],
+     "mean": 73.08662536443148,
+     "std": 82.55909536578278,
+     "frac_zero": 0.5082319866722199
+    },
+    "valid_frac_fullres": 0.4967721782590587,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 980,
+      "height": 980,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 46.6,
+    "window_hi": 145.4,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 103.7106396981765,
+    "layer_mean_std_valid": 21.143426499880924,
+    "fullres_display": {
+     "shape": [
+      980,
+      980
+     ],
+     "mean": 73.08662536443148,
+     "std": 82.55909536578278,
+     "frac_zero": 0.5082319866722199,
+     "valid_frac": 0.4967721782590587,
+     "mean_valid": 147.12302452316075,
+     "std_valid": 53.180115481399554,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      980,
+      980
+     ],
+     "image_hw": [
+      980,
+      980
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:15:59Z",
+   "seconds": 2.2,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250502183421_RAW_overview.png",
+   "sha256": "c8aa4fdae5331ddaa4387ecc2387bd1d32aec1767c5b818e5d2e794acde9bc56",
+   "bytes": 1874823,
+   "scroll": "PHerc1447",
+   "segment": "20250502183421",
+   "segment_dir": "20250502183421-auto_grown_20250502161744358",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 11,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250502183421-auto_grown_20250502161744358/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      3820,
+      3860
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     3860,
+     3820
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_TA_HEL_4.320um_1.0m_116keV_binmean_2_PHerc1447_C_TA_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 225,
+    "chunks_total": 930,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 18432000,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      3820,
+      3860
+     ],
+     "mean": 23.135008816428396,
+     "std": 58.06071986927933,
+     "frac_zero": 0.8419329680167105
+    },
+    "valid_frac_fullres": 0.15974323847760627,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 3860,
+      "height": 3820,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 44.0,
+    "window_hi": 157.6,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 108.53479969398578,
+    "layer_mean_std_valid": 26.84659128291201,
+    "fullres_display": {
+     "shape": [
+      3820,
+      3860
+     ],
+     "mean": 23.135008816428396,
+     "std": 58.06071986927933,
+     "frac_zero": 0.8419329680167105,
+     "valid_frac": 0.15974323847760627,
+     "mean_valid": 144.82621635138312,
+     "std_valid": 58.98163183175287,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      3820,
+      3860
+     ],
+     "image_hw": [
+      3820,
+      3860
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:16:10Z",
+   "seconds": 11.2,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250502184201_RAW_overview.png",
+   "sha256": "6dc70262dd77cd545482aaa6fd6f9e2b8e29531259693d9eaefe25fd71c1e0ef",
+   "bytes": 1626287,
+   "scroll": "PHerc1447",
+   "segment": "20250502184201",
+   "segment_dir": "20250502184201-auto_grown_20250502163549332",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 12,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250502184201-auto_grown_20250502163549332/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      3580,
+      2220
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2220,
+     3580
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_TA_HEL_4.320um_1.0m_116keV_binmean_2_PHerc1447_C_TA_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 191,
+    "chunks_total": 504,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 15646720,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      3580,
+      2220
+     ],
+     "mean": 33.815878630026674,
+     "std": 65.95370186096149,
+     "frac_zero": 0.7547784236750718
+    },
+    "valid_frac_fullres": 0.24778046202627207,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2220,
+      "height": 3580,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 36.8,
+    "window_hi": 169.6,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 107.85360683708602,
+    "layer_mean_std_valid": 31.699816280368772,
+    "fullres_display": {
+     "shape": [
+      3580,
+      2220
+     ],
+     "mean": 33.815878630026674,
+     "std": 65.95370186096149,
+     "frac_zero": 0.7547784236750718,
+     "valid_frac": 0.24778046202627207,
+     "mean_valid": 136.47516173588048,
+     "std_valid": 59.539739686146646,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      3580,
+      2220
+     ],
+     "image_hw": [
+      3580,
+      2220
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:16:19Z",
+   "seconds": 9.3,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250502184658_RAW_overview.png",
+   "sha256": "77a41651d47def5fea5b43c37bcdebe8c0f3f92f178bdfc628bacb71a6678760",
+   "bytes": 2091170,
+   "scroll": "PHerc1447",
+   "segment": "20250502184658",
+   "segment_dir": "20250502184658-auto_grown_20250502163923577",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 13,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250502184658-auto_grown_20250502163923577/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      4220,
+      2860
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2860,
+     4220
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_TA_HEL_4.320um_1.0m_116keV_binmean_2_PHerc1447_C_TA_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 244,
+    "chunks_total": 759,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 19988480,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      4096,
+      2776
+     ],
+     "mean": 31.62027557988675,
+     "std": 64.34055041401795,
+     "frac_zero": 0.7746031483586996
+    },
+    "valid_frac_fullres": 0.22582814105325955,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2776,
+      "height": 4096,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 40.4,
+    "window_hi": 168.0,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 110.49996752966815,
+    "layer_mean_std_valid": 29.521273709265447,
+    "fullres_display": {
+     "shape": [
+      4220,
+      2860
+     ],
+     "mean": 31.620330759288105,
+     "std": 64.60005492198498,
+     "frac_zero": 0.7765022536705001,
+     "valid_frac": 0.22582814105325955,
+     "mean_valid": 140.01944404187756,
+     "std_valid": 57.45789750462495,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "cv2.INTER_AREA",
+     "factor": 0.9706161137440759,
+     "fullres_hw": [
+      4220,
+      2860
+     ],
+     "image_hw": [
+      4096,
+      2776
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:16:30Z",
+   "seconds": 11.1,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250502184845_RAW_overview.png",
+   "sha256": "ddbb5cbebbe4d9c9387c23ec4f59799a0f852f6cfb1ccf9907f0a48af9a5758a",
+   "bytes": 2545721,
+   "scroll": "PHerc1447",
+   "segment": "20250502184845",
+   "segment_dir": "20250502184845-auto_grown_20250502164121265",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 14,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250502184845-auto_grown_20250502164121265/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      4620,
+      2200
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2200,
+     4620
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_TA_HEL_4.320um_1.0m_116keV_binmean_2_PHerc1447_C_TA_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 326,
+    "chunks_total": 666,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 26705920,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      4096,
+      1950
+     ],
+     "mean": 54.58292580629006,
+     "std": 77.21291041476745,
+     "frac_zero": 0.6143560947516026
+    },
+    "valid_frac_fullres": 0.3865035419126328,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 1950,
+      "height": 4096,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 41.6,
+    "window_hi": 166.6,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 110.84539420663054,
+    "layer_mean_std_valid": 28.976819012607287,
+    "fullres_display": {
+     "shape": [
+      4620,
+      2200
+     ],
+     "mean": 54.583079397874855,
+     "std": 77.60560168471795,
+     "frac_zero": 0.6175328610783156,
+     "valid_frac": 0.3865035419126328,
+     "mean_valid": 141.22271461670869,
+     "std_valid": 57.85200976150183,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "cv2.INTER_AREA",
+     "factor": 0.8865800865800866,
+     "fullres_hw": [
+      4620,
+      2200
+     ],
+     "image_hw": [
+      4096,
+      1950
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:16:45Z",
+   "seconds": 14.5,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250502185519_RAW_overview.png",
+   "sha256": "476bb7361eb02949587fc15dc5e746c4b94e4feb8f8a7ca2ec9acbc49b0f3fe3",
+   "bytes": 2072408,
+   "scroll": "PHerc1447",
+   "segment": "20250502185519",
+   "segment_dir": "20250502185519-auto_grown_20250502164303733",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 15,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250502185519-auto_grown_20250502164303733/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      3200,
+      2660
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2660,
+     3200
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_TA_HEL_4.320um_1.0m_116keV_binmean_2_PHerc1447_C_TA_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 236,
+    "chunks_total": 525,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 19333120,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      3200,
+      2660
+     ],
+     "mean": 41.7523983787594,
+     "std": 71.63033332465554,
+     "frac_zero": 0.7056183035714285
+    },
+    "valid_frac_fullres": 0.29747544642857143,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2660,
+      "height": 3200,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 38.4,
+    "window_hi": 166.6,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 108.94389392882064,
+    "layer_mean_std_valid": 30.06936655267965,
+    "fullres_display": {
+     "shape": [
+      3200,
+      2660
+     ],
+     "mean": 41.7523983787594,
+     "std": 71.63033332465554,
+     "frac_zero": 0.7056183035714285,
+     "valid_frac": 0.29747544642857143,
+     "mean_valid": 140.35578021658608,
+     "std_valid": 58.383279110171074,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      3200,
+      2660
+     ],
+     "image_hw": [
+      3200,
+      2660
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:16:55Z",
+   "seconds": 10.4,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250502205333_RAW_overview.png",
+   "sha256": "2af657ffe72147f45ccd1f279819ab8ba4cd3270c1ddd820de28aa50532bded3",
+   "bytes": 4327022,
+   "scroll": "PHerc1447",
+   "segment": "20250502205333",
+   "segment_dir": "20250502205333-auto_grown_20250502181030065",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 16,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, zarr level 0 (byte ranges of layers 13..17 only)",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250502205333-auto_grown_20250502181030065/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.zarr/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      31,
+      3760,
+      2580
+     ],
+     "chunks": [
+      31,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "zattrs_canvas_size": [
+     2580,
+     3760
+    ],
+    "zattrs_source_zarr": "/volumes/esrf/20250506/SCROLLS_TA_HEL_4.320um_1.0m_116keV_binmean_2_PHerc1447_C_TA_0001_masked.zarr/",
+    "zattrs_num_slices": 31,
+    "zattrs_slice_step": 1.0,
+    "chunks_stored": 396,
+    "chunks_total": 630,
+    "byte_range_per_chunk": [
+     212992,
+     294911
+    ],
+    "bytes_downloaded": 32440320,
+    "dtype": "uint8",
+    "surface_volumes_in_bucket": {
+     "tifs": [],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      3760,
+      2580
+     ],
+     "mean": 62.70794192231568,
+     "std": 76.87593014374653,
+     "frac_zero": 0.4668655162460828
+    },
+    "valid_frac_fullres": 0.5389864753422399,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2580,
+      "height": 3760,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 32.6,
+    "window_hi": 162.2,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 91.8288643996481,
+    "layer_mean_std_valid": 35.36838811453937,
+    "fullres_display": {
+     "shape": [
+      3760,
+      2580
+     ],
+     "mean": 62.70794192231568,
+     "std": 76.87593014374653,
+     "frac_zero": 0.4668655162460828,
+     "valid_frac": 0.5389864753422399,
+     "mean_valid": 116.34418448533069,
+     "std_valid": 68.73565494274197,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      3760,
+      2580
+     ],
+     "image_hw": [
+      3760,
+      2580
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:17:14Z",
+   "seconds": 18.3,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250702235910_RAW_overview.png",
+   "sha256": "a2ee017f1cc2ddce97e9c7c0433ed02235001c5eb88b278a58f3e55e78ae8900",
+   "bytes": 3745722,
+   "scroll": "PHerc1447",
+   "segment": "20250702235910",
+   "segment_dir": "20250702235910-auto_grown_20250702235910292",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 17,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, layer TIFFs",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250702235910-auto_grown_20250702235910292/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "layer_files": [
+     {
+      "key": "PHerc1447/segments/20250702235910-auto_grown_20250702235910292/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/13.tif",
+      "bytes": 4080680,
+      "sha256": "a59bdd8515996ae5535e93055a93443f7d6ab712000e147060408779a0a40fe3"
+     },
+     {
+      "key": "PHerc1447/segments/20250702235910-auto_grown_20250702235910292/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/14.tif",
+      "bytes": 4024166,
+      "sha256": "e68ff231356df0a70dc51b0216daf918c97a516a99e4b79499946a17ae88db2b"
+     },
+     {
+      "key": "PHerc1447/segments/20250702235910-auto_grown_20250702235910292/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/15.tif",
+      "bytes": 3974156,
+      "sha256": "adeccfa5914daff2799a0fb38f76c86345e8be3c3ff0c2df4843be29f28d85c7"
+     },
+     {
+      "key": "PHerc1447/segments/20250702235910-auto_grown_20250702235910292/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/16.tif",
+      "bytes": 3927594,
+      "sha256": "f8f1e4decb7afc2be48e787efff04eb469535ddf664c0d211687fb606758b40e"
+     },
+     {
+      "key": "PHerc1447/segments/20250702235910-auto_grown_20250702235910292/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/17.tif",
+      "bytes": 3881064,
+      "sha256": "3387c5071a7e4be9caeb8f240fd2fe1cfa19822d33f32c4238f9c84c08449003"
+     }
+    ],
+    "dtype": "uint8",
+    "decoder": [
+     "cv2 (tifffile: ValueError)"
+    ],
+    "bytes_downloaded": 19887660,
+    "surface_volumes_in_bucket": {
+     "tifs": [
+      "8.64um-1.2m-116keV-volume-20250521151220.tifs"
+     ],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      2980,
+      3240
+     ],
+     "mean": 75.54830132985335,
+     "std": 82.68369579950284,
+     "frac_zero": 0.4801629173916646
+    },
+    "valid_frac_fullres": 0.5253956417267379,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 3240,
+      "height": 2980,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 45.8,
+    "window_hi": 148.2,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 103.62936248225833,
+    "layer_mean_std_valid": 23.134379098517112,
+    "fullres_display": {
+     "shape": [
+      2980,
+      3240
+     ],
+     "mean": 75.54830132985335,
+     "std": 82.68369579950284,
+     "frac_zero": 0.4801629173916646,
+     "valid_frac": 0.5253956417267379,
+     "mean_valid": 143.79316334174422,
+     "std_valid": 56.560872246272496,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "none",
+     "factor": 1.0,
+     "fullres_hw": [
+      2980,
+      3240
+     ],
+     "image_hw": [
+      2980,
+      3240
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:17:18Z",
+   "seconds": 4.1,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250703025628_RAW_overview.png",
+   "sha256": "7372408bfe5a60b8d680e41c2e36dddbb7fbc8c4468d4d8ff0d6d77ae87b28ae",
+   "bytes": 5784574,
+   "scroll": "PHerc1447",
+   "segment": "20250703025628",
+   "segment_dir": "20250703025628-auto_grown_20250703025628283",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 18,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, layer TIFFs",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250703025628-auto_grown_20250703025628283/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "layer_files": [
+     {
+      "key": "PHerc1447/segments/20250703025628-auto_grown_20250703025628283/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/13.tif",
+      "bytes": 6866218,
+      "sha256": "e39b7946fbe69036eedd8d8b13775df39bc6adcc81e9ac79cbb9f6256f15f632"
+     },
+     {
+      "key": "PHerc1447/segments/20250703025628-auto_grown_20250703025628283/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/14.tif",
+      "bytes": 6717192,
+      "sha256": "8239afa7fea885a0df7e4b3456187733e3ec449bbb4aa7f31e941b211343e74c"
+     },
+     {
+      "key": "PHerc1447/segments/20250703025628-auto_grown_20250703025628283/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/15.tif",
+      "bytes": 6612210,
+      "sha256": "91c6f9c84fca202cdb7bb3eaf0da52b9a56caed8c74962eac7052e3d9ffc3cdd"
+     },
+     {
+      "key": "PHerc1447/segments/20250703025628-auto_grown_20250703025628283/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/16.tif",
+      "bytes": 6580526,
+      "sha256": "4eb2b45b4bb78d39b6563431224c5342a2fc8b7f1d7231e90da0bc5ac263c93b"
+     },
+     {
+      "key": "PHerc1447/segments/20250703025628-auto_grown_20250703025628283/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/17.tif",
+      "bytes": 6603522,
+      "sha256": "f9446e4f3f58e7777b9902147c09904dfe312b4398ef74020dbdd93ffee192b9"
+     }
+    ],
+    "dtype": "uint8",
+    "decoder": [
+     "cv2 (tifffile: ValueError)"
+    ],
+    "bytes_downloaded": 33379668,
+    "surface_volumes_in_bucket": {
+     "tifs": [
+      "8.64um-1.2m-116keV-volume-20250521151220.tifs"
+     ],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      3942,
+      4096
+     ],
+     "mean": 71.54548509540683,
+     "std": 82.09352404808736,
+     "frac_zero": 0.5145393731568684
+    },
+    "valid_frac_fullres": 0.4878277796862476,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 4096,
+      "height": 3942,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 57.0,
+    "window_hi": 154.8,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 113.30588608516032,
+    "layer_mean_std_valid": 21.18402712094793,
+    "fullres_display": {
+     "shape": [
+      4100,
+      4260
+     ],
+     "mean": 71.5456762281003,
+     "std": 82.38936565561625,
+     "frac_zero": 0.5170642390930952,
+     "valid_frac": 0.4878277796862476,
+     "mean_valid": 146.6617507394019,
+     "std_valid": 53.83407149013132,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "cv2.INTER_AREA",
+     "factor": 0.9615023474178404,
+     "fullres_hw": [
+      4100,
+      4260
+     ],
+     "image_hw": [
+      3942,
+      4096
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:17:22Z",
+   "seconds": 4.4,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20250703034159_RAW_overview.png",
+   "sha256": "a4979e5f947a51fdf084b2d98ab4534a2378e1868346d28cef8017d691788444",
+   "bytes": 4288539,
+   "scroll": "PHerc1447",
+   "segment": "20250703034159",
+   "segment_dir": "20250703034159-auto_grown_20250703034159599",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 19,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, layer TIFFs",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20250703034159-auto_grown_20250703034159599/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "layer_files": [
+     {
+      "key": "PHerc1447/segments/20250703034159-auto_grown_20250703034159599/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/13.tif",
+      "bytes": 7202654,
+      "sha256": "3272ebbb11fbf2680a5a38e309752e4537b260080461f6fc40d7d4f2866cb94b"
+     },
+     {
+      "key": "PHerc1447/segments/20250703034159-auto_grown_20250703034159599/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/14.tif",
+      "bytes": 7106502,
+      "sha256": "2e5c88c0748ac55e2db2c91d46d2de91868c64c99f30df9cc7ca7a8592e29512"
+     },
+     {
+      "key": "PHerc1447/segments/20250703034159-auto_grown_20250703034159599/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/15.tif",
+      "bytes": 7019112,
+      "sha256": "9b810f45ef09590ccb7e1887554d587a54077c00b05a442ea68f1b29071b1dd5"
+     },
+     {
+      "key": "PHerc1447/segments/20250703034159-auto_grown_20250703034159599/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/16.tif",
+      "bytes": 6945656,
+      "sha256": "2c8e516e80dd9b9d5fb8be072b4c0782dfe5c5321900465440c07814af44a548"
+     },
+     {
+      "key": "PHerc1447/segments/20250703034159-auto_grown_20250703034159599/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/17.tif",
+      "bytes": 6891858,
+      "sha256": "fd33064ff507bb2c4ba92befda94c65e0060aaa0f20ec89fdc19b165ad9f26dd"
+     }
+    ],
+    "dtype": "uint8",
+    "decoder": [
+     "cv2 (tifffile: ValueError)"
+    ],
+    "bytes_downloaded": 35165782,
+    "surface_volumes_in_bucket": {
+     "tifs": [
+      "8.64um-1.2m-116keV-volume-20250521151220.tifs"
+     ],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      2841,
+      4096
+     ],
+     "mean": 74.16786777666864,
+     "std": 84.25662384338666,
+     "frac_zero": 0.4974191216506072
+    },
+    "valid_frac_fullres": 0.5045828835122034,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 4096,
+      "height": 2841,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 43.6,
+    "window_hi": 147.2,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 103.3906124092797,
+    "layer_mean_std_valid": 24.263561233815572,
+    "fullres_display": {
+     "shape": [
+      3620,
+      5220
+     ],
+     "mean": 74.16813879892466,
+     "std": 84.55524905839916,
+     "frac_zero": 0.5008567240320908,
+     "valid_frac": 0.5045828835122034,
+     "mean_valid": 146.98901057180015,
+     "std_valid": 58.86798639658117,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "cv2.INTER_AREA",
+     "factor": 0.7846743295019157,
+     "fullres_hw": [
+      3620,
+      5220
+     ],
+     "image_hw": [
+      2841,
+      4096
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:17:26Z",
+   "seconds": 4.3,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-dominion/862185af-d429-4e4b-8b81-3def5d9428e8/scratchpad/hrv1/raw/PHerc1447_20251105093211_RAW_overview.png",
+   "sha256": "5afb6fc2abe963542f39f46d8ce7748d008552433b18712cd2ca6b9a7fe47ae3",
+   "bytes": 768414,
+   "scroll": "PHerc1447",
+   "segment": "20251105093211",
+   "segment_dir": "20251105093211-z_dbg_gen_00320",
+   "volume_id": "20250521151220",
+   "voxel_size_um": 8.64,
+   "voxel_size_source": "metadata.json samplePixelSize 0.00864 mm (PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/metadata.json)",
+   "protocol": "MAY",
+   "product": "RAW overview",
+   "note": "RAW overview: mean of the middle 5 layers (13..17 of 31) of the official organizer surface volume; linear 1-99 % window over valid pixels; INTER_AREA downscale only; a CT display, not evidence",
+   "round_robin_order": 20,
+   "window": null,
+   "seed_draw": null,
+   "source": {
+    "kind": "official surface volume, layer TIFFs",
+    "prefix": "s3://vesuvius-challenge-open-data/PHerc1447/segments/20251105093211-z_dbg_gen_00320/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/",
+    "layers": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "layer_files": [
+     {
+      "key": "PHerc1447/segments/20251105093211-z_dbg_gen_00320/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/13.tif",
+      "bytes": 8600598,
+      "sha256": "e76a715fd1c07dcda8560ce5634529008099c05cc179090eef9654104776c854"
+     },
+     {
+      "key": "PHerc1447/segments/20251105093211-z_dbg_gen_00320/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/14.tif",
+      "bytes": 8538354,
+      "sha256": "0f18d031b42392468d452dbaf1ae64604442a0d68b5b574eca14cf4616cc7655"
+     },
+     {
+      "key": "PHerc1447/segments/20251105093211-z_dbg_gen_00320/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/15.tif",
+      "bytes": 8481304,
+      "sha256": "a303935a89e1bb10903ba8837753cf350635a47b3329223aa1b36a0081c39912"
+     },
+     {
+      "key": "PHerc1447/segments/20251105093211-z_dbg_gen_00320/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/16.tif",
+      "bytes": 8433738,
+      "sha256": "a800177aabd08ea0419cbd5f00d59752549b47a00a90de06b29ceeefde8a151e"
+     },
+     {
+      "key": "PHerc1447/segments/20251105093211-z_dbg_gen_00320/surface-volumes/8.64um-1.2m-116keV-volume-20250521151220.tifs/17.tif",
+      "bytes": 8408200,
+      "sha256": "0fb9fbd1083607f7e6ed7ab12b7ceaade114ef340ca4e1dd3a43da6b95a044c5"
+     }
+    ],
+    "dtype": "uint8",
+    "decoder": [
+     "cv2 (tifffile: ValueError)"
+    ],
+    "bytes_downloaded": 42462194,
+    "surface_volumes_in_bucket": {
+     "tifs": [
+      "8.64um-1.2m-116keV-volume-20250521151220.tifs"
+     ],
+     "zarr": [
+      "8.64um-1.2m-116keV-volume-20250521151220.zarr"
+     ]
+    }
+   },
+   "checks": {
+    "image": {
+     "shape": [
+      4096,
+      2468
+     ],
+     "mean": 11.640908214995696,
+     "std": 41.242439947954104,
+     "frac_zero": 0.9149929646348258
+    },
+    "valid_frac_fullres": 0.08459447310400925,
+    "png": {
+     "chunks": [
+      "IDAT",
+      "IEND",
+      "IHDR"
+     ],
+     "ihdr": {
+      "width": 2468,
+      "height": 4096,
+      "bit_depth": 8,
+      "color_type": 0,
+      "interlace": 0
+     }
+    },
+    "window_lo": 44.0,
+    "window_hi": 145.8,
+    "window_pct": [
+     1.0,
+     99.0
+    ],
+    "window_over": "valid px (any of layers 13..17 > 0)",
+    "layer_mean_valid": 99.01041004554656,
+    "layer_mean_std_valid": 22.98843971799144,
+    "fullres_display": {
+     "shape": [
+      13640,
+      8220
+     ],
+     "mean": 11.640928668008076,
+     "std": 41.67406391727609,
+     "frac_zero": 0.9162555475879587,
+     "valid_frac": 0.08459447310400925,
+     "mean_valid": 137.60861958080298,
+     "std_valid": 56.53137393578338,
+     "max_invalid": 0
+    },
+    "downscale": {
+     "method": "cv2.INTER_AREA",
+     "factor": 0.3002932551319648,
+     "fullres_hw": [
+      13640,
+      8220
+     ],
+     "image_hw": [
+      4096,
+      2468
+     ]
+    }
+   },
+   "created_utc": "2026-09-25T18:17:44Z",
+   "seconds": 17.5,
+   "script": "/work/hrv1/scripts/hrv1_raw.py",
+   "script_sha256": "5c83b56a7a5b3e40493c2cb1429c9f66c2f9fb24de80510fffba6a0a8285d167"
+  }
+ ],
+ "ink_window_draws": {},
+ "events": [],
+ "n_files": 21
+}
