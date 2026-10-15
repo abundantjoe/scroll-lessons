@@ -1,0 +1,218 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "audit_of": "DECL-C3-NT-R1 (C2-NT gate re-declared once on PHerc0139 w044); runner results logs/c3/c3_nt_r1_results.json",
+ "c3_nt_r1_results_sha256": "9a430680bb46ca9886f779413321d6c19b3a06bbf3470fbab0456ca6da1b8b6e",
+ "auditor": "fresh agent, independent re-derivation; no prior exposure to this run; no images viewed; no repo file written except this one; nothing committed",
+ "audit_utc": "2026-09-25T02:38Z",
+ "repo_head_at_audit": "20644178a226ce73069e4b3927cff06b66e35986 (runner head d85f021 + runner results commit; diff touches only logs/c3/c3_nt_r1_results.json and one gpu_ledger row)",
+ "rules_read": [
+  "DECL-C3",
+  "METRIC-HASH-0",
+  "C3-RUN1",
+  "DECL-C3-R1",
+  "METRIC-HASH-6",
+  "METRIC-HASH-7",
+  "C3-R1-VERDICT",
+  "DECL-C3-NT",
+  "C3-NT-VERDICT",
+  "DECL-C3-NT-R1",
+  "METRIC-HASH-9",
+  "METRIC-HASH-10",
+  "also D0-KNOWN-TEXT, DECL-READCAL-A2, RCBANK-1, DECL-HANDED, HANDED-1, DECL-HANDED-R2, HANDED-R2, DECL-HANDED-R3 (for other agents' use of 0139 segments)"
+ ],
+ "rules_chain_verify": "OK (python -m hercules.records.rules_append verify: 57 entries)",
+ "hashes": {
+  "tools/c3/pick_crop_seg.py": {
+   "declared": "f0a52666d9a8d18d1e1be2446bb2f3a81c6c72f848cc991a7ef2b9194f25cfa2",
+   "entry": "METRIC-HASH-9",
+   "actual": "f0a52666d9a8d18d1e1be2446bb2f3a81c6c72f848cc991a7ef2b9194f25cfa2",
+   "match": true
+  },
+  "tools/c3/fidelity.py": {
+   "declared": "7c7ce085be389ebc39759f325a57bee3017a0725ee1eda2ee89aae4a90b16058",
+   "entry": "METRIC-HASH-7",
+   "actual": "7c7ce085be389ebc39759f325a57bee3017a0725ee1eda2ee89aae4a90b16058",
+   "match": true
+  },
+  "tools/c3/auc_eval.py": {
+   "declared": "27fa289bd2b38fdafb447f1d791640a4590b748627ce9255742e4c94ea0042a8",
+   "entry": "METRIC-HASH-10",
+   "actual": "27fa289bd2b38fdafb447f1d791640a4590b748627ce9255742e4c94ea0042a8",
+   "match": true
+  },
+  "src/hercules/metrics/pixel.py": {
+   "declared": "a5ab7fed2b83ce005e45a683ba883f8f53073dd9f9818c375bc9ab693fc097c8",
+   "entry": "METRIC-HASH-0 (and -6)",
+   "actual": "a5ab7fed2b83ce005e45a683ba883f8f53073dd9f9818c375bc9ab693fc097c8",
+   "match": true
+  },
+  "also_checked": {
+   "tools/c3/tif2npy.py": "998f1b98...c5e4 = METRIC-HASH-6",
+   "tools/c3/ledger_run.sh": "47ac6728...63b4 = METRIC-HASH-6",
+   "base checkpoint step-075000.pth": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab = DECL-C3 e635558a...9cab",
+   "pick_crop_seg.py history": "added in commit 91b011e (2026-09-25T01:37:49Z, with METRIC-HASH-9); file mtime 01:37:48Z; unchanged since"
+  }
+ },
+ "hashes_all_match": true,
+ "crop_check": {
+  "command": "PYTHONPATH=/home/user/dominion/src /opt/hv/bin/python tools/c3/pick_crop_seg.py /work/c3/data/hf/native9/w044/w044_supervision_mask.zarr/0 /work/c3/nt_r1/mesh_valid.npy",
+  "output": {
+   "y0": 2816,
+   "x0": 2304,
+   "supervision_px": 1052919
+  },
+  "expected_y0_2816_x0_2304": true,
+  "matches_runner_output_file": "/work/c3/nt_r1/pick_crop_seg.out identical (sha256 16d8163e...5cd52)",
+  "brute_force_enumeration": "384 candidates on the 256 px grid, 279 fully mesh-valid; maximum 1,052,919 supervision px shared by y0 2816/3072/3328/3584 at x0 2304; tie rule (smaller y0) gives y0 2816. Next best 1,002,836 at (2816, 2560). Ignoring mesh validity the same crop wins, so the choice does not depend on the mesh-valid rule.",
+  "supervision_mask": "28 x 6040 x 8160 uint8 {0,255}; only plane 14 non-zero (1,190,307 px); picker plane = shape[0]//2 = 14 = auc_eval plane",
+  "mesh_valid_npy": {
+   "path": "/work/c3/nt_r1/mesh_valid.npy",
+   "sha256": "cd0f1463e64f31db415fc112ba9d070659fdb63ec49e16568bfa69125f053b9f",
+   "re_derived_independently": true,
+   "method": "auditor's own code: w044 -on-20250728140407-9.362um mesh (302 x 408, scale 0.05, 109,447 valid vertices; mesh files sha256 equal to runner's); pixel p -> grid (p+0.5)*0.05; valid iff inside grid and all 4 corners of the containing quad valid",
+   "auditor_valid_px": 43478000,
+   "array_equal_to_runner_file": true,
+   "crop_fully_valid": true
+  },
+  "crop_rows_cols": {
+   "rows": [
+    2816,
+    4863
+   ],
+   "cols": [
+    2304,
+    4351
+   ]
+  }
+ },
+ "label_check": {
+  "labels_crop_equals_source_zarr_z14_rows2816_4863_cols2304_4351": true,
+  "supervision_crop_equals_source_zarr_z14": true,
+  "label_values": [
+   0,
+   255
+  ],
+  "supervision_values": [
+   0,
+   255
+  ],
+  "label_files_vs_hf_manifest": "all 8220 files of /work/c3/data/hf/native9/w044 match /work/c3/nt_r1/native9_w044_manifest.sha256 (sha256 ba618fe8...c09b); none modified after 01:42Z",
+  "team_sv_level0_vs_manifest": "all 2755 objects match /work/c3/nt_r1/teamSV_L0_manifest.txt",
+  "ink_in_mask": 398284,
+  "blank_in_mask": 654635,
+  "supervision_px": 1052919,
+  "valid_px": 4194304,
+  "render_valid_npy_recomputed_from_render_equal": true
+ },
+ "inference_check": {
+  "log": "/work/c3/nt_r1/infer_c2_nt.log",
+  "tta_mirror_in_log": "tta_mirror=False on both passes",
+  "command_flags": "--direction both --batch-size 4 --num-workers 1 --no-compile, no --tta-mirror; checkpoint step-075000 (sha256 matches); input = our render of the crop",
+  "forward_file": "/work/c3/nt_r1/infer/c2_nt/w044_nt.tif (first pass, layers 6..22 ascending; mtime 01:51:50Z, when the second pass started)",
+  "reverse_file": "/work/c3/nt_r1/infer/c2_nt/w044_nt_reverse.tif (second pass, layers 22..6; mtime 02:02:57Z)",
+  "naming_source": "/work/villa/vesuvius/src/vesuvius/ink_detection/inference/infer.py at villa 41701aa (the module /opt/hv-ink imports): resolve_run_directions('both') = ('forward','reverse'); resolve_single_output_path keeps OUT.tif for forward and appends _reverse otherwise; select_layer_indices reverses indices only for direction == 'reverse'",
+  "tif_decodes": "auditor decoded both LZW tifs with tifffile+imagecodecs (/opt/hv-ink); equal to the runner's .tif.npy files; map sha256 equal to runner values"
+ },
+ "freshness_check": {
+  "clause": "DECL-C3-NT-R1: w044, 'which no model map of this project has ever covered'; crop picked 'run once before any render or model map of the segment exists'",
+  "timeline_utc": {
+   "2026-09-24T22:13Z-22:16:55Z": "READ-CAL agent fetched w044 mesh metadata and the w044 9.362 um mesh (x/y/z.tif, same sha256 as C3 copy) for its same-papyrus KD-tree only (geometry; no CT, no map)",
+   "2026-09-24T23:02:01Z-23:58:27Z": "gpu_ledger row 37: the only whole-canvas / team-SV inference in the project: w040 team SV (not w044)",
+   "2026-09-25T01:37:48Z-01:38:29Z": "pick_crop_seg.py written; DECL-C3-NT-R1, METRIC-HASH-9, METRIC-HASH-10",
+   "01:39:02Z-01:41:54Z": "w044 mesh, team SV level 0 and native9 labels fetched (ledger rows 69-70)",
+   "01:42:41Z-01:42:45Z": "mesh_valid.npy built (row 71)",
+   "01:42:51Z-01:43:07Z": "picker, single ledger row (72); pick_crop_seg.out 01:43:06.99Z",
+   "01:43:16Z": "render starts (row 73); first zarr file 01:43:20.69Z",
+   "01:44:31Z": "C2-NT inference starts (row 74)"
+  },
+  "what_was_checked": [
+   "all 78 rows of logs/gpu_ledger.tsv: w044 / 20260115000000 appear only in rows 69-78 (from 01:39:14Z); 20260112 (w043) appears in no row; the only whole-canvas or team-SV inference is row 37 (w040); every render/inference row before row 73 is on w040 (4 renders, 6 inference runs)",
+   "find over / (excluding /proc, /sys, /opt, /usr, villa and docker) for *.zarr directories: 7 renders, all w040 except /work/c3/nt_r1/render/w044_crop_x2304_y2816_2048.zarr (created 01:43:20Z)",
+   "find for .tif/.npy/.npz/.png files newer than 2026-09-24 outside download mirrors: model maps exist only in /work/c3/infer (w040), /work/c3/r1 (w040), /work/c3/nt (w040), /work/c3/nt_r1 (w044, after the picker); no w044 file in /work/handed, /work/readcal/work, /work/pipeline, /work/bank, /work/seal_J, /work/harness_*, /tmp, /home/user, /srv",
+   "find -iname '*w044*' / '*20260115000000*' under /work: only the READ-CAL mesh/metadata copies (09-24 22:13-22:16Z) and the C3 NT-R1 files (from 01:39:02Z); the organizer's w044 ink-detection maps (2.399 um and 1.129 um, listed in data/catalogue/known_text.json) were never fetched",
+   "text grep of /work and the repo for w044: handedness fetch.py asserts w044 is never fetched; build_r2.py / build_r3.py exclude w044; READ-CAL uses w044 only as a KD-tree base trace; logs/views.tsv, key_reads.tsv, harness_jobs.tsv have no w043/w044 entry",
+   "running processes at audit time: only the handedness R3 selector (excludes w044)",
+   "3-D same-papyrus test (auditor code; rule of DECL-READCAL-A2: nearest sample < 6 vox and normal distance < 2 vox; targets densified to ~2 vox) of the w044 surface against all 38 other 0139 9.362 um meshes"
+  ],
+  "three_d_overlap_results": {
+   "w040 (the only segment with earlier project renders and base-model maps, incl. the whole-canvas no-TTA team-SV map)": {
+    "crop_min_distance_vox": 28.43,
+    "crop_pixels_within_14_vox": 0,
+    "same_papyrus_in_crop_px": 0,
+    "same_papyrus_elsewhere_on_w044": "about 12,200 vox^2 (0.011 cm^2), all outside the crop"
+   },
+   "w043 (20260112000000)": {
+    "same_papyrus_in_crop_px": 17863,
+    "fraction_of_crop": 0.00426,
+    "in_supervision_mask_px": 0,
+    "project_products_of_w043_before_picker": "no render and no base-model map; only the handedness agent's resample of the ORGANIZER 2.399 um reference map to the 9 um canvas (/work/handed/work/ref9_w043.npy, 2026-09-24T23:49:47Z) and mapped human labels (ink9_w043.npz, 23:56Z), not in gpu_ledger; the HANDED-R2 w043 display window (built 02:10Z, after the picker) is on w043 cols 4608-6743, away from the shared zone (w043 cols about 2560-3780)",
+    "AUC_excluding_these_px": {
+     "forward": 0.9995971792193425,
+     "reverse": 0.5855798890491869
+    }
+   },
+   "w041, w045, w046, w042, w039": "share papyrus with w044 only outside the crop (0 px in the crop); w041/w039/w045 had organizer reference-map resamples by the handedness agent, none a project model map",
+   "w024, w047, w053 (READ-CAL reference-map resamples), w030, w035": "no shared papyrus; crop min distance 30-150+ vox"
+  },
+  "pre_existing_render_or_model_map_of_crop": false,
+  "pre_existing_render_or_model_map_on_w044_canvas": false,
+  "ordering_constraint_met": true,
+  "notes": [
+   "Unlike C3-NT (voided because a no-TTA base map of the whole w040 canvas covered the crop), no base-model map, render or C2-NT-recipe output of any crop pixel, or of papyrus within 28 vox of it, existed before the picker ran.",
+   "An unlogged picker run on the final inputs is excluded by timing: mesh_valid.npy was written at 01:42:45Z and the logged run began at 01:42:51Z (the picker takes about 16 s). In any case the picker has no free choice: it is deterministic, uses no map, and its result does not depend on the mesh-valid rule.",
+   "Record only (not defects of this run): other agents' products absent from gpu_ledger (handedness reference-map resamples of w030/w035/w039/w041/w043/w045; /work/pipeline/w040 levelled smoke renders 2026-09-24T23:13-23:16Z). The DECL-C3-NT-R1 sentence 'no model map of this project has ever covered' w044 is true on the w044 canvas; in 3-D the earlier w040 team-SV map overlaps about 0.011 cm^2 of w044 papyrus far from the crop."
+  ]
+ },
+ "recomputed": {
+  "render_pearson_pooled_28_slices": 0.9999989090025321,
+  "render_pearson_pooled_exact_integer_check": "0.99999890900253198",
+  "render_pearson_min_slice": 0.9999983288509938,
+  "render_pearson_argmin_slice": 13,
+  "render_exact_equal_voxel_fraction": 0.9966129234858921,
+  "render_max_abs_diff": 1,
+  "render_slice_offset_pooled": {
+   "-1": 0.8553742113014301,
+   "0": 0.9999989090025321,
+   "1": 0.8553744609391288
+  },
+  "render_path": "/work/c3/nt_r1/render/w044_crop_x2304_y2816_2048.zarr/0 (28 x 2048 x 2048)",
+  "sv_path": "/work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr/0 [:, 2816:4864, 2304:4352]",
+  "c2_nt_forward_auc_in_supervision_mask": 0.9995971792193425,
+  "c2_nt_reverse_auc_in_supervision_mask": 0.5855798890491869,
+  "not_a_bar_all_valid_forward": 0.9888358515906979,
+  "not_a_bar_all_valid_reverse": 0.5095731563608107,
+  "method": "hercules.metrics.pixel.auc(map, lab01, valid & (sup > 0)); lab01 = 1 where label > 127.5 (all 255), 0 where label == 0; valid = /work/c3/nt_r1/fidelity_nt_r1_render_valid.npy (equal to any-slice-nonzero of the render; all 4,194,304 px); maps decoded by the auditor from the tifs; pearson = hercules.metrics.pixel.pearson over all crop voxels"
+ },
+ "differences_vs_runner": {
+  "render_pearson_pooled": 0.0,
+  "render_pearson_min_slice": 0.0,
+  "forward_auc_in_mask": 0.0,
+  "reverse_auc_in_mask": 0.0,
+  "forward_all_valid_not_a_bar": 0.0,
+  "reverse_all_valid_not_a_bar": 0.0,
+  "counts": "ink 398,284 / blank 654,635 in mask: identical",
+  "runner_statement_differences": "The runner's note that no render or model map of any part of w044 existed is correct on the w044 canvas and for the crop; it does not mention the 3-D overlaps recorded above (none in the scored pixels)."
+ },
+ "bar_outcomes_on_recomputed_numbers": {
+  "pooled_render_pearson_ge_0.999": {
+   "value": 0.9999989090025321,
+   "met": true
+  },
+  "c2_nt_forward_auc_ge_0.987": {
+   "value": 0.9995971792193425,
+   "met": true
+  },
+  "c2_nt_reverse_auc_lt_0.60": {
+   "value": 0.5855798890491869,
+   "met": true
+  },
+  "all_bars_met": true
+ },
+ "audit": "PASS",
+ "reasons": [
+  "Procedure sound: hashes match METRIC-HASH-9 (picker), -10 (auc_eval), -7 (fidelity), -0 (pixel.py); the picker re-run prints y0 2816, x0 2304 (1,052,919 supervision px) and mesh_valid.npy is re-derived bit-for-bit by independent code; the crop is fully mesh-valid and the choice does not depend on the mesh-valid rule.",
+  "Freshness/ordering holds: no render or model map of any w044 pixel existed before the picker (01:42:51Z) by any agent (ledger, file search, other agents' scripts). The only earlier base-model maps (w040, incl. the whole-canvas no-TTA team-SV map that voided C3-NT) lie at least 28 vox from every crop point. 0.43 % of the crop is the same papyrus as w043, which had only an organizer reference-map resample and no project render or model map; none of those pixels is in the supervision mask, so the scored AUCs are unchanged.",
+  "Labels and supervision crops equal the Z = 14 source slices; source files match their manifests; no TTA in the inference log; w044_nt.tif = forward and w044_nt_reverse.tif = reverse per villa infer.py; all numbers re-derived with difference 0.0.",
+  "Bar outcomes (recorded, not a verdict): pooled Pearson 0.9999989 MET (>= 0.999); forward AUC 0.99960 MET (>= 0.987); reverse AUC 0.58558 MET (< 0.60, margin 0.014)."
+ ]
+}
