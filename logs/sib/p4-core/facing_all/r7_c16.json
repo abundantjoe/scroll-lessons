@@ -1,0 +1,46 @@
+{
+ "tile": "r7_c16",
+ "grid_rows": [
+  2920,
+  3338
+ ],
+ "grid_cols": [
+  6674,
+  7092
+ ],
+ "n_valid": 174724,
+ "outer": {
+  "coverage": 0.9299581053547309,
+  "n_hits": 162486,
+  "n_sources": 174724,
+  "median_dy_px": -32.399026609207795,
+  "median_dx_px": -7273.7643220496175,
+  "iqr_dy_px": [
+   -59.884829534072196,
+   -4.065209858927119
+  ],
+  "iqr_dx_px": [
+   -7492.446011936205,
+   -7107.778524390058
+  ],
+  "target_winding": "k+1 of the source winding (floor(s)); w027 has no outer and w010 no inner target in this mesh"
+ },
+ "inner": {
+  "coverage": 0.9190265790618347,
+  "n_hits": 160576,
+  "n_sources": 174724,
+  "median_dy_px": 102.80975322552331,
+  "median_dx_px": 6645.147391334074,
+  "iqr_dy_px": [
+   73.28159740464253,
+   126.9732084870684
+  ],
+  "iqr_dx_px": [
+   6548.798766229163,
+   6846.420723433788
+  ],
+  "target_winding": "k-1 of the source winding (floor(s)); w027 has no outer and w010 no inner target in this mesh"
+ },
+ "field_rule": "32 x 32 cells of the tile; source = nearest grid vertex to the cell centre; value = facing canvas (row, col) px, NaN where none",
+ "wall_s": 2.3
+}

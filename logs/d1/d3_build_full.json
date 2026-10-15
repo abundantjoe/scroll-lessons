@@ -1,0 +1,1805 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-25T23:38:49Z",
+ "serves": "RULES.md DECL-D3D4, DECL-D3-A1 items 5 and 7, DECL-D3-A3 items 3-5 (displays as DECL-D1-A6 BASE v2)",
+ "stage": "D3 display build (full)",
+ "viewing": "no image or pixel array was opened, displayed or described; numbers only",
+ "inputs": {
+  "pinned_d1": {
+   "/work/d1/scripts/d1_common.py": "3ff3eb01753a568fdb65cee67f165cd9f4fd524e968d43f0ee373ade44b8848e",
+   "/work/d1/scripts/d1_build_v2.py": "50f8a637d86cacc2fbc1b154f4eaba47ed36a7b52fd624b1fe1fe7f773fd109d",
+   "/work/d1/scripts/d1_infer.py": "b2289eae4880ee2bccc3825e9870a3f327697ef47f8dde2e5c470b8d3e65648e",
+   "/work/d1/work/prep.json": "57da9ff24ed982527791a2579d52d8886d5c493ca217f172a9e7417fa7e09b05",
+   "/work/d1/work/render.json": "cf92fe882382be408fb05d4060c7033f8964acee4eb7fb8cbc0db9618e6fc2e0",
+   "/work/d1/work/gate.json": "9cd88a987345401ddd6b5eb09eb135286decd50e96b86efdc1f91d862bccd4bd",
+   "/work/d1/work/infer.json": "67ce1baf7bca8ef1815a006d1061c5c4595a93924cf2a83074f7e8bbb5f35893",
+   "/work/d1/manifest.json": "61708f722188665663d516906c489f09d77e8698cb828a829b64b3cbdab7cf0a"
+  },
+  "code_and_input_sha256": {
+   "/home/user/dominion/src/hercules/pipeline/canvas.py": "bf54ee566f8a8f6a05f68a66e23113e6d8576c8f377a1cda6dbc73283bd307d6",
+   "/home/user/dominion/src/hercules/pipeline/centre.py": "f519c77a9616308ac7ff8bfb018f5d7627887782ceb26e439998324e548a5e07",
+   "/home/user/dominion/src/hercules/pipeline/window.py": "c184c79ceb64382c05db928a7f1a90c6dee1f5db3d0b9b5ab58b714ea473609a",
+   "/home/user/dominion/src/hercules/pipeline/smoke.py": "b8b996dca048b720a450acbb32a87ce1ca2353467c7ef9dcfa1df6f5017c6e46",
+   "/home/user/dominion/src/hercules/display/builder.py": "ed42725e878c4e8c99aae98d24316cb39477ebc2c35308d43176fa22a8be7f8a",
+   "/home/user/dominion/src/hercules/metrics/pixel.py": "a5ab7fed2b83ce005e45a683ba883f8f53073dd9f9818c375bc9ab693fc097c8",
+   "/work/jseal/scripts/build_jseal.py": "9ef0f996fdd87321483c59420372af27a0316fbf93d85da6071deac3879b9449",
+   "/work/jseal/work/check.json": "39bfbefa992b0bb5a2d52995cbcc547e4857c0014da4374b67a2baba03ad522d",
+   "/work/probe3/scripts/build_probe3.py": "368df3ef566166ad3da37eda9993c3260f0f86474d49daeab46857cbcaf200c8",
+   "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+  }
+ },
+ "arms": {
+  "FA": {
+   "model_final": {
+    "path": "/work/d3/runs/FA/model_final.pth",
+    "sha256": "123ab62a8d9df774d0c84bc64332cf155c2ca26de4d4acba974ca4f341395c1e"
+   },
+   "infer_record": "/work/d3/work/infer_FA.json",
+   "infer_record_sha256": "a4615a8a3d5a25aeaf912288bbd21bb48ca97287a88e6e66f9f5bb937b1a3016",
+   "infer_script_sha256": "77b7662438d013e663ed938d49d39f9df879c30b9c18d554d75c8ad3ccb05efe",
+   "windows": {
+    "J1": {
+     "threads": 1,
+     "seconds": 711.3,
+     "output_dir_tree_sha256": "d6894463a5e45068d2a9f72fd075d664fec5b5db71b4111f30ba843407d5a00d",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J1.tif.npy": "180a29884620e0b838ddaa847be37897ab7106bec927103d53e4073ad1ef3034",
+      "J1_reverse.tif.npy": "775cc8958c0843d78f3b1435e4f40df0c40d9d0643fcf721a0a8bf50a25ea652"
+     },
+     "tif_sha256": {
+      "J1.tif": "9ea53e395de8d18098763500768fcd53b2bb4a21c119c02faeaa529826bddd41",
+      "J1_reverse.tif": "940d133be7cf48b726c69bad17021d465d86c9cda6cc4dd7096658ca6f06ab33"
+     }
+    },
+    "J2": {
+     "threads": 1,
+     "seconds": 625.9,
+     "output_dir_tree_sha256": "92d44ab13d8237dd2e12302475dd98fcf302715d4726de93705219142cbed2b6",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J2.tif.npy": "d1736dc9e3b6836903aa53d4288fc921dbaabb6b118c5cba19b2a203c4eced0a",
+      "J2_reverse.tif.npy": "433eef082b5e8f3fad13d6d82077718845ea3874c2821bb54f7b6704e6bbd580"
+     },
+     "tif_sha256": {
+      "J2.tif": "64b1926ddcc1360503796e329bcdda59cd3b5dec621ed9c0f51b667e331c98c5",
+      "J2_reverse.tif": "a6549f3d9e4ffc1780863a7684b5d5654c0065755c9213e5dca31f3a41a3636b"
+     }
+    },
+    "J3": {
+     "threads": 1,
+     "seconds": 829.1,
+     "output_dir_tree_sha256": "1bdb514751d798e617320987892aae9da1f21b3fcd6ea84ef1844e12cc7d34ce",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J3.tif.npy": "3e1b5468b1cd050af6eb69211ca4523e7133cd89e108b1bcbee95bd6dcf37d2e",
+      "J3_reverse.tif.npy": "fd65ab56ca38c5d65d5eef5dd810b4612dd0877beead902ff2851f90ccfbb47c"
+     },
+     "tif_sha256": {
+      "J3.tif": "babeca42871817cde95633b67b450c5c2075be6392921ac6aa4f2c98f9451cc8",
+      "J3_reverse.tif": "c1ef6cb1759af6ce579e6619fa925d3995990746fbfd8abe8a4dbc4bda65e1a5"
+     }
+    },
+    "J4": {
+     "threads": 1,
+     "seconds": 903.9,
+     "output_dir_tree_sha256": "adc9440c994cfea3e0d449a16d7ce3773dd4eb71bc0cb8a18895c257481ec90c",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J4.tif.npy": "7825d0f7b39e7055513f4d757f657c0d1180c133436e5a3784890c48971169fa",
+      "J4_reverse.tif.npy": "ab02d3240854a93b042e3ec7dcc12a5ad46b0475aa9921030b6b03e7799f6113"
+     },
+     "tif_sha256": {
+      "J4.tif": "16d40017b3c26f437d5a1adfaf588de7b3a84fd7fdc471b1b029542c41f11a4f",
+      "J4_reverse.tif": "eb7ea712e051ed7c45548ee7cc2d77b39fb57b213e0c2ef1c62e1ac694260f9c"
+     }
+    },
+    "J5": {
+     "threads": 1,
+     "seconds": 718.7,
+     "output_dir_tree_sha256": "2df67d91f3ca5693014f1c77d0f1306d1b7f007408dbfd03260b0917da54e9b4",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J5.tif.npy": "bf7988311e001043c8ad0b78cddec7c972f475a2e7be8a42d7da366c4a70a7d9",
+      "J5_reverse.tif.npy": "0b4ef9658f94bd1a555028a6827e27bfcc1527b4781cd2094014094520648f8c"
+     },
+     "tif_sha256": {
+      "J5.tif": "51ba638f09fb9d82cde48a1ac4ae45b421c0de9cc0e79c07001a5d215fc7b8ae",
+      "J5_reverse.tif": "e4150cc0e18eaf07f56b10f105a513d017275e0ea1cfc5ee0310ffb1763c55fe"
+     }
+    },
+    "blank_w053_y256_x1536": {
+     "threads": 1,
+     "seconds": 843.2,
+     "output_dir_tree_sha256": "87a31f01eb3f20bb0eff90f52ba3264d9592e37263babf49b1e1f522183370c2",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "blank_w053_y256_x1536.tif.npy": "89fe09a360a34e8ab31dafb7f4ebb02287e027a33d5ca54361066d8d38050f2b",
+      "blank_w053_y256_x1536_reverse.tif.npy": "1ec8bde3d5852d29501975621aa27da7fc863da5e81a710bea3e1d5e70136b6d"
+     },
+     "tif_sha256": {
+      "blank_w053_y256_x1536.tif": "41d346b3d02db6495d4e477d2dfd80d543cdd5cda894f7af9e02540bd9c64def",
+      "blank_w053_y256_x1536_reverse.tif": "bf53dd4a7ae92f0d99caaeff4512bae3b19b53ebaddcf3bf6b3057011ed8b8da"
+     }
+    },
+    "blank_w053_y256_x7168": {
+     "threads": 1,
+     "seconds": 808.9,
+     "output_dir_tree_sha256": "9ce84a432359744857af99638ad1f40e5b7191a273647b2d0cc6e52f6b7c40ba",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "blank_w053_y256_x7168.tif.npy": "0f0af96af80d312f64027fe15f724dd231b2ecd828e685a93b6fe59b75c153a5",
+      "blank_w053_y256_x7168_reverse.tif.npy": "6148984f2581df3e295f08ea49cc7ba986df08d0c31b7b7cc87a47a71b30f902"
+     },
+     "tif_sha256": {
+      "blank_w053_y256_x7168.tif": "0d1bacd0af5bb534d03c5c25df89e49c865eb6f20d5bdd2cf0abaf74fd2170b2",
+      "blank_w053_y256_x7168_reverse.tif": "494dfad325955a3f2abadb3d82c7607803c73de2e3aa87e94825e4710d5755bb"
+     }
+    },
+    "canary_w044_y2816_x2816": {
+     "threads": 1,
+     "seconds": 908.7,
+     "output_dir_tree_sha256": "b36db187b4623e54f821500eb5986ac869ad1e90d7ff45f47fc4bf3d5a749848",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "canary_w044_y2816_x2816.tif.npy": "f059dcd88a1401c79a0c8011baddc0a2a5577946422ce8b22514a112b1a41228",
+      "canary_w044_y2816_x2816_reverse.tif.npy": "38fcafbaa90f82be7c4d027db18f66a7086e9cce013279b34d281ad382bccd01"
+     },
+     "tif_sha256": {
+      "canary_w044_y2816_x2816.tif": "2f4f3d43835818eb655b4119fe129a73cb5964744e2b57b1c069884663189ee8",
+      "canary_w044_y2816_x2816_reverse.tif": "ecc247d127d601a72d34ef8a93071f03b306d93ac84400f440755db16fe0e756"
+     }
+    }
+   }
+  },
+  "NULLA": {
+   "model_final": {
+    "path": "/work/d3/runs/NULLA/model_final.pth",
+    "sha256": "0225b7d8d03afc9de19119103d22f2f4028475d0f9f76866e710e99015d426f1"
+   },
+   "infer_record": "/work/d3/work/infer_NULLA.json",
+   "infer_record_sha256": "04be2389c2b5de0ac7d9e633b8ed6b3981975adcc64f089a44d6831e2f912473",
+   "infer_script_sha256": "77b7662438d013e663ed938d49d39f9df879c30b9c18d554d75c8ad3ccb05efe",
+   "windows": {
+    "J1": {
+     "threads": 1,
+     "seconds": 706.2,
+     "output_dir_tree_sha256": "ccfb10151bdbd19b63c33ebeff4151ba874ea9a972829d482553ed9d6d913b88",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J1.tif.npy": "cd73e05b0e8ac348613254e60f9e7405e9bccbbf68fd6f3013ae47647b7b7f5d",
+      "J1_reverse.tif.npy": "9c826c1192edb7d0aa3b3ac7bbfd30d73ae98343f0724ea32d4a3b1f32ad49cb"
+     },
+     "tif_sha256": {
+      "J1.tif": "cc5353ce414f6fb8aff78c32234d14ea9445f718f716e4a090d069f4e159b9eb",
+      "J1_reverse.tif": "ede8871d59610fd8244b3e42e927ad9ffd2cca29b6945f3d2905138c09c57a49"
+     }
+    },
+    "J2": {
+     "threads": 1,
+     "seconds": 611.5,
+     "output_dir_tree_sha256": "790b1907f17cf9c5b9e9058b8d841f1cddf6ca8a3dcee785ce1e2f5a38b7b7f6",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J2.tif.npy": "8277d9c854a389d786ba4da650bae14620c65bfbbbcb5dc2664a30f606c79ed6",
+      "J2_reverse.tif.npy": "b10fc68d63be794601d6fde45e024260237bc161e84be4556f92b1ea49cc164f"
+     },
+     "tif_sha256": {
+      "J2.tif": "2199dcd126e2eee18bd1e58bb4a205382017d7449de0b42be5f4cb77dcc979bb",
+      "J2_reverse.tif": "0963656a1ab63cd6e04b0a710bb032c5545867bfa5c2565296c784ce7f762ca2"
+     }
+    },
+    "J3": {
+     "threads": 1,
+     "seconds": 820.6,
+     "output_dir_tree_sha256": "dbd5a7b859772d14490192218b099b9566b59c49205408bb1beff9d4e7f5b7a7",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J3.tif.npy": "937bd24434f0c2a1953a2c19636891d7929e0844107c3d3b703a8e90e0183abe",
+      "J3_reverse.tif.npy": "73491fbdccb197aaf5501827b1fdac8c2c9ddaca2b8a54d3dcc6799f5cc14f73"
+     },
+     "tif_sha256": {
+      "J3.tif": "f90599596b5d2a673322ac3d99e40cc460614b3ede2cff68d885fbf124d85534",
+      "J3_reverse.tif": "05599e237367306aba3a6f6bd161e1315a234f9c11b04b304fdd96afa800eebe"
+     }
+    },
+    "J4": {
+     "threads": 1,
+     "seconds": 916.1,
+     "output_dir_tree_sha256": "f6a63562ded3aa2e9620c27903ad4139bcad4fa4df263cb7d40872325e58103d",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J4.tif.npy": "599326a7812482d709e9fa013e214e752f9b64cbfee16ceea572fd5fa9e2df2a",
+      "J4_reverse.tif.npy": "f5a2c3f3b4fb5628511691b3951a8f4fdca5b431bc0496b2bafca507418526e0"
+     },
+     "tif_sha256": {
+      "J4.tif": "355ae62ad191e9d664729ee45d82b4ac8a34be07137a20d0b1bddd8d25fb436e",
+      "J4_reverse.tif": "f092d20a7a478201c6ffc9ed8a7a92652e323ae33eddad99e848bbb92051af9a"
+     }
+    },
+    "J5": {
+     "threads": 1,
+     "seconds": 710.1,
+     "output_dir_tree_sha256": "cb483bf0db638b3cede5f8e3836f9e3ee88415011791bfe0667401a16652206e",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J5.tif.npy": "2b2c221c29a1f5706a4f66eaf14c84feb5f00560883f00c184536ec227349fa3",
+      "J5_reverse.tif.npy": "bc09413f75802a6e4585a920d0a2f8239352e2935af6d91ed55c6cc117ec3883"
+     },
+     "tif_sha256": {
+      "J5.tif": "9442b550fc0e300c2e8250d4106d24caf81ae48ab9dd4b26dcb2642d55114536",
+      "J5_reverse.tif": "a097db969a485fcdf26817d9cbdef45a47d23beeb4346beb84d3e1a910eaa39a"
+     }
+    },
+    "blank_w053_y256_x1536": {
+     "threads": 1,
+     "seconds": 844.6,
+     "output_dir_tree_sha256": "0ebf78017ba60eefdf75fde428a3995895d3294b4224f24eda419c96ff174dfa",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "blank_w053_y256_x1536.tif.npy": "8c8977fdb1d655dd66bec058091822b265095cddfdbc9d9a8f4fa1f8abcf17ad",
+      "blank_w053_y256_x1536_reverse.tif.npy": "d0d0f9538d58a48382cca1dea3a7620340170a8d1d8987b88579fe3ed4a791fb"
+     },
+     "tif_sha256": {
+      "blank_w053_y256_x1536.tif": "4c13698fd8cab99c401504504974a89c475bbb4452d3b8f7280355e878c8996b",
+      "blank_w053_y256_x1536_reverse.tif": "c4d942f69e5621fb958b8f3997854b2d43457413a588bdb697397672e1d903d6"
+     }
+    },
+    "blank_w053_y256_x7168": {
+     "threads": 1,
+     "seconds": 803.0,
+     "output_dir_tree_sha256": "c8703d991b9f478c22b5f284f5790c899edfffda85f9e8e42af1fbaa22af98db",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "blank_w053_y256_x7168.tif.npy": "72804cc06d18c602f4e713fb5410ce1ba81d5e31be2630ada84064a8f07229f7",
+      "blank_w053_y256_x7168_reverse.tif.npy": "7c3eb46cb80d920d96d9fc8cd29fa3f8c99f6c98b58cc15506ef680bda1f63ea"
+     },
+     "tif_sha256": {
+      "blank_w053_y256_x7168.tif": "c5008a1eea52501cb963a8ccc4139098820d44c694a00c025b5fd7d4199d6a99",
+      "blank_w053_y256_x7168_reverse.tif": "7a9cda4a50583f0bd0cff316f2ff617225771389ed702d645c420cb1e0233073"
+     }
+    },
+    "canary_w044_y2816_x2816": {
+     "threads": 1,
+     "seconds": 891.5,
+     "output_dir_tree_sha256": "1e4eb3f231901e19deaa1188faf1d077138ed0c6e3388622cd5de0a86a2dd29d",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "canary_w044_y2816_x2816.tif.npy": "b188cfdcee40b138dd0968643fdca00cc266bb44036f24ca76b66b5c9884c60f",
+      "canary_w044_y2816_x2816_reverse.tif.npy": "d93a9b569e3d10e507fab3b26359c45c157e6497ad47cd0caef23e17b131f589"
+     },
+     "tif_sha256": {
+      "canary_w044_y2816_x2816.tif": "b057fc2ce45905dc152519994ff320e6b10f56932bd63f5a1f060562ff77efe9",
+      "canary_w044_y2816_x2816_reverse.tif": "07a6bfc41fe61a4e00990d67b52f913180ec4b8dfa1addd3d7ad2b4ed2f68a14"
+     }
+    }
+   }
+  },
+  "REVA": {
+   "model_final": {
+    "path": "/work/d3/runs/REVA/model_final.pth",
+    "sha256": "94c8ba522e9f55f0ff4168380e13e65e28847914d3b754560c33106652af866f"
+   },
+   "infer_record": "/work/d3/work/infer_REVA.json",
+   "infer_record_sha256": "433533073855b662b8300791e974626217ec90b18f0ab17e8d0be4b68d3d170e",
+   "infer_script_sha256": "77b7662438d013e663ed938d49d39f9df879c30b9c18d554d75c8ad3ccb05efe",
+   "windows": {
+    "J1": {
+     "threads": 3,
+     "seconds": 322.8,
+     "output_dir_tree_sha256": "461b7801cc37bc120af6bb8c54544ba357877649e8994264c32a239215d81ce6",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J1.tif.npy": "a138145d88cf91797e8f483c2ae67fce1964cefaa49179971a8ba3bac92a85e6",
+      "J1_reverse.tif.npy": "4c3386ebca8866d64bdf60aa3e3b372e7ea83375e341906a0c248207b3fffdec"
+     },
+     "tif_sha256": {
+      "J1.tif": "dbf25d39535b755f2bdea4c3b6d59c6577c4042503900357825e09ef522fbed7",
+      "J1_reverse.tif": "d38339c4d2ba40f12dc096359ba9998c3a4f68e664d898541943aa1a0a880c66"
+     }
+    },
+    "J2": {
+     "threads": 3,
+     "seconds": 288.2,
+     "output_dir_tree_sha256": "ee8d8bf42b266129f9d5ebcc2f8524bb2076589099d4afdb93ffb78467b621b8",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J2.tif.npy": "b562760931f698bbfe666647ba1651b5cd85b258d0442ca23caba5f79f14ea74",
+      "J2_reverse.tif.npy": "67615563d1934434a809b4d2e39ca734abcaabfad04c2046486e9c6decda60d3"
+     },
+     "tif_sha256": {
+      "J2.tif": "3a21f06ba3e3f4321142deda2a1c2b3fafaba0f70255f08a909316199da47503",
+      "J2_reverse.tif": "f7e182b749bf568d6993549f581de42c2b77c196a6ee32e3529db7410d5d6ba5"
+     }
+    },
+    "J3": {
+     "threads": 3,
+     "seconds": 381.1,
+     "output_dir_tree_sha256": "3823d6490e01cd99f8e53d16309f57ed5d0afe9bb6dd6df67f2d02dab69f1c48",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J3.tif.npy": "c69ccb9859b0c4496d010a0858e2ddda0bb07ebb728cc134b08f2c8fc1ed1000",
+      "J3_reverse.tif.npy": "4d03265620c891174bb95b43ce93055ba4cefe2cf6fcdfd9f511655ec3064827"
+     },
+     "tif_sha256": {
+      "J3.tif": "a72745787e041cdb4ac9c6f201198702f811b3ed41d283d4a4ce669be92de1f2",
+      "J3_reverse.tif": "f7a5d2bd778c43f8b2e38837020207a955039ddd3a69d715d2f5c66190968669"
+     }
+    },
+    "J4": {
+     "threads": 3,
+     "seconds": 419.2,
+     "output_dir_tree_sha256": "56d1ccfd99b36bdb40fe3fd834ee217d287aa3ddb1259e20596f9b017758c028",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J4.tif.npy": "f7cc36ee0fa7fa9c02a8363419f09bb7cf336681a2d68cfb4864df5d6590b646",
+      "J4_reverse.tif.npy": "dad8340bbffd9100e812f5d00d52132b78aab328947d5f7ee7c2199ac61b6b44"
+     },
+     "tif_sha256": {
+      "J4.tif": "b95354ea58f66dd77d8687d4c27ef1b3652d39daf1a106d4d6f03cbc116c2bb7",
+      "J4_reverse.tif": "913167f499ec512673a0ae629285910db85b614438ba393c45f97cc6b1c36162"
+     }
+    },
+    "J5": {
+     "threads": 3,
+     "seconds": 339.2,
+     "output_dir_tree_sha256": "fea954170422d53e6d9e3f4e58aabcc58348db0554950ab824b2df870935e9b1",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J5.tif.npy": "84e0e994348f9cdfec67d0a1fc66b99eb41aa491be27f538288ddb693e537549",
+      "J5_reverse.tif.npy": "21889463ac0266cf81d005fa3b6bed7a70a8d0ce9f7532af380b5c6b6cbfafbd"
+     },
+     "tif_sha256": {
+      "J5.tif": "5075f925aee63e21745e59d073ccbf53416c8f6a8ae5e11a03ecaf838fab37db",
+      "J5_reverse.tif": "7a24f925f04c7a1df4b0e5474c66003b77bb5d3b2266964695a0fe69922e33d5"
+     }
+    },
+    "blank_w053_y256_x1536": {
+     "threads": 3,
+     "seconds": 400.2,
+     "output_dir_tree_sha256": "3cf9fbdb7cb407016c674e11617a9b2693f5963d5668594e27cd2dfa02e516d3",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "blank_w053_y256_x1536.tif.npy": "4ddaec26d54f712f29f34efb2db62e10a86c0a71ea6b3c1b78044f6c2fcc47df",
+      "blank_w053_y256_x1536_reverse.tif.npy": "502c82edb2a057b4a5b76088bd1b795b5c7ca90b73b2c9242958559b669a2b23"
+     },
+     "tif_sha256": {
+      "blank_w053_y256_x1536.tif": "8a27bf3166ddcd44b1da97ec698ad64742850b6b03be1ba96999854aaf2be4dd",
+      "blank_w053_y256_x1536_reverse.tif": "669e86a093ace82307ec904e0f13348fa60e172ec9284b330bdfa57ad9fa5a75"
+     }
+    },
+    "blank_w053_y256_x7168": {
+     "threads": 3,
+     "seconds": 367.2,
+     "output_dir_tree_sha256": "d905593b666df34f004bee5c784c7ecc3505e5a804da60e23bf7781088f426e3",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "blank_w053_y256_x7168.tif.npy": "aeb84b89d75a3fcb04972a3afbea5d33992ee49e24cdc2b58eb56c38341da5d9",
+      "blank_w053_y256_x7168_reverse.tif.npy": "375046c632749e7dce283c0608c1e919c1c1ec9a23f2cfe5503cb4803c9fa19d"
+     },
+     "tif_sha256": {
+      "blank_w053_y256_x7168.tif": "b0f1c9b18bea636af88bc45e7f8d08a06cefcd42ddd3f3b7887630a1d6248a32",
+      "blank_w053_y256_x7168_reverse.tif": "84e7fa98531a33a077cf9465954cba723f61c7590e7272cfd9e1a28ba478e5fb"
+     }
+    },
+    "canary_w044_y2816_x2816": {
+     "threads": 3,
+     "seconds": 410.9,
+     "output_dir_tree_sha256": "bfc509adee2ee406a955622560c25b191084612a63f2073c0896ca33e4c26f46",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "canary_w044_y2816_x2816.tif.npy": "3b7abab76829ef225aa5851c59b6910ee34000e340f66c11f966624a662caf43",
+      "canary_w044_y2816_x2816_reverse.tif.npy": "020fe808b5a3050c9ed48fc4c76c8e501fa121bcc0740b958f4843f7923e13b5"
+     },
+     "tif_sha256": {
+      "canary_w044_y2816_x2816.tif": "1d6ddb9faa6f0eed75db6d3c8d2188c11769b38342a0b17b221af8295c90386b",
+      "canary_w044_y2816_x2816_reverse.tif": "efa8383272f0c74658b99fc6cbb4fb678c7e2b5dfa39c7823e847e4252f84e6d"
+     }
+    }
+   }
+  },
+  "CTRL": {
+   "model_final": {
+    "path": "/work/d3/runs/CTRL/model_final.pth",
+    "sha256": "6b690dda74ba58f11aa4cba2e8bfa1681427050e3352060d76929d76f29597ed"
+   },
+   "infer_record": "/work/d3/work/infer_CTRL.json",
+   "infer_record_sha256": "b73c9c0db0f225f3465f8019a8f4b4b37661598783bd8ac740925d697fd99d4e",
+   "infer_script_sha256": "77b7662438d013e663ed938d49d39f9df879c30b9c18d554d75c8ad3ccb05efe",
+   "windows": {
+    "J1": {
+     "threads": 1,
+     "seconds": 709.3,
+     "output_dir_tree_sha256": "fc5588d2f3ef846d831733c704e321559ad1dd596ccab46eca50a6ba19a5812a",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J1.tif.npy": "0255a8d8a30d7fb54c7a832cfe686d25861f564ff4a7f25cf5071d9433edb13a",
+      "J1_reverse.tif.npy": "968ce801a2b60e357cbc6d70c04267e29d7f7b5800aa32c1080752a47dbcf5f8"
+     },
+     "tif_sha256": {
+      "J1.tif": "eee1fa09fc17b1fb2fef5847a822b06e8c270cc88cbb2e329c1a25e1aee14ac1",
+      "J1_reverse.tif": "fe4fbdfa7ccc656ee6436f527f15cede04e66806eaadbd8d42be0a0fd6c0173e"
+     }
+    },
+    "J2": {
+     "threads": 1,
+     "seconds": 626.9,
+     "output_dir_tree_sha256": "9aa62626f9d8728dce69d9a5ca4d5512749d6dc549a1461245104dbc411981ae",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J2.tif.npy": "d8e55e8996f6f94ad5ef295942b4b54a641063493f210d2f6c61e6ef665958ce",
+      "J2_reverse.tif.npy": "2de8718382444ec42a6698559cb0116a7ac52951e174f4b0bdc56ae926056ee6"
+     },
+     "tif_sha256": {
+      "J2.tif": "dfeca46f3884fcb7f46b73ccb9f353fc57e567b91423b8a5411fa4d27183e04e",
+      "J2_reverse.tif": "069d7bb3637b0d8a8c7da5400d95c458d533dc5aae6b3b7d2a3e969a07ee2335"
+     }
+    },
+    "J3": {
+     "threads": 1,
+     "seconds": 799.5,
+     "output_dir_tree_sha256": "62d526a7c1a31c4a52d3d5caa14f626133e30b42f4b3558f5930e0bd9f6d8a09",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J3.tif.npy": "981bb9fcb95ca120df257109b457be018e94e0a59ea35a983a6ec59c97d52abf",
+      "J3_reverse.tif.npy": "7bcc5c404e2579468f7bdbf6e59874a8f013f4cab1d446fdff17beddced9c8f3"
+     },
+     "tif_sha256": {
+      "J3.tif": "af58fca028c751d4352e7ee3f3f231f1036afc9d7fed4e6044a6af9bb1cabfd1",
+      "J3_reverse.tif": "808304ad3c2e7ec0113d951f2116bdcef4c8e8eb7fc5510a21fd349a4339b991"
+     }
+    },
+    "J4": {
+     "threads": 1,
+     "seconds": 909.5,
+     "output_dir_tree_sha256": "e36a3679638ed382f6d61b8920457fb7d8874ab81ace79b8b41f822234c56e7c",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J4.tif.npy": "76e37fd7bf4105bc263657199a45339ea4937b6161d7daff6ed91a09e62e7889",
+      "J4_reverse.tif.npy": "bfb88b478398e52234651f2f26d52a2ed096087d08e4727f74e5463a0b97dacf"
+     },
+     "tif_sha256": {
+      "J4.tif": "2bc38280dac0e390b265f94cac58ac02a15c903356849f86b25fde49e1786c4a",
+      "J4_reverse.tif": "a17eafef6cf2e0e00d3df09c3988ba54dfef86d53f77288d46261fab480165ba"
+     }
+    },
+    "J5": {
+     "threads": 1,
+     "seconds": 717.2,
+     "output_dir_tree_sha256": "50696ba9645240314b1c9317a7c29c7a52f0b595857bda8231aa8fdca1425025",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "J5.tif.npy": "d05139885f14662ede54c8a21ac944c14a2ccdbc8c93c8eccfa61416728d49fa",
+      "J5_reverse.tif.npy": "0fcf44294cc1b92dc99f33fb99c5a681d67c8e693e6102e3d3be23c7dec7a7f4"
+     },
+     "tif_sha256": {
+      "J5.tif": "0689627d312866bc9a7d622e1aed96550290ec930ddc39ea1a81662991c6657a",
+      "J5_reverse.tif": "75f46a643e4cec353307f0934cced69938f41de9d5b134cb19e183cbc4655177"
+     }
+    },
+    "blank_w053_y256_x1536": {
+     "threads": 1,
+     "seconds": 844.2,
+     "output_dir_tree_sha256": "5f3217baaf9636907f3156992030ece30d878daf3a55c5ff9256b8812b94cfef",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "blank_w053_y256_x1536.tif.npy": "12c7f0159e1aa99468032cfcb34315ceacafa35adcbb63955d1163be6dea3694",
+      "blank_w053_y256_x1536_reverse.tif.npy": "1953afc86181d9366006da0693bfbeaaa01338beb0285832ea0919d0dfa781cc"
+     },
+     "tif_sha256": {
+      "blank_w053_y256_x1536.tif": "badbe893824eab49e70b852625f3890a3989fdf22e9df67ed35961d9abd4d75d",
+      "blank_w053_y256_x1536_reverse.tif": "b1b0b48f53aa21cd5f444b4f3760b98aa24c81c9745eeeaf7fcfa49232c62968"
+     }
+    },
+    "blank_w053_y256_x7168": {
+     "threads": 1,
+     "seconds": 814.6,
+     "output_dir_tree_sha256": "101539f474858da98c80ae1d8ad865ee2f0465b94d97a462b3fdd3a6111f2630",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "blank_w053_y256_x7168.tif.npy": "5ae1ec9d84de5d8c08cd0c5679939f8c12db0ad5a5fab083d99d27cd6346d760",
+      "blank_w053_y256_x7168_reverse.tif.npy": "51ff0cf24c08499d4b510b17b1a4c895ef6fa1e519289c47b3d1a617a70f85cb"
+     },
+     "tif_sha256": {
+      "blank_w053_y256_x7168.tif": "83d9667310e36c757472cd985e2a413c095e3bf90a77770c99c4d877b272fb50",
+      "blank_w053_y256_x7168_reverse.tif": "d2518df4848e2bbdc42d47b9a728cadd3d8edfab0550fbabfb5abd17c59cb181"
+     }
+    },
+    "canary_w044_y2816_x2816": {
+     "threads": 1,
+     "seconds": 922.8,
+     "output_dir_tree_sha256": "96f9d75aaa9dfa58b42936c29eaad66e06c534169e957ce851067804e10b1134",
+     "layer_indices_forward": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ],
+     "layer_indices_reverse": [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7
+     ],
+     "npy_sha256": {
+      "canary_w044_y2816_x2816.tif.npy": "62c4b78a17afda6459e4724552556499f29c7f29d4eea0e9346015659b79dd52",
+      "canary_w044_y2816_x2816_reverse.tif.npy": "8c4f9d01c42eeb0e69ff2a0116c5a7f60759e1e8e41deca3dfd57fe65460d71a"
+     },
+     "tif_sha256": {
+      "canary_w044_y2816_x2816.tif": "c253db4359e7eb80976ec085664f0aab7f14c9528782dbfacbec735103a90a71",
+      "canary_w044_y2816_x2816_reverse.tif": "7402e1ec55c535d02d935df2c0a02c6b99dd1ee1011f208ff3498dea58bae4d7"
+     }
+    }
+   }
+  }
+ },
+ "n_images": 128,
+ "counts_arm_state": {
+  "REVA|A": 16,
+  "FA|A": 16,
+  "CTRL|B": 16,
+  "NULLA|B": 16,
+  "NULLA|A": 16,
+  "REVA|B": 16,
+  "CTRL|A": 16,
+  "FA|B": 16
+ },
+ "key_path": "/srv/scorer/d3_key.json",
+ "key_sha256": "fbf76799416733b1144f7d383d90bb710c7281f94b3b5f86961493cb28ecc7ac",
+ "verify": {
+  "key_mode_octal": "0o400",
+  "key_size_equals_text": true,
+  "uuid_collisions_with_d1": 0,
+  "n_d1_uuids_checked": 192,
+  "n_png_files": 128,
+  "memory_equals_disk": true,
+  "n_files": 128,
+  "manifest_sha256": "fef9db5ea9c92cc4dc22d5f16d938c55c063e5dbc39a51f662467860e990f31e"
+ },
+ "manifest": {
+  "path": "/work/d3/manifest.json",
+  "sha256": "fef9db5ea9c92cc4dc22d5f16d938c55c063e5dbc39a51f662467860e990f31e"
+ },
+ "windows": {
+  "J1": {
+   "set": "J",
+   "gate": {
+    "pass": true
+   }
+  },
+  "J2": {
+   "set": "J",
+   "gate": {
+    "pass": true
+   }
+  },
+  "J3": {
+   "set": "J",
+   "gate": {
+    "pass": true
+   }
+  },
+  "J4": {
+   "set": "J",
+   "gate": {
+    "pass": true
+   }
+  },
+  "J5": {
+   "set": "J",
+   "gate": {
+    "pass": true
+   }
+  },
+  "blank_w053_y256_x1536": {
+   "set": "blank",
+   "gate": {
+    "pass": null
+   }
+  },
+  "blank_w053_y256_x7168": {
+   "set": "blank",
+   "gate": {
+    "pass": null
+   }
+  },
+  "canary_w044_y2816_x2816": {
+   "set": "canary",
+   "gate": {
+    "pass": null
+   }
+  }
+ },
+ "gated_J": [
+  "J1",
+  "J2",
+  "J3",
+  "J4",
+  "J5"
+ ],
+ "blob_f180": {
+  "file": "/work/d3/blob_f180.json",
+  "sha256": "ede64499d3b7daa4128652deee979a984f81484f6d773de737386ad6a2323f48",
+  "full_table": "/home/user/dominion/logs/d1/d3_blob_f180.json",
+  "full_table_sha256": "17852706efddbec12be075cb7305da39284e5d54ea6405eee915dccef8f1e968"
+ },
+ "threads": 3,
+ "seconds": 269.2,
+ "script": {
+  "path": "/work/d3/scripts/d3_build.py",
+  "sha256": "a5b928c743c294df7d03bcb03b98fc7909f41d57bb0cd79f7391a725de3afb6b"
+ }
+}
