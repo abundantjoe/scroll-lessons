@@ -1,0 +1,388 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "version": 2,
+ "declaration": "RULES.md DECL-CHAINVALID (+ -A1 pending)",
+ "status": "PLAN ONLY. No ink map of PHerc0841 exists or will be made until the orchestrator appends the declaration and gives GO; the runner refuses without /work/cv/GO",
+ "stricter_defaults": {
+  "levelling": "LEVELLED (as specified): level_mesh step 20 vox on the mapped meshes; predictions scored on the organizer canvas through the exact levelled<->organizer correspondence (level_check.json)",
+  "shells": "T shell only exists on 0841 (C4 = 0139/0814 clean controls, K = fold K; neither has 0841 windows); every rendered sample >= 144 vox point-to-surface from J, fail-closed",
+  "precision": "only a precision with which the chain2um GATE-E2E-0139 passes; if it passes in neither, no 0841 run",
+  "area": "bar decided on the pooled primary E (labelled px) only; secondary crops report r_org_all only",
+  "reference_model": "organizer map model 20260417190342 may have seen 0841 labels: result recorded as a chain check only, never as evidence of the reader",
+  "go": "no run without explicit GO after the declaration is appended and the chain2um gate report exists"
+ },
+ "map_version": {
+  "field_final_sha256": "fb2b8467b95d2d7a7c9531d72e9dbe2ae81806a9df50de81a05c777f426c7523",
+  "record": "RULES.md REG-0841-NA"
+ },
+ "meshes": {
+  "mapped": "/work/cv/mesh (node threshold 172 vox)",
+  "levelled": "/work/cv/mesh_lev",
+  "levelled_file_sha256": {
+   "w00": {
+    "x": "4d5aac0895f25a542bb3fe57289b257008917b84047bc4c8b8e7e1262842a760",
+    "y": "3914df40187636244ade85122d9649d61ce6d5059f0bd9423f7918ec75ae9562",
+    "z": "290277e6a35f02910b2ad01a357170afddaa9024d9872c62c41618625d3d8801"
+   },
+   "214732": {
+    "x": "3b87740fcbcb37e5e608f307700d6bdc3e3cbcdce8e7de8a8c151724823a5e9d",
+    "y": "e56c0a05609633f3119b5ad09c289170362ca5d992ef290ff78cccfb2885f01e",
+    "z": "8d508fca80f00eeafd01a6cc09669049e9b4f2513a3135bbdaebd728fedd945a"
+   },
+   "022814": {
+    "x": "39891c6246f0dc22bd65371077909126d270051e068e3ea958b885aebd6a48b8",
+    "y": "c69caf4ede2a49c55332f3411209e1106bda9fd5d5e64dccd989a380da10ef8c",
+    "z": "3d8ef00f979e5078b063b9153333478d7d144bb92d2a47d96c80595967c6615d"
+   }
+  },
+  "level_transform": {
+   "w00": {
+    "angle_deg": 81.92430557121901,
+    "spread_deg": 3.176715155674787,
+    "e_u": [
+     0.9900833406622354,
+     -0.14048123911436688
+    ],
+    "e_v": [
+     0.14048123911436688,
+     0.9900833406622354
+    ],
+    "origin": [
+     57.58858939505953,
+     99.46560166491899
+    ],
+    "du": 1.007705567057442,
+    "dv": 1.0001020845292226,
+    "step_vox": 20.0,
+    "metric": [
+     19.847067093616587,
+     19.997958517819296
+    ],
+    "shape": [
+     755,
+     350
+    ]
+   },
+   "214732": {
+    "angle_deg": 81.87925651652209,
+    "spread_deg": 3.115074147977212,
+    "e_u": [
+     0.9899725806584659,
+     -0.14125965292473686
+    ],
+    "e_v": [
+     0.14125965292473686,
+     0.9899725806584659
+    ],
+    "origin": [
+     42.30113623109455,
+     174.58767340153963
+    ],
+    "du": 1.0074655799762329,
+    "dv": 1.0039022887856586,
+    "step_vox": 20.0,
+    "metric": [
+     19.851794837965404,
+     19.922257597591916
+    ],
+    "shape": [
+     754,
+     346
+    ]
+   },
+   "022814": {
+    "angle_deg": 82.86183999242853,
+    "spread_deg": 3.542324691447753,
+    "e_u": [
+     0.9922493970219536,
+     -0.12426235998712339
+    ],
+    "e_v": [
+     0.12426235998712339,
+     0.9922493970219536
+    ],
+    "origin": [
+     85.68787692509689,
+     56.51696290608723
+    ],
+    "du": 1.0049852997851616,
+    "dv": 1.0105271322187759,
+    "step_vox": 20.0,
+    "metric": [
+     19.90078860285365,
+     19.79165067650065
+    ],
+    "shape": [
+     698,
+     336
+    ]
+   }
+  },
+  "level_check": {
+   "w00": {
+    "dist_median": 0.02291125243519248,
+    "dist_p99": 1.175239632344849,
+    "dist_max": 5.686637534867866,
+    "roundtrip_px_max": 5.4569682106375694e-12,
+    "edge_within_10pct": 0.9434074471962707
+   },
+   "214732": {
+    "dist_median": 0.022929432203686113,
+    "dist_p99": 1.1832293754099046,
+    "dist_max": 4.550761444666527,
+    "roundtrip_px_max": 7.275957614183426e-12,
+    "edge_within_10pct": 0.9493199002074233
+   },
+   "022814": {
+    "dist_median": 0.022683262012045895,
+    "dist_p99": 1.3676599541152665,
+    "dist_max": 5.7341899573096855,
+    "roundtrip_px_max": 5.4569682106375694e-12,
+    "edge_within_10pct": 0.8957192633150821
+   }
+  },
+  "residual_vs_organizer_2p4_mesh": {
+   "w00": {
+    "n": 53840,
+    "rescanvox_median": 5.0764582695143305,
+    "rescanvox_p95": 8.667350877435739,
+    "rescanvox_max": 11.892168154240576,
+    "vox9_median": 1.3012657677551172,
+    "vox9_p95": 2.2220126997672853,
+    "vox9_max": 3.0493819601226764
+   },
+   "214732": {
+    "n": 54208,
+    "rescanvox_median": 5.0015391999787,
+    "rescanvox_p95": 8.518526648411838,
+    "rescanvox_max": 11.62371382157052,
+    "vox9_median": 1.2820330129619482,
+    "vox9_p95": 2.1838287460016548,
+    "vox9_max": 2.980579605258358
+   },
+   "022814": {
+    "n": 44059,
+    "rescanvox_median": 5.527615586258526,
+    "rescanvox_p95": 9.411394350773106,
+    "rescanvox_max": 11.747859801379768,
+    "vox9_median": 1.4169852392993383,
+    "vox9_p95": 2.4127972061503065,
+    "vox9_max": 3.0123825779005435
+   }
+  }
+ },
+ "exclusion": {
+  "min_clearance_vox_levelled": 144.2940813485024,
+  "all_ge_144": true,
+  "method": "clearance_check_lev.json: kept-node blocks (re-checked per node where a block box fails) grown by 13.2 vox (slab 8 + pixel 5.2), jsurf point-to-surface"
+ },
+ "area": {
+  "w00": {
+   "canvas": [
+    15100,
+    7000
+   ],
+   "renderable_px": 20662000,
+   "E_org_px": 0,
+   "E_mapped_renderable": 0,
+   "E_ink": 0
+  },
+  "214732": {
+   "canvas": [
+    15080,
+    6920
+   ],
+   "renderable_px": 20737600,
+   "E_org_px": 943443,
+   "E_mapped_renderable": 922836,
+   "E_ink": 340876
+  },
+  "022814": {
+   "canvas": [
+    13960,
+    6720
+   ],
+   "renderable_px": 16695200,
+   "E_org_px": 0,
+   "E_mapped_renderable": 0,
+   "E_ink": 0
+  }
+ },
+ "chain": {
+  "render": "vc_render_tifxyz (villa 41701aa) --segmentation /work/cv/mesh_lev/<seg> --scale 1 --group-idx 0 --num-slices 63 --slice-step 1 --voxel-size 2.403 --voxel-unit micrometer --flip-normals --crop-x rx --crop-y ry --crop-width rw --crop-height rh",
+  "inference": "chain2um infer2um.py verbatim (tools/sib/reg0841na/chain2um_copy, sha256 in SOURCE.txt): --start 0 --layers 62 --tile 256 --stride 128 --batch 1 --threads 4, directions reverse AND forward, checkpoint ink_canonical_2um r152_3ddec_v2_l5_epoch13.ckpt sha256 36dd0de8...",
+  "scoring": "cv_eval_lev.py (tests/sib_reg0841_cv_eval_lev_test.py)"
+ },
+ "crops_primary": [
+  {
+   "segment": "214732",
+   "segment_id": "20260220214732-auto_grown_20260220144552896",
+   "ry": 0,
+   "rx": 5248,
+   "rh": 1920,
+   "rw": 1672,
+   "core": [
+    0,
+    1792,
+    5376,
+    6920
+   ],
+   "core_px": 2320288,
+   "core_E_px": 478277
+  },
+  {
+   "segment": "214732",
+   "segment_id": "20260220214732-auto_grown_20260220144552896",
+   "ry": 1664,
+   "rx": 5248,
+   "rh": 2048,
+   "rw": 1672,
+   "core": [
+    1792,
+    3584,
+    5376,
+    6920
+   ],
+   "core_px": 2052848,
+   "core_E_px": 444559
+  }
+ ],
+ "crops_secondary": [
+  {
+   "segment": "w00",
+   "segment_id": "20260220213127-w00",
+   "ry": 1664,
+   "rx": 3456,
+   "rh": 2048,
+   "rw": 2048,
+   "core": [
+    1792,
+    3584,
+    3584,
+    5376
+   ],
+   "core_px": 3211264,
+   "core_E_px": 0
+  },
+  {
+   "segment": "w00",
+   "segment_id": "20260220213127-w00",
+   "ry": 1664,
+   "rx": 1664,
+   "rh": 2048,
+   "rw": 2048,
+   "core": [
+    1792,
+    3584,
+    1792,
+    3584
+   ],
+   "core_px": 3138128,
+   "core_E_px": 0
+  },
+  {
+   "segment": "214732",
+   "segment_id": "20260220214732-auto_grown_20260220144552896",
+   "ry": 1664,
+   "rx": 3456,
+   "rh": 2048,
+   "rw": 2048,
+   "core": [
+    1792,
+    3584,
+    3584,
+    5376
+   ],
+   "core_px": 3211264,
+   "core_E_px": 0
+  },
+  {
+   "segment": "214732",
+   "segment_id": "20260220214732-auto_grown_20260220144552896",
+   "ry": 1664,
+   "rx": 1664,
+   "rh": 2048,
+   "rw": 2048,
+   "core": [
+    1792,
+    3584,
+    1792,
+    3584
+   ],
+   "core_px": 3183728,
+   "core_E_px": 0
+  },
+  {
+   "segment": "022814",
+   "segment_id": "20260221022814-auto_grown_20260220174252405",
+   "ry": 0,
+   "rx": 3456,
+   "rh": 1920,
+   "rw": 2048,
+   "core": [
+    0,
+    1792,
+    3584,
+    5376
+   ],
+   "core_px": 3028384,
+   "core_E_px": 0
+  },
+  {
+   "segment": "022814",
+   "segment_id": "20260221022814-auto_grown_20260220174252405",
+   "ry": 0,
+   "rx": 1664,
+   "rh": 1920,
+   "rw": 2048,
+   "core": [
+    0,
+    1792,
+    1792,
+    3584
+   ],
+   "core_px": 2805504,
+   "core_E_px": 0
+  }
+ ],
+ "rule_R": {
+  "n_render_dot_r_out_median": {
+   "w00": -0.8858474154221866,
+   "214732": -0.8836683877450259,
+   "022814": -0.8615452535336436
+  },
+  "frac_positive": {
+   "w00": 0.020626432391138275,
+   "214732": 0.020526028252556,
+   "022814": 0.022151437047123475
+  },
+  "label_crops": [
+   {
+    "y": -128,
+    "x": 5248,
+    "n_nodes": 5775,
+    "median_n_dot_rout": -0.9791087986446007,
+    "frac_positive": 0.0
+   },
+   {
+    "y": 1664,
+    "x": 5248,
+    "n_nodes": 5247,
+    "median_n_dot_rout": -0.9572098669283176,
+    "frac_positive": 0.0
+   }
+  ],
+  "note": "render normal points toward the umbilicus proxy (mask centroid); rule R = (sign -, winning order) once run"
+ },
+ "compute": {
+  "s_per_tile_bf16": 3.8,
+  "s_per_tile_fp32": 5.1,
+  "primary_h_bf16": 0.73,
+  "primary_h_fp32": 0.99,
+  "secondary_h_bf16": 2.79,
+  "secondary_h_fp32": 3.74,
+  "render_s_per_2048_crop": 52,
+  "note": "both orders; upper bounds (empty batches skipped); timings from 2 synthetic tiles and one CT render"
+ },
+ "runner": "tools/sib/reg0841/chainvalid/run_chainvalid_lev.sh primary|secondary PRECISION (refuses without /work/cv/GO)"
+}
