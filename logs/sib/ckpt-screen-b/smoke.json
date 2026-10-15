@@ -1,0 +1,634 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "start_utc": "2026-09-26T00:48:01Z",
+ "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+ "smoke_sha256": "23e271f9198b5e7f2a90555c95cc924e6994aecbce90b39f031e8e09952cce3c",
+ "T1_resampler": {
+  "forward": {
+   "max_abs_err": 6.12432472735236e-05,
+   "zpos_first_last": [
+    7.184415723136082,
+    22.815584276863916
+   ],
+   "zoom": 3.902459358065861,
+   "model_grid": [
+    780,
+    780
+   ]
+  },
+  "reverse": {
+   "max_abs_err": 6.12432472735236e-05,
+   "zpos_first_last": [
+    7.184415723136082,
+    22.815584276863916
+   ],
+   "zoom": 3.902459358065861,
+   "model_grid": [
+    780,
+    780
+   ]
+  }
+ },
+ "T2_tiling_vs_direct": {
+  "tiles_run": 1,
+  "max_abs_diff": 0.0,
+  "outside_zero": true
+ },
+ "T3": {
+  "iteration-0": {
+   "native": {
+    "render_shape": [
+     31,
+     400,
+     400
+    ],
+    "map_shape": [
+     400,
+     400
+    ],
+    "map_dtype": "uint8",
+    "tiles": 3,
+    "seconds_per_tile": 1.194,
+    "covered_frac_of_valid": 0.8221597751906865,
+    "zero_where_uncovered": true,
+    "fwd_mean": 168.50760625,
+    "rev_mean": 166.77581875,
+    "fwd_sha": "e5426903e588cab5f026f05730574a4e36e4abc3fe9e42e39cbc18096656a958",
+    "rev_sha": "ed731fa54844088bab236758baaf37cbb96ae8d2ad6f10cae27612344369d71f",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     512,
+     512
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-0",
+     "commit": "06c306449b39df42c745608ceade243498d24243",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "8fdb5c7903cc3dce2c37a93b028028582fef9134b6a826870e3bfab544f5be79"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "62c43b98f55c169ae874c684a59953b5ce1cb45140129107f861501cce3edaef",
+       "lfs_sha256_ok": true
+      }
+     }
+    },
+    "deterministic": true
+   },
+   "spec": {
+    "render_shape": [
+     31,
+     200,
+     200
+    ],
+    "map_shape": [
+     200,
+     200
+    ],
+    "map_dtype": "uint8",
+    "tiles": 24,
+    "seconds_per_tile": 4.085,
+    "covered_frac_of_valid": 0.9584263392857143,
+    "zero_where_uncovered": true,
+    "fwd_mean": 148.0529,
+    "rev_mean": 147.47055,
+    "fwd_sha": "07daa862dacad8da702d342f03f39320debe88612777830b9ad8cfdb7dcf4d70",
+    "rev_sha": "7436dcc3955ac16d08c4d98799152c26ef725f6787b13f202acb0cb4fb676991",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     780,
+     780
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-0",
+     "commit": "06c306449b39df42c745608ceade243498d24243",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "8fdb5c7903cc3dce2c37a93b028028582fef9134b6a826870e3bfab544f5be79"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "62c43b98f55c169ae874c684a59953b5ce1cb45140129107f861501cce3edaef",
+       "lfs_sha256_ok": true
+      }
+     }
+    }
+   }
+  },
+  "iteration-1": {
+   "native": {
+    "render_shape": [
+     31,
+     400,
+     400
+    ],
+    "map_shape": [
+     400,
+     400
+    ],
+    "map_dtype": "uint8",
+    "tiles": 3,
+    "seconds_per_tile": 0.876,
+    "covered_frac_of_valid": 0.8221597751906865,
+    "zero_where_uncovered": true,
+    "fwd_mean": 26.7724875,
+    "rev_mean": 27.81550625,
+    "fwd_sha": "f6a6590808777f5a0434d0f19647fd602cb87f57a84cebc0e2daf7216a56d25a",
+    "rev_sha": "1e05df0c61014d20316e1e8d4f18ceae3c9442188d28abc250063f1b024f63af",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     512,
+     512
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-1",
+     "commit": "f2012ce96ddebcae6888246370c28d458a4d45dd",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "885c280718577acceb58162089cd3801bfdf81f8274fea7e38e6706bdcf3e165"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "75e4009673b2c419c23cb388474c87357c226058598f1e2d7cba4e71d22e0fcb",
+       "lfs_sha256_ok": true
+      }
+     }
+    },
+    "deterministic": true
+   },
+   "spec": {
+    "render_shape": [
+     31,
+     200,
+     200
+    ],
+    "map_shape": [
+     200,
+     200
+    ],
+    "map_dtype": "uint8",
+    "tiles": 24,
+    "seconds_per_tile": 3.611,
+    "covered_frac_of_valid": 0.9584263392857143,
+    "zero_where_uncovered": true,
+    "fwd_mean": 42.907825,
+    "rev_mean": 62.299025,
+    "fwd_sha": "26ea8069e8b1e6e6879ded21ad0d6bd108e98ea23931ef27e45a2054398932c9",
+    "rev_sha": "199fed52c83e2274d88e3cac10dc74a7479b3f06d05968e1d4a9015166b5f4d4",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     780,
+     780
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-1",
+     "commit": "f2012ce96ddebcae6888246370c28d458a4d45dd",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "885c280718577acceb58162089cd3801bfdf81f8274fea7e38e6706bdcf3e165"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "75e4009673b2c419c23cb388474c87357c226058598f1e2d7cba4e71d22e0fcb",
+       "lfs_sha256_ok": true
+      }
+     }
+    }
+   }
+  },
+  "iteration-2": {
+   "native": {
+    "render_shape": [
+     31,
+     400,
+     400
+    ],
+    "map_shape": [
+     400,
+     400
+    ],
+    "map_dtype": "uint8",
+    "tiles": 3,
+    "seconds_per_tile": 0.963,
+    "covered_frac_of_valid": 0.8221597751906865,
+    "zero_where_uncovered": true,
+    "fwd_mean": 48.849125,
+    "rev_mean": 52.65396875,
+    "fwd_sha": "12683f6f36ba43937ec3c4b8ad22bee7ed59f6b24ead5243f4e945acf38f1d8c",
+    "rev_sha": "55b371b523dfbe22585cb0d8242726a223a0bf3266488f9ce8f7741ceeea27ca",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     512,
+     512
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-2",
+     "commit": "bf6053ca28863ca8fb87860803c0392945290fc6",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "36bb9c4ee2bc049a6cf78feaa4adea5112752f2042067b657710bb71a1bd6bc0"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "485ce6e12cca19071c5746d95327d9aa6f2fd04ea1a2acc95c9530d3ee895b71",
+       "lfs_sha256_ok": true
+      }
+     }
+    },
+    "deterministic": true
+   },
+   "spec": {
+    "render_shape": [
+     31,
+     200,
+     200
+    ],
+    "map_shape": [
+     200,
+     200
+    ],
+    "map_dtype": "uint8",
+    "tiles": 24,
+    "seconds_per_tile": 3.526,
+    "covered_frac_of_valid": 0.9584263392857143,
+    "zero_where_uncovered": true,
+    "fwd_mean": 170.67605,
+    "rev_mean": 165.2074,
+    "fwd_sha": "6d8c7417cdfb7f2c265e90ba7619f179663eb0e432acba0f5966315f42f51920",
+    "rev_sha": "78ab0a4e8e0874a2070d2921595b7575cddd5fa742926570861f735ee911565d",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     780,
+     780
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-2",
+     "commit": "bf6053ca28863ca8fb87860803c0392945290fc6",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "36bb9c4ee2bc049a6cf78feaa4adea5112752f2042067b657710bb71a1bd6bc0"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "485ce6e12cca19071c5746d95327d9aa6f2fd04ea1a2acc95c9530d3ee895b71",
+       "lfs_sha256_ok": true
+      }
+     }
+    }
+   }
+  },
+  "iteration-3": {
+   "native": {
+    "render_shape": [
+     31,
+     400,
+     400
+    ],
+    "map_shape": [
+     400,
+     400
+    ],
+    "map_dtype": "uint8",
+    "tiles": 3,
+    "seconds_per_tile": 0.93,
+    "covered_frac_of_valid": 0.8221597751906865,
+    "zero_where_uncovered": true,
+    "fwd_mean": 141.62929375,
+    "rev_mean": 146.20640625,
+    "fwd_sha": "cc671f3b35b8bc7e4481310b998e56074d6b70e9fdbd8df2381e9e0974f0e8ed",
+    "rev_sha": "1204ffb8baec986f29c490581b5003dd9727c289525b4086a07965adc6b41e52",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     512,
+     512
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-3",
+     "commit": "ecb158ec66244f55339be33d6299c8d60a466f50",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "e6d2edf4a1f52b5b6672ed31cdb04a412b8540aea59073cf2ab0146f17da28d2"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "f9b5b8982dd62c7551ba7fe260b9db6c9746cc7d14580877691f558b1875abae",
+       "lfs_sha256_ok": true
+      }
+     }
+    },
+    "deterministic": true
+   },
+   "spec": {
+    "render_shape": [
+     31,
+     200,
+     200
+    ],
+    "map_shape": [
+     200,
+     200
+    ],
+    "map_dtype": "uint8",
+    "tiles": 24,
+    "seconds_per_tile": 3.585,
+    "covered_frac_of_valid": 0.9584263392857143,
+    "zero_where_uncovered": true,
+    "fwd_mean": 99.268475,
+    "rev_mean": 115.779225,
+    "fwd_sha": "32635806c0f0aeec43b7ac8f87f23484614c3b3d1a605a4604eca03554108302",
+    "rev_sha": "da1b8e027f18cc3c2e833e073bec5b214f9ccf1dc5bec479b4ac84bbf9787932",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     780,
+     780
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-3",
+     "commit": "ecb158ec66244f55339be33d6299c8d60a466f50",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "e6d2edf4a1f52b5b6672ed31cdb04a412b8540aea59073cf2ab0146f17da28d2"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "f9b5b8982dd62c7551ba7fe260b9db6c9746cc7d14580877691f558b1875abae",
+       "lfs_sha256_ok": true
+      }
+     }
+    }
+   }
+  },
+  "iteration-4": {
+   "native": {
+    "render_shape": [
+     31,
+     400,
+     400
+    ],
+    "map_shape": [
+     400,
+     400
+    ],
+    "map_dtype": "uint8",
+    "tiles": 3,
+    "seconds_per_tile": 0.849,
+    "covered_frac_of_valid": 0.8221597751906865,
+    "zero_where_uncovered": true,
+    "fwd_mean": 77.88605,
+    "rev_mean": 77.96511875,
+    "fwd_sha": "5d678ce32dfe6f1d36ed63db919ff54c2e6c21ddb02812f00ce3f1b33bf338bb",
+    "rev_sha": "812e96ccf1f61a88d0001b316d4d463603420b152edf4d3771a1eef898c7cc1f",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     512,
+     512
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-4",
+     "commit": "9ff9913da0f2f8374784dd4d4196fdcf62ba6883",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "46dd83a3d5cef7e52b62bf8b879d902a3a090c8e6be1b19954719caee1b7b79a"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "a1612b1fc97dea039aec3a1d06ff65fe0ee217b91dbe6db9785eb2e5befb3ffe",
+       "lfs_sha256_ok": true
+      }
+     }
+    },
+    "deterministic": true
+   },
+   "spec": {
+    "render_shape": [
+     31,
+     200,
+     200
+    ],
+    "map_shape": [
+     200,
+     200
+    ],
+    "map_dtype": "uint8",
+    "tiles": 24,
+    "seconds_per_tile": 3.606,
+    "covered_frac_of_valid": 0.9584263392857143,
+    "zero_where_uncovered": true,
+    "fwd_mean": 60.179025,
+    "rev_mean": 63.556825,
+    "fwd_sha": "725336e637c750792fbb3de4322b4932fae221f16b11cedb851d50c0053f0bc8",
+    "rev_sha": "3a08b430ce11219a4cad9169c4807476fb108c7ef6b8454b51af5f9a4b4b89ce",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     780,
+     780
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-4",
+     "commit": "9ff9913da0f2f8374784dd4d4196fdcf62ba6883",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "46dd83a3d5cef7e52b62bf8b879d902a3a090c8e6be1b19954719caee1b7b79a"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "a1612b1fc97dea039aec3a1d06ff65fe0ee217b91dbe6db9785eb2e5befb3ffe",
+       "lfs_sha256_ok": true
+      }
+     }
+    }
+   }
+  },
+  "iteration-5": {
+   "native": {
+    "render_shape": [
+     31,
+     400,
+     400
+    ],
+    "map_shape": [
+     400,
+     400
+    ],
+    "map_dtype": "uint8",
+    "tiles": 3,
+    "seconds_per_tile": 0.882,
+    "covered_frac_of_valid": 0.8221597751906865,
+    "zero_where_uncovered": true,
+    "fwd_mean": 95.65530625,
+    "rev_mean": 95.040125,
+    "fwd_sha": "141554104ed3ff6d92e0cebeced8d21d3e67849b8b19a895f4de77b25df4381e",
+    "rev_sha": "2e1be72fd97d4ab4db9baaf778941220a5bd18b16a7281035e35798d04f68602",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     512,
+     512
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-5",
+     "commit": "6288ba60115ce827018926bcb0ea8e5696f33d3b",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "941f69c2487b51bc9eb9fc638cc6c4b4af2d30e25ccd45044751ce7eaabcd35e"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "9920d4338e51d38b241cbf48392610be0519e4e19c2e9d987ccfc2e78bd3301b",
+       "lfs_sha256_ok": true
+      }
+     }
+    },
+    "deterministic": true
+   },
+   "spec": {
+    "render_shape": [
+     31,
+     200,
+     200
+    ],
+    "map_shape": [
+     200,
+     200
+    ],
+    "map_dtype": "uint8",
+    "tiles": 24,
+    "seconds_per_tile": 3.6,
+    "covered_frac_of_valid": 0.9584263392857143,
+    "zero_where_uncovered": true,
+    "fwd_mean": 112.803825,
+    "rev_mean": 112.236175,
+    "fwd_sha": "a1a325ea9b161989db619d25d99fe84bebc53ff514d3b9adbc990e2cb3d6651d",
+    "rev_sha": "50c64a4bafdf9f4a0f1afb8fb40ba99e1d5a60826fbe79efa2a5626f207f45f2",
+    "fwd_ne_rev": true,
+    "model_grid_hw": [
+     780,
+     780
+    ],
+    "wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+    "checkpoint": {
+     "repo": "scrollprize/PHerc.1667-iteration-5",
+     "commit": "6288ba60115ce827018926bcb0ea8e5696f33d3b",
+     "files": {
+      "config.json": {
+       "git_oid_ok": true,
+       "sha256": "941f69c2487b51bc9eb9fc638cc6c4b4af2d30e25ccd45044751ce7eaabcd35e"
+      },
+      "configuration_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990"
+      },
+      "modeling_inkdetection.py": {
+       "git_oid_ok": true,
+       "sha256": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+      },
+      "model.safetensors": {
+       "sha256": "9920d4338e51d38b241cbf48392610be0519e4e19c2e9d987ccfc2e78bd3301b",
+       "lfs_sha256_ok": true
+      }
+     }
+    }
+   }
+  }
+ },
+ "end_utc": "2026-09-26T01:06:39Z"
+}

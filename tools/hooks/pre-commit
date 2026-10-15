@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Provenance: Project HERCULES | owner the owner | [id removed]
+#
+# Git pre-commit hook. Install with: bash tools/hooks/install.sh
+# (sets core.hooksPath=tools/hooks). All checks live in
+# src/hercules/records/precommit.py and read STAGED content only:
+# RULES.md append-only + chain verify, Unicode Cf in paths/content and image
+# metadata (cf_scan), plaintext under seals/, private key material, >20 MB.
+# Fails closed: any error (including a failed import) rejects the commit.
+set -u
+
+HOOK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)" || exit 1
+REPO_ROOT="$(git rev-parse --show-toplevel)" || exit 1
+cd "$REPO_ROOT" || exit 1
+
+if [ -x /opt/hv/bin/python ]; then
+    PY=/opt/hv/bin/python
+else
+    PY=python3
+fi
+
+# src/ of the checkout this hook lives in (== <repo>/src when hooksPath=tools/hooks).
+export PYTHONPATH="$(cd "$HOOK_DIR/../.." && pwd)/src"
+exec "$PY" -m hercules.records.precommit

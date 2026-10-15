@@ -1,0 +1,465 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "audit_utc": "2026-09-25T05:23:24Z",
+ "repo_head_at_audit": "54f4260edbc1f341167730cb8aa1de5d2853bfe5",
+ "auditor": "fresh auditor agent, no stake in the result",
+ "rules_chain_verify": "OK /home/user/dominion/RULES.md: 74 entries; preamble sha256 f0b331fdd48042aa25f42e9598bb10a3d705e4473102d7b41e89269694dde201; last DECL-D1-A2 sha256 188e7b6b3d55e7e48f05812d51ae30f6386877acec053f107c77f896cf27e773",
+ "audit_of": "PROBE3-RESULT (DECL-READCAL-PROBE3; driver tools/readcal/score_probe3.py; scorer METRIC-HASH-11; key sheet METRIC-HASH-12)",
+ "checks": {
+  "1_declaration_before_data": {
+   "result": "PASS",
+   "DECL-READCAL-PROBE3": {
+    "entry_utc": "2026-09-25T04:25:26Z",
+    "commit": "1721515 2026-09-25T04:25:40Z"
+   },
+   "feasibility_numbers_only_utc": "2026-09-25T03:55:10Z (logs/readcal/probe3_feasibility.json); information-only C3 variant 04:19:23Z",
+   "build_checks_utc": "2026-09-25T04:32:30Z",
+   "images_and_key_written_utc": "2026-09-25T04:56:51Z",
+   "jobs_created_utc": "2026-09-25T04:57:31Z",
+   "readers_launched_utc": [
+    "2026-09-25T04:57:59Z",
+    "2026-09-25T04:59:20Z"
+   ],
+   "sealed_answer_mtime_utc": [
+    "2026-09-25T04:58:42Z",
+    "2026-09-25T05:01:14Z"
+   ],
+   "driver_written_committed_utc": "04:59:48Z written; commit 5e8133c 05:00:01Z",
+   "first_decryption_utc": "2026-09-25T05:01:23Z (probe3-final-scoring, 12); exploratory 05:02:07Z-05:02:21Z (24)",
+   "result_entry_utc": "2026-09-25T05:02:50Z (commit 720bae2 05:03:37Z)",
+   "finding": "declaration entered and committed before any PROBE-3 image, job, sealed answer or decryption; driver committed before decryption"
+  },
+  "2_scorer_integrity": {
+   "src/hercules/scorer/probe1.py": {
+    "sha256": "d5d68ff721205a85fb2c398af2bb981dc46805f369cc2a8c54616c90bcedc1e3",
+    "declared": "METRIC-HASH-11",
+    "equal": true,
+    "git": "only commit f3c3dda 2026-09-25T03:02:13Z (METRIC-HASH-11 commit); blob sha256 equal"
+   },
+   "src/hercules/scorer/consensus.py": {
+    "sha256": "d5ae23ef1af08be1323ad2be21ec6ca411186e8ebe107a2e5c3241b9f60ee594",
+    "declared": "METRIC-HASH-0 (and METRIC-HASH-10)",
+    "equal": true,
+    "git": "last change 15ca995 2026-09-24T21:57:36Z"
+   },
+   "src/hercules/scorer/letters.py": {
+    "declared": "METRIC-HASH-0",
+    "equal": true
+   },
+   "src/hercules/scorer/matching.py": {
+    "declared": "METRIC-HASH-0",
+    "equal": true
+   },
+   "src/hercules/scorer/schema.py": {
+    "declared": "METRIC-HASH-0",
+    "equal": true
+   },
+   "src/hercules/scorer/keyaccess.py": {
+    "declared": "METRIC-HASH-5",
+    "equal": true
+   },
+   "src/hercules/harness/audit.py": {
+    "declared": "METRIC-HASH-5",
+    "equal": true
+   },
+   "src/hercules/harness/collect.py": {
+    "declared": "METRIC-HASH-5",
+    "equal": true
+   },
+   "transcript_scan": "no Edit/Write/shell write to src/hercules/scorer or src/hercules/harness files in any transcript after 2026-09-25T03:02:13Z (only a new file sealpos.py at 05:07:56Z, after all three results)",
+   "result": "PASS",
+   "driver": {
+    "path": "tools/readcal/score_probe3.py",
+    "sha256": "bd27bd738cccd8dc26836f614aeb1a098cb03139e589bffc1b08a21a3e0ce2f3",
+    "git": "only commit 5e8133c 05:00:01Z; committed blob, working file and PROBE3-RESULT prefix equal; run 05:01:21Z unchanged"
+   }
+  },
+  "3_transcript_audit": {
+   "result": "PASS",
+   "method": "hercules.harness.audit.audit() called directly per job (nothing appended to logs/harness_jobs.tsv), plus auditor checks: each listed image Read exactly once, no other tool, exactly one sealed write matching the permitted form to the job path and scorer recipient, one hand-back, one non-meta prompt whose sha256 equals the job brief_sha256, wire tool inputs equal logged inputs, no tool errors, sealed file sha256 equals job answer_sha256, transcript model equals arm model; orchestrator Agent calls: one launch per job, subagent_type general-purpose, requested model equals arm model, prompt sha256 equals brief_sha256; no SendMessage to any reader.",
+   "n_jobs": 12,
+   "n_all_checks_pass": 12,
+   "violations_total": 0,
+   "unread_images_total": 0,
+   "images_read_per_job": [
+    4
+   ],
+   "sealed_writes_per_job": [
+    1
+   ],
+   "transcript_model_vs_arm": {
+    "match": 12
+   },
+   "readers_per_arm": {
+    "K_D2_A_opus": 3,
+    "K_D2_A_fable": 3,
+    "K_D2_B_opus": 3,
+    "K_D2_B_fable": 3
+   },
+   "distinct_agents": 12
+  },
+  "4_inputs": {
+   "result": "PASS",
+   "image_sha256": "all 12 jobs: key sheet first (5da96bde..., exactly once), then the 3 window images of the arm state; every sha256 equals /work/probe3/manifest.json and the files on disk; key /srv/scorer/probe3_key.json sha256 d2e035d9... equals the build record",
+   "order": "per-reader order drawn with secrets.SystemRandom (make_jobs_probe3.py); 6 of 6 possible orders used across 12 readers",
+   "task_text": "identical to PROBE-2 (asserted sha256 74a0cbe8... in make_jobs_probe3.py); launches and transcripts carry the job brief hash",
+   "freshness": "12 distinct agent ids, none used in any other job of any probe; one prompt per transcript"
+  },
+  "5_rederivation": {
+   "result": "PASS",
+   "decryptions": {
+    "purpose": "audit-probe3",
+    "n": 12,
+    "first_utc": "2026-09-25T05:17:44Z",
+    "last_utc": "2026-09-25T05:17:44Z"
+   },
+   "answers": 12,
+   "malformed_by_declared_validator": 0,
+   "raw_left_namings": 143,
+   "unknown_identity_namings": 0,
+   "removed_by_per_reader_dedup": 0,
+   "right_side_namings": 0,
+   "items_not_in_key": 0,
+   "namings_on_items_not_in_key": 0,
+   "item_coverage": "every window image answered exactly once; the key-sheet item (listed first, not in the key) was omitted from all 12 answers, so 0 key-sheet namings",
+   "normaliser_check": "auditor's own identity mapping (Unicode names, spec B) vs hercules.scorer.letters.normalize_letter: 0 disagreements in 143 namings",
+   "own_code": "identity from Unicode names; [y,x] = M [iy,ix,1] with the key image_to_levelled_window_px; per-reader same-kind dedup < 150 px (first kept); greedy one-to-one complete-linkage grouping (pairs of different readers within 150 px sorted by distance, rank), >= 2 of 3 readers; firm if >= 2 members firm; identity shuffle within reader, positions fixed, 2000 permutations with python random (not numpy), p = (1 + #null >= obs)/(1 + N); code validated first on synthetic answers against the declared scorer (all counts equal, 60 synthetic answers).",
+   "declared_scorer_rerun": "hercules.scorer.probe1.map_namings/score_arm on the same decrypted answers, reader labels r0-r2 as in the recorded runs",
+   "comparison": {
+    "recorded_cells_compared": 12,
+    "count_differences": [],
+    "p_declared_rerun_equal_recorded_cells": 12,
+    "p_differences": [],
+    "own_code_vs_declared_scorer_count_differences": [],
+    "cells_where_greedy_below_exact_max_grouping": [],
+    "cells_sensitive_to_dedup_boundary": []
+   }
+  },
+  "6_bar": {
+   "result": "PASS (recorded verdict follows from re-derived numbers)",
+   "declared": "PRIMARY: K_D2_A_fable >= 5 agreed in at least one of 3 windows with identity-shuffle p < 0.05 there -> REPLICATED",
+   "primary_per_window_agreed": {
+    "w040_y2560_x4096": 0,
+    "w040_y256_x512": 1,
+    "w044_y2816_x2816": 10
+   },
+   "primary_per_window_p_declared": {
+    "w040_y2560_x4096": null,
+    "w040_y256_x512": "1",
+    "w044_y2816_x2816": "1/2001"
+   },
+   "primary_per_window_p_auditor": {
+    "w040_y2560_x4096": null,
+    "w040_y256_x512": "1",
+    "w044_y2816_x2816": "1/2001"
+   },
+   "primary_w044_p_auditor_20000": 5e-05,
+   "primary_pass_windows_declared_p": [
+    "w044_y2816_x2816"
+   ],
+   "primary_pass_windows_auditor_p": [
+    "w044_y2816_x2816"
+   ],
+   "mirror_prediction_A_gt_B_each_model": {
+    "A_vs_B": {
+     "opus": [
+      8,
+      9
+     ],
+     "fable": [
+      11,
+      9
+     ]
+    },
+    "met": false
+   },
+   "sg_feas_window_exists": false,
+   "outcome": "PRIMARY MET at w044_y2816_x2816 (10 agreed, p = 1/2001 declared and auditor; 1/20001 with 20000 permutations): REPLICATED; SG-FEAS NOT PASSED; mirror prediction NOT MET (reported only)",
+   "recorded_verdict": "REPLICATED; lift for display K_D2 with reader model fable only; SG bars unchanged",
+   "verdict_follows": true
+  },
+  "7_window_freshness": {
+   "result": "PASS",
+   "selection_rule": "probe3_feasibility.json (sha256 1e8b58f8... = declared; script sha256 a5572ea3... = declared and = file on disk): 484 positive-ink pool windows = 108 evaluated + 111 skipped (2-D overlap) + 265 skipped (segment full); evaluated list is in declared rank order (score desc, coverage desc, segment, y0, x0); 105 rejected for shared papyrus >= 1000 vox^2 with an earlier window, 3 accepted; every decision consistent with the thresholds; accepted = the 3 declared windows (w044 (2816, 2816) 0.0799; w040 (2560, 4096) 0.0329; w040 (256, 512) 0.0329)",
+   "build_regression": "build_checks.json: check_a (PROBE-2 selection w045 (768, 5888) only) passed; check_b (the 3 declared windows) passed; state-A rerun equals selection record for all 3; 6 PNG 1068 x 1068 8-bit grey",
+   "views_log": "logs/views.tsv has only its header (no image ever viewed); independent scan of the orchestrator transcript and all 98 subagent transcripts: the orchestrator Read no image; PROBE-3 images were Read only by the 12 PROBE-3 readers (36 reads, first 04:58:02Z); no other image of w040/w044 was Read by anyone",
+   "earlier_jobs": "all 56 job records created before PROBE-3 (latest 03:34:38Z; includes 1 J-picker job absent from agent_map.txt) list images only from handed R2 (w030/w035/w039/w043), handed R3 (w030/w039/w041/w043/w045), READ-CAL picker (w024/w047/w053), J picker (non-0139 segments), PROBE-1/2 (w030/w035/w039/w043) and the key sheet; handed R1 (pre-harness) used w039/w041; none lists an image of w040 or w044"
+  }
+ },
+ "recomputed": {
+  "windows": [
+   "w040_y2560_x4096",
+   "w040_y256_x512",
+   "w044_y2816_x2816"
+  ],
+  "arms": {
+   "K_D2_A_fable": {
+    "n_readers": 3,
+    "per_window": {
+     "w040_y2560_x4096": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w040_y256_x512": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 6,
+      "group_sizes_2_3": [
+       0,
+       1
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     },
+     "w044_y2816_x2816": {
+      "agreed": 10,
+      "agreed_firm": 0,
+      "named_total": 31,
+      "group_sizes_2_3": [
+       8,
+       2
+      ],
+      "p_auditor_2000": "1/2001",
+      "p_auditor_2000_float": 0.0005,
+      "p_declared_scorer": "1/2001",
+      "p_declared_float": 0.0005,
+      "p_auditor_20000": 5e-05,
+      "max_one_to_one_groups": 10,
+      "agreed_if_dedup_inclusive_150": 10
+     }
+    },
+    "total": {
+     "agreed": 11,
+     "agreed_firm": 0,
+     "named": 37
+    },
+    "max_agreed_in_window": 10
+   },
+   "K_D2_A_opus": {
+    "n_readers": 3,
+    "per_window": {
+     "w040_y2560_x4096": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w040_y256_x512": {
+      "agreed": 3,
+      "agreed_firm": 0,
+      "named_total": 8,
+      "group_sizes_2_3": [
+       3,
+       0
+      ],
+      "p_auditor_2000": "5/87",
+      "p_auditor_2000_float": 0.05747,
+      "p_declared_scorer": "140/2001",
+      "p_declared_float": 0.06997,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 3,
+      "agreed_if_dedup_inclusive_150": 3
+     },
+     "w044_y2816_x2816": {
+      "agreed": 5,
+      "agreed_firm": 0,
+      "named_total": 20,
+      "group_sizes_2_3": [
+       1,
+       4
+      ],
+      "p_auditor_2000": "77/2001",
+      "p_auditor_2000_float": 0.03848,
+      "p_declared_scorer": "26/667",
+      "p_declared_float": 0.03898,
+      "p_auditor_20000": 0.036398,
+      "max_one_to_one_groups": 5,
+      "agreed_if_dedup_inclusive_150": 5
+     }
+    },
+    "total": {
+     "agreed": 8,
+     "agreed_firm": 0,
+     "named": 28
+    },
+    "max_agreed_in_window": 5
+   },
+   "K_D2_B_fable": {
+    "n_readers": 3,
+    "per_window": {
+     "w040_y2560_x4096": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w040_y256_x512": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 6,
+      "group_sizes_2_3": [
+       0,
+       1
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     },
+     "w044_y2816_x2816": {
+      "agreed": 8,
+      "agreed_firm": 0,
+      "named_total": 42,
+      "group_sizes_2_3": [
+       7,
+       1
+      ],
+      "p_auditor_2000": "7/2001",
+      "p_auditor_2000_float": 0.0035,
+      "p_declared_scorer": "13/2001",
+      "p_declared_float": 0.0065,
+      "p_auditor_20000": 0.0064,
+      "max_one_to_one_groups": 8,
+      "agreed_if_dedup_inclusive_150": 8
+     }
+    },
+    "total": {
+     "agreed": 9,
+     "agreed_firm": 0,
+     "named": 48
+    },
+    "max_agreed_in_window": 8
+   },
+   "K_D2_B_opus": {
+    "n_readers": 3,
+    "per_window": {
+     "w040_y2560_x4096": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w040_y256_x512": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 5,
+      "group_sizes_2_3": [
+       1,
+       0
+      ],
+      "p_auditor_2000": "340/667",
+      "p_auditor_2000_float": 0.50975,
+      "p_declared_scorer": "331/667",
+      "p_declared_float": 0.49625,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     },
+     "w044_y2816_x2816": {
+      "agreed": 8,
+      "agreed_firm": 1,
+      "named_total": 25,
+      "group_sizes_2_3": [
+       4,
+       4
+      ],
+      "p_auditor_2000": "1/2001",
+      "p_auditor_2000_float": 0.0005,
+      "p_declared_scorer": "1/667",
+      "p_declared_float": 0.0015,
+      "p_auditor_20000": 0.0003,
+      "max_one_to_one_groups": 8,
+      "agreed_if_dedup_inclusive_150": 8
+     }
+    },
+    "total": {
+     "agreed": 9,
+     "agreed_firm": 1,
+     "named": 30
+    },
+    "max_agreed_in_window": 8
+   }
+  },
+  "mirror_check_A_vs_B": {
+   "opus": [
+    8,
+    9
+   ],
+   "fable": [
+    11,
+    9
+   ]
+  }
+ },
+ "differences_vs_recorded": {
+  "counts": "none: all 12 arm-window cells and totals equal (including 1 agreed-firm in K_D2_B_opus w044); own code equals the declared scorer in every cell",
+  "p": "declared-scorer rerun reproduces every recorded p exactly; auditor RNG p differ by Monte Carlo noise only (primary cell identical, 1/2001)",
+  "text": []
+ },
+ "bar_outcome": "REPLICATED (K_D2_A_fable at w044: 10 agreed, p 1/2001)",
+ "audit": "PASS",
+ "reasons": [
+  "declaration entered and committed before any PROBE-3 image, job, answer or decryption; driver committed before decryption and unchanged",
+  "scorer, key sheet and driver equal their recorded hashes",
+  "all 12 transcripts VALID; inputs equal the manifest; 12 fresh distinct agents with the declared models; per-reader random order",
+  "windows chosen by the declared rule (recorded numbers and build regression checks); no w040/w044 image seen by anyone before the readers",
+  "independent re-derivation reproduces every recorded count; the PRIMARY bar applied to re-derived numbers gives REPLICATED with a wide margin (10 vs 5 agreed; p 1/2001 vs 0.05)"
+ ],
+ "notes": [
+  "Only 3 windows qualified (declared); the replication rests on one window (w044), as PROBE-2 rested on w039; agreement at w044 is also beyond the null in both mirror states and the directional mirror prediction is NOT MET (recorded).",
+  "An information-only C3-variant feasibility run (C3 crops as clearance objects) was made at 04:19Z before the declaration; the declared rule is the unchanged PROBE-2 rule and the C3 overlap is disclosed; numbers only.",
+  "24 exploratory decryptions (identity statistics) after final scoring and before the result entry; labelled exploratory, verdict unaffected.",
+  "The result was recorded before this independent audit (AUDIT-OMIT-PROBES, I17); per that entry the lift was PROVISIONAL until an auditor PASS is recorded.",
+  "Greedy grouping equals the exact maximum one-to-one grouping in every cell; no cell changes if the dedup boundary is inclusive (<= 150 px)."
+ ]
+}
