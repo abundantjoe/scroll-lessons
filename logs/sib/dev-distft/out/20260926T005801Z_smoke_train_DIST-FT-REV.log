@@ -1,0 +1,81 @@
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 32
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"step": 1, "loss": 0.6244404315948486, "grad_norm_preclip": 1.9337525367736816, "s_per_step": 18.770879638999986, "supervised_frac": 0.9228477478027344, "epochs": [1], "run_index": 0, "sample_digest": "7c4fc6cbbd6daab90fa0e18b87397d90c5f2460424bfea4399366ad1f0c80310", "loss_mean_window": 0.6244404315948486}
+{"step": 2, "loss": 0.5849864482879639, "grad_norm_preclip": 0.9100600481033325, "s_per_step": 19.274404187000073, "supervised_frac": 0.9061088562011719, "epochs": [1], "run_index": 0, "sample_digest": "e7362b14ce190d5dd4915ea089ff2913c3f017a82f0630338dbce2d93f36a60c", "loss_mean_window": 0.5849864482879639}
+{"step": 3, "loss": 0.5694712996482849, "grad_norm_preclip": 0.714058518409729, "s_per_step": 15.674854350000032, "supervised_frac": 0.9339962005615234, "epochs": [1], "run_index": 0, "sample_digest": "baf2e6b921cc1e58848ff5e6aa3ca8db595846814f322f81662e54736b293353", "loss_mean_window": 0.5694712996482849}
+{"step": 4, "loss": 0.5700833797454834, "grad_norm_preclip": 0.7089406847953796, "s_per_step": 16.960538788999884, "supervised_frac": 0.9253044128417969, "epochs": [1], "run_index": 0, "sample_digest": "d6f4f5e9804d3156f5d502a43aa9f619c17a7ab4f5a14b90eb8377c97ac38772", "loss_mean_window": 0.5700833797454834}
+{"step": 5, "loss": 0.5636796951293945, "grad_norm_preclip": 0.7236484885215759, "s_per_step": 15.141366157999983, "supervised_frac": 0.9229736328125, "epochs": [1], "run_index": 0, "sample_digest": "50bcd8f70631d889da2d1a7894dc7674e8e5e2f9514e2461eb161cfc44f69dc7", "loss_mean_window": 0.5636796951293945}
+{"step": 6, "loss": 0.5609140992164612, "grad_norm_preclip": 0.5643126368522644, "s_per_step": 14.75282530000004, "supervised_frac": 0.9079933166503906, "epochs": [1], "run_index": 0, "sample_digest": "850b82bda5e2dfabd2a31707822019ab24fac8e2cec4769f5d542a249ef030a7", "loss_mean_window": 0.5609140992164612}
+{"step": 7, "loss": 0.5569388270378113, "grad_norm_preclip": 0.48328161239624023, "s_per_step": 16.836617153999896, "supervised_frac": 0.9277400970458984, "epochs": [1], "run_index": 0, "sample_digest": "4943a8b99b20c3013ea1600e854ffd38bd31ca8ade2ba79a094840661c9a1890", "loss_mean_window": 0.5569388270378113}
+{"step": 8, "loss": 0.5533050894737244, "grad_norm_preclip": 0.4908267557621002, "s_per_step": 15.935791255999902, "supervised_frac": 0.9030323028564453, "epochs": [1], "run_index": 0, "sample_digest": "7945c7f550f10138f424552b9c33493bbe3d87a6cadf095ffe1f5a79d5e7187f", "loss_mean_window": 0.5533050894737244}
+{"step": 9, "loss": 0.5517878532409668, "grad_norm_preclip": 0.5030696392059326, "s_per_step": 17.22973659499985, "supervised_frac": 0.8924446105957031, "epochs": [1], "run_index": 0, "sample_digest": "2bbca8e84cb83c31af724e690afebd3ab34711d24d80f1bb4a077143724f33ec", "loss_mean_window": 0.5517878532409668}
+{"step": 10, "loss": 0.5513020753860474, "grad_norm_preclip": 0.41359105706214905, "s_per_step": 16.017794226999968, "supervised_frac": 0.9278011322021484, "epochs": [1], "run_index": 0, "sample_digest": "e2bd110531ebf467b63b58939828388e840ceeca2abc282bc39430dc02762b98", "loss_mean_window": 0.5513020753860474}
+{"event": "checkpoint", "step": 10, "utc": "2026-09-26T01:00:53Z", "local_bytes": 414977916, "seconds": 0.39}
+{"step": 11, "loss": 0.5455582141876221, "grad_norm_preclip": 0.4372006058692932, "s_per_step": 16.675789340000165, "supervised_frac": 0.9200172424316406, "epochs": [1], "run_index": 0, "sample_digest": "6305222e29066a9f8bcc314f0b82535093615f9c3af186982913b314db48cc49", "loss_mean_window": 0.5455582141876221}
+{"step": 12, "loss": 0.540772557258606, "grad_norm_preclip": 0.42955753207206726, "s_per_step": 16.701770979999992, "supervised_frac": 0.9039211273193359, "epochs": [1], "run_index": 0, "sample_digest": "38bf327fdf592418399e84aa58aaa4fb316dac567ca0888d46037865ad2358b3", "loss_mean_window": 0.540772557258606}
+{"step": 13, "loss": 0.5418771505355835, "grad_norm_preclip": 0.32505542039871216, "s_per_step": 15.84272669500001, "supervised_frac": 0.9283332824707031, "epochs": [1], "run_index": 0, "sample_digest": "938869512486d3d25f28deda61cef4a891c6e79c28185be7bbe87efb733732f3", "loss_mean_window": 0.5418771505355835}
+{"step": 14, "loss": 0.5396692752838135, "grad_norm_preclip": 0.300848126411438, "s_per_step": 16.405733994000002, "supervised_frac": 0.8804759979248047, "epochs": [1], "run_index": 0, "sample_digest": "b37d977d7fbbb2a6a1cf5d534c110a57830340fb029ea34422acfcd541cb7e26", "loss_mean_window": 0.5396692752838135}
+{"step": 15, "loss": 0.5439102053642273, "grad_norm_preclip": 0.304228276014328, "s_per_step": 15.864087297999959, "supervised_frac": 0.9342823028564453, "epochs": [1], "run_index": 0, "sample_digest": "2d452c095fd28c2eb72ae9dae5e635dc20adc4d4d0de3959648ec89ac57e4801", "loss_mean_window": 0.5439102053642273}
+{"step": 16, "loss": 0.5393525958061218, "grad_norm_preclip": 0.2483072131872177, "s_per_step": 16.710153020999996, "supervised_frac": 0.9148693084716797, "epochs": [1], "run_index": 0, "sample_digest": "53ea61312bacd26f4a534f192c3db38929dd4a054aeeb482e5a7ac0653a34c70", "loss_mean_window": 0.5393525958061218}
+{"step": 17, "loss": 0.5396901965141296, "grad_norm_preclip": 0.3133268654346466, "s_per_step": 16.166965681999955, "supervised_frac": 0.9110012054443359, "epochs": [1], "run_index": 0, "sample_digest": "0c7a9be857f29f8fce395af7bdb9302e832516f9f5b124b294dee67f9b13a2a1", "loss_mean_window": 0.5396901965141296}
+{"step": 18, "loss": 0.5367022752761841, "grad_norm_preclip": 0.2833482325077057, "s_per_step": 15.917856373999939, "supervised_frac": 0.9293537139892578, "epochs": [1], "run_index": 0, "sample_digest": "1ea1e66034b2cde546cc0eeaa8954acbf340df4c6005c6dc989e50fa7ace36d0", "loss_mean_window": 0.5367022752761841}
+{"step": 19, "loss": 0.5343964695930481, "grad_norm_preclip": 0.26262784004211426, "s_per_step": 16.341478512000094, "supervised_frac": 0.9265270233154297, "epochs": [2], "run_index": 0, "sample_digest": "8bdb5d41b0aee9ca9e2cca0e274f91dcd449127d75a465165be033d15a82fb62", "loss_mean_window": 0.5343964695930481}
+{"step": 20, "loss": 0.5321411490440369, "grad_norm_preclip": 0.2540353238582611, "s_per_step": 16.267070411000077, "supervised_frac": 0.9113559722900391, "epochs": [2], "run_index": 0, "sample_digest": "e64e68217708c484cd5c81a4e363ce460a8a88a4d092404d80e92be645264373", "loss_mean_window": 0.5321411490440369}
+SUMMARY {"provenance": "Provenance: Project HERCULES | owner the owner | [id removed]", "arm": "DIST-FT-REV", "seed": 20260925, "config_sha256": "c3e0319221abeb89fb95f16b0db059a4dd3602587cf0c9dfe5996c8575f7c820", "started_utc": "2026-09-26T00:58:01Z", "finished_utc": "2026-09-26T01:03:37Z", "steps": 20, "finite_loss_steps": 20, "loss_first": 0.6244404315948486, "loss_last": 0.5321411490440369, "median_s_per_step": 16.304274461500086, "loop_s": 330.2, "wall_s": 335.6, "peak_rss_kb": 7033320, "strict_load": "<All keys matched successfully>", "threads": {"intra": 4, "interop": 1}, "sample_digest_final": "e64e68217708c484cd5c81a4e363ce460a8a88a4d092404d80e92be645264373", "checks": {"rev_syn_exact_depth_reverse": true, "rot_margin_full": "per-subtile (edge sub-tiles padded, padding ignored)", "subtiles_per_patch": {"syn": 9}, "distft_target": [{"schema": "hercules-distft-target/1", "kind": "soft", "value": "ref9 / 255", "supervised": "registry 'valid'", "pinned_rule_reproduced": true, "n_supervised_px": 8847360, "n_pinned_supervised_px": 6959925, "n_band_px_now_supervised": 1887435, "soft_sha256": "95c38a3ecfd07e2c61aab6afc9aa670a965de97a39b7a2dee0a3ed6b267225ed", "valid_sha256": "15cfae29007e170d24c23cb16ea841e3047d9ef1454442055a60b9f4699169df"}], "distft_aug_label_value_multiset": {"samples": 640, "value_multiset_changed": 0}}, "resumptions": [], "checkpoint_events": [{"event": "checkpoint", "step": 10, "utc": "2026-09-26T01:00:53Z", "local_bytes": 414977916, "seconds": 0.39}], "model_final": {"path": "/work/distft/smoke/run_DIST-FT-REV/model_final.pth", "sha256": "4e9a50043d01bd8ab5319b3881ef31bd96494cc861c56876f1a57a07ef3b5b01", "bytes": 138363103}, "checkpoint_registry_sha256": "b929cfa1d702c0dc20fe1201c37481b7fdb8521430bdc2c543b0eb95cda4d1c4", "script": {"path": "/home/user/dominion/tools/sib/dev-distft/pinned/d2_train.py", "sha256": "fdbe236cc2cf46664c3d0558e58c7594220a4ce105fde3b5453d634680496f24"}}

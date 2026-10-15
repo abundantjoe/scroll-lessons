@@ -1,0 +1,299 @@
+.EFEEEEEEE                                                               [100%]
+==================================== ERRORS ====================================
+_________________ ERROR at setup of test_soft_source_alignment _________________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/distft/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7f5b3b5a6d70>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def reg(tmp_path_factory):
+>       d = str(tmp_path_factory.mktemp("syn"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/distft/pt'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/distft/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+____________ ERROR at setup of test_rotate_equals_pinned_on_binary _____________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/distft/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7f5b3b5a6d70>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def reg(tmp_path_factory):
+>       d = str(tmp_path_factory.mktemp("syn"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/distft/pt'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/distft/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_______________ ERROR at setup of test_rotate_soft_keeps_values ________________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/distft/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7f5b3b5a6d70>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def reg(tmp_path_factory):
+>       d = str(tmp_path_factory.mktemp("syn"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/distft/pt'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/distft/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+______ ERROR at setup of test_hard_target_through_layer_is_bitwise_pinned ______
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/distft/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7f5b3b5a6d70>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def reg(tmp_path_factory):
+>       d = str(tmp_path_factory.mktemp("syn"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/distft/pt'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/distft/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_______________ ERROR at setup of test_soft_batch_and_aug_check ________________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/distft/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7f5b3b5a6d70>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def reg(tmp_path_factory):
+>       d = str(tmp_path_factory.mktemp("syn"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/distft/pt'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/distft/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+________________ ERROR at setup of test_null_seed_fixed_and_rev ________________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/distft/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7f5b3b5a6d70>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def reg(tmp_path_factory):
+>       d = str(tmp_path_factory.mktemp("syn"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/distft/pt'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/distft/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+___________________ ERROR at setup of test_null_seed_refused ___________________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/distft/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7f5b3b5a6d70>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def tmp(tmp_path_factory):
+>       return str(tmp_path_factory.mktemp("work"))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/distft/pt'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/distft/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+____________________ ERROR at setup of test_resume_bitwise _____________________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/distft/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7f5b3b5a6d70>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def reg(tmp_path_factory):
+>       d = str(tmp_path_factory.mktemp("syn"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/distft/pt'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/distft/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+=================================== FAILURES ===================================
+________________ test_soft_loss_input_equals_official_on_binary ________________
+
+    def test_soft_loss_input_equals_official_on_binary():
+>       from vesuvius.ink_detection.training.train import prepare_loss_inputs
+
+tools/sib/dev-distft/tests/test_distft.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py:33: in <module>
+    from vesuvius.ink_detection.training.dilation import (
+/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py:10: in <module>
+    from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Native ZYX crop, tifxyz selection, surface projection, and mask geometry."""
+    
+    from __future__ import annotations
+    
+>   import cc3d
+E   ModuleNotFoundError: No module named 'cc3d'
+
+/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py:5: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tools/sib/dev-distft/tests/test_distft.py::test_soft_loss_input_equals_official_on_binary
+ERROR tools/sib/dev-distft/tests/test_distft.py::test_soft_source_alignment
+ERROR tools/sib/dev-distft/tests/test_distft.py::test_rotate_equals_pinned_on_binary
+ERROR tools/sib/dev-distft/tests/test_distft.py::test_rotate_soft_keeps_values
+ERROR tools/sib/dev-distft/tests/test_distft.py::test_hard_target_through_layer_is_bitwise_pinned
+ERROR tools/sib/dev-distft/tests/test_distft.py::test_soft_batch_and_aug_check
+ERROR tools/sib/dev-distft/tests/test_distft.py::test_null_seed_fixed_and_rev
+ERROR tools/sib/dev-distft/tests/test_distft.py::test_null_seed_refused - Fil...
+ERROR tools/sib/dev-distft/tests/test_distft.py::test_resume_bitwise - FileNo...
+1 failed, 1 passed, 8 errors in 2.07s

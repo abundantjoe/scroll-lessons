@@ -1,0 +1,117 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "arm": "DIST-FT",
+ "seed": 20260925,
+ "config_sha256": "e21fc6b8f910643e8743769bc78ebca6b1ceaf418ab32cf05371698b53bc28cd",
+ "started_utc": "2026-09-26T00:46:13Z",
+ "finished_utc": "2026-09-26T00:52:03Z",
+ "steps": 20,
+ "finite_loss_steps": 20,
+ "losses": [
+  0.6282525062561035,
+  0.5862164497375488,
+  0.568769097328186,
+  0.5699299573898315,
+  0.5632084608078003,
+  0.5618962645530701,
+  0.5570165514945984,
+  0.5544583797454834,
+  0.5507247447967529,
+  0.5507140159606934,
+  0.5461198687553406,
+  0.5411319732666016,
+  0.543860137462616,
+  0.5393030047416687,
+  0.5439200401306152,
+  0.5384930372238159,
+  0.5390084981918335,
+  0.5360918641090393,
+  0.5348882675170898,
+  0.5325492024421692
+ ],
+ "loss_first": 0.6282525062561035,
+ "loss_last": 0.5325492024421692,
+ "median_s_per_step": 16.664054873499992,
+ "loop_s": 344.8,
+ "wall_s": 350.1,
+ "peak_rss_kb": 6940744,
+ "strict_load": "<All keys matched successfully>",
+ "threads": {
+  "intra": 4,
+  "interop": 1
+ },
+ "sample_digest_final": "e64e68217708c484cd5c81a4e363ce460a8a88a4d092404d80e92be645264373",
+ "checks": {
+  "rot_margin_full": "per-subtile (edge sub-tiles padded, padding ignored)",
+  "subtiles_per_patch": {
+   "syn": 9
+  },
+  "distft_target": [
+   {
+    "schema": "hercules-distft-target/1",
+    "kind": "soft",
+    "value": "ref9 / 255",
+    "supervised": "registry 'valid'",
+    "pinned_rule_reproduced": true,
+    "n_supervised_px": 8847360,
+    "n_pinned_supervised_px": 6959925,
+    "n_band_px_now_supervised": 1887435,
+    "soft_sha256": "95c38a3ecfd07e2c61aab6afc9aa670a965de97a39b7a2dee0a3ed6b267225ed",
+    "valid_sha256": "15cfae29007e170d24c23cb16ea841e3047d9ef1454442055a60b9f4699169df"
+   }
+  ],
+  "distft_aug_label_value_multiset": {
+   "samples": 640,
+   "value_multiset_changed": 0
+  }
+ },
+ "meta": {
+  "sources": [
+   {
+    "name": "syn",
+    "role": "train",
+    "n": 64,
+    "size": 384,
+    "registry_sha256": "99d0a93dc59259a643c540e8e1a1cb1bdcc4ef7d997b8eaf4b6144889124eb84",
+    "kind": "pairs"
+   }
+  ],
+  "distft": {
+   "label_value": "ref9 / 255",
+   "loss": "official (smoothed BCE + Dice, ignore channel), unchanged",
+   "null_seed": 20260925,
+   "pinned_commit": "8475920fa1a8dd7a753c426be0ebd592851ad884",
+   "recipe": "DIST-FT",
+   "schema": "hercules-distft-target/1",
+   "supervised": "pair-valid pixels",
+   "target": "soft",
+   "pinned_sha256": {
+    "d2_train.py": "fdbe236cc2cf46664c3d0558e58c7594220a4ce105fde3b5453d634680496f24",
+    "d2_data.py": "5b7a6a5df4f07cf75ef84b63899e531c040b0cb13d8b45b7c180ac2b10a7676b",
+    "ckpt_shards.py": "ba6db9991e14000b9ba051244c6ae2fa59928b4c6094cc64316ca559cbf3b974",
+    "contam_check.py": "0e30cabbc762979f5b197c0365815dc5915048626c6a01ffb571c643b9f1321e"
+   },
+   "wrapper_sha256": "69e5b68065245c8512221769a50aa743b8877fc9c874708adc1f886b7989f2df"
+  }
+ },
+ "resumptions": [],
+ "checkpoint_events": [
+  {
+   "event": "checkpoint",
+   "step": 10,
+   "utc": "2026-09-26T00:49:15Z",
+   "local_bytes": 414977916,
+   "seconds": 0.4
+  }
+ ],
+ "model_final": {
+  "path": "/work/distft/smoke/run_DIST-FT/model_final.pth",
+  "sha256": "95e13ae47e9fcb87face979c77eff3e6ebd276cecdd1f663bd1962a28fce33ae",
+  "bytes": 138363103
+ },
+ "checkpoint_registry_sha256": "f8c0835347440d262882a0a524931dfec0cdf9081e473d947d0b1ca2640e396d",
+ "script": {
+  "path": "/home/user/dominion/tools/sib/dev-distft/pinned/d2_train.py",
+  "sha256": "fdbe236cc2cf46664c3d0558e58c7594220a4ce105fde3b5453d634680496f24"
+ }
+}

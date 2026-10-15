@@ -1,0 +1,372 @@
+..FEEFFF.F                                                               [100%]
+==================================== ERRORS ====================================
+____________ ERROR at setup of test_rotate_equals_pinned_on_binary _____________
+
+reg = '/work/distft/pt/syn0/registry.json', tmp = '/work/distft/pt/work0'
+
+    @pytest.fixture(scope="module")
+    def trainers(reg, tmp):
+        cfg = cfg_for(tmp, reg, target="hard")
+        pin = PINNED_TRAINER(copy.deepcopy(cfg), os.path.join(tmp, "p"))
+>       mine = distft.DistFTTrainer(copy.deepcopy(cfg), os.path.join(tmp, "m"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tools/sib/dev-distft/distft.py:213: in __init__
+    super().__init__(cfg, out, bench=bench, sources=sources)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <distft.DistFTTrainer object at 0x7f1922232ba0>
+cfg = {'amx_gate': None, 'arm': 'DIST-FT', 'base_checkpoint': {'name': 'ink_9um hybrid_3d2d seed42 step-075000 (HF scrollpri...eed42/step-075000.pth', 'sha256': 'e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab'}, 'batch': 2, ...}
+out = '/work/distft/pt/work0/m', bench = False
+sources = [Source(name='syn', role='train', images=array([[[[ 77,  82,  86, ...,  69,  70,  64],
+         [ 79,  98, 110, ...,  ...SYNTHETIC', 'voxel_um': 9.362, 'mesh_stride_px': 16, 'halo_px': 64, 'label_rule': {'ink_min': 150, 'blank_max': 100}})]
+
+    def __init__(self, cfg: dict, out: str, *, bench: bool = False, sources=None):
+        self.cfg, self.out, self.bench = cfg, out, bench
+        self.csha = config_sha256(cfg)
+        if cfg["precision"] == "bf16" and not bench:
+            g = cfg.get("amx_gate")
+            if not g:
+                raise SystemExit("bf16 training refused: no AMX gate record in the config (orchestrator gate first)")
+            if sha256_file(g["path"]) != g["sha256"]:
+                raise SystemExit("bf16 training refused: AMX gate record changed since the config was made")
+            rec = json.load(open(g["path"]))
+            if rec.get("pass") is not True:
+                raise SystemExit("bf16 training refused: the AMX gate record does not say pass: true")
+        import numpy as np
+        import random
+        import torch
+        self.np, self.random, self.torch = np, random, torch
+        th = int(cfg["threads"])
+        torch.set_num_threads(th)
+>       torch.set_num_interop_threads(1)
+E       RuntimeError: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called
+
+tools/sib/dev-distft/pinned/d2_train.py:201: RuntimeError
+---------------------------- Captured stdout setup -----------------------------
+{"config": "/work/distft/pt/work0/cfg_DIST-FT_hard_11_3.json", "sha256": "111697b85dc1a437867c4ef3a0d4d4de5ab526076d23d6cc14d54f20b85354d8"}
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 2
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+_______________ ERROR at setup of test_rotate_soft_keeps_values ________________
+
+reg = '/work/distft/pt/syn0/registry.json', tmp = '/work/distft/pt/work0'
+
+    @pytest.fixture(scope="module")
+    def trainers(reg, tmp):
+        cfg = cfg_for(tmp, reg, target="hard")
+        pin = PINNED_TRAINER(copy.deepcopy(cfg), os.path.join(tmp, "p"))
+>       mine = distft.DistFTTrainer(copy.deepcopy(cfg), os.path.join(tmp, "m"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tools/sib/dev-distft/distft.py:213: in __init__
+    super().__init__(cfg, out, bench=bench, sources=sources)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <distft.DistFTTrainer object at 0x7f1922232ba0>
+cfg = {'amx_gate': None, 'arm': 'DIST-FT', 'base_checkpoint': {'name': 'ink_9um hybrid_3d2d seed42 step-075000 (HF scrollpri...eed42/step-075000.pth', 'sha256': 'e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab'}, 'batch': 2, ...}
+out = '/work/distft/pt/work0/m', bench = False
+sources = [Source(name='syn', role='train', images=array([[[[ 77,  82,  86, ...,  69,  70,  64],
+         [ 79,  98, 110, ...,  ...SYNTHETIC', 'voxel_um': 9.362, 'mesh_stride_px': 16, 'halo_px': 64, 'label_rule': {'ink_min': 150, 'blank_max': 100}})]
+
+    def __init__(self, cfg: dict, out: str, *, bench: bool = False, sources=None):
+        self.cfg, self.out, self.bench = cfg, out, bench
+        self.csha = config_sha256(cfg)
+        if cfg["precision"] == "bf16" and not bench:
+            g = cfg.get("amx_gate")
+            if not g:
+                raise SystemExit("bf16 training refused: no AMX gate record in the config (orchestrator gate first)")
+            if sha256_file(g["path"]) != g["sha256"]:
+                raise SystemExit("bf16 training refused: AMX gate record changed since the config was made")
+            rec = json.load(open(g["path"]))
+            if rec.get("pass") is not True:
+                raise SystemExit("bf16 training refused: the AMX gate record does not say pass: true")
+        import numpy as np
+        import random
+        import torch
+        self.np, self.random, self.torch = np, random, torch
+        th = int(cfg["threads"])
+        torch.set_num_threads(th)
+>       torch.set_num_interop_threads(1)
+E       RuntimeError: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called
+
+tools/sib/dev-distft/pinned/d2_train.py:201: RuntimeError
+=================================== FAILURES ===================================
+________________ test_soft_loss_input_equals_official_on_binary ________________
+
+    def test_soft_loss_input_equals_official_on_binary():
+        from vesuvius.ink_detection.training.train import prepare_loss_inputs
+        g = torch.Generator().manual_seed(0)
+        lab = (torch.rand(3, 1, 17, 128, 128, generator=g) > 0.7).float()
+        sup = (torch.rand(3, 1, 17, 128, 128, generator=g) > 0.2).float()
+        b = dict(inklabels=lab, supervision_mask=sup)
+        for shape in ((3, 1, 128, 128), (3, 1, 64, 64)):
+            p = torch.randn(shape, generator=g)
+            o = prepare_loss_inputs(p, b, mode="flat")
+            s = distft.soft_prepare_loss_inputs(p, b, mode="flat")
+            assert all(torch.equal(x, y) for x, y in zip(o, s))
+            pl = [torch.randn(shape, generator=g), torch.randn(3, 1, 32, 32, generator=g)]
+            o = prepare_loss_inputs(pl, b, mode="flat"); s = distft.soft_prepare_loss_inputs(pl, b, mode="flat")
+            assert torch.equal(o[1], s[1]) and torch.equal(o[2], s[2])
+        soft = dict(inklabels=torch.rand(2, 1, 17, 128, 128, generator=g) * 0.9, supervision_mask=sup[:2])
+        t = distft.soft_prepare_loss_inputs(torch.randn(2, 1, 128, 128), soft, mode="flat")[1]
+>       assert torch.allclose(t, soft["inklabels"][:, :, 0]) and float(t.max()) < 1.0
+E       assert (False)
+E        +  where False = <built-in method allclose of type object at 0x7f19663e41a0>(tensor([[[[0.6822, 0.8791, 0.8715,  ..., 0.8921, 0.8757, 0.8437],\n          [0.8989, 0.8555, 0.8219,  ..., 0.8445, 0.7...56, 0.8738, 0.8957,  ..., 0.8586, 0.8897, 0.7735],\n          [0.8901, 0.8678, 0.8745,  ..., 0.8992, 0.8499, 0.8319]]]]), tensor([[[[0.2916, 0.2882, 0.6919,  ..., 0.3930, 0.7071, 0.6221],\n          [0.4575, 0.3101, 0.5266,  ..., 0.1098, 0.0...59, 0.2708, 0.5403,  ..., 0.5541, 0.7157, 0.1418],\n          [0.8014, 0.8255, 0.1139,  ..., 0.8992, 0.8499, 0.4231]]]]))
+E        +    where <built-in method allclose of type object at 0x7f19663e41a0> = torch.allclose
+
+tools/sib/dev-distft/tests/test_distft.py:73: AssertionError
+_______________ test_hard_target_through_layer_is_bitwise_pinned _______________
+
+reg = '/work/distft/pt/syn0/registry.json', tmp = '/work/distft/pt/work0'
+
+    def test_hard_target_through_layer_is_bitwise_pinned(reg, tmp):
+        """target=hard through DistFTTrainer == the pinned Trainer bitwise (losses and weights, 3 steps, rot24)."""
+        cfg = cfg_for(tmp, reg, target="hard", steps=3)
+        res = []
+        for cls in (PINNED_TRAINER, distft.DistFTTrainer):
+            torch.use_deterministic_algorithms(True)
+>           t = cls(copy.deepcopy(cfg), os.path.join(tmp, "eq"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <d2_train.Trainer object at 0x7f1928239a90>
+cfg = {'amx_gate': None, 'arm': 'DIST-FT', 'base_checkpoint': {'name': 'ink_9um hybrid_3d2d seed42 step-075000 (HF scrollpri...eed42/step-075000.pth', 'sha256': 'e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab'}, 'batch': 2, ...}
+out = '/work/distft/pt/work0/eq', bench = False, sources = None
+
+    def __init__(self, cfg: dict, out: str, *, bench: bool = False, sources=None):
+        self.cfg, self.out, self.bench = cfg, out, bench
+        self.csha = config_sha256(cfg)
+        if cfg["precision"] == "bf16" and not bench:
+            g = cfg.get("amx_gate")
+            if not g:
+                raise SystemExit("bf16 training refused: no AMX gate record in the config (orchestrator gate first)")
+            if sha256_file(g["path"]) != g["sha256"]:
+                raise SystemExit("bf16 training refused: AMX gate record changed since the config was made")
+            rec = json.load(open(g["path"]))
+            if rec.get("pass") is not True:
+                raise SystemExit("bf16 training refused: the AMX gate record does not say pass: true")
+        import numpy as np
+        import random
+        import torch
+        self.np, self.random, self.torch = np, random, torch
+        th = int(cfg["threads"])
+        torch.set_num_threads(th)
+>       torch.set_num_interop_threads(1)
+E       RuntimeError: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called
+
+tools/sib/dev-distft/pinned/d2_train.py:201: RuntimeError
+----------------------------- Captured stdout call -----------------------------
+{"config": "/work/distft/pt/work0/cfg_DIST-FT_hard_11_3.json", "sha256": "111697b85dc1a437867c4ef3a0d4d4de5ab526076d23d6cc14d54f20b85354d8"}
+________________________ test_soft_batch_and_aug_check _________________________
+
+reg = '/work/distft/pt/syn0/registry.json', tmp = '/work/distft/pt/work0'
+
+    def test_soft_batch_and_aug_check(reg, tmp):
+        cfg = cfg_for(tmp, reg, target="soft", steps=2)
+>       t = distft.DistFTTrainer(copy.deepcopy(cfg), os.path.join(tmp, "s"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tools/sib/dev-distft/distft.py:213: in __init__
+    super().__init__(cfg, out, bench=bench, sources=sources)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <distft.DistFTTrainer object at 0x7f1928239bd0>
+cfg = {'amx_gate': None, 'arm': 'DIST-FT', 'base_checkpoint': {'name': 'ink_9um hybrid_3d2d seed42 step-075000 (HF scrollpri...eed42/step-075000.pth', 'sha256': 'e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab'}, 'batch': 2, ...}
+out = '/work/distft/pt/work0/s', bench = False
+sources = [Source(name='syn', role='train', images=array([[[[ 77,  82,  86, ...,  69,  70,  64],
+         [ 79,  98, 110, ...,  ...d4524aae4025b5f14e3932f7229454', 'valid_sha256': 'd593d24b827e98f68e7406ca3094254d3e5526f62d2d037f778936ac5a1153ee'}})]
+
+    def __init__(self, cfg: dict, out: str, *, bench: bool = False, sources=None):
+        self.cfg, self.out, self.bench = cfg, out, bench
+        self.csha = config_sha256(cfg)
+        if cfg["precision"] == "bf16" and not bench:
+            g = cfg.get("amx_gate")
+            if not g:
+                raise SystemExit("bf16 training refused: no AMX gate record in the config (orchestrator gate first)")
+            if sha256_file(g["path"]) != g["sha256"]:
+                raise SystemExit("bf16 training refused: AMX gate record changed since the config was made")
+            rec = json.load(open(g["path"]))
+            if rec.get("pass") is not True:
+                raise SystemExit("bf16 training refused: the AMX gate record does not say pass: true")
+        import numpy as np
+        import random
+        import torch
+        self.np, self.random, self.torch = np, random, torch
+        th = int(cfg["threads"])
+        torch.set_num_threads(th)
+>       torch.set_num_interop_threads(1)
+E       RuntimeError: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called
+
+tools/sib/dev-distft/pinned/d2_train.py:201: RuntimeError
+----------------------------- Captured stdout call -----------------------------
+{"config": "/work/distft/pt/work0/cfg_DIST-FT_soft_11_2.json", "sha256": "66a29eebf91bbf81eb8cdeb6f7524d6398dac9eecfc5f25a8f331f6195059c92"}
+_________________________ test_null_seed_fixed_and_rev _________________________
+
+reg = '/work/distft/pt/syn0/registry.json', tmp = '/work/distft/pt/work0'
+
+    def test_null_seed_fixed_and_rev(reg, tmp):
+        perms = []
+        for seed in (11, 12):
+>           t = distft.DistFTTrainer(cfg_for(tmp, reg, arm="DIST-FT-NULL", seed=seed), os.path.join(tmp, "n"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tools/sib/dev-distft/distft.py:213: in __init__
+    super().__init__(cfg, out, bench=bench, sources=sources)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <distft.DistFTTrainer object at 0x7f1928239e50>
+cfg = {'amx_gate': None, 'arm': 'DIST-FT-NULL', 'base_checkpoint': {'name': 'ink_9um hybrid_3d2d seed42 step-075000 (HF scro...eed42/step-075000.pth', 'sha256': 'e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab'}, 'batch': 2, ...}
+out = '/work/distft/pt/work0/n', bench = False
+sources = [Source(name='syn', role='train', images=array([[[[ 77,  82,  86, ...,  69,  70,  64],
+         [ 79,  98, 110, ...,  ...d4524aae4025b5f14e3932f7229454', 'valid_sha256': 'd593d24b827e98f68e7406ca3094254d3e5526f62d2d037f778936ac5a1153ee'}})]
+
+    def __init__(self, cfg: dict, out: str, *, bench: bool = False, sources=None):
+        self.cfg, self.out, self.bench = cfg, out, bench
+        self.csha = config_sha256(cfg)
+        if cfg["precision"] == "bf16" and not bench:
+            g = cfg.get("amx_gate")
+            if not g:
+                raise SystemExit("bf16 training refused: no AMX gate record in the config (orchestrator gate first)")
+            if sha256_file(g["path"]) != g["sha256"]:
+                raise SystemExit("bf16 training refused: AMX gate record changed since the config was made")
+            rec = json.load(open(g["path"]))
+            if rec.get("pass") is not True:
+                raise SystemExit("bf16 training refused: the AMX gate record does not say pass: true")
+        import numpy as np
+        import random
+        import torch
+        self.np, self.random, self.torch = np, random, torch
+        th = int(cfg["threads"])
+        torch.set_num_threads(th)
+>       torch.set_num_interop_threads(1)
+E       RuntimeError: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called
+
+tools/sib/dev-distft/pinned/d2_train.py:201: RuntimeError
+----------------------------- Captured stdout call -----------------------------
+{"config": "/work/distft/pt/work0/cfg_DIST-FT-NULL_soft_11_3.json", "sha256": "381c4eb4545feb592b772f95ff1514d2f1e129b7e5d6a955842c2ece9d86af02"}
+_____________________________ test_resume_bitwise ______________________________
+
+reg = '/work/distft/pt/syn0/registry.json', tmp = '/work/distft/pt/work0'
+
+    def test_resume_bitwise(reg, tmp):
+        distft.use_distft_trainer()
+        try:
+            cfg = cfg_for(tmp, reg, arm="DIST-FT", steps=4)
+>           a = d2_train.run_train(copy.deepcopy(cfg), os.path.join(tmp, "full"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tools/sib/dev-distft/tests/test_distft.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tools/sib/dev-distft/pinned/d2_train.py:529: in run_train
+    tr = Trainer(cfg, out)
+         ^^^^^^^^^^^^^^^^^
+tools/sib/dev-distft/distft.py:213: in __init__
+    super().__init__(cfg, out, bench=bench, sources=sources)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <distft.DistFTTrainer object at 0x7f19223ea9e0>
+cfg = {'amx_gate': None, 'arm': 'DIST-FT', 'base_checkpoint': {'name': 'ink_9um hybrid_3d2d seed42 step-075000 (HF scrollpri...eed42/step-075000.pth', 'sha256': 'e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab'}, 'batch': 2, ...}
+out = '/work/distft/pt/work0/full', bench = False
+sources = [Source(name='syn', role='train', images=array([[[[ 77,  82,  86, ...,  69,  70,  64],
+         [ 79,  98, 110, ...,  ...d4524aae4025b5f14e3932f7229454', 'valid_sha256': 'd593d24b827e98f68e7406ca3094254d3e5526f62d2d037f778936ac5a1153ee'}})]
+
+    def __init__(self, cfg: dict, out: str, *, bench: bool = False, sources=None):
+        self.cfg, self.out, self.bench = cfg, out, bench
+        self.csha = config_sha256(cfg)
+        if cfg["precision"] == "bf16" and not bench:
+            g = cfg.get("amx_gate")
+            if not g:
+                raise SystemExit("bf16 training refused: no AMX gate record in the config (orchestrator gate first)")
+            if sha256_file(g["path"]) != g["sha256"]:
+                raise SystemExit("bf16 training refused: AMX gate record changed since the config was made")
+            rec = json.load(open(g["path"]))
+            if rec.get("pass") is not True:
+                raise SystemExit("bf16 training refused: the AMX gate record does not say pass: true")
+        import numpy as np
+        import random
+        import torch
+        self.np, self.random, self.torch = np, random, torch
+        th = int(cfg["threads"])
+        torch.set_num_threads(th)
+>       torch.set_num_interop_threads(1)
+E       RuntimeError: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called
+
+tools/sib/dev-distft/pinned/d2_train.py:201: RuntimeError
+----------------------------- Captured stdout call -----------------------------
+{"config": "/work/distft/pt/work0/cfg_DIST-FT_soft_11_4.json", "sha256": "f2adafad6b97e7cd5312749b5d8c35cc41fd36230614672a0793cb9c7c1159c1"}
+=========================== short test summary info ============================
+FAILED tools/sib/dev-distft/tests/test_distft.py::test_soft_loss_input_equals_official_on_binary
+FAILED tools/sib/dev-distft/tests/test_distft.py::test_hard_target_through_layer_is_bitwise_pinned
+FAILED tools/sib/dev-distft/tests/test_distft.py::test_soft_batch_and_aug_check
+FAILED tools/sib/dev-distft/tests/test_distft.py::test_null_seed_fixed_and_rev
+FAILED tools/sib/dev-distft/tests/test_distft.py::test_resume_bitwise - Runti...
+ERROR tools/sib/dev-distft/tests/test_distft.py::test_rotate_equals_pinned_on_binary
+ERROR tools/sib/dev-distft/tests/test_distft.py::test_rotate_soft_keeps_values
+5 failed, 3 passed, 2 errors in 12.86s

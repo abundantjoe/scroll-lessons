@@ -1,0 +1,137 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "arm": "DIST-FT-NULL",
+ "seed": 20260925,
+ "config_sha256": "9c5bda226b0550c4a21dd36999853a708d0ab9f8a553de007d877abf66b3591e",
+ "started_utc": "2026-09-26T00:52:06Z",
+ "finished_utc": "2026-09-26T00:57:59Z",
+ "steps": 20,
+ "finite_loss_steps": 20,
+ "losses": [
+  0.6316335201263428,
+  0.5932319164276123,
+  0.5794481635093689,
+  0.5759468078613281,
+  0.5761790871620178,
+  0.5722715854644775,
+  0.5705780982971191,
+  0.5722864270210266,
+  0.5720639228820801,
+  0.5735610723495483,
+  0.5690054893493652,
+  0.5701141357421875,
+  0.5681440234184265,
+  0.5693440437316895,
+  0.5714962482452393,
+  0.5714893937110901,
+  0.5699886083602905,
+  0.5693871974945068,
+  0.57168048620224,
+  0.5688194036483765
+ ],
+ "loss_first": 0.6316335201263428,
+ "loss_last": 0.5688194036483765,
+ "median_s_per_step": 17.259027480499867,
+ "loop_s": 348.3,
+ "wall_s": 353.7,
+ "peak_rss_kb": 7004680,
+ "strict_load": "<All keys matched successfully>",
+ "threads": {
+  "intra": 4,
+  "interop": 1
+ },
+ "sample_digest_final": "e64e68217708c484cd5c81a4e363ce460a8a88a4d092404d80e92be645264373",
+ "checks": {
+  "null_fixed_points": 0,
+  "null_patches_whose_ink_differs_from_own": 64,
+  "rot_margin_full": "per-subtile (edge sub-tiles padded, padding ignored)",
+  "subtiles_per_patch": {
+   "syn": 9
+  },
+  "distft_target": [
+   {
+    "schema": "hercules-distft-target/1",
+    "kind": "soft",
+    "value": "ref9 / 255",
+    "supervised": "registry 'valid'",
+    "pinned_rule_reproduced": true,
+    "n_supervised_px": 8847360,
+    "n_pinned_supervised_px": 6959925,
+    "n_band_px_now_supervised": 1887435,
+    "soft_sha256": "95c38a3ecfd07e2c61aab6afc9aa670a965de97a39b7a2dee0a3ed6b267225ed",
+    "valid_sha256": "15cfae29007e170d24c23cb16ea841e3047d9ef1454442055a60b9f4699169df"
+   }
+  ],
+  "distft_aug_label_value_multiset": {
+   "samples": 640,
+   "value_multiset_changed": 0
+  }
+ },
+ "meta": {
+  "sources": [
+   {
+    "name": "syn",
+    "role": "train",
+    "n": 64,
+    "size": 384,
+    "registry_sha256": "99d0a93dc59259a643c540e8e1a1cb1bdcc4ef7d997b8eaf4b6144889124eb84",
+    "kind": "pairs"
+   }
+  ],
+  "derangement": {
+   "rule": "default_rng(seed).permutation over the concatenated role=train patches, redrawn until no fixed point; patch i gets patch perm[i]'s labels",
+   "attempts": 2,
+   "fixed_points": 0,
+   "perm_sha256": "e06a168f5fb7494d417f1c94a12084abed4602358fa0511e675f919b89e4f241",
+   "perm_head": [
+    19,
+    38,
+    12,
+    17,
+    8,
+    61,
+    9,
+    20,
+    0,
+    47
+   ]
+  },
+  "distft": {
+   "label_value": "ref9 / 255",
+   "loss": "official (smoothed BCE + Dice, ignore channel), unchanged",
+   "null_seed": 20260925,
+   "pinned_commit": "8475920fa1a8dd7a753c426be0ebd592851ad884",
+   "recipe": "DIST-FT",
+   "schema": "hercules-distft-target/1",
+   "supervised": "pair-valid pixels",
+   "target": "soft",
+   "pinned_sha256": {
+    "d2_train.py": "fdbe236cc2cf46664c3d0558e58c7594220a4ce105fde3b5453d634680496f24",
+    "d2_data.py": "5b7a6a5df4f07cf75ef84b63899e531c040b0cb13d8b45b7c180ac2b10a7676b",
+    "ckpt_shards.py": "ba6db9991e14000b9ba051244c6ae2fa59928b4c6094cc64316ca559cbf3b974",
+    "contam_check.py": "0e30cabbc762979f5b197c0365815dc5915048626c6a01ffb571c643b9f1321e"
+   },
+   "wrapper_sha256": "69e5b68065245c8512221769a50aa743b8877fc9c874708adc1f886b7989f2df"
+  }
+ },
+ "resumptions": [],
+ "checkpoint_events": [
+  {
+   "event": "checkpoint",
+   "step": 10,
+   "utc": "2026-09-26T00:55:06Z",
+   "local_bytes": 414977916,
+   "seconds": 0.39
+  }
+ ],
+ "model_final": {
+  "path": "/work/distft/smoke/run_DIST-FT-NULL/model_final.pth",
+  "sha256": "36791f9a23e73bbde3d9ad826992171d826e9e5a61557283c2193758ca0c3a8a",
+  "bytes": 138363487
+ },
+ "checkpoint_registry_sha256": "fafcc89e8443217a10752498bdd86006e072698814b96f51cec54f00471c2cce",
+ "script": {
+  "path": "/home/user/dominion/tools/sib/dev-distft/pinned/d2_train.py",
+  "sha256": "fdbe236cc2cf46664c3d0558e58c7594220a4ce105fde3b5453d634680496f24"
+ }
+}

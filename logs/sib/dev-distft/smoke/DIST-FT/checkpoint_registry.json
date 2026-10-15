@@ -1,0 +1,124 @@
+{
+ "config": {
+  "amx_gate": null,
+  "arm": "DIST-FT",
+  "base_checkpoint": {
+   "name": "ink_9um hybrid_3d2d seed42 step-075000 (HF scrollprize/ink_9um rev 7109667e)",
+   "path": "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth",
+   "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+  },
+  "batch": 32,
+  "ckpt": {
+   "every": 10,
+   "remote_ref": null,
+   "shard_bytes": 90000000
+  },
+  "deterministic": true,
+  "distft": {
+   "label_value": "ref9 / 255",
+   "loss": "official (smoothed BCE + Dice, ignore channel), unchanged",
+   "null_seed": 20260925,
+   "pinned_commit": "8475920fa1a8dd7a753c426be0ebd592851ad884",
+   "recipe": "DIST-FT",
+   "schema": "hercules-distft-target/1",
+   "supervised": "pair-valid pixels",
+   "target": "soft"
+  },
+  "forward": "full",
+  "label_rule": {
+   "blank_max": 100,
+   "ink_min": 150
+  },
+  "lineage": {
+   "decl": "DECL-DEVLOOP-A1 recipe 3 (DIST-FT)",
+   "parent": "base",
+   "parent_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+  },
+  "log_every": 1,
+  "micro_batch": 32,
+  "null": false,
+  "optimizer": {
+   "betas": [
+    0.9,
+    0.999
+   ],
+   "grad_clip": 1.0,
+   "lr": 2e-05,
+   "name": "adamw",
+   "schedule": "constant",
+   "weight_decay": 3e-05
+  },
+  "precision": "fp32",
+  "rev": false,
+  "rot24": true,
+  "schema": "hercules-d2-trainer-config/1",
+  "seed": 20260925,
+  "sources": [
+   {
+    "kind": "pairs",
+    "name": "syn",
+    "path": "/work/distft/smoke/syn/registry.json",
+    "role": "train",
+    "sha256": "99d0a93dc59259a643c540e8e1a1cb1bdcc4ef7d997b8eaf4b6144889124eb84"
+   }
+  ],
+  "steps": 20,
+  "subtile": true,
+  "threads": 4,
+  "tile": 128,
+  "z": {
+   "centre_offset": 0,
+   "jitter": 2,
+   "stack_depth": 21,
+   "window": 17
+  }
+ },
+ "config_sha256": "e21fc6b8f910643e8743769bc78ebca6b1ceaf418ab32cf05371698b53bc28cd",
+ "data_registries": [
+  {
+   "n": 64,
+   "name": "syn",
+   "role": "train",
+   "sha256": "99d0a93dc59259a643c540e8e1a1cb1bdcc4ef7d997b8eaf4b6144889124eb84"
+  }
+ ],
+ "data_registry_sha256": "9b85c86d4d840ab5075e9dc87e7f6c490f6550f4f48cd5105d76bc11bbfb5eed",
+ "lineage": {
+  "base_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+  "decl": "DECL-DEVLOOP-A1 recipe 3 (DIST-FT)",
+  "parent": "base",
+  "parent_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+  "steps": 20
+ },
+ "model_final": {
+  "bytes": 138363103,
+  "path": "/work/distft/smoke/run_DIST-FT/model_final.pth",
+  "sha256": "95e13ae47e9fcb87face979c77eff3e6ebd276cecdd1f663bd1962a28fce33ae"
+ },
+ "patch_registry": {
+  "fl09_method": "tools/sib/trainer/contam_check.py (CORR-RETRACE-RULE: point-to-surface, fail-closed)",
+  "fl09_ready": true,
+  "path": "/work/distft/smoke/run_DIST-FT/patch_registry.npz",
+  "schema": "hercules-d2-patch-registry/1",
+  "sha256": "2232efc18deabd80a81362eddb1ca5803d7290e384a7d02ec64b62825937a5a2",
+  "sources": [
+   {
+    "halo_px": 64,
+    "has_mesh_xyz": true,
+    "index": 0,
+    "mesh_stride_px": 16,
+    "n": 64,
+    "n_drawn": 64,
+    "name": "syn",
+    "registry_sha256": "99d0a93dc59259a643c540e8e1a1cb1bdcc4ef7d997b8eaf4b6144889124eb84",
+    "role": "train",
+    "size_px": 384,
+    "voxel_um": 9.362
+   }
+  ]
+ },
+ "patch_registry_pool_sha256": "ba488ead65ab948be8a3b3699dd0dec388df1dd61a45d19bef01580ebbf6c203",
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "schema": "hercules-d2-checkpoint-registry/1",
+ "train_log_sha256": "7a6bacd50567909faed08519478851edb7b3fa97614b9a5566926d99f4fd9021"
+}
