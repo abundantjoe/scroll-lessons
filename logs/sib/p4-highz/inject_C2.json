@@ -1,0 +1,1156 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "material": "C2",
+ "segment": "20260701183125-w028-037",
+ "voxel_um": 2.4,
+ "T_hi": 203,
+ "regions": [
+  {
+   "tile": "r1_c13",
+   "chunk0": [
+    93,
+    893
+   ]
+  },
+  {
+   "tile": "r0_c9",
+   "chunk0": [
+    33,
+    600
+   ]
+  },
+  {
+   "tile": "r3_c19",
+   "chunk0": [
+    217,
+    1281
+   ]
+  },
+  {
+   "tile": "r6_c6",
+   "chunk0": [
+    415,
+    405
+   ]
+  },
+  {
+   "tile": "r1_c18",
+   "chunk0": [
+    66,
+    1171
+   ]
+  },
+  {
+   "tile": "r4_c14",
+   "chunk0": [
+    288,
+    918
+   ]
+  },
+  {
+   "tile": "r5_c3",
+   "chunk0": [
+    347,
+    237
+   ]
+  },
+  {
+   "tile": "r2_c8",
+   "chunk0": [
+    153,
+    552
+   ]
+  },
+  {
+   "tile": "r8_c2",
+   "chunk0": [
+    521,
+    161
+   ]
+  },
+  {
+   "tile": "r4_c17",
+   "chunk0": [
+    267,
+    1113
+   ]
+  },
+  {
+   "tile": "r1_c1",
+   "chunk0": [
+    84,
+    107
+   ]
+  },
+  {
+   "tile": "r2_c1",
+   "chunk0": [
+    178,
+    77
+   ]
+  },
+  {
+   "tile": "r8_c20",
+   "chunk0": [
+    528,
+    1303
+   ]
+  },
+  {
+   "tile": "r6_c6",
+   "chunk0": [
+    405,
+    426
+   ]
+  },
+  {
+   "tile": "r1_c8",
+   "chunk0": [
+    105,
+    524
+   ]
+  },
+  {
+   "tile": "r3_c6",
+   "chunk0": [
+    235,
+    391
+   ]
+  },
+  {
+   "tile": "r1_c18",
+   "chunk0": [
+    101,
+    1209
+   ]
+  },
+  {
+   "tile": "r3_c12",
+   "chunk0": [
+    246,
+    821
+   ]
+  },
+  {
+   "tile": "r4_c9",
+   "chunk0": [
+    262,
+    623
+   ]
+  },
+  {
+   "tile": "r0_c12",
+   "chunk0": [
+    24,
+    786
+   ]
+  }
+ ],
+ "n_regions": 20,
+ "region_side_mm": 3.6863999999999995,
+ "glyph": "H-like, 3.0 x 2.0 mm, stroke 0.4 mm",
+ "glyph_px": 498166,
+ "false_positive_letter_components_no_injection": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "model": "- Letter: a Greek capital H-like glyph, 3.0 mm tall, 2.0 mm wide, stroke 0.4 mm (DECL-P4-10 item 3 range), centred in\n  a 12 x 12 chunk region (1536 px) whose px are >= 95 % mesh-valid and whose chunks are all present.\n- Layer of thickness t (um) whose lower face is on the mesh surface (centre slice), growing towards increasing slice\n  index; per voxel the covered depth fraction f; grey increment f (g_pig - g_pap) with g_pig from pigments.json\n  (linear grey model, papyrus density 0.8 g/cm3; see pigments.py for the caveats).\n- Blur: the increment is convolved with a 3-D Gaussian of sigma 0 (ideal) or 1.0 voxel (~2.4 voxel FWHM), then added\n  to the real uint8 voxels and clipped to [0, 255].\n- Detected (pattern): the sheet-slab maximum > T_hi mask has an 8-connected component with bounding box 0.5-5 mm that\n  overlaps the glyph (the screen's letter-scale criterion). Also reported: the n_hi increment vs the control's\n  (tile p99 - tile median) gap, i.e. whether one such letter alone lifts a median tile over the hotspot bar.\n- False-positive check: the same regions without injection (letter-scale components count).",
+ "papyrus_density_g_cm3": 0.8,
+ "results": {
+  "Au (gold leaf / shell gold)": {
+   "sigma_0.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 1.0,
+      "n_hi_increment_median": 159796.0
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497758.0
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1493626.0
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2489532.0
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3485267.0
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.01
+   },
+   "sigma_1.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 2100.0
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.45,
+      "n_hi_increment_median": 74467.5
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1003753.0
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1508689.5
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1885224.0
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2514611.5
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2535999.5
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2750269.5
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3760363.0
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 4790942.0
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 4811437.0
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.05
+   }
+  },
+  "HgS (cinnabar / vermilion)": {
+   "sigma_0.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 1121.5
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.25,
+      "n_hi_increment_median": 51667.0
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 1.0,
+      "n_hi_increment_median": 496004.0
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1493626.0
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2489532.0
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3485267.0
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.05
+   },
+   "sigma_1.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 368.5
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.0,
+      "n_hi_increment_median": 1140.5
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 0.25,
+      "n_hi_increment_median": 56895.5
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 554971.0
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1469683.5
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1841473.5
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2505450.0
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2526712.5
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3121448.5
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 4314631.5
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 4586392.5
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.1
+   }
+  },
+  "Pb3O4 (red lead / minium)": {
+   "sigma_0.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 3083.0
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.85,
+      "n_hi_increment_median": 128273.5
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1493626.0
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2489532.0
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3485267.0
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.02
+   },
+   "sigma_1.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 481.5
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.0,
+      "n_hi_increment_median": 1692.5
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 0.85,
+      "n_hi_increment_median": 150078.0
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 915494.0
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1500795.0
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2050025.5
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2512075.0
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2533800.0
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3214443.5
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 4399376.0
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 4593742.0
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.05
+   }
+  },
+  "PbO (litharge / massicot)": {
+   "sigma_0.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 4526.0
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 1.0,
+      "n_hi_increment_median": 164425.5
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1493626.0
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2489532.0
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3485267.0
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.02
+   },
+   "sigma_1.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 554.0
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.0,
+      "n_hi_increment_median": 2108.0
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 1.0,
+      "n_hi_increment_median": 208064.5
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1012899.0
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1510948.5
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2126319.0
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2514863.0
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2536217.0
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3261501.0
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 4437251.5
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 4596296.5
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.05
+   }
+  },
+  "CuO (from azurite / malachite)": {
+   "sigma_0.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 82.0
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.0,
+      "n_hi_increment_median": 232.5
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 0.0,
+      "n_hi_increment_median": 3083.0
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 0.85,
+      "n_hi_increment_median": 128273.5
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 493693.0
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1487938.5
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2489532.0
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3485267.0
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.1
+   },
+   "sigma_1.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 66.0
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.0,
+      "n_hi_increment_median": 155.0
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 0.0,
+      "n_hi_increment_median": 481.5
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 0.0,
+      "n_hi_increment_median": 1694.0
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 0.25,
+      "n_hi_increment_median": 50084.5
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 917719.0
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1500868.5
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1823317.0
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2749352.0
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3816202.0
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 4338619.0
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.5
+   }
+  },
+  "CaCuSi4O10 (Egyptian blue)": {
+   "sigma_0.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 9.0
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.0,
+      "n_hi_increment_median": 27.5
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 0.0,
+      "n_hi_increment_median": 82.0
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 0.0,
+      "n_hi_increment_median": 232.5
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 0.0,
+      "n_hi_increment_median": 989.0
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 0.85,
+      "n_hi_increment_median": 132389.0
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 495348.0
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 996920.0
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2038912.5
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3485267.0
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.5
+   },
+   "sigma_1.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 0.0
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.0,
+      "n_hi_increment_median": 9.0
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 0.0,
+      "n_hi_increment_median": 66.0
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 0.0,
+      "n_hi_increment_median": 155.0
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 0.0,
+      "n_hi_increment_median": 368.5
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 0.0,
+      "n_hi_increment_median": 1695.0
+     },
+     {
+      "t_um": 1,
+      "recovery": 0.25,
+      "n_hi_increment_median": 53853.5
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 543285.5
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1629576.0
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2671775.5
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3808934.5
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 2
+   }
+  },
+  "Fe2O3 (red ochre / hematite)": {
+   "sigma_0.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 46.5
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.0,
+      "n_hi_increment_median": 104.5
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 0.0,
+      "n_hi_increment_median": 503.5
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 0.0,
+      "n_hi_increment_median": 7132.5
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 201379.0
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 497893.5
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1201350.5
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2489532.0
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3485267.0
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.2
+   },
+   "sigma_1.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 35.5
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.0,
+      "n_hi_increment_median": 74.5
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 0.0,
+      "n_hi_increment_median": 252.0
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 0.0,
+      "n_hi_increment_median": 603.0
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 0.0,
+      "n_hi_increment_median": 2981.5
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 262811.0
+     },
+     {
+      "t_um": 1,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1087762.5
+     },
+     {
+      "t_um": 2,
+      "recovery": 1.0,
+      "n_hi_increment_median": 1522215.0
+     },
+     {
+      "t_um": 5,
+      "recovery": 1.0,
+      "n_hi_increment_median": 2240666.5
+     },
+     {
+      "t_um": 10,
+      "recovery": 1.0,
+      "n_hi_increment_median": 3342030.5
+     },
+     {
+      "t_um": 20,
+      "recovery": 1.0,
+      "n_hi_increment_median": 4087143.5
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 0.5
+   }
+  },
+  "carbon ink (soot)": {
+   "sigma_0.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 0.0
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.0,
+      "n_hi_increment_median": 0.0
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 0.0,
+      "n_hi_increment_median": 9.0
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 0.0,
+      "n_hi_increment_median": 27.5
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 0.0,
+      "n_hi_increment_median": 60.5
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 0.0,
+      "n_hi_increment_median": 213.5
+     },
+     {
+      "t_um": 1,
+      "recovery": 0.0,
+      "n_hi_increment_median": 717.0
+     },
+     {
+      "t_um": 2,
+      "recovery": 0.1,
+      "n_hi_increment_median": 28595.0
+     },
+     {
+      "t_um": 5,
+      "recovery": 0.6,
+      "n_hi_increment_median": 154462.5
+     },
+     {
+      "t_um": 10,
+      "recovery": 0.85,
+      "n_hi_increment_median": 304408.5
+     },
+     {
+      "t_um": 20,
+      "recovery": 0.95,
+      "n_hi_increment_median": 531734.5
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 10
+   },
+   "sigma_1.0": {
+    "curve": [
+     {
+      "t_um": 0.01,
+      "recovery": 0.0,
+      "n_hi_increment_median": 0.0
+     },
+     {
+      "t_um": 0.02,
+      "recovery": 0.0,
+      "n_hi_increment_median": 0.0
+     },
+     {
+      "t_um": 0.05,
+      "recovery": 0.0,
+      "n_hi_increment_median": 0.0
+     },
+     {
+      "t_um": 0.1,
+      "recovery": 0.0,
+      "n_hi_increment_median": 8.5
+     },
+     {
+      "t_um": 0.2,
+      "recovery": 0.0,
+      "n_hi_increment_median": 36.0
+     },
+     {
+      "t_um": 0.5,
+      "recovery": 0.0,
+      "n_hi_increment_median": 123.0
+     },
+     {
+      "t_um": 1,
+      "recovery": 0.0,
+      "n_hi_increment_median": 321.5
+     },
+     {
+      "t_um": 2,
+      "recovery": 0.0,
+      "n_hi_increment_median": 980.0
+     },
+     {
+      "t_um": 5,
+      "recovery": 0.0,
+      "n_hi_increment_median": 14308.5
+     },
+     {
+      "t_um": 10,
+      "recovery": 0.5,
+      "n_hi_increment_median": 146558.0
+     },
+     {
+      "t_um": 20,
+      "recovery": 0.8,
+      "n_hi_increment_median": 362884.0
+     }
+    ],
+    "detection_limit_um_recovery_ge_0p8": 20
+   }
+  }
+ },
+ "utc": "2026-09-26T19:55:29Z"
+}

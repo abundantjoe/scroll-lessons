@@ -1,0 +1,678 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-16 item 2 (control strip only; no title-strip number)",
+ "material": "C2",
+ "segment": "20260701183125-w028-037",
+ "attenuation_source": "NIST X-ray mass attenuation tables (Hubbell & Seltzer) via pigments.py (pigments_ext.json); p4-purple colourants.json not available when computed; densities marked 'assumed' are assumptions",
+ "method": "inject.py unchanged (DECL-P4-6 panel): 20 real control regions per offset, H glyph 3 x 2 mm stroke 0.4 mm, layer lower face at centre + offset, linear grey model (papyrus 0.8 g/cm3), letter-scale criterion, recovery >= 0.8; offset 0 = the +-15 um slab; thickness grid 0.01-20 um (None = not detected at 20 um)",
+ "offsets_um": [
+  -60,
+  -45,
+  -30,
+  -15,
+  0,
+  15,
+  30,
+  45,
+  60
+ ],
+ "false_positives_no_injection": {
+  "-60": 0,
+  "-45": 0,
+  "-30": 0,
+  "-15": 0,
+  "0": 0,
+  "15": 0,
+  "30": 0,
+  "45": 0,
+  "60": 0
+ },
+ "mu_cm-1_78keV": {
+  "Au (gold leaf / shell gold)": 44.963359478003454,
+  "HgS (cinnabar / vermilion)": 17.12192988428257,
+  "Pb3O4 (red lead / minium)": 20.956158873613493,
+  "PbO (litharge / massicot)": 22.864885378302482,
+  "CuO (from azurite / malachite)": 4.3121188852893395,
+  "CaCuSi4O10 (Egyptian blue)": 0.9811759826469398,
+  "Fe2O3 (red ochre / hematite)": 2.5883931194082135,
+  "carbon ink (soot)": 0.2919784118832677,
+  "Br: Tyrian purple, 0 % Br loss": 1.0059978894190584,
+  "Br: Tyrian purple, 50 % Br loss": 0.6654591222655004,
+  "Br: Tyrian purple, 90 % Br loss": 0.32621321168028433,
+  "Ca: purpurissum (10 % dibromoindigo on CaCO3)": 0.7217201965491249,
+  "Al: alumina lake (10 % dye on Al(OH)3)": 0.40996230315858245,
+  "S: gypsum lake (10 % dye on CaSO4.2H2O)": 0.49214251485781385,
+  "As: orpiment As2S3": 2.7078255645669094,
+  "As: realgar As4S4": 3.0325539662145395
+ },
+ "mu_ratio_to_papyrus_0p8": {
+  "Au (gold leaf / shell gold)": 327.72185768828797,
+  "HgS (cinnabar / vermilion)": 124.79562768504363,
+  "Pb3O4 (red lead / minium)": 152.74195246534703,
+  "PbO (litharge / massicot)": 166.65397779436108,
+  "CuO (from azurite / malachite)": 31.429493437898298,
+  "CaCuSi4O10 (Egyptian blue)": 7.151441073025104,
+  "Fe2O3 (red ochre / hematite)": 18.86587237626286,
+  "carbon ink (soot)": 2.128126293456164,
+  "Br: Tyrian purple, 0 % Br loss": 7.3323590803351175,
+  "Br: Tyrian purple, 50 % Br loss": 4.85029371239836,
+  "Br: Tyrian purple, 90 % Br loss": 2.377651513931596,
+  "Ca: purpurissum (10 % dibromoindigo on CaCO3)": 5.2603605755914495,
+  "Al: alumina lake (10 % dye on Al(OH)3)": 2.9880687104580543,
+  "S: gypsum lake (10 % dye on CaSO4.2H2O)": 3.587050902980044,
+  "As: orpiment As2S3": 19.736372784819086,
+  "As: realgar As4S4": 22.103202049081954
+ },
+ "detection_limit_um": {
+  "Au (gold leaf / shell gold)": {
+   "-60": {
+    "sigma_0.0": 0.01,
+    "sigma_1.0": 0.05
+   },
+   "-45": {
+    "sigma_0.0": 0.01,
+    "sigma_1.0": 0.05
+   },
+   "-30": {
+    "sigma_0.0": 0.01,
+    "sigma_1.0": 0.05
+   },
+   "-15": {
+    "sigma_0.0": 0.01,
+    "sigma_1.0": 0.05
+   },
+   "0": {
+    "sigma_0.0": 0.01,
+    "sigma_1.0": 0.05
+   },
+   "15": {
+    "sigma_0.0": 0.01,
+    "sigma_1.0": 0.05
+   },
+   "30": {
+    "sigma_0.0": 0.01,
+    "sigma_1.0": 0.05
+   },
+   "45": {
+    "sigma_0.0": 0.01,
+    "sigma_1.0": 0.05
+   },
+   "60": {
+    "sigma_0.0": 0.01,
+    "sigma_1.0": 0.05
+   }
+  },
+  "HgS (cinnabar / vermilion)": {
+   "-60": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   },
+   "-45": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   },
+   "-30": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   },
+   "-15": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   },
+   "0": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   },
+   "15": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   },
+   "30": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   },
+   "45": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   },
+   "60": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   }
+  },
+  "Pb3O4 (red lead / minium)": {
+   "-60": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   },
+   "-45": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "-30": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "-15": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   },
+   "0": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "15": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "30": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "45": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   },
+   "60": {
+    "sigma_0.0": 0.05,
+    "sigma_1.0": 0.1
+   }
+  },
+  "PbO (litharge / massicot)": {
+   "-60": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "-45": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "-30": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "-15": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "0": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "15": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "30": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "45": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   },
+   "60": {
+    "sigma_0.0": 0.02,
+    "sigma_1.0": 0.05
+   }
+  },
+  "CuO (from azurite / malachite)": {
+   "-60": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "-45": {
+    "sigma_0.0": 0.1,
+    "sigma_1.0": 0.5
+   },
+   "-30": {
+    "sigma_0.0": 0.1,
+    "sigma_1.0": 0.5
+   },
+   "-15": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "0": {
+    "sigma_0.0": 0.1,
+    "sigma_1.0": 0.5
+   },
+   "15": {
+    "sigma_0.0": 0.1,
+    "sigma_1.0": 0.5
+   },
+   "30": {
+    "sigma_0.0": 0.1,
+    "sigma_1.0": 0.5
+   },
+   "45": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "60": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   }
+  },
+  "CaCuSi4O10 (Egyptian blue)": {
+   "-60": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "-45": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "-30": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "-15": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "0": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "15": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "30": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "45": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "60": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   }
+  },
+  "Fe2O3 (red ochre / hematite)": {
+   "-60": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "-45": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "-30": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "-15": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "0": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "15": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "30": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "45": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "60": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   }
+  },
+  "carbon ink (soot)": {
+   "-60": {
+    "sigma_0.0": 10,
+    "sigma_1.0": 20
+   },
+   "-45": {
+    "sigma_0.0": 10,
+    "sigma_1.0": 20
+   },
+   "-30": {
+    "sigma_0.0": 20,
+    "sigma_1.0": null
+   },
+   "-15": {
+    "sigma_0.0": 20,
+    "sigma_1.0": 20
+   },
+   "0": {
+    "sigma_0.0": 10,
+    "sigma_1.0": 20
+   },
+   "15": {
+    "sigma_0.0": 10,
+    "sigma_1.0": null
+   },
+   "30": {
+    "sigma_0.0": 20,
+    "sigma_1.0": null
+   },
+   "45": {
+    "sigma_0.0": 10,
+    "sigma_1.0": 20
+   },
+   "60": {
+    "sigma_0.0": 10,
+    "sigma_1.0": 20
+   }
+  },
+  "Br: Tyrian purple, 0 % Br loss": {
+   "-60": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "-45": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "-30": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "-15": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "0": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "15": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "30": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "45": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   },
+   "60": {
+    "sigma_0.0": 0.5,
+    "sigma_1.0": 2
+   }
+  },
+  "Br: Tyrian purple, 50 % Br loss": {
+   "-60": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "-45": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "-30": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "-15": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 5
+   },
+   "0": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "15": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "30": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "45": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "60": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 5
+   }
+  },
+  "Br: Tyrian purple, 90 % Br loss": {
+   "-60": {
+    "sigma_0.0": 5,
+    "sigma_1.0": 10
+   },
+   "-45": {
+    "sigma_0.0": 5,
+    "sigma_1.0": 10
+   },
+   "-30": {
+    "sigma_0.0": 5,
+    "sigma_1.0": 10
+   },
+   "-15": {
+    "sigma_0.0": 5,
+    "sigma_1.0": 10
+   },
+   "0": {
+    "sigma_0.0": 5,
+    "sigma_1.0": 10
+   },
+   "15": {
+    "sigma_0.0": 5,
+    "sigma_1.0": 10
+   },
+   "30": {
+    "sigma_0.0": 5,
+    "sigma_1.0": 10
+   },
+   "45": {
+    "sigma_0.0": 5,
+    "sigma_1.0": 10
+   },
+   "60": {
+    "sigma_0.0": 5,
+    "sigma_1.0": 10
+   }
+  },
+  "Ca: purpurissum (10 % dibromoindigo on CaCO3)": {
+   "-60": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "-45": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "-30": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "-15": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "0": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "15": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "30": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "45": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   },
+   "60": {
+    "sigma_0.0": 1,
+    "sigma_1.0": 2
+   }
+  },
+  "Al: alumina lake (10 % dye on Al(OH)3)": {
+   "-60": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "-45": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "-30": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "-15": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "0": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "15": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "30": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "45": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "60": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   }
+  },
+  "S: gypsum lake (10 % dye on CaSO4.2H2O)": {
+   "-60": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "-45": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "-30": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "-15": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "0": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "15": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "30": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "45": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   },
+   "60": {
+    "sigma_0.0": 2,
+    "sigma_1.0": 5
+   }
+  },
+  "As: orpiment As2S3": {
+   "-60": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "-45": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "-30": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "-15": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "0": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "15": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "30": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "45": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "60": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   }
+  },
+  "As: realgar As4S4": {
+   "-60": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "-45": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "-30": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "-15": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "0": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "15": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "30": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "45": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   },
+   "60": {
+    "sigma_0.0": 0.2,
+    "sigma_1.0": 0.5
+   }
+  }
+ },
+ "caveat": "linear-grey model is optimistic: the control's real carbon ink (10-20 um per Angelotti et al.) is not detected by this criterion, so real limits may be higher by up to ~(mu_ink x 20 um)/(mu_class) (REPORT.md section 5)",
+ "utc": "2026-09-27T06:07:26Z"
+}

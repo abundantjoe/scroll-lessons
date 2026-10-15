@@ -1,0 +1,1200 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "orchestrator addenda to DECL-P4-6-A1/A2 and DECL-P4-12 (pigment physics; numbers only)",
+ "source": "NIST XCOM / X-ray mass attenuation coefficients (Hubbell & Seltzer, NISTIR 5632), element tables stored as data/sib/p4-highz/nist_zNN.html; compounds by the mixture rule",
+ "papyrus_model": {
+  "mass_fractions": {
+   "C": 0.7,
+   "O": 0.25,
+   "H": 0.05
+  },
+  "densities_g_cm3": [
+   0.4,
+   0.8,
+   1.2
+  ]
+ },
+ "model": "- grey g is linear in the linear attenuation coefficient mu: g = g_void + (g_pap - g_void) * mu / mu_pap, with\n  g_void and g_pap the two modes of the control's sheet+gap voxel histogram (voids between/inside sheets, papyrus).\n- A pigment layer of thickness t on the recto fills a fraction f = t / voxel of a voxel otherwise papyrus:\n  g = g_pap + f (g_pig - g_pap), g_pig unclipped. Voxel > T_hi requires f > (T_hi - g_pap) / (g_pig - g_pap).\n- No point-spread blur and no phase-contrast edge enhancement are modelled: blur of FWHM ~2 voxels roughly doubles\n  the needed t for layers thinner than the blur; phase contrast (22 cm propagation) adds edge overshoot. So t_min is\n  a lower bound for an ideal system, uncertain to about a factor 2-3.\n- Carbonised papyrus composition and density are not measured here: C 0.70, O 0.25, H 0.05 by mass, density\n  0.4 / 0.8 / 1.2 g/cm3 bracket the plausible range; all results are given for the three densities.",
+ "materials": {
+  "C": {
+   "voxel_um": 2.258,
+   "energy_keV": 78.0,
+   "g_void_mode": 39,
+   "g_papyrus_mode": 109,
+   "T_hi": 233,
+   "pigments": {
+    "Au (gold leaf / shell gold)": {
+     "mu_cm-1": 44.963359478003454,
+     "density": 19.3,
+     "note": "inert; leaf is sub-micron",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 655.4437153765759,
+       "grey_full_voxel_unclipped": 45920.060076360314,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.0027067699327042467,
+       "t_min_um_ideal": 0.006111886508046189,
+       "t_min_um_with_2vox_blur_x2": 0.012223773016092378
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 327.72185768828797,
+       "grey_full_voxel_unclipped": 22979.530038180157,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.005421824496108918,
+       "t_min_um_ideal": 0.012242479712213938,
+       "t_min_um_with_2vox_blur_x2": 0.024484959424427875
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 218.48123845885866,
+       "grey_full_voxel_unclipped": 15332.686692120105,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.008145201783756054,
+       "t_min_um_ideal": 0.01839186562772117,
+       "t_min_um_with_2vox_blur_x2": 0.03678373125544234
+      }
+     }
+    },
+    "HgS (cinnabar / vermilion)": {
+     "mu_cm-1": 17.12192988428257,
+     "density": 8.1,
+     "note": "stable at 300-400 C",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 249.59125537008725,
+       "grey_full_voxel_unclipped": 17510.387875906108,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.007125868401088278,
+       "t_min_um_ideal": 0.01609021084965733,
+       "t_min_um_with_2vox_blur_x2": 0.03218042169931466
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 124.79562768504363,
+       "grey_full_voxel_unclipped": 8774.693937953054,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.014309298353697725,
+       "t_min_um_ideal": 0.03231039568264946,
+       "t_min_um_with_2vox_blur_x2": 0.06462079136529893
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 83.19708512336243,
+       "grey_full_voxel_unclipped": 5862.79595863537,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.021550990144845027,
+       "t_min_um_ideal": 0.04866213574706007,
+       "t_min_um_with_2vox_blur_x2": 0.09732427149412014
+      }
+     }
+    },
+    "Pb3O4 (red lead / minium)": {
+     "mu_cm-1": 20.956158873613493,
+     "density": 8.9,
+     "note": "-> PbO above ~500 C",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 305.48390493069405,
+       "grey_full_voxel_unclipped": 21422.873345148582,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.005817806927534578,
+       "t_min_um_ideal": 0.013136608042373077,
+       "t_min_um_with_2vox_blur_x2": 0.026273216084746153
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 152.74195246534703,
+       "grey_full_voxel_unclipped": 10730.936672574291,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.011673953989969312,
+       "t_min_um_ideal": 0.026359788109350708,
+       "t_min_um_with_2vox_blur_x2": 0.052719576218701415
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 101.82796831023136,
+       "grey_full_voxel_unclipped": 7166.957781716195,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.017568821440279072,
+       "t_min_um_ideal": 0.03967039881215014,
+       "t_min_um_with_2vox_blur_x2": 0.07934079762430028
+      }
+     }
+    },
+    "PbO (litharge / massicot)": {
+     "mu_cm-1": 22.864885378302482,
+     "density": 9.5,
+     "note": "",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 333.30795558872217,
+       "grey_full_voxel_unclipped": 23370.556891210552,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.005330683607289148,
+       "t_min_um_ideal": 0.012036683585258896,
+       "t_min_um_with_2vox_blur_x2": 0.024073367170517793
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 166.65397779436108,
+       "grey_full_voxel_unclipped": 11704.778445605276,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.010693546843937432,
+       "t_min_um_ideal": 0.02414602877361072,
+       "t_min_um_with_2vox_blur_x2": 0.04829205754722144
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 111.1026518629074,
+       "grey_full_voxel_unclipped": 7816.185630403517,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.016088881979284552,
+       "t_min_um_ideal": 0.03632869550922452,
+       "t_min_um_with_2vox_blur_x2": 0.07265739101844904
+      }
+     }
+    },
+    "CuO (from azurite / malachite)": {
+     "mu_cm-1": 4.3121188852893395,
+     "density": 6.3,
+     "note": "decomposition product",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 62.858986875796596,
+       "grey_full_voxel_unclipped": 4439.129081305762,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.028636559712581933,
+       "t_min_um_ideal": 0.06466135183101,
+       "t_min_um_with_2vox_blur_x2": 0.12932270366202
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 31.429493437898298,
+       "grey_full_voxel_unclipped": 2239.064540652881,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.058214198505925574,
+       "t_min_um_ideal": 0.13144766022637994,
+       "t_min_um_with_2vox_blur_x2": 0.2628953204527599
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 20.952995625265533,
+       "grey_full_voxel_unclipped": 1505.7096937685874,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.08878008118166955,
+       "t_min_um_ideal": 0.20046542330820985,
+       "t_min_um_with_2vox_blur_x2": 0.4009308466164197
+      }
+     }
+    },
+    "CaCuSi4O10 (Egyptian blue)": {
+     "mu_cm-1": 0.9811759826469398,
+     "density": 3.07,
+     "note": "stable to ~1000 C",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 14.302882146050209,
+       "grey_full_voxel_unclipped": 1040.2017502235146,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.13316126174616458,
+       "t_min_um_ideal": 0.30067812902283964,
+       "t_min_um_with_2vox_blur_x2": 0.6013562580456793
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 7.151441073025104,
+       "grey_full_voxel_unclipped": 539.6008751117573,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.28796968879317136,
+       "t_min_um_ideal": 0.650235557294981,
+       "t_min_um_with_2vox_blur_x2": 1.300471114589962
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 4.7676273820167365,
+       "grey_full_voxel_unclipped": 372.7339167411716,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.4701708507279084,
+       "t_min_um_ideal": 1.061645780943617,
+       "t_min_um_with_2vox_blur_x2": 2.123291561887234
+      }
+     }
+    },
+    "Fe2O3 (red ochre / hematite)": {
+     "mu_cm-1": 2.5883931194082135,
+     "density": 5.24,
+     "note": "weak",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 37.73174475252572,
+       "grey_full_voxel_unclipped": 2680.2221326768004,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.048226093896799334,
+       "t_min_um_ideal": 0.1088945200189729,
+       "t_min_um_with_2vox_blur_x2": 0.2177890400379458
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 18.86587237626286,
+       "grey_full_voxel_unclipped": 1359.6110663384002,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.09915152947035182,
+       "t_min_um_ideal": 0.2238841535440544,
+       "t_min_um_with_2vox_blur_x2": 0.4477683070881088
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 12.577248250841908,
+       "grey_full_voxel_unclipped": 919.4073775589336,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.1530094658978874,
+       "t_min_um_ideal": 0.34549537399742974,
+       "t_min_um_with_2vox_blur_x2": 0.6909907479948595
+      }
+     }
+    },
+    "carbon ink (soot)": {
+     "mu_cm-1": 0.2919784118832677,
+     "density": 1.8,
+     "note": "reference: black ink",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 4.256252586912328,
+       "grey_full_voxel_unclipped": 336.93768108386297,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.5440083421502294,
+       "t_min_um_ideal": 1.228370836575218,
+       "t_min_um_with_2vox_blur_x2": 2.456741673150436
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 2.128126293456164,
+       "grey_full_voxel_unclipped": 187.96884054193148,
+       "full_voxel_exceeds_T_hi": false,
+       "min_fill_fraction": null,
+       "t_min_um_ideal": null,
+       "t_min_um_with_2vox_blur_x2": null
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 1.4187508623041096,
+       "grey_full_voxel_unclipped": 138.3125603612877,
+       "full_voxel_exceeds_T_hi": false,
+       "min_fill_fraction": null,
+       "t_min_um_ideal": null,
+       "t_min_um_with_2vox_blur_x2": null
+      }
+     }
+    },
+    "Br: Tyrian purple, 0 % Br loss": {
+     "mu_cm-1": 1.0059978894190584,
+     "density": 1.7,
+     "note": "density assumed 1.7 (indigo 1.35-1.5; no measured value used)",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 14.664718160670235,
+       "grey_full_voxel_unclipped": 1065.5302712469165,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.12963520729809808,
+       "t_min_um_ideal": 0.29271629807910543,
+       "t_min_um_with_2vox_blur_x2": 0.5854325961582109
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 7.3323590803351175,
+       "grey_full_voxel_unclipped": 552.2651356234583,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.279742280713308,
+       "t_min_um_ideal": 0.6316580698506494,
+       "t_min_um_with_2vox_blur_x2": 1.2633161397012989
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 4.8882393868900795,
+       "grey_full_voxel_unclipped": 381.1767570823056,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.4555862937352241,
+       "t_min_um_ideal": 1.028713851254136,
+       "t_min_um_with_2vox_blur_x2": 2.057427702508272
+      }
+     }
+    },
+    "Br: Tyrian purple, 50 % Br loss": {
+     "mu_cm-1": 0.6654591222655004,
+     "density": 1.55,
+     "note": "Br 2 -> 1 atom (H substituted); density assumed",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 9.70058742479672,
+       "grey_full_voxel_unclipped": 718.0411197357704,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.20359873246948715,
+       "t_min_um_ideal": 0.459725937916102,
+       "t_min_um_with_2vox_blur_x2": 0.919451875832204
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 4.85029371239836,
+       "grey_full_voxel_unclipped": 378.5205598678852,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.46007621852961006,
+       "t_min_um_ideal": 1.0388521014398595,
+       "t_min_um_with_2vox_blur_x2": 2.077704202879719
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 3.2335291415989067,
+       "grey_full_voxel_unclipped": 265.3470399119235,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.7931074363150983,
+       "t_min_um_ideal": 1.790836591199492,
+       "t_min_um_with_2vox_blur_x2": 3.581673182398984
+      }
+     }
+    },
+    "Br: Tyrian purple, 90 % Br loss": {
+     "mu_cm-1": 0.32621321168028433,
+     "density": 1.4,
+     "note": "Br 2 -> 0.2 atom; density assumed",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 4.755303027863192,
+       "grey_full_voxel_unclipped": 371.87121195042346,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.47171388255091984,
+       "t_min_um_ideal": 1.065129946799977,
+       "t_min_um_with_2vox_blur_x2": 2.130259893599954
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 2.377651513931596,
+       "grey_full_voxel_unclipped": 205.43560597521173,
+       "full_voxel_exceeds_T_hi": false,
+       "min_fill_fraction": null,
+       "t_min_um_ideal": null,
+       "t_min_um_with_2vox_blur_x2": null
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 1.585101009287731,
+       "grey_full_voxel_unclipped": 149.95707065014116,
+       "full_voxel_exceeds_T_hi": false,
+       "min_fill_fraction": null,
+       "t_min_um_ideal": null,
+       "t_min_um_with_2vox_blur_x2": null
+      }
+     }
+    },
+    "Ca: purpurissum (10 % dibromoindigo on CaCO3)": {
+     "mu_cm-1": 0.7217201965491249,
+     "density": 2.5,
+     "note": "chalk carrier; density assumed 2.5 (calcite 2.71)",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 10.520721151182899,
+       "grey_full_voxel_unclipped": 775.4504805828029,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.18606033548293566,
+       "t_min_um_ideal": 0.42012423752046874,
+       "t_min_um_with_2vox_blur_x2": 0.8402484750409375
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 5.2603605755914495,
+       "grey_full_voxel_unclipped": 407.22524029140146,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.41579310952633414,
+       "t_min_um_ideal": 0.9388608413104624,
+       "t_min_um_with_2vox_blur_x2": 1.8777216826209249
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 3.5069070503943003,
+       "grey_full_voxel_unclipped": 284.483493527601,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.7066191668933044,
+       "t_min_um_ideal": 1.5955460788450813,
+       "t_min_um_with_2vox_blur_x2": 3.1910921576901625
+      }
+     }
+    },
+    "Al: alumina lake (10 % dye on Al(OH)3)": {
+     "mu_cm-1": 0.40996230315858245,
+     "density": 2.2,
+     "note": "gibbsite 2.42; density assumed 2.2",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 5.976137420916109,
+       "grey_full_voxel_unclipped": 457.32961946412763,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.3559846566902991,
+       "t_min_um_ideal": 0.8038133548066954,
+       "t_min_um_with_2vox_blur_x2": 1.6076267096133907
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 2.9880687104580543,
+       "grey_full_voxel_unclipped": 248.16480973206382,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.8910298532994019,
+       "t_min_um_ideal": 2.0119454087500492,
+       "t_min_um_with_2vox_blur_x2": 4.0238908175000985
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 1.9920458069720366,
+       "grey_full_voxel_unclipped": 178.44320648804256,
+       "full_voxel_exceeds_T_hi": false,
+       "min_fill_fraction": null,
+       "t_min_um_ideal": null,
+       "t_min_um_with_2vox_blur_x2": null
+      }
+     }
+    },
+    "S: gypsum lake (10 % dye on CaSO4.2H2O)": {
+     "mu_cm-1": 0.49214251485781385,
+     "density": 2.1,
+     "note": "gypsum 2.32; density assumed 2.1",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 7.174101805960088,
+       "grey_full_voxel_unclipped": 541.1871264172062,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.2869127570456558,
+       "t_min_um_ideal": 0.6478490054090907,
+       "t_min_um_with_2vox_blur_x2": 1.2956980108181815
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 3.587050902980044,
+       "grey_full_voxel_unclipped": 290.0935632086031,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.6847289202497133,
+       "t_min_um_ideal": 1.5461179019238527,
+       "t_min_um_with_2vox_blur_x2": 3.0922358038477054
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 2.391367268653363,
+       "grey_full_voxel_unclipped": 206.3957088057354,
+       "full_voxel_exceeds_T_hi": false,
+       "min_fill_fraction": null,
+       "t_min_um_ideal": null,
+       "t_min_um_with_2vox_blur_x2": null
+      }
+     }
+    },
+    "As: orpiment As2S3": {
+     "mu_cm-1": 2.7078255645669094,
+     "density": 3.49,
+     "note": "",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 39.47274556963817,
+       "grey_full_voxel_unclipped": 2802.092189874672,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.046043726414642556,
+       "t_min_um_ideal": 0.10396673424426289,
+       "t_min_um_with_2vox_blur_x2": 0.20793346848852579
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 19.736372784819086,
+       "grey_full_voxel_unclipped": 1420.546094937336,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.0945449042764483,
+       "t_min_um_ideal": 0.21348239385622025,
+       "t_min_um_with_2vox_blur_x2": 0.4269647877124405
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 13.15758185654606,
+       "grey_full_voxel_unclipped": 960.0307299582241,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.1457056668283729,
+       "t_min_um_ideal": 0.32900339569846604,
+       "t_min_um_with_2vox_blur_x2": 0.6580067913969321
+      }
+     }
+    },
+    "As: realgar As4S4": {
+     "mu_cm-1": 3.0325539662145395,
+     "density": 3.56,
+     "note": "",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 44.20640409816391,
+       "grey_full_voxel_unclipped": 3133.4482868714736,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.040999213158399585,
+       "t_min_um_ideal": 0.09257622331166626,
+       "t_min_um_with_2vox_blur_x2": 0.18515244662333252
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 22.103202049081954,
+       "grey_full_voxel_unclipped": 1586.2241434357368,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.08394122215711967,
+       "t_min_um_ideal": 0.18953927963077621,
+       "t_min_um_with_2vox_blur_x2": 0.37907855926155243
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 14.735468032721306,
+       "grey_full_voxel_unclipped": 1070.4827622904913,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.1289674707267774,
+       "t_min_um_ideal": 0.29120854890106335,
+       "t_min_um_with_2vox_blur_x2": 0.5824170978021267
+      }
+     }
+    }
+   }
+  },
+  "C2": {
+   "voxel_um": 2.4,
+   "energy_keV": 78.0,
+   "g_void_mode": 42,
+   "g_papyrus_mode": 112,
+   "T_hi": 203,
+   "pigments": {
+    "Au (gold leaf / shell gold)": {
+     "mu_cm-1": 44.963359478003454,
+     "density": 19.3,
+     "note": "inert; leaf is sub-micron",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 655.4437153765759,
+       "grey_full_voxel_unclipped": 45923.060076360314,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.001986419869968439,
+       "t_min_um_ideal": 0.004767407687924254,
+       "t_min_um_with_2vox_blur_x2": 0.009534815375848507
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 327.72185768828797,
+       "grey_full_voxel_unclipped": 22982.530038180157,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.003978919589886383,
+       "t_min_um_ideal": 0.009549407015727318,
+       "t_min_um_with_2vox_blur_x2": 0.019098814031454636
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 218.48123845885866,
+       "grey_full_voxel_unclipped": 15335.686692120105,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.005977527115498395,
+       "t_min_um_ideal": 0.014346065077196149,
+       "t_min_um_with_2vox_blur_x2": 0.028692130154392297
+      }
+     }
+    },
+    "HgS (cinnabar / vermilion)": {
+     "mu_cm-1": 17.12192988428257,
+     "density": 8.1,
+     "note": "stable at 300-400 C",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 249.59125537008725,
+       "grey_full_voxel_unclipped": 17513.387875906108,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.005229467939508333,
+       "t_min_um_ideal": 0.012550723054819999,
+       "t_min_um_with_2vox_blur_x2": 0.025101446109639998
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 124.79562768504363,
+       "grey_full_voxel_unclipped": 8777.693937953054,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.010501178630536234,
+       "t_min_um_ideal": 0.02520282871328696,
+       "t_min_um_with_2vox_blur_x2": 0.05040565742657392
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 83.19708512336243,
+       "grey_full_voxel_unclipped": 5865.79595863537,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.015815645993394335,
+       "t_min_um_ideal": 0.0379575503841464,
+       "t_min_um_with_2vox_blur_x2": 0.0759151007682928
+      }
+     }
+    },
+    "Pb3O4 (red lead / minium)": {
+     "mu_cm-1": 20.956158873613493,
+     "density": 8.9,
+     "note": "-> PbO above ~500 C",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 305.48390493069405,
+       "grey_full_voxel_unclipped": 21425.873345148582,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.004269519600045537,
+       "t_min_um_ideal": 0.010246847040109289,
+       "t_min_um_with_2vox_blur_x2": 0.020493694080218578
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 152.74195246534703,
+       "grey_full_voxel_unclipped": 10733.936672574291,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.008567175911993607,
+       "t_min_um_ideal": 0.020561222188784655,
+       "t_min_um_with_2vox_blur_x2": 0.04112244437756931
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 101.82796831023136,
+       "grey_full_voxel_unclipped": 7169.957781716195,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.012893247992462865,
+       "t_min_um_ideal": 0.030943795181910875,
+       "t_min_um_with_2vox_blur_x2": 0.06188759036382175
+      }
+     }
+    },
+    "PbO (litharge / massicot)": {
+     "mu_cm-1": 22.864885378302482,
+     "density": 9.5,
+     "note": "",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 333.30795558872217,
+       "grey_full_voxel_unclipped": 23373.556891210552,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.003912033937607359,
+       "t_min_um_ideal": 0.009388881450257661,
+       "t_min_um_with_2vox_blur_x2": 0.018777762900515322
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 166.65397779436108,
+       "grey_full_voxel_unclipped": 11707.778445605276,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.007847683570954084,
+       "t_min_um_ideal": 0.0188344405702898,
+       "t_min_um_with_2vox_blur_x2": 0.0376688811405796
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 111.1026518629074,
+       "grey_full_voxel_unclipped": 7819.185630403517,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.01180716338802334,
+       "t_min_um_ideal": 0.028337192131256014,
+       "t_min_um_with_2vox_blur_x2": 0.05667438426251203
+      }
+     }
+    },
+    "CuO (from azurite / malachite)": {
+     "mu_cm-1": 4.3121188852893395,
+     "density": 6.3,
+     "note": "decomposition product",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 62.858986875796596,
+       "grey_full_voxel_unclipped": 4442.129081305762,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.021015539789072224,
+       "t_min_um_ideal": 0.050437295493773335,
+       "t_min_um_with_2vox_blur_x2": 0.10087459098754667
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 31.429493437898298,
+       "grey_full_voxel_unclipped": 2242.064540652881,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.04272171019386474,
+       "t_min_um_ideal": 0.10253210446527537,
+       "t_min_um_with_2vox_blur_x2": 0.20506420893055075
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 20.952995625265533,
+       "grey_full_voxel_unclipped": 1508.7096937685874,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.06515312409299942,
+       "t_min_um_ideal": 0.15636749782319861,
+       "t_min_um_with_2vox_blur_x2": 0.31273499564639723
+      }
+     }
+    },
+    "CaCuSi4O10 (Egyptian blue)": {
+     "mu_cm-1": 0.9811759826469398,
+     "density": 3.07,
+     "note": "stable to ~1000 C",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 14.302882146050209,
+       "grey_full_voxel_unclipped": 1043.2017502235146,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.09772318402339497,
+       "t_min_um_ideal": 0.23453564165614793,
+       "t_min_um_with_2vox_blur_x2": 0.46907128331229586
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 7.151441073025104,
+       "grey_full_voxel_unclipped": 542.6008751117573,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.21133259419498865,
+       "t_min_um_ideal": 0.5071982260679727,
+       "t_min_um_with_2vox_blur_x2": 1.0143964521359454
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 4.7676273820167365,
+       "grey_full_voxel_unclipped": 375.7339167411716,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.3450447372277392,
+       "t_min_um_ideal": 0.828107369346574,
+       "t_min_um_with_2vox_blur_x2": 1.656214738693148
+      }
+     }
+    },
+    "Fe2O3 (red ochre / hematite)": {
+     "mu_cm-1": 2.5883931194082135,
+     "density": 5.24,
+     "note": "weak",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 37.73174475252572,
+       "grey_full_voxel_unclipped": 2683.2221326768004,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.03539173019845757,
+       "t_min_um_ideal": 0.08494015247629817,
+       "t_min_um_with_2vox_blur_x2": 0.16988030495259634
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 18.86587237626286,
+       "grey_full_voxel_unclipped": 1362.6110663384002,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.07276442888550012,
+       "t_min_um_ideal": 0.1746346293252003,
+       "t_min_um_with_2vox_blur_x2": 0.3492692586504006
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 12.577248250841908,
+       "grey_full_voxel_unclipped": 922.4073775589336,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.11228920481215929,
+       "t_min_um_ideal": 0.2694940915491823,
+       "t_min_um_with_2vox_blur_x2": 0.5389881830983646
+      }
+     }
+    },
+    "carbon ink (soot)": {
+     "mu_cm-1": 0.2919784118832677,
+     "density": 1.8,
+     "note": "reference: black ink",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 4.256252586912328,
+       "grey_full_voxel_unclipped": 339.93768108386297,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.39923192851347483,
+       "t_min_um_ideal": 0.9581566284323395,
+       "t_min_um_with_2vox_blur_x2": 1.916313256864679
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 2.128126293456164,
+       "grey_full_voxel_unclipped": 190.96884054193148,
+       "full_voxel_exceeds_T_hi": false,
+       "min_fill_fraction": null,
+       "t_min_um_ideal": null,
+       "t_min_um_with_2vox_blur_x2": null
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 1.4187508623041096,
+       "grey_full_voxel_unclipped": 141.3125603612877,
+       "full_voxel_exceeds_T_hi": false,
+       "min_fill_fraction": null,
+       "t_min_um_ideal": null,
+       "t_min_um_with_2vox_blur_x2": null
+      }
+     }
+    },
+    "Br: Tyrian purple, 0 % Br loss": {
+     "mu_cm-1": 1.0059978894190584,
+     "density": 1.7,
+     "note": "density assumed 1.7 (indigo 1.35-1.5; no measured value used)",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 14.664718160670235,
+       "grey_full_voxel_unclipped": 1068.5302712469165,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.09513551503328165,
+       "t_min_um_ideal": 0.22832523607987593,
+       "t_min_um_with_2vox_blur_x2": 0.45665047215975185
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 7.3323590803351175,
+       "grey_full_voxel_unclipped": 555.2651356234583,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.2052947382654115,
+       "t_min_um_ideal": 0.4927073718369876,
+       "t_min_um_with_2vox_blur_x2": 0.9854147436739752
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 4.8882393868900795,
+       "grey_full_voxel_unclipped": 384.1767570823056,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.33434155427343054,
+       "t_min_um_ideal": 0.8024197302562333,
+       "t_min_um_with_2vox_blur_x2": 1.6048394605124665
+      }
+     }
+    },
+    "Br: Tyrian purple, 50 % Br loss": {
+     "mu_cm-1": 0.6654591222655004,
+     "density": 1.55,
+     "note": "Br 2 -> 1 atom (H substituted); density assumed",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 9.70058742479672,
+       "grey_full_voxel_unclipped": 721.0411197357704,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.14941519882841395,
+       "t_min_um_ideal": 0.3585964771881935,
+       "t_min_um_with_2vox_blur_x2": 0.717192954376387
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 4.85029371239836,
+       "grey_full_voxel_unclipped": 381.5205598678852,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.3376365797273751,
+       "t_min_um_ideal": 0.8103277913457002,
+       "t_min_um_with_2vox_blur_x2": 1.6206555826914004
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 3.2335291415989067,
+       "grey_full_voxel_unclipped": 268.3470399119235,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.5820385218118866,
+       "t_min_um_ideal": 1.396892452348528,
+       "t_min_um_with_2vox_blur_x2": 2.793784904697056
+      }
+     }
+    },
+    "Br: Tyrian purple, 90 % Br loss": {
+     "mu_cm-1": 0.32621321168028433,
+     "density": 1.4,
+     "note": "Br 2 -> 0.2 atom; density assumed",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 4.755303027863192,
+       "grey_full_voxel_unclipped": 374.87121195042346,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.3461771234849492,
+       "t_min_um_ideal": 0.8308250963638781,
+       "t_min_um_with_2vox_blur_x2": 1.6616501927277563
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 2.377651513931596,
+       "grey_full_voxel_unclipped": 208.43560597521173,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.9436348647344123,
+       "t_min_um_ideal": 2.2647236753625895,
+       "t_min_um_with_2vox_blur_x2": 4.529447350725179
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 1.585101009287731,
+       "grey_full_voxel_unclipped": 152.95707065014116,
+       "full_voxel_exceeds_T_hi": false,
+       "min_fill_fraction": null,
+       "t_min_um_ideal": null,
+       "t_min_um_with_2vox_blur_x2": null
+      }
+     }
+    },
+    "Ca: purpurissum (10 % dibromoindigo on CaCO3)": {
+     "mu_cm-1": 0.7217201965491249,
+     "density": 2.5,
+     "note": "chalk carrier; density assumed 2.5 (calcite 2.71)",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 10.520721151182899,
+       "grey_full_voxel_unclipped": 778.4504805828029,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.13654427845925116,
+       "t_min_um_ideal": 0.3277062683022028,
+       "t_min_um_with_2vox_blur_x2": 0.6554125366044056
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 5.2603605755914495,
+       "grey_full_voxel_unclipped": 410.22524029140146,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.3051384916685194,
+       "t_min_um_ideal": 0.7323323800044466,
+       "t_min_um_with_2vox_blur_x2": 1.4646647600088931
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 3.5069070503943003,
+       "grey_full_voxel_unclipped": 287.483493527601,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.5185672918329896,
+       "t_min_um_ideal": 1.2445615003991748,
+       "t_min_um_with_2vox_blur_x2": 2.4891230007983496
+      }
+     }
+    },
+    "Al: alumina lake (10 % dye on Al(OH)3)": {
+     "mu_cm-1": 0.40996230315858245,
+     "density": 2.2,
+     "note": "gibbsite 2.42; density assumed 2.2",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 5.976137420916109,
+       "grey_full_voxel_unclipped": 460.32961946412763,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.2612468045065905,
+       "t_min_um_ideal": 0.6269923308158172,
+       "t_min_um_with_2vox_blur_x2": 1.2539846616316344
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 2.9880687104580543,
+       "grey_full_voxel_unclipped": 251.16480973206382,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.6539009407277869,
+       "t_min_um_ideal": 1.5693622577466886,
+       "t_min_um_with_2vox_blur_x2": 3.138724515493377
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 1.9920458069720366,
+       "grey_full_voxel_unclipped": 181.44320648804256,
+       "full_voxel_exceeds_T_hi": false,
+       "min_fill_fraction": null,
+       "t_min_um_ideal": null,
+       "t_min_um_with_2vox_blur_x2": null
+      }
+     }
+    },
+    "S: gypsum lake (10 % dye on CaSO4.2H2O)": {
+     "mu_cm-1": 0.49214251485781385,
+     "density": 2.1,
+     "note": "gypsum 2.32; density assumed 2.1",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 7.174101805960088,
+       "grey_full_voxel_unclipped": 544.1871264172062,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.21055694267060224,
+       "t_min_um_ideal": 0.5053366624094453,
+       "t_min_um_with_2vox_blur_x2": 1.0106733248188906
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 3.587050902980044,
+       "grey_full_voxel_unclipped": 293.0935632086031,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.5025026753445476,
+       "t_min_um_ideal": 1.2060064208269143,
+       "t_min_um_with_2vox_blur_x2": 2.4120128416538287
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 2.391367268653363,
+       "grey_full_voxel_unclipped": 209.3957088057354,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.934332745413946,
+       "t_min_um_ideal": 2.24239858899347,
+       "t_min_um_with_2vox_blur_x2": 4.48479717798694
+      }
+     }
+    },
+    "As: orpiment As2S3": {
+     "mu_cm-1": 2.7078255645669094,
+     "density": 3.49,
+     "note": "",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 39.47274556963817,
+       "grey_full_voxel_unclipped": 2805.092189874672,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.03379015406235865,
+       "t_min_um_ideal": 0.08109636974966075,
+       "t_min_um_with_2vox_blur_x2": 0.1621927394993215
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 19.736372784819086,
+       "grey_full_voxel_unclipped": 1423.546094937336,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.06938376039642577,
+       "t_min_um_ideal": 0.16652102495142185,
+       "t_min_um_with_2vox_blur_x2": 0.3330420499028437
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 13.15758185654606,
+       "grey_full_voxel_unclipped": 963.0307299582241,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.10692915872082205,
+       "t_min_um_ideal": 0.2566299809299729,
+       "t_min_um_with_2vox_blur_x2": 0.5132599618599458
+      }
+     }
+    },
+    "As: realgar As4S4": {
+     "mu_cm-1": 3.0325539662145395,
+     "density": 3.56,
+     "note": "",
+     "by_papyrus_density": {
+      "0.4": {
+       "mu_pap_cm-1": 0.06859987886552607,
+       "mu_ratio_pigment_over_papyrus": 44.20640409816391,
+       "grey_full_voxel_unclipped": 3136.4482868714736,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.030088132237212597,
+       "t_min_um_ideal": 0.07221151736931022,
+       "t_min_um_with_2vox_blur_x2": 0.14442303473862045
+      },
+      "0.8": {
+       "mu_pap_cm-1": 0.13719975773105214,
+       "mu_ratio_pigment_over_papyrus": 22.103202049081954,
+       "grey_full_voxel_unclipped": 1589.2241434357368,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.06160202593788621,
+       "t_min_um_ideal": 0.1478448622509269,
+       "t_min_um_with_2vox_blur_x2": 0.2956897245018538
+      },
+      "1.2": {
+       "mu_pap_cm-1": 0.20579963659657818,
+       "mu_ratio_pigment_over_papyrus": 14.735468032721306,
+       "grey_full_voxel_unclipped": 1073.4827622904913,
+       "full_voxel_exceeds_T_hi": true,
+       "min_fill_fraction": 0.09464548254948986,
+       "t_min_um_ideal": 0.22714915811877565,
+       "t_min_um_with_2vox_blur_x2": 0.4542983162375513
+      }
+     }
+    }
+   }
+  }
+ },
+ "mu_rho_cm2_g": {
+  "Au": {
+   "74.0": 2.6620144577360927,
+   "78.0": 2.329707744974272,
+   "110.0": 4.058406007781851,
+   "137.0": 2.336427672715952
+  },
+  "Hg": {
+   "74.0": 2.752432319466584,
+   "78.0": 2.408683255952314,
+   "110.0": 4.156360602321895,
+   "137.0": 2.3964698075434967
+  },
+  "Pb": {
+   "74.0": 2.9483861817164385,
+   "78.0": 2.57957060851679,
+   "110.0": 4.372704661584484,
+   "137.0": 2.5262126140011696
+  },
+  "Cu": {
+   "74.0": 0.9314521078733584,
+   "78.0": 0.8140655026003645,
+   "110.0": 0.38644431952141617,
+   "137.0": 0.26079594960063673
+  },
+  "Fe": {
+   "74.0": 0.7205704376128276,
+   "78.0": 0.6333172930205426,
+   "110.0": 0.3199395095073534,
+   "137.0": 0.22650870178409965
+  },
+  "C": {
+   "74.0": 0.16475588044705558,
+   "78.0": 0.1622102288240376,
+   "110.0": 0.14729718251215443,
+   "137.0": 0.13826625242126184
+  },
+  "Br": {
+   "74.0": 1.4751453440742768,
+   "78.0": 1.2817603618411868,
+   "110.0": 0.5603260664959504,
+   "137.0": 0.35147844872043216
+  },
+  "As": {
+   "74.0": 1.2656537814640139,
+   "78.0": 1.1012727016171089,
+   "110.0": 0.49207565415415533,
+   "137.0": 0.31516923522297874
+  },
+  "Ca": {
+   "74.0": 0.428681441828882,
+   "78.0": 0.38499535202327845,
+   "110.0": 0.23243350240890887,
+   "137.0": 0.1842549024664535
+  },
+  "Al": {
+   "74.0": 0.22005884014500213,
+   "78.0": 0.20755700652101317,
+   "110.0": 0.1621033226452175,
+   "137.0": 0.14450003675884876
+  },
+  "S": {
+   "74.0": 0.29200547534016613,
+   "78.0": 0.268936391085367,
+   "110.0": 0.18852742096134523,
+   "137.0": 0.1608190434525308
+  }
+ },
+ "k_edges": {
+  "Au": 80.7,
+  "Hg": 83.1,
+  "Pb": 88.0
+ },
+ "utc": "2026-09-26T21:55:14Z"
+}

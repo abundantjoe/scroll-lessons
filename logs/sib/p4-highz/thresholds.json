@@ -1,0 +1,17 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-6 item 2; frozen before any P4-F tile or per-tile number",
+ "T_mid": 80,
+ "T_hi": 233,
+ "source": "control 20260623142658-w028-037 1.129 um L1 surface volume, level 0, sheet slab slices 52..64, mesh-valid px of the 64 eligible M2b tiles, 6 % whole-chunk random sample, voxels > 0",
+ "T_mid_rule": "p50 (median)",
+ "T_hi_rule": "p99.9",
+ "applies_to": [
+  "E1",
+  "control"
+ ],
+ "control_sheet_voxels_nonzero": 3366259108,
+ "tile_value": "clip(255 * (max_sheet - T_mid) / (T_hi - T_mid), 0, 255); 0 outside mesh-valid",
+ "n_hi_rule": "sheet-slab voxels > T_hi",
+ "utc": "2026-09-26T17:50:05Z"
+}

@@ -1,0 +1,232 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "orchestrator request (DECL-P4-6/-A1): point-like vs layer-like bright voxels, control vs E1",
+ "method": "whole level-0 chunks (116 x 128 x 128, 2.258 um isotropic), random (default_rng(20260927)) among chunks of eligible tiles; voxels > T_hi at mesh-valid px of eligible tiles; 26-connected components; PCA of voxel coordinates; centroid offset = (z - 58) x 2.258 um (negative = towards slice 0); components touching the chunk's y/x border are truncated",
+ "materials": {
+  "C": {
+   "chunks": 904,
+   "valid_voxels": 1707416064,
+   "hi_voxels": 1636313,
+   "hi_density": 0.0009583563341711654,
+   "components": 16283,
+   "size_bins": {
+    "1-1": {
+     "components": 1659,
+     "frac_of_hi_voxels": 0.0010138647068134274
+    },
+    "2-7": {
+     "components": 4481,
+     "frac_of_hi_voxels": 0.0108182236528097
+    },
+    "8-63": {
+     "components": 7224,
+     "frac_of_hi_voxels": 0.10976017424539193
+    },
+    "64-511": {
+     "components": 2563,
+     "frac_of_hi_voxels": 0.2551724517253117
+    },
+    "512-inf": {
+     "components": 356,
+     "frac_of_hi_voxels": 0.6232352856696732
+    }
+   },
+   "ge8": {
+    "components": 10143,
+    "voxels": 1616952,
+    "planarity_l3_over_l2_median": 0.5461799266017425,
+    "linearity_l2_over_l1_median": 0.5004111072923124,
+    "frac_planar_l3_l2_lt_0p1": 0.021985605836537515,
+    "normal_z_abs_median": 0.6248795423373014,
+    "frac_normal_along_depth_gt_0p9": 0.243517696933846,
+    "centroid_offset_um_quantiles": [
+     -121.7232332688588,
+     -60.966,
+     -0.7270340557275465,
+     68.42037105263158,
+     119.75632291666666
+    ],
+    "frac_centroid_within_15um_of_surface": 0.12205461894902889,
+    "frac_border_truncated": 0.14206842157152716,
+    "frac_peak_255": 0.3902198560583654
+   },
+   "ge64": {
+    "components": 2919,
+    "voxels": 1437350,
+    "planarity_l3_over_l2_median": 0.5129048074358294,
+    "linearity_l2_over_l1_median": 0.4882902918774763,
+    "frac_planar_l3_l2_lt_0p1": 0.013703323055841042,
+    "normal_z_abs_median": 0.7925172244115062,
+    "frac_normal_along_depth_gt_0p9": 0.36211031175059955,
+    "centroid_offset_um_quantiles": [
+     -121.36106898734177,
+     -61.319298622151564,
+     -1.1847530864197493,
+     69.59532591154755,
+     119.99131021084337
+    ],
+    "frac_centroid_within_15um_of_surface": 0.11031175059952038,
+    "frac_border_truncated": 0.19390202124015074,
+    "frac_peak_255": 0.8725590955806783
+   },
+   "ge512": {
+    "components": 356,
+    "voxels": 1019808,
+    "planarity_l3_over_l2_median": 0.3999994677541622,
+    "linearity_l2_over_l1_median": 0.49442712666547084,
+    "frac_planar_l3_l2_lt_0p1": 0.02247191011235955,
+    "normal_z_abs_median": 0.9140158471591437,
+    "frac_normal_along_depth_gt_0p9": 0.5308988764044944,
+    "centroid_offset_um_quantiles": [
+     -117.06630032692544,
+     -52.5854145277322,
+     7.919590225673976,
+     68.05873526707916,
+     118.6759597844798
+    ],
+    "frac_centroid_within_15um_of_surface": 0.1348314606741573,
+    "frac_border_truncated": 0.29775280898876405,
+    "frac_peak_255": 0.9915730337078652
+   },
+   "ge64_within_15um": {
+    "components": 322,
+    "voxels": 115421,
+    "planarity_l3_over_l2_median": 0.5201412759521472,
+    "linearity_l2_over_l1_median": 0.5413097791004842,
+    "frac_planar_l3_l2_lt_0p1": 0.003105590062111801,
+    "normal_z_abs_median": 0.7700654930132971,
+    "frac_normal_along_depth_gt_0p9": 0.3447204968944099,
+    "centroid_offset_um_quantiles": [
+     -13.152643155794012,
+     -6.427323369565217,
+     0.5055042949176796,
+     7.687663596711518,
+     12.87767144987573
+    ],
+    "frac_centroid_within_15um_of_surface": 1.0,
+    "frac_border_truncated": 0.18322981366459629,
+    "frac_peak_255": 0.8757763975155279
+   },
+   "frac_hi_voxels_in_components_centred_within_15um": 0.086026328703616,
+   "uniform_depth_expectation_within_15um": 0.11206896551724138,
+   "material": "C",
+   "sampled_chunks": 1000,
+   "present_chunks": 904,
+   "secs": 15.1,
+   "T_hi": 233
+  },
+  "E1": {
+   "chunks": 961,
+   "valid_voxels": 1817174336,
+   "hi_voxels": 1545147,
+   "hi_density": 0.0008503020152712524,
+   "components": 22977,
+   "size_bins": {
+    "1-1": {
+     "components": 2277,
+     "frac_of_hi_voxels": 0.0014736461967696278
+    },
+    "2-7": {
+     "components": 6310,
+     "frac_of_hi_voxels": 0.016286476302901923
+    },
+    "8-63": {
+     "components": 10232,
+     "frac_of_hi_voxels": 0.1626997301874838
+    },
+    "64-511": {
+     "components": 3696,
+     "frac_of_hi_voxels": 0.38502161930224116
+    },
+    "512-inf": {
+     "components": 462,
+     "frac_of_hi_voxels": 0.43451852801060353
+    }
+   },
+   "ge8": {
+    "components": 14390,
+    "voxels": 1517705,
+    "planarity_l3_over_l2_median": 0.5532055850325867,
+    "linearity_l2_over_l1_median": 0.4847807214435955,
+    "frac_planar_l3_l2_lt_0p1": 0.0236275191104934,
+    "normal_z_abs_median": 0.6393076957552553,
+    "frac_normal_along_depth_gt_0p9": 0.2467685892981237,
+    "centroid_offset_um_quantiles": [
+     -120.42666666666668,
+     -65.62610374352847,
+     -4.028494754053689,
+     61.3861803454565,
+     118.545
+    ],
+    "frac_centroid_within_15um_of_surface": 0.13599722029186936,
+    "frac_border_truncated": 0.13898540653231412,
+    "frac_peak_255": 0.390271021542738
+   },
+   "ge64": {
+    "components": 4158,
+    "voxels": 1266310,
+    "planarity_l3_over_l2_median": 0.495448621756336,
+    "linearity_l2_over_l1_median": 0.4648018947471273,
+    "frac_planar_l3_l2_lt_0p1": 0.016835016835016835,
+    "normal_z_abs_median": 0.8029520697417176,
+    "frac_normal_along_depth_gt_0p9": 0.360990860990861,
+    "centroid_offset_um_quantiles": [
+     -120.53507423352903,
+     -64.51942298455818,
+     -4.254168162372544,
+     62.583224539899625,
+     118.06060322076297
+    ],
+    "frac_centroid_within_15um_of_surface": 0.13684463684463685,
+    "frac_border_truncated": 0.18566618566618567,
+    "frac_peak_255": 0.867003367003367
+   },
+   "ge512": {
+    "components": 462,
+    "voxels": 671395,
+    "planarity_l3_over_l2_median": 0.40677992735053803,
+    "linearity_l2_over_l1_median": 0.49887394324172085,
+    "frac_planar_l3_l2_lt_0p1": 0.032467532467532464,
+    "normal_z_abs_median": 0.9025942803240279,
+    "frac_normal_along_depth_gt_0p9": 0.5086580086580087,
+    "centroid_offset_um_quantiles": [
+     -119.29815041912808,
+     -60.90945509483373,
+     -2.4968173466056376,
+     55.11888614601888,
+     115.71873221196338
+    ],
+    "frac_centroid_within_15um_of_surface": 0.1277056277056277,
+    "frac_border_truncated": 0.3008658008658009,
+    "frac_peak_255": 0.9891774891774892
+   },
+   "ge64_within_15um": {
+    "components": 569,
+    "voxels": 151216,
+    "planarity_l3_over_l2_median": 0.4819482394010802,
+    "linearity_l2_over_l1_median": 0.47606827094230825,
+    "frac_planar_l3_l2_lt_0p1": 0.014059753954305799,
+    "normal_z_abs_median": 0.7841424098983464,
+    "frac_normal_along_depth_gt_0p9": 0.3321616871704745,
+    "centroid_offset_um_quantiles": [
+     -12.83422924930491,
+     -7.013484848484855,
+     0.10381609195401985,
+     7.595090909090916,
+     13.386714285714291
+    ],
+    "frac_centroid_within_15um_of_surface": 1.0,
+    "frac_border_truncated": 0.15992970123022848,
+    "frac_peak_255": 0.8681898066783831
+   },
+   "frac_hi_voxels_in_components_centred_within_15um": 0.12266082126813824,
+   "uniform_depth_expectation_within_15um": 0.11206896551724138,
+   "material": "E1",
+   "sampled_chunks": 1000,
+   "present_chunks": 961,
+   "secs": 15.6,
+   "T_hi": 233
+  }
+ },
+ "utc": "2026-09-26T19:52:26Z"
+}

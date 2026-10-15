@@ -1,0 +1,712 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-6-A1 item 2 and DECL-P4-6-A2 item 2 (inventory; numbers only; no K-edge map)",
+ "K_edges_keV": {
+  "Au": 80.7,
+  "Hg": 83.1,
+  "Pb": 88.0
+ },
+ "reference_frame": "20260411134726-2.400um-0.2m-78keV-masked",
+ "volumes": {
+  "20260310170716-45.532um-11.0m-74keV-masked": {
+   "volume": "20260310170716-45.532um-11.0m-74keV-masked",
+   "energy_keV": 74.0,
+   "pixel_um": 45.532,
+   "date": "2026-03-10T16:28:57.422666+01:00",
+   "beamline": "bm18",
+   "mosaic_tiles": null,
+   "shape_zyx_level0": [
+    4071,
+    2264,
+    2264
+   ],
+   "registration": {
+    "transform_json": true,
+    "fixed_volume": "PHerc4Paris-20230205180739_masked",
+    "matrix_moving_to_fixed_xyz": [
+     [
+      -4.5387935540728375,
+      -3.6429325203362453,
+      0.021069588280720364,
+      13272.77612412344
+     ],
+     [
+      -3.680279946390386,
+      4.517373766578172,
+      -0.08259952689371323,
+      2675.9546792363617
+     ],
+     [
+      0.04066669734339528,
+      0.0834049198029113,
+      5.857265798560667,
+      -9679.642884290326
+     ]
+    ],
+    "landmarks": 15,
+    "landmark_residual_fixed_vox_rms": 65.53066549392113,
+    "landmark_residual_fixed_vox_max": 125.69018128190187,
+    "convention_check": "fixed = M [moving_xyz, 1]",
+    "registered_to_20260411134726": true,
+    "how": "composed: own affine to canonical 20230205180739, then inverse of the 20260411134726 affine",
+    "scale_to_ref": 19.005666566629127
+   },
+   "coverage_w010_027": {
+    "E1_20260623141924": {
+     "points": 200000,
+     "frac_inside_volume_extent": 1.0,
+     "frac_nonzero_data_at_inside_points": 0.944,
+     "nonzero_check": "1000 points at level 0",
+     "z_range_in_volume_vox": [
+      1554.656902142136,
+      3654.7346031647485
+     ],
+     "xy_range_in_volume_vox": [
+      1046.1259985864153,
+      1407.6355142355171,
+      862.7009141495859,
+      1484.1835679708706
+     ],
+     "strip_z_range_ref_vox": [
+      27967.443359375,
+      68052.2890625
+     ]
+    },
+    "E2_20260701183124": {
+     "points": 200000,
+     "frac_inside_volume_extent": 1.0,
+     "frac_nonzero_data_at_inside_points": 0.955,
+     "nonzero_check": "1000 points at level 0",
+     "z_range_in_volume_vox": [
+      722.2764644413023,
+      3863.0481103851175
+     ],
+     "xy_range_in_volume_vox": [
+      873.7457863970021,
+      1406.9749766124444,
+      864.6977398792794,
+      1541.9708149168769
+     ],
+     "strip_z_range_ref_vox": [
+      12007.13671875,
+      72034.7265625
+     ]
+    }
+   }
+  },
+  "20260310173927-45.532um-11.0m-110keV-masked": {
+   "volume": "20260310173927-45.532um-11.0m-110keV-masked",
+   "energy_keV": 110.0,
+   "pixel_um": 45.532,
+   "date": "2026-03-10T17:02:32.032543+01:00",
+   "beamline": "bm18",
+   "mosaic_tiles": null,
+   "shape_zyx_level0": [
+    4066,
+    2264,
+    2264
+   ],
+   "registration": {
+    "transform_json": false,
+    "registered_to_20260411134726": false,
+    "note": "no transform.json published; not registered to any frame in the bucket"
+   },
+   "coverage_w010_027": null
+  },
+  "20260323153942-2.400um-0.2m-137keV-masked": {
+   "volume": "20260323153942-2.400um-0.2m-137keV-masked",
+   "energy_keV": 137.0,
+   "pixel_um": 2.4,
+   "date": "2026-03-15T06:26:01.084619+01:00",
+   "beamline": "bm18",
+   "mosaic_tiles": null,
+   "shape_zyx_level0": [
+    6625,
+    8431,
+    8431
+   ],
+   "registration": {
+    "transform_json": true,
+    "fixed_volume": "PHercParis4-20230205180739_masked",
+    "matrix_moving_to_fixed_xyz": [
+     [
+      -0.23621143064857364,
+      -0.19693581640857907,
+      0.002388220406282726,
+      7034.614463353075
+     ],
+     [
+      -0.19682609059408498,
+      0.23585743108741802,
+      -0.004050126154489958,
+      3203.973859828384
+     ],
+     [
+      -0.0009748504477406541,
+      0.00502443683682706,
+      0.3065904924438596,
+      3895.121788095995
+     ]
+    ],
+    "landmarks": 13,
+    "landmark_residual_fixed_vox_rms": 0.7603808939770457,
+    "landmark_residual_fixed_vox_max": 1.114258052333298,
+    "convention_check": "fixed = M [moving_xyz, 1]",
+    "registered_to_20260411134726": true,
+    "how": "composed: own affine to canonical 20230205180739, then inverse of the 20260411134726 affine",
+    "scale_to_ref": 1.000414671871849
+   },
+   "coverage_w010_027": {
+    "E1_20260623141924": {
+     "points": 200000,
+     "frac_inside_volume_extent": 0.047245,
+     "frac_nonzero_data_at_inside_points": 0.775,
+     "nonzero_check": "1000 points at level 5",
+     "z_range_in_volume_vox": [
+      4.508455310577119,
+      6624.8494758623565
+     ],
+     "xy_range_in_volume_vox": [
+      5740.601387126859,
+      8430.839110780638,
+      1927.5392714544414,
+      8428.434868354152
+     ],
+     "strip_z_range_ref_vox": [
+      27967.443359375,
+      68052.2890625
+     ]
+    },
+    "E2_20260701183124": {
+     "points": 200000,
+     "frac_inside_volume_extent": 0.030115,
+     "frac_nonzero_data_at_inside_points": 0.789,
+     "nonzero_check": "1000 points at level 5",
+     "z_range_in_volume_vox": [
+      14.467800273960165,
+      6624.478381618705
+     ],
+     "xy_range_in_volume_vox": [
+      5796.63627343953,
+      8430.880518739545,
+      1941.0293058020598,
+      8429.112217043881
+     ],
+     "strip_z_range_ref_vox": [
+      12007.13671875,
+      72034.7265625
+     ]
+    }
+   }
+  },
+  "20260411134726-2.400um-0.2m-78keV-masked": {
+   "volume": "20260411134726-2.400um-0.2m-78keV-masked",
+   "energy_keV": 78.0,
+   "pixel_um": 2.4,
+   "date": "2026-03-10T18:08:40.173143+01:00",
+   "beamline": "bm18",
+   "mosaic_tiles": null,
+   "shape_zyx_level0": [
+    75784,
+    32693,
+    32693
+   ],
+   "registration": {
+    "transform_json": true,
+    "fixed_volume": "PHercParis4-20230205180739_masked",
+    "matrix_moving_to_fixed_xyz": [
+     [
+      -0.23841071793061291,
+      -0.19362400462393486,
+      0.0021338753748049444,
+      11024.043667710986
+     ],
+     [
+      -0.19369582314244563,
+      0.23850010646891293,
+      -0.003964264465841007,
+      2861.834433287773
+     ],
+     [
+      -0.0008390736081137979,
+      0.004538179336261518,
+      0.30657436617414124,
+      -9057.070809768327
+     ]
+    ],
+    "landmarks": 24,
+    "landmark_residual_fixed_vox_rms": 2.4540901305866134,
+    "landmark_residual_fixed_vox_max": 6.439737279042922,
+    "convention_check": "fixed = M [moving_xyz, 1]",
+    "registered_to_20260411134726": true,
+    "how": "identity (reference frame)",
+    "scale_to_ref": 1.0
+   },
+   "coverage_w010_027": {
+    "E1_20260623141924": {
+     "points": 200000,
+     "frac_inside_volume_extent": 1.0,
+     "frac_nonzero_data_at_inside_points": 1.0,
+     "nonzero_check": "1000 points at level 5",
+     "z_range_in_volume_vox": [
+      27967.443359375,
+      68052.2890625
+     ],
+     "xy_range_in_volume_vox": [
+      14710.1953125,
+      21549.90234375,
+      11258.78125,
+      23030.859375
+     ],
+     "strip_z_range_ref_vox": [
+      27967.443359375,
+      68052.2890625
+     ]
+    },
+    "E2_20260701183124": {
+     "points": 200000,
+     "frac_inside_volume_extent": 1.0,
+     "frac_nonzero_data_at_inside_points": 1.0,
+     "nonzero_check": "1000 points at level 5",
+     "z_range_in_volume_vox": [
+      12007.13671875,
+      72034.7265625
+     ],
+     "xy_range_in_volume_vox": [
+      11311.0703125,
+      21555.044921875,
+      11297.0390625,
+      24127.3515625
+     ],
+     "strip_z_range_ref_vox": [
+      12007.13671875,
+      72034.7265625
+     ]
+    }
+   }
+  },
+  "20260608103018-1.129um-0.2m-78keV-masked": {
+   "volume": "20260608103018-1.129um-0.2m-78keV-masked",
+   "energy_keV": 78.0,
+   "pixel_um": 1.129,
+   "date": "2026-03-15T10:11:50.921589+01:00",
+   "beamline": "bm18",
+   "mosaic_tiles": 19,
+   "shape_zyx_level0": [
+    59969,
+    36006,
+    32354
+   ],
+   "registration": {
+    "transform_json": true,
+    "fixed_volume": "2.4um_PHerc-Paris4_masked",
+    "matrix_moving_to_fixed_xyz": [
+     [
+      0.4707666920759728,
+      0.006083857284656546,
+      0.00019751752464569616,
+      5805.340302081483
+     ],
+     [
+      -0.006080253073916825,
+      0.4708290918191928,
+      -0.0010790959797848665,
+      5493.890163950601
+     ],
+     [
+      -0.00017625872950265966,
+      0.001261388797834728,
+      0.47074242543448375,
+      28084.05307481582
+     ]
+    ],
+    "landmarks": 16,
+    "landmark_residual_fixed_vox_rms": 1.2234627420546564,
+    "landmark_residual_fixed_vox_max": 1.8768299158099997,
+    "convention_check": "fixed = M [moving_xyz, 1]",
+    "registered_to_20260411134726": true,
+    "how": "direct affine to the 2.4 um 78 keV volume (fixed_volume '2.4um_PHerc-Paris4_masked')",
+    "scale_to_ref": 0.47080657751665594
+   },
+   "coverage_w010_027": {
+    "E1_20260623141924": {
+     "points": 200000,
+     "frac_inside_volume_extent": 0.71113,
+     "frac_nonzero_data_at_inside_points": 0.976,
+     "nonzero_check": "1000 points at level 5",
+     "z_range_in_volume_vox": [
+      1.1082312982980511,
+      59968.2210400326
+     ],
+     "xy_range_in_volume_vox": [
+      18604.361310555425,
+      32353.055089639805,
+      12620.586411294264,
+      30846.716575691047
+     ],
+     "strip_z_range_ref_vox": [
+      27967.443359375,
+      68052.2890625
+     ]
+    },
+    "E2_20260701183124": {
+     "points": 200000,
+     "frac_inside_volume_extent": 0.458445,
+     "frac_nonzero_data_at_inside_points": 0.976,
+     "nonzero_check": "1000 points at level 5",
+     "z_range_in_volume_vox": [
+      0.09271328241447918,
+      59968.93941785213
+     ],
+     "xy_range_in_volume_vox": [
+      18599.382360230695,
+      32353.253397522363,
+      12703.41746966871,
+      30952.87962402549
+     ],
+     "strip_z_range_ref_vox": [
+      12007.13671875,
+      72034.7265625
+     ]
+    }
+   }
+  }
+ },
+ "kedge_pairs": [
+  {
+   "scans": [
+    "20260310170716-45.532um-11.0m-74keV-masked",
+    "20260310173927-45.532um-11.0m-110keV-masked"
+   ],
+   "energies_keV": [
+    74.0,
+    110.0
+   ],
+   "pixel_um": [
+    45.532,
+    45.532
+   ],
+   "brackets_K_edges": [
+    "Au",
+    "Hg",
+    "Pb"
+   ],
+   "both_registered_to_20260411134726": false,
+   "coverage_w010_027_(frac_inside, frac_nonzero)": [
+    {
+     "E1_20260623141924": [
+      1.0,
+      0.944
+     ],
+     "E2_20260701183124": [
+      1.0,
+      0.955
+     ]
+    },
+    {}
+   ],
+   "FLAG": false
+  },
+  {
+   "scans": [
+    "20260310170716-45.532um-11.0m-74keV-masked",
+    "20260323153942-2.400um-0.2m-137keV-masked"
+   ],
+   "energies_keV": [
+    74.0,
+    137.0
+   ],
+   "pixel_um": [
+    45.532,
+    2.4
+   ],
+   "brackets_K_edges": [
+    "Au",
+    "Hg",
+    "Pb"
+   ],
+   "both_registered_to_20260411134726": true,
+   "coverage_w010_027_(frac_inside, frac_nonzero)": [
+    {
+     "E1_20260623141924": [
+      1.0,
+      0.944
+     ],
+     "E2_20260701183124": [
+      1.0,
+      0.955
+     ]
+    },
+    {
+     "E1_20260623141924": [
+      0.047245,
+      0.775
+     ],
+     "E2_20260701183124": [
+      0.030115,
+      0.789
+     ]
+    }
+   ],
+   "FLAG": true
+  },
+  {
+   "scans": [
+    "20260310173927-45.532um-11.0m-110keV-masked",
+    "20260411134726-2.400um-0.2m-78keV-masked"
+   ],
+   "energies_keV": [
+    110.0,
+    78.0
+   ],
+   "pixel_um": [
+    45.532,
+    2.4
+   ],
+   "brackets_K_edges": [
+    "Au",
+    "Hg",
+    "Pb"
+   ],
+   "both_registered_to_20260411134726": false,
+   "coverage_w010_027_(frac_inside, frac_nonzero)": [
+    {},
+    {
+     "E1_20260623141924": [
+      1.0,
+      1.0
+     ],
+     "E2_20260701183124": [
+      1.0,
+      1.0
+     ]
+    }
+   ],
+   "FLAG": false
+  },
+  {
+   "scans": [
+    "20260310173927-45.532um-11.0m-110keV-masked",
+    "20260608103018-1.129um-0.2m-78keV-masked"
+   ],
+   "energies_keV": [
+    110.0,
+    78.0
+   ],
+   "pixel_um": [
+    45.532,
+    1.129
+   ],
+   "brackets_K_edges": [
+    "Au",
+    "Hg",
+    "Pb"
+   ],
+   "both_registered_to_20260411134726": false,
+   "coverage_w010_027_(frac_inside, frac_nonzero)": [
+    {},
+    {
+     "E1_20260623141924": [
+      0.71113,
+      0.976
+     ],
+     "E2_20260701183124": [
+      0.458445,
+      0.976
+     ]
+    }
+   ],
+   "FLAG": false
+  },
+  {
+   "scans": [
+    "20260323153942-2.400um-0.2m-137keV-masked",
+    "20260411134726-2.400um-0.2m-78keV-masked"
+   ],
+   "energies_keV": [
+    137.0,
+    78.0
+   ],
+   "pixel_um": [
+    2.4,
+    2.4
+   ],
+   "brackets_K_edges": [
+    "Au",
+    "Hg",
+    "Pb"
+   ],
+   "both_registered_to_20260411134726": true,
+   "coverage_w010_027_(frac_inside, frac_nonzero)": [
+    {
+     "E1_20260623141924": [
+      0.047245,
+      0.775
+     ],
+     "E2_20260701183124": [
+      0.030115,
+      0.789
+     ]
+    },
+    {
+     "E1_20260623141924": [
+      1.0,
+      1.0
+     ],
+     "E2_20260701183124": [
+      1.0,
+      1.0
+     ]
+    }
+   ],
+   "FLAG": true
+  },
+  {
+   "scans": [
+    "20260323153942-2.400um-0.2m-137keV-masked",
+    "20260608103018-1.129um-0.2m-78keV-masked"
+   ],
+   "energies_keV": [
+    137.0,
+    78.0
+   ],
+   "pixel_um": [
+    2.4,
+    1.129
+   ],
+   "brackets_K_edges": [
+    "Au",
+    "Hg",
+    "Pb"
+   ],
+   "both_registered_to_20260411134726": true,
+   "coverage_w010_027_(frac_inside, frac_nonzero)": [
+    {
+     "E1_20260623141924": [
+      0.047245,
+      0.775
+     ],
+     "E2_20260701183124": [
+      0.030115,
+      0.789
+     ]
+    },
+    {
+     "E1_20260623141924": [
+      0.71113,
+      0.976
+     ],
+     "E2_20260701183124": [
+      0.458445,
+      0.976
+     ]
+    }
+   ],
+   "FLAG": true
+  }
+ ],
+ "inputs": [
+  {
+   "key": "PHercParis4/volumes/20260310170716-45.532um-11.0m-74keV-masked.zarr/metadata.json",
+   "bytes": 8153,
+   "sha256": "8d22122ef348fe5c63d01b0cddf37ccbf999679d9f06e7a72a3da7391231dc42"
+  },
+  {
+   "key": "PHercParis4/volumes/20260310170716-45.532um-11.0m-74keV-masked.zarr/0/.zarray",
+   "bytes": 238,
+   "sha256": "f5b2a20e63905eb3ad2db12c35a3407d5287b5076b02b6742a22728bf94ef0ef"
+  },
+  {
+   "key": "PHercParis4/volumes/20260310170716-45.532um-11.0m-74keV-masked.zarr/transform.json",
+   "bytes": 3192,
+   "sha256": "5d645d2594a1ee48137eea2683e6fa2127db6831fdfc0a489bab995bc199cbcf"
+  },
+  {
+   "key": "PHercParis4/volumes/20260310173927-45.532um-11.0m-110keV-masked.zarr/metadata.json",
+   "bytes": 8076,
+   "sha256": "3ff6342a4264e463b4b36e26b297c8ccf645f896f93663822c882c4d56526d94"
+  },
+  {
+   "key": "PHercParis4/volumes/20260310173927-45.532um-11.0m-110keV-masked.zarr/0/.zarray",
+   "bytes": 238,
+   "sha256": "b3ec628915599e8c6d41ad7182b10d6806c6f66d8ffbfba18ac93640989563bc"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/metadata.json",
+   "bytes": 9021,
+   "sha256": "26792eb8a448ed37e0835effd920552ffd3a182b584b20e8a88a5c1d37981740"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/0/.zarray",
+   "bytes": 238,
+   "sha256": "3de34a3c81c3ad5b23ec708f53b7493d5541194140df63815be10f59ac87dc3b"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/transform.json",
+   "bytes": 2677,
+   "sha256": "057abe4af41076bdee6e6eb74b198bdd1bec8607cc7ee0dc1c5979a168d2af3e"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/metadata.json",
+   "bytes": 8453,
+   "sha256": "881bf77fc0f02a91040755da25d54ad958e290a528ec61489e411937112fba4d"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/0/.zarray",
+   "bytes": 241,
+   "sha256": "145e04cb3317367f9b3d0d3fb5c8541518137e643964119638543e4ddf4445db"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/transform.json",
+   "bytes": 4394,
+   "sha256": "d9443fc545b5e53cec50b1e65a284679ba18c4293cd3efa354b939d0b2c477c4"
+  },
+  {
+   "key": "PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/metadata.json",
+   "bytes": 158775,
+   "sha256": "acd47f1093d8917b1642198e3f0f5de3bff3d86222e630600a225bb46ba715ca"
+  },
+  {
+   "key": "PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/0/.zarray",
+   "bytes": 241,
+   "sha256": "e5483c9c2dc8dfa79ab1ccb234c6847771c9da87e59f443ce9223cb936e81cf4"
+  },
+  {
+   "key": "PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/transform.json",
+   "bytes": 3053,
+   "sha256": "2291a626dd3a2712984ec7eaa00bcf6f636b10936c9c36d57efc7228f649d1ad"
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260411134726-2.4um.tifxyz/x.tif",
+   "bytes": 76504070,
+   "sha256": "4ff0c66c7c91d71c5ee6939b5aa46fb75176a5ccc80aa19cbe380085255083de"
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260411134726-2.4um.tifxyz/y.tif",
+   "bytes": 76504070,
+   "sha256": "af4cdfacb4e5f0fbef5eacde48aeb2f6d067ccc8171252b86690de7a988c2f0d"
+  },
+  {
+   "key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260411134726-2.4um.tifxyz/z.tif",
+   "bytes": 76504070,
+   "sha256": "8afccc713f42e97d45dbceb50fe89eaace6500f7556fdb7234049f8e34007177"
+  },
+  {
+   "key": "PHercParis4/segments/20260701183124-w010-027/mesh/20260701183124-on-20260411134726-2.4um.tifxyz/x.tif",
+   "bytes": 118592134,
+   "sha256": "c304cdfd975587864cfcb2147aff1db0ddc9f3240260204cce6b2891c9910165"
+  },
+  {
+   "key": "PHercParis4/segments/20260701183124-w010-027/mesh/20260701183124-on-20260411134726-2.4um.tifxyz/y.tif",
+   "bytes": 118592134,
+   "sha256": "9a4eefdae0705ad0f0b59e79093bf48f63dad7760a1ce0be5030e408c8f94139"
+  },
+  {
+   "key": "PHercParis4/segments/20260701183124-w010-027/mesh/20260701183124-on-20260411134726-2.4um.tifxyz/z.tif",
+   "bytes": 118592134,
+   "sha256": "a06716afd74c973d80c8f9275737fe95d776edd25537ae3076b07deb46c034f8"
+  }
+ ],
+ "coverage_method": "valid vertices of the two w010-027 meshes in the 20260411134726 frame (200k random each), mapped by the published affines into each volume's level-0 voxel frame; 'inside' = within the zarr extent; 'nonzero' = voxel > 0 at a coarse level (scanned, not masked)",
+ "utc": "2026-09-26T18:29:29Z"
+}
