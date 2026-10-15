@@ -1,0 +1,342 @@
+{
+ "provenance": "Project HERCULES | [id removed]",
+ "what": "numbers-only physical check of the 20 kept DECL-FL-2 auto-grown PHerc0846B segments (no image viewed)",
+ "method": "per segment 300 random valid tifxyz vertices (rng seed 0); on_sheet = organizer surface-m7 L0 (th0.2) value >= 128 at the vertex or +-2 vx in z; in_ct_mask = masked CT level 2 (x4) value > 0 at the vertex; script tools/sib/fl-pherc0846b/fl2/onsurf.py",
+ "summary": {
+  "on_sheet_median": 0.1955,
+  "on_sheet_range": [
+   0.127,
+   0.33
+  ],
+  "in_ct_mask_median": 0.413,
+  "in_ct_mask_range": [
+   0.215,
+   0.677
+  ],
+  "segments_with_area_31.13_cm2": "15 of 20 (growth stops at the generations cap, not at data)"
+ },
+ "reading": "Median 37% of vertices lie inside the scroll CT mask (range 22-68%); the rest are in air outside the scroll. Bounding boxes span ~5000-6000 vx (4.7-5.6 cm) in both x and y. These meshes are tracer runaways that cross the scroll rather than follow a wrap; the DECL-FL-1/2 gate (area >= 16 cm2, 0 transverse self-crossings) does not detect this. Caveat: on_sheet uses a z-only tolerance, so it underestimates contact on steep sheets; in_ct_mask has no such bias.",
+ "consequence": "Tiles are cut where the mesh is valid, not where it is on papyrus, so many kept tiles of this scroll are mostly air or cross-sheet. Worker did not change the gate or tiling (brief: parameters only); flagged for the orchestrator.",
+ "per_segment": {
+  "s10": {
+   "n": 300,
+   "oob": 3,
+   "on_sheet": 0.135,
+   "in_ct_mask": 0.215,
+   "bbox_min": [
+    384.0,
+    2008.0,
+    3080.0
+   ],
+   "bbox_max": [
+    6304.0,
+    7923.0,
+    4716.0
+   ]
+  },
+  "s12": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.18,
+   "in_ct_mask": 0.367,
+   "bbox_min": [
+    -19.0,
+    1389.0,
+    2192.0
+   ],
+   "bbox_max": [
+    5071.0,
+    6526.0,
+    4341.0
+   ]
+  },
+  "s14": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.167,
+   "in_ct_mask": 0.39,
+   "bbox_min": [
+    973.0,
+    860.0,
+    2771.0
+   ],
+   "bbox_max": [
+    6750.0,
+    6870.0,
+    6183.0
+   ]
+  },
+  "s16": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.133,
+   "in_ct_mask": 0.307,
+   "bbox_min": [
+    2121.0,
+    1855.0,
+    1803.0
+   ],
+   "bbox_max": [
+    7642.0,
+    7786.0,
+    6687.0
+   ]
+  },
+  "s18": {
+   "n": 300,
+   "oob": 1,
+   "on_sheet": 0.204,
+   "in_ct_mask": 0.425,
+   "bbox_min": [
+    1214.0,
+    2590.0,
+    3705.0
+   ],
+   "bbox_max": [
+    7091.0,
+    8054.0,
+    7648.0
+   ]
+  },
+  "s2": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.257,
+   "in_ct_mask": 0.553,
+   "bbox_min": [
+    -18.0,
+    1149.0,
+    5267.0
+   ],
+   "bbox_max": [
+    5004.0,
+    6493.0,
+    9683.0
+   ]
+  },
+  "s20": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.187,
+   "in_ct_mask": 0.287,
+   "bbox_min": [
+    -19.0,
+    1165.0,
+    3597.0
+   ],
+   "bbox_max": [
+    5280.0,
+    6526.0,
+    6696.0
+   ]
+  },
+  "s22": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.153,
+   "in_ct_mask": 0.413,
+   "bbox_min": [
+    985.0,
+    715.0,
+    4856.0
+   ],
+   "bbox_max": [
+    6736.0,
+    6819.0,
+    7186.0
+   ]
+  },
+  "s26": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.15,
+   "in_ct_mask": 0.38,
+   "bbox_min": [
+    450.0,
+    1721.0,
+    4298.0
+   ],
+   "bbox_max": [
+    6299.0,
+    7734.0,
+    7991.0
+   ]
+  },
+  "s30": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.167,
+   "in_ct_mask": 0.33,
+   "bbox_min": [
+    926.0,
+    590.0,
+    5597.0
+   ],
+   "bbox_max": [
+    6789.0,
+    6522.0,
+    7364.0
+   ]
+  },
+  "s32": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.227,
+   "in_ct_mask": 0.513,
+   "bbox_min": [
+    2014.0,
+    1330.0,
+    7355.0
+   ],
+   "bbox_max": [
+    7845.0,
+    7255.0,
+    9319.0
+   ]
+  },
+  "s34": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.243,
+   "in_ct_mask": 0.553,
+   "bbox_min": [
+    701.0,
+    1531.0,
+    7072.0
+   ],
+   "bbox_max": [
+    6326.0,
+    7489.0,
+    9771.0
+   ]
+  },
+  "s36": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.207,
+   "in_ct_mask": 0.423,
+   "bbox_min": [
+    -18.0,
+    616.0,
+    6871.0
+   ],
+   "bbox_max": [
+    5422.0,
+    6192.0,
+    8547.0
+   ]
+  },
+  "s38": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.207,
+   "in_ct_mask": 0.413,
+   "bbox_min": [
+    1121.0,
+    153.0,
+    6713.0
+   ],
+   "bbox_max": [
+    7037.0,
+    6084.0,
+    8572.0
+   ]
+  },
+  "s4": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.147,
+   "in_ct_mask": 0.37,
+   "bbox_min": [
+    1233.0,
+    1724.0,
+    4407.0
+   ],
+   "bbox_max": [
+    6962.0,
+    7684.0,
+    8120.0
+   ]
+  },
+  "s40": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.207,
+   "in_ct_mask": 0.517,
+   "bbox_min": [
+    2044.0,
+    1317.0,
+    9398.0
+   ],
+   "bbox_max": [
+    7892.0,
+    7320.0,
+    11375.0
+   ]
+  },
+  "s42": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.257,
+   "in_ct_mask": 0.677,
+   "bbox_min": [
+    476.0,
+    1805.0,
+    7465.0
+   ],
+   "bbox_max": [
+    6259.0,
+    7754.0,
+    11766.0
+   ]
+  },
+  "s46": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.29,
+   "in_ct_mask": 0.623,
+   "bbox_min": [
+    1561.0,
+    -17.0,
+    8445.0
+   ],
+   "bbox_max": [
+    6871.0,
+    5420.0,
+    10427.0
+   ]
+  },
+  "s6": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.33,
+   "in_ct_mask": 0.617,
+   "bbox_min": [
+    252.0,
+    79.0,
+    8565.0
+   ],
+   "bbox_max": [
+    5939.0,
+    6186.0,
+    13048.0
+   ]
+  },
+  "s8": {
+   "n": 300,
+   "oob": 0,
+   "on_sheet": 0.127,
+   "in_ct_mask": 0.287,
+   "bbox_min": [
+    1817.0,
+    1848.0,
+    2560.0
+   ],
+   "bbox_max": [
+    7469.0,
+    7763.0,
+    5951.0
+   ]
+  }
+ }
+}
