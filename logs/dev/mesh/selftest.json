@@ -1,0 +1,168 @@
+{
+ "utc": "2026-10-09T22:37:57Z",
+ "tests": {
+  "A_flat_sheet_no_self_intersection": {
+   "pass": true,
+   "n_tri": 5782,
+   "candidate_pairs": 14026,
+   "intersecting_pairs": 0,
+   "secs": 0.17
+  },
+  "A_flat_sheet_arclength_uv_near_isometric": {
+   "pass": true,
+   "arclength": {
+    "area_ratio": {
+     "median": 0.9999999999999999,
+     "p95": 1.0000000000000027,
+     "max": 1.0000000000000053
+    },
+    "conformal_s1_over_s2": {
+     "median": 1.0,
+     "p95": 1.0000000149011612,
+     "max": 1.0000000149011612
+    },
+    "angle_dev_deg": {
+     "median": 3.552713678800501e-14,
+     "p95": 1.2789769243681803e-13,
+     "max": 1.5631940186722204e-13
+    }
+   },
+   "nominal_grid_uv_area_ratio": {
+    "median": 1.0032028379780746,
+    "p95": 1.0049771209995984,
+    "max": 1.0049825935949341
+   },
+   "uv_steps": {
+    "median_step_u": 20.064056759561492,
+    "median_step_v": 20.0,
+    "nominal_step": [
+     20.0,
+     20.0
+    ]
+   },
+   "note": "the ripple stretches the nominal grid uv (area ratio > 1); the arc-length uv absorbs it along u"
+  },
+  "B_folded_sheet_self_intersects_at_known_crossing": {
+   "pass": true,
+   "intersecting_pairs": 117,
+   "candidate_pairs": 18226,
+   "hit_points_within_60vox_of_crossing_line": 117,
+   "expected_min_pairs": 39,
+   "secs": 0.25,
+   "note": "limacon inner loop crosses the outer loop along the line x=3000,z=3000 for all 40 rows; >= 1 pair per row expected"
+  },
+  "C_parallel_sheets_44vox_no_crossing": {
+   "pass": true,
+   "intersecting_pairs": 0,
+   "candidate_pairs": 0,
+   "vertex_distance": {
+    "min": 44.0,
+    "median": 44.0,
+    "p95": 44.0
+   },
+   "secs": 0.01
+  },
+  "D_crossing_sheets_detected_on_known_line": {
+   "pass": true,
+   "intersecting_pairs": 98,
+   "candidate_pairs": 1740,
+   "hit_points_within_25vox_of_x1590": 98,
+   "hit_x_range": [
+    1590.0,
+    1590.0
+   ],
+   "secs": 0.03
+  },
+  "D2_sheet_touching_along_edge_not_counted": {
+   "pass": true,
+   "intersecting_pairs": 0,
+   "candidate_pairs": 1160
+  },
+  "D3_coplanar_overlap_counted": {
+   "pass": true,
+   "intersecting_pairs": 17024,
+   "candidate_pairs": 45396
+  },
+  "E_obj_roundtrip": {
+   "pass": true,
+   "n_v": 3000,
+   "n_f": 5782,
+   "area_ratio_median_obj": 0.9999995911188623
+  },
+  "F_W3_synthetic_laminae": {
+   "pass": true,
+   "cases": {
+    "on_lamina": {
+     "pass": true,
+     "status_counts": {
+      "OK": 144
+     },
+     "median_clearance_plus": 44.0,
+     "median_clearance_minus": 44.0,
+     "median_ratio": 1.0,
+     "median_spacing": 44.0,
+     "median_own_offset": 0.0,
+     "expected": {
+      "clearance_min": 44,
+      "clearance_max": 44,
+      "ratio": 1.0,
+      "status": "OK"
+     },
+     "bar_pass": true
+    },
+    "offset_5": {
+     "pass": true,
+     "status_counts": {
+      "OK": 144
+     },
+     "median_clearance_plus": 39.0,
+     "median_clearance_minus": 49.0,
+     "median_ratio": 0.8863636363636364,
+     "median_spacing": 44.0,
+     "median_own_offset": -5.0,
+     "expected": {
+      "clearance_min": 39,
+      "clearance_max": 49,
+      "ratio": 0.8863636363636364,
+      "status": "OK"
+     },
+     "bar_pass": true
+    },
+    "midway_22": {
+     "pass": true,
+     "status_counts": {
+      "OFF_LAMINA": 144
+     },
+     "median_clearance_plus": 22.0,
+     "median_clearance_minus": 22.0,
+     "median_ratio": null,
+     "median_spacing": null,
+     "median_own_offset": null,
+     "expected": {
+      "clearance_min": 22,
+      "clearance_max": 22,
+      "ratio": null,
+      "status": "OFF_LAMINA"
+     },
+     "bar_pass": false
+    }
+   },
+   "chunks_fetched": 12,
+   "slab_calls": 6,
+   "MB": 25.2,
+   "note": "mesh normals point +z; prominence 3 MAD; laminae every 44 vox"
+  },
+  "F2_W3_tilted_normal_geometry": {
+   "pass": true,
+   "n_vertices_on_lamina": 12,
+   "expected_clearance_along_normal": 46.82382198894013,
+   "median_clearance_plus": 47.0,
+   "median_clearance_minus": 47.0,
+   "status_counts": {
+    "OK": 12
+   }
+  }
+ },
+ "deviations": [],
+ "all_pass": true
+}

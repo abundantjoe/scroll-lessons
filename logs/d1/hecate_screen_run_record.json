@@ -1,0 +1,89 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "prediction_sha256": {
+  "214732_base.tif": "2c9c62facc138e66974a790c238f9847a75ddffb09225338e74797b5218a82a8",
+  "214732_base_reverse.tif": "1dc6a8d6df26f9ff1cf3b66790fd99e8a887f5687130144b4784725fcc595377",
+  "214732_hec_fwd.png": "669de013c75eed32ff0af31aedb3bcc637597a82287d3948eaafae34cdf729e1",
+  "214732_hec_rev.png": "48e189d3deaf585392f75305e68cf8b96bc15e3c38a943a520b341ae76911826"
+ },
+ "ledger": [
+  [
+   "vm",
+   "cpu",
+   "/work/bin/vc vc_render_tifxyz -v s3://vesuvius-challenge-open-data/PHerc0841/volumes/20250821151531-9.366um-1.2m-113keV-masked.zarr/ --remote-url s3://vesuvius-challenge-open-data/PHerc0841/volumes/20250821151531-9.366um-1.2m-113keV-masked.zarr/ --segmentation /work/hecate/work/geom/mesh_214732_masked.tifxyz --scale 1 --group-idx 0 --num-slices 28 --slice-step 1 --voxel-size 9.366 --voxel-unit micrometer --flip-normals --crop-x 1764 --crop-y 637 --crop-width 366 --crop-height 732 --cache-gb 4 --zarr-output /work/hecate/work/render/214732_r9.zarr ",
+   "2026-09-25T06:36:08Z",
+   "2026-09-25T06:36:23Z",
+   "15",
+   "0",
+   "13874aec472bfc83df4ce598636a0294a981b1afa8307109d138c56ecdbe286e"
+  ],
+  [
+   "vm",
+   "cpu",
+   "/work/bin/vc vc_render_tifxyz -v s3://vesuvius-challenge-open-data/PHerc0841/volumes/20250821151531-9.366um-1.2m-113keV-masked.zarr/ --remote-url s3://vesuvius-challenge-open-data/PHerc0841/volumes/20250821151531-9.366um-1.2m-113keV-masked.zarr/ --segmentation /work/hecate/work/geom/mesh_214732_masked.tifxyz --scale 0.975625 --group-idx 0 --num-slices 16 --slice-step 1.0249839846252402 --voxel-size 9.6 --voxel-unit micrometer --flip-normals --crop-x 1781 --crop-y 682 --crop-width 297 --crop-height 593 --cache-gb 4 --zarr-output /work/hecate/work/render/214732_r96.zarr ",
+   "2026-09-25T06:36:23Z",
+   "2026-09-25T06:36:32Z",
+   "9",
+   "0",
+   "7686c96a8035ed2efec88eb86af6f5e484c28dba3e7dcf84f53578dd0f8baa6e"
+  ],
+  [
+   "vm",
+   "cpu",
+   "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/hecate/work/in/214732_r9.zarr /work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth /work/hecate/work/pred/214732_base.tif --direction both --batch-size 4 --num-workers 1 --no-compile ",
+   "2026-09-25T06:36:49Z",
+   "2026-09-25T06:37:18Z",
+   "29",
+   "0",
+   "2c9c62facc138e66974a790c238f9847a75ddffb09225338e74797b5218a82a8"
+  ],
+  [
+   "vm",
+   "cpu",
+   "/opt/hv-ink/bin/python /work/hecate/src/hecate.py --checkpoint /work/hecate/ckpt/hecate_9.6um.pth --input /work/hecate/work/in/214732_r96.npy --spacing-um 9.6 --output /work/hecate/work/pred/214732_hec_fwd.png --device cpu ",
+   "2026-09-25T06:37:18Z",
+   "2026-09-25T06:43:20Z",
+   "362",
+   "0",
+   "669de013c75eed32ff0af31aedb3bcc637597a82287d3948eaafae34cdf729e1"
+  ],
+  [
+   "vm",
+   "cpu",
+   "/opt/hv-ink/bin/python /work/hecate/src/hecate.py --checkpoint /work/hecate/ckpt/hecate_9.6um.pth --input /work/hecate/work/in/214732_r96.npy --spacing-um 9.6 --output /work/hecate/work/pred/214732_hec_rev.png --device cpu --reverse ",
+   "2026-09-25T06:43:20Z",
+   "2026-09-25T06:49:26Z",
+   "366",
+   "0",
+   "48e189d3deaf585392f75305e68cf8b96bc15e3c38a943a520b341ae76911826"
+  ]
+ ],
+ "checkpoints": {
+  "/work/hecate/ckpt/hecate_9.6um.pth": "809f4f10f7cb7afa19b4bee0f7d2ab31edd7e11b664f9f210cc9c17f22fcfe5d",
+  "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+ },
+ "hecate_source": {
+  "hecate.py": "c232c18a1a86cfb91257a00db13288202bb8ae33732ba26f7291a9b8adb8da59",
+  "README.md": "17d7f029ffcff421dbf767c89e0e36a91f141fdfb5a647cc254e4c88cffabe9e",
+  "LICENSE": "85b6c05ee6c6c25c2808ad4396a6e8f1f739cf12369885cc29644b7eaade349b",
+  "requirements.txt": "cbb03f9674de9da201ad200ef03693e8c9e4663e906214aadcf3ebd51ce7d6bc"
+ },
+ "scripts": {
+  "evaluate.py": "072e8a8e4c8491c9afd1cf5e635d6bbd0d19f45362da12c286e6cb65abac5ef6",
+  "geom_sets.py": "f6017d812e473296c459dac46fc2fa32822e7639aa2ae03ca1afb7c56eaf4778",
+  "post_render.py": "9f0557554584891c1b032c45b4c8a059d5fc2791d060857462369f24d68b5e6d",
+  "render.py": "2591730056e63806a3f5b4fd306ea77f1095ad26e8e3af728ffb716c05eb8b45",
+  "run_infer.py": "c5b36934c89936f76d636bb45ef5ae5a3fc9f5e791440bf71c89755aa53303be",
+  "run_logged.sh": "23d19148139b29637a9769fe641bb725b172445e9836a3ab784c2d15845a63c7",
+  "speed_test.py": "e3ffe470aaa76bc77ede6dcf7a5e424599001a979951f421565d3c14738f1a09"
+ },
+ "metric_code": {
+  "src/hercules/metrics/pixel.py": "a5ab7fed2b83ce005e45a683ba883f8f53073dd9f9818c375bc9ab693fc097c8",
+  "src/hercules/pipeline/canvas.py": "bf54ee566f8a8f6a05f68a66e23113e6d8576c8f377a1cda6dbc73283bd307d6",
+  "src/hercules/geometry/tifxyz.py": "241a2bbfedf6b6b7a4c3ea2d46f93962288012cbf593694fb0b8d0aec73f456f"
+ },
+ "inputs": {
+  "r9": "e485558944a8f0006b0305f592c59d30781eb8561302962f424d4628dc5c5c16",
+  "r96": "955d11aea65a3ba91f4325e7a9b544f837faf7dd78a414abdcfd9492b76693df"
+ }
+}

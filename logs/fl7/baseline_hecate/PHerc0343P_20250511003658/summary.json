@@ -1,0 +1,58 @@
+{
+ "hecate96_resampled_fwd": {
+  "pixel_auc": 0.7309,
+  "pixel_ap": 0.3902,
+  "tile_auc_p95": 0.6522
+ },
+ "hecate96_resampled_rev": {
+  "pixel_auc": 0.5509,
+  "pixel_ap": 0.1533,
+  "tile_auc_p95": 0.5202
+ },
+ "hecate96_resampled_mean": {
+  "pixel_auc": 0.7094,
+  "pixel_ap": 0.3225,
+  "tile_auc_p95": 0.6357
+ },
+ "hecate96_native_crops_fwd": {
+  "pixel_auc": 0.7235,
+  "pixel_ap": 0.3786,
+  "tile_auc_p95": 0.6747
+ },
+ "hecate96_native_crops_rev": {
+  "pixel_auc": 0.5941,
+  "pixel_ap": 0.1716,
+  "tile_auc_p95": 0.5307
+ },
+ "whole_segment_control": {
+  "test": "whole-segment control: pixel AUC/AP of the canvas map vs the organizers pseudo-label on a random 1.5 M of the valid (non-empty middle-plane) pixels, not only the 600 shard crops",
+  "valid_frac": 0.6110561074734703,
+  "n_pixels": 1500000,
+  "label_pos_frac": 0.0756,
+  "fwd": {
+   "pixel_auc": 0.7578,
+   "pixel_ap": 0.2796
+  },
+  "rev": {
+   "pixel_auc": 0.5756,
+   "pixel_ap": 0.0885
+  },
+  "mean": {
+   "pixel_auc": 0.7338,
+   "pixel_ap": 0.2187
+  }
+ },
+ "context_master_global_r1": {
+  "pixel_auc": 0.579,
+  "pixel_ap": 0.167,
+  "tile_auc": 0.575
+ },
+ "checkpoint_sha256": "809f4f10f7cb7afa19b4bee0f7d2ab31edd7e11b664f9f210cc9c17f22fcfe5d",
+ "hf_revision": "9cb86e500e944b11a06a7020403cde5dffb5bcb2",
+ "shard_sha256_prefix": "e680c6bad2219ed0",
+ "compute_s": {
+  "fwd_fp32_stride32": 3114,
+  "rev_fp32_stride32": 6986,
+  "note": "fwd includes ~6 min lost to a container restart and resumed from checkpoint; rev had no restart but ran while the forward scoring and label fetch shared the CPUs"
+ }
+}

@@ -1,0 +1,18 @@
+[2026-10-02T17:05:34Z] env: setup_env.sh
+[2026-10-02T17:11:34Z] GP env ok (/opt/gp/bin/python)
+[2026-10-02T17:11:46Z] grow i100 seed (4434.6 6219.5 4744.0) gens 60
+[2026-10-02T17:25:59Z] grow done 853 s: generated surface 6520069.402154 vx^2 (4.867206 cm^2)
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/fl4/sheetcheck.py", line 7, in <module>
+    i=int(d.rstrip('/').rsplit('_i',1)[1]); s=seeds[i]
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[2026-10-02T17:26:06Z] FAILED: sheetcheck error
+i100 seed r=1720 R(p10/50/90)=1225/1627/1874 vox  z 3295-5417  |cos(n,radial)| median=0.42 frac>0.8=0.16 frac<0.3=0.38
+GATE {"seed": 100, "median_cos": 0.422261545881669, "frac_gt08": 0.16108876759551852, "R_p10": 1225.1435517173848, "R_p90": 1873.7174063736845, "side_cm": 2.03904, "spread_mm_per_cm": 2.7481942993911006, "pass": false}
+[2026-10-02T17:33:04Z] WARN push failed: sheet gate FAIL
+[2026-10-02T17:33:04Z] FAILED: sheet gate (DECL-FL-4-A5)
+[2026-10-02T17:38:50Z] env: setup_env.sh
+i100 seed r=1720 R(p10/50/90)=1225/1627/1874 vox  z 3295-5417  |cos(n,radial)| median=0.42 frac>0.8=0.16 frac<0.3=0.38
+GATE {"seed": 100, "median_cos": 0.422261545881669, "frac_gt08": 0.16108876759551852, "R_p10": 1225.1435517173848, "R_p90": 1873.7174063736845, "side_cm": 2.03904, "spread_mm_per_cm": 2.7481942993911006, "pass": false}
+[2026-10-02T17:39:51Z] FAILED: sheet gate (DECL-FL-4-A5)

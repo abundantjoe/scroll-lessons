@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/inference/infer.py", line 1400, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/inference/infer.py", line 1372, in main
+    configured = configure_model(args)
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/inference/infer.py", line 904, in configure_model
+    config = InkConfig.from_mapping(payload["config"])
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/config.py", line 1132, in from_mapping
+    return cls._from_canonical_mapping(deepcopy(dict(authored)))
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/config.py", line 1139, in _from_canonical_mapping
+    model = InkModelConfig.from_mapping(canonical)
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/config.py", line 866, in from_mapping
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported model_type 'multiteacher_3d_projection'; allowed: unet, unet_2p5d, unet_3d_stem_2d, vesuvius_unet, vesuvius_unet_2p5d, vesuvius_unet_3d_stem_2d
+rc=1

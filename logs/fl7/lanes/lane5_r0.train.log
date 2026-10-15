@@ -1,0 +1,6 @@
+train (1200, 16, 64, 64) val (600, 16, 64, 64) label means 0.2496669371361826 0.24589281269148283
+/home/user/dominion/tools/master/train_master.py:59: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  loss = dice_bce(logit.float(), (y > 0.5).float()); opt.zero_grad(); loss.backward(); opt.step(); tl += float(loss)
+{"epoch": 0, "train_loss": 1.3348812890052795, "val_auc": 0.5439159610643708, "val_ap": 0.1696773363624976, "secs": 123.08661723136902}
+best val AUC 0.5439159610643708 saved logs/fl7/lanes/lane5_r0.pt

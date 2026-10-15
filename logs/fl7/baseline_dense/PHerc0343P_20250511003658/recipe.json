@@ -1,0 +1,129 @@
+{
+ "job": "DECL-FL-7 item 3(ii): public dense-native 9 um ink model on the held-out scroll segment, scored at the validation shard crop positions",
+ "model": {
+  "hf_repo": "Nieuwlaar/ink9um-dense-native",
+  "hf_commit": "b894a0493ab2291cc8dc3247020c0d7cb0967a58",
+  "file": "weights/dense_native_016000.safetensors",
+  "sha256_safetensors": "d3d95dc41dcb24ed76b84b5e12ca5dae25d7fb34edf1dfbb93e0186f91e6fc6d (matches weights/VERIFY.md)",
+  "tensors": 508,
+  "params": 68175426,
+  "pth_payload": "{\"model\": state_dict, \"config\": training/configs/train_dense_native.json, \"step\": 16000} (model-card snippet); config copied to logs/fl7/baseline_dense/train_dense_native.json",
+  "sha256_pth": "301caa0b02e2aa2d6071573ebb4a282ec72bdf9dc864c6dd11bc45b435ed457e",
+  "model_type": "vesuvius_unet_3d_stem_2d (ink_9um hybrid_3d2d family)",
+  "patch": [
+   17,
+   128,
+   128
+  ],
+  "normalization": "robust_mad p1-p99 (tifxyz_robust in villa infer)",
+  "training_domain": "PHerc0139 native 113 keV 9.362 um 28-slice surface volumes (dense 78 keV-teacher pseudo-labels) + aligned ~9.6 um 21-slice pooled inputs (PHerc0139, 1667, Paris4, 0814); init KLAVIS ink9um-dense; held out there: 0139 title/w024/w047/w053",
+  "card_reported": {
+   "title_auc_vs_78keV": 0.9548,
+   "w024_auc": 0.9685
+  }
+ },
+ "inference": {
+  "code": "villa 41701aa0eaa1aa765523db3f9f972b5830abf549, vesuvius.ink_detection.inference.infer (the merged koine_machines flat pipeline; the card names the pre-merge module koine_machines.inference.infer)",
+  "env": "/opt/hv-ink (torch 2.14.1+cpu, 4 threads); fp32 on CPU (autocast only on cuda)",
+  "load": "missing_keys=0 unexpected_keys=0",
+  "command": "python -m vesuvius.ink_detection.inference.infer sv.zarr dense_native_016000.pth out.tif --overlap 0.5 --blend-mode hann --direction <forward|reverse> --batch-size 4 --num-workers 1 --no-compile [--layer-start a --layer-end b]",
+  "output_encoding": "uint8 = clip(prob,0,1)*255 (villa merged infer); NOT the (v-64)/128 scaling in the card zavg_infer.sh, which targets the pre-merge koine_machines encoder; scoring is min-max normalized so the affine choice does not change AUC/AP",
+  "patches": 1316,
+  "stride": 64,
+  "default_window_31": "center crop 7..23 (17 of 31 layers), as the card VERIFY recipe (default window) does on the 28-slice native volumes (5..21)",
+  "reverse": "same layers in reversed order (the card reports forward only; reversal collapses its benchmark to 0.51, so both are run and reported separately: the organizer volume layer order is not known a priori)",
+  "zavg_windows": [
+   {
+    "card_window": "0:20",
+    "slices_28": [
+     2,
+     18
+    ],
+    "center_28": 10.0,
+    "offset_um_from_midplane": -32.8,
+    "center_31": 11,
+    "window_31": "3:20",
+    "slices_31": [
+     3,
+     19
+    ]
+   },
+   {
+    "card_window": "3:23",
+    "slices_28": [
+     5,
+     21
+    ],
+    "center_28": 13.0,
+    "offset_um_from_midplane": -4.7,
+    "center_31": 14,
+    "window_31": "6:23",
+    "slices_31": [
+     6,
+     22
+    ]
+   },
+   {
+    "card_window": "5:25",
+    "slices_28": [
+     7,
+     23
+    ],
+    "center_28": 15.0,
+    "offset_um_from_midplane": 14.0,
+    "center_31": 17,
+    "window_31": "9:26",
+    "slices_31": [
+     9,
+     25
+    ]
+   },
+   {
+    "card_window": "8:27",
+    "slices_28": [
+     9,
+     25
+    ],
+    "center_28": 17.0,
+    "offset_um_from_midplane": 32.8,
+    "center_31": 19,
+    "window_31": "11:28",
+    "slices_31": [
+     11,
+     27
+    ]
+   }
+  ],
+  "zavg_rule": "card recipe for 28-slice native volumes (0:20 3:23 5:25 8:27, each center-cropped to 17 slices) mapped to the same physical offset from the mid-plane in this 31-slice 8.64 um volume, rounded to the nearest voxel; mean of the 4 window maps"
+ },
+ "input": {
+  "scroll": "PHerc0343P",
+  "segment": "20250511003658-tifxyz",
+  "surface_volume": "8.64um-1.2m-116keV-volume-20250521134555.zarr",
+  "shape_DHW": [
+   31,
+   3440,
+   2060
+  ],
+  "um": 8.64,
+  "keV": 116,
+  "nonempty_coverage": 0.6257,
+  "mismatch_vs_model_native_domain": {
+   "voxel_um": "8.64 vs 9.362 (model is 8.4% coarser; a 128 px patch covers 1.11 mm here vs 1.20 mm in training; a 17-layer window spans 147 um here vs 159 um)",
+   "layers": "31 vs 28 (total thickness 268 um vs 262 um: the same physical slab, finer sampled)",
+   "energy_keV": "116 vs 113 (and 21-slice ~9.6 um aligned pooled inputs from 2.4 um volumes for the rest of the corpus)",
+   "scroll": "PHerc0343P never in any public ink_9um/dense label set (the card lists its training sources: PHerc0139, 1667, Paris4, 0814)",
+   "no_resampling": "the volume is fed natively; no rescale to 9.362 um was applied (the card recipe does none for native volumes)"
+  }
+ },
+ "labels": {
+  "shard": "/dev/shm/shards/PHerc0343P_20250511003658.npz (tools/master/build_data.py --stride 48 --max 600, level 0)",
+  "pred": "vesuvius-challenge-open-data/PHerc0343P/segments/20250511003658-tifxyz/ink-detection/PHerc0343P-20250511003658-2.215um-0.4m-111keV-volume-20260304131111-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif",
+  "n_crops": 600,
+  "crop": 64,
+  "label_mean": 0.24589281269148283,
+  "crops_with_ink": 0.49833333333333335,
+  "note": "pseudo-labels = organizers 2.4 um new_canon_autoresearch_recipe prediction rescaled INTER_AREA onto the 8.64 um canvas; not human marks",
+  "scorer": "tools/master/baseline_eval.py: pixel AUC, pixel AP, tile AUC (crop p95 vs crop contains ink) at the shard crop positions"
+ }
+}

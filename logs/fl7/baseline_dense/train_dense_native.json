@@ -1,0 +1,354 @@
+{
+ "description": "TREATMENT: KLAVIS dense recipe (aligned21_hybrid_3d2d, his ex016 label set rebuilt from public data) + OUR 10 native-113keV PHerc0139 segments with dense 78keV-teacher pseudo-labels at ~30% of every batch (quota key 0139nat=19/64). Init dense-ex016, AdamW 2e-5, 20k steps. Held out forever: title w024 w047 w053.",
+ "mode": "flat",
+ "model_type": "vesuvius_unet_3d_stem_2d",
+ "model_config": {
+  "autoconfigure": true,
+  "basic_encoder_block": "BasicBlockD",
+  "basic_decoder_block": "ConvBlock",
+  "stem_channels": 16,
+  "z_projection_mode": "none"
+ },
+ "targets": {
+  "ink": {
+   "activation": "none",
+   "out_channels": 1,
+   "z_projection_mode": "none"
+  }
+ },
+ "in_channels": 1,
+ "patch_size": [
+  17,
+  128,
+  128
+ ],
+ "patch_overlap": 0.25,
+ "patch_min_labeled_coverage": 0.0,
+ "flat_z_window_jitter": {
+  "enabled": true,
+  "window_depth": 17,
+  "max_offset": 2,
+  "probability": 1.0,
+  "padding": "forbidden"
+ },
+ "image_normalization": {
+  "mode": "robust_mad",
+  "percentile_lower": 1.0,
+  "percentile_upper": 99.0
+ },
+ "augmentation_preset": "default",
+ "augmentation_rotation_axes": [
+  0
+ ],
+ "loss": {
+  "bce_label_smoothing": 0.5,
+  "dice_label_smoothing": 0.0
+ },
+ "optimizer": "adamw",
+ "learning_rate": 2e-05,
+ "weight_decay": 3e-05,
+ "scheduler": {
+  "name": "diffusers_cosine_warmup"
+ },
+ "warmup_steps": 500,
+ "grad_clip": 1.0,
+ "mixed_precision": "fp16",
+ "batch_size": 64,
+ "num_iterations": 20000,
+ "seed": 42,
+ "sampling_strategy": "fixed_scroll_prior_stratified",
+ "fixed_scroll_prior": {
+  "seed": 42,
+  "target_batch_counts": {
+   "0139": 20,
+   "1667": 16,
+   "Paris4": 8,
+   "0814": 1,
+   "0139nat": 19
+  }
+ },
+ "sampling_audit_every": 200,
+ "best_checkpoint_metric": "val_balanced_accuracy",
+ "save_every": 4000,
+ "val_every": 4000,
+ "val_steps": 32,
+ "val_preview_batches": 1,
+ "log_every": 50,
+ "dataloader_workers": 12,
+ "pin_memory": true,
+ "verify_finite_gradients_steps": 0,
+ "max_amp_overflow_events": 0,
+ "out_dir": "/workspace/out/dense_native",
+ "datasets": [
+  {
+   "segments_path": "/workspace/data/labels/aligned-scrollprizeorg-21slices",
+   "segments": [
+    "pherc0139-w016",
+    "pherc0139-w035",
+    "pherc0139-w039",
+    "pherc0139-w040",
+    "pherc0139-w041",
+    "pherc0139-w043"
+   ],
+   "surface_volume_paths": {
+    "pherc0139-w016": "/workspace/data/volumes/aligned-iso9/pherc0139-w016.zarr",
+    "pherc0139-w035": "/workspace/data/volumes/aligned-iso9/pherc0139-w035.zarr",
+    "pherc0139-w039": "/workspace/data/volumes/aligned-iso9/pherc0139-w039.zarr",
+    "pherc0139-w040": "/workspace/data/volumes/aligned-iso9/pherc0139-w040.zarr",
+    "pherc0139-w041": "/workspace/data/volumes/aligned-iso9/pherc0139-w041.zarr",
+    "pherc0139-w043": "/workspace/data/volumes/aligned-iso9/pherc0139-w043.zarr"
+   },
+   "volume_scale": 0,
+   "source_family": "public_2p4_level2_zmean4",
+   "sampling_scroll": "0139",
+   "sampling_physical_segment_keys": {
+    "pherc0139-w016": "0139:w016",
+    "pherc0139-w035": "0139:w035",
+    "pherc0139-w039": "0139:w039",
+    "pherc0139-w040": "0139:w040",
+    "pherc0139-w041": "0139:w041",
+    "pherc0139-w043": "0139:w043"
+   },
+   "sampling_representation_keys": {
+    "pherc0139-w016": "public_2p4_level2_zmean4:pherc0139-w016",
+    "pherc0139-w035": "public_2p4_level2_zmean4:pherc0139-w035",
+    "pherc0139-w039": "public_2p4_level2_zmean4:pherc0139-w039",
+    "pherc0139-w040": "public_2p4_level2_zmean4:pherc0139-w040",
+    "pherc0139-w041": "public_2p4_level2_zmean4:pherc0139-w041",
+    "pherc0139-w043": "public_2p4_level2_zmean4:pherc0139-w043"
+   }
+  },
+  {
+   "segments_path": "/workspace/data/labels/dense7-aligned-rebuilt",
+   "segments": [
+    "pherc0139-w017",
+    "pherc0139-w028",
+    "pherc0139-w029"
+   ],
+   "surface_volume_paths": {
+    "pherc0139-w017": "/workspace/data/volumes/aligned-iso9/pherc0139-w017.zarr",
+    "pherc0139-w028": "/workspace/data/volumes/aligned-iso9/pherc0139-w028.zarr",
+    "pherc0139-w029": "/workspace/data/volumes/aligned-iso9/pherc0139-w029.zarr"
+   },
+   "volume_scale": 0,
+   "source_family": "public_2p4_level2_zmean4",
+   "sampling_scroll": "0139",
+   "sampling_physical_segment_keys": {
+    "pherc0139-w017": "0139:w017",
+    "pherc0139-w028": "0139:w028",
+    "pherc0139-w029": "0139:w029"
+   },
+   "sampling_representation_keys": {
+    "pherc0139-w017": "public_2p4_level2_zmean4:pherc0139-w017",
+    "pherc0139-w028": "public_2p4_level2_zmean4:pherc0139-w028",
+    "pherc0139-w029": "public_2p4_level2_zmean4:pherc0139-w029"
+   }
+  },
+  {
+   "segments_path": "/workspace/data/labels/dense7-aligned-rebuilt",
+   "segments": [
+    "pherc0814-46527"
+   ],
+   "surface_volume_paths": {
+    "pherc0814-46527": "/workspace/data/volumes/aligned-iso9/pherc0814-46527.zarr"
+   },
+   "volume_scale": 0,
+   "source_family": "public_2p4_level2_zmean4",
+   "sampling_scroll": "0814",
+   "sampling_physical_segment_keys": {
+    "pherc0814-46527": "0814:46527"
+   },
+   "sampling_representation_keys": {
+    "pherc0814-46527": "public_2p4_level2_zmean4:pherc0814-46527"
+   }
+  },
+  {
+   "segments_path": "/workspace/data/labels/aligned-scrollprizeorg-21slices",
+   "segments": [
+    "pherc1667-w013",
+    "pherc1667-w018",
+    "pherc1667-w023",
+    "pherc1667-w031"
+   ],
+   "surface_volume_paths": {
+    "pherc1667-w013": "/workspace/data/volumes/aligned-iso9/pherc1667-w013.zarr",
+    "pherc1667-w018": "/workspace/data/volumes/aligned-iso9/pherc1667-w018.zarr",
+    "pherc1667-w023": "/workspace/data/volumes/aligned-iso9/pherc1667-w023.zarr",
+    "pherc1667-w031": "/workspace/data/volumes/aligned-iso9/pherc1667-w031.zarr"
+   },
+   "volume_scale": 0,
+   "source_family": "public_2p4_level2_zmean4",
+   "sampling_scroll": "1667",
+   "sampling_physical_segment_keys": {
+    "pherc1667-w013": "1667:w013",
+    "pherc1667-w018": "1667:w018",
+    "pherc1667-w023": "1667:w023",
+    "pherc1667-w031": "1667:w031"
+   },
+   "sampling_representation_keys": {
+    "pherc1667-w013": "public_2p4_level2_zmean4:pherc1667-w013",
+    "pherc1667-w018": "public_2p4_level2_zmean4:pherc1667-w018",
+    "pherc1667-w023": "public_2p4_level2_zmean4:pherc1667-w023",
+    "pherc1667-w031": "public_2p4_level2_zmean4:pherc1667-w031"
+   }
+  },
+  {
+   "segments_path": "/workspace/data/labels/dense7-aligned-rebuilt",
+   "segments": [
+    "pherc1667-w028",
+    "pherc1667-w029"
+   ],
+   "surface_volume_paths": {
+    "pherc1667-w028": "/workspace/data/volumes/aligned-iso9/pherc1667-w028.zarr",
+    "pherc1667-w029": "/workspace/data/volumes/aligned-iso9/pherc1667-w029.zarr"
+   },
+   "volume_scale": 0,
+   "source_family": "public_2p4_level2_zmean4",
+   "sampling_scroll": "1667",
+   "sampling_physical_segment_keys": {
+    "pherc1667-w028": "1667:w028",
+    "pherc1667-w029": "1667:w029"
+   },
+   "sampling_representation_keys": {
+    "pherc1667-w028": "public_2p4_level2_zmean4:pherc1667-w028",
+    "pherc1667-w029": "public_2p4_level2_zmean4:pherc1667-w029"
+   }
+  },
+  {
+   "segments_path": "/workspace/data/labels/aligned-scrollprizeorg-21slices",
+   "segments": [
+    "phercparis4-w00",
+    "phercparis4-w01",
+    "phercparis4-w02",
+    "phercparis4-w03",
+    "phercparis4-w05",
+    "phercparis4-w06",
+    "phercparis4-w07",
+    "phercparis4-w09"
+   ],
+   "surface_volume_paths": {
+    "phercparis4-w00": "/workspace/data/volumes/aligned-iso9/phercparis4-w00.zarr",
+    "phercparis4-w01": "/workspace/data/volumes/aligned-iso9/phercparis4-w01.zarr",
+    "phercparis4-w02": "/workspace/data/volumes/aligned-iso9/phercparis4-w02.zarr",
+    "phercparis4-w03": "/workspace/data/volumes/aligned-iso9/phercparis4-w03.zarr",
+    "phercparis4-w05": "/workspace/data/volumes/aligned-iso9/phercparis4-w05.zarr",
+    "phercparis4-w06": "/workspace/data/volumes/aligned-iso9/phercparis4-w06.zarr",
+    "phercparis4-w07": "/workspace/data/volumes/aligned-iso9/phercparis4-w07.zarr",
+    "phercparis4-w09": "/workspace/data/volumes/aligned-iso9/phercparis4-w09.zarr"
+   },
+   "volume_scale": 0,
+   "source_family": "public_2p4_level2_zmean4",
+   "sampling_scroll": "Paris4",
+   "sampling_physical_segment_keys": {
+    "phercparis4-w00": "Paris4:w00",
+    "phercparis4-w01": "Paris4:w01",
+    "phercparis4-w02": "Paris4:w02",
+    "phercparis4-w03": "Paris4:w03",
+    "phercparis4-w05": "Paris4:w05",
+    "phercparis4-w06": "Paris4:w06",
+    "phercparis4-w07": "Paris4:w07",
+    "phercparis4-w09": "Paris4:w09"
+   },
+   "sampling_representation_keys": {
+    "phercparis4-w00": "public_2p4_level2_zmean4:phercparis4-w00",
+    "phercparis4-w01": "public_2p4_level2_zmean4:phercparis4-w01",
+    "phercparis4-w02": "public_2p4_level2_zmean4:phercparis4-w02",
+    "phercparis4-w03": "public_2p4_level2_zmean4:phercparis4-w03",
+    "phercparis4-w05": "public_2p4_level2_zmean4:phercparis4-w05",
+    "phercparis4-w06": "public_2p4_level2_zmean4:phercparis4-w06",
+    "phercparis4-w07": "public_2p4_level2_zmean4:phercparis4-w07",
+    "phercparis4-w09": "public_2p4_level2_zmean4:phercparis4-w09"
+   }
+  },
+  {
+   "segments_path": "/workspace/data/labels/native9-scrollprizeorg-21slices",
+   "segments": [
+    "w035",
+    "w039",
+    "w040",
+    "w041",
+    "w044"
+   ],
+   "surface_volume_paths": {
+    "w035": "/workspace/data/volumes/native113/w035.zarr",
+    "w039": "/workspace/data/volumes/native113/w039.zarr",
+    "w040": "/workspace/data/volumes/native113/w040.zarr",
+    "w041": "/workspace/data/volumes/native113/w041.zarr",
+    "w044": "/workspace/data/volumes/native113/w044.zarr"
+   },
+   "volume_scale": 0,
+   "source_family": "native_9p362_level0",
+   "sampling_scroll": "0139",
+   "sampling_physical_segment_keys": {
+    "w035": "0139:w035",
+    "w039": "0139:w039",
+    "w040": "0139:w040",
+    "w041": "0139:w041",
+    "w044": "0139:w044"
+   },
+   "sampling_representation_keys": {
+    "w035": "native_9p362_level0:w035",
+    "w039": "native_9p362_level0:w039",
+    "w040": "native_9p362_level0:w040",
+    "w041": "native_9p362_level0:w041",
+    "w044": "native_9p362_level0:w044"
+   }
+  },
+  {
+   "segments_path": "/workspace/data/labels/native-dense-0139-78keV",
+   "segments": [
+    "w030",
+    "w032",
+    "w033",
+    "w034",
+    "w040",
+    "w041",
+    "w043",
+    "w046",
+    "w049",
+    "w050"
+   ],
+   "surface_volume_paths": {
+    "w030": "/workspace/data/volumes/native113/w030.zarr",
+    "w032": "/workspace/data/volumes/native113/w032.zarr",
+    "w033": "/workspace/data/volumes/native113/w033.zarr",
+    "w034": "/workspace/data/volumes/native113/w034.zarr",
+    "w040": "/workspace/data/volumes/native113/w040.zarr",
+    "w041": "/workspace/data/volumes/native113/w041.zarr",
+    "w043": "/workspace/data/volumes/native113/w043.zarr",
+    "w046": "/workspace/data/volumes/native113/w046.zarr",
+    "w049": "/workspace/data/volumes/native113/w049.zarr",
+    "w050": "/workspace/data/volumes/native113/w050.zarr"
+   },
+   "volume_scale": 0,
+   "source_family": "native_9p362_level0_dense78keV",
+   "sampling_scroll": "0139nat",
+   "sampling_physical_segment_keys": {
+    "w030": "0139nat:w030",
+    "w032": "0139nat:w032",
+    "w033": "0139nat:w033",
+    "w034": "0139nat:w034",
+    "w040": "0139nat:w040",
+    "w041": "0139nat:w041",
+    "w043": "0139nat:w043",
+    "w046": "0139nat:w046",
+    "w049": "0139nat:w049",
+    "w050": "0139nat:w050"
+   },
+   "sampling_representation_keys": {
+    "w030": "native_9p362_level0_dense78keV:w030",
+    "w032": "native_9p362_level0_dense78keV:w032",
+    "w033": "native_9p362_level0_dense78keV:w033",
+    "w034": "native_9p362_level0_dense78keV:w034",
+    "w040": "native_9p362_level0_dense78keV:w040",
+    "w041": "native_9p362_level0_dense78keV:w041",
+    "w043": "native_9p362_level0_dense78keV:w043",
+    "w046": "native_9p362_level0_dense78keV:w046",
+    "w049": "native_9p362_level0_dense78keV:w049",
+    "w050": "native_9p362_level0_dense78keV:w050"
+   }
+  }
+ ],
+ "checkpoint": "/workspace/job/init.pth",
+ "weights_only": true
+}

@@ -1,0 +1,132 @@
+{
+ "job": "DECL-FL-7 item 3(ii): public dense-native 9 um ink model (Nieuwlaar/ink9um-dense-native dense_native_016000) on held-out PHerc0343P 20250511003658, 8.64 um organizer surface volume, scored at the validation shard crop positions (600 crops, 64 px, 49.8 % with pseudo-label ink)",
+ "scores": {
+  "dense016k_for_z11-28": {
+   "pixel_auc": 0.7441,
+   "pixel_ap": 0.3939,
+   "tile_auc_p95": 0.6594,
+   "n_crops": 600
+  },
+  "dense016k_for_z3-20": {
+   "pixel_auc": 0.7533,
+   "pixel_ap": 0.3968,
+   "tile_auc_p95": 0.6632,
+   "n_crops": 600
+  },
+  "dense016k_for_z6-23": {
+   "pixel_auc": 0.7605,
+   "pixel_ap": 0.4154,
+   "tile_auc_p95": 0.6889,
+   "n_crops": 600
+  },
+  "dense016k_for_z9-26": {
+   "pixel_auc": 0.752,
+   "pixel_ap": 0.4057,
+   "tile_auc_p95": 0.6798,
+   "n_crops": 600
+  },
+  "dense016k_for_zavg": {
+   "pixel_auc": 0.7694,
+   "pixel_ap": 0.4529,
+   "tile_auc_p95": 0.6891,
+   "n_crops": 600
+  },
+  "dense016k_fwd": {
+   "pixel_auc": 0.7605,
+   "pixel_ap": 0.4082,
+   "tile_auc_p95": 0.6884,
+   "n_crops": 600
+  },
+  "dense016k_mean": {
+   "pixel_auc": 0.7441,
+   "pixel_ap": 0.3807,
+   "tile_auc_p95": 0.6761,
+   "n_crops": 600
+  },
+  "dense016k_rev": {
+   "pixel_auc": 0.5847,
+   "pixel_ap": 0.1822,
+   "tile_auc_p95": 0.5497,
+   "n_crops": 600
+  },
+  "dense016k_rev_z11-28": {
+   "pixel_auc": 0.6446,
+   "pixel_ap": 0.2404,
+   "tile_auc_p95": 0.6002,
+   "n_crops": 600
+  },
+  "dense016k_rev_z3-20": {
+   "pixel_auc": 0.555,
+   "pixel_ap": 0.155,
+   "tile_auc_p95": 0.5047,
+   "n_crops": 600
+  },
+  "dense016k_rev_z6-23": {
+   "pixel_auc": 0.5789,
+   "pixel_ap": 0.1687,
+   "tile_auc_p95": 0.5465,
+   "n_crops": 600
+  },
+  "dense016k_rev_z9-26": {
+   "pixel_auc": 0.6158,
+   "pixel_ap": 0.2103,
+   "tile_auc_p95": 0.5572,
+   "n_crops": 600
+  },
+  "dense016k_rev_zavg": {
+   "pixel_auc": 0.6135,
+   "pixel_ap": 0.2043,
+   "tile_auc_p95": 0.5621,
+   "n_crops": 600
+  },
+  "ink9um_s42_75k_fwd": {
+   "pixel_auc": 0.6539,
+   "pixel_ap": 0.3123,
+   "tile_auc_p95": 0.5812,
+   "n_crops": 600
+  },
+  "ink9um_s42_75k_mean": {
+   "pixel_auc": 0.6484,
+   "pixel_ap": 0.2779,
+   "tile_auc_p95": 0.5783,
+   "n_crops": 600
+  },
+  "ink9um_s42_75k_rev": {
+   "pixel_auc": 0.5352,
+   "pixel_ap": 0.1665,
+   "tile_auc_p95": 0.4995,
+   "n_crops": 600
+  }
+ },
+ "fl7_bars_for_reference": {
+  "pixel_auc": 0.9,
+  "pixel_ap": 0.5,
+  "tile_auc_p95": 0.85
+ },
+ "best_dense_recipe": "dense016k_for_zavg",
+ "best_vs_bars": {
+  "pixel_auc": [
+   0.7694,
+   0.9,
+   "below"
+  ],
+  "pixel_ap": [
+   0.4529,
+   0.5,
+   "below"
+  ],
+  "tile_auc_p95": [
+   0.6891,
+   0.85,
+   "below"
+  ]
+ },
+ "reading": [
+  "The public dense-native model is a comparator record (item 3(ii)); the bars in item 3(i)/(iii) apply to the master model, not to it. Its best recipe here (forward z-window ensemble) sits below all three bars on this scroll.",
+  "Direction: forward (organizer layer order) beats reverse on every window (pixel AUC 0.74-0.77 vs 0.55-0.64), the same orientation sensitivity the model card reports (reversal collapses its benchmark to 0.51); the organizer volume therefore has the recto-facing order the model expects, and the fwd/rev mean is worse than forward alone.",
+  "z-window ensemble (card recipe mapped to 31 layers): +0.009 pixel AUC, +0.045 AP over the default center window, in line with the card (+0.015 AUC on its benchmark).",
+  "Input mismatch (recipe.json): 8.64 um / 116 keV / 31 layers vs the model native domain 9.362 um / 113 keV / 28 layers (8.4 % finer sampling, same slab thickness), fed natively without resampling as the card recipe does; PHerc0343P is outside every public ink_9um/dense label set.",
+  "Labels are the organizers 2026 2.4 um pseudo-labels rescaled to the coarse canvas, not human marks; the reference PNG pseudolabel_organizers2026_q4.png shows them on the same canvas as the maps.",
+  "No letters and no readings are claimed from any map here."
+ ]
+}

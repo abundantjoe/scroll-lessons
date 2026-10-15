@@ -1,0 +1,13 @@
+[2026-10-02T17:05:35Z] env: setup_env.sh
+[2026-10-02T17:11:08Z] GP env ok (/opt/gp/bin/python)
+[2026-10-02T17:11:14Z] grow i99 seed (5028.1 7345.9 4744.0) gens 60
+[2026-10-02T17:26:54Z] grow done 940 s: generated surface 6155311.977331 vx^2 (4.594916 cm^2)
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/fl4/sheetcheck.py", line 7, in <module>
+    i=int(d.rstrip('/').rsplit('_i',1)[1]); s=seeds[i]
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[2026-10-02T17:27:00Z] FAILED: sheetcheck error
+i 99 seed r=1593 R(p10/50/90)=1200/1552/1946 vox  z 3231-5874  |cos(n,radial)| median=0.81 frac>0.8=0.52 frac<0.3=0.03
+GATE {"seed": 99, "median_cos": 0.8071411782947562, "frac_gt08": 0.5163746049985636, "R_p10": 1199.5968542531705, "R_p90": 1946.3139347024364, "side_cm": 2.03904, "spread_mm_per_cm": 3.1640554256324833, "pass": false}
+[2026-10-02T17:31:01Z] FAILED: sheet gate (DECL-FL-4-A5)

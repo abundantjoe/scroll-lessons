@@ -1,0 +1,19 @@
+{
+  "checkpoint": "hecate_9.6um.pth",
+  "sampling_um": 9.6,
+  "shape_yx": [
+    3096,
+    1854
+  ],
+  "reverse_z": true,
+  "central_depth": 16,
+  "planes": [
+    6,
+    22
+  ],
+  "precision": "fp32",
+  "stride": 32,
+  "n_origins": 5472,
+  "probabilities": "uint8 = round(255 * probability); no min-max scaling",
+  "driver": "hecate_tiled.py (resumable re-implementation of hecate.predict)"
+}

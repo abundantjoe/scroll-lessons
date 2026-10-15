@@ -1,0 +1,21 @@
+[2026-10-02T17:05:36Z] env: setup_env.sh
+[2026-10-02T17:10:46Z] GP env ok (/opt/gp/bin/python)
+[2026-10-02T17:10:49Z] grow i101 seed (5156.1 5221.1 4744.0) gens 60
+[2026-10-02T17:25:09Z] grow done 860 s: generated surface 6512903.713726 vx^2 (4.861857 cm^2)
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/fl4/sheetcheck.py", line 7, in <module>
+    i=int(d.rstrip('/').rsplit('_i',1)[1]); s=seeds[i]
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[2026-10-02T17:25:15Z] FAILED: sheetcheck error
+[2026-10-02T17:31:04Z] env: setup_env.sh
+i101 seed r=1412 R(p10/50/90)=1136/1420/1989 vox  z 3338-5637  |cos(n,radial)| median=0.66 frac>0.8=0.34 frac<0.3=0.19
+GATE {"seed": 101, "median_cos": 0.6636259704367361, "frac_gt08": 0.3411376041367423, "R_p10": 1136.17793088161, "R_p90": 1989.439724019071, "side_cm": 2.03904, "spread_mm_per_cm": 3.61551607261636, "pass": false}
+[2026-10-02T17:31:55Z] FAILED: sheet gate (DECL-FL-4-A5)
+i101 seed r=1412 R(p10/50/90)=1136/1420/1989 vox  z 3338-5637  |cos(n,radial)| median=0.66 frac>0.8=0.34 frac<0.3=0.19
+GATE {"seed": 101, "median_cos": 0.6636259704367361, "frac_gt08": 0.3411376041367423, "R_p10": 1136.17793088161, "R_p90": 1989.439724019071, "side_cm": 2.03904, "spread_mm_per_cm": 3.61551607261636, "pass": false}
+[2026-10-02T17:38:01Z] gate MARGINAL tier (A7-E2)
+[2026-10-02T17:38:03Z] render
+[2026-10-02T17:39:41Z] render ok
+[2026-10-02T17:39:41Z] GP B forward
+[2026-10-02T17:57:00Z] GP B reverse
