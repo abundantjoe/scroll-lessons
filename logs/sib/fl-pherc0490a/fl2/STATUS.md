@@ -1,0 +1,42 @@
+2026-10-01T02:14:47Z fl-pherc0490a fl2: START DECL-FL-2 primary (lane 0) PHerc0490A vol 20250521151210; brief 0e07b757 + assign ffb22500 verified; template = pilot fl2 copy (4dd77aa, = 54b29c96 + FL2 params) with PHerc0490A params (8.64 um, CT/SURF, UMB none, names pherc0490a_fl-pherc0490a_s<k>); env fixed per item 3 (vesuvius pip --ignore-requires-python on 3.13, imagecodecs), setup_env OK, ckpt e635558a OK; DENSE: pilot DENSE_FAIL (no DENSE_OK.json), official only
+2026-10-01T02:18:07Z fl-pherc0490a fl2: s3 listing
+2026-10-01T02:20:27Z fl-pherc0490a fl2: seeds
+2026-10-01T02:21:34Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s0
+2026-10-01T02:22:23Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s2
+2026-10-01T02:23:36Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s4
+2026-10-01T02:24:36Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s6
+2026-10-01T02:25:36Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s8
+2026-10-01T02:26:43Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s10
+2026-10-01T02:27:49Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s12
+2026-10-01T02:28:55Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s14
+2026-10-01T02:29:52Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s16
+2026-10-01T02:30:49Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s18
+2026-10-01T02:31:47Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s20
+2026-10-01T02:32:44Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s22
+2026-10-01T02:34:06Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s24
+2026-10-01T02:35:50Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s26
+2026-10-01T02:36:44Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s28
+2026-10-01T02:37:48Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s30
+2026-10-01T02:38:51Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s32
+2026-10-01T02:39:47Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s34
+2026-10-01T02:40:46Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s36
+2026-10-01T02:41:42Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s38
+2026-10-01T02:42:41Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s40
+2026-10-01T02:43:41Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s42
+2026-10-01T02:44:55Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s44
+2026-10-01T02:45:52Z fl-pherc0490a fl2: grow pherc0490a_fl-pherc0490a_s46
+2026-10-01T03:14:15Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s0
+2026-10-01T03:43:18Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s2
+2026-10-01T04:10:26Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s4
+2026-10-01T06:55:13Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s6
+2026-10-01T07:37:35Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s8
+2026-10-01T08:25:36Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s10
+2026-10-01T09:09:16Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s12
+2026-10-01T10:07:56Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s14
+2026-10-01T10:54:32Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s16
+2026-10-01T11:40:57Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s18
+2026-10-01T12:45:59Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s20
+2026-10-01T13:45:56Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s22
+2026-10-01T14:41:13Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s24
+2026-10-01T15:32:26Z fl-pherc0490a fl2: tiles pherc0490a_fl-pherc0490a_s28
+2026-10-01T16:07:29Z fl-pherc0490a fl2: keepalive re-arm refused by the session's auto-mode permission check; not routed around. Detached watchdog/pipeline continue while the container lives; relaunch after a restart: setsid nohup bash tools/sib/fl-pherc0490a/fl2/watchdog.sh &

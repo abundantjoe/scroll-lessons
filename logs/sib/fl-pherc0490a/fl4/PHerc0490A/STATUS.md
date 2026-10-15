@@ -1,0 +1,1 @@
+2026-10-01T18:31:07Z fl-pherc0490a fl4: NOT STARTED. go.sh would kill FL-2, fetch and run the GP model kit and need the keepalive call, which auto mode refused at 16:07Z (and earlier refused external code and weights). Held for the owner's explicit go-ahead in this session; not routed around. FL-2: 14/22 segments tiled and pushed; pipeline not running.
