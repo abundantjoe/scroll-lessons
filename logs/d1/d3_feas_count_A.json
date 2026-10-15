@@ -1,0 +1,241 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "rule": "DECL-D3-FEAS",
+ "builder": "A",
+ "generated_utc": "2026-09-25T09:23:32Z",
+ "method": {
+  "canvas_to_grid": "g = (c + 0.5)/20 per axis; bilinear interpolation of tifxyz x,y,z (float64); pixel mesh-valid iff all 4 surrounding grid nodes != -1 and inside grid",
+  "J_points": "every mesh-valid canvas pixel inside each 2136x2136 J window (J1-J5) on its own segment; one pooled KD-tree",
+  "exclusion": "pixel excluded if Euclidean 3-D distance of its mesh point to nearest J point < 128 vox (strict), OR pixel lies inside a J window on its own segment; applied to all 3 segments; mesh-invalid pixels have no mesh point and are only excluded if inside a J window",
+  "distance_check": "scipy cKDTree exact nearest neighbour (distance_upper_bound 132 vox, float64), plus brute-force re-check of up to 300 random retained pixels with d < 132 against all J points",
+  "tiles": "128x128 px, origins 0, s, 2s, ... with origin+128 <= canvas size; eligible iff valid9 count*10 >= 9*16384 and zero excluded pixels; TEXT iff count(valid & text)*100 >= pct*count(valid)",
+  "text_ref9": "ref9 >= 150",
+  "text_lab_gt0": "lab9_inklabels.frac > 0 AND lab9_supervision.frac > 0 (literal 'label > 0 inside supervision' on the 9 um area-averaged fractions)",
+  "text_lab_ge0p5": "lab9_inklabels.frac >= 0.5 AND lab9_supervision.frac >= 0.5 (majority-footprint variant, extra)",
+  "pixel_area_cm2": 8.772195599999997e-07,
+  "threads": 2
+ },
+ "J_windows": {
+  "J1": {
+   "segment": "20260220214732-auto_grown_20260220144552896",
+   "n_points_mine": 3832476,
+   "n_points_bank": 958503,
+   "rows": [
+    300,
+    2436
+   ],
+   "cols": [
+    2315,
+    4451
+   ]
+  },
+  "J2": {
+   "segment": "20260220213127-w00",
+   "n_points_mine": 3263120,
+   "n_points_bank": 815395,
+   "rows": [
+    2030,
+    4166
+   ],
+   "cols": [
+    2340,
+    4476
+   ]
+  },
+  "J3": {
+   "segment": "20260220214732-auto_grown_20260220144552896",
+   "n_points_mine": 4368560,
+   "n_points_bank": 1091007,
+   "rows": [
+    1950,
+    4086
+   ],
+   "cols": [
+    104,
+    2240
+   ]
+  },
+  "J4": {
+   "segment": "20260221022814-auto_grown_20260220174252405",
+   "n_points_mine": 4562496,
+   "n_points_bank": 1138489,
+   "rows": [
+    1000,
+    3136
+   ],
+   "cols": [
+    624,
+    2760
+   ]
+  },
+  "J5": {
+   "segment": "20260221022814-auto_grown_20260220174252405",
+   "n_points_mine": 3955040,
+   "n_points_bank": 988350,
+   "rows": [
+    1000,
+    3136
+   ],
+   "cols": [
+    2760,
+    4896
+   ]
+  }
+ },
+ "J_points_total": 19981692,
+ "per_segment": {
+  "20260220213127-w00": {
+   "primary_s64_2pct": {
+    "n_tiles": 4672,
+    "eligible": 309,
+    "text_ref9": 122,
+    "text_lab_gt0": 0,
+    "text_lab_ge0p5": 0
+   },
+   "strict_s128_5pct": {
+    "n_tiles": 1184,
+    "eligible": 80,
+    "text_ref9": 23,
+    "text_lab_gt0": 0,
+    "text_lab_ge0p5": 0
+   },
+   "generous_s32_1pct": {
+    "n_tiles": 18560,
+    "eligible": 1231,
+    "text_ref9": 509,
+    "text_lab_gt0": 0,
+    "text_lab_ge0p5": 0
+   },
+   "canvas_rows_cols": [
+    4220,
+    4760
+   ],
+   "valid9_px": 14261585,
+   "valid9_cm2": 12.510541318602597,
+   "mesh_valid_px_mine": 14535200,
+   "mesh_valid_mismatch_vs_bank_px": 0,
+   "valid9_outside_my_meshvalid_px": 0,
+   "excluded_3d_px": 12695331,
+   "excluded_total_px": 13994707,
+   "nonexcluded_valid_px": 1711995,
+   "nonexcluded_valid_cm2": 1.5017955006221995,
+   "nonexcluded_ref_text_cm2": 0.08359551518975998,
+   "min_3d_dist_retained_meshvalid_px_vox": 128.00015393672064,
+   "retained_meshvalid_px_with_no_J_within_132vox": 1692263,
+   "bruteforce_sample_n": 300,
+   "bruteforce_sample_min_dist_vox": 128.00702082315405
+  },
+  "20260220214732-auto_grown_20260220144552896": {
+   "primary_s64_2pct": {
+    "n_tiles": 5112,
+    "eligible": 317,
+    "text_ref9": 111,
+    "text_lab_gt0": 20,
+    "text_lab_ge0p5": 20
+   },
+   "strict_s128_5pct": {
+    "n_tiles": 1296,
+    "eligible": 76,
+    "text_ref9": 25,
+    "text_lab_gt0": 5,
+    "text_lab_ge0p5": 5
+   },
+   "generous_s32_1pct": {
+    "n_tiles": 20448,
+    "eligible": 1248,
+    "text_ref9": 479,
+    "text_lab_gt0": 88,
+    "text_lab_ge0p5": 86
+   },
+   "canvas_rows_cols": [
+    4640,
+    4720
+   ],
+   "valid9_px": 14311038,
+   "valid9_cm2": 12.553922457503276,
+   "mesh_valid_px_mine": 14603600,
+   "mesh_valid_mismatch_vs_bank_px": 0,
+   "valid9_outside_my_meshvalid_px": 0,
+   "excluded_3d_px": 12750704,
+   "excluded_total_px": 13674660,
+   "nonexcluded_valid_px": 1724802,
+   "nonexcluded_valid_cm2": 1.5130300515271196,
+   "nonexcluded_ref_text_cm2": 0.10920418580483997,
+   "min_3d_dist_retained_meshvalid_px_vox": 128.00006382866454,
+   "retained_meshvalid_px_with_no_J_within_132vox": 1704910,
+   "bruteforce_sample_n": 300,
+   "bruteforce_sample_min_dist_vox": 128.00806699067232
+  },
+  "20260221022814-auto_grown_20260220174252405": {
+   "primary_s64_2pct": {
+    "n_tiles": 4275,
+    "eligible": 240,
+    "text_ref9": 73,
+    "text_lab_gt0": 0,
+    "text_lab_ge0p5": 0
+   },
+   "strict_s128_5pct": {
+    "n_tiles": 1102,
+    "eligible": 55,
+    "text_ref9": 17,
+    "text_lab_gt0": 0,
+    "text_lab_ge0p5": 0
+   },
+   "generous_s32_1pct": {
+    "n_tiles": 17100,
+    "eligible": 988,
+    "text_ref9": 353,
+    "text_lab_gt0": 0,
+    "text_lab_ge0p5": 0
+   },
+   "canvas_rows_cols": [
+    3760,
+    4900
+   ],
+   "valid9_px": 13661996,
+   "valid9_cm2": 11.984570119841756,
+   "mesh_valid_px_mine": 13756000,
+   "mesh_valid_mismatch_vs_bank_px": 0,
+   "valid9_outside_my_meshvalid_px": 0,
+   "excluded_3d_px": 12294830,
+   "excluded_total_px": 12902286,
+   "nonexcluded_valid_px": 1436713,
+   "nonexcluded_valid_cm2": 1.2603127457062797,
+   "nonexcluded_ref_text_cm2": 0.053577061846559984,
+   "min_3d_dist_retained_meshvalid_px_vox": 128.00026190546458,
+   "retained_meshvalid_px_with_no_J_within_132vox": 1415822,
+   "bruteforce_sample_n": 300,
+   "bruteforce_sample_min_dist_vox": 128.02011848676685
+  }
+ },
+ "total": {
+  "primary_s64_2pct": {
+   "n_tiles": 14059,
+   "eligible": 866,
+   "text_ref9": 306,
+   "text_lab_gt0": 20,
+   "text_lab_ge0p5": 20
+  },
+  "strict_s128_5pct": {
+   "n_tiles": 3582,
+   "eligible": 211,
+   "text_ref9": 65,
+   "text_lab_gt0": 5,
+   "text_lab_ge0p5": 5
+  },
+  "generous_s32_1pct": {
+   "n_tiles": 56108,
+   "eligible": 3467,
+   "text_ref9": 1341,
+   "text_lab_gt0": 88,
+   "text_lab_ge0p5": 86
+  },
+  "nonexcluded_valid_cm2": 4.275138297855599,
+  "nonexcluded_ref_text_cm2": 0.24637676284115995
+ },
+ "decision_input": {
+  "primary_text_patches_total": 306,
+  "threshold": 280
+ },
+ "seconds": 825.1
+}

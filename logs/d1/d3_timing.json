@@ -1,0 +1,380 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "id": "d3_timing",
+ "serves": "RULES.md D0-HW (D3/D4 run only if a CPU timing test shows <= 12 h per arm), DECL-D3D4, D3-FEAS-RESULT",
+ "generated_utc": "2026-09-25T09:45:28Z",
+ "viewing": "no image or pixel array was opened, displayed or described; numbers only",
+ "not_read": "/srv/scorer, /work/sealed_io, seals/, /work/jseal/seal_J.age, J-window renders/maps (none opened)",
+ "summary": {
+  "s_per_step_median_batch8_fp32_3threads": 3.0453934019969893,
+  "projected_h_per_arm_2000_steps": 1.6918852233316608,
+  "projected_h_4_arms_sequential": 6.767540893326643,
+  "peak_rss_GB_batch8": 3.317690368,
+  "peak_rss_GiB_batch8": 3.0898399353027344,
+  "peak_rss_kB_VmHWM_batch8": 3239932,
+  "D0_HW_bar_h_per_arm": 12.0,
+  "per_arm_le_12h": true,
+  "headroom_factor_vs_12h": 7.09267971285286,
+  "with_eval_maps_h_per_arm": 2.771468556664994,
+  "with_eval_maps_h_4_arms": 11.085874226659977,
+  "eval_maps_note": "post-training C2-NT maps (both orders) for 8 D1-type 2648 px windows = sum of D1 infer seconds (logs/d1/d1_build_infer.json), not part of the D0-HW per-arm training bar",
+  "data_used": "REAL: official vc_render_tifxyz -n 31 at 9.366 um of one fold-A crop (not synthetic tensors)",
+  "batch4_batch2": "not required: batch 8 fits (peak RSS 3.32 GB = 3.09 GiB of 15 GB RAM); batch-2 smoke run (1 warm-up + 2 steps, not a valid >= 20-step measurement) gave 0.914 s/step"
+ },
+ "official_code": {
+  "villa_checkout": "/work/villa",
+  "villa_commit": "41701aa0eaa1aa765523db3f9f972b5830abf549",
+  "villa_tree_status": "clean (git status --porcelain empty for vesuvius/src/vesuvius/ink_detection and models)",
+  "training_entry_point": {
+   "module": "vesuvius.ink_detection.training.train",
+   "path": "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py",
+   "sha256": "f87f882d3aed60818037abf1b04f42606d5882dcbd087f0b057065335c7061c2",
+   "invocation": "python -m vesuvius.ink_detection.training.train <config.json>",
+   "hf_model_card_name": "koine_machines.training.train configs/aligned21_hybrid_3d2d.json (pre-rename module; /work/ckpt/ink_9um/README.md)",
+   "runs_here_as_is": false,
+   "why_not": "requires accelerate (not installed in /opt/hv-ink) and mixed_precision fp16 (CUDA AMP); its InkDataset needs the ink_9um label layout (segment dirs with *_inklabels/*_supervision_mask)"
+  },
+  "training_config": {
+   "path": "/work/villa/vesuvius/src/vesuvius/ink_detection/configs/aligned21_hybrid_3d2d.json",
+   "sha256": "f9925e206c39ac831e404d6de82d1fa5c35306dabd9511e2eafbff2fdb89cd63",
+   "matches_checkpoint_embedded_config": "yes for every recipe key; differences only in resolved/extra fields (flat_z_window_jitter.training_only, fixed_scroll_prior manifest/batch_size/schema fields); same 29 dataset segments"
+  },
+  "components_sha256": {
+   "ink_detection/training/train.py": "f87f882d3aed60818037abf1b04f42606d5882dcbd087f0b057065335c7061c2",
+   "ink_detection/configs/aligned21_hybrid_3d2d.json": "f9925e206c39ac831e404d6de82d1fa5c35306dabd9511e2eafbff2fdb89cd63",
+   "ink_detection/config.py": "87fca050b5b815badd50a0118d496403cf14f335129754c1ac35abd11cb30e84",
+   "ink_detection/models/model.py": "d58c9f24723ce4633d67b96c3283d54bd2715679f07622ef957a33c2f06faf73",
+   "ink_detection/models/hybrid_3d2d.py": "799363ce85438e1305ed6505927f9ba61875fc4bd12433b2c5a2b9767d9ee232",
+   "ink_detection/models/checkpoint.py": "47acc2dfd0384ff38a84b8ba194cb74886c01cba3b1a7f0775651f9dd9f5d919",
+   "ink_detection/training/losses.py": "5fdbf11cc66c80dfcf30de7abf1a2455ece12cb80b2f98e8c0c06907a8c7b39a",
+   "ink_detection/training/optimizers.py": "d76c93e1fd222aefb664ae38e368e2b69e14703ebcb50ba72416cebc44329d6c",
+   "ink_detection/training/stitching.py": "6231404fcf043fe6ed4334adfca46218668dd5eee72649327f27f9defe6d42a3",
+   "ink_detection/training/deep_supervision.py": "70b28f28aca94a0dd65d3016c34ad8449e18df5426af819588d8d7ad841de522",
+   "ink_detection/data/normalization.py": "add2afeb7e9adfd666fedf16aec1ef798e9a9cd2438cab1dc180215b0cd92630",
+   "ink_detection/data/augmentations.py": "2dd7f942db6d2fff83a5fa093840b960d800897677191b062179b929fedbd8ac",
+   "ink_detection/data/dataset.py": "626e7adc58e56bfe1607a529264d39b81bbf3cce7557100a764f6a0b14116803",
+   "ink_detection/inference/infer.py": "979aed8e1bf047bea8e30bd0bbe55538556289c72b5914bbbbecf355e5940389",
+   "models/training/optimizers.py": "09173b05a9318dd90670692cf83b2117271defbb86b01da51eceeab4890d0b8a",
+   "models/training/loss/nnunet_losses.py": "c3807408b807d801a2b0aac0332fdfaf70e5fe135258942f03fb9269a340ea47",
+   "image_proc/intensity/normalization.py": "52b9d950ad339ff251195bb0b62cc9f7ec9add8617294c7920b825f192ab700e"
+  },
+  "render_binary": {
+   "path": "/work/villa/volume-cartographer/build/hrc-release-gcc/bin/vc_render_tifxyz",
+   "sha256": "473369f96735b3526e8d2999ad84463ba9b76c1c70cd20abce5998d7af7a9f2c",
+   "wrapper": "/work/bin/vc (vc3d-deps image sha-0c371b1d...)"
+  }
+ },
+ "base_checkpoint": {
+  "path": "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth",
+  "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+  "bytes": 138360039,
+  "payload_keys": [
+   "model",
+   "config",
+   "step"
+  ],
+  "step": 74999,
+  "optimizer_state_present": false,
+  "lr_scheduler_state_present": false,
+  "model_class": "Local3DStem2DUNet (vesuvius_unet_3d_stem_2d) via ink_detection.models.model.make_model(InkConfig.from_mapping(ckpt['config']))",
+  "load_for_training": "clean: official load_model_state + explicit load_state_dict(strict=True) -> <All keys matched successfully>; model.train(); all params require grad",
+  "n_params": 34546498,
+  "n_trainable": 34546498
+ },
+ "base_recipe_official_as_embedded": {
+  "optimizer": "SGD lr 0.01, momentum 0.99, nesterov, weight_decay 3e-5 (OptimizerConfig defaults for momentum/nesterov)",
+  "scheduler": "diffusers_cosine_warmup, warmup 1000, num_iterations 78125 (step-075000 = intermediate checkpoint)",
+  "batch": "64, fixed_scroll_prior_stratified 0139/1667/Paris4/0814 = 29/22/11/2",
+  "precision": "fp16 AMP (Accelerate)",
+  "grad_clip": 1.0,
+  "ema": "off",
+  "loss": "LabelSmoothedDCAndBCELoss: BCE (label smoothing 0.5) x 1.0 + soft Dice x 0.25, ignore channel",
+  "normalization": "robust_mad p1/p99 per patch (normalize_robust)",
+  "patch": [
+   17,
+   128,
+   128
+  ],
+  "z_window": "17 of 21 slices, training jitter +-2",
+  "augmentation": "preset default, rotation_axes [0]",
+  "sampling_stride_xy": 32
+ },
+ "timing_recipe": {
+  "source": "section 4.D2 archive recipe of the governing prompt is NOT recorded in METHOD.md or the repo -> fallback used",
+  "optimizer": {
+   "cls": "AdamW",
+   "lr": 2e-05,
+   "weight_decay": 3e-05,
+   "betas": [
+    0.9,
+    0.999
+   ]
+  },
+  "weight_decay_note": "official 3e-5 kept (torch AdamW default would be 1e-2)",
+  "scheduler": "none (constant lr); fallback recipe names none",
+  "loss": "official create_loss(InkConfig): BCE ls 0.5 + 0.25 Dice with ignore label",
+  "grad_clip": 1.0,
+  "batch": 8,
+  "precision": "fp32 (no autocast)",
+  "order": "forward",
+  "normalization": "official normalize_image(robust_mad, 1, 99) per 17x128x128 patch",
+  "augmentation": "official build_augmentations('default', (17,128,128), rotation_axes=(0,)) per sample",
+  "z_window": "official flat_z_window_bbox on base slices 5..25 of the -n 31 render: canonical 7..23 (= C2-NT forward layer_indices), jitter +-2",
+  "step": "prepare_model_input -> run_model_forward(stitched=False) -> prepare_loss_inputs(mode flat) -> concatenate_deep_supervision_ignore -> loss -> backward -> clip_grad_norm_ 1.0 -> AdamW.step -> zero_grad",
+  "threads": {
+   "torch_intra": 3,
+   "torch_interop": 1,
+   "OMP_NUM_THREADS": 3,
+   "MKL_NUM_THREADS": 3,
+   "dataloader_workers": 0,
+   "cpu_count": 4
+  },
+  "software": {
+   "python": "3.13.12",
+   "torch": "2.14.0+cpu",
+   "venv": "/opt/hv-ink (unmodified)",
+   "extra_import_deps": "installed with pip --no-deps --target /work/d3_timing/pylib (not in /opt/hv-ink): scipy 1.18.1, scikit-image 0.26.0, lazy_loader 0.6, fft-conv-pytorch 1.2.0, SimpleITK 2.5.6, pandas 3.0.6, connected-components-3d 4.1.0, numba 0.67.0, llvmlite 0.49.0 (needed by the official augmentation/training modules; 730 MB)"
+  },
+  "arms_compute": "identical per step; NULLA = inklabels permuted across the batch; REVA = input depth reversed"
+ },
+ "data": {
+  "kind": "real fold-A render + organizer teacher labels (not synthetic)",
+  "segment": "20260220213127-w00",
+  "canvas_hw": [
+   4220,
+   4760
+  ],
+  "crop_canvas_y0_x0_size": [
+   512,
+   1664,
+   384
+  ],
+  "crop_rule": "select_crop.py docstring: largest S in (384,320,256) on a 64 px grid with 0 excluded px (count-B exclusion), fully mesh-valid, valid9 >= 90 %, every px >= 144 vox 3-D from any J mesh point (128 + 15 vox half slab + 1), ref9 text >= 2 %; ties: max text fraction, then smaller y0, x0",
+  "crop_choice": {
+   "S": 384,
+   "y0": 512,
+   "x0": 1664,
+   "text_frac_valid": 0.28665730432363856,
+   "valid_frac": 0.9996134440104166,
+   "min_3d_dist_lowerbound_vox": Infinity,
+   "n_primary_tiles_s64_inside": 25
+  },
+  "crop_min_3d_dist_to_J_vox": "> 149.6 for every px (beyond the 144 + e + 1 query bound; lower bound reported as Infinity)",
+  "exclusion_reproduction": {
+   "excluded_px": 13994707,
+   "nonexcluded_valid_px": 1711995,
+   "primary_eligible_text": {
+    "eligible": 309,
+    "text_ref9": 122
+   },
+   "matches_d3_feas_count_B": "yes (13994707 / 1711995 / 309 / 122 for w00)"
+  },
+  "candidates_per_size": {
+   "384": 115,
+   "320": 137,
+   "256": 142
+  },
+  "render_command": "vc_render_tifxyz -v s3://vesuvius-challenge-open-data/PHerc0841/volumes/20250821151531-9.366um-1.2m-113keV-masked.zarr/ --remote-url s3://vesuvius-challenge-open-data/PHerc0841/volumes/20250821151531-9.366um-1.2m-113keV-masked.zarr/ --segmentation /work/bank/0841/s3/PHerc0841/segments/20260220213127-w00/mesh/20260220213127-on-20250821151531-9.366um.tifxyz --scale 1 --group-idx 0 --num-slices 31 --slice-step 1 --voxel-size 9.366 --voxel-unit micrometer --flip-normals --crop-x 1664 --crop-y 512 --crop-width 384 --crop-height 384 --cache-gb 2 --zarr-output /work/d3_timing/render/w00_x1664_y512_384.zarr",
+  "render_seconds": 8.5,
+  "render_returncode": 0,
+  "render_output": "/work/d3_timing/render/w00_x1664_y512_384.zarr",
+  "render_tree_sha256": "ac7e19fbde047cfe780715d3ade81601154a68c3c01f0d332afde8a899c65e34",
+  "render_shape_dtype": [
+   [
+    31,
+    384,
+    384
+   ],
+   "uint8"
+  ],
+  "render_valid_any_frac": 1.0,
+  "render_canvas_alignment": "NCC vs bank ct2to9 on the same canvas: slice 15 = 0.8253 at shift (0,0), slice 14 = 0.8015",
+  "labels": "bank canvas9 ref9 (organizer 2.4 um reference ink map on the 9 um canvas): ink = ref >= 150, blank = ref <= 100, rest and ~valid9 ignored",
+  "label_px_in_crop": {
+   "ink_px": 42253,
+   "blank_px": 96809,
+   "ignored_px": 8394,
+   "crop_px": 147456
+  },
+  "patch_origins": "81 origins on a 32 px grid inside the crop (128 px patches)",
+  "input_sha256": {
+   "ref9.npy": "70ad7555e8978156af32b32f4f88e39e19331ee762a534a9ece6637511c3a865",
+   "valid9.npy": "3323e783989c094ad3969b3bdc4179b3ce39df5e2675143f2d913338150f54f1",
+   "bank_0841.json": "7e3b715f942daa4dda047feef33cccea5f61776f87b9afb5fe52f1eaa4d16b85"
+  }
+ },
+ "input_shapes": {
+  "model_input": [
+   8,
+   1,
+   17,
+   128,
+   128
+  ],
+  "model_output": [
+   8,
+   1,
+   128,
+   128
+  ],
+  "targets": [
+   8,
+   1,
+   128,
+   128
+  ],
+  "targets_with_ignore": [
+   8,
+   2,
+   128,
+   128
+  ],
+  "input_dtype": "torch.float32",
+  "output_dtype": "torch.float32"
+ },
+ "results": {
+  "batch8_fp32_FA": {
+   "median_wall_s_per_step": 3.0453934019969893,
+   "mean_wall_s_per_step": 3.0539426503996947,
+   "p90_wall_s": 3.163978577997477,
+   "min_wall_s": 2.945077242999105,
+   "max_wall_s": 3.219989999997779,
+   "median_compute_s_per_step": 2.8955887789998087,
+   "median_data_s_per_step": 0.14745854800275993,
+   "projected_h_2000_steps": 1.6918852233316608,
+   "projected_h_4_arms_sequential": 6.767540893326643,
+   "peak_rss_kb_VmHWM": 3239932,
+   "rss_after_load_kb": 990360,
+   "total_loop_s": 85.9499314679997,
+   "n_warmup": 3,
+   "n_measured": 25,
+   "peak_rss_GB": 3.317690368,
+   "loss_first_last": [
+    0.6066475510597229,
+    0.5135236978530884
+   ]
+  },
+  "batch8_fp32_REVA": {
+   "median_wall_s_per_step": 2.9881363840031554,
+   "mean_wall_s_per_step": 3.00168804884961,
+   "p90_wall_s": 3.07822367139961,
+   "min_wall_s": 2.8968425409984775,
+   "max_wall_s": 3.1891499159974046,
+   "median_compute_s_per_step": 2.8449011995035107,
+   "median_data_s_per_step": 0.14399553250041208,
+   "projected_h_2000_steps": 1.6600757688906418,
+   "projected_h_4_arms_sequential": 6.640303075562567,
+   "peak_rss_kb_VmHWM": 3182620,
+   "rss_after_load_kb": 990476,
+   "total_loop_s": 69.7393292659981,
+   "n_warmup": 3,
+   "n_measured": 20,
+   "peak_rss_GB": 3.25900288,
+   "loss_first_last": [
+    0.6399948596954346,
+    0.5519195795059204
+   ]
+  },
+  "batch8_fp32_NULLA": {
+   "median_wall_s_per_step": 3.03697803850082,
+   "mean_wall_s_per_step": 3.031966689550245,
+   "p90_wall_s": 3.137782982396311,
+   "min_wall_s": 2.9400106169996434,
+   "max_wall_s": 3.1726874700034386,
+   "median_compute_s_per_step": 2.8816673965011432,
+   "median_data_s_per_step": 0.14863719249842688,
+   "projected_h_2000_steps": 1.6872100213893444,
+   "projected_h_4_arms_sequential": 6.748840085557378,
+   "peak_rss_kb_VmHWM": 3170780,
+   "rss_after_load_kb": 990692,
+   "total_loop_s": 70.0218043979985,
+   "n_warmup": 3,
+   "n_measured": 20,
+   "peak_rss_GB": 3.24687872,
+   "loss_first_last": [
+    0.6452395915985107,
+    0.617943286895752
+   ]
+  },
+  "batch2_fp32_smoke_not_a_measurement": {
+   "median_wall_s_per_step": 0.9138142650008376,
+   "n_warmup": 1,
+   "n_measured": 2,
+   "peak_rss_GB": 1.925627904
+  },
+  "batch8_fp32_FA_wall_s_per_step_all": [
+   3.4586,
+   3.096,
+   3.0338,
+   3.1436,
+   3.0447,
+   3.22,
+   3.1159,
+   2.9707,
+   3.0614,
+   2.9568,
+   3.1687,
+   3.1345,
+   2.9743,
+   3.0971,
+   2.9451,
+   2.959,
+   3.0117,
+   3.1746,
+   3.0334,
+   2.9856,
+   3.0454,
+   2.9679,
+   2.9477,
+   3.0473,
+   2.9864,
+   3.128,
+   3.157,
+   3.0719
+  ],
+  "machine_load": "idle apart from this test (load average 0.27 before the batch-8 run)"
+ },
+ "eval_map_seconds_d1_reference": {
+  "J1": 436.5,
+  "J2": 399.8,
+  "J3": 520.8,
+  "J4": 549.5,
+  "J5": 430.3,
+  "blank_w053_y256_x1536": 503.9,
+  "blank_w053_y256_x7168": 494.0,
+  "canary_w044_y2816_x2816": 551.7
+ },
+ "deviations_and_open_items_vs_DECL_D3D4": [
+  "Entry point: the official train.py cannot run here as-is (no accelerate; fp16 AMP needs CUDA). A D3 run would use this loop (the official functions, train.py's inner step without Accelerate) or needs accelerate plus a precision override.",
+  "Precision fp32 on CPU instead of the base recipe's fp16 AMP.",
+  "Recipe: section 4.D2 archive recipe not recorded in METHOD.md or the repo; fallback AdamW lr 2e-5, batch 8 used. LR schedule unspecified (constant used); weight decay 3e-5 kept from the official config. Timing does not depend on these.",
+  "50/50 batches: the non-fold-A half of FA batches, and all CTRL batches ('equal steps, no new labels'), need a replay source (base training corpus: ink_9um labels bucket plus 29 surface volumes). It is NOT local and was not fetched. The timing used fold-A patches in all 8 slots. Compute per step does not depend on the source; replay I/O time was not measured.",
+  "NULLA shuffle granularity and REVA definition are not specified in DECL-D3D4; the timing used a per-batch label permutation and input depth reversal (same compute for any choice).",
+  "Teacher labels come from the organizer reference maps (ref9 thresholds 150/100), not human labels, as D3-FEAS-RESULT expects.",
+  "Timing crop rendered directly on the organizer mesh (C3/C1-style, --flip-normals, -n 31), not via the D1 levelled-window pipeline. The fine-tune input window is the C2-NT forward window 7..23 with the official +-2 jitter.",
+  "Timing crop uses a stricter >= 144 vox margin to J (render slab clearance); fold A itself is defined at >= 128 vox.",
+  "Extra python packages are needed by the official augmentation/training imports; installed outside the validated venv (/work/d3_timing/pylib).",
+  "Dataloader: 0 workers (3-thread cap) versus 12 in the official config. Data plus augmentation cost 0.147 s of a 3.045 s step.",
+  "Not included in the per-arm hours: checkpoint writes (model 138 MB; about 0.4 GB with AdamW state per arm) and post-training evaluation maps (about 1.08 h per arm for 8 D1-type windows).",
+  "Measured on an idle machine. Concurrent jobs on the 4 cores would lengthen steps; headroom vs the 12 h bar is 7.1x."
+ ],
+ "files": {
+  "scripts": {
+   "ft_timing.py": "8d60cada41f886e8e10a6e270a615be3bc1ebae634d8792bb26436bab887b5dd",
+   "select_crop.py": "8e05f1be1ecd3a647536b188b0bd9d391639cbc9056a84aa02b37749c325559a"
+  },
+  "results": {
+   "crop_choice.json": "3ff24085f7456e2caac5d9612ecc4f7cb2bf649ea2831974cc10441fe6c90488",
+   "render_check.json": "dc00ee90a9dc4c8164ac2212263fd324f159cb0198f2394eef243ccd55315c4f",
+   "smoke.json": "5b961bee5da549a5804057606ec6980684e193d965c2abf522a69cf4e8f72509",
+   "t_b8_fp32.json": "f3e0751d5fee8f1b9dc1238ea5fdad2423966125a5005a06e08fdc89a4ce2802",
+   "t_b8_fp32_NULLA.json": "14ce5b2f5a9029dde4b340c9ce59b4d05a5ae01a31229e02aefe5bfc8d58291e",
+   "t_b8_fp32_REVA.json": "ff496110b5a631c0b833305755645f257f24d0f0a95fc82fc744d4bd83f7dba4"
+  },
+  "dir": "/work/d3_timing (render, results, scripts, logs, pylib; 736 MB total, not in the repo)"
+ },
+ "script_sources": {
+  "ft_timing.py": "# Provenance: Project HERCULES | owner the owner | [id removed]\n\"\"\"D3 CPU timing test: minimal fine-tune loop built from the OFFICIAL villa ink_detection training components\n(villa 41701aa: make_model, load_model_state, create_loss, create_training_optimizer, prepare_model_input,\nrun_model_forward, prepare_loss_inputs, concatenate_deep_supervision_ignore, normalize_image(robust_mad),\nflat_z_window_bbox, build_augmentations('default')), mirroring the inner step of\nvesuvius/ink_detection/training/train.py::_run_training without Accelerate (not installed; fp16 AMP needs CUDA).\nStarts from the base checkpoint weights (step-075000; optimizer state not restored). Recipe (fallback, section\n4.D2 recipe not recorded in METHOD.md/repo): AdamW lr 2e-5 (official wd 3e-5, betas 0.9/0.999), official loss\n(label-smoothed BCE 0.5 + 0.25 Dice, ignore label), grad clip 1.0, batch B, forward order, 17 x 128 x 128.\nInputs: official vc_render_tifxyz -n 31 at 9.366 um of ONE fold-A crop (0841 w00, canvas y0 512 x0 1664, 384 px);\nC2-NT forward window = slices 7..23, official training jitter 17-of-21 (base 5..25, +-2). Targets: organizer\nreference map on the same canvas (bank ref9): ink = ref >= 150, blank = ref <= 100, rest and ~valid9 ignored.\nPatch origins on a 32 px grid inside the crop (official stride_xy 32). Arms only change labels/input order\n(NULLA: labels permuted across the batch; REVA: depth-flipped input); compute is identical.\nNumbers only: no image or pixel array is displayed.\"\"\"\nimport os, sys, json, time, argparse, random, resource, hashlib, platform\nos.environ.setdefault(\"OMP_NUM_THREADS\", \"3\")\nos.environ.setdefault(\"MKL_NUM_THREADS\", \"3\")\nimport numpy as np\nimport torch\n\nap = argparse.ArgumentParser()\nap.add_argument(\"--batch\", type=int, default=8)\nap.add_argument(\"--warmup\", type=int, default=3)\nap.add_argument(\"--steps\", type=int, default=25)\nap.add_argument(\"--precision\", choices=(\"fp32\", \"bf16\"), default=\"fp32\")\nap.add_argument(\"--arm\", choices=(\"FA\", \"NULLA\", \"REVA\", \"CTRL\"), default=\"FA\")\nap.add_argument(\"--no-aug\", action=\"store_true\")\nap.add_argument(\"--out\", required=True)\nargs = ap.parse_args()\n\ntorch.set_num_threads(3)\ntorch.set_num_interop_threads(1)\nSEED = 42\nrandom.seed(SEED); np.random.seed(SEED); torch.manual_seed(SEED)\n\n\ndef vmhwm_kb():\n    for line in open(\"/proc/self/status\"):\n        if line.startswith(\"VmHWM:\"):\n            return int(line.split()[1])\n    return None\n\n\ndef rss_kb():\n    for line in open(\"/proc/self/status\"):\n        if line.startswith(\"VmRSS:\"):\n            return int(line.split()[1])\n    return None\n\n\nimport copy\nimport zarr\nfrom vesuvius.ink_detection.config import InkConfig, TrainingConfig, resolve_training_mapping\nfrom vesuvius.ink_detection.models.model import make_model\nfrom vesuvius.ink_detection.models.checkpoint import load_checkpoint, load_model_state\nfrom vesuvius.ink_detection.training.losses import create_loss\nfrom vesuvius.ink_detection.training.optimizers import create_training_optimizer\nfrom vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs\nfrom vesuvius.ink_detection.training.stitching import run_model_forward\nfrom vesuvius.ink_detection.training.deep_supervision import concatenate_deep_supervision_ignore\nfrom vesuvius.ink_detection.data.normalization import normalize_image\nfrom vesuvius.ink_detection.data.dataset import flat_z_window_bbox\nfrom vesuvius.ink_detection.data.augmentations import build_augmentations\n\nCK = \"/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth\"\nRENDER = \"/work/d3_timing/render/w00_x1664_y512_384.zarr\"\nSEG = \"20260220213127-w00\"\nY0, X0, S = 512, 1664, 384\nt_load0 = time.perf_counter()\nck = load_checkpoint(CK)\nmapping = copy.deepcopy(ck[\"config\"])\nmapping.update(optimizer=\"adamw\", learning_rate=2e-5, batch_size=args.batch, num_iterations=2000,\n               out_dir=\"/work/d3_timing/unused_out\")\ntc = TrainingConfig.from_mapping(resolve_training_mapping(mapping))\nink = tc.ink\nmodel = make_model(ink)\nload_model_state(model, ck[\"model\"])                       # official loader (strict load_state_dict inside)\nstrict = model.load_state_dict(ck[\"model\"], strict=True)   # explicit strict re-check\noptimizer = create_training_optimizer(model, tc)\nloss_fn = create_loss(ink)\nt_load = time.perf_counter() - t_load0\nrss_after_load = rss_kb()\n\n# ---- data: one fold-A crop (render + teacher labels on the same canvas)\nvol = np.asarray(zarr.open(f\"{RENDER}/0\", mode=\"r\")[:])                      # (31, 384, 384) uint8\nref = np.load(f\"/work/bank/0841/canvas9/{SEG}/ref9.npy\", mmap_mode=\"r\")[Y0:Y0 + S, X0:X0 + S]\nval = np.load(f\"/work/bank/0841/canvas9/{SEG}/valid9.npy\", mmap_mode=\"r\")[Y0:Y0 + S, X0:X0 + S].astype(bool)\nref = np.asarray(ref, dtype=np.float32)\nink_lab = (ref >= 150) & val\nsup = ((ref >= 150) | (ref <= 100)) & val\nlabel_stats = dict(ink_px=int(ink_lab.sum()), blank_px=int((sup & ~ink_lab).sum()),\n                   ignored_px=int((~sup).sum()), crop_px=int(S * S))\ndel ref\norigins = [(y, x) for y in range(0, S - 128 + 1, 32) for x in range(0, S - 128 + 1, 32)]\naug = None if args.no_aug else build_augmentations(ink.data.augmentation.preset, ink.data.patch_size,\n                                                    rotation_axes=ink.data.augmentation.rotation_axes)\nPZ = ink.data.patch_size[0]          # 17\n\n\ndef make_sample():\n    y, x = random.choice(origins)\n    # official flat z window: base 21 = render slices 5..25 (centre of -n 31), canonical 7..23 (= C2-NT forward),\n    # training jitter +-2\n    bbox, off = flat_z_window_bbox((5, y, x, 26, y + 128, x + 128), config=ink.data,\n                                   do_augmentations=aug is not None, is_validation=False)\n    z0, _, _, z1, _, _ = bbox\n    img = vol[z0:z1, y:y + 128, x:x + 128]\n    if args.arm == \"REVA\":\n        img = img[::-1]\n    img = normalize_image(np.ascontiguousarray(img), ink.data.normalization)\n    lab = np.broadcast_to(ink_lab[y:y + 128, x:x + 128], (PZ, 128, 128)).astype(np.float32)\n    sm = np.broadcast_to(sup[y:y + 128, x:x + 128], (PZ, 128, 128)).astype(np.float32)\n    d = {\"image\": torch.from_numpy(np.ascontiguousarray(img)).float().unsqueeze(0),\n         \"inklabels\": torch.from_numpy(lab.copy()).unsqueeze(0),\n         \"supervision_mask\": torch.from_numpy(sm.copy()).unsqueeze(0)}\n    if aug is not None:\n        d = aug(**d)\n    return {k: d[k] for k in (\"image\", \"inklabels\", \"supervision_mask\")}\n\n\ndef make_batch():\n    items = [make_sample() for _ in range(args.batch)]\n    b = {k: torch.stack([it[k] for it in items]) for k in items[0]}\n    if args.arm == \"NULLA\":\n        perm = torch.randperm(args.batch)\n        b[\"inklabels\"] = b[\"inklabels\"][perm]\n    return b\n\n\namp = torch.autocast(\"cpu\", dtype=torch.bfloat16) if args.precision == \"bf16\" else torch.autocast(\"cpu\", enabled=False)\nrecs = []\nshapes = None\nmodel.train()\nt_all0 = time.perf_counter()\nfor step in range(args.warmup + args.steps):\n    t0 = time.perf_counter()\n    batch = make_batch()\n    t1 = time.perf_counter()\n    with amp:\n        x = prepare_model_input(batch, tc)\n        preds = run_model_forward(model, x, tc.model_crop_size, stitched=tc.use_stitched_forward,\n                                  use_gradient_checkpointing=tc.stitched_gradient_checkpointing)\n    lp, targets, ignore = prepare_loss_inputs(preds, batch, mode=ink.data.mode,\n                                             force_full_supervision=tc.force_full_supervision)\n    twi = concatenate_deep_supervision_ignore(targets, ignore, lp)\n    loss = loss_fn(lp.float(), twi.float())\n    if not torch.isfinite(loss):\n        raise RuntimeError(f\"non-finite loss at step {step}\")\n    loss.backward()\n    gn = torch.nn.utils.clip_grad_norm_(model.parameters(), tc.grad_clip)\n    optimizer.step()\n    optimizer.zero_grad(set_to_none=True)\n    t2 = time.perf_counter()\n    if shapes is None:\n        shapes = dict(model_input=list(x.shape), model_output=list(preds.shape), targets=list(targets.shape),\n                      targets_with_ignore=list(twi.shape), input_dtype=str(x.dtype), output_dtype=str(preds.dtype))\n    recs.append(dict(step=step, data_s=t1 - t0, compute_s=t2 - t1, wall_s=t2 - t0, loss=float(loss.item()),\n                     grad_norm=float(gn), supervised_frac=float((ignore <= 0).float().mean())))\n    print(f\"step {step} data {t1-t0:.3f} compute {t2-t1:.3f} loss {loss.item():.4f} gn {float(gn):.3f}\", flush=True)\nmeas = recs[args.warmup:]\nwall = np.array([r[\"wall_s\"] for r in meas]); comp = np.array([r[\"compute_s\"] for r in meas])\ndata = np.array([r[\"data_s\"] for r in meas])\nmed = float(np.median(wall))\nout = dict(\n    provenance=\"Provenance: Project HERCULES | owner the owner | [id removed]\",\n    config=dict(batch=args.batch, warmup=args.warmup, steps=args.steps, precision=args.precision, arm=args.arm,\n                augmentation=None if aug is None else ink.data.augmentation.preset, torch_threads=torch.get_num_threads(),\n                interop_threads=torch.get_num_interop_threads(), OMP_NUM_THREADS=os.environ.get(\"OMP_NUM_THREADS\"),\n                torch=torch.__version__, python=platform.python_version(), cpu_count=os.cpu_count()),\n    optimizer=dict(cls=type(optimizer).__name__, lr=optimizer.param_groups[0][\"lr\"],\n                   weight_decay=optimizer.param_groups[0][\"weight_decay\"], betas=list(optimizer.param_groups[0][\"betas\"])),\n    strict_load=str(strict), n_params=int(sum(p.numel() for p in model.parameters())),\n    n_trainable=int(sum(p.numel() for p in model.parameters() if p.requires_grad)),\n    shapes=shapes, label_stats_crop=label_stats, n_patch_origins=len(origins),\n    load_s=t_load, rss_after_load_kb=rss_after_load,\n    median_wall_s_per_step=med, mean_wall_s_per_step=float(wall.mean()), p90_wall_s=float(np.percentile(wall, 90)),\n    min_wall_s=float(wall.min()), max_wall_s=float(wall.max()),\n    median_compute_s_per_step=float(np.median(comp)), median_data_s_per_step=float(np.median(data)),\n    projected_h_2000_steps=med * 2000 / 3600, projected_h_4_arms_sequential=4 * med * 2000 / 3600,\n    peak_rss_kb_VmHWM=vmhwm_kb(), peak_rss_kb_ru_maxrss=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,\n    total_loop_s=time.perf_counter() - t_all0, steps=recs,\n    script_sha256=hashlib.sha256(open(__file__, \"rb\").read()).hexdigest())\njson.dump(out, open(args.out, \"w\"), indent=1)\nprint(json.dumps({k: v for k, v in out.items() if k != \"steps\"}, indent=1))\n",
+  "select_crop.py": "# Provenance: Project HERCULES | owner the owner | [id removed]\n\"\"\"D3 timing test: choose ONE small fold-A crop on ONE 0841 organizer segment (numbers only).\nExclusion exactly as logs/d1/d3_feas_count_B.json (DECL-D3-FEAS builder B method): pixel excluded iff inside\nits segment's J window or its mesh point is < 128 vox (3-D) from any J mesh point; lower bound on distance from a\nstride-4 subsample KD-tree minus the measured covering radius, exact full-res check in the ambiguous band.\nExtra safety margin for the timing crop (declared here, before any result): every mesh-valid pixel of the crop\nmust have a certified 3-D distance >= 144 vox (128 + 15 vox half-depth of the -n 31 slab + 1 vox interpolation),\nso no rendered voxel lies within 128 vox of a J mesh point. Crop rule: square S in (384, 320, 256) on a 64 px\ngrid; eligible iff 0 excluded px, mesh-valid everywhere, valid9 >= 90 %, min distance >= 144; choose the largest S\nwith any eligible crop whose ref9 text fraction (valid & ref9 >= 150) >= 2 %; ties: max text fraction, then smaller\ny0, x0. No image or pixel array is displayed; only counts and coordinates are written.\"\"\"\nimport os, json, time, hashlib, sys\nos.environ.setdefault(\"OMP_NUM_THREADS\", \"3\")\nimport numpy as np, tifffile\nfrom scipy.spatial import cKDTree\n\nBANK = \"/work/bank/0841\"\nSEG = \"20260220213127-w00\"\nT = 128.0\nMARGIN = 144.0\nW = 3\nOUT = sys.argv[1]\nt0 = time.time()\nbank = json.load(open(f\"{BANK}/bank_0841.json\"))\nJW = bank[\"J_windows\"]\nSEGS = sorted(bank[\"segments\"].keys())\n\n\ndef mesh(seg):\n    ts = seg.split(\"-\")[0]\n    d = f\"{BANK}/s3/PHerc0841/segments/{seg}/mesh/{ts}-on-20250821151531-9.366um.tifxyz\"\n    return np.stack([tifffile.imread(f\"{d}/{c}.tif\").astype(np.float64) for c in \"xyz\"], -1)\n\n\ndef canvas_points(xyz, rows, cols):\n    G = xyz.shape[:2]\n    gy = (rows + 0.5) / 20.0; i0 = np.floor(gy).astype(np.int64); fy = gy - i0\n    gx = (cols + 0.5) / 20.0; j0 = np.floor(gx).astype(np.int64); fx = gx - j0\n    okr = i0 + 1 < G[0]; okc = j0 + 1 < G[1]\n    i0 = np.minimum(i0, G[0] - 2); j0 = np.minimum(j0, G[1] - 2)\n    v = xyz[..., 0] != -1\n    q = v[:-1, :-1] & v[1:, :-1] & v[:-1, 1:] & v[1:, 1:]\n    valid = q[i0][:, j0] & okr[:, None] & okc[None, :]\n    fy = fy[:, None, None]; fx = fx[None, :, None]\n    A = xyz[i0][:, j0]; B = xyz[i0][:, j0 + 1]; C = xyz[i0 + 1][:, j0]; D = xyz[i0 + 1][:, j0 + 1]\n    return (1 - fy) * ((1 - fx) * A + fx * B) + fy * ((1 - fx) * C + fx * D), valid\n\n\nmeshes = {s: mesh(s) for s in SEGS}\nfull_pts, sub_pts = [], []\nfor j in sorted(JW):\n    w = JW[j]; s = w[\"segment\"]; y0, x0, n = w[\"y0\"], w[\"x0\"], w[\"size\"]\n    P, V = canvas_points(meshes[s], np.arange(y0, y0 + n), np.arange(x0, x0 + n))\n    full_pts.append(P[V]); sub_pts.append(P[1::4, 1::4][V[1::4, 1::4]])\n    del P, V\nfull_pts = np.concatenate(full_pts); sub_pts = np.concatenate(sub_pts)\nsub_tree = cKDTree(sub_pts)\ne = 0.0\nfor k in range(0, len(full_pts), 2_000_000):\n    d, _ = sub_tree.query(full_pts[k:k + 2_000_000], k=1, workers=W)\n    e = max(e, float(d.max()))\ne_used = e + 1e-6\nfull_tree = None\n\nH, Wd = meshes[SEG].shape[0] * 20, meshes[SEG].shape[1] * 20\ninJ = np.zeros((H, Wd), bool)\nfor j, w in JW.items():\n    if w[\"segment\"] == SEG:\n        inJ[w[\"y0\"]:w[\"y0\"] + w[\"size\"], w[\"x0\"]:w[\"x0\"] + w[\"size\"]] = True\nMV = np.zeros((H, Wd), bool)\nlb = np.full((H, Wd), -np.inf)        # certified lower bound on 3-D distance to J (inf-capped)\nBLK = 512\nn_amb = 0\nfor r0 in range(0, H, BLK):\n    rows = np.arange(r0, min(H, r0 + BLK))\n    P, V = canvas_points(meshes[SEG], rows, np.arange(Wd))\n    MV[rows] = V\n    q = V & ~inJ[rows]\n    idx = np.flatnonzero(q)\n    Pf = P.reshape(-1, 3)\n    dsub = np.full(q.size, np.inf)\n    if len(idx):\n        d, _ = sub_tree.query(Pf[idx], k=1, workers=W, distance_upper_bound=MARGIN + e_used + 1.0)\n        dsub[idx] = d\n    blk_lb = dsub - e_used\n    # exact distance where the lower bound is inconclusive for the MARGIN test (covers the 128 band too)\n    amb = q.reshape(-1) & (dsub < MARGIN + e_used) & (dsub >= T)\n    amb_idx = np.flatnonzero(amb)\n    n_amb += len(amb_idx)\n    if len(amb_idx):\n        if full_tree is None:\n            full_tree = cKDTree(full_pts)\n        dex, _ = full_tree.query(Pf[amb_idx], k=1, workers=W, distance_upper_bound=MARGIN + e_used + 2.0)\n        blk_lb[amb_idx] = dex\n    blk_lb[~q.reshape(-1)] = -np.inf\n    lb[rows] = blk_lb.reshape(len(rows), Wd)\n    del P, V, Pf, dsub, blk_lb\nexcluded = inJ | (MV & (lb < T))\nvalid = np.load(f\"{BANK}/canvas9/{SEG}/valid9.npy\").astype(bool)\nref = np.load(f\"{BANK}/canvas9/{SEG}/ref9.npy\")\ntxt = valid & (ref >= 150)\ndel ref\n\n\ndef sat(m):\n    a = np.zeros((m.shape[0] + 1, m.shape[1] + 1), np.int64)\n    a[1:, 1:] = m.astype(np.int64).cumsum(0).cumsum(1)\n    return a\n\n\ndef boxsum(a, ys, xs, S):\n    Y = ys[:, None]; X = xs[None, :]\n    return a[Y + S, X + S] - a[Y, X + S] - a[Y + S, X] + a[Y, X]\n\n\nfar = MV & (lb >= MARGIN)\nSv, Sm, Sx, St, Sf = sat(valid), sat(MV), sat(excluded), sat(txt), sat(far)\n# PRIMARY count reproduction (stride 64, 128 px tiles, >= 90 % valid, 0 excluded, text >= 2 %)\nys = np.arange(0, H - 128 + 1, 64); xs = np.arange(0, Wd - 128 + 1, 64)\nnv = boxsum(Sv, ys, xs, 128); ne = boxsum(Sx, ys, xs, 128); nt = boxsum(St, ys, xs, 128)\nelig = (10 * nv >= 9 * 128 * 128) & (ne == 0)\nprimary = dict(eligible=int(elig.sum()), text_ref9=int((elig & (100 * nt >= 2 * nv)).sum()))\nchoice = None\ncands = {}\nfor S in (384, 320, 256):\n    ys = np.arange(0, H - S + 1, 64); xs = np.arange(0, Wd - S + 1, 64)\n    nv = boxsum(Sv, ys, xs, S); nm = boxsum(Sm, ys, xs, S); nx = boxsum(Sx, ys, xs, S)\n    nt = boxsum(St, ys, xs, S); nf = boxsum(Sf, ys, xs, S)\n    ok = (nx == 0) & (nm == S * S) & (nf == S * S) & (10 * nv >= 9 * S * S) & (100 * nt >= 2 * nv)\n    cands[S] = int(ok.sum())\n    if ok.any() and choice is None:\n        frac = np.where(ok, nt / np.maximum(nv, 1), -1.0)\n        best = frac.max()\n        a, b = [(a, b) for a, b in zip(*np.nonzero(frac == best))][0]   # row-major -> smaller y0 then x0\n        y0, x0 = int(ys[a]), int(xs[b])\n        crop_lb = lb[y0:y0 + S, x0:x0 + S]\n        choice = dict(S=S, y0=y0, x0=x0, text_frac_valid=float(best), valid_frac=float(nv[a, b] / (S * S)),\n                      min_3d_dist_lowerbound_vox=float(crop_lb.min()),\n                      n_primary_tiles_s64_inside=int(((S - 128) // 64 + 1) ** 2))\nres = dict(provenance=\"Provenance: Project HERCULES | owner the owner | [id removed]\",\n           segment=SEG, canvas_hw=[H, Wd], e_cover_radius_vox=e, n_J_full=int(len(full_pts)),\n           ambiguous_exact_px=int(n_amb), excluded_px=int(excluded.sum()),\n           nonexcluded_valid_px=int((valid & ~excluded).sum()),\n           far144_valid_px=int((valid & far & ~excluded).sum()),\n           primary_reproduction=primary, candidates_per_size=cands, choice=choice,\n           seconds=round(time.time() - t0, 1),\n           script_sha256=hashlib.sha256(open(__file__, \"rb\").read()).hexdigest())\njson.dump(res, open(OUT, \"w\"), indent=1)\nprint(json.dumps(res, indent=1))\n"
+ }
+}

@@ -1,0 +1,21 @@
+TASK rh-e2: remote blind-read harness for P4-E material E2 (raw 2.4 um CT, Paris 4 inner title strip 20260701183124-w010-027) under DECL-REMOTE-HARNESS-1. Read RULES.md DECL-HARNESS-A1, DECL-P4-2 (+A1-A3), DECL-P4-5, METRIC-HASH-26, METRIC-HASH-27 and DECL-REMOTE-HARNESS-1 first. The last is your contract; follow it item by item.
+1. Setup:
+   - Verify that the sha256 of tools/p4/*.py equals METRIC-HASH-27.
+   - Create /work/p4/img, /srv/scorer and /work/sealed_io.
+   - Confirm `age` exists.
+2. Material: the builder is pairs0814b, at origin/claude/gifted-bell-gavnl5-sib-pairs0814b logs/sib/pairs0814b/e2/ (manifest.json and tiles; 160 eligible tiles reported). E2 takes NO coverage flag. Run:
+   - python3 tools/p4/norm_manifest.py origin/claude/gifted-bell-gavnl5-sib-pairs0814b logs/sib/pairs0814b/e2/manifest.json <tiles dir in that ref> /work/p4/src_e2
+   - python3 tools/p4/p4_jobs.py import 20260701183124-w010-027 /work/p4/src_e2/tiles /work/p4/src_e2/manifest_norm.json e2
+   - python3 tools/p4/p4_jobs.py null ne2 <ceil(n_e2/8)> e2
+   - python3 tools/p4/p4_jobs.py jobs census_e2 e2 ne2 sigma2
+   Adapt only the path arguments; never change the eligibility rules.
+3. COMMIT A, pushed BEFORE any reader starts, under logs/sib/rh-e2/A/:
+   - copies of /srv/scorer/p4_key_e2.json and p4_key_ne2.json, with sha256;
+   - jobs_census_e2.json;
+   - all briefs of this batch;
+   - img_manifest.json mapping uuid to sha256;
+   - the builder ref sha.
+4. Readers: for each job, one fresh Agent with subagent_type general-purpose and model opus, whose prompt is EXACTLY the brief file's text. Up to 4 at a time. Answers are sealed to the orchestrator's age key; never try to read them, and never quote a reader's reply.
+5. Audit each transcript with hercules.harness.audit.audit(transcript, allowed_images, sealed_output='/work/sealed_io/<job>.age', recipient='age1vp0tkyj8xecncfmcxj748ceef89mpmwayljccaduapjx3aqhh5rstvvcq5'), plus the check prompt == brief. An invalid job gets one fresh re-run with the same brief; disclose it.
+6. COMMIT B, under logs/sib/rh-e2/B/: .age files, audit.json, transcripts/<job>.jsonl.gz and harness_jobs.tsv.
+With about 20 sessions you may split the reader launches across one sub-sibling, with the same brief files, after commit A. Both must push to their own branch, and the sub-sibling's jobs must be a disjoint subset.
