@@ -1,0 +1,17 @@
+{
+ "repo_url": "https://github.com/abundantjoe/handcheck",
+ "commit_sha": "eb986cc30537629e16ef2f0300aca13e76a5a0d1",
+ "commits": [
+  "de12a57154e66bfd928bd48ba4a6de5c42bb97f5 (package)",
+  "eb986cc30537629e16ef2f0300aca13e76a5a0d1 (zarr added to test extra)"
+ ],
+ "tests_passed": "94 passed, 1 skipped (clean install from GitHub, pip install -e .[test])",
+ "scrub_ok": true,
+ "about": "Predicts whether a tifxyz mesh render reads mirrored, from geometry and catalogue metadata; flags undecidable meshes.",
+ "about_chars": 117,
+ "summary": "(1) Data: newer Vesuvius Challenge scans; 77 organizer tifxyz meshes of PHerc0139, PHerc0800, PHerc1447 and fragment PHerc0009B. (2) It checks, before rendering, that a segment will show the written face unmirrored, and it stops meshes that are not on the scroll in their declared frame from being read as text. (3) It predicts the mirror state for each mesh from geometry and catalogue metadata, with independent centre sources and a CT frame check, and it flags meshes it cannot decide instead of guessing. (4) Evidence: 94 tests pass. Planted glyphs read correctly in 32/32 cases, and the wrong-sign control comes out mirrored in 32/32. PHerc0139 is 38/38 HIGH unmirrored, with the winding check agreeing on 36/36 meshes; PHerc0800 is 6/6 unmirrored. On PHerc1447, 11 of 15 meshes are flagged, 10 of them lying 41-91% on zero CT; these are flags to be confirmed by the organizers.",
+ "note_1447": "Brief said '9 of 15 flagged'; that was the handed-1 rule. The packaged rule, rerun from public data, flags 11 of 15 (10 FRAME_UNVERIFIED + 1 FLAG), identical to logs/sib/handed/h2/rule_applied.json. Published 11.",
+ "note_0841": "PHerc0841 not included in the public results: its original run excluded a held-out region whose points are not public.",
+ "note_0009B": "New: frame-checked for the first time; 11/18 fail the 5% zero-CT gate (5.1-12.1%), reported as a gate limitation for fragments; all 18 unmirrored without the gate.",
+ "about_not_set": "GitHub About description not set: no tool here edits repo settings; owner sets it from 'about'."
+}

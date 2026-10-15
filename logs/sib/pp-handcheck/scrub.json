@@ -1,0 +1,111 @@
+{
+ "package": "handcheck",
+ "n_files": 23,
+ "files": {
+  ".gitignore": "404ea3e45e00c001c14f77f86b9ab634409720dd4b5d3acd8973c99c19f8d021",
+  "LICENSE": "d2341f95982b75307f73195072d33e8616c6dca8422dd6ad052509157ba08610",
+  "README.md": "079e625851544d8c08c4f8d67f283480022086d0162f1208949e10079e1eacaf",
+  "data/LICENSE-DATA.md": "72f7088f1b61bed7f9352b5ec92bd719228ccf569d0444ba7fbe2ee7903bfa73",
+  "pyproject.toml": "ab311406e762b5a54ce6e316f34103b7f130fa5d2108e80beeb4503d54060458",
+  "results/official_meshes.csv": "94394f293becd52f4dd1f09b0b2226714dd1997bc54abae7c6523152f37b51d2",
+  "results/official_meshes.json": "0f0d82e7bb6b3eb7c9a83bb9adb478859c3b83a5f73787a39a2b17b2d9922082",
+  "results/synthetic_validation.json": "0716c6bf8eaa2c854da81df0945d83ab20221935c64d7b832292eb5f98d0e6b9",
+  "results/winding_PHerc0139.json": "67003c2d5fb9791ac663e67c61d2fcad56e89c633a0dc3683255796601c97c73",
+  "scripts/reproduce_official.py": "586be402bdcf902a4c77488303c975d3ce21a303d7b2c031fd5c63af4dc68f9d",
+  "scripts/synthetic_validation.py": "5529389d4f0c6f49e94c6f912d978135f625d5954c1bbb0230c6742b126f1405",
+  "scripts/winding_check.py": "0fb1d2eb7a1a4f411fb6ff3dc8b0d7e5123d29dab80ecaab96339e938057aede",
+  "src/handcheck/__init__.py": "c7cad979ff2680b68b289ab3669607a822cb5bc81915a04a00d9ae86405e2e71",
+  "src/handcheck/cli.py": "0fdea053b3dd4e308ec90bcb99bbfd698d0929bf5337617e7b1f987e29699d7e",
+  "src/handcheck/level_mesh.py": "9d1a344134ff511876c358310d944fad92f5bcb3deb8b8ba895a6bbf78d83b6d",
+  "src/handcheck/public.py": "7a6c32f6db7175c211251d1bd8cf29e2955f43d51444d88eb169250097729522",
+  "src/handcheck/render_synth.py": "2cb136ef18330c3f03054b00a1193d3b4927567b616ae2449d9353dc22bda18f",
+  "src/handcheck/rule.py": "ddc602af008013704eb34dce7a272e04aa5a79b4985869e288e480b10cd9da31",
+  "src/handcheck/synth.py": "7f5a3027f1192f5291b863056594582202080f726e6ee7135c8e7770c8e07aa2",
+  "src/handcheck/tifxyz.py": "24f10b9f49d5b927939bdb9dd511f3c19dcc22e4eea7d3f625ca4e1c6398e001",
+  "tests/test_cli.py": "b4cd3ede189697dc51d1c8f344781118e1200926b9bb21446e8a60f85f3e93fd",
+  "tests/test_public.py": "a36f63a1264a4882cfaa396f86e5cc2e675052a06f0006eea51ed968f7fe1e37",
+  "tests/test_rule.py": "34e59b68d982076344717cf05b372547590b9727905b0a9c8a8761aedc3d0c4b"
+ },
+ "checks": [
+  "secrets",
+  "private_paths",
+  "governance",
+  "paris4_title_search",
+  "personal"
+ ],
+ "licence_mit": true,
+ "findings": [],
+ "reviewed_exceptions": [
+  {
+   "check": "paris4_title_search",
+   "file": "results/official_meshes.csv",
+   "line": 5,
+   "match": "w028",
+   "reason": "official PHerc0139 segment ID (winding number in the organizer name), not Paris 4 data"
+  },
+  {
+   "check": "paris4_title_search",
+   "file": "results/official_meshes.json",
+   "line": 293,
+   "match": "w028",
+   "reason": "official PHerc0139 segment ID (winding number in the organizer name), not Paris 4 data"
+  },
+  {
+   "check": "paris4_title_search",
+   "file": "results/winding_PHerc0139.json",
+   "line": 53,
+   "match": "w028",
+   "reason": "official PHerc0139 segment ID (winding number in the organizer name), not Paris 4 data"
+  },
+  {
+   "check": "secrets",
+   "file": "src/handcheck/public.py",
+   "line": 52,
+   "match": "token",
+   "reason": "S3 ListObjectsV2 pagination continuation token of the anonymous public bucket, not a credential"
+  },
+  {
+   "check": "secrets",
+   "file": "src/handcheck/public.py",
+   "line": 55,
+   "match": "token",
+   "reason": "S3 ListObjectsV2 pagination continuation token of the anonymous public bucket, not a credential"
+  },
+  {
+   "check": "secrets",
+   "file": "src/handcheck/public.py",
+   "line": 56,
+   "match": "token",
+   "reason": "S3 ListObjectsV2 pagination continuation token of the anonymous public bucket, not a credential"
+  },
+  {
+   "check": "secrets",
+   "file": "src/handcheck/public.py",
+   "line": 56,
+   "match": "token",
+   "reason": "S3 ListObjectsV2 pagination continuation token of the anonymous public bucket, not a credential"
+  },
+  {
+   "check": "secrets",
+   "file": "src/handcheck/public.py",
+   "line": 60,
+   "match": "Token",
+   "reason": "S3 ListObjectsV2 pagination continuation token of the anonymous public bucket, not a credential"
+  },
+  {
+   "check": "secrets",
+   "file": "src/handcheck/public.py",
+   "line": 60,
+   "match": "Token",
+   "reason": "S3 ListObjectsV2 pagination continuation token of the anonymous public bucket, not a credential"
+  },
+  {
+   "check": "secrets",
+   "file": "src/handcheck/public.py",
+   "line": 63,
+   "match": "token",
+   "reason": "S3 ListObjectsV2 pagination continuation token of the anonymous public bucket, not a credential"
+  }
+ ],
+ "scrub_ok": true
+}
