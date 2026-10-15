@@ -1,0 +1,14 @@
+# p4v-13 STATUS (DECL-P4-26-A2, BRIEF_VERSO)
+Provenance: Project HERCULES | [id removed]
+
+- 2026-09-30T23:32:10Z start. sha256: infer_verso.py a1bd1f248cc6b49263f9a01dd7041b1123864f571b129fad643779c4ccb92b90; infer.py 36a64e1ac07eea859bb586a484300ace048e732420167f9bf77516befaccdf2e; own_common.py ddf9077087a85a7bce44139b6ea56e6ea1dbed37353c30e3a25af58ba1daf3b9; ckpt-screen-b@98cd075 p4o_tiles.py a32d7e86..., infer_1667.py 29444f37... (both match CKB_SHA); model_final.pth bfa9f7a62097374b93e87c7b406a9c3eba6b77dca3d9f79c10300fa0114daea5 (verified); summary.json 43e781fe...; BRIEF_VERSO 377fa355...; verso_assign.json f3364896...
+[line withheld: prize-candidate detail under review]
+- 2026-10-01T00:21:12Z REPRO FAIL: forward 20260701183124-w010-027:0,11 png_sha256 fb6a6900fe8f99daedfac50039462d00a0bbe59b16f02a0c253a2b914a02c809 (file fb6a6900fe8f99daedfac50039462d00a0bbe59b16f02a0c253a2b914a02c809) vs own-lead 6954db7da54cb2bb818842042b789c974bd908fc446a4902de4ee70d6f534102
+- 2026-10-01T00:30Z STAND DOWN (orchestrator 00:24Z, DECL-P4-26-A2-E2). Runner and every infer/infer_verso process stopped. 0 listed tiles made or pushed (no verso/, no fwd_x/tiles/). Only the r0c11 repro (FAIL, above) was pushed.
+- Environment: CPU "Intel(R) Xeon(R) Processor @ 2.80GHz"; flags fma avx2 avx512f avx512dq avx512cd avx512bw avx512vl avx512_vnni (no amx); nproc 4. torch 2.14.1+cpu; get_cpu_capability() AVX512; default get_num_threads() 4. Repro run used --threads 4 (infer.py line 80 set_num_threads(a.threads)); the brief's lane runs would use 2. oneMKL 2024.2 (build 20240605); oneDNN (MKL-DNN) v3.12.0 (80afa710); OpenMP 4.5; GCC 13.3. Venv installed 2026-09-30 by the BRIEF_S1MAP step 2 commands (unpinned torch).
+- Repro run facts (numbers only):
+  * The run was interrupted after band 4/9 (container restart, ~23:37Z) and resumed from infer.py's band checkpoint at 00:15Z (log: resume_band 4). infer.py counts chunks_missing only for bands run after a resume, so this record's chunks_missing=0 covers bands 5-9 only. It is not evidence that the 761 chunks own-lead found missing were present.
+  * The 404 path works here: a nonexistent key returns 404 NoSuchKey, and a 169-chunk canvas grid sample gave 42 x 404 and 127 x 206.
+  * Diagnostic: a clean re-run (fresh checkpoint dir, --threads 4) was started, then stopped at bands_done=2 when the stand-down came. Its bands 1-2 u8 rows equal the resumed run's: 0 px differ, max |diff| 0. Same machine, two runs, deterministic. The comparison with own-lead stays open.
+  * Untested candidate causes for the 6954db7d vs fb6a6900 mismatch: (a) a newer torch/oneDNN/MKL than own-lead's (unpinned install), or AVX512 vs own-lead's CPU path; (b) --threads 4 here vs own-lead's setting; (c) checkpoint staleness at the band-4 resume across the container restart (os.replace without fsync).
+- End. p4v-13 stood down.
