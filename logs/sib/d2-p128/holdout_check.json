@@ -1,0 +1,121 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "refs": {
+  "dev": "a6af0cb9fa6a29d1975e65496d80c83e3c5e20fe",
+  "trainer": "08d7e42da1bc2a01c55b8ca0659f00c2b2c33935",
+  "p0814": "ede21e36554a104e9d5ead04e227d4a089fa04ea",
+  "p0139": "3ed0fc11ae7a0d65f30a899ac05e05f7af378aeb"
+ },
+ "dev_registry": {
+  "sha256": "765693928c6e9744f9fc68fddb0b3b4384ad36a53b6ad812b09f0798bdbda365",
+  "segments": {
+   "PHerc0139": [
+    "20260206000001-w047_2026020613",
+    "20260215000000-w024_2026021572",
+    "20260220000000-w053_2026022021"
+   ],
+   "PHerc0814": [
+    "20250925204843-auto_grown_20250925204843950",
+    "20250925212701-auto_grown_20250925212701145",
+    "20250925222237-auto_grown_20250925222237459",
+    "20250926165636-auto_trace_20250926165636789",
+    "20251001060526-auto_grown_20251001060526760"
+   ]
+  }
+ },
+ "eligible_products_sha256": "7eab88b7db82e2fd2cd9eeafb1a4ce386c513b096e01f5dd7501ead8c85b11bb",
+ "pairs0814": {
+  "registry_files": 12,
+  "rows": 957,
+  "status": {
+   "GATED": 957
+  },
+  "segments": [
+   "20250925161630-auto_grown_20250925161630635",
+   "20250925182632-auto_grown_20250925182632715",
+   "20250925204843-auto_grown_20250925204843950",
+   "20250925212701-auto_grown_20250925212701145",
+   "20250925222237-auto_grown_20250925222237459",
+   "20250926165636-auto_trace_20250926165636789",
+   "20250926203608-auto_grown_20250926203608932",
+   "20250928235954-auto_grown_20250928235953722_copy",
+   "20250929040153-auto_grown_20250929040153260",
+   "20250930083742-auto_grown_20250930083742882",
+   "20251001060526-auto_grown_20251001060526760",
+   "20260226000000-46527_2um_try2"
+  ],
+  "segments_in_dev_0814": [
+   "20250925204843-auto_grown_20250925204843950",
+   "20250925212701-auto_grown_20250925212701145",
+   "20250925222237-auto_grown_20250925222237459",
+   "20250926165636-auto_trace_20250926165636789",
+   "20251001060526-auto_grown_20251001060526760"
+  ],
+  "rows_in_dev_segments": 473,
+  "gated_rows_failing_decl_d2_filter": 628,
+  "failing_ids_head": [
+   "20250925161630_1152_5760",
+   "20250925161630_768_15360",
+   "20250925161630_2688_384",
+   "20250925161630_2688_768",
+   "20250925161630_2304_2304",
+   "20250925161630_1536_3840",
+   "20250925161630_1536_4224",
+   "20250925161630_1920_4224",
+   "20250925161630_2688_5760",
+   "20250925161630_1920_6912"
+  ],
+  "segment_ids_mentioning_0841": [],
+  "segment_ids_in_eligible_catalogue": []
+ },
+ "dryrun_allow_pairs0814": {
+  "sha256": "6b1fc52fd7bb6a7b95df474a3a62e2ffe331b676920abd1ff9587e43ca8bb666",
+  "n": 329,
+  "per_segment": {
+   "20250925161630": 53,
+   "20250925182632": 50,
+   "20250925204843": 21,
+   "20250925212701": 11,
+   "20250925222237": 23,
+   "20250926165636": 22,
+   "20250926203608": 27,
+   "20250929040153": 31,
+   "20250930083742": 43,
+   "20251001060526": 44,
+   "20260226000000": 4
+  },
+  "n_in_dev_segments": 121,
+  "per_dev_segment": {
+   "20250925204843": 21,
+   "20250925212701": 11,
+   "20250925222237": 23,
+   "20250926165636": 22,
+   "20251001060526": 44
+  }
+ },
+ "pairs0139_branch_files": [
+  "logs/sib/pairs0139/affine_validation.json",
+  "logs/sib/pairs0139/affines.json",
+  "logs/sib/pairs0139/diag_conv_w035_smoke.json",
+  "logs/sib/pairs0139/diag_render24_vs_organizer_sv.json",
+  "logs/sib/pairs0139/exclusion.json",
+  "logs/sib/pairs0139/fetch_manifest.jsonl",
+  "logs/sib/pairs0139/gate_spec.json",
+  "logs/sib/pairs0139/labelq.jsonl",
+  "logs/sib/pairs0139/runs.jsonl",
+  "logs/sib/pairs0139/segment_order.json"
+ ],
+ "not_checked": [
+  "+16 vox same-papyrus extension of DEV hold-outs (needs meshes; list to be frozen by the orchestrator)",
+  "clean-control / READ-CAL / canary hold-outs (lists not yet published)",
+  "pairs0139, pairs0139b/c, pairs0814b registries (no final registry at check time)"
+ ],
+ "independent_filter_recompute": {
+  "rule": "ncc0 >= 0.8 and >= 7 of 9 windows aligned with |dy|,|dx| <= 1 px",
+  "n_pass": 329,
+  "equals_dryrun_allowlist": true,
+  "pass_minus_allow": 0,
+  "allow_minus_pass": 0
+ },
+ "finding": "121 of the 329 dry-run allowlist patches (36.8 %) lie on 5 PHerc0814 segments that are DEV segments in the devloop dev_registry.json; DECL-DEVLOOP-A1 item 6 excludes DEV segments (+ same-papyrus +16 vox) from every D2 training set. The dry run has holdout_ids_total 0, so the freeze request must list them."
+}

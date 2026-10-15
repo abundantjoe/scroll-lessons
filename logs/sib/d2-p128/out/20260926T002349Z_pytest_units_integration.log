@@ -1,0 +1,450 @@
+.EE..EEE.EE.EEEEEEEEEEEEEE                                               [100%]
+==================================== ERRORS ====================================
+________ ERROR at setup of test_synthetic_registry_roundtrip_and_tamper ________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_____________ ERROR at setup of test_patch_registry_and_clearance ______________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+______________ ERROR at setup of test_tilegrid_quads_triangulate _______________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+__________ ERROR at setup of test_shards_save_delete_restore_bitwise ___________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_________________ ERROR at setup of test_shard_cap_and_tamper __________________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_____________________ ERROR at setup of test_config_rules ______________________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+____________________ ERROR at setup of test_stagec_adapter _____________________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+______________ ERROR at setup of test_tilegrid_adapter_and_mosaic ______________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_________ ERROR at setup of test_tilegrid_label_rule_mismatch_refused __________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_______ ERROR at setup of test_determinism_twice_identical[p128-flags0] ________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/sib/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7ff7bda32fd0>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def syn(tmp_path_factory):
+>       d = tmp_path_factory.mktemp("syn")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/sib_trainer_integration_test.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+__ ERROR at setup of test_determinism_twice_identical[p384_null_micro-flags1] __
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/sib/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7ff7bda32fd0>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def syn(tmp_path_factory):
+>       d = tmp_path_factory.mktemp("syn")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/sib_trainer_integration_test.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_ ERROR at setup of test_determinism_twice_identical[p384_rev_stitched-flags2] _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/sib/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7ff7bda32fd0>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def syn(tmp_path_factory):
+>       d = tmp_path_factory.mktemp("syn")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/sib_trainer_integration_test.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_____________ ERROR at setup of test_paired_sampling_p384_null_rev _____________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/sib/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7ff7bda32fd0>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def syn(tmp_path_factory):
+>       d = tmp_path_factory.mktemp("syn")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/sib_trainer_integration_test.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_______________ ERROR at setup of test_subtile_p128_covers_grid ________________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/sib/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7ff7bda32fd0>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def syn(tmp_path_factory):
+>       d = tmp_path_factory.mktemp("syn")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/sib_trainer_integration_test.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_________________ ERROR at setup of test_seed_changes_the_run __________________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/sib/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7ff7bda32fd0>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def syn(tmp_path_factory):
+>       d = tmp_path_factory.mktemp("syn")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/sib_trainer_integration_test.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+____________ ERROR at setup of test_resume_local_and_remote_bitwise ____________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/sib/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7ff7bda32fd0>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def syn(tmp_path_factory):
+>       d = tmp_path_factory.mktemp("syn")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/sib_trainer_integration_test.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_________________ ERROR at setup of test_d3_equivalence[CTRL] __________________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+__________________ ERROR at setup of test_d3_equivalence[FA] ___________________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_________________ ERROR at setup of test_d3_equivalence[NULLA] _________________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_________________ ERROR at setup of test_d3_equivalence[REVA] __________________
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+__________ ERROR at setup of test_bf16_training_refused_without_gate ___________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=PosixPath('/work/sib/pt'), _trace=<pluggy._tracing.TagTracerSub object at 0x7ff7bda32fd0>, _basetemp=None, _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def syn(tmp_path_factory):
+>       d = tmp_path_factory.mktemp("syn")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/sib_trainer_integration_test.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:136: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:117: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+/opt/hv-ink/lib/python3.13/site-packages/_pytest/tmpdir.py:158: in getbasetemp
+    basetemp.mkdir(mode=0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/work/sib/pt'), mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+=========================== short test summary info ============================
+ERROR tests/sib_trainer_units_test.py::test_synthetic_registry_roundtrip_and_tamper
+ERROR tests/sib_trainer_units_test.py::test_patch_registry_and_clearance - Fi...
+ERROR tests/sib_trainer_units_test.py::test_tilegrid_quads_triangulate - File...
+ERROR tests/sib_trainer_units_test.py::test_shards_save_delete_restore_bitwise
+ERROR tests/sib_trainer_units_test.py::test_shard_cap_and_tamper - FileNotFou...
+ERROR tests/sib_trainer_units_test.py::test_config_rules - FileNotFoundError:...
+ERROR tests/sib_trainer_units_test.py::test_stagec_adapter - FileNotFoundErro...
+ERROR tests/sib_trainer_units_test.py::test_tilegrid_adapter_and_mosaic - Fil...
+ERROR tests/sib_trainer_units_test.py::test_tilegrid_label_rule_mismatch_refused
+ERROR tests/sib_trainer_integration_test.py::test_determinism_twice_identical[p128-flags0]
+ERROR tests/sib_trainer_integration_test.py::test_determinism_twice_identical[p384_null_micro-flags1]
+ERROR tests/sib_trainer_integration_test.py::test_determinism_twice_identical[p384_rev_stitched-flags2]
+ERROR tests/sib_trainer_integration_test.py::test_paired_sampling_p384_null_rev
+ERROR tests/sib_trainer_integration_test.py::test_subtile_p128_covers_grid - ...
+ERROR tests/sib_trainer_integration_test.py::test_seed_changes_the_run - File...
+ERROR tests/sib_trainer_integration_test.py::test_resume_local_and_remote_bitwise
+ERROR tests/sib_trainer_integration_test.py::test_d3_equivalence[CTRL] - File...
+ERROR tests/sib_trainer_integration_test.py::test_d3_equivalence[FA] - FileNo...
+ERROR tests/sib_trainer_integration_test.py::test_d3_equivalence[NULLA] - Fil...
+ERROR tests/sib_trainer_integration_test.py::test_d3_equivalence[REVA] - File...
+ERROR tests/sib_trainer_integration_test.py::test_bf16_training_refused_without_gate
+5 passed, 21 errors in 5.37s

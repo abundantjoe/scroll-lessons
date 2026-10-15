@@ -1,0 +1,50 @@
+{
+ "steps": 30,
+ "loss_bitwise_equal": true,
+ "weights_bitwise_equal": true,
+ "digest_equal": true,
+ "finite_A": 30,
+ "resumptions_B": [
+  {
+   "event": "resume",
+   "utc": "2026-09-26T01:04:11Z",
+   "from_step": 20,
+   "source": "local"
+  }
+ ],
+ "median_s_per_step_A": 18.34953710800005,
+ "median_s_per_step_B_resumed_leg": 18.21739366299994,
+ "peak_rss_kb_A": 6852544,
+ "peak_rss_kb_B_resumed_leg": 7320716,
+ "loss_first": 0.6264469623565674,
+ "loss_last": 0.46449556946754456,
+ "model_final_sha256_A": "2fdb87d51d89cba1441739faa1cc282054afa340594d9662d496cd59ead13c07",
+ "model_final_sha256_B": "2fdb87d51d89cba1441739faa1cc282054afa340594d9662d496cd59ead13c07",
+ "checks": {
+  "rot_margin_full": "per-subtile (edge sub-tiles padded, padding ignored)",
+  "subtiles_per_patch": {
+   "syn": 1
+  }
+ },
+ "ckpt_events_A": [
+  {
+   "event": "checkpoint",
+   "step": 10,
+   "utc": "2026-09-26T00:50:08Z",
+   "local_bytes": 414975484,
+   "seconds": 0.31
+  },
+  {
+   "event": "checkpoint",
+   "step": 20,
+   "utc": "2026-09-26T00:53:14Z",
+   "local_bytes": 414971772,
+   "seconds": 0.38
+  }
+ ],
+ "threads": {
+  "intra": 4,
+  "interop": 1
+ },
+ "config_sha256": "2e23202b89f0460105dd15966baa23bbe0cfa91f8cc494666d2c4436464bc5cc"
+}

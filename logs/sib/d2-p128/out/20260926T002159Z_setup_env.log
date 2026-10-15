@@ -1,0 +1,17 @@
+Cloning into '/work/villa'...
+From https://github.com/ScrollPrize/villa
+ * branch              41701aa0eaa1aa765523db3f9f972b5830abf549 -> FETCH_HEAD
+/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth: OK
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import torch, vesuvius.ink_detection.training.train as t; print("torch", torch.__version__, "threads", torch.get_num_threads())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+    from vesuvius.ink_detection.training.dilation import (
+    ...<2 lines>...
+    )
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+    from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+    import cc3d
+ModuleNotFoundError: No module named 'cc3d'
