@@ -1,0 +1,216 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-10 item 2 (family FE detector), FROZEN before any title-strip (E1/E2) number",
+ "status": "FROZEN",
+ "materials": {
+  "E1": {
+   "segment": "20260623141924-w010-027",
+   "sv": "1.129um-0.23m-78keV-volume-20260608103018-L1.zarr",
+   "level": 0,
+   "voxel_um": 2.258,
+   "grid": "p4-tiles-b e1/grid.json (T 8872)",
+   "eligible": "p4-tiles-b e1/manifest.json: valid >= 0.5 and frac outside 1.129 um volume < 0.5 (60 tiles; p4-highz rule/code)",
+   "labelled_adjacency": "excl_d_a (union flag)"
+  },
+  "C": {
+   "segment": "20260623142658-w028-037",
+   "sv": "1.129um-0.23m-78keV-volume-20260608103018-L1.zarr",
+   "level": 0,
+   "voxel_um": 2.258,
+   "grid": "p4-tiles-b m2b/grid.json (T 8869)",
+   "eligible": "valid >= 0.5 and frac outside < 0.5 from m2b/manifest.json (64 tiles; p4-highz rule/code)",
+   "role": "known-text control (carbon ink) for E1"
+  },
+  "E2": {
+   "segment": "20260701183124-w010-027",
+   "sv": "2.4um-0.22m-78keV-volume-20260411134726.zarr",
+   "level": 1,
+   "voxel_um_xy": 4.8,
+   "voxel_um_z": 2.4,
+   "T_canvas_px": 8343,
+   "eligible_from": {
+    "ref": "origin/claude/gifted-bell-gavnl5-sib-pairs0814b",
+    "path": "logs/sib/pairs0814b/e2/manifest.json"
+   },
+   "labelled_adjacency": "logs/p4/excl/excl_a_union_e2.json (union flag)"
+  },
+  "C2": {
+   "segment": "20260701183125-w028-037",
+   "sv": "2.4um-0.22m-78keV-volume-20260411134726.zarr",
+   "level": 1,
+   "voxel_um_xy": 4.8,
+   "voxel_um_z": 2.4,
+   "T_canvas_px": 8343,
+   "eligible_from": null,
+   "eligible_rule": "grid T 8343 from (0,0); tile eligible if >= 50 % of its blocks are valid (block valid = >= 50 % of its px valid)",
+   "role": "known-text control (carbon ink) for E2; same 2.4 um pipeline as E2 (the 2.4 um trace of w028-037)"
+  }
+ },
+ "families": {
+  "1129": {
+   "calibrated_on": "C",
+   "bands": {
+    "S": [
+     58,
+     68
+    ],
+    "I": [
+     49,
+     56
+    ],
+    "D": [
+     40,
+     49
+    ],
+    "F": [
+     40,
+     68
+    ]
+   },
+   "side": 1,
+   "v_air": 66.852,
+   "v_pap": 81.811,
+   "delta": 14.959,
+   "B_lo": 82,
+   "B_hi": 230,
+   "expected_full_voxel_value": {
+    "lean_rho_e_R3.1": 113.2,
+    "standard_rho_e_R4.5": 134.2,
+    "standard_mu_R10.9": 229.9
+   },
+   "voxel_sd_control": {
+    "S": 43.16,
+    "I": 42.35,
+    "D": 42.21
+   }
+  },
+  "24": {
+   "calibrated_on": "C2",
+   "bands": {
+    "S": [
+     54,
+     63
+    ],
+    "I": [
+     46,
+     52
+    ],
+    "D": [
+     37,
+     46
+    ],
+    "F": [
+     37,
+     63
+    ]
+   },
+   "side": 1,
+   "v_air": 76.355,
+   "v_pap": 88.713,
+   "delta": 12.358,
+   "B_lo": 89,
+   "B_hi": 211,
+   "expected_full_voxel_value": {
+    "lean_rho_e_R3.1": 114.7,
+    "standard_rho_e_R4.5": 132.0,
+    "standard_mu_R10.9": 211.1
+   },
+   "voxel_sd_control": {
+    "S": 37.1,
+    "I": 35.91,
+    "D": 35.89
+   }
+  }
+ },
+ "calibration_rules": {
+  "sample": "2 % of control chunk positions, rng 20260926 (calib.py); control only",
+  "side": "recto surface layer on + side iff the sheet-core mean exceeds the gap mean (both controls: +1, sheet mass on the - side)",
+  "v_air": "min of the depth-profile mean over slices c+4..c+27 (gap side)",
+  "v_pap": "max of the depth-profile mean over slices c-12..c-4 (sheet core)",
+  "B_lo": "round(v_pap): band starts at the papyrus-core mean",
+  "B_hi": "min(254, round(v_air + 10.9 delta)): full voxel of standard ochre ink in the optimistic mu regime; caps denser grains (magnetite, Hg/Pb)",
+  "note": "voxel noise sd ~36-43 grey levels vs delta ~12-15: a single voxel carries almost no FE evidence; the detector relies on integration over ~1e5 px per stroke bar"
+ },
+ "detector": {
+  "per_voxel": "x = clip(v, B_lo, B_hi) - B_lo",
+  "per_px": "e = mean_S(x) - mean_I(x); px valid iff mesh-valid (E1/C: tifxyz rule of p4-highz) and every voxel of the fetch range F is nonzero",
+  "bands_slices": "S = recto surface layer 0..+20 um (gap side), I = sheet interior -20..-7 um, D = deep null -41..-22 um (f_in only); see families.*.bands (half-open [lo, hi))",
+  "block": "8x8 px at 2.258 um (18.06 um) for E1/C; 4x4 px at 4.8 um (19.2 um) for E2/C2; block value = sum over valid px, with the valid count",
+  "matched_filter": {
+   "bar_width_mm": 0.45,
+   "bar_length_mm": 1.8,
+   "flank_width_mm": 0.45,
+   "orientations_deg": [
+    0,
+    45,
+    90,
+    135
+   ],
+   "min_bar_valid": 0.8,
+   "min_flank_valid": 0.5,
+   "margin_mm": 2.5,
+   "response": "r = (valid-weighted mean e over bar) - (valid-weighted mean e over flanks); max over orientations"
+  },
+  "normalisation": "z = r / sigma0; sigma0 = 1.4826 MAD of r over all valid positions of the eligible control tiles of the same family (C for E1, C2 for E2)",
+  "tile_score": "max z over bar centres whose block centre lies in the tile (tile + 2.5 mm margin of data used)",
+  "rot90_null": "same score on np.rot90 of the tile(+margin) block maps; the 4-orientation kernel set is closed under 90 deg, so this is an implementation check more than an independent null (disclosed)",
+  "in_sheet_fraction": "f_in = mean S-band excess / (mean S-band excess + mean D-band excess) over the argmax bar footprint; depth-uniform material gives ~0.5"
+ },
+ "eligibility": {
+  "min_valid_block_frac": 0.5
+ },
+ "threshold": {
+  "theta": "per family: numpy.percentile(control tile z  UNION  control tile z_rot90, 99) (DECL-P4-10 item 4)",
+  "hotspot": "non-labelled-adjacent title-strip tile with z > theta AND f_in >= 0.8"
+ },
+ "injection": {
+  "locations": ">= 10 control (C / C2) and >= 10 title-strip (E1 / E2) per family; random eligible tile and chunk-aligned origin, rng seeds 101 (C), 202 (E1), 303 (C2), 404 (E2); patch accepted iff >= 90 % mesh-valid (E1/C, mask only) and >= 90 % nonzero columns",
+  "patch_mm": 7.0,
+  "letters": "15 Greek capitals (A, Delta, E, H, K, Lambda, M, N, Pi, Sigma, T, Gamma, Omega, Xi, Z) as polylines; height U[2,4] mm, stroke U[0.3,0.6] mm, rotation {0,90,180,270} + U[-10,10] deg",
+  "height_mm": [
+   2.0,
+   4.0
+  ],
+  "stroke_mm": [
+   0.3,
+   0.6
+  ],
+  "thickness_um": [
+   2,
+   5,
+   10,
+   20
+  ],
+  "regimes": [
+   {
+    "name": "lean_rho_e",
+    "R": 3.1
+   },
+   {
+    "name": "standard_rho_e",
+    "R": 4.5
+   },
+   {
+    "name": "standard_mu",
+    "R": 10.9
+   }
+  ],
+  "primary_regime": "standard_rho_e (conservative); plausible thickness 5-10 um (MEMO.md)",
+  "layer": "from the mesh plane outward (+ side), per-slice occupancy min(1, max(0, t/um_z - k)) for slice centre+k",
+  "value_model": "v' = v + blur(o (V_paint - v)), V_paint = v_air + R (v_pap - v_air); only voxels > 0; clip 1..255; round",
+  "psf_sigma_vox": 1.0,
+  "detection": "z_letter = max z over bar centres within the letter bbox dilated by 0.5 mm; detected iff z_letter > theta; also reported with f_in >= 0.8",
+  "false_positive": "baseline (no plant) z over the same window > theta, at control and title locations; control tile FP by leave-one-out threshold; rot-90 null",
+  "verdict_rule": "sensitivity < 0.8 at 5 um in the primary regime -> 'insensitive' at the plausible thickness (DECL-P4-10 item 3); detection limit = smallest thickness with sensitivity >= 0.8 per regime"
+ },
+ "code": {
+  "fe.py": "dd881ddaccb856c4957997ea9453c01e64e84e583ddf1d6e1aa57a8ce2ef02bf",
+  "strip.py": "a9d5436f923114e1ec87008a949f923aa3a0db32a0ccb7546bf14347e36657fc",
+  "inject.py": "0c1b829e5723b56e417684d48297cb3291099235c91642258053baf929b1ad82",
+  "calib.py": "837631f50d1b7a1ffb9e2b78896bc251231bb2b3ffe94d43f1b350d7d11b03d0",
+  "hz_common.py": "e5846bc2b18948839b5fbacd3820e665a5ed23ae3b256b6b437be9d7edac9204"
+ },
+ "utc": "2026-09-26T18:16:19Z",
+ "calib_control_json_sha256": "f02ec6d5c6e5ad87e47a877d2d98e91b90fa27d6ef1e1ed05e88cf164b481e0e",
+ "smoke_test": "inject.py run once on control C (1 location, dummy theta/sigma0) to check the code runs; no E1/E2 byte read before this file was pushed"
+}

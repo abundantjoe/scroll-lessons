@@ -1,0 +1,4 @@
+D3 = FOLD-0841 and D4 = BOOTSTRAP-T (section 6.6).
+D3: CTRL = D2's L-0841 winner, or base if D2 failed or did not run. Fold A = 0841 papyrus >= 128 vox from every sealed window, needing >= 280 text patches, else INFEASIBLE (= not passed). Arms: FA (CTRL + 2000 steps, 50/50 batches, fold-A teacher labels); NULLA; REVA; CTRL (equal steps, no new labels). PASS: FA >= CTRL + max(3, 0.1 S') with p_max < 0.01; NULLA, REVA <= CTRL + 1; F_B <= CTRL + 1; no window > 1 below CTRL; w053 blob-f180 <= 0.0272. LABEL-EQUIV reported. J decisions used: 3 of 3; J then retires.
+D4: on KTLB-4-0841 (INFEASIBLE if unsealed). Arms: PLA (labels from CTRL's own fold-A map: ink = text order >= its 92nd percentile with other order <= its 60th; blank = text order <= its 40th; no morphology), PLA-REV, CTRL. PASS: PLA >= CTRL + max(2, 0.05 S) with p_max < 0.01 and PLA-REV <= CTRL + 1.
+Route F runs only if D3 AND D4 pass. Default for both: not passed at 24 h past their dates in D0-HW.
