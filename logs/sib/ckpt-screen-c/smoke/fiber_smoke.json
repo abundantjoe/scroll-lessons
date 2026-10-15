@@ -1,0 +1,78 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "ckpt": "/work/ckscr/ckpt/fiber_ink_4class_selfdistill/p4_4class_ddp8_20260526_step029000.pth",
+ "ckpt_sha256": "feef7fad198c5c53ede4193cf2686a515be574beb110cc957bd7984b52085bf2",
+ "threads": 4,
+ "torch": "2.14.0+cpu",
+ "wrapper_sha256": "fca5d1bfdc0b85f2736f9dbb2312c5dd5d9ee6751c2fc738a54ace847b0fe524",
+ "load_s": 8.6,
+ "ckpt_keys": [
+  "config",
+  "ema",
+  "model",
+  "optimizer",
+  "step"
+ ],
+ "config": {
+  "patch_size": [
+   256,
+   256,
+   256
+  ],
+  "target_name": "labels",
+  "out_channels": 4,
+  "activation": "none",
+  "in_channels": 1,
+  "mixed_precision": "bf16",
+  "dataset": {
+   "volume_url": "s3://vesuvius-challenge-open-data/PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/",
+   "storage_options": {
+    "anon": true
+   },
+   "scale": 0,
+   "min_nonempty_frac": 0.1,
+   "dark_threshold": 50
+  },
+  "pseudo": {
+   "fiber_teacher": "/ephemeral/fiber_5class_inputs/fiber_teacher.pth",
+   "ink_teacher": "/ephemeral/fiber_5class_inputs/ink_teacher.pth",
+   "fiber_thr": 0.5,
+   "ink_thr": 0.1,
+   "dark_voxel_thr": 90,
+   "ws_image_mode": "distance",
+   "ws_h_merge": 14000,
+   "ws_min_voxels": 400,
+   "pca_cos_threshold": 0.819
+  },
+  "num_iterations": 30000,
+  "wandb_run_name": "p4_4class_ddp8_20260526",
+  "ema": {
+   "enabled": true,
+   "decay": 0.9995,
+   "start_step": 1000
+  }
+ },
+ "step": 29000,
+ "missing_keys": [],
+ "unexpected_keys": [],
+ "n_params": 141887492,
+ "forward": {
+  "128": {
+   "seconds": 5.64,
+   "out_shape": [
+    1,
+    4,
+    128,
+    128,
+    128
+   ],
+   "class_frac_argmax": [
+    0.8039484024047852,
+    0.03481626510620117,
+    0.05571889877319336,
+    0.10551643371582031
+   ],
+   "ink_prob_mean": 0.1195603460073471
+  }
+ }
+}

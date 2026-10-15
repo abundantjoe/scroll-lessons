@@ -1,0 +1,678 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "task": "ckpt-screen-c",
+ "rule": "DECL-DEVLOOP-SCREEN phase 1",
+ "villa_sha": "41701aa0eaa1aa765523db3f9f972b5830abf549",
+ "root_index": {
+  "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/metadata.json",
+  "sha256": "8119d1c2d48b54f880c81bfd7ff9a51eb5edd166c9c06eac754abf15dba7e0ac",
+  "note": "identical to the index recorded in data/catalogue/checkpoints.json (last_modified 2026-09-23)"
+ },
+ "dev_scrolls_considered": [
+  "PHerc0139",
+  "PHerc0814",
+  "PHerc0009B",
+  "PHerc0332",
+  "PHerc0500P2",
+  "PHerc1451"
+ ],
+ "wrapper": {
+  "path": "tools/sib/ckpt-screen-c/screen_infer.py",
+  "sha256": "b9d421f4166970217d225bb147fd3f7b06f1c84ddc6a2e0c82cf8189b83ad24f"
+ },
+ "smoke_input": {
+  "kind": "synthetic smoothed noise (31, 384, 384) uint8, right quarter zero; no CT",
+  "generator": "tools/sib/ckpt-screen-c/make_smoke.py seed 20260926",
+  "sha256": "fc59fcda346648467fe636c2c0c950a3ae08b4eab373bec04535be0312c6e148"
+ },
+ "cost_basis": "DEV window 2136 px (2 cm at 9.362 um) + 256 px margin per side = 2648 px square; CPU minutes per depth order = tiles / measured tiles-per-second on the smoke render, 4 threads, fp32 (villa autocast disabled), batch 32; a screen needs both orders",
+ "checkpoints": {
+  "timesformer_scroll5_july_retreat": {
+   "repo": "scrollprize/timesformer_scroll5_july_retreat",
+   "commit": "5b714296b256b8f993ce69e8e57aea585125d782",
+   "file": "timesformer_scroll5_july_retreat_20241113070770_frepoch=9.ckpt",
+   "card_licence": "mit",
+   "architecture": "TimeSformer small (dim 512, depth 8, heads 6, patch 16, 64 x 64 input, rotary frame embedding: the weights do not fix the frame count); villa model_timesformer.RegressionPLModel keys match exactly; with_norm False",
+   "registry": {
+    "id": "20250713185324",
+    "compatible_samples": [
+     "PHerc0172"
+    ],
+    "target_resolution_um": [
+     7.0,
+     10.0
+    ],
+    "default_layers": 27,
+    "default_tile_size": 64,
+    "default_stride": 16
+   },
+   "production": {
+    "runs_in_index": 54,
+    "sample": "PHerc0172",
+    "render": "vc_render_tifxyz num-slices 33, flip-normals true, scale 1, voxel 7.91 um",
+    "ink": "start-layer 3, end-layer 30, tile 64, stride 16, force-reverse false, image ink-detection:v42"
+   },
+   "input_spec": {
+    "voxel_um": "7.91 in production (registry range 7-10 um); DEV renders 9.362 um (inside range)",
+    "slices": "27 centred on the surface: offsets -13..+13 (render indices 2..28 of 31)",
+    "centring": "surface = centre slice of an odd-count vc_render_tifxyz stack (production 33 -> layers 3..29; devloop 31 -> 2..28)",
+    "order": "forward = increasing vc_render_tifxyz --flip-normals index (production: flip-normals true, force-reverse false)",
+    "normalisation": {
+     "primary": "clip 0..200 then /200 (villa ink-detection/optimized_inference inference.py: np.clip(tile, 0, 200); A.ToFloat(max_value=200)); this is the production path",
+     "training_code": "clip 0..200 then /255 (villa deprecated train_timesformer_og.py: A.Normalize(mean=0, std=1), max_pixel_value default 255)",
+     "discrepancy": "production inference scales inputs 255/200 = 1.275 x the training-code scaling; the screen uses the production path unchanged (not chosen from any DEV result)"
+    },
+    "tiling": "tile 64, stride 16, Hann-window overlap-add, sigmoid, 4 x 4 logits bilinear-resized to 64 x 64; pixels covered only by Hann-zero tile borders (outermost canvas row/column) come out 0; all-zero tiles skipped",
+    "output": "uint8 = floor(clip(p, 0, 1) * 255) (villa processing.reduce_partitions)",
+    "in_plane_orientation": "no rotation or flip applied by the official code (tiles are square; model is not rotation-equivariant by construction); render canvas used as is",
+    "alt_window": "TRAIN26 offsets -15..+10 (deprecated training code); available as --window alt"
+   },
+   "text_order": {
+    "value": "forward",
+    "documented": true,
+    "source": "official bucket metadata.json production provenance (54 PHerc0172 runs)"
+   },
+   "training_data": {
+    "scrolls": [
+     "PHerc0172"
+    ],
+    "segments": "UNKNOWN",
+    "source": "card: \"Pherc 172 (Scroll 5) timesformer weights. Trained with papyrologists annotated labels during July text retreat.\"; ckpt hparams pred_shape (1792, 11520), epoch 9, global_step 43800",
+    "lineage": "UNKNOWN (the related repo timesformer_scroll5_27112024 was pretrained on PHerc.Paris4; nothing documents this for july_retreat)",
+    "dev_scrolls_named": []
+   },
+   "weights": {
+    "sha256": "b5f9f48c231728548e906ec52b56434aa2bbe86e90927212be1322314d35b331",
+    "sha256_catalogue": "b5f9f48c231728548e906ec52b56434aa2bbe86e90927212be1322314d35b331",
+    "verified": true,
+    "bytes": 455707757,
+    "url": "https://huggingface.co/scrollprize/timesformer_scroll5_july_retreat/resolve/5b714296b256b8f993ce69e8e57aea585125d782/timesformer_scroll5_july_retreat_20241113070770_frepoch=9.ckpt",
+    "downloaded_utc": "2026-09-26T00:38:35Z"
+   },
+   "wrapper_sha256": "b9d421f4166970217d225bb147fd3f7b06f1c84ddc6a2e0c82cf8189b83ad24f",
+   "smoke": {
+    "ckpt": "timesformer_scroll5_july_retreat",
+    "precision": "fp32",
+    "window": "primary",
+    "n_slices": 27,
+    "wrapper_sha256": "b9d421f4166970217d225bb147fd3f7b06f1c84ddc6a2e0c82cf8189b83ad24f",
+    "missing_keys": 0,
+    "unexpected_keys": 0,
+    "shape_mismatch": 0,
+    "n_params": 37959696,
+    "orders": {
+     "forward": {
+      "sha256": "7af9b9fc9fe56eea8c2bf3a3bc5222e30983bfc529ab5a317f3368155d207ee2",
+      "dtype": "uint8",
+      "ndim": 2,
+      "shape_ok": true,
+      "invalid_all_zero": true,
+      "valid_mean": 57.81035698784722,
+      "valid_std": 15.381699981138961,
+      "valid_eq0_frac": 0.008680555555555556,
+      "seconds": 54.03,
+      "tiles": 441,
+      "tiles_per_s": 8.162,
+      "dev_window_tiles": 26569,
+      "dev_window_cpu_min_est": 54.3
+     },
+     "reverse": {
+      "sha256": "e2e4fb224c73ec4cd784a7aae855a9196624c300135eb930e2cf7d56ee019a7d",
+      "dtype": "uint8",
+      "ndim": 2,
+      "shape_ok": true,
+      "invalid_all_zero": true,
+      "valid_mean": 60.910671657986114,
+      "valid_std": 16.592739288078718,
+      "valid_eq0_frac": 0.008680555555555556,
+      "seconds": 63.51,
+      "tiles": 441,
+      "tiles_per_s": 6.944,
+      "dev_window_tiles": 26569,
+      "dev_window_cpu_min_est": 63.8
+     }
+    },
+    "forward_vs_reverse": {
+     "mean_abs": 15.522298177083334,
+     "max_abs": 79,
+     "pearson": 0.09665792586879582
+    }
+   },
+   "cost_cpu_min_per_dev_window": {
+    "per_order": {
+     "forward": 54.3,
+     "reverse": 63.8
+    },
+    "both_orders": 118.1
+   }
+  },
+  "timesformer_GP_scroll1": {
+   "repo": "scrollprize/timesformer_GP_scroll1",
+   "commit": "61b81d31ddb93c89a2b3b00c66769d18bd96ccb2",
+   "file": "model.safetensors",
+   "card_licence": "card text \"License: MIT\" (no YAML licence tag, no LICENSE file)",
+   "architecture": "TimeSformer small (dim 512, depth 8, heads 6), HF repo class TimesformerScrollprizeModel; card: expects (B, 1, 26, 64, 64)",
+   "registry": {
+    "id": "20230702185753",
+    "compatible_samples": [
+     "PHercParis4"
+    ],
+    "target_resolution_um": [
+     7.0,
+     10.0
+    ],
+    "default_layers": 27,
+    "default_tile_size": 64,
+    "default_stride": 16
+   },
+   "production": {
+    "runs_in_index": 0
+   },
+   "input_spec": {
+    "voxel_um": "7.91 (Scroll 1 2023 segments; registry range 7-10 um); DEV renders 9.362 um",
+    "slices": "27 centred (registry default_layers 27; same workflow as july_retreat): offsets -13..+13; card says 26 frames (rotary embedding accepts either)",
+    "centring": "as july_retreat",
+    "order": "registry defaults (no force_reverse) -> forward; no production run recorded",
+    "normalisation": {
+     "primary": "clip 0..200 then /200 (villa ink-detection/optimized_inference inference.py: np.clip(tile, 0, 200); A.ToFloat(max_value=200)); this is the production path",
+     "training_code": "clip 0..200 then /255 (villa deprecated train_timesformer_og.py: A.Normalize(mean=0, std=1), max_pixel_value default 255)",
+     "discrepancy": "production inference scales inputs 255/200 = 1.275 x the training-code scaling; the screen uses the production path unchanged (not chosen from any DEV result)"
+    },
+    "tiling": "tile 64, stride 16, Hann-window overlap-add, sigmoid, 4 x 4 logits bilinear-resized to 64 x 64; pixels covered only by Hann-zero tile borders (outermost canvas row/column) come out 0; all-zero tiles skipped",
+    "output": "uint8 = floor(clip(p, 0, 1) * 255) (villa processing.reduce_partitions)",
+    "in_plane_orientation": "no rotation or flip applied by the official code (tiles are square; model is not rotation-equivariant by construction); render canvas used as is",
+    "alt_window": "TRAIN26 offsets -15..+10 (the card names train_timesformer_og.py as its training script); --window alt"
+   },
+   "text_order": {
+    "value": "forward",
+    "documented": "registry defaults only (no production run in the index); orchestrator to confirm",
+    "source": "official bucket metadata.json models[20230702185753]"
+   },
+   "training_data": {
+    "scrolls": [
+     "PHercParis4"
+    ],
+    "segments": "UNKNOWN for this exact checkpoint",
+    "source": "card: Grand Prize 2023 model, 12 epochs with train_timesformer_og.py; registry compatible_samples PHercParis4; the deprecated train_timesformer_og.py at the pinned villa SHA lists 17 Scroll 1 segment ids (+ \"recto\"), which may differ from the list used for this checkpoint",
+    "code_list": [
+     "20231210121321",
+     "20231022170901",
+     "20231106155351",
+     "20231005123336",
+     "20230820203112",
+     "20230826170124",
+     "20230702185753",
+     "20230522215721",
+     "20230531193658",
+     "20230903193206",
+     "20230902141231",
+     "20231007101615",
+     "20230929220926",
+     "recto",
+     "20231016151000",
+     "20231012184423",
+     "20231031143850"
+    ],
+    "dev_scrolls_named": []
+   },
+   "weights": {
+    "sha256": "490a98f9491e1180274ed3a0c0a9c611d73a0109c0e0c0fbba1097562a972488",
+    "sha256_catalogue": "490a98f9491e1180274ed3a0c0a9c611d73a0109c0e0c0fbba1097562a972488",
+    "verified": true,
+    "bytes": 151853128,
+    "url": "https://huggingface.co/scrollprize/timesformer_GP_scroll1/resolve/61b81d31ddb93c89a2b3b00c66769d18bd96ccb2/model.safetensors",
+    "downloaded_utc": "2026-09-26T00:38:07Z"
+   },
+   "wrapper_sha256": "b9d421f4166970217d225bb147fd3f7b06f1c84ddc6a2e0c82cf8189b83ad24f",
+   "smoke": {
+    "ckpt": "timesformer_GP_scroll1",
+    "precision": "fp32",
+    "window": "primary",
+    "n_slices": 27,
+    "wrapper_sha256": "b9d421f4166970217d225bb147fd3f7b06f1c84ddc6a2e0c82cf8189b83ad24f",
+    "missing_keys": 0,
+    "unexpected_keys": 0,
+    "shape_mismatch": 0,
+    "n_params": 37959696,
+    "orders": {
+     "forward": {
+      "sha256": "90eb9e9dd18ff7e4e6a0cf3746229e44dbcd2126491382239834e3a4974391a8",
+      "dtype": "uint8",
+      "ndim": 2,
+      "shape_ok": true,
+      "invalid_all_zero": true,
+      "valid_mean": 219.29179325810185,
+      "valid_std": 29.853789552535414,
+      "valid_eq0_frac": 0.008662471064814815,
+      "seconds": 66.42,
+      "tiles": 441,
+      "tiles_per_s": 6.64,
+      "dev_window_tiles": 26569,
+      "dev_window_cpu_min_est": 66.7
+     },
+     "reverse": {
+      "sha256": "cc8f410f1faa34d3684c400cfe06b4861b84df3f3173b08618d2dcffaa879d41",
+      "dtype": "uint8",
+      "ndim": 2,
+      "shape_ok": true,
+      "invalid_all_zero": true,
+      "valid_mean": 215.8623046875,
+      "valid_std": 36.71699355232872,
+      "valid_eq0_frac": 0.008662471064814815,
+      "seconds": 66.09,
+      "tiles": 441,
+      "tiles_per_s": 6.673,
+      "dev_window_tiles": 26569,
+      "dev_window_cpu_min_est": 66.4
+     }
+    },
+    "forward_vs_reverse": {
+     "mean_abs": 10.864167390046296,
+     "max_abs": 115,
+     "pearson": 0.8474933717086404
+    }
+   },
+   "cost_cpu_min_per_dev_window": {
+    "per_order": {
+     "forward": 66.7,
+     "reverse": 66.4
+    },
+    "both_orders": 133.1
+   }
+  },
+  "timesformer_large_scroll1_01122024": {
+   "repo": "scrollprize/timesformer_large_scroll1_01122024",
+   "commit": "7e8b37ce66b2497b4af1ad07ae3d7d8f5c5fa990",
+   "file": "model.safetensors",
+   "card_licence": "none stated",
+   "architecture": "TimeSformer large (dim 512, depth 16, heads 8), HF repo class; not loadable by villa model_timesformer (hard-coded depth 8)",
+   "registry": null,
+   "production": {
+    "runs_in_index": 0
+   },
+   "input_spec": {
+    "voxel_um": "7.91 (Scroll 1 segments, undocumented on the card); DEV renders 9.362 um",
+    "slices": "26: offsets -15..+10 (card points to villa ink-detection; training-code window, the only documented one for this checkpoint)",
+    "centring": "legacy 65-layer surface volumes, surface = layer 32",
+    "order": "UNDOCUMENTED in the flip-normals convention: both orders reported",
+    "normalisation": {
+     "primary": "clip 0..200 then /200 (villa ink-detection/optimized_inference inference.py: np.clip(tile, 0, 200); A.ToFloat(max_value=200)); this is the production path",
+     "training_code": "clip 0..200 then /255 (villa deprecated train_timesformer_og.py: A.Normalize(mean=0, std=1), max_pixel_value default 255)",
+     "discrepancy": "production inference scales inputs 255/200 = 1.275 x the training-code scaling; the screen uses the production path unchanged (not chosen from any DEV result)"
+    },
+    "tiling": "tile 64, stride 16, Hann-window overlap-add, sigmoid, 4 x 4 logits bilinear-resized to 64 x 64; pixels covered only by Hann-zero tile borders (outermost canvas row/column) come out 0; all-zero tiles skipped",
+    "output": "uint8 = floor(clip(p, 0, 1) * 255) (villa processing.reduce_partitions)",
+    "in_plane_orientation": "no rotation or flip applied by the official code (tiles are square; model is not rotation-equivariant by construction); render canvas used as is",
+    "alt_window": "PROD27 offsets -13..+13 (family production convention); --window alt"
+   },
+   "text_order": {
+    "value": null,
+    "documented": false,
+    "rule": "both orders reported; not chosen from DEV results"
+   },
+   "training_data": {
+    "scrolls": [
+     "PHercParis4 (Scroll 1)"
+    ],
+    "segments_finetune": [
+     "20231210121321",
+     "20231022170901",
+     "20231106155351",
+     "20231005123336",
+     "20230820203112",
+     "20230826170124",
+     "20230702185753",
+     "20230522215721",
+     "20230531193658",
+     "20230903193206",
+     "20230902141231",
+     "20231007101615",
+     "20230929220926",
+     "20231016151000",
+     "20231012184423",
+     "20231031143850"
+    ],
+    "pretraining": "UNKNOWN",
+    "source": "card \"Finetuning segments\"",
+    "dev_scrolls_named": []
+   },
+   "weights": {
+    "sha256": "c85dd722aad3734476dd6d8f14fae7a249a0a3c019fbd68f894558ae381e3e9d",
+    "sha256_catalogue": "c85dd722aad3734476dd6d8f14fae7a249a0a3c019fbd68f894558ae381e3e9d",
+    "verified": true,
+    "bytes": 336694640,
+    "url": "https://huggingface.co/scrollprize/timesformer_large_scroll1_01122024/resolve/7e8b37ce66b2497b4af1ad07ae3d7d8f5c5fa990/model.safetensors",
+    "downloaded_utc": "2026-09-26T00:38:44Z"
+   },
+   "wrapper_sha256": "b9d421f4166970217d225bb147fd3f7b06f1c84ddc6a2e0c82cf8189b83ad24f",
+   "smoke": {
+    "ckpt": "timesformer_large_scroll1_01122024",
+    "precision": "fp32",
+    "window": "primary",
+    "n_slices": 26,
+    "wrapper_sha256": "b9d421f4166970217d225bb147fd3f7b06f1c84ddc6a2e0c82cf8189b83ad24f",
+    "missing_keys": 0,
+    "unexpected_keys": 0,
+    "shape_mismatch": 0,
+    "n_params": 84166672,
+    "orders": {
+     "forward": {
+      "sha256": "015e9f07c245a4fcf6e0e6341f6c018b8f50214eae60c5dcb426934a06de8e88",
+      "dtype": "uint8",
+      "ndim": 2,
+      "shape_ok": true,
+      "invalid_all_zero": true,
+      "valid_mean": 164.42293294270834,
+      "valid_std": 38.34382135422652,
+      "valid_eq0_frac": 0.008662471064814815,
+      "seconds": 147.42,
+      "tiles": 441,
+      "tiles_per_s": 2.991,
+      "dev_window_tiles": 26569,
+      "dev_window_cpu_min_est": 148.0
+     },
+     "reverse": {
+      "sha256": "1fbf787c3b6fb192a95ac1f29858a801764b6fe8a9b0dd6bd453af4ef5da114a",
+      "dtype": "uint8",
+      "ndim": 2,
+      "shape_ok": true,
+      "invalid_all_zero": true,
+      "valid_mean": 164.7342574508102,
+      "valid_std": 39.45569116290249,
+      "valid_eq0_frac": 0.008662471064814815,
+      "seconds": 146.5,
+      "tiles": 441,
+      "tiles_per_s": 3.01,
+      "dev_window_tiles": 26569,
+      "dev_window_cpu_min_est": 147.1
+     }
+    },
+    "forward_vs_reverse": {
+     "mean_abs": 28.320475260416668,
+     "max_abs": 91,
+     "pearson": 0.6091631907093041
+    }
+   },
+   "cost_cpu_min_per_dev_window": {
+    "per_order": {
+     "forward": 148.0,
+     "reverse": 147.1
+    },
+    "both_orders": 295.1
+   }
+  },
+  "resnet50_7.9um_scroll1_frags": {
+   "repo": "scrollprize/resnet50_7.9um_scroll1_frags",
+   "commit": "f3975de34d4734dd507360304f828808b7182139",
+   "file": "model.safetensors",
+   "card_licence": "none stated",
+   "architecture": "3D ResNet-50 encoder (Bottleneck [3,4,6,3]) + 2D decoder after max over depth, HF repo class Resnet3DScrollprizeModel; output stride 4",
+   "registry": null,
+   "production": {
+    "runs_in_index": 0
+   },
+   "input_spec": {
+    "voxel_um": "7.9 (repo name); DEV renders 9.362 um",
+    "slices": "18 (card/config num_layers=18, interpreted as input layers): offsets -9..+8 (render indices 6..23), centring per villa deprecated inference_resnet3d.py (start = mid - n // 2)",
+    "tiling": "tile 256 (card/config window_size=256), stride 64 (wrapper choice, undocumented), Hann overlap-add, sigmoid, 64 x 64 logits bilinear to 256",
+    "normalisation": "clip 0..200, /200 (villa optimized_inference, as for all its models)",
+    "output": "uint8 = floor(p * 255)",
+    "order": "UNDOCUMENTED: both orders reported"
+   },
+   "text_order": {
+    "value": null,
+    "documented": false,
+    "rule": "both orders reported; not chosen from DEV results"
+   },
+   "training_data": {
+    "scrolls": "UNKNOWN beyond PHercParis4",
+    "ids_card": [
+     "20240814211913",
+     "20231210121321",
+     "frag2",
+     "frag6",
+     "frag1",
+     "frag3",
+     "frag4",
+     "frag5",
+     "20240813112037",
+     "20240813194718",
+     "20240814122007",
+     "20240814124338",
+     "20240814125124",
+     "20240815194445",
+     "20240818211653",
+     "20240820102547",
+     "20240820102554",
+     "20240820103254",
+     "20240820133348",
+     "20240816164032",
+     "20240814230136",
+     "20240820150159",
+     "20240906213422",
+     "20240907121934"
+    ],
+    "resolved_in_root_index": {
+     "20231210121321": "PHercParis4"
+    },
+    "unresolved": "23 of 24 ids (frag1..frag6 and 21 ids from 2024-08/09) are not in the official root index; their scrolls are UNKNOWN, so no DEV scroll can be shown absent",
+    "source": "card \"Pretrained on Pherc.Paris4 on Fragments and Fragment Hidden layers\""
+   },
+   "weights": {
+    "sha256": "fa00728db74d714769960dd77e9911a0e0938b3f272933c153632b5bed543c34",
+    "sha256_catalogue": "fa00728db74d714769960dd77e9911a0e0938b3f272933c153632b5bed543c34",
+    "verified": true,
+    "bytes": 342867728,
+    "url": "https://huggingface.co/scrollprize/resnet50_7.9um_scroll1_frags/resolve/f3975de34d4734dd507360304f828808b7182139/model.safetensors",
+    "downloaded_utc": "2026-09-26T00:38:52Z"
+   },
+   "wrapper_sha256": "b9d421f4166970217d225bb147fd3f7b06f1c84ddc6a2e0c82cf8189b83ad24f",
+   "smoke": {
+    "ckpt": "resnet50_7.9um_scroll1_frags",
+    "precision": "fp32",
+    "window": "primary",
+    "n_slices": 18,
+    "wrapper_sha256": "b9d421f4166970217d225bb147fd3f7b06f1c84ddc6a2e0c82cf8189b83ad24f",
+    "missing_keys": 0,
+    "unexpected_keys": 0,
+    "shape_mismatch": 0,
+    "n_params": 85651636,
+    "orders": {
+     "forward": {
+      "sha256": "a0db1aeecc459d3a066f7dea89c1213bdfe86e53b0796c064767881a3886c3ee",
+      "dtype": "uint8",
+      "ndim": 2,
+      "shape_ok": true,
+      "invalid_all_zero": true,
+      "valid_mean": 119.13047055844908,
+      "valid_std": 30.394471490890858,
+      "valid_eq0_frac": 0.015236183449074073,
+      "seconds": 14.56,
+      "tiles": 9,
+      "tiles_per_s": 0.618,
+      "dev_window_tiles": 1521,
+      "dev_window_cpu_min_est": 41.0
+     },
+     "reverse": {
+      "sha256": "22404fbe5a74d81aba1c4e2f3e274a4599f1359b0541ab9552e025fd523d655e",
+      "dtype": "uint8",
+      "ndim": 2,
+      "shape_ok": true,
+      "invalid_all_zero": true,
+      "valid_mean": 119.09226707175925,
+      "valid_std": 30.387900880420418,
+      "valid_eq0_frac": 0.015227141203703705,
+      "seconds": 13.58,
+      "tiles": 9,
+      "tiles_per_s": 0.663,
+      "dev_window_tiles": 1521,
+      "dev_window_cpu_min_est": 38.3
+     }
+    },
+    "forward_vs_reverse": {
+     "mean_abs": 0.8672146267361112,
+     "max_abs": 5,
+     "pearson": 0.9992227807417148
+    }
+   },
+   "cost_note": "rate measured on only 9 tiles of 256 px (smoke canvas 384 px); indicative",
+   "cost_cpu_min_per_dev_window": {
+    "per_order": {
+     "forward": 41.0,
+     "reverse": 38.3
+    },
+    "both_orders": 79.3
+   }
+  },
+  "fiber_ink_4class_selfdistill": {
+   "repo": "scrollprize/fiber_ink_4class_selfdistill",
+   "commit": "ec9bbc4dbc65a052fc4d78429f7ce5eff080aafe",
+   "file": "p4_4class_ddp8_20260526_step029000.pth",
+   "card_licence": "mit (LICENSE file)",
+   "architecture": "vesuvius NetworkFromConfig 3D UNet, 4-class softmax head (0 bg, 1 vertical fiber, 2 horizontal fiber, 3 ink); EMA weights recommended by the card",
+   "outputs_ink_class": true,
+   "registry": null,
+   "production": {
+    "runs_in_index": 0
+   },
+   "input_spec": {
+    "voxel_um": "2.4 (PHerc. Paris 4 2.4 um volume)",
+    "input": "1-channel CT subvolume in scan orientation, 256^3 patches",
+    "normalisation": "per-crop clip to [p1, p99] percentiles then min-max to [0, 1] (villa scripts/fiber_5class/dataset.py percentile_minmax_normalize)",
+    "output": "per-voxel 4-class softmax; no official inference / surface-projection script exists (scripts/fiber_5class has train, label generation and visualisation only)"
+   },
+   "screen_status": "SPEC-MISMATCH for the 9 um render screen: its documented input is a 2.4 um CT volume, not a 9.362 um flattened render. No render wrapper was built (it would be off-spec on voxel size (3.9 x) and geometry). A spec-conformant route (run on the DEV scroll 2.4 um volume around the organizer 2.4 um mesh, then project class-3 probability onto the 9 um canvas) needs a new declaration by the orchestrator; per-patch cost is in fiber_smoke.",
+   "smoke_notes": [
+    "256^3 forward (the documented patch size) was killed by the container memory cgroup (anon-rss 14.0 GB of ~15 GB; runs.jsonl smoke_fiber_fp32_b exit 137); 128^3 runs in 5.6 s at 4 threads fp32 (smoke_fiber_fp32_c). A 256^3 route needs sliding 128^3 inference or a larger machine; that is outside the documented spec and is not chosen here.",
+    "first attempt (smoke_fiber_fp32) failed on a float64 input: the smoke script omitted the float32 cast that dataset.py applies after normalisation; fixed to match dataset.py"
+   ],
+   "cost_rough": "route B only, not built: a 2 x 2 cm window at 2.4 um is ~8333^2 px; with ~128 voxels of depth around the sheet and 128^3 patches without overlap that is ~(8333/128)^2 = ~4240 patches x 5.6 s = ~6.6 CPU-hours per window before overlap or volume download; indicative only",
+   "text_order": {
+    "value": "not applicable (volumetric model)"
+   },
+   "training_data": {
+    "scrolls": [
+     "PHercParis4"
+    ],
+    "segments": "whole 2.4 um volume (random 256^3 crops); pseudo-labels from a fiber teacher and an unpublished ink teacher (card: unrecoverable)",
+    "source": "card",
+    "dev_scrolls_named": []
+   },
+   "weights": {
+    "sha256": "feef7fad198c5c53ede4193cf2686a515be574beb110cc957bd7984b52085bf2",
+    "sha256_catalogue": "feef7fad198c5c53ede4193cf2686a515be574beb110cc957bd7984b52085bf2",
+    "verified": true,
+    "bytes": 2260148109,
+    "url": "https://huggingface.co/scrollprize/fiber_ink_4class_selfdistill/resolve/ec9bbc4dbc65a052fc4d78429f7ce5eff080aafe/p4_4class_ddp8_20260526_step029000.pth",
+    "downloaded_utc": "2026-09-26T00:40:11Z"
+   },
+   "wrapper_sha256": "fca5d1bfdc0b85f2736f9dbb2312c5dd5d9ee6751c2fc738a54ace847b0fe524",
+   "smoke": {
+    "config": {
+     "patch_size": [
+      256,
+      256,
+      256
+     ],
+     "target_name": "labels",
+     "out_channels": 4,
+     "activation": "none",
+     "in_channels": 1,
+     "mixed_precision": "bf16",
+     "dataset": {
+      "volume_url": "s3://vesuvius-challenge-open-data/PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/",
+      "storage_options": {
+       "anon": true
+      },
+      "scale": 0,
+      "min_nonempty_frac": 0.1,
+      "dark_threshold": 50
+     },
+     "pseudo": {
+      "fiber_teacher": "/ephemeral/fiber_5class_inputs/fiber_teacher.pth",
+      "ink_teacher": "/ephemeral/fiber_5class_inputs/ink_teacher.pth",
+      "fiber_thr": 0.5,
+      "ink_thr": 0.1,
+      "dark_voxel_thr": 90,
+      "ws_image_mode": "distance",
+      "ws_h_merge": 14000,
+      "ws_min_voxels": 400,
+      "pca_cos_threshold": 0.819
+     },
+     "num_iterations": 30000,
+     "wandb_run_name": "p4_4class_ddp8_20260526",
+     "ema": {
+      "enabled": true,
+      "decay": 0.9995,
+      "start_step": 1000
+     }
+    },
+    "step": 29000,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "n_params": 141887492,
+    "forward": {
+     "128": {
+      "seconds": 5.64,
+      "out_shape": [
+       1,
+       4,
+       128,
+       128,
+       128
+      ],
+      "class_frac_argmax": [
+       0.8039484024047852,
+       0.03481626510620117,
+       0.05571889877319336,
+       0.10551643371582031
+      ],
+      "ink_prob_mean": 0.1195603460073471
+     }
+    },
+    "load_s": 8.6
+   }
+  }
+ },
+ "determinism_gp_fp32_vs_repeat": {
+  "forward": {
+   "identical": true,
+   "mean_abs": 0.0,
+   "max_abs": 0,
+   "frac_diff_gt2": 0.0
+  },
+  "reverse": {
+   "identical": true,
+   "mean_abs": 0.0,
+   "max_abs": 0,
+   "frac_diff_gt2": 0.0
+  }
+ },
+ "precision_gp_fp32_vs_official_cpu_autocast": {
+  "forward": {
+   "identical": false,
+   "mean_abs": 0.1420627170138889,
+   "max_abs": 2,
+   "frac_diff_gt2": 0.0
+  },
+  "reverse": {
+   "identical": false,
+   "mean_abs": 0.1713595920138889,
+   "max_abs": 2,
+   "frac_diff_gt2": 0.0
+  }
+ },
+ "new_checkpoints_after_2026_09_24": {
+  "utc": "2026-09-26T00:38:11Z",
+  "url": "https://huggingface.co/api/models?author=scrollprize&limit=500&full=true",
+  "listing_sha256": "4f7fd12b5e4e5c3d612495520bc424f7f9b191671058da2fabb581c699a90402",
+  "live_count": 43,
+  "catalogue_count": 43,
+  "catalogue_generated_utc": "2026-09-24T22:03:12Z",
+  "new_repos": [],
+  "changed_commit": [],
+  "created_or_modified_since_2026_09_24": [],
+  "result": "no scrollprize model repo created, modified or re-committed after the catalogue (2026-09-24T22:03Z); queue unchanged",
+  "note": "listing sha differs from the catalogue listing sha because of volatile fields (downloads, likes); repo ids and commit shas are identical"
+ }
+}
