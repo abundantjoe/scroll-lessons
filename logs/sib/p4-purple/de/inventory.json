@@ -1,0 +1,698 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "brief_de.md item 1; PROTOCOL.md A1",
+ "volumes": {
+  "20260323153942-2.400um-0.2m-137keV-masked": {
+   "voxel_size_mm": 0.0024,
+   "energy_keV_nominal": 137.0,
+   "energy_note": "BM18 filtered polychromatic beam; 'energy' is the nominal/mean energy; the spectrum is not published",
+   "propagation_distance_mm": 220.0,
+   "source_sample_distance_mm": 178000.0,
+   "beamline": "bm18",
+   "machine_mode": "16 bunch",
+   "scan_radix": "2.4um_137keV_PHerc-Paris4_ROI1",
+   "scan_type": "helical",
+   "nb_scans": 5,
+   "start_date": "2026-03-15T06:26:01.084619+01:00",
+   "end_date": "2026-03-15T08:25:29.330739+01:00",
+   "helical_z_start_end_step_mm": [
+    -258.5,
+    -238.04,
+    5.115
+   ],
+   "tomo_N": 13000,
+   "expo_time_s": 0.12,
+   "half_acquisition": false,
+   "detector": {
+    "sensor": "Pco",
+    "sensorPixelSize": 0.0046,
+    "roi_size": "[4416, 2368]",
+    "opticsName": "Fixed_X2",
+    "optical_magnification": 2.0,
+    "scintillator": "GAGG_50um_refl",
+    "samplePixelSize": 0.0024
+   },
+   "attenuators_fields": {
+    "wba11": {
+     "thickness": 5.0,
+     "type": "sapphire"
+    },
+    "wba12": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba13": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba14": {
+     "thickness": 0.1,
+     "type": "Au"
+    },
+    "wba15": {
+     "thickness": 0.0,
+     "type": "free pass"
+    },
+    "wba21": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba22": {
+     "thickness": 15.0,
+     "type": "sapphire"
+    },
+    "wba23": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba24": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba25": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba31": {
+     "thickness": 0.0,
+     "type": "free pass"
+    },
+    "wba32": {
+     "thickness": 0.0,
+     "type": "free pass"
+    }
+   },
+   "attenuators_comment": "wba11 = Mo 1.30mm, wba12 = Ag 0.20mm, wba13 = Au 0.10mm, wba14 = Ag 0.20mm",
+   "reconstruction": {
+    "workflow": "nabu",
+    "phase_retrieval": {
+     "method": "Paganin",
+     "delta_beta": 2000.0,
+     "unsharp_coeff": 5.0,
+     "unsharp_sigma": 2.5,
+     "unsharp_method": "gaussian",
+     "padding_type": "edge"
+    },
+    "method": "GHBP",
+    "rotation_axis_position": "4214.75",
+    "flat_field": "Standard",
+    "double_flat_ring_correction": true,
+    "double_flat_params": {
+     "DoubleFlatsFilterMethodPar": "median",
+     "DoubleFlatsPeriodNturns": "5",
+     "DoubleFlatsNsectorsPerTurn": "1",
+     "DoubleFlatsProjStep": "10",
+     "DoubleFlatsMethodScheme": "b",
+     "DoubleFlatsRadiusPixBasic": "20",
+     "DoubleFlatsPerStageScheme": "n"
+    },
+    "detector_distortion_correction": true,
+    "lut_path_scheme": true,
+    "other_filters": "not published (no explicit ring/other filter fields beyond the above)",
+    "float32_histogram": {
+     "min": -0.07328377664089203,
+     "max": 1.0037870407104492,
+     "min_0p002_percentile": 1.9371509552001953e-07,
+     "max_0p998_percentile": 0.12388285249471664,
+     "min_0p00001_percentile": -0.02470460720360279,
+     "max_0p99999_percentile": 0.21008306741714478
+    },
+    "float32_used_range_for_conversion": {
+     "dataset_used_min": -0.02470460720360279,
+     "dataset_used_max": 0.21008306741714478
+    },
+    "units_of_float_values": "not published"
+   },
+   "grey_scaling": {
+    "export": {
+     "target_window_f32_min": 0.01,
+     "target_window_f32_max": 0.16,
+     "window_u16_min": 9687,
+     "window_u16_max": 51556,
+     "z_crop_start": 0,
+     "z_crop_end": 6624,
+     "workflow_name": "export-2-4um-pherc-paris4-roi1-3cfa48",
+     "workflow_creation": "2026-03-23T15:39:42Z"
+    },
+    "dtype_level0": "|u1",
+    "u8_to_f32": "f = 0.01 + g * (0.16 - 0.01) / 255",
+    "f32_per_grey_level": 0.000588235294117647
+   },
+   "masking": {
+    "method": "SAM2",
+    "sam2_checkpoint": "/recon/models/masking/sam2-checkpoints/sam2.1_hiera_tiny.pt",
+    "sam2_model_cfg": "configs/sam2.1/sam2.1_hiera_t",
+    "finetuned_weights": "/recon/models/masking/sam2-checkpoints/scrollmask_august_t_4000.torch",
+    "dilation_structure": "5",
+    "dilation_iterations": "1",
+    "mask_scale": 16
+   },
+   "levels": {
+    "0": {
+     "shape": [
+      6625,
+      8431,
+      8431
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    },
+    "1": {
+     "shape": [
+      3313,
+      4216,
+      4216
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    },
+    "2": {
+     "shape": [
+      1657,
+      2108,
+      2108
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    },
+    "3": {
+     "shape": [
+      829,
+      1054,
+      1054
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    },
+    "4": {
+     "shape": [
+      415,
+      527,
+      527
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    },
+    "5": {
+     "shape": [
+      208,
+      264,
+      264
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    }
+   },
+   "transform": {
+    "fixed_volume": "PHercParis4-20230205180739_masked",
+    "matrix_moving_to_fixed_xyz": [
+     [
+      -0.23621143064857364,
+      -0.19693581640857907,
+      0.002388220406282726,
+      7034.614463353075
+     ],
+     [
+      -0.19682609059408498,
+      0.23585743108741802,
+      -0.004050126154489958,
+      3203.973859828384
+     ],
+     [
+      -0.0009748504477406541,
+      0.00502443683682706,
+      0.3065904924438596,
+      3895.121788095995
+     ]
+    ],
+    "landmarks": 13,
+    "residual_fixed_vox_rms": 0.7603808939770457,
+    "residual_fixed_vox_max": 1.114258052333298,
+    "other_keys": [
+     "fixed_volume",
+     "schema_version"
+    ]
+   },
+   "zattrs_sha256": "97e968dbbf11cc856dc57648aaaa9e6cade5e6575472dcfdeac7cfa50f546dd9",
+   "derived": {
+    "wavelength_m": 9.049941491474471e-12,
+    "paganin_a_m2": 1.2509741070214807e-08,
+    "paganin_cutoff_period_um": 111.84695378156174,
+    "paganin_kernel_L_um (exp(-|x|/L) 1-D)": 17.800995564106305,
+    "transfer": "nabu Paganin 1 / (1 + pi lambda z (delta/beta) f^2), f in cycles/m"
+   },
+   "top_level_metadata_keys": [
+    "masking",
+    "scan",
+    "zarr_export"
+   ]
+  },
+  "20260411134726-2.400um-0.2m-78keV-masked": {
+   "voxel_size_mm": 0.0024,
+   "energy_keV_nominal": 78.0,
+   "energy_note": "BM18 filtered polychromatic beam; 'energy' is the nominal/mean energy; the spectrum is not published",
+   "propagation_distance_mm": 220.0,
+   "source_sample_distance_mm": 178000.0,
+   "beamline": "bm18",
+   "machine_mode": "16 bunch",
+   "scan_radix": "2.4um_PHerc-Paris4_B_HA",
+   "scan_type": "helical",
+   "nb_scans": 36,
+   "start_date": "2026-03-10T18:08:40.173143+01:00",
+   "end_date": "2026-03-11T03:49:14.762511+01:00",
+   "helical_z_start_end_step_mm": [
+    -355.0,
+    -175.9792,
+    5.115
+   ],
+   "tomo_N": 49000,
+   "expo_time_s": 0.017,
+   "half_acquisition": false,
+   "detector": {
+    "sensor": "Pco",
+    "sensorPixelSize": 0.0046,
+    "roi_size": "[4416, 2368]",
+    "opticsName": "Fixed_X2",
+    "optical_magnification": 2.0,
+    "scintillator": "GAGG_50um_refl",
+    "samplePixelSize": 0.0024
+   },
+   "attenuators_fields": {
+    "wba11": {
+     "thickness": 5.0,
+     "type": "sapphire"
+    },
+    "wba12": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba13": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba14": {
+     "thickness": 0.1,
+     "type": "Au"
+    },
+    "wba15": {
+     "thickness": 0.0,
+     "type": "free pass"
+    },
+    "wba21": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba22": {
+     "thickness": 15.0,
+     "type": "sapphire"
+    },
+    "wba23": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba24": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba25": {
+     "thickness": 0.0,
+     "type": "empty"
+    },
+    "wba31": {
+     "thickness": 0.0,
+     "type": "free pass"
+    },
+    "wba32": {
+     "thickness": 0.0,
+     "type": "free pass"
+    }
+   },
+   "attenuators_comment": "wba11 = sapphire 5.0mm, wba14 = Au 0.10mm, wba22 = sapphire 15mm rods  3x5mm",
+   "reconstruction": {
+    "workflow": "nabu",
+    "phase_retrieval": {
+     "method": "Paganin",
+     "delta_beta": 1000.0,
+     "unsharp_coeff": 4.0,
+     "unsharp_sigma": 1.2,
+     "unsharp_method": "gaussian",
+     "padding_type": "edge"
+    },
+    "method": "GHBP",
+    "rotation_axis_position": "16345.875",
+    "flat_field": "Standard",
+    "double_flat_ring_correction": false,
+    "double_flat_params": "not published",
+    "detector_distortion_correction": true,
+    "lut_path_scheme": false,
+    "other_filters": "not published (no explicit ring/other filter fields beyond the above)",
+    "float32_histogram": {
+     "min": -0.3480614423751831,
+     "max": 4.913288116455078,
+     "min_0p002_percentile": -0.01706598699092865,
+     "max_0p998_percentile": 0.13065475225448608,
+     "min_0p00001_percentile": -0.055924028158187866,
+     "max_0p99999_percentile": 0.32707345485687256
+    },
+    "float32_used_range_for_conversion": {
+     "dataset_used_min": -0.055924028158187866,
+     "dataset_used_max": 0.32707345485687256
+    },
+    "units_of_float_values": "not published"
+   },
+   "grey_scaling": {
+    "export": {
+     "target_window_f32_min": -0.04,
+     "target_window_f32_max": 0.22,
+     "window_u16_min": 2725,
+     "window_u16_max": 47214,
+     "z_crop_start": 1528,
+     "z_crop_end": 75783,
+     "workflow_name": "export-2-4um-pherc-paris4-997fe6",
+     "workflow_creation": "2026-04-11T13:47:26Z"
+    },
+    "dtype_level0": "|u1",
+    "u8_to_f32": "f = -0.04 + g * (0.22 - -0.04) / 255",
+    "f32_per_grey_level": 0.001019607843137255
+   },
+   "masking": {
+    "method": "SAM2",
+    "sam2_checkpoint": "/recon/models/masking/sam2-checkpoints/sam2.1_hiera_tiny.pt",
+    "sam2_model_cfg": "configs/sam2.1/sam2.1_hiera_t",
+    "finetuned_weights": "/recon/models/masking/sam2-checkpoints/scrollmask_august_t_4000.torch",
+    "dilation_structure": "5",
+    "dilation_iterations": "1",
+    "mask_scale": 16
+   },
+   "levels": {
+    "0": {
+     "shape": [
+      75784,
+      32693,
+      32693
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    },
+    "1": {
+     "shape": [
+      37892,
+      16347,
+      16347
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    },
+    "2": {
+     "shape": [
+      18946,
+      8174,
+      8174
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    },
+    "3": {
+     "shape": [
+      9473,
+      4087,
+      4087
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    },
+    "4": {
+     "shape": [
+      4737,
+      2044,
+      2044
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    },
+    "5": {
+     "shape": [
+      2369,
+      1022,
+      1022
+     ],
+     "chunks": [
+      128,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "filters": null,
+     "fill_value": 0,
+     "order": "C",
+     "dimension_separator": "/"
+    }
+   },
+   "transform": {
+    "fixed_volume": "PHercParis4-20230205180739_masked",
+    "matrix_moving_to_fixed_xyz": [
+     [
+      -0.23841071793061291,
+      -0.19362400462393486,
+      0.0021338753748049444,
+      11024.043667710986
+     ],
+     [
+      -0.19369582314244563,
+      0.23850010646891293,
+      -0.003964264465841007,
+      2861.834433287773
+     ],
+     [
+      -0.0008390736081137979,
+      0.004538179336261518,
+      0.30657436617414124,
+      -9057.070809768327
+     ]
+    ],
+    "landmarks": 24,
+    "residual_fixed_vox_rms": 2.4540901305866134,
+    "residual_fixed_vox_max": 6.439737279042922,
+    "other_keys": [
+     "fixed_volume",
+     "schema_version"
+    ]
+   },
+   "zattrs_sha256": "97e968dbbf11cc856dc57648aaaa9e6cade5e6575472dcfdeac7cfa50f546dd9",
+   "derived": {
+    "wavelength_m": 1.5895410055538494e-11,
+    "paganin_a_m2": 1.0986118760380953e-08,
+    "paganin_cutoff_period_um": 104.81468771303454,
+    "paganin_kernel_L_um (exp(-|x|/L) 1-D)": 16.681775658162792,
+    "transfer": "nabu Paganin 1 / (1 + pi lambda z (delta/beta) f^2), f in cycles/m"
+   },
+   "top_level_metadata_keys": [
+    "masking",
+    "scan",
+    "zarr_export"
+   ]
+  }
+ },
+ "fetched_files": [
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/metadata.json",
+   "bytes": 9021,
+   "sha256": "26792eb8a448ed37e0835effd920552ffd3a182b584b20e8a88a5c1d37981740"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/.zattrs",
+   "bytes": 3018,
+   "sha256": "97e968dbbf11cc856dc57648aaaa9e6cade5e6575472dcfdeac7cfa50f546dd9"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/.zgroup",
+   "bytes": 24,
+   "sha256": "2383746e67b4bcc2762b3f100f06c3fa2d5f149ab5a8e5da5d33521464a01959"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/transform.json",
+   "bytes": 2677,
+   "sha256": "057abe4af41076bdee6e6eb74b198bdd1bec8607cc7ee0dc1c5979a168d2af3e"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/0/.zarray",
+   "bytes": 238,
+   "sha256": "3de34a3c81c3ad5b23ec708f53b7493d5541194140df63815be10f59ac87dc3b"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/1/.zarray",
+   "bytes": 284,
+   "sha256": "390bfb51954a5a665c8212a70a79d563035ad2b28c0e209b24f6aaef938c8675"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/2/.zarray",
+   "bytes": 284,
+   "sha256": "b31671d244e6647be8c80fb30bfcdd226eb99b2969af171244d289d3f0c98313"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/3/.zarray",
+   "bytes": 283,
+   "sha256": "5b691ec771c76582d8ba2d7275a5ad7dfeb8da16ef56e2bcdfa753884647bcf2"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/4/.zarray",
+   "bytes": 281,
+   "sha256": "8068982225bf7abd26578cc8addd4b9645315e642b9a0598044f5788336e58d6"
+  },
+  {
+   "key": "PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/5/.zarray",
+   "bytes": 281,
+   "sha256": "4e9acc29b10133af7f1a1d32f5ab4cd2d65022d99a0c4b7bd9b20eeec7bde516"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/metadata.json",
+   "bytes": 8453,
+   "sha256": "881bf77fc0f02a91040755da25d54ad958e290a528ec61489e411937112fba4d"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/.zattrs",
+   "bytes": 3018,
+   "sha256": "97e968dbbf11cc856dc57648aaaa9e6cade5e6575472dcfdeac7cfa50f546dd9"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/.zgroup",
+   "bytes": 24,
+   "sha256": "2383746e67b4bcc2762b3f100f06c3fa2d5f149ab5a8e5da5d33521464a01959"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/transform.json",
+   "bytes": 4394,
+   "sha256": "d9443fc545b5e53cec50b1e65a284679ba18c4293cd3efa354b939d0b2c477c4"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/0/.zarray",
+   "bytes": 241,
+   "sha256": "145e04cb3317367f9b3d0d3fb5c8541518137e643964119638543e4ddf4445db"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/1/.zarray",
+   "bytes": 287,
+   "sha256": "3f367deac061b3c45ed3a60597531e5f0a1927161816ee4ed07d912d961af2e2"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/2/.zarray",
+   "bytes": 285,
+   "sha256": "9d2c4fb65b5cb83aa9bfa88ed3af2a7c790531c109dd4ffddcbd9c8ff853cc11"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/3/.zarray",
+   "bytes": 284,
+   "sha256": "1de2b9051d19f5e48cf869eba0de505980ab4b66af0a6bc4752f9edb98a2d803"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/4/.zarray",
+   "bytes": 284,
+   "sha256": "439fefb4180ae749783cb2e47b5faa877ca6e5b211a64a408c08e228f9bceebf"
+  },
+  {
+   "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/5/.zarray",
+   "bytes": 284,
+   "sha256": "9ad4ca4c79ffa212816c0ba19dd7f3c3ff043dcff11acdc4b5abab873c62b9ba"
+  }
+ ]
+}
