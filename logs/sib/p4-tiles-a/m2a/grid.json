@@ -1,0 +1,198 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "segment": "20260623141924-w010-027",
+ "declaration": "RULES.md DECL-P4-4 item 1 (M2a), item 2",
+ "voxel_size_mm": 0.001129,
+ "voxel_size_source": "20260608103018 metadata.json samplePixelSize (all 20 entries equal, mm); consistent with volume name 1.129um",
+ "mesh_meta_native": {
+  "area_vx2": 32566812709.892258,
+  "bbox": [
+   [
+    18597.556640625,
+    12604.2392578125,
+    -310.16583251953125
+   ],
+   [
+    33188.71484375,
+    37865.34375,
+    84875.7578125
+   ]
+  ],
+  "format": "tifxyz",
+  "scale": [
+   0.05000000074505806,
+   0.05000000074505806
+  ],
+  "type": "seg",
+  "uuid": "out"
+ },
+ "mesh_meta_2p4": {
+  "area_vx2": 7210423109.822679,
+  "bbox": [
+   [
+    14706.615234375,
+    11252.33203125,
+    27963.7265625
+   ],
+   [
+    21575.623046875,
+    23096.3203125,
+    68063.15625
+   ]
+  ],
+  "format": "tifxyz",
+  "scale": [
+   0.05000000074505806,
+   0.05000000074505806
+  ],
+  "type": "seg",
+  "uuid": "out"
+ },
+ "grid_shape": [
+  4775,
+  18070
+ ],
+ "canvas_shape": [
+  47750,
+  180700
+ ],
+ "canvas_tiff": {
+  "tile": [
+   1024,
+   1024
+  ],
+  "compression": 32946,
+  "dtype": "uint8",
+  "n_tiles": 8319
+ },
+ "scale_canvas_per_grid": {
+  "rows": 10.0,
+  "cols": 10.0,
+  "integer_exact": true
+ },
+ "canvas_note": "prediction rendered at L1 (x2): one canvas px = 2 native voxels at mesh scale; grid step 1/0.05 = 20 native vox = 10 canvas px expected",
+ "mesh_valid": {
+  "rule": "vertex valid iff none of x,y,z == -1 and all finite",
+  "n_valid": 82137796,
+  "n_total": 86284250,
+  "fraction": 0.9519442540208671
+ },
+ "edge_length_vox": {
+  "n_edges": 164247553,
+  "median": 19.96607780456543,
+  "median_along_cols": 19.962730407714844,
+  "median_along_rows": 19.969877243041992,
+  "pct_1_5_25_50_75_95_99": [
+   18.270844497680663,
+   19.147647857666016,
+   19.754308700561523,
+   19.96607780456543,
+   20.147720336914062,
+   20.544851303100586,
+   21.01914405822754
+  ]
+ },
+ "px_per_mm": 443.622228276229,
+ "px_per_mm_formula": "canvas_px_per_grid_step / (median 3-D edge length [native vox] * voxel_size_mm)",
+ "px_per_mm_by_axis": {
+  "cols": 443.69661587849845,
+  "rows": 443.53782538568254
+ },
+ "nominal_px_per_mm_L1": 442.8697962798937,
+ "tile_mm": 20.0,
+ "T_canvas_px": 8872,
+ "tile_grid": {
+  "n_rows": 6,
+  "n_cols": 21,
+  "rule": "tile (r,c) = rows [r*T,(r+1)*T), cols [c*T,(c+1)*T) from (0,0); pixels beyond the canvas count as not mesh-valid and are 0"
+ },
+ "canvas_mask_rule": "canvas px (i,j) -> grid (floor(i*gh/H), floor(j*gw/W)) nearest neighbour",
+ "area_valid_cm2_grid": 417.365404464157,
+ "mesh_meta_area_cm2": 415.1099471934978,
+ "affine": {
+  "matrix": [
+   [
+    0.4707666920759728,
+    0.006083857284656546,
+    0.00019751752464569616,
+    5805.340302081483
+   ],
+   [
+    -0.006080253073916825,
+    0.4708290918191928,
+    -0.0010790959797848665,
+    5493.890163950601
+   ],
+   [
+    -0.00017625872950265966,
+    0.001261388797834728,
+    0.47074242543448375,
+    28084.05307481582
+   ]
+  ],
+  "fixed_volume": "2.4um_PHerc-Paris4_masked",
+  "native_bbox": [
+   [
+    18597.556640625,
+    12604.2392578125,
+    -310.16583251953125
+   ],
+   [
+    33188.71484375,
+    37865.34375,
+    84875.7578125
+   ]
+  ],
+  "native_bbox_through_affine": [
+   [
+    14637.0712890625,
+    11315.58984375,
+    27950.666015625
+   ],
+   [
+    21676.61328125,
+    23028.611328125,
+    68080.5859375
+   ]
+  ],
+  "mesh_2p4_bbox": [
+   [
+    14706.615234375,
+    11252.33203125,
+    27963.7265625
+   ],
+   [
+    21575.623046875,
+    23096.3203125,
+    68063.15625
+   ]
+  ]
+ },
+ "frame_2p4_check": {
+  "rule": "median <= 2.0 and p95 <= 5.0 vox (2.4 um frame) over 20000 valid native vertices, seed 20260926",
+  "grid_native": [
+   4775,
+   18070
+  ],
+  "grid_2p4": [
+   2248,
+   8508
+  ],
+  "scaled_index": {
+   "n_compared": 19992,
+   "median_vox": 7.467474937438965,
+   "p95_vox": 7.679374694824219,
+   "max_vox": 11.061925888061523
+  },
+  "scaled_corner": {
+   "n_compared": 19996,
+   "median_vox": 4.107059478759766,
+   "p95_vox": 6.144777774810791,
+   "max_vox": 7.31321382522583
+  },
+  "best_mapping": "scaled_corner",
+  "grids_correspond": false,
+  "chosen_2p4_frame_method": "published affine 20260608103018 -> 20260411134726 (transform.json)"
+ },
+ "seconds": 160.5
+}

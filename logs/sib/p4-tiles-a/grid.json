@@ -1,0 +1,100 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "segment": "20260701183124-w010-027",
+ "voxel_size_mm": 0.0024,
+ "voxel_size_source": "volume metadata.json scan.tomo.acquisition.detector.samplePixelSize (mm); consistent with volume name 2.400um",
+ "mesh_meta": {
+  "area_vx2": 11135834907.612097,
+  "bbox": [
+   [
+    11304.947265625,
+    11250.30078125,
+    11953.3466796875
+   ],
+   [
+    21583.953125,
+    24169.70703125,
+    72051.4453125
+   ]
+  ],
+  "format": "tifxyz",
+  "scale": [
+   0.05000000074505806,
+   0.05000000074505806
+  ],
+  "type": "seg",
+  "uuid": "out"
+ },
+ "grid_shape": [
+  3488,
+  8500
+ ],
+ "canvas_shape": [
+  69760,
+  170000
+ ],
+ "canvas_tiff": {
+  "tile": [
+   1024,
+   1024
+  ],
+  "compression": 32946,
+  "dtype": "uint8",
+  "n_tiles": 11523
+ },
+ "scale_canvas_per_grid": {
+  "rows": 20.0,
+  "cols": 20.0,
+  "integer_exact": true
+ },
+ "mesh_scale_meta_inverse": [
+  19.99999970197678,
+  19.99999970197678
+ ],
+ "mesh_valid": {
+  "rule": "vertex valid iff none of x,y,z == -1 and all finite",
+  "n_valid": 28221728,
+  "n_total": 29648000,
+  "fraction": 0.9518931462493254,
+  "n_nonfinite": 0,
+  "n_minus1_per_axis": [
+   1426272,
+   1426272,
+   1426272
+  ]
+ },
+ "edge_length_vox": {
+  "n_edges": 56428064,
+  "median": 19.97771453857422,
+  "median_along_cols": 19.986940383911133,
+  "median_along_rows": 19.968647003173828,
+  "pct_1_5_25_50_75_95_99": [
+   17.21210479736328,
+   18.78485679626465,
+   19.685781478881836,
+   19.97771453857422,
+   20.2025089263916,
+   20.66314125061035,
+   21.2625732421875
+  ]
+ },
+ "grid_step_mm_median": 0.04794651489257812,
+ "px_per_mm": 417.1314650253318,
+ "px_per_mm_formula": "canvas_px_per_grid_step / (median 3-D edge length [vox] * voxel_size_mm)",
+ "px_per_mm_by_axis": {
+  "cols": 416.938919777907,
+  "rows": 417.3208796774679
+ },
+ "nominal_px_per_mm_one_px_per_voxel": 416.6666666666667,
+ "tile_mm": 20.0,
+ "T_canvas_px": 8343,
+ "tile_grid": {
+  "n_rows": 9,
+  "n_cols": 21,
+  "rule": "tile (r,c) = rows [r*T,(r+1)*T), cols [c*T,(c+1)*T) from (0,0); pixels beyond the canvas count as not mesh-valid and are 0"
+ },
+ "canvas_mask_rule": "canvas px (i,j) -> grid (floor(i*gh/H), floor(j*gw/W)) nearest neighbour (= i//20, j//20 here)",
+ "area_valid_cm2_grid": 648.7803559791947,
+ "mesh_meta_area_cm2": 641.4240906784567,
+ "seconds": 10.2
+}
