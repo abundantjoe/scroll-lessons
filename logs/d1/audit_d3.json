@@ -1,0 +1,478 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "audit": "D3 (FOLD-0841) independent pre-verdict audit",
+ "generated_utc": "2026-09-26T10:05:00Z",
+ "auditor": "fresh single auditor (earlier stopped auditors not relied on)",
+ "viewing": "no image opened, displayed or described; no letter identity, position, seal or answer content in this file",
+ "runner_summary": {
+  "path": "logs/d1/d3_summary.json",
+  "sha256": "fb8d31c0ed7c6c10acc7a9a6d82c8ddb554638b479f0c0faf27869074573bf0c",
+  "full_results_sha256_matches_file": true
+ },
+ "verdict": "PASS",
+ "verdict_meaning": "the recorded outcome NOT PASSED follows from the data under the declarations; no invalidating defect found",
+ "rules_chain": "verify OK, 127 entries",
+ "checks": {
+  "1_rederive": {
+   "result": "AGREE",
+   "method": "own code: own letter normaliser, (x+0.5)*2-0.5 mapping, state-B seal mirrored x->2135-x, forward panel = text order from the key, max one-to-one same-kind matching within 250 px, own Monte Carlo identity null (20000 perms); scorer modules not imported",
+   "S_prime": 20,
+   "arms": {
+    "FA-A": {
+     "J_text_order_namings": 0,
+     "text_order_namings_incl_blank": 0,
+     "summed_mean_C_all_R250": 0.0,
+     "summed_mean_C_net": 0.0,
+     "F_B_per_reader": 0.0,
+     "blank_namings_mean": 0.0
+    },
+    "FA-B": {
+     "J_text_order_namings": 0,
+     "text_order_namings_incl_blank": 0,
+     "summed_mean_C_all_R250": 0.0,
+     "summed_mean_C_net": 0.0,
+     "F_B_per_reader": 0.0,
+     "blank_namings_mean": 0.0
+    },
+    "CTRL-A": {
+     "J_text_order_namings": 0,
+     "text_order_namings_incl_blank": 0,
+     "summed_mean_C_all_R250": 0.0,
+     "summed_mean_C_net": 0.0,
+     "F_B_per_reader": 1.6667,
+     "blank_namings_mean": 0.0
+    },
+    "CTRL-B": {
+     "J_text_order_namings": 0,
+     "text_order_namings_incl_blank": 0,
+     "summed_mean_C_all_R250": 0.0,
+     "summed_mean_C_net": 0.0,
+     "F_B_per_reader": 1.0,
+     "blank_namings_mean": 0.0
+    },
+    "NULLA-A": {
+     "J_text_order_namings": 1,
+     "text_order_namings_incl_blank": 1,
+     "summed_mean_C_all_R250": 0.0,
+     "summed_mean_C_net": 0.0,
+     "F_B_per_reader": 0.0,
+     "blank_namings_mean": 0.0
+    },
+    "NULLA-B": {
+     "J_text_order_namings": 1,
+     "text_order_namings_incl_blank": 2,
+     "summed_mean_C_all_R250": 0.0,
+     "summed_mean_C_net": 0.0,
+     "F_B_per_reader": 0.0,
+     "blank_namings_mean": 0.3333
+    },
+    "REVA-A": {
+     "J_text_order_namings": 0,
+     "text_order_namings_incl_blank": 0,
+     "summed_mean_C_all_R250": 0.0,
+     "summed_mean_C_net": 0.0,
+     "F_B_per_reader": 0.3333,
+     "blank_namings_mean": 0.0
+    },
+    "REVA-B": {
+     "J_text_order_namings": 0,
+     "text_order_namings_incl_blank": 0,
+     "summed_mean_C_all_R250": 0.0,
+     "summed_mean_C_net": 0.0,
+     "F_B_per_reader": 0.0,
+     "blank_namings_mean": 0.0
+    }
+   },
+   "canary_namings_per_reader": {
+    "FA-A_r0": 5,
+    "FA-A_r1": 7,
+    "FA-A_r2": 7,
+    "FA-B_r0": 3,
+    "FA-B_r1": 7,
+    "FA-B_r2": 4,
+    "NULLA-A_r0": 7,
+    "NULLA-A_r1": 7,
+    "NULLA-A_r2": 6,
+    "NULLA-B_r0": 13,
+    "NULLA-B_r1": 11,
+    "NULLA-B_r2": 13,
+    "REVA-A_r0": 8,
+    "REVA-A_r1": 7,
+    "REVA-A_r2": 9,
+    "REVA-B_r0": 7,
+    "REVA-B_r1": 8,
+    "REVA-B_r2": 7,
+    "CTRL-A_r0": 6,
+    "CTRL-A_r1": 7,
+    "CTRL-A_r2": 6,
+    "CTRL-B_r0": 10,
+    "CTRL-B_r1": 13,
+    "CTRL-B_r2": 9
+   },
+   "canary_range": [
+    3,
+    13
+   ],
+   "outcome_rederived": {
+    "FA_ge_CTRL_plus_3": false,
+    "p_max_lt_0.01": false,
+    "p_max_FA": 1.0,
+    "NULLA_le_CTRL_plus_1": true,
+    "REVA_le_CTRL_plus_1": true,
+    "FB_FA_le_CTRL_plus_1": true,
+    "no_window_more_than_1_below": true,
+    "blob_f180_le_0.0272": true,
+    "outcome": "NOT PASSED"
+   },
+   "comparison_with_runner": {
+    "summary_fields_differing": 0,
+    "full_results_scored_records_compared": 144,
+    "mismatches": 0,
+    "unscored_records": "24 (each reader's unseen blank; structural)"
+   },
+   "note": "runner n_named_total counts text-order namings on J AND blank items: NULLA-B 2 = 1 on J + 1 on a blank; J-only text-order namings are NULLA-A 1, NULLA-B 1, others 0. All text-order J namings lie > 250 px from every seal letter (C_all 0, null 0, C_net 0)."
+  },
+  "2_timeline": {
+   "result": "PASS (one note)",
+   "declarations_utc": {
+    "DECL-D3-A1": "2026-09-25T09:47:01Z",
+    "METRIC-HASH-18": "2026-09-25T09:50:38Z",
+    "DECL-D3-A2": "2026-09-25T10:25:41Z",
+    "DECL-D3-A3": "2026-09-25T10:54:44Z"
+   },
+   "first_training_step_utc": {
+    "CTRL": "2026-09-25T10:45:25Z (run_arms; resumed 12:21:56Z from step 1000 after ~11:43Z restart)",
+    "FA": "2026-09-25T13:18:30Z",
+    "NULLA": "2026-09-25T15:13:19Z",
+    "REVA": "2026-09-25T17:07:33Z"
+   },
+   "smoke_tests_utc": "2026-09-25T10:43-10:44Z (after DECL-D3-A2)",
+   "first_infer_map_utc": "2026-09-25T11:11:45Z (E1 BASE0 canary); first arm map 13:19Z",
+   "img_files_utc": "2026-09-25T23:38:49Z (128)",
+   "stage2_commit_utc": "2026-09-25T23:39:19Z",
+   "jobs_created_utc": [
+    "2026-09-25T23:39:26Z",
+    "2026-09-25T23:39:27Z"
+   ],
+   "stage2_precedes_all_jobs": true,
+   "metric_hash_18_files_unchanged": "5/5",
+   "d3_answer_decrypts_before_d3_score": 0,
+   "first_d3_answer_decrypt": "2026-09-25T23:58:40Z d3-score",
+   "note": "DECL-D3-A3 is 9 min after CTRL's first training step (A3 itself says CTRL was training). A3 pins only stage-2 inference/display/blob/LABEL-EQUIV; no map, display or read existed before it; A1, METRIC-HASH-18 and A2 precede every training step. Not invalidating."
+  },
+  "3_training_contamination": {
+   "result": "PASS",
+   "steps": {
+    "FA": 2000,
+    "NULLA": 2000,
+    "REVA": 2000,
+    "CTRL": 2000
+   },
+   "finite_loss_steps": {
+    "FA": 2000,
+    "NULLA": 2000,
+    "REVA": 2000,
+    "CTRL": 2000
+   },
+   "final_loss": {
+    "FA": 0.4587,
+    "NULLA": 0.4791,
+    "REVA": 0.4424,
+    "CTRL": 0.4288
+   },
+   "model_final_sha_eq_summary_eq_infer_eq_build": "4/4",
+   "pairing": {
+    "streams": "fold-A and replay streams from SeedSequence(20260925).spawn(2), arm-independent (d3_train.py sha 2943b1b6...)",
+    "FA_eq_REVA_supervised_frac_logged_steps": "41/41",
+    "epochs_equal_FA_NULLA_REVA": "41/41",
+    "step1_replay_loss_identical_FA_NULLA_REVA": true,
+    "NULLA_fixed_points": 0,
+    "CTRL_fold_a_in_batch": 0
+   },
+   "replay_pool": {
+    "n_tiles": 2643,
+    "scroll": "PHerc0139 only (w035 540, w039 305, w040 756, w041 321, w044 721)",
+    "PHerc0841_tiles": 0
+   },
+   "fold_a_clearance": {
+    "records": "feasibility: exact KD-tree to 19.98M J canvas-pixel mesh points (~1 vox sampling), min retained 128.0001 vox; pool: every tile >= 144 vox (4 tiles in [144,150))",
+    "recomputed_point_to_surface_vox_min": 144.561,
+    "n_tiles": 288,
+    "n_pool_points": 4714592,
+    "tiles_lt_144": 0,
+    "tiles_lt_128": 0,
+    "method": "J = bilinear mesh surface of each exact 2136 px J window footprint, sampled every 4 px (max edge 8.54 vox), triangulated; exact point-to-triangle distance for all candidates",
+    "slab_min_vox_conservative": 129.56,
+    "sensitivity_note": "if the J surface is padded by one extra 20-vox grid cell beyond each J window (not part of J under DECL-D3-FEAS), the minimum is 119.4 vox; reported only"
+   }
+  },
+  "4_harness": {
+   "result": "PASS (notes)",
+   "jobs_valid_last_harness_row": "24/24",
+   "answer_sha_file_eq_record_eq_harness": "24/24",
+   "prompt_equals_brief": "24/24 (exact)",
+   "reads_exactly_listed_15_once_each": "24/24",
+   "one_bash_prescribed_form": "24/24",
+   "bash_errors": 0,
+   "model": "claude-fable-5-1 (24/24)",
+   "answer_agent_ids_distinct": true,
+   "overlap_with_other_agent_map_rows": 0,
+   "overlap_with_earlier_rows": 0,
+   "dead_agents": {
+    "n": 4,
+    "bash_calls": 0,
+    "reads": 15,
+    "answers_written": 0,
+    "sealed_file_mtime_minus_rerun_bash_s": "0.77-1.35 (all 24 agents)"
+   },
+   "d3_image_sha_in_d1_manifest": "0/128",
+   "briefs_with_arm_state_order_window_terms": 0,
+   "brief_items_eq_item_map": "24/24",
+   "notes": [
+    "every answering agent also made 1 SubagentHandback call whose message is exactly DONE (the environment's hand-back)",
+    "3 agents (FA-B r0, FA-B r1, CTRL-B r0) wrote 1-3 short narration texts (54-153 chars) besides DONE: 0 Greek characters, 0 letter names, 0 coordinates, 0 JSON; transcript-only, cannot change answers",
+    "D3-RERUN-1 says the 4 stopped readers had issued their sealed-write command; their transcripts show 15 reads and 0 Bash calls (wording only; no answer existed either way)"
+   ]
+  },
+  "5_adversarial": {
+   "result": "PASS",
+   "a_display_stats_mean_by_arm_set_order": {
+    "CTRL|J|fwd": {
+     "mean": 90.562,
+     "std": 47.737,
+     "f150": 0.139,
+     "f0": 0.14
+    },
+    "CTRL|J|rev": {
+     "mean": 92.393,
+     "std": 47.242,
+     "f150": 0.143,
+     "f0": 0.14
+    },
+    "CTRL|blank|fwd": {
+     "mean": 82.416,
+     "std": 34.488,
+     "f150": 0.063,
+     "f0": 0.043
+    },
+    "CTRL|blank|rev": {
+     "mean": 88.523,
+     "std": 35.641,
+     "f150": 0.074,
+     "f0": 0.043
+    },
+    "CTRL|canary|fwd": {
+     "mean": 99.015,
+     "std": 43.928,
+     "f150": 0.17,
+     "f0": 0.0
+    },
+    "CTRL|canary|rev": {
+     "mean": 85.3,
+     "std": 30.259,
+     "f150": 0.061,
+     "f0": 0.0
+    },
+    "FA|J|fwd": {
+     "mean": 62.311,
+     "std": 30.548,
+     "f150": 0.018,
+     "f0": 0.14
+    },
+    "FA|J|rev": {
+     "mean": 60.258,
+     "std": 26.051,
+     "f150": 0.004,
+     "f0": 0.14
+    },
+    "FA|blank|fwd": {
+     "mean": 65.318,
+     "std": 20.264,
+     "f150": 0.007,
+     "f0": 0.043
+    },
+    "FA|blank|rev": {
+     "mean": 66.092,
+     "std": 19.576,
+     "f150": 0.004,
+     "f0": 0.043
+    },
+    "FA|canary|fwd": {
+     "mean": 78.661,
+     "std": 33.824,
+     "f150": 0.073,
+     "f0": 0.0
+    },
+    "FA|canary|rev": {
+     "mean": 68.798,
+     "std": 15.58,
+     "f150": 0.006,
+     "f0": 0.0
+    },
+    "NULLA|J|fwd": {
+     "mean": 70.94,
+     "std": 31.619,
+     "f150": 0.012,
+     "f0": 0.14
+    },
+    "NULLA|J|rev": {
+     "mean": 71.345,
+     "std": 31.756,
+     "f150": 0.011,
+     "f0": 0.14
+    },
+    "NULLA|blank|fwd": {
+     "mean": 79.389,
+     "std": 29.51,
+     "f150": 0.034,
+     "f0": 0.043
+    },
+    "NULLA|blank|rev": {
+     "mean": 78.213,
+     "std": 25.257,
+     "f150": 0.014,
+     "f0": 0.043
+    },
+    "NULLA|canary|fwd": {
+     "mean": 95.901,
+     "std": 39.636,
+     "f150": 0.133,
+     "f0": 0.0
+    },
+    "NULLA|canary|rev": {
+     "mean": 82.701,
+     "std": 23.886,
+     "f150": 0.028,
+     "f0": 0.0
+    },
+    "REVA|J|fwd": {
+     "mean": 63.733,
+     "std": 28.643,
+     "f150": 0.007,
+     "f0": 0.14
+    },
+    "REVA|J|rev": {
+     "mean": 63.789,
+     "std": 28.555,
+     "f150": 0.006,
+     "f0": 0.14
+    },
+    "REVA|blank|fwd": {
+     "mean": 68.663,
+     "std": 22.776,
+     "f150": 0.01,
+     "f0": 0.043
+    },
+    "REVA|blank|rev": {
+     "mean": 69.563,
+     "std": 21.972,
+     "f150": 0.006,
+     "f0": 0.043
+    },
+    "REVA|canary|fwd": {
+     "mean": 82.221,
+     "std": 34.434,
+     "f150": 0.079,
+     "f0": 0.0
+    },
+    "REVA|canary|rev": {
+     "mean": 71.505,
+     "std": 17.823,
+     "f150": 0.009,
+     "f0": 0.0
+    }
+   },
+   "a_d1_base_display_stats": {
+    "D1-BASE|J|fwd": {
+     "mean": 79.032,
+     "std": 40.434,
+     "f150": 0.065,
+     "f0": 0.14
+    },
+    "D1-BASE|J|rev": {
+     "mean": 78.088,
+     "std": 38.218,
+     "f150": 0.052,
+     "f0": 0.14
+    },
+    "D1-BASE|blank|fwd": {
+     "mean": 78.179,
+     "std": 29.997,
+     "f150": 0.041,
+     "f0": 0.043
+    },
+    "D1-BASE|blank|rev": {
+     "mean": 77.317,
+     "std": 26.739,
+     "f150": 0.022,
+     "f0": 0.043
+    },
+    "D1-BASE|canary|fwd": {
+     "mean": 91.324,
+     "std": 40.486,
+     "f150": 0.131,
+     "f0": 0.0
+    },
+    "D1-BASE|canary|rev": {
+     "mean": 77.28,
+     "std": 22.391,
+     "f150": 0.022,
+     "f0": 0.0
+    }
+   },
+   "a_note": "FA J displays are darker and lower-contrast than D1 BASE (fwd mean 62.3 vs 79.0, std 30.5 vs 40.4, frac>=150 0.018 vs 0.065) but carry signal; zero fraction equals the render-invalid mask (0.140 J); every FA reader named 3-7 letters on the FA canary display",
+   "a_canary_same_pipeline": "16/16 canary PNGs reconstructed exactly from each arm's canary map with the J pipeline",
+   "b_mean_abs_FA_minus_CTRL_fullres_in_render_valid": {
+    "J1|fwd": 29.93,
+    "J1|rev": 27.43,
+    "J2|fwd": 32.08,
+    "J2|rev": 33.16,
+    "J3|fwd": 46.49,
+    "J3|rev": 44.24,
+    "J4|fwd": 36.24,
+    "J4|rev": 48.0,
+    "J5|fwd": 28.03,
+    "J5|rev": 37.42,
+    "blank_w053_y256_x1536|fwd": 16.41,
+    "blank_w053_y256_x1536|rev": 22.24,
+    "blank_w053_y256_x7168|fwd": 25.52,
+    "blank_w053_y256_x7168|rev": 29.62,
+    "canary_w044_y2816_x2816|fwd": 23.89,
+    "canary_w044_y2816_x2816|rev": 20.05
+   },
+   "b_png_reconstruction_exact": "128/128 (own crop 256, render-valid mask, mirror, 2x2 area mean); nearest other-arm mean abs diff >= 8.34",
+   "b_map_hashes": "tif==infer record 64/64, tif==build 64/64, npy==build 64/64, npy==decoded tif 64/64, model==infer==build 4/4",
+   "c_frame": "D3 key set/gate equal D1 key for J1-J5 (5/5); D1 BASE entries scale 2, origin 0, levelled window px of the state; D3 inference inputs are the D1 renders (32/32 window-arm pairs); E2 dry-run PNGs 32/32 in D1 manifest",
+   "d_answers": {
+    "malformed": 0,
+    "missing_items": 0,
+    "foreign_items": 0,
+    "duplicate_ids": 0,
+    "letters_missing_xy": 0,
+    "out_of_1068_bounds": 0,
+    "items_per_answer": 7
+   },
+   "e_other": [
+    "FA readers named 0 letters on any J or blank panel in either order or state (0 of 72 panels), so no scoring, mirror, frame or text-order choice can raise FA C_net above 0: the outcome is invariant",
+    "FA blob-f180 recomputed (hercules.metrics.pixel.blob_f180, 9.362 um): 0.000291 / 0.003484, identical to the runner (bar 0.0272)",
+    "no data-before-declaration, J-halo training, answer-changing harness breach, outcome-changing scoring/mapping error, unreadable display, or fabrication found"
+   ]
+  }
+ },
+ "auditor_decryptions": {
+  "purposes": [
+   "audit-d3-rederive: seal + 24 answers (2026-09-26T09:58:49Z)",
+   "audit-d3-compare: results_d3.age twice (09:59:22Z, 09:59:37Z; second pass after fixing an auditor comparison bug)"
+  ],
+  "logged_in": "logs/key_reads.tsv"
+ },
+ "auditor_scripts_sha256": {
+  "rederive.py": "2fd11ee45d9d7c93f7bb392317363e800a94be81eb699f22685d4ce7d452f6b8",
+  "harness.py": "b5dc0652edcee1e778ffdd93ae283596b308f20d48900ca242d060f79e38a31f",
+  "clearance.py": "85b2019d5b97a1f8a2aa33d2e19d869abae5fc66ffbc26d8a274e10ceead3e5a",
+  "displays.py": "42ad617eb96f3efec1fbb51a6e0b62af5c409623be38bcbe0a9b61494d397770"
+ },
+ "auditor_notes": [
+  "scratch scripts live in the session scratchpad (aud3/); an older scratch file rederive.py at the scratchpad root was overwritten and then moved to aud3/ (outside the repo)"
+ ]
+}

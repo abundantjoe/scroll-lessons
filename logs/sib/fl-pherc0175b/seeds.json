@@ -1,0 +1,347 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-30T04:01:19Z",
+ "surface_zarr": "PHerc0175B/representations/predictions/surfaces/20250521125822-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+ "level0_shape_zyx": [
+  15897,
+  9613,
+  9613
+ ],
+ "level5_shape_zyx": [
+  497,
+  301,
+  301
+ ],
+ "level5_surface_voxels": 6445273,
+ "axis_estimate_level5": {
+  "z_band_edges": [
+   0,
+   49,
+   99,
+   149,
+   198,
+   248,
+   298,
+   347,
+   397,
+   447,
+   497
+  ],
+  "cy": [
+   177.37,
+   143.78,
+   139.31,
+   142.39,
+   144.79,
+   154.46,
+   158.62,
+   161.43,
+   148.56,
+   150.44
+  ],
+  "cx": [
+   143.18,
+   157.93,
+   155.21,
+   154.95,
+   158.01,
+   156.29,
+   148.13,
+   142.55,
+   132.11,
+   142.76
+  ],
+  "R99": [
+   145.96,
+   140.04,
+   134.27,
+   129.87,
+   129.58,
+   131.02,
+   135.09,
+   139.78,
+   148.73,
+   164.62
+  ],
+  "note": "centroid of surface voxels per z band; provisional axis, no umbilicus published"
+ },
+ "rule": "Seed plan. Level 5 (x32) surface voxels (>= 128): per z band, the xy centroid of surface voxels is the\n    provisional scroll axis (no umbilicus is published for this volume) and R99 = p99 radius. Mid radius =\n    r / R99 in [0.40, 0.60]. Targets: z fractions {0.5, 0.3, 0.7} x angles {0, 90, 180, 270} deg, ordered so the\n    first four are spread in both z and angle. Each target snaps to the nearest level-5 mid-radius surface voxel,\n    then to the nearest level-0 voxel >= 128 within 48 voxels of its x32 position.",
+ "candidates": [
+  {
+   "target": [
+    0.5,
+    0
+   ],
+   "level5_zyx": [
+    249,
+    154,
+    234
+   ],
+   "radius_frac": 0.593,
+   "angle_deg": 359.7,
+   "angle_err_deg": 0.3,
+   "status": "ok",
+   "seed_xyz": [
+    7504,
+    4945,
+    7984
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 1.0,
+   "k": 0
+  },
+  {
+   "target": [
+    0.3,
+    90
+   ],
+   "level5_zyx": [
+    149,
+    219,
+    155
+   ],
+   "radius_frac": 0.59,
+   "angle_deg": 90.0,
+   "angle_err_deg": 0.0,
+   "status": "ok",
+   "seed_xyz": [
+    4977,
+    7025,
+    4785
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 1.73,
+   "k": 1
+  },
+  {
+   "target": [
+    0.7,
+    180
+   ],
+   "level5_zyx": [
+    348,
+    161,
+    61
+   ],
+   "radius_frac": 0.583,
+   "angle_deg": 180.3,
+   "angle_err_deg": 0.3,
+   "status": "ok",
+   "seed_xyz": [
+    1967,
+    5169,
+    11152
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 1.41,
+   "k": 2
+  },
+  {
+   "target": [
+    0.5,
+    270
+   ],
+   "level5_zyx": [
+    248,
+    76,
+    156
+   ],
+   "radius_frac": 0.599,
+   "angle_deg": 269.8,
+   "angle_err_deg": 0.2,
+   "status": "ok",
+   "seed_xyz": [
+    5008,
+    2448,
+    7952
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 0.0,
+   "k": 3
+  },
+  {
+   "target": [
+    0.3,
+    270
+   ],
+   "level5_zyx": [
+    149,
+    66,
+    155
+   ],
+   "radius_frac": 0.588,
+   "angle_deg": 270.0,
+   "angle_err_deg": 0.0,
+   "status": "ok",
+   "seed_xyz": [
+    4976,
+    2132,
+    4784
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 4.0,
+   "k": 4
+  },
+  {
+   "target": [
+    0.7,
+    0
+   ],
+   "level5_zyx": [
+    348,
+    161,
+    222
+   ],
+   "radius_frac": 0.568,
+   "angle_deg": 359.7,
+   "angle_err_deg": 0.3,
+   "status": "ok",
+   "seed_xyz": [
+    7120,
+    5168,
+    11151
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 1.0,
+   "k": 5
+  },
+  {
+   "target": [
+    0.5,
+    90
+   ],
+   "level5_zyx": [
+    248,
+    232,
+    156
+   ],
+   "radius_frac": 0.592,
+   "angle_deg": 90.2,
+   "angle_err_deg": 0.2,
+   "status": "ok",
+   "seed_xyz": [
+    5008,
+    7440,
+    7952
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 0.0,
+   "k": 6
+  },
+  {
+   "target": [
+    0.3,
+    180
+   ],
+   "level5_zyx": [
+    149,
+    142,
+    81
+   ],
+   "radius_frac": 0.569,
+   "angle_deg": 180.3,
+   "angle_err_deg": 0.3,
+   "status": "ok",
+   "seed_xyz": [
+    2613,
+    4561,
+    4785
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 5.2,
+   "k": 7
+  },
+  {
+   "target": [
+    0.7,
+    90
+   ],
+   "level5_zyx": [
+    348,
+    239,
+    143
+   ],
+   "radius_frac": 0.555,
+   "angle_deg": 89.7,
+   "angle_err_deg": 0.3,
+   "status": "ok",
+   "seed_xyz": [
+    4593,
+    7662,
+    11151
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 2.45,
+   "k": 8
+  },
+  {
+   "target": [
+    0.5,
+    180
+   ],
+   "level5_zyx": [
+    248,
+    154,
+    83
+   ],
+   "radius_frac": 0.559,
+   "angle_deg": 180.4,
+   "angle_err_deg": 0.4,
+   "status": "ok",
+   "seed_xyz": [
+    2673,
+    4942,
+    7955
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 3.74,
+   "k": 9
+  },
+  {
+   "target": [
+    0.3,
+    0
+   ],
+   "level5_zyx": [
+    149,
+    142,
+    226
+   ],
+   "radius_frac": 0.547,
+   "angle_deg": 359.7,
+   "angle_err_deg": 0.3,
+   "status": "ok",
+   "seed_xyz": [
+    7249,
+    4561,
+    4784
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 1.41,
+   "k": 10
+  },
+  {
+   "target": [
+    0.7,
+    270
+   ],
+   "level5_zyx": [
+    348,
+    82,
+    143
+   ],
+   "radius_frac": 0.568,
+   "angle_deg": 270.3,
+   "angle_err_deg": 0.3,
+   "status": "ok",
+   "seed_xyz": [
+    4592,
+    2642,
+    11150
+   ],
+   "seed_value": 255,
+   "snap_dist_vx": 2.83,
+   "k": 11
+  }
+ ]
+}

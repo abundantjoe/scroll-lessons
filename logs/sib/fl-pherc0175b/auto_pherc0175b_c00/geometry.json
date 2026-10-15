@@ -1,0 +1,63 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-30T04:03:07Z",
+ "segment_dir": "auto_pherc0175b_c00",
+ "meta_area_cm2": 47.377017393533805,
+ "grid_area_cm2": 47.3759,
+ "grid_shape": [
+  402,
+  402
+ ],
+ "valid_points": 158404,
+ "meta_scale": 0.05000000074505806,
+ "step_vx": 19.99999970197678,
+ "voxel_um": 8.64,
+ "edge_ratio_percentiles": {
+  "1": 1.0011,
+  "5": 1.0021,
+  "50": 1.0034,
+  "95": 1.0045,
+  "99": 1.0055
+ },
+ "edge_ratio_note": "grid edge length / nominal step (1.0 = no stretch)",
+ "edge_ratio_frac_outside_0.5_2.0": 0.0,
+ "bbox_xyz_min": [
+  3586.5,
+  1136.5,
+  2981.4
+ ],
+ "bbox_xyz_max": [
+  11551.0,
+  8959.8,
+  10804.5
+ ],
+ "selfcross_transverse": 0,
+ "selfcross_census": [
+  {
+   "diagonal": 0,
+   "triangles": 315218,
+   "transverse": 0,
+   "coplanar": 0,
+   "grazing": 0,
+   "quads_dropped_for_edge_length": 0
+  },
+  {
+   "diagonal": 1,
+   "triangles": 315218,
+   "transverse": 0,
+   "coplanar": 0,
+   "grazing": 0,
+   "quads_dropped_for_edge_length": 0
+  }
+ ],
+ "x_tif_sha256": "8638dbc3b7770449e0b8db9bf41bb48740a52fe2aba59a6b408e028bb28556af",
+ "gate": {
+  "area_cm2_used": 47.3759,
+  "area_ok": true,
+  "selfcross_ok": true,
+  "rule": "keep iff 0 transverse self-crossings AND min(meta, grid) area >= 16 cm^2"
+ },
+ "keep": true,
+ "source": "auto",
+ "grow_variant": "plain"
+}
