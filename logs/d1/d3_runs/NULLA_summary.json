@@ -1,0 +1,140 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "arm": "NULLA",
+ "smoke": false,
+ "started_utc": "2026-09-25T15:13:22Z",
+ "finished_utc": "2026-09-25T17:07:31Z",
+ "steps": 2000,
+ "finite_loss_steps": 2000,
+ "loss_first": 0.5515062212944031,
+ "loss_last": 0.47906675934791565,
+ "loss_mean_last50": 0.49435313165187833,
+ "median_s_per_step": 3.416279920001216,
+ "loop_s": 6841.9,
+ "peak_rss_kb": 4163160,
+ "base_checkpoint": {
+  "path": "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth",
+  "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+ },
+ "strict_load": "<All keys matched successfully>",
+ "recipe": {
+  "optimizer": "AdamW",
+  "lr": 2e-05,
+  "weight_decay": 3e-05,
+  "betas": [
+   0.9,
+   0.999
+  ],
+  "schedule": "constant",
+  "grad_clip": 1.0,
+  "batch": 8,
+  "fold_a_per_batch": 4,
+  "replay_per_batch": 4,
+  "precision": "fp32",
+  "seed": 20260925,
+  "z_window": "stack 2..18 (render 7..23) +-2 official jitter",
+  "augmentation": "official default",
+  "threads": {
+   "intra": 3,
+   "interop": 1
+  }
+ },
+ "sampling": {
+  "fold_a_epochs": 28,
+  "replay_epochs": 4
+ },
+ "resumptions": [],
+ "checkpoint_events": [
+  {
+   "event": "checkpoint",
+   "step": 250,
+   "mode": "write-then-replace",
+   "used_before_bytes": 2358033345,
+   "utc": "2026-09-25T15:27:48Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 500,
+   "mode": "delete-then-write",
+   "used_before_bytes": 2791829655,
+   "utc": "2026-09-25T15:42:14Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 750,
+   "mode": "delete-then-write",
+   "used_before_bytes": 2811786082,
+   "utc": "2026-09-25T15:56:35Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1000,
+   "mode": "delete-then-write",
+   "used_before_bytes": 2835167275,
+   "utc": "2026-09-25T16:11:07Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1250,
+   "mode": "delete-then-write",
+   "used_before_bytes": 2854577954,
+   "utc": "2026-09-25T16:25:31Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1500,
+   "mode": "delete-then-write",
+   "used_before_bytes": 2874303879,
+   "utc": "2026-09-25T16:39:46Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1750,
+   "mode": "delete-then-write",
+   "used_before_bytes": 2894910841,
+   "utc": "2026-09-25T16:53:58Z"
+  }
+ ],
+ "ckpt_every": 250,
+ "loop_s_note": "",
+ "meta": {
+  "arm": "NULLA",
+  "replay_manifest_sha256": "0fc4dd46ed9cbb686f95409d1bd5426fbe1a43ccc58a7c40de372a44b9603ab5",
+  "n_replay": 2643,
+  "fa_manifest_sha256": "8b127e1017d1e9a780f393e8822271ecc838bcb19e5fd4c5cf91515d6f98c040",
+  "n_fold_a": 288,
+  "derangement": {
+   "rule": "default_rng(20260925).permutation redrawn until no fixed point; tile i gets tile perm[i]'s labels",
+   "attempts": 1,
+   "fixed_points": 0,
+   "perm_sha256": "48e2031af813166b755c00a8769788c6f4c5ae11e172ccce28dd6ff5417cb4cb",
+   "perm_head": [
+    158,
+    56,
+    138,
+    114,
+    1,
+    6,
+    44,
+    241,
+    174,
+    266
+   ]
+  }
+ },
+ "checks": {
+  "nulla_fixed_points": 0,
+  "nulla_tiles_whose_ink_label_differs_from_own": 288
+ },
+ "train_log": "/work/d3/runs/NULLA/train_log.jsonl",
+ "train_log_sha256": "9d123f45c3961740831725d8d87b0c4e0db2b5522f7fc1a77da397d768d0f8d1",
+ "script": {
+  "path": "/work/d3/scripts/d3_train.py",
+  "sha256": "2943b1b6fb7492433fc1476bb57848d306c705f70ccef575bf701342acf6f52f"
+ },
+ "model_final": {
+  "path": "/work/d3/runs/NULLA/model_final.pth",
+  "sha256": "0225b7d8d03afc9de19119103d22f2f4028475d0f9f76866e710e99015d426f1",
+  "bytes": 138362783
+ }
+}

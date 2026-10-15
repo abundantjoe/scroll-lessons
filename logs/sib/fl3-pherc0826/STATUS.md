@@ -1,0 +1,1 @@
+2026-09-30T04:13:45Z | fl3-pherc0826 | launched (setsid nohup run.sh, restart loop x6): PHerc0826 has no organizer segments -> PASS 3 auto-grow, 4 explicit seeds in the inner third of the radius (r/R 0.13-0.25 in a test draw), gate 0 self-crossings + >=16 cm2; C2-NT render, ink_9um step-075000 both directions no TTA CPU; 2 cm tiles; appends DONE <n tiles> when finished
