@@ -1,0 +1,22 @@
+{
+ "provenance": "Project HERCULES | [id removed]",
+ "utc": "2026-10-01T02:40Z",
+ "finding": "FL2 auto-grown segments of PHerc0306B (template fl-pherc0257@54b29c96 grow params, no normal_grid_path) do not follow the surface-m7 papyrus prediction. Their tiles should not enter the census until this is resolved.",
+ "symptoms": {
+  "grow_log": "GrowPatch reports 'empty space tracing'; NORMAL loss weight 10 has no normal grid to act on",
+  "speed_mm2_per_s": "about 44 (whole 150-generation patch in about 60 s); the DECL-FL-1 smoke test WITH the organizer normal grids grew at 0.04-0.8 mm2/s",
+  "area_cm2": "s0 26.514, s2 26.515, s4 26.513, s6 26.516, s8 26.516, s12 26.514: the geometric maximum of a 150-generation step-20 patch at 8.64 um (88,800 quads), i.e. every fringe candidate accepted",
+  "self_intersections": "0 for all, consistent with a smooth free surface"
+ },
+ "check_1_support": {"script": "tools/sib/fl-pherc0306b/fl2/surfcheck.py", "samples_per_segment": 150,
+  "s0": {"frac_on_pred_ge128": 0.227, "frac_within_3vox_pred_ge128": 0.713, "plane_fit_rms_vox": 486.6},
+  "s2": {"frac_on_pred_ge128": 0.307, "frac_within_3vox_pred_ge128": 0.52, "plane_fit_rms_vox": 695.8}},
+ "check_2_normal_offset_control": {"script": "tools/sib/fl-pherc0306b/fl2/surfshift.py", "samples_per_segment": 60,
+  "rule": "a sheet-following mesh has its highest prediction support at offset 0 and lower support off-sheet",
+  "s0_frac_pred_ge128_by_offset_vox": {"0": 0.167, "4": 0.167, "8": 0.183, "12": 0.183, "16": 0.233},
+  "s2_frac_pred_ge128_by_offset_vox": {"0": 0.15, "4": 0.15, "8": 0.217, "12": 0.167, "16": 0.183},
+  "result": "no peak at 0: on-mesh support equals off-sheet support (FAIL)"},
+ "likely_cause": "grow params without normal_grid_path; the organizer normal grids exist next to the prediction (...surface-m7-L0-th0.2.normal-grids, loadable remotely via normal-grids-remote.json)",
+ "scope": "probably every DECL-FL-2 worker using this template, and the pilot's PHerc0257 segments; same check recommended",
+ "action_taken": "evidence pushed; stopping the running pipeline was refused by this session's permission classifier, so it continues to render and tile these segments"
+}

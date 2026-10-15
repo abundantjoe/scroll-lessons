@@ -1,0 +1,201 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "segment": "20250831000000-w040_2025083102",
+ "mesh": "/work/c3/data/s3/PHerc0139/segments/20250831000000-w040_2025083102/mesh/20250831000000-on-20250728140407-9.362um.tifxyz",
+ "volume_url": "s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/",
+ "voxel_size_um": 9.362,
+ "window": {
+  "y0": 1490,
+  "x0": 1990,
+  "h": 1068,
+  "w": 1068
+ },
+ "official_umbilicus": null,
+ "centre": {
+  "kind": "ct_mask_centroid_level4",
+  "seconds": 52.7,
+  "n_slices": 424,
+  "n_requests": 6784,
+  "x_range": [
+   2948.2950070776856,
+   3232.216502737788
+  ],
+  "y_range": [
+   3026.148932598503,
+   3171.081187445261
+  ]
+ },
+ "geometry": {
+  "cut": {
+   "r0": 34,
+   "c0": 59,
+   "shape": [
+    135,
+    135
+   ],
+   "region_shape": [
+    81,
+    81
+   ]
+  },
+  "angle_deg": 97.55542850587341,
+  "spread_deg": 1.0172959738799061,
+  "organizer_edge_frac_5pct": 0.9996913580246913,
+  "organizer_edge_frac_10pct": 1.0,
+  "levelled_region_shape": [
+   81,
+   81
+  ],
+  "edge_frac_5pct": 0.9996141975308642,
+  "edge_frac_10pct": 1.0,
+  "levelled_iso_z_tilt_deg": 0.8881790127459624,
+  "levelled_residual_angle_deg": 89.98357937004154,
+  "levelled_residual_spread_deg": 1.0098170611173503,
+  "level_metric_vox_per_cell": [
+   20.03217848215457,
+   20.010349604793348
+  ],
+  "level_du_dv": [
+   0.998393660370826,
+   0.9994827874076289
+  ],
+  "map_det": -1.002127236933829,
+  "map_singular_values": [
+   1.0016089241077284,
+   1.000517480239668
+  ],
+  "map_mirrored": true,
+  "flip_u_mirror": true,
+  "flip_v": false,
+  "chirality_before": 1,
+  "chirality_after": -1,
+  "z_ascending": true,
+  "convention_sign": -1,
+  "sign_organizer": {
+   "sign": 1,
+   "frac_clear": 0.9804907788446883,
+   "frac_positive": 1.0,
+   "ambiguous": false,
+   "n_valid": 6561
+  },
+  "sign_levelled": {
+   "sign": -1,
+   "frac_clear": 0.9905524063576748,
+   "frac_positive": 0.00016831238779174148,
+   "ambiguous": false,
+   "n_valid": 17994
+  },
+  "ambiguous": false,
+  "pad": {
+   "top": 0,
+   "left": 0,
+   "final_shape": [
+    150,
+    150
+   ]
+  },
+  "lev_canvas_shape": [
+   3000,
+   3000
+  ],
+  "lev_window": {
+   "y0": 955,
+   "x0": 955,
+   "h": 1068,
+   "w": 1068
+  },
+  "render_crop_xywh": [
+   699,
+   699,
+   1580,
+   1580
+  ],
+  "lev_window_render_valid_frac": 1.0
+ },
+ "centre_comparison_on_window": {
+  "mask_centroid": {
+   "sign": 1,
+   "frac_clear": 0.9804907788446883,
+   "frac_positive": 1.0,
+   "ambiguous": false,
+   "chirality": 1
+  },
+  "geometric": {
+   "sign": 1,
+   "frac_clear": 0.9643347050754458,
+   "frac_positive": 1.0,
+   "ambiguous": false,
+   "chirality": 1
+  },
+  "volume_axis": {
+   "sign": 1,
+   "frac_clear": 0.9762231367169639,
+   "frac_positive": 1.0,
+   "ambiguous": false,
+   "chirality": 1
+  },
+  "geometric_centre_xy_median": [
+   3138.928489046501,
+   3550.4157182329614
+  ],
+  "mask_centroid_xy_median": [
+   3032.460341363001,
+   3096.514008221671
+  ],
+  "volume_axis_xy": [
+   3310.0,
+   3310.0
+  ]
+ },
+ "render_command": "vc_render_tifxyz -v s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/ --remote-url s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/ --segmentation /work/pipeline/w040/lev_w040_y1490_x1990_zasc_c-1.tifxyz --scale 1 --group-idx 0 --num-slices 31 --slice-step 1 --voxel-size 9.362 --voxel-unit micrometer --crop-x 699 --crop-y 699 --crop-width 1580 --crop-height 1580 --cache-gb 4 --zarr-output /work/pipeline/w040/render_lev_n31_zasc_c-1.zarr",
+ "flip_normals": false,
+ "render": {
+  "seconds": 55.5,
+  "returncode": 0,
+  "output_sha256": "dc8ef4328cd47e621f84a390336abad1c95e81563607a701ec855f1c219574ec"
+ },
+ "render_shape": [
+  31,
+  1580,
+  1580
+ ],
+ "gate": {
+  "render_slice": 15,
+  "render_slice_offset": 0.0,
+  "sv_slices": [
+   13,
+   14
+  ],
+  "sv_slice_offsets": [
+   -0.5,
+   0.5
+  ],
+  "ncc_zero_shift": 0.9861535980493982,
+  "n_valid": 1140409,
+  "best_shift": [
+   0,
+   0
+  ],
+  "best_shift_norm": 0.0,
+  "best_ncc": 0.9861535980493982,
+  "control_shift_px": 5,
+  "control_ncc": {
+   "5,0": 0.7440280362484257,
+   "-5,0": 0.7446248317209551,
+   "0,5": 0.7619265941579615,
+   "0,-5": 0.7563814381178232
+  },
+  "control_ncc_max": 0.7619265941579615,
+  "passed": true,
+  "pass_ncc": 0.8,
+  "pass_shift_px": 2.0,
+  "valid_frac_ours": 0.9998895341497286,
+  "valid_frac_sv": 0.9999000547068972
+ },
+ "slice_direction_check": {
+  "ours_17_vs_sv_15": 0.9383713463488798,
+  "ours_17_vs_sv_12": -0.2863409812353824,
+  "ours_13_vs_sv_12": 0.9292940609282393,
+  "ours_13_vs_sv_15": -0.31418165905747886
+ }
+}
