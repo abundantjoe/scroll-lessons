@@ -1,0 +1,118 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "decision": "D1 (KTLB-3R)",
+ "lens": "harness",
+ "audit": "PASS",
+ "audit_utc": "2026-09-25T08:41:30Z",
+ "repo_head": "8d159ac",
+ "method": "hercules.harness.audit.audit / tool_calls called directly on every D1 transcript (no append to logs/harness_jobs.tsv); independent stricter checks (each listed image read exactly once, exactly one Bash, tool names subset of Read/Bash/SubagentHandback); prompt vs brief file vs job-record brief_sha256; brief header re-derived from hercules.harness.jobs.HEADER; model briefs re-rendered from configs/briefs/k_d2_pairs_task.txt; image sha256 vs job records and manifests; global scan of 242 subagent transcripts and the orchestrator transcript for Read/tool inputs touching /srv/scorer, /work/d1/withdrawn_v1, /work/d1/img, /work/jseal; orchestrator Agent launches counted per job; 34 answer files decrypted via hercules.harness.collect.load_answer (purpose audit-d1-harness, 34 log lines) and compared for equality with each agent's heredoc body (booleans only). /srv/scorer key and item-map files were not read (tool permission denied); image kinds were taken from job-list membership.",
+ "records": {
+  "rules_chain": "OK, 88 entries, last D1-RERUN-CHANCE",
+  "audit_py_sha256": "e36cb995aee6f54461ef8dfc3af57ecd167853c74408f2917d1cbf560426e1f1 (= METRIC-HASH-5)",
+  "k_d2_task": "74a0cbe8... (= METRIC-HASH-14)",
+  "k_d2_pairs_task": "bd03427e... (= METRIC-HASH-14)"
+ },
+ "counts_per_role": {
+  "blank_picker": {
+   "jobs": 1,
+   "valid": 1,
+   "images_read_once": "3/3",
+   "sealed_writes": 1,
+   "handback_DONE": 1
+  },
+  "J_sealers": {
+   "jobs": 3,
+   "valid": 3,
+   "images_read_once": "6/6 each",
+   "sealed_writes": 3,
+   "handback_DONE": 3
+  },
+  "REF_readers": {
+   "jobs": 12,
+   "valid": 12,
+   "images_read_once": "8/8 each",
+   "sealed_writes": 12,
+   "handback_DONE": 12
+  },
+  "BASE_readers": {
+   "jobs": 6,
+   "valid": 6,
+   "images_read_once": "15/15 each",
+   "sealed_writes": 6,
+   "handback_DONE": 6
+  },
+  "RAW_readers": {
+   "jobs": 6,
+   "valid": 6,
+   "images_read_once": "15/15 each",
+   "sealed_writes": 6,
+   "handback_DONE": 2,
+   "no_handback_api_error_after_write": 4
+  },
+  "CHANCE_rerun_readers": {
+   "jobs": 6,
+   "valid": 6,
+   "images_read_once": "15/15 each",
+   "sealed_writes": 6,
+   "handback_DONE": 6
+  },
+  "CHANCE_dead_agents": {
+   "agents": 6,
+   "tool_calls": 0,
+   "image_reads": 0,
+   "writes": 0,
+   "prompt_equals_rerun_prompt": 6
+  }
+ },
+ "checks": {
+  "audit_function_valid": "34/34 (0 violations, 0 unread)",
+  "each_listed_image_read_exactly_once": "34/34 (387 reads total: 3+18+96+270)",
+  "exactly_one_sealed_bash_write_to_job_out_with_job_recipient": "34/34 (single recipient across all 102 job records)",
+  "only_Read_Bash_SubagentHandback": "34/34",
+  "answer_sha256_eq_job_record_eq_harness_log": "34/34; answer file mtime 1.2-3.4 s after the agent's Bash call",
+  "answer_file_equals_agent_heredoc_json": "34/34",
+  "orchestrator_launches": "40 (34 jobs x1, 6 CHANCE jobs x2), all general-purpose, model fable, prompt == brief file (up to one trailing newline) 40/40",
+  "prompt_hash_eq_brief_sha256": "16/16 exact for J-seal and REF; 18 model + 6 dead: equal after removing one trailing newline",
+  "brief_header_rederived": "34/34; brief image paths == job images 34/34; task text frozen single (16) / pairs (18, 7 items each, uuid + LEFT/RIGHT only)",
+  "agent_ids_distinct": "107/107 in agent maps (40 D1 incl. 6 dead; 67 earlier PROBE/HANDED/READ-CAL); D1 vs earlier overlap 0",
+  "image_hashes": "D1 manifest 96/96, J-seal manifest 9/9 (= logs/d1/jseal_manifest.json 2ddce428...), withdrawn_v1 96/96 intact; job-record image hashes 0 mismatches; key sheet 5da96bde...a65f88 in all 34 jobs",
+  "arm_state_order_window_names_in_D1_reader_paths": "0/30 jobs (all /work/d1/img/<uuid>.png)",
+  "reads_under_srv_scorer_by_any_agent": 0,
+  "reads_of_withdrawn_v1_by_any_agent": 0,
+  "D1_or_Jseal_images_read_by_agents_outside_their_jobs": 0,
+  "readers_reading_more_than_one_of_{Jseal-ref, REF-stage, model-stage}": 0,
+  "REF_stage_vs_model_stage_image_overlap": 0,
+  "orchestrator_image_reads": 0,
+  "launch_after_commit": "J-seal jobs 05:53:49 < launch 05:54:08; REF jobs 07:42:02 < 07:42:26; D1-REF-RESULT 07:46:58 and model jobs 07:47:12 < 07:47:41; D1-RERUN-CHANCE 08:22:54 < re-runs 08:23:19"
+ },
+ "findings": [
+  {
+   "severity": "note",
+   "text": "D1-RERUN-CHANCE states 6 of the 12 BASE/RAW readers died after the write and before the hand-back; transcripts show 4 (RAW-A_2, RAW-B_0, RAW-B_1, RAW-B_2) ending in an API-error block after a valid sealed write with no hand-back call; the other 8 handed back DONE. Count correction only; answers unaffected."
+  },
+  {
+   "severity": "note",
+   "text": "The hand-back is not required by the audit function; the 4 readers without it are VALID and their answer files equal their heredocs. RAW-A_2 emitted a plain-text DONE before the error."
+  },
+  {
+   "severity": "note",
+   "text": "BASE-A_0 and BASE-A_2 each emitted one 50-character assistant text block (no braces, no Greek) before their first tool call, i.e. before any image was read; not a tool call and cannot carry answer content."
+  },
+  {
+   "severity": "note",
+   "text": "Model-stage brief files end with a newline that the delivered prompt lacks, so the prompt sha256 differs from the recorded brief_sha256 for the 18 model agents and 6 dead agents; content is otherwise identical (J-seal and REF briefs have no trailing newline and match exactly)."
+  },
+  {
+   "severity": "note",
+   "text": "J-seal material paths carry set/kind folder names: the blank picker's 2 images lie under /work/jseal/blank/ and the sealers' 5 under /work/jseal/J/. This predates DECL-D1-A5 item 2 (declared 05:59:34Z, applying to D1 reader images; picker launched 05:54:08Z). The folder name could bias blank confirmation toward 'no writing'; the D1 blank bar rests on reader namings, not the picker's."
+  },
+  {
+   "severity": "note",
+   "text": "src/hercules/harness/jobs.py (brief header generator) appears in no METRIC-HASH record; every D1 brief header was re-derived exactly from its current HEADER and the job record, so there is no effect."
+  },
+  {
+   "severity": "note",
+   "text": "/srv/scorer key and item-map files were not opened by this auditor (permission denied); freshness and image kinds were established from job-list membership and transcript reads, not from the display key."
+  }
+ ]
+}

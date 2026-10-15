@@ -1,0 +1,75 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-9 item 2 (validation gate); sibling task p4-crackle",
+ "status": "PRE-REGISTERED before any crackle-energy number, tile or AUC exists; no image, tile or CT pixel is viewed",
+ "control": {
+  "segment": "20260623142658-w028-037",
+  "surface_volume": "PHercParis4/segments/20260623142658-w028-037/surface-volumes/1.129um-0.23m-78keV-volume-20260608103018-L1.zarr level 0 (2.258 um in-plane and depth; canvas identical to the M2b prediction canvas 49280 x 187760)",
+  "prediction_tiles": "origin/claude/gifted-bell-gavnl5-sib-p4-tiles-b logs/sib/p4-tiles-b/m2b/tiles/*.png, bytes sha256-checked against m2b/manifest.json png_sha256, decoded as arrays only",
+  "m2b_manifest_sha256": "427821cbc42e382bc82e4fcdb23212d30b0cb5dd5c208c048d9a61bf688acc32"
+ },
+ "tile_draw": {
+  "pool": "the 64 M2b tiles with valid_fraction >= 0.5 and frac_mesh_points_outside_1129_volume < 0.5 (DECL-P4-4-A1), sorted by (r, c)",
+  "rule": "numpy.random.default_rng(20260926).choice(64, 16, replace=False); indices into the sorted pool; 16 >= 12 required",
+  "indices": [
+   17,
+   50,
+   49,
+   10,
+   41,
+   8,
+   5,
+   4,
+   28,
+   36,
+   32,
+   42,
+   44,
+   46,
+   29,
+   56
+  ],
+  "tiles": [
+   "r2_c4",
+   "r2_c5",
+   "r2_c8",
+   "r2_c10",
+   "r2_c17",
+   "r3_c7",
+   "r3_c8",
+   "r3_c11",
+   "r3_c15",
+   "r3_c20",
+   "r4_c0",
+   "r4_c2",
+   "r4_c4",
+   "r4_c7",
+   "r4_c8",
+   "r4_c14"
+  ]
+ },
+ "channel": {
+  "slices": "surface-volume slices 50..66 (centre 58 = n//2 of 116; |k| <= 8, i.e. |k| x 2.258 um <= 18.1 um <= 20 um)",
+  "dog": "per slice, float32 cv2.GaussianBlur sigma 1.5 px minus sigma 6.0 px (ksize 2*ceil(4 sigma)+1, BORDER_REFLECT at the halo edge), squared; tile read with a 32 px halo so no tile-edge effect",
+  "energy": "mean of the squared DoG over the 17 slices, at L0 (T x T canvas px of the tile, T = 8869 for M2b, zero-padded past the canvas)",
+  "display_grid": "cv2.resize INTER_AREA T x T -> 1068 x 1068 (18.73 um px; the same resize and pixel grid as the M2b PNGs)",
+  "pos_mask": "a 1068 px is mesh-valid with CT > 0 iff every L0 canvas px under it is mesh-valid (grid vertex (i//10, j//10) valid) and has a 17-slice raw CT mean > 0 (INTER_AREA mean of the L0 mask >= 1 - 1e-6)",
+  "stretch": "DECL-P4-5-A1: builder.linear_window_ct over pos pixels of the 1068 energy map; non-pos written as 0",
+  "missing_chunks": "S3 404 chunks are zeros (CT = 0, hence not pos)",
+  "io": "HTTP Range reads of bytes [50*16384, 67*16384) of each uncompressed 116x128x128 chunk; one chunk verified equal to the same slices of a full GET"
+ },
+ "auc": {
+  "values_primary": "the stretched uint8 P4-H display values (1068 grid)",
+  "values_secondary": "the unstretched float energy at 1068 (per-tile AUC; pooled over per-tile ranks is not used)",
+  "analysis_mask": "pos_mask of the crackle tile AND the 1068 px is fully mesh-valid on the prediction grid (same rule)",
+  "thresholds_primary": "p90 and p50 (numpy.percentile, linear) of the M2b prediction PNG values over the pooled analysis-mask pixels of all 16 control tiles; ink = pred >= p90, background = pred <= p50",
+  "thresholds_secondary": "the same per tile (reported only)",
+  "boundary_exclusion": "ink px kept only if its Euclidean distance (scipy distance_transform_edt, px = 20 mm / 1068 = 18.727 um) to the nearest non-ink px is > 50 um; background likewise to the nearest non-background px; px outside the analysis mask count as non-class (conservative)",
+  "statistic": "Mann-Whitney AUC with average ranks for ties = P(crackle(ink) > crackle(bg)) + 0.5 P(tie)",
+  "pooled": "all kept ink and background px of all tiles together",
+  "rot90_sanity": "the prediction tile and its valid mask rotated by numpy.rot90(k=1); thresholds recomputed the same way on the rotated maps; crackle tile unrotated",
+  "bootstrap": "2000 resamples of the 16 tiles with replacement, numpy default_rng(20260927); pooled AUC recomputed; 2.5 and 97.5 percentiles (for both the AUC and the rot-90 AUC)"
+ },
+ "decision": "PASS iff pooled AUC >= 0.70 AND 0.47 <= pooled rot-90 AUC <= 0.53 (point estimates, DECL-P4-9 item 2). Otherwise FAIL: P4-H stops and is reported. The CI is reported, not used as the bar.",
+ "utc": "2026-09-26T18:01:21Z"
+}

@@ -1,0 +1,370 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-25T06:30:05Z",
+ "serves": "RULES.md DECL-D1 (+ DECL-D1-A1..-A5), SEAL-J-D1: D1 renders, alignment gate, C2-NT maps, RAW slabs, text order AUCs, D2 displays",
+ "stage": "alignment gate",
+ "viewing": "no image was opened; numbers only",
+ "script": {
+  "path": "/work/d1/scripts/d1_gate.py",
+  "sha256": "8d4d1a71a47c63c9c6172d4041a07b3f80991dc4a30cbb4624d22f09e57619d8"
+ },
+ "gate_code": {
+  "module": "/home/user/dominion/src/hercules/pipeline/window.py",
+  "module_sha256": "c184c79ceb64382c05db928a7f1a90c6dee1f5db3d0b9b5ab58b714ea473609a",
+  "alignment_gate_source_sha256": "7ec4bdba9384a102db5760866f23674de430e2a7955cfc53877ad0a0ea4e9efb",
+  "ncc_source_sha256": "4dbd3a7e80ca2aa7348b0e69d2b6ae36228b1982066fa16e36c3bf378f307d3a",
+  "parameters": "defaults: max_shift 5, pass_ncc 0.80, pass_shift_px 2.0, sv_slices = surface_slices(28) = [13, 14], zero_is_invalid; render_margin_px 256"
+ },
+ "windows": {
+  "J1": {
+   "render_slice": 15,
+   "render_slice_offset": 0.0,
+   "sv_slices": [
+    13,
+    14
+   ],
+   "sv_slice_offsets": [
+    -0.5,
+    0.5
+   ],
+   "ncc_zero_shift": 0.964217271760627,
+   "n_valid": 3763269,
+   "best_shift": [
+    0,
+    0
+   ],
+   "best_shift_norm": 0.0,
+   "best_ncc": 0.964217271760627,
+   "control_shift_px": 5,
+   "control_ncc": {
+    "5,0": 0.5680509524656624,
+    "-5,0": 0.5702051518367656,
+    "0,5": 0.6483781794050834,
+    "0,-5": 0.6484081550271543
+   },
+   "control_ncc_max": 0.6484081550271543,
+   "passed": true,
+   "pass_ncc": 0.8,
+   "pass_shift_px": 2.0,
+   "valid_frac_ours": 0.8249017642974372,
+   "valid_frac_sv": 0.8346148687034466,
+   "binding": true,
+   "organizer_sv": "/work/bank/0841/s3/PHerc0841/segments/20260220214732-auto_grown_20260220144552896/surface-volumes/9.366um-1.2m-113keV-volume-20250821151531.zarr/0",
+   "organizer_sv_kind": "organizer 9.366 um SV (bank, 28 slices)",
+   "sv_fetch": null,
+   "seconds": 7.7
+  },
+  "J2": {
+   "render_slice": 15,
+   "render_slice_offset": 0.0,
+   "sv_slices": [
+    13,
+    14
+   ],
+   "sv_slice_offsets": [
+    -0.5,
+    0.5
+   ],
+   "ncc_zero_shift": 0.9598117382205592,
+   "n_valid": 3199848,
+   "best_shift": [
+    0,
+    0
+   ],
+   "best_shift_norm": 0.0,
+   "best_ncc": 0.9598117382205592,
+   "control_shift_px": 5,
+   "control_ncc": {
+    "5,0": 0.586967496634294,
+    "-5,0": 0.5803991376959309,
+    "0,5": 0.6299723869609053,
+    "0,-5": 0.6346283846913567
+   },
+   "control_ncc_max": 0.6346283846913567,
+   "passed": true,
+   "pass_ncc": 0.8,
+   "pass_shift_px": 2.0,
+   "valid_frac_ours": 0.701370697092118,
+   "valid_frac_sv": 0.7107302669416039,
+   "binding": true,
+   "organizer_sv": "/work/bank/0841/s3/PHerc0841/segments/20260220213127-w00/surface-volumes/9.366um-1.2m-113keV-volume-20250821151531.zarr/0",
+   "organizer_sv_kind": "organizer 9.366 um SV (bank, 28 slices)",
+   "sv_fetch": null,
+   "seconds": 6.7
+  },
+  "J3": {
+   "render_slice": 15,
+   "render_slice_offset": 0.0,
+   "sv_slices": [
+    13,
+    14
+   ],
+   "sv_slice_offsets": [
+    -0.5,
+    0.5
+   ],
+   "ncc_zero_shift": 0.9650844524015852,
+   "n_valid": 4328157,
+   "best_shift": [
+    0,
+    0
+   ],
+   "best_shift_norm": 0.0,
+   "best_ncc": 0.9650844524015852,
+   "control_shift_px": 5,
+   "control_ncc": {
+    "5,0": 0.5885105845898315,
+    "-5,0": 0.5900084972361349,
+    "0,5": 0.6450121095524948,
+    "0,-5": 0.649992539080306
+   },
+   "control_ncc_max": 0.649992539080306,
+   "passed": true,
+   "pass_ncc": 0.8,
+   "pass_shift_px": 2.0,
+   "valid_frac_ours": 0.9488917908092412,
+   "valid_frac_sv": 0.9543850558992271,
+   "binding": true,
+   "organizer_sv": "/work/bank/0841/s3/PHerc0841/segments/20260220214732-auto_grown_20260220144552896/surface-volumes/9.366um-1.2m-113keV-volume-20250821151531.zarr/0",
+   "organizer_sv_kind": "organizer 9.366 um SV (bank, 28 slices)",
+   "sv_fetch": null,
+   "seconds": 8.7
+  },
+  "J4": {
+   "render_slice": 15,
+   "render_slice_offset": 0.0,
+   "sv_slices": [
+    13,
+    14
+   ],
+   "sv_slice_offsets": [
+    -0.5,
+    0.5
+   ],
+   "ncc_zero_shift": 0.9733573404621231,
+   "n_valid": 4560983,
+   "best_shift": [
+    0,
+    0
+   ],
+   "best_shift_norm": 0.0,
+   "best_ncc": 0.9733573404621231,
+   "control_shift_px": 5,
+   "control_ncc": {
+    "5,0": 0.6499942657907009,
+    "-5,0": 0.6493674945737311,
+    "0,5": 0.6833874943764812,
+    "0,-5": 0.6836908695925593
+   },
+   "control_ncc_max": 0.6836908695925593,
+   "passed": true,
+   "pass_ncc": 0.8,
+   "pass_shift_px": 2.0,
+   "valid_frac_ours": 0.999748164162774,
+   "valid_frac_sv": 0.9998443834252129,
+   "binding": true,
+   "organizer_sv": "/work/bank/0841/s3/PHerc0841/segments/20260221022814-auto_grown_20260220174252405/surface-volumes/9.366um-1.2m-113keV-volume-20250821151531.zarr/0",
+   "organizer_sv_kind": "organizer 9.366 um SV (bank, 28 slices)",
+   "sv_fetch": null,
+   "seconds": 11.2
+  },
+  "J5": {
+   "render_slice": 15,
+   "render_slice_offset": 0.0,
+   "sv_slices": [
+    13,
+    14
+   ],
+   "sv_slice_offsets": [
+    -0.5,
+    0.5
+   ],
+   "ncc_zero_shift": 0.9654223112571504,
+   "n_valid": 3891610,
+   "best_shift": [
+    0,
+    0
+   ],
+   "best_shift_norm": 0.0,
+   "best_ncc": 0.9654223112571504,
+   "control_shift_px": 5,
+   "control_ncc": {
+    "5,0": 0.5722537531197153,
+    "-5,0": 0.5646139244269138,
+    "0,5": 0.6340980955919028,
+    "0,-5": 0.6382968461671583
+   },
+   "control_ncc_max": 0.6382968461671583,
+   "passed": true,
+   "pass_ncc": 0.8,
+   "pass_shift_px": 2.0,
+   "valid_frac_ours": 0.853012035517401,
+   "valid_frac_sv": 0.8620794407271809,
+   "binding": true,
+   "organizer_sv": "/work/bank/0841/s3/PHerc0841/segments/20260221022814-auto_grown_20260220174252405/surface-volumes/9.366um-1.2m-113keV-volume-20250821151531.zarr/0",
+   "organizer_sv_kind": "organizer 9.366 um SV (bank, 28 slices)",
+   "sv_fetch": null,
+   "seconds": 7.3
+  },
+  "blank_w053_y256_x1536": {
+   "render_slice": 15,
+   "render_slice_offset": 0.0,
+   "sv_slices": [
+    13,
+    14
+   ],
+   "sv_slice_offsets": [
+    -0.5,
+    0.5
+   ],
+   "ncc_zero_shift": 0.9761257286800029,
+   "n_valid": 4390786,
+   "best_shift": [
+    0,
+    0
+   ],
+   "best_shift_norm": 0.0,
+   "best_ncc": 0.9761257286800029,
+   "control_shift_px": 5,
+   "control_ncc": {
+    "5,0": 0.7060886130309745,
+    "-5,0": 0.7011590474352042,
+    "0,5": 0.7003470752790808,
+    "0,-5": 0.7015131336761865
+   },
+   "control_ncc_max": 0.7060886130309745,
+   "passed": true,
+   "pass_ncc": 0.8,
+   "pass_shift_px": 2.0,
+   "valid_frac_ours": 0.9624128985537741,
+   "valid_frac_sv": 0.9674548755768773,
+   "binding": false,
+   "organizer_sv": "s3://vesuvius-challenge-open-data/PHerc0139/segments/20260220000000-w053_2026022021/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr/0",
+   "organizer_sv_kind": "organizer 9.362 um SV of w053 (S3, 28 slices; fetched for the window only)",
+   "sv_fetch": {
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      28,
+      7440,
+      10360
+     ],
+     "chunks": [
+      28,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "n_chunks": 324,
+    "bytes": 140378112,
+    "missing": 18
+   },
+   "seconds": 17.9
+  },
+  "blank_w053_y256_x7168": {
+   "render_slice": 15,
+   "render_slice_offset": 0.0,
+   "sv_slices": [
+    13,
+    14
+   ],
+   "sv_slice_offsets": [
+    -0.5,
+    0.5
+   ],
+   "ncc_zero_shift": 0.9623151169533684,
+   "n_valid": 4368151,
+   "best_shift": [
+    0,
+    0
+   ],
+   "best_shift_norm": 0.0,
+   "best_ncc": 0.9623151169533684,
+   "control_shift_px": 5,
+   "control_ncc": {
+    "5,0": 0.6791866765361374,
+    "-5,0": 0.685247068452142,
+    "0,5": 0.6445696050395577,
+    "0,-5": 0.6453117993447607
+   },
+   "control_ncc_max": 0.685247068452142,
+   "passed": true,
+   "pass_ncc": 0.8,
+   "pass_shift_px": 2.0,
+   "valid_frac_ours": 0.9574132229376201,
+   "valid_frac_sv": 0.9628253920660972,
+   "binding": false,
+   "organizer_sv": "s3://vesuvius-challenge-open-data/PHerc0139/segments/20260220000000-w053_2026022021/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr/0",
+   "organizer_sv_kind": "organizer 9.362 um SV of w053 (S3, 28 slices; fetched for the window only)",
+   "sv_fetch": {
+    "zarray": {
+     "zarr_format": 2,
+     "shape": [
+      28,
+      7440,
+      10360
+     ],
+     "chunks": [
+      28,
+      128,
+      128
+     ],
+     "dtype": "|u1",
+     "compressor": null,
+     "fill_value": 0,
+     "order": "C",
+     "filters": null,
+     "dimension_separator": "/"
+    },
+    "n_chunks": 324,
+    "bytes": 144048128,
+    "missing": 10
+   },
+   "seconds": 17.6
+  },
+  "canary_w044_y2816_x2816": {
+   "render_slice": 15,
+   "render_slice_offset": 0.0,
+   "sv_slices": [
+    13,
+    14
+   ],
+   "sv_slice_offsets": [
+    -0.5,
+    0.5
+   ],
+   "ncc_zero_shift": 0.987695027843254,
+   "n_valid": 4562207,
+   "best_shift": [
+    0,
+    0
+   ],
+   "best_shift_norm": 0.0,
+   "best_ncc": 0.987695027843254,
+   "control_shift_px": 5,
+   "control_ncc": {
+    "5,0": 0.6982688364039683,
+    "-5,0": 0.6986337828931987,
+    "0,5": 0.7330483251340366,
+    "0,-5": 0.7329566184644226
+   },
+   "control_ncc_max": 0.7330483251340366,
+   "passed": true,
+   "pass_ncc": 0.8,
+   "pass_shift_px": 2.0,
+   "valid_frac_ours": 0.9999583561278739,
+   "valid_frac_sv": 0.999971068467786,
+   "binding": false,
+   "organizer_sv": "/work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr/0",
+   "organizer_sv_kind": "team 9.362 um SV of w044 (28 slices; C3-NT-R1 download)",
+   "sv_fetch": null,
+   "seconds": 9.2
+  }
+ }
+}
