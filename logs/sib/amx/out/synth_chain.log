@@ -1,0 +1,25 @@
+['bf16.log', 'bf16.tif', 'bf16_reverse.tif', 'fp32.log', 'fp32.tif', 'fp32_reverse.tif', 'synth.zarr']
+ Traceback (most recent call last):
+  File "/work/amx/pylib/scipy/__init__.py", line 83, in <module>
+    from scipy._lib._ccallback import LowLevelCallable
+  File "/work/amx/pylib/scipy/_lib/_ccallback.py", line 1, in <module>
+    from . import _ccallback_c
+ImportError: cannot import name '_ccallback_c' from 'scipy._lib' (/work/amx/pylib/scipy/_lib/__init__.py)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/amx/amx_gate.py", line 39, in <module>
+    from hercules.metrics.pixel import auc, pearson  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/src/hercules/metrics/pixel.py", line 7, in <module>
+    from scipy import ndimage
+  File "/work/amx/pylib/scipy/__init__.py", line 88, in <module>
+    raise ImportError(msg) from e
+ImportError: The `scipy` install you are using seems to be broken, (extension modules cannot be imported), please try reinstalling.
+ gate_rc 1
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/amx/synth_chain.py", line 43, in <module>
+    res = json.load(open(sys.argv[1]))
+                    ~~~~^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'logs/sib/amx/synth_chain_gate.json'

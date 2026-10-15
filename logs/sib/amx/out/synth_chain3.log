@@ -1,0 +1,34 @@
+['bf16.log', 'bf16.tif', 'bf16_reverse.tif', 'fp32.log', 'fp32.tif', 'fp32_reverse.tif', 'fp32rep.log', 'fp32rep.tif', 'fp32rep_reverse.tif', 'labels.npy', 'synth.zarr', 'valid.npy']
+ thon3.11/site-packages/tifffile/tifffile.py", line 4641, in asarray
+    result = page0.asarray(
+             ^^^^^^^^^^^^^^
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 9360, in asarray
+    for _ in self.segments(
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 9167, in segments
+    yield from executor.map(decode, chunk)
+  File "/usr/lib/python3.11/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 9136, in decode
+    return func(decode_func(*args, **decodeargs))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv/lib/python3.11/site-packages/tifffile/tifffile.py", line 8404, in decode_raise_compression
+    raise ValueError(msg)
+ValueError: <COMPRESSION.LZW: 5> requires the 'imagecodecs' package
+ gate_rc 1
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/amx/synth_chain.py", line 48, in <module>
+    res = json.load(open(sys.argv[1]))
+                    ~~~~^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'logs/sib/amx/synth_chain_gate.json'

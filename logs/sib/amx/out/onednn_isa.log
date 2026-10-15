@@ -1,0 +1,18 @@
+== fp32
+    135 cpu,reorder,jit:blk
+     68 cpu,reorder,jit:uni
+     60 cpu,convolution,jit:avx512_core
+      6 cpu,convolution,jit_1x1:avx512_core
+      5 cpu,reorder,jit_direct_copy:uni
+      5 cpu,deconvolution,brg_deconv:avx512_core+brgconv_strided:avx512_core
+      4 cpu,reorder,brgemm_matmul_copy_reorder_t
+== bf16
+    141 cpu,reorder,jit:uni
+     71 cpu,reorder,jit_direct_copy:uni
+     60 cpu,convolution,brg_conv_fwd:avx10_1_512_amx
+      6 cpu,convolution,brgconv_1x1:avx10_1_512_amx
+      5 cpu,deconvolution,brg_deconv:avx10_1_512_amx+brgconv_strided:avx10_1_512_amx
+onednn_verbose,v1,info,oneDNN v3.12.0 (commit 80afa71049cd69a3df32adcccb623b12cd7baa22)
+onednn_verbose,v1,info,cpu,runtime:OpenMP,nthr:1
+onednn_verbose,v1,info,cpu,isa:Intel AVX10.1 and Intel AMX with bfloat16 and 8-bit integer support
+onednn_verbose,v1,info,gpu,runtime:none

@@ -1,0 +1,69 @@
+{
+ "utc": "2026-09-25T18:58:42Z",
+ "threads": 4,
+ "env": {
+  "torch": "2.14.0+cpu",
+  "mkldnn": true,
+  "onednn_cpu_capability": "AVX512",
+  "villa": "41701aa0eaa1aa765523db3f9f972b5830abf549"
+ },
+ "attempts": {
+  "dyn": {
+   "status": "ok",
+   "n_linear_modules": 0,
+   "n_conv_modules": 71,
+   "median_s": 0.32562964400017336,
+   "q1_s": 0.3025456587500912,
+   "q3_s": 0.35382348999996793,
+   "iqr_s": 0.051277831249876726,
+   "mean_s": 0.3304591133000258,
+   "min_s": 0.2888429059998998,
+   "max_s": 0.40463712499968096,
+   "n": 20,
+   "logit_max_abs_diff_vs_fp32": 0.0,
+   "u8_max_abs_diff_vs_fp32": 0,
+   "u8_frac_within_2_vs_fp32": 1.0,
+   "setup_wall_s": 8.865067720413208
+  },
+  "fx": {
+   "status": "failed",
+   "error": "TraceError: symbolically traced variables cannot be used as inputs to control flow",
+   "trace_tail": [
+    "           ~~~~~~~~~~~~~~~~~~~^^^^^^",
+    "  File \"/opt/hv-ink/lib/python3.13/site-packages/torch/fx/proxy.py\", line 492, in to_bool",
+    "    raise TraceError(",
+    "        \"symbolically traced variables cannot be used as inputs to control flow\"",
+    "    )",
+    "torch.fx.proxy.TraceError: symbolically traced variables cannot be used as inputs to control flow"
+   ],
+   "setup_wall_s": 1.1968486309051514
+  },
+  "pt2e": {
+   "status": "failed",
+   "error": "ModuleNotFoundError: No module named 'torchao'",
+   "trace_tail": [
+    "  File \"/home/user/dominion/tools/sib/amx/int8_feas.py\", line 64, in attempt",
+    "    res[\"attempts\"][name] = dict(status=\"ok\", **fn())",
+    "                                                ~~^^",
+    "  File \"/home/user/dominion/tools/sib/amx/int8_feas.py\", line 102, in pt2e",
+    "    from torchao.quantization.pt2e.quantize_pt2e import prepare_pt2e, convert_pt2e",
+    "ModuleNotFoundError: No module named 'torchao'"
+   ],
+   "setup_wall_s": 0.0005996227264404297
+  }
+ },
+ "fp32_eager": {
+  "median_s": 0.35963017000017317,
+  "q1_s": 0.34814447075018506,
+  "q3_s": 0.3815986049999083,
+  "iqr_s": 0.03345413424972321,
+  "mean_s": 0.369292443050017,
+  "min_s": 0.33247707999998966,
+  "max_s": 0.45075749999978143,
+  "n": 20,
+  "logit_max_abs_diff_vs_fp32": 0.0,
+  "u8_max_abs_diff_vs_fp32": 0,
+  "u8_frac_within_2_vs_fp32": 1.0
+ },
+ "peak_rss_mb": 970.95703125
+}

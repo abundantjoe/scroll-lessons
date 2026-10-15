@@ -1,0 +1,39 @@
+{
+ "utc": "2026-09-25T19:25:17Z",
+ "threads": 4,
+ "env": {
+  "torch": "2.14.0+cpu",
+  "mkldnn": true,
+  "onednn_cpu_capability": "AVX512",
+  "villa": "41701aa0eaa1aa765523db3f9f972b5830abf549"
+ },
+ "attempts": {
+  "fx_parts": {
+   "status": "failed",
+   "error": "TypeError: float() argument must be a string or a real number, not 'Proxy'",
+   "trace_tail": [
+    "  File \"/opt/hv-ink/lib/python3.13/site-packages/torch/fx/_symbolic_trace.py\", line 932, in trace",
+    "    (self.create_arg(fn(*args)),),",
+    "                     ~~^^^^^^^",
+    "  File \"/work/villa/vesuvius/src/vesuvius/models/build/encoder.py\", line 163, in forward",
+    "    alpha = float(feature_gate_alpha)",
+    "TypeError: float() argument must be a string or a real number, not 'Proxy'"
+   ],
+   "setup_wall_s": 0.5899183750152588
+  }
+ },
+ "fp32_eager": {
+  "median_s": 0.34818622500006313,
+  "q1_s": 0.33822634124976503,
+  "q3_s": 0.3649235555001269,
+  "iqr_s": 0.026697214250361867,
+  "mean_s": 0.35141256974998214,
+  "min_s": 0.33071816099982243,
+  "max_s": 0.3876776070001142,
+  "n": 20,
+  "logit_max_abs_diff_vs_fp32": 0.0,
+  "u8_max_abs_diff_vs_fp32": 0,
+  "u8_frac_within_2_vs_fp32": 1.0
+ },
+ "peak_rss_mb": 908.125
+}

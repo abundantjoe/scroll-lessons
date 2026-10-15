@@ -1,0 +1,635 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-25T16:59:42Z",
+ "serves": "RULES.md DECL-D3D4, DECL-D3-A1 item 5, DECL-D3-A3 items 1-2: D3 arm maps (official C2-NT-style inference, both orders, on the D1 renders of J1-J5, the 2 w053 blanks and the canary)",
+ "arm": "FA",
+ "stage": "D3 arm inference (C2-NT-style)",
+ "viewing": "no image was opened; numbers only",
+ "windows": {
+  "J1": {
+   "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/d1/work/render/J1.zarr /work/d3/runs/FA/model_final.pth /work/d3/infer/FA/J1/J1.tif --direction both --batch-size 4 --num-workers 1 --no-compile",
+   "threads": 1,
+   "checkpoint_sha256": "123ab62a8d9df774d0c84bc64332cf155c2ca26de4d4acba974ca4f341395c1e",
+   "start_utc": "2026-09-25T15:13:49Z",
+   "end_utc": "2026-09-25T15:25:40Z",
+   "seconds": 711.3,
+   "returncode": 0,
+   "output_dir_tree_sha256": "d6894463a5e45068d2a9f72fd075d664fec5b5db71b4111f30ba843407d5a00d",
+   "log": "/work/d3/logs/infer_FA_J1.log",
+   "layer_indices_forward": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "layer_indices_reverse": [
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7
+   ],
+   "log_tta_mirror": [
+    "False",
+    "False"
+   ],
+   "outputs": {
+    "J1.tif": {
+     "path": "/work/d3/infer/FA/J1/J1.tif",
+     "bytes": 2555878,
+     "sha256": "9ea53e395de8d18098763500768fcd53b2bb4a21c119c02faeaa529826bddd41"
+    },
+    "J1_reverse.tif": {
+     "path": "/work/d3/infer/FA/J1/J1_reverse.tif",
+     "bytes": 2455946,
+     "sha256": "940d133be7cf48b726c69bad17021d465d86c9cda6cc4dd7096658ca6f06ab33"
+    },
+    "J1.tif.npy": {
+     "path": "/work/d3/infer/FA/J1/J1.tif.npy",
+     "bytes": 7012032,
+     "sha256": "180a29884620e0b838ddaa847be37897ab7106bec927103d53e4073ad1ef3034"
+    },
+    "J1_reverse.tif.npy": {
+     "path": "/work/d3/infer/FA/J1/J1_reverse.tif.npy",
+     "bytes": 7012032,
+     "sha256": "775cc8958c0843d78f3b1435e4f40df0c40d9d0643fcf721a0a8bf50a25ea652"
+    }
+   },
+   "tif2npy_stdout": "/work/d3/infer/FA/J1/J1.tif (2648, 2648) uint8 0 216 9ea53e395de8d18098763500768fcd53b2bb4a21c119c02faeaa529826bddd41\n/work/d3/infer/FA/J1/J1_reverse.tif (2648, 2648) uint8 0 209 940d133be7cf48b726c69bad17021d465d86c9cda6cc4dd7096658ca6f06ab33"
+  },
+  "J2": {
+   "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/d1/work/render/J2.zarr /work/d3/runs/FA/model_final.pth /work/d3/infer/FA/J2/J2.tif --direction both --batch-size 4 --num-workers 1 --no-compile",
+   "threads": 1,
+   "checkpoint_sha256": "123ab62a8d9df774d0c84bc64332cf155c2ca26de4d4acba974ca4f341395c1e",
+   "start_utc": "2026-09-25T15:25:41Z",
+   "end_utc": "2026-09-25T15:36:07Z",
+   "seconds": 625.9,
+   "returncode": 0,
+   "output_dir_tree_sha256": "92d44ab13d8237dd2e12302475dd98fcf302715d4726de93705219142cbed2b6",
+   "log": "/work/d3/logs/infer_FA_J2.log",
+   "layer_indices_forward": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "layer_indices_reverse": [
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7
+   ],
+   "log_tta_mirror": [
+    "False",
+    "False"
+   ],
+   "outputs": {
+    "J2.tif": {
+     "path": "/work/d3/infer/FA/J2/J2.tif",
+     "bytes": 2406129,
+     "sha256": "64b1926ddcc1360503796e329bcdda59cd3b5dec621ed9c0f51b667e331c98c5"
+    },
+    "J2_reverse.tif": {
+     "path": "/work/d3/infer/FA/J2/J2_reverse.tif",
+     "bytes": 2277840,
+     "sha256": "a6549f3d9e4ffc1780863a7684b5d5654c0065755c9213e5dca31f3a41a3636b"
+    },
+    "J2.tif.npy": {
+     "path": "/work/d3/infer/FA/J2/J2.tif.npy",
+     "bytes": 7012032,
+     "sha256": "d1736dc9e3b6836903aa53d4288fc921dbaabb6b118c5cba19b2a203c4eced0a"
+    },
+    "J2_reverse.tif.npy": {
+     "path": "/work/d3/infer/FA/J2/J2_reverse.tif.npy",
+     "bytes": 7012032,
+     "sha256": "433eef082b5e8f3fad13d6d82077718845ea3874c2821bb54f7b6704e6bbd580"
+    }
+   },
+   "tif2npy_stdout": "/work/d3/infer/FA/J2/J2.tif (2648, 2648) uint8 0 224 64b1926ddcc1360503796e329bcdda59cd3b5dec621ed9c0f51b667e331c98c5\n/work/d3/infer/FA/J2/J2_reverse.tif (2648, 2648) uint8 0 220 a6549f3d9e4ffc1780863a7684b5d5654c0065755c9213e5dca31f3a41a3636b"
+  },
+  "J3": {
+   "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/d1/work/render/J3.zarr /work/d3/runs/FA/model_final.pth /work/d3/infer/FA/J3/J3.tif --direction both --batch-size 4 --num-workers 1 --no-compile",
+   "threads": 1,
+   "checkpoint_sha256": "123ab62a8d9df774d0c84bc64332cf155c2ca26de4d4acba974ca4f341395c1e",
+   "start_utc": "2026-09-25T15:36:07Z",
+   "end_utc": "2026-09-25T15:49:56Z",
+   "seconds": 829.1,
+   "returncode": 0,
+   "output_dir_tree_sha256": "1bdb514751d798e617320987892aae9da1f21b3fcd6ea84ef1844e12cc7d34ce",
+   "log": "/work/d3/logs/infer_FA_J3.log",
+   "layer_indices_forward": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "layer_indices_reverse": [
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7
+   ],
+   "log_tta_mirror": [
+    "False",
+    "False"
+   ],
+   "outputs": {
+    "J3.tif": {
+     "path": "/work/d3/infer/FA/J3/J3.tif",
+     "bytes": 3050314,
+     "sha256": "babeca42871817cde95633b67b450c5c2075be6392921ac6aa4f2c98f9451cc8"
+    },
+    "J3_reverse.tif": {
+     "path": "/work/d3/infer/FA/J3/J3_reverse.tif",
+     "bytes": 2937820,
+     "sha256": "c1ef6cb1759af6ce579e6619fa925d3995990746fbfd8abe8a4dbc4bda65e1a5"
+    },
+    "J3.tif.npy": {
+     "path": "/work/d3/infer/FA/J3/J3.tif.npy",
+     "bytes": 7012032,
+     "sha256": "3e1b5468b1cd050af6eb69211ca4523e7133cd89e108b1bcbee95bd6dcf37d2e"
+    },
+    "J3_reverse.tif.npy": {
+     "path": "/work/d3/infer/FA/J3/J3_reverse.tif.npy",
+     "bytes": 7012032,
+     "sha256": "fd65ab56ca38c5d65d5eef5dd810b4612dd0877beead902ff2851f90ccfbb47c"
+    }
+   },
+   "tif2npy_stdout": "/work/d3/infer/FA/J3/J3.tif (2648, 2648) uint8 0 226 babeca42871817cde95633b67b450c5c2075be6392921ac6aa4f2c98f9451cc8\n/work/d3/infer/FA/J3/J3_reverse.tif (2648, 2648) uint8 0 218 c1ef6cb1759af6ce579e6619fa925d3995990746fbfd8abe8a4dbc4bda65e1a5"
+  },
+  "J4": {
+   "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/d1/work/render/J4.zarr /work/d3/runs/FA/model_final.pth /work/d3/infer/FA/J4/J4.tif --direction both --batch-size 4 --num-workers 1 --no-compile",
+   "threads": 1,
+   "checkpoint_sha256": "123ab62a8d9df774d0c84bc64332cf155c2ca26de4d4acba974ca4f341395c1e",
+   "start_utc": "2026-09-25T15:49:56Z",
+   "end_utc": "2026-09-25T16:05:00Z",
+   "seconds": 903.9,
+   "returncode": 0,
+   "output_dir_tree_sha256": "adc9440c994cfea3e0d449a16d7ce3773dd4eb71bc0cb8a18895c257481ec90c",
+   "log": "/work/d3/logs/infer_FA_J4.log",
+   "layer_indices_forward": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "layer_indices_reverse": [
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7
+   ],
+   "log_tta_mirror": [
+    "False",
+    "False"
+   ],
+   "outputs": {
+    "J4.tif": {
+     "path": "/work/d3/infer/FA/J4/J4.tif",
+     "bytes": 3296356,
+     "sha256": "16d40017b3c26f437d5a1adfaf588de7b3a84fd7fdc471b1b029542c41f11a4f"
+    },
+    "J4_reverse.tif": {
+     "path": "/work/d3/infer/FA/J4/J4_reverse.tif",
+     "bytes": 3299589,
+     "sha256": "eb7ea712e051ed7c45548ee7cc2d77b39fb57b213e0c2ef1c62e1ac694260f9c"
+    },
+    "J4.tif.npy": {
+     "path": "/work/d3/infer/FA/J4/J4.tif.npy",
+     "bytes": 7012032,
+     "sha256": "7825d0f7b39e7055513f4d757f657c0d1180c133436e5a3784890c48971169fa"
+    },
+    "J4_reverse.tif.npy": {
+     "path": "/work/d3/infer/FA/J4/J4_reverse.tif.npy",
+     "bytes": 7012032,
+     "sha256": "ab02d3240854a93b042e3ec7dcc12a5ad46b0475aa9921030b6b03e7799f6113"
+    }
+   },
+   "tif2npy_stdout": "/work/d3/infer/FA/J4/J4.tif (2648, 2648) uint8 0 221 16d40017b3c26f437d5a1adfaf588de7b3a84fd7fdc471b1b029542c41f11a4f\n/work/d3/infer/FA/J4/J4_reverse.tif (2648, 2648) uint8 0 218 eb7ea712e051ed7c45548ee7cc2d77b39fb57b213e0c2ef1c62e1ac694260f9c"
+  },
+  "J5": {
+   "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/d1/work/render/J5.zarr /work/d3/runs/FA/model_final.pth /work/d3/infer/FA/J5/J5.tif --direction both --batch-size 4 --num-workers 1 --no-compile",
+   "threads": 1,
+   "checkpoint_sha256": "123ab62a8d9df774d0c84bc64332cf155c2ca26de4d4acba974ca4f341395c1e",
+   "start_utc": "2026-09-25T16:05:01Z",
+   "end_utc": "2026-09-25T16:16:59Z",
+   "seconds": 718.7,
+   "returncode": 0,
+   "output_dir_tree_sha256": "2df67d91f3ca5693014f1c77d0f1306d1b7f007408dbfd03260b0917da54e9b4",
+   "log": "/work/d3/logs/infer_FA_J5.log",
+   "layer_indices_forward": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "layer_indices_reverse": [
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7
+   ],
+   "log_tta_mirror": [
+    "False",
+    "False"
+   ],
+   "outputs": {
+    "J5.tif": {
+     "path": "/work/d3/infer/FA/J5/J5.tif",
+     "bytes": 2633334,
+     "sha256": "51ba638f09fb9d82cde48a1ac4ae45b421c0de9cc0e79c07001a5d215fc7b8ae"
+    },
+    "J5_reverse.tif": {
+     "path": "/work/d3/infer/FA/J5/J5_reverse.tif",
+     "bytes": 2645380,
+     "sha256": "e4150cc0e18eaf07f56b10f105a513d017275e0ea1cfc5ee0310ffb1763c55fe"
+    },
+    "J5.tif.npy": {
+     "path": "/work/d3/infer/FA/J5/J5.tif.npy",
+     "bytes": 7012032,
+     "sha256": "bf7988311e001043c8ad0b78cddec7c972f475a2e7be8a42d7da366c4a70a7d9"
+    },
+    "J5_reverse.tif.npy": {
+     "path": "/work/d3/infer/FA/J5/J5_reverse.tif.npy",
+     "bytes": 7012032,
+     "sha256": "0b4ef9658f94bd1a555028a6827e27bfcc1527b4781cd2094014094520648f8c"
+    }
+   },
+   "tif2npy_stdout": "/work/d3/infer/FA/J5/J5.tif (2648, 2648) uint8 0 216 51ba638f09fb9d82cde48a1ac4ae45b421c0de9cc0e79c07001a5d215fc7b8ae\n/work/d3/infer/FA/J5/J5_reverse.tif (2648, 2648) uint8 0 213 e4150cc0e18eaf07f56b10f105a513d017275e0ea1cfc5ee0310ffb1763c55fe"
+  },
+  "blank_w053_y256_x1536": {
+   "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/d1/work/render/blank_w053_y256_x1536.zarr /work/d3/runs/FA/model_final.pth /work/d3/infer/FA/blank_w053_y256_x1536/blank_w053_y256_x1536.tif --direction both --batch-size 4 --num-workers 1 --no-compile",
+   "threads": 1,
+   "checkpoint_sha256": "123ab62a8d9df774d0c84bc64332cf155c2ca26de4d4acba974ca4f341395c1e",
+   "start_utc": "2026-09-25T16:17:00Z",
+   "end_utc": "2026-09-25T16:31:03Z",
+   "seconds": 843.2,
+   "returncode": 0,
+   "output_dir_tree_sha256": "87a31f01eb3f20bb0eff90f52ba3264d9592e37263babf49b1e1f522183370c2",
+   "log": "/work/d3/logs/infer_FA_blank_w053_y256_x1536.log",
+   "layer_indices_forward": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "layer_indices_reverse": [
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7
+   ],
+   "log_tta_mirror": [
+    "False",
+    "False"
+   ],
+   "outputs": {
+    "blank_w053_y256_x1536.tif": {
+     "path": "/work/d3/infer/FA/blank_w053_y256_x1536/blank_w053_y256_x1536.tif",
+     "bytes": 2796980,
+     "sha256": "41d346b3d02db6495d4e477d2dfd80d543cdd5cda894f7af9e02540bd9c64def"
+    },
+    "blank_w053_y256_x1536_reverse.tif": {
+     "path": "/work/d3/infer/FA/blank_w053_y256_x1536/blank_w053_y256_x1536_reverse.tif",
+     "bytes": 2902559,
+     "sha256": "bf53dd4a7ae92f0d99caaeff4512bae3b19b53ebaddcf3bf6b3057011ed8b8da"
+    },
+    "blank_w053_y256_x1536.tif.npy": {
+     "path": "/work/d3/infer/FA/blank_w053_y256_x1536/blank_w053_y256_x1536.tif.npy",
+     "bytes": 7012032,
+     "sha256": "89fe09a360a34e8ab31dafb7f4ebb02287e027a33d5ca54361066d8d38050f2b"
+    },
+    "blank_w053_y256_x1536_reverse.tif.npy": {
+     "path": "/work/d3/infer/FA/blank_w053_y256_x1536/blank_w053_y256_x1536_reverse.tif.npy",
+     "bytes": 7012032,
+     "sha256": "1ec8bde3d5852d29501975621aa27da7fc863da5e81a710bea3e1d5e70136b6d"
+    }
+   },
+   "tif2npy_stdout": "/work/d3/infer/FA/blank_w053_y256_x1536/blank_w053_y256_x1536.tif (2648, 2648) uint8 0 225 41d346b3d02db6495d4e477d2dfd80d543cdd5cda894f7af9e02540bd9c64def\n/work/d3/infer/FA/blank_w053_y256_x1536/blank_w053_y256_x1536_reverse.tif (2648, 2648) uint8 0 215 bf53dd4a7ae92f0d99caaeff4512bae3b19b53ebaddcf3bf6b3057011ed8b8da"
+  },
+  "blank_w053_y256_x7168": {
+   "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/d1/work/render/blank_w053_y256_x7168.zarr /work/d3/runs/FA/model_final.pth /work/d3/infer/FA/blank_w053_y256_x7168/blank_w053_y256_x7168.tif --direction both --batch-size 4 --num-workers 1 --no-compile",
+   "threads": 1,
+   "checkpoint_sha256": "123ab62a8d9df774d0c84bc64332cf155c2ca26de4d4acba974ca4f341395c1e",
+   "start_utc": "2026-09-25T16:31:03Z",
+   "end_utc": "2026-09-25T16:44:32Z",
+   "seconds": 808.9,
+   "returncode": 0,
+   "output_dir_tree_sha256": "9ce84a432359744857af99638ad1f40e5b7191a273647b2d0cc6e52f6b7c40ba",
+   "log": "/work/d3/logs/infer_FA_blank_w053_y256_x7168.log",
+   "layer_indices_forward": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "layer_indices_reverse": [
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7
+   ],
+   "log_tta_mirror": [
+    "False",
+    "False"
+   ],
+   "outputs": {
+    "blank_w053_y256_x7168.tif": {
+     "path": "/work/d3/infer/FA/blank_w053_y256_x7168/blank_w053_y256_x7168.tif",
+     "bytes": 2836576,
+     "sha256": "0d1bacd0af5bb534d03c5c25df89e49c865eb6f20d5bdd2cf0abaf74fd2170b2"
+    },
+    "blank_w053_y256_x7168_reverse.tif": {
+     "path": "/work/d3/infer/FA/blank_w053_y256_x7168/blank_w053_y256_x7168_reverse.tif",
+     "bytes": 2850683,
+     "sha256": "494dfad325955a3f2abadb3d82c7607803c73de2e3aa87e94825e4710d5755bb"
+    },
+    "blank_w053_y256_x7168.tif.npy": {
+     "path": "/work/d3/infer/FA/blank_w053_y256_x7168/blank_w053_y256_x7168.tif.npy",
+     "bytes": 7012032,
+     "sha256": "0f0af96af80d312f64027fe15f724dd231b2ecd828e685a93b6fe59b75c153a5"
+    },
+    "blank_w053_y256_x7168_reverse.tif.npy": {
+     "path": "/work/d3/infer/FA/blank_w053_y256_x7168/blank_w053_y256_x7168_reverse.tif.npy",
+     "bytes": 7012032,
+     "sha256": "6148984f2581df3e295f08ea49cc7ba986df08d0c31b7b7cc87a47a71b30f902"
+    }
+   },
+   "tif2npy_stdout": "/work/d3/infer/FA/blank_w053_y256_x7168/blank_w053_y256_x7168.tif (2648, 2648) uint8 0 213 0d1bacd0af5bb534d03c5c25df89e49c865eb6f20d5bdd2cf0abaf74fd2170b2\n/work/d3/infer/FA/blank_w053_y256_x7168/blank_w053_y256_x7168_reverse.tif (2648, 2648) uint8 0 217 494dfad325955a3f2abadb3d82c7607803c73de2e3aa87e94825e4710d5755bb"
+  },
+  "canary_w044_y2816_x2816": {
+   "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/d1/work/render/canary_w044_y2816_x2816.zarr /work/d3/runs/FA/model_final.pth /work/d3/infer/FA/canary_w044_y2816_x2816/canary_w044_y2816_x2816.tif --direction both --batch-size 4 --num-workers 1 --no-compile",
+   "threads": 1,
+   "checkpoint_sha256": "123ab62a8d9df774d0c84bc64332cf155c2ca26de4d4acba974ca4f341395c1e",
+   "start_utc": "2026-09-25T16:44:32Z",
+   "end_utc": "2026-09-25T16:59:41Z",
+   "seconds": 908.7,
+   "returncode": 0,
+   "output_dir_tree_sha256": "b36db187b4623e54f821500eb5986ac869ad1e90d7ff45f47fc4bf3d5a749848",
+   "log": "/work/d3/logs/infer_FA_canary_w044_y2816_x2816.log",
+   "layer_indices_forward": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "layer_indices_reverse": [
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7
+   ],
+   "log_tta_mirror": [
+    "False",
+    "False"
+   ],
+   "outputs": {
+    "canary_w044_y2816_x2816.tif": {
+     "path": "/work/d3/infer/FA/canary_w044_y2816_x2816/canary_w044_y2816_x2816.tif",
+     "bytes": 3622143,
+     "sha256": "2f4f3d43835818eb655b4119fe129a73cb5964744e2b57b1c069884663189ee8"
+    },
+    "canary_w044_y2816_x2816_reverse.tif": {
+     "path": "/work/d3/infer/FA/canary_w044_y2816_x2816/canary_w044_y2816_x2816_reverse.tif",
+     "bytes": 3235758,
+     "sha256": "ecc247d127d601a72d34ef8a93071f03b306d93ac84400f440755db16fe0e756"
+    },
+    "canary_w044_y2816_x2816.tif.npy": {
+     "path": "/work/d3/infer/FA/canary_w044_y2816_x2816/canary_w044_y2816_x2816.tif.npy",
+     "bytes": 7012032,
+     "sha256": "f059dcd88a1401c79a0c8011baddc0a2a5577946422ce8b22514a112b1a41228"
+    },
+    "canary_w044_y2816_x2816_reverse.tif.npy": {
+     "path": "/work/d3/infer/FA/canary_w044_y2816_x2816/canary_w044_y2816_x2816_reverse.tif.npy",
+     "bytes": 7012032,
+     "sha256": "38fcafbaa90f82be7c4d027db18f66a7086e9cce013279b34d281ad382bccd01"
+    }
+   },
+   "tif2npy_stdout": "/work/d3/infer/FA/canary_w044_y2816_x2816/canary_w044_y2816_x2816.tif (2648, 2648) uint8 48 218 2f4f3d43835818eb655b4119fe129a73cb5964744e2b57b1c069884663189ee8\n/work/d3/infer/FA/canary_w044_y2816_x2816/canary_w044_y2816_x2816_reverse.tif (2648, 2648) uint8 47 223 ecc247d127d601a72d34ef8a93071f03b306d93ac84400f440755db16fe0e756"
+  }
+ },
+ "script": {
+  "path": "/work/d3/scripts/d3_infer.py",
+  "sha256": "77b7662438d013e663ed938d49d39f9df879c30b9c18d554d75c8ad3ccb05efe"
+ },
+ "copy_of": {
+  "path": "/work/d1/scripts/d1_infer.py",
+  "sha256": "b2289eae4880ee2bccc3825e9870a3f327697ef47f8dde2e5c470b8d3e65648e"
+ },
+ "checkpoint": {
+  "path": "/work/d3/runs/FA/model_final.pth",
+  "sha256": "123ab62a8d9df774d0c84bc64332cf155c2ca26de4d4acba974ca4f341395c1e",
+  "summary_model_final_sha256": "123ab62a8d9df774d0c84bc64332cf155c2ca26de4d4acba974ca4f341395c1e"
+ },
+ "tif2npy": {
+  "path": "/home/user/dominion/tools/c3/tif2npy.py",
+  "sha256": "998f1b98314b6b7d52ebbca229d48bfcd5a501ee3f2f96478586e901fef5c5e4"
+ }
+}

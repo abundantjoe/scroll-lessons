@@ -1,0 +1,96 @@
+Provenance: Project HERCULES | owner the owner | [id removed]
+
+PROPOSAL (draft by sibling task amx; not a declaration; the orchestrator decides whether and how to declare)
+Proposed ID: DECL-AMX-1. Kind: declaration. To be appended before any bf16 map of real data or any bf16 training step
+on real data exists.
+
+Purpose. Permit torch.autocast('cpu', dtype=torch.bfloat16) (Intel AMX) for (I) the validated 9 um base-map chain
+C2-NT, and (II) CPU fine-tunes following the D3 recipe. Each needs its own bar. Until the matching bar passes,
+every map and every fine-tune stays fp32, as now. Measured speed-up on this CPU (logs/sib/amx/REPORT.md): inference
+1.6-1.8x, full training step about 1.8x at 4 threads. Neither is evidence of letters; both are equivalence checks.
+
+I. INFERENCE GATE (AMX-INF)
+1. Chain under test (bf16 C2-NT): tools/sib/amx/infer_bf16.py (sha256 pinned at declaration). It runs the unchanged
+   official CLI vesuvius.ink_detection.inference.infer (villa 41701aa; infer.py sha256 979aed8e...0389) inside
+   torch.autocast('cpu', bfloat16). The command is otherwise exactly C2-NT: --direction both, no TTA,
+   --batch-size 4, --num-workers 1, --no-compile, base checkpoint e635558a...9cab.
+   Why a wrapper is needed: the official CLI autocasts only on CUDA, so on CPU it always runs fp32.
+2. Data: the C3-NT-R1 crop of PHerc0139 w044 (x0 2304, y0 2816, 2048 x 2048). This is base-trained, non-eligible
+   papyrus that is already mapped (C3-NT-R1-VERDICT), so no new papyrus is exposed. Inputs are the C3-NT-R1 render
+   of that crop (-n 28, --flip-normals, 9.362 um from 0139 metadata) and the organizer native9 w044 labels and
+   supervision mask. The C3-NT-R1 record logs/c3/c3_nt_r1_results.json gives all hashes.
+3. fp32 reference: a fresh fp32 C2-NT run on the same render. It must reproduce the C3-NT-R1 maps bitwise (forward
+   sha256 1d540b92...d237, reverse addbb866...6a77). If it does not, the fp32 re-run is compared with the recorded
+   metrics instead: forward and reverse AUC in the mask must equal 0.99960 / 0.58558 to 5 decimals. If neither
+   holds, the gate is VOID and the defect is recorded.
+4. Metrics: tools/sib/amx/amx_gate.py (sha256 pinned at declaration; it uses hercules.metrics.pixel.pearson and
+   .auc from the code hashed in DECL-C3).
+   - Valid pixels: render-valid AND organizer supervision mask > 0, as in C3-NT-R1.
+   - Labels: ink = label > (min + max) / 2, blank = label == 0, as in tools/c3/auc_eval.py.
+5. Bars. PASS requires all of these:
+   (a) Pearson r(bf16 map, fp32 map) >= 0.999, in each order.
+   (b) bf16 forward AUC >= 0.987.
+   (c) bf16 reverse AUC < 0.60.
+   (d) At least 99.9 % of valid pixels have |bf16 - fp32| <= 2 grey levels, in each order.
+   Reported without a bar: max |diff|, mean |diff|, the |diff| histogram, and AUC(bf16) - AUC(fp32) in each order.
+   Note: C3-NT-R1's reverse AUC margin is only 0.014 (0.58558 against < 0.60). Bar (c) is therefore the most likely
+   to fail, and a failure there is meaningful.
+6. Scope of a PASS. bf16 may be used for base-checkpoint maps with the C2-NT command only. The gate does not transfer:
+   - to TTA, other checkpoints, other patch sizes or strides;
+   - to fine-tuned weights. Each fine-tuned checkpoint whose maps will be read in bf16 re-runs this gate on the same
+     crop first.
+   A FAIL keeps every map fp32. Default: FAIL (not run) at 24 h after the declared date.
+
+II. TRAINING PARITY (AMX-TRAIN)
+1. Recipe: the D3 CTRL arm of DECL-D3-A1 item 1 and DECL-D3-A2 items 2-4, unchanged: 8 replay tiles per batch from
+   the 2643-tile PHerc0139 base-training replay pool (0139 is non-eligible: data/catalogue/eligible_products.json),
+   seed 20260925, 2000 steps, AdamW lr 2e-5 constant, wd 3e-5, grad clip 1.0, batch 8, official loss (smoothed BCE
+   0.5 + 0.25 Dice), official augmentations, and the identical tile/jitter/augmentation sequence (paired runs).
+2. Arms:
+   - P32: fp32. This is the existing D3 CTRL run (logs/d1/d3_runs/CTRL_train_log.jsonl, run log sha256
+     d8c9e5ce...c7c5, model_final 6b690dda), provided the P16 code path is bitwise the same trainer.
+   - P16: the same trainer run inside torch.autocast('cpu', bfloat16). The loss is computed on .float() logits, as
+     tools/d3/d3_train.py already does. AdamW keeps fp32 master weights and there is no grad scaler. Implement it as a
+     wrapper that runs tools/d3/d3_train.py unchanged inside the autocast context (sha256 pinned at declaration), not
+     as an edit of the D3 trainer.
+   - Thread count as P32 (3 threads), so that only the dtype differs.
+3. Primary metric: the final-window loss L = mean training loss over the last 200 steps (1801-2000), i.e. the mean of
+   the last four 50-step loss_mean_window values in train_log.jsonl.
+   Why 200 steps rather than 50: in P32, consecutive 50-step window means differ by median 0.7 % and up to 3.0 % over
+   the last 20 windows (measured from the committed CTRL log). A single-window 2 % bar would therefore sit inside the
+   run's own batch noise, even though P16 and P32 see identical batches.
+4. Bar. PASS requires all of these:
+   (a) |L(P16) - L(P32)| / L(P32) <= 0.02.
+   (b) All 2000 P16 losses are finite.
+   (c) P16 completes 2000 steps.
+   Reported without a bar:
+   - relative gap of every 50-step window;
+   - the 50-step final-window gap;
+   - grad-norm medians;
+   - L2 distance between the P16 and P32 final weights, relative to their distance from base;
+   - P16 wall time per step.
+5. Recommended calibration (orchestrator's choice, reported only). A second fp32 run P32' at 4 threads, which differs
+   from P32 only in reduction order, measures how far two fp32 trajectories drift apart. The bf16 gap is then read
+   against that floor. Cost about 1.3 h at 4 threads.
+6. Scope of a PASS. bf16 training is permitted for later CPU fine-tunes of this model family and recipe (batch 8,
+   lr 2e-5, 2000 steps). Any change of recipe re-runs this bar. A bf16-trained checkpoint still needs AMX-INF (I.6)
+   before any bf16 map of it is read, and its fp32 maps are unaffected. A FAIL keeps training fp32.
+   Default: FAIL (not run) at 24 h after the declared date.
+   Cost: P16 at 3 threads, about 0.9-1.0 h by the step time measured here (1.8x faster than fp32's 3.1 s per step).
+
+Nothing in this proposal touches PHerc0841, the J windows, seals, readers or any eligible volume.
+
+FORECAST FROM THE SIBLING MEASUREMENTS. This is disclosed before the declaration and does not change the bars.
+- Synthetic data: the full official chain on a random uint8 volume (21 x 640 x 640; no scroll data).
+  - The fp32 chain is bitwise deterministic across re-runs.
+  - bf16 against fp32, all pixels: Pearson 0.99943 forward and 0.99910 reverse.
+  - Within +-2 grey levels: 98.18 % forward and 97.72 % reverse. Max |diff| is 5 forward and 7 reverse.
+  - Bar I.5(d) at 99.9 % would FAIL on this input.
+- Per-segment ablation, 32 random tiles. Only "decoder bf16" keeps 100 % within +-2, and it gives no speed-up
+  (1.0x). Any bf16 placement that speeds things up gives 98.6-99.5 % within +-2.
+- Random N(0,1) input is out of distribution for real robust_mad-normalised papyrus, so the real-data outcome is
+  unknown. The forecast is nevertheless that AMX-INF fails bar (d) and C2-NT stays fp32.
+- The pinned code hashes at this draft are listed below. Re-pin them at declaration if the files change.
+  - amx_gate.py sha256 3138ce1cd691bd7443a6d099f8f1cef36f9134539277ce0c52ae9664225460b1
+  - infer_bf16.py sha256 fe77a9a87cb2326667edeb879e811ac71349fdab4800882a83b06751136db188
+- AMX-TRAIN is a different question, a loss-parity bar, and is not forecast by these numbers.
