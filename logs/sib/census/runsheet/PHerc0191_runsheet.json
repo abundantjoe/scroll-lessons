@@ -1,0 +1,2216 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "scroll": "PHerc0191",
+ "volume_id": "20250821151635",
+ "m7_zarr": "s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+ "normal_grids_s3": "s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids",
+ "normal_grids_local": "/work/ng/PHerc0191",
+ "status": "PLAN ONLY: do not trace before the orchestrator declares T0 and the census run",
+ "voxel_um_from_metadata": 9.362,
+ "per_gen": {
+  "45": {
+   "reach_vox": 900,
+   "params_json": {
+    "mode": "seed",
+    "step_size": 20,
+    "min_area_cm": 0.2,
+    "generations": 45,
+    "thread_limit": 1,
+    "direction_fields": [],
+    "voxelsize": 9.362,
+    "normal_grid_path": "/work/ng/PHerc0191",
+    "<PRESET>": "reject_dist_th and compactness (and space_line_weight) as declared after T0"
+   },
+   "levels": [
+    {
+     "level": 0,
+     "seeds": [
+      {
+       "id": "PHerc0191-s00",
+       "seed_xyz": [
+        5574,
+        5098,
+        2038
+       ]
+      },
+      {
+       "id": "PHerc0191-s01",
+       "seed_xyz": [
+        4692,
+        5126,
+        2048
+       ]
+      },
+      {
+       "id": "PHerc0191-s02",
+       "seed_xyz": [
+        4692,
+        4806,
+        2038
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       1137,
+       2949
+      ],
+      "xz": [
+       3905,
+       6027
+      ],
+      "yz": [
+       3791,
+       6475
+      ]
+     },
+     "bytes": {
+      "xy": 434622866,
+      "xz": 2186450728,
+      "yz": 2700905598
+     },
+     "bytes_total": 5321979192,
+     "new_bytes_if_kept": 5321979192,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:1137-2949 xz:3905-6027 yz:3791-6475"
+    },
+    {
+     "level": 1,
+     "seeds": [
+      {
+       "id": "PHerc0191-s03",
+       "seed_xyz": [
+        5290,
+        5746,
+        2864
+       ]
+      },
+      {
+       "id": "PHerc0191-s04",
+       "seed_xyz": [
+        3564,
+        5556,
+        2866
+       ]
+      },
+      {
+       "id": "PHerc0191-s05",
+       "seed_xyz": [
+        4796,
+        4113,
+        2865
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       1963,
+       3767
+      ],
+      "xz": [
+       3212,
+       6647
+      ],
+      "yz": [
+       2663,
+       6191
+      ]
+     },
+     "bytes": {
+      "xy": 384394608,
+      "xz": 3309265400,
+      "yz": 3791431192
+     },
+     "bytes_total": 7485091200,
+     "new_bytes_if_kept": 2593345454,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:1963-3767 xz:3212-6647 yz:2663-6191"
+    },
+    {
+     "level": 2,
+     "seeds": [
+      {
+       "id": "PHerc0191-s06",
+       "seed_xyz": [
+        4441,
+        6157,
+        3692
+       ]
+      },
+      {
+       "id": "PHerc0191-s07",
+       "seed_xyz": [
+        2758,
+        4620,
+        3692
+       ]
+      },
+      {
+       "id": "PHerc0191-s08",
+       "seed_xyz": [
+        5078,
+        4490,
+        3691
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       2790,
+       4593
+      ],
+      "xz": [
+       3589,
+       7058
+      ],
+      "yz": [
+       1857,
+       5979
+      ]
+     },
+     "bytes": {
+      "xy": 489316086,
+      "xz": 3151058812,
+      "yz": 4188093320
+     },
+     "bytes_total": 7828468218,
+     "new_bytes_if_kept": 988682536,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:2790-4593 xz:3589-7058 yz:1857-5979"
+    },
+    {
+     "level": 3,
+     "seeds": [
+      {
+       "id": "PHerc0191-s09",
+       "seed_xyz": [
+        5404,
+        5142,
+        4516
+       ]
+      },
+      {
+       "id": "PHerc0191-s10",
+       "seed_xyz": [
+        3602,
+        6361,
+        4519
+       ]
+      },
+      {
+       "id": "PHerc0191-s11",
+       "seed_xyz": [
+        3679,
+        4059,
+        4519
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       3615,
+       5420
+      ],
+      "xz": [
+       3158,
+       7262
+      ],
+      "yz": [
+       2701,
+       6305
+      ]
+     },
+     "bytes": {
+      "xy": 543655536,
+      "xz": 3628684186,
+      "yz": 3827490564
+     },
+     "bytes_total": 7999830286,
+     "new_bytes_if_kept": 379440772,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:3615-5420 xz:3158-7262 yz:2701-6305"
+    },
+    {
+     "level": 4,
+     "seeds": [
+      {
+       "id": "PHerc0191-s12",
+       "seed_xyz": [
+        5779,
+        6169,
+        5338
+       ]
+      },
+      {
+       "id": "PHerc0191-s13",
+       "seed_xyz": [
+        2940,
+        5488,
+        5346
+       ]
+      },
+      {
+       "id": "PHerc0191-s14",
+       "seed_xyz": [
+        4521,
+        4099,
+        5346
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       4437,
+       6247
+      ],
+      "xz": [
+       3198,
+       7070
+      ],
+      "yz": [
+       2039,
+       6680
+      ]
+     },
+     "bytes": {
+      "xy": 585343458,
+      "xz": 3527036802,
+      "yz": 4518022302
+     },
+     "bytes_total": 8630402562,
+     "new_bytes_if_kept": 377602414,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:4437-6247 xz:3198-7070 yz:2039-6680"
+    },
+    {
+     "level": 5,
+     "seeds": [
+      {
+       "id": "PHerc0191-s15",
+       "seed_xyz": [
+        4566,
+        6240,
+        6173
+       ]
+      },
+      {
+       "id": "PHerc0191-s16",
+       "seed_xyz": [
+        3038,
+        4300,
+        6173
+       ]
+      },
+      {
+       "id": "PHerc0191-s17",
+       "seed_xyz": [
+        5034,
+        4150,
+        6173
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       5272,
+       7074
+      ],
+      "xz": [
+       3249,
+       7141
+      ],
+      "yz": [
+       2137,
+       5935
+      ]
+     },
+     "bytes": {
+      "xy": 610325458,
+      "xz": 3507801770,
+      "yz": 4011816402
+     },
+     "bytes_total": 8129943630,
+     "new_bytes_if_kept": 283423866,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:5272-7074 xz:3249-7141 yz:2137-5935"
+    },
+    {
+     "level": 6,
+     "seeds": [
+      {
+       "id": "PHerc0191-s18",
+       "seed_xyz": [
+        5842,
+        4593,
+        7000
+       ]
+      },
+      {
+       "id": "PHerc0191-s19",
+       "seed_xyz": [
+        3553,
+        5684,
+        7002
+       ]
+      },
+      {
+       "id": "PHerc0191-s20",
+       "seed_xyz": [
+        3282,
+        3038,
+        7001
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       6099,
+       7903
+      ],
+      "xz": [
+       2137,
+       6585
+      ],
+      "yz": [
+       2381,
+       6743
+      ]
+     },
+     "bytes": {
+      "xy": 611288008,
+      "xz": 4019553094,
+      "yz": 4321640820
+     },
+     "bytes_total": 8952481922,
+     "new_bytes_if_kept": 1004183166,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:6099-7903 xz:2137-6585 yz:2381-6743"
+    },
+    {
+     "level": 7,
+     "seeds": [
+      {
+       "id": "PHerc0191-s21",
+       "seed_xyz": [
+        5077,
+        5131,
+        7830
+       ]
+      },
+      {
+       "id": "PHerc0191-s22",
+       "seed_xyz": [
+        3166,
+        4717,
+        7828
+       ]
+      },
+      {
+       "id": "PHerc0191-s23",
+       "seed_xyz": [
+        4419,
+        2919,
+        7833
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       6927,
+       8734
+      ],
+      "xz": [
+       2018,
+       6032
+      ],
+      "yz": [
+       2265,
+       5978
+      ]
+     },
+     "bytes": {
+      "xy": 603598554,
+      "xz": 3677226610,
+      "yz": 3961591188
+     },
+     "bytes_total": 8242416352,
+     "new_bytes_if_kept": 328936912,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:6927-8734 xz:2018-6032 yz:2265-5978"
+    },
+    {
+     "level": 8,
+     "seeds": [
+      {
+       "id": "PHerc0191-s24",
+       "seed_xyz": [
+        4364,
+        5197,
+        8654
+       ]
+      },
+      {
+       "id": "PHerc0191-s25",
+       "seed_xyz": [
+        2552,
+        3584,
+        8655
+       ]
+      },
+      {
+       "id": "PHerc0191-s26",
+       "seed_xyz": [
+        5330,
+        3217,
+        8655
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       7753,
+       9556
+      ],
+      "xz": [
+       2316,
+       6098
+      ],
+      "yz": [
+       1651,
+       6231
+      ]
+     },
+     "bytes": {
+      "xy": 599231686,
+      "xz": 3583144704,
+      "yz": 4435823630
+     },
+     "bytes_total": 8618200020,
+     "new_bytes_if_kept": 341947062,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:7753-9556 xz:2316-6098 yz:1651-6231"
+    },
+    {
+     "level": 9,
+     "seeds": [
+      {
+       "id": "PHerc0191-s27",
+       "seed_xyz": [
+        5328,
+        4077,
+        9483
+       ]
+      },
+      {
+       "id": "PHerc0191-s28",
+       "seed_xyz": [
+        3390,
+        5467,
+        9480
+       ]
+      },
+      {
+       "id": "PHerc0191-s29",
+       "seed_xyz": [
+        3500,
+        2872,
+        9482
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       8579,
+       10384
+      ],
+      "xz": [
+       1971,
+       6368
+      ],
+      "yz": [
+       2489,
+       6229
+      ]
+     },
+     "bytes": {
+      "xy": 597872360,
+      "xz": 3949549274,
+      "yz": 3966915476
+     },
+     "bytes_total": 8514337110,
+     "new_bytes_if_kept": 292705706,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:8579-10384 xz:1971-6368 yz:2489-6229"
+    },
+    {
+     "level": 10,
+     "seeds": [
+      {
+       "id": "PHerc0191-s30",
+       "seed_xyz": [
+        4736,
+        4520,
+        10305
+       ]
+      },
+      {
+       "id": "PHerc0191-s31",
+       "seed_xyz": [
+        2576,
+        4502,
+        10309
+       ]
+      },
+      {
+       "id": "PHerc0191-s32",
+       "seed_xyz": [
+        4253,
+        2913,
+        10310
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       9404,
+       11211
+      ],
+      "xz": [
+       2012,
+       5421
+      ],
+      "yz": [
+       1675,
+       5637
+      ]
+     },
+     "bytes": {
+      "xy": 606660978,
+      "xz": 3123480246,
+      "yz": 3966317628
+     },
+     "bytes_total": 7696458852,
+     "new_bytes_if_kept": 282025640,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:9404-11211 xz:2012-5421 yz:1675-5637"
+    },
+    {
+     "level": 11,
+     "seeds": [
+      {
+       "id": "PHerc0191-s33",
+       "seed_xyz": [
+        4355,
+        5728,
+        11136
+       ]
+      },
+      {
+       "id": "PHerc0191-s34",
+       "seed_xyz": [
+        2665,
+        3349,
+        11136
+       ]
+      },
+      {
+       "id": "PHerc0191-s35",
+       "seed_xyz": [
+        4774,
+        3214,
+        11136
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       10235,
+       12037
+      ],
+      "xz": [
+       2313,
+       6629
+      ],
+      "yz": [
+       1764,
+       5675
+      ]
+     },
+     "bytes": {
+      "xy": 605431212,
+      "xz": 3952107670,
+      "yz": 3971606014
+     },
+     "bytes_total": 8529144896,
+     "new_bytes_if_kept": 273317110,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:10235-12037 xz:2313-6629 yz:1764-5675"
+    },
+    {
+     "level": 12,
+     "seeds": [
+      {
+       "id": "PHerc0191-s36",
+       "seed_xyz": [
+        5735,
+        3886,
+        11963
+       ]
+      },
+      {
+       "id": "PHerc0191-s37",
+       "seed_xyz": [
+        3454,
+        4924,
+        11963
+       ]
+      },
+      {
+       "id": "PHerc0191-s38",
+       "seed_xyz": [
+        2971,
+        2008,
+        11966
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       11062,
+       12867
+      ],
+      "xz": [
+       1107,
+       5825
+      ],
+      "yz": [
+       2070,
+       6636
+      ]
+     },
+     "bytes": {
+      "xy": 595492340,
+      "xz": 3803068892,
+      "yz": 4481192106
+     },
+     "bytes_total": 8879753338,
+     "new_bytes_if_kept": 556072566,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:11062-12867 xz:1107-5825 yz:2070-6636"
+    },
+    {
+     "level": 13,
+     "seeds": [
+      {
+       "id": "PHerc0191-s39",
+       "seed_xyz": [
+        5177,
+        5058,
+        12791
+       ]
+      },
+      {
+       "id": "PHerc0191-s40",
+       "seed_xyz": [
+        3379,
+        4377,
+        12792
+       ]
+      },
+      {
+       "id": "PHerc0191-s41",
+       "seed_xyz": [
+        4324,
+        2642,
+        12789
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       11888,
+       13693
+      ],
+      "xz": [
+       1741,
+       5959
+      ],
+      "yz": [
+       2478,
+       6078
+      ]
+     },
+     "bytes": {
+      "xy": 570016134,
+      "xz": 3718002650,
+      "yz": 3873146672
+     },
+     "bytes_total": 8161165456,
+     "new_bytes_if_kept": 248686400,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:11888-13693 xz:1741-5959 yz:2478-6078"
+    },
+    {
+     "level": 14,
+     "seeds": [
+      {
+       "id": "PHerc0191-s42",
+       "seed_xyz": [
+        4433,
+        5904,
+        13618
+       ]
+      },
+      {
+       "id": "PHerc0191-s43",
+       "seed_xyz": [
+        3353,
+        4171,
+        13618
+       ]
+      },
+      {
+       "id": "PHerc0191-s44",
+       "seed_xyz": [
+        5065,
+        3728,
+        13618
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       12717,
+       14519
+      ],
+      "xz": [
+       2827,
+       6805
+      ],
+      "yz": [
+       2452,
+       5966
+      ]
+     },
+     "bytes": {
+      "xy": 558517394,
+      "xz": 3708927660,
+      "yz": 3811482014
+     },
+     "bytes_total": 8078927068,
+     "new_bytes_if_kept": 261760998,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:12717-14519 xz:2827-6805 yz:2452-5966"
+    },
+    {
+     "level": 15,
+     "seeds": [
+      {
+       "id": "PHerc0191-s45",
+       "seed_xyz": [
+        5580,
+        4694,
+        14449
+       ]
+      },
+      {
+       "id": "PHerc0191-s46",
+       "seed_xyz": [
+        3432,
+        6256,
+        14445
+       ]
+      },
+      {
+       "id": "PHerc0191-s47",
+       "seed_xyz": [
+        3491,
+        3234,
+        14444
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       13543,
+       15350
+      ],
+      "xz": [
+       2333,
+       7157
+      ],
+      "yz": [
+       2531,
+       6481
+      ]
+     },
+     "bytes": {
+      "xy": 597974834,
+      "xz": 4187046080,
+      "yz": 4076745332
+     },
+     "bytes_total": 8861766246,
+     "new_bytes_if_kept": 290603990,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:13543-15350 xz:2333-7157 yz:2531-6481"
+    },
+    {
+     "level": 16,
+     "seeds": [
+      {
+       "id": "PHerc0191-s48",
+       "seed_xyz": [
+        5212,
+        5368,
+        15272
+       ]
+      },
+      {
+       "id": "PHerc0191-s49",
+       "seed_xyz": [
+        3110,
+        5151,
+        15266
+       ]
+      },
+      {
+       "id": "PHerc0191-s50",
+       "seed_xyz": [
+        4607,
+        3465,
+        15274
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       14365,
+       16175
+      ],
+      "xz": [
+       2564,
+       6269
+      ],
+      "yz": [
+       2209,
+       6113
+      ]
+     },
+     "bytes": {
+      "xy": 637712252,
+      "xz": 3554904432,
+      "yz": 4097807976
+     },
+     "bytes_total": 8290424660,
+     "new_bytes_if_kept": 295202760,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:14365-16175 xz:2564-6269 yz:2209-6113"
+    },
+    {
+     "level": 17,
+     "seeds": [
+      {
+       "id": "PHerc0191-s51",
+       "seed_xyz": [
+        4572,
+        5686,
+        16101
+       ]
+      },
+      {
+       "id": "PHerc0191-s52",
+       "seed_xyz": [
+        2830,
+        4115,
+        16099
+       ]
+      },
+      {
+       "id": "PHerc0191-s53",
+       "seed_xyz": [
+        5254,
+        3963,
+        16097
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       15196,
+       17002
+      ],
+      "xz": [
+       3062,
+       6587
+      ],
+      "yz": [
+       1929,
+       6155
+      ]
+     },
+     "bytes": {
+      "xy": 651928008,
+      "xz": 3402882604,
+      "yz": 4282910496
+     },
+     "bytes_total": 8337721108,
+     "new_bytes_if_kept": 301855434,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:15196-17002 xz:3062-6587 yz:1929-6155"
+    },
+    {
+     "level": 18,
+     "seeds": [
+      {
+       "id": "PHerc0191-s54",
+       "seed_xyz": [
+        6194,
+        4620,
+        16927
+       ]
+      },
+      {
+       "id": "PHerc0191-s55",
+       "seed_xyz": [
+        3609,
+        5839,
+        16923
+       ]
+      },
+      {
+       "id": "PHerc0191-s56",
+       "seed_xyz": [
+        3782,
+        3695,
+        16926
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       16022,
+       17828
+      ],
+      "xz": [
+       2794,
+       6740
+      ],
+      "yz": [
+       2708,
+       7095
+      ]
+     },
+     "bytes": {
+      "xy": 644214776,
+      "xz": 3698246618,
+      "yz": 4158779472
+     },
+     "bytes_total": 8501240866,
+     "new_bytes_if_kept": 403388986,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:16022-17828 xz:2794-6740 yz:2708-7095"
+    },
+    {
+     "level": 19,
+     "seeds": [
+      {
+       "id": "PHerc0191-s57",
+       "seed_xyz": [
+        5119,
+        5395,
+        17751
+       ]
+      },
+      {
+       "id": "PHerc0191-s58",
+       "seed_xyz": [
+        2919,
+        4849,
+        17753
+       ]
+      },
+      {
+       "id": "PHerc0191-s59",
+       "seed_xyz": [
+        4323,
+        2714,
+        17748
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       16847,
+       18654
+      ],
+      "xz": [
+       1813,
+       6296
+      ],
+      "yz": [
+       2018,
+       6020
+      ]
+     },
+     "bytes": {
+      "xy": 582704428,
+      "xz": 3953096128,
+      "yz": 4143339024
+     },
+     "bytes_total": 8679139580,
+     "new_bytes_if_kept": 238528106,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:16847-18654 xz:1813-6296 yz:2018-6020"
+    }
+   ],
+   "union_bytes": 15063689070,
+   "max_level_bytes": 8952481922,
+   "time_per_seed_s_measured_scaled": 259.743272771,
+   "hours_60_seeds_4_parallel": 1.0822636365458334,
+   "commands": [
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s00 --params /work/census_trace/PHerc0191/params_g45.json --seed 5574 5098 2038",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s01 --params /work/census_trace/PHerc0191/params_g45.json --seed 4692 5126 2048",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s02 --params /work/census_trace/PHerc0191/params_g45.json --seed 4692 4806 2038",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s03 --params /work/census_trace/PHerc0191/params_g45.json --seed 5290 5746 2864",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s04 --params /work/census_trace/PHerc0191/params_g45.json --seed 3564 5556 2866",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s05 --params /work/census_trace/PHerc0191/params_g45.json --seed 4796 4113 2865",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s06 --params /work/census_trace/PHerc0191/params_g45.json --seed 4441 6157 3692",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s07 --params /work/census_trace/PHerc0191/params_g45.json --seed 2758 4620 3692",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s08 --params /work/census_trace/PHerc0191/params_g45.json --seed 5078 4490 3691",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s09 --params /work/census_trace/PHerc0191/params_g45.json --seed 5404 5142 4516",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s10 --params /work/census_trace/PHerc0191/params_g45.json --seed 3602 6361 4519",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s11 --params /work/census_trace/PHerc0191/params_g45.json --seed 3679 4059 4519",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s12 --params /work/census_trace/PHerc0191/params_g45.json --seed 5779 6169 5338",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s13 --params /work/census_trace/PHerc0191/params_g45.json --seed 2940 5488 5346",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s14 --params /work/census_trace/PHerc0191/params_g45.json --seed 4521 4099 5346",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s15 --params /work/census_trace/PHerc0191/params_g45.json --seed 4566 6240 6173",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s16 --params /work/census_trace/PHerc0191/params_g45.json --seed 3038 4300 6173",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s17 --params /work/census_trace/PHerc0191/params_g45.json --seed 5034 4150 6173",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s18 --params /work/census_trace/PHerc0191/params_g45.json --seed 5842 4593 7000",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s19 --params /work/census_trace/PHerc0191/params_g45.json --seed 3553 5684 7002",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s20 --params /work/census_trace/PHerc0191/params_g45.json --seed 3282 3038 7001",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s21 --params /work/census_trace/PHerc0191/params_g45.json --seed 5077 5131 7830",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s22 --params /work/census_trace/PHerc0191/params_g45.json --seed 3166 4717 7828",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s23 --params /work/census_trace/PHerc0191/params_g45.json --seed 4419 2919 7833",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s24 --params /work/census_trace/PHerc0191/params_g45.json --seed 4364 5197 8654",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s25 --params /work/census_trace/PHerc0191/params_g45.json --seed 2552 3584 8655",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s26 --params /work/census_trace/PHerc0191/params_g45.json --seed 5330 3217 8655",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s27 --params /work/census_trace/PHerc0191/params_g45.json --seed 5328 4077 9483",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s28 --params /work/census_trace/PHerc0191/params_g45.json --seed 3390 5467 9480",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s29 --params /work/census_trace/PHerc0191/params_g45.json --seed 3500 2872 9482",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s30 --params /work/census_trace/PHerc0191/params_g45.json --seed 4736 4520 10305",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s31 --params /work/census_trace/PHerc0191/params_g45.json --seed 2576 4502 10309",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s32 --params /work/census_trace/PHerc0191/params_g45.json --seed 4253 2913 10310",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s33 --params /work/census_trace/PHerc0191/params_g45.json --seed 4355 5728 11136",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s34 --params /work/census_trace/PHerc0191/params_g45.json --seed 2665 3349 11136",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s35 --params /work/census_trace/PHerc0191/params_g45.json --seed 4774 3214 11136",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s36 --params /work/census_trace/PHerc0191/params_g45.json --seed 5735 3886 11963",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s37 --params /work/census_trace/PHerc0191/params_g45.json --seed 3454 4924 11963",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s38 --params /work/census_trace/PHerc0191/params_g45.json --seed 2971 2008 11966",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s39 --params /work/census_trace/PHerc0191/params_g45.json --seed 5177 5058 12791",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s40 --params /work/census_trace/PHerc0191/params_g45.json --seed 3379 4377 12792",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s41 --params /work/census_trace/PHerc0191/params_g45.json --seed 4324 2642 12789",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s42 --params /work/census_trace/PHerc0191/params_g45.json --seed 4433 5904 13618",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s43 --params /work/census_trace/PHerc0191/params_g45.json --seed 3353 4171 13618",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s44 --params /work/census_trace/PHerc0191/params_g45.json --seed 5065 3728 13618",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s45 --params /work/census_trace/PHerc0191/params_g45.json --seed 5580 4694 14449",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s46 --params /work/census_trace/PHerc0191/params_g45.json --seed 3432 6256 14445",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s47 --params /work/census_trace/PHerc0191/params_g45.json --seed 3491 3234 14444",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s48 --params /work/census_trace/PHerc0191/params_g45.json --seed 5212 5368 15272",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s49 --params /work/census_trace/PHerc0191/params_g45.json --seed 3110 5151 15266",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s50 --params /work/census_trace/PHerc0191/params_g45.json --seed 4607 3465 15274",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s51 --params /work/census_trace/PHerc0191/params_g45.json --seed 4572 5686 16101",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s52 --params /work/census_trace/PHerc0191/params_g45.json --seed 2830 4115 16099",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s53 --params /work/census_trace/PHerc0191/params_g45.json --seed 5254 3963 16097",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s54 --params /work/census_trace/PHerc0191/params_g45.json --seed 6194 4620 16927",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s55 --params /work/census_trace/PHerc0191/params_g45.json --seed 3609 5839 16923",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s56 --params /work/census_trace/PHerc0191/params_g45.json --seed 3782 3695 16926",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s57 --params /work/census_trace/PHerc0191/params_g45.json --seed 5119 5395 17751",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s58 --params /work/census_trace/PHerc0191/params_g45.json --seed 2919 4849 17753",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g45/PHerc0191-s59 --params /work/census_trace/PHerc0191/params_g45.json --seed 4323 2714 17748"
+   ]
+  },
+  "75": {
+   "reach_vox": 1500,
+   "params_json": {
+    "mode": "seed",
+    "step_size": 20,
+    "min_area_cm": 0.2,
+    "generations": 75,
+    "thread_limit": 1,
+    "direction_fields": [],
+    "voxelsize": 9.362,
+    "normal_grid_path": "/work/ng/PHerc0191",
+    "<PRESET>": "reject_dist_th and compactness (and space_line_weight) as declared after T0"
+   },
+   "levels": [
+    {
+     "level": 0,
+     "seeds": [
+      {
+       "id": "PHerc0191-s00",
+       "seed_xyz": [
+        5574,
+        5098,
+        2038
+       ]
+      },
+      {
+       "id": "PHerc0191-s01",
+       "seed_xyz": [
+        4692,
+        5126,
+        2048
+       ]
+      },
+      {
+       "id": "PHerc0191-s02",
+       "seed_xyz": [
+        4692,
+        4806,
+        2038
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       537,
+       3549
+      ],
+      "xz": [
+       3305,
+       6627
+      ],
+      "yz": [
+       3191,
+       7075
+      ]
+     },
+     "bytes": {
+      "xy": 770988706,
+      "xz": 3213500332,
+      "yz": 3644297056
+     },
+     "bytes_total": 7628786094,
+     "new_bytes_if_kept": 7628786094,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:537-3549 xz:3305-6627 yz:3191-7075"
+    },
+    {
+     "level": 1,
+     "seeds": [
+      {
+       "id": "PHerc0191-s03",
+       "seed_xyz": [
+        5290,
+        5746,
+        2864
+       ]
+      },
+      {
+       "id": "PHerc0191-s04",
+       "seed_xyz": [
+        3564,
+        5556,
+        2866
+       ]
+      },
+      {
+       "id": "PHerc0191-s05",
+       "seed_xyz": [
+        4796,
+        4113,
+        2865
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       1363,
+       4367
+      ],
+      "xz": [
+       2612,
+       7247
+      ],
+      "yz": [
+       2063,
+       6791
+      ]
+     },
+     "bytes": {
+      "xy": 651346526,
+      "xz": 4036901592,
+      "yz": 4550748676
+     },
+     "bytes_total": 9238996794,
+     "new_bytes_if_kept": 2054093464,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:1363-4367 xz:2612-7247 yz:2063-6791"
+    },
+    {
+     "level": 2,
+     "seeds": [
+      {
+       "id": "PHerc0191-s06",
+       "seed_xyz": [
+        4441,
+        6157,
+        3692
+       ]
+      },
+      {
+       "id": "PHerc0191-s07",
+       "seed_xyz": [
+        2758,
+        4620,
+        3692
+       ]
+      },
+      {
+       "id": "PHerc0191-s08",
+       "seed_xyz": [
+        5078,
+        4490,
+        3691
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       2190,
+       5193
+      ],
+      "xz": [
+       2989,
+       7658
+      ],
+      "yz": [
+       1257,
+       6579
+      ]
+     },
+     "bytes": {
+      "xy": 780154478,
+      "xz": 3900901866,
+      "yz": 4766131596
+     },
+     "bytes_total": 9447187940,
+     "new_bytes_if_kept": 699658604,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:2190-5193 xz:2989-7658 yz:1257-6579"
+    },
+    {
+     "level": 3,
+     "seeds": [
+      {
+       "id": "PHerc0191-s09",
+       "seed_xyz": [
+        5404,
+        5142,
+        4516
+       ]
+      },
+      {
+       "id": "PHerc0191-s10",
+       "seed_xyz": [
+        3602,
+        6361,
+        4519
+       ]
+      },
+      {
+       "id": "PHerc0191-s11",
+       "seed_xyz": [
+        3679,
+        4059,
+        4519
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       3015,
+       6020
+      ],
+      "xz": [
+       2558,
+       7862
+      ],
+      "yz": [
+       2101,
+       6905
+      ]
+     },
+     "bytes": {
+      "xy": 900857552,
+      "xz": 4261317616,
+      "yz": 4569724772
+     },
+     "bytes_total": 9731899940,
+     "new_bytes_if_kept": 362719932,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:3015-6020 xz:2558-7862 yz:2101-6905"
+    },
+    {
+     "level": 4,
+     "seeds": [
+      {
+       "id": "PHerc0191-s12",
+       "seed_xyz": [
+        5779,
+        6169,
+        5338
+       ]
+      },
+      {
+       "id": "PHerc0191-s13",
+       "seed_xyz": [
+        2940,
+        5488,
+        5346
+       ]
+      },
+      {
+       "id": "PHerc0191-s14",
+       "seed_xyz": [
+        4521,
+        4099,
+        5346
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       3837,
+       6847
+      ],
+      "xz": [
+       2598,
+       7670
+      ],
+      "yz": [
+       1439,
+       7280
+      ]
+     },
+     "bytes": {
+      "xy": 965807648,
+      "xz": 4189553288,
+      "yz": 4925798144
+     },
+     "bytes_total": 10081159080,
+     "new_bytes_if_kept": 333505678,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:3837-6847 xz:2598-7670 yz:1439-7280"
+    },
+    {
+     "level": 5,
+     "seeds": [
+      {
+       "id": "PHerc0191-s15",
+       "seed_xyz": [
+        4566,
+        6240,
+        6173
+       ]
+      },
+      {
+       "id": "PHerc0191-s16",
+       "seed_xyz": [
+        3038,
+        4300,
+        6173
+       ]
+      },
+      {
+       "id": "PHerc0191-s17",
+       "seed_xyz": [
+        5034,
+        4150,
+        6173
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       4672,
+       7674
+      ],
+      "xz": [
+       2649,
+       7741
+      ],
+      "yz": [
+       1537,
+       6535
+      ]
+     },
+     "bytes": {
+      "xy": 997626912,
+      "xz": 4173202752,
+      "yz": 4646309704
+     },
+     "bytes_total": 9817139368,
+     "new_bytes_if_kept": 276747390,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:4672-7674 xz:2649-7741 yz:1537-6535"
+    },
+    {
+     "level": 6,
+     "seeds": [
+      {
+       "id": "PHerc0191-s18",
+       "seed_xyz": [
+        5842,
+        4593,
+        7000
+       ]
+      },
+      {
+       "id": "PHerc0191-s19",
+       "seed_xyz": [
+        3553,
+        5684,
+        7002
+       ]
+      },
+      {
+       "id": "PHerc0191-s20",
+       "seed_xyz": [
+        3282,
+        3038,
+        7001
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       5499,
+       8503
+      ],
+      "xz": [
+       1537,
+       7185
+      ],
+      "yz": [
+       1781,
+       7343
+      ]
+     },
+     "bytes": {
+      "xy": 1011156514,
+      "xz": 4545945784,
+      "yz": 4834503216
+     },
+     "bytes_total": 10391605514,
+     "new_bytes_if_kept": 782618440,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:5499-8503 xz:1537-7185 yz:1781-7343"
+    },
+    {
+     "level": 7,
+     "seeds": [
+      {
+       "id": "PHerc0191-s21",
+       "seed_xyz": [
+        5077,
+        5131,
+        7830
+       ]
+      },
+      {
+       "id": "PHerc0191-s22",
+       "seed_xyz": [
+        3166,
+        4717,
+        7828
+       ]
+      },
+      {
+       "id": "PHerc0191-s23",
+       "seed_xyz": [
+        4419,
+        2919,
+        7833
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       6327,
+       9334
+      ],
+      "xz": [
+       1418,
+       6632
+      ],
+      "yz": [
+       1665,
+       6578
+      ]
+     },
+     "bytes": {
+      "xy": 1007943056,
+      "xz": 4318365010,
+      "yz": 4623857510
+     },
+     "bytes_total": 9950165576,
+     "new_bytes_if_kept": 302869260,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:6327-9334 xz:1418-6632 yz:1665-6578"
+    },
+    {
+     "level": 8,
+     "seeds": [
+      {
+       "id": "PHerc0191-s24",
+       "seed_xyz": [
+        4364,
+        5197,
+        8654
+       ]
+      },
+      {
+       "id": "PHerc0191-s25",
+       "seed_xyz": [
+        2552,
+        3584,
+        8655
+       ]
+      },
+      {
+       "id": "PHerc0191-s26",
+       "seed_xyz": [
+        5330,
+        3217,
+        8655
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       7153,
+       10156
+      ],
+      "xz": [
+       1716,
+       6698
+      ],
+      "yz": [
+       1051,
+       6831
+      ]
+     },
+     "bytes": {
+      "xy": 998564626,
+      "xz": 4247854784,
+      "yz": 4918453778
+     },
+     "bytes_total": 10164873188,
+     "new_bytes_if_kept": 318457900,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:7153-10156 xz:1716-6698 yz:1051-6831"
+    },
+    {
+     "level": 9,
+     "seeds": [
+      {
+       "id": "PHerc0191-s27",
+       "seed_xyz": [
+        5328,
+        4077,
+        9483
+       ]
+      },
+      {
+       "id": "PHerc0191-s28",
+       "seed_xyz": [
+        3390,
+        5467,
+        9480
+       ]
+      },
+      {
+       "id": "PHerc0191-s29",
+       "seed_xyz": [
+        3500,
+        2872,
+        9482
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       7979,
+       10984
+      ],
+      "xz": [
+       1371,
+       6968
+      ],
+      "yz": [
+       1889,
+       6829
+      ]
+     },
+     "bytes": {
+      "xy": 1001893756,
+      "xz": 4502457686,
+      "yz": 4650242510
+     },
+     "bytes_total": 10154593952,
+     "new_bytes_if_kept": 293124388,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:7979-10984 xz:1371-6968 yz:1889-6829"
+    },
+    {
+     "level": 10,
+     "seeds": [
+      {
+       "id": "PHerc0191-s30",
+       "seed_xyz": [
+        4736,
+        4520,
+        10305
+       ]
+      },
+      {
+       "id": "PHerc0191-s31",
+       "seed_xyz": [
+        2576,
+        4502,
+        10309
+       ]
+      },
+      {
+       "id": "PHerc0191-s32",
+       "seed_xyz": [
+        4253,
+        2913,
+        10310
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       8804,
+       11811
+      ],
+      "xz": [
+       1412,
+       6021
+      ],
+      "yz": [
+       1075,
+       6237
+      ]
+     },
+     "bytes": {
+      "xy": 1004385116,
+      "xz": 3888924374,
+      "yz": 4619009166
+     },
+     "bytes_total": 9512318656,
+     "new_bytes_if_kept": 275680218,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:8804-11811 xz:1412-6021 yz:1075-6237"
+    },
+    {
+     "level": 11,
+     "seeds": [
+      {
+       "id": "PHerc0191-s33",
+       "seed_xyz": [
+        4355,
+        5728,
+        11136
+       ]
+      },
+      {
+       "id": "PHerc0191-s34",
+       "seed_xyz": [
+        2665,
+        3349,
+        11136
+       ]
+      },
+      {
+       "id": "PHerc0191-s35",
+       "seed_xyz": [
+        4774,
+        3214,
+        11136
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       9635,
+       12637
+      ],
+      "xz": [
+       1713,
+       7229
+      ],
+      "yz": [
+       1164,
+       6275
+      ]
+     },
+     "bytes": {
+      "xy": 1002086358,
+      "xz": 4479718102,
+      "yz": 4625938818
+     },
+     "bytes_total": 10107743278,
+     "new_bytes_if_kept": 273011642,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:9635-12637 xz:1713-7229 yz:1164-6275"
+    },
+    {
+     "level": 12,
+     "seeds": [
+      {
+       "id": "PHerc0191-s36",
+       "seed_xyz": [
+        5735,
+        3886,
+        11963
+       ]
+      },
+      {
+       "id": "PHerc0191-s37",
+       "seed_xyz": [
+        3454,
+        4924,
+        11963
+       ]
+      },
+      {
+       "id": "PHerc0191-s38",
+       "seed_xyz": [
+        2971,
+        2008,
+        11966
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       10462,
+       13467
+      ],
+      "xz": [
+       507,
+       6425
+      ],
+      "yz": [
+       1470,
+       7236
+      ]
+     },
+     "bytes": {
+      "xy": 981722002,
+      "xz": 4382095070,
+      "yz": 4907662390
+     },
+     "bytes_total": 10271479462,
+     "new_bytes_if_kept": 434764516,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:10462-13467 xz:507-6425 yz:1470-7236"
+    },
+    {
+     "level": 13,
+     "seeds": [
+      {
+       "id": "PHerc0191-s39",
+       "seed_xyz": [
+        5177,
+        5058,
+        12791
+       ]
+      },
+      {
+       "id": "PHerc0191-s40",
+       "seed_xyz": [
+        3379,
+        4377,
+        12792
+       ]
+      },
+      {
+       "id": "PHerc0191-s41",
+       "seed_xyz": [
+        4324,
+        2642,
+        12789
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       11288,
+       14293
+      ],
+      "xz": [
+       1141,
+       6559
+      ],
+      "yz": [
+       1878,
+       6678
+      ]
+     },
+     "bytes": {
+      "xy": 955915956,
+      "xz": 4352483828,
+      "yz": 4595933898
+     },
+     "bytes_total": 9904333682,
+     "new_bytes_if_kept": 255267902,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:11288-14293 xz:1141-6559 yz:1878-6678"
+    },
+    {
+     "level": 14,
+     "seeds": [
+      {
+       "id": "PHerc0191-s42",
+       "seed_xyz": [
+        4433,
+        5904,
+        13618
+       ]
+      },
+      {
+       "id": "PHerc0191-s43",
+       "seed_xyz": [
+        3353,
+        4171,
+        13618
+       ]
+      },
+      {
+       "id": "PHerc0191-s44",
+       "seed_xyz": [
+        5065,
+        3728,
+        13618
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       12117,
+       15119
+      ],
+      "xz": [
+       2227,
+       7405
+      ],
+      "yz": [
+       1852,
+       6566
+      ]
+     },
+     "bytes": {
+      "xy": 964779936,
+      "xz": 4319507250,
+      "yz": 4553518650
+     },
+     "bytes_total": 9837805836,
+     "new_bytes_if_kept": 283532906,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:12117-15119 xz:2227-7405 yz:1852-6566"
+    },
+    {
+     "level": 15,
+     "seeds": [
+      {
+       "id": "PHerc0191-s45",
+       "seed_xyz": [
+        5580,
+        4694,
+        14449
+       ]
+      },
+      {
+       "id": "PHerc0191-s46",
+       "seed_xyz": [
+        3432,
+        6256,
+        14445
+       ]
+      },
+      {
+       "id": "PHerc0191-s47",
+       "seed_xyz": [
+        3491,
+        3234,
+        14444
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       12943,
+       15950
+      ],
+      "xz": [
+       1733,
+       7757
+      ],
+      "yz": [
+       1931,
+       7081
+      ]
+     },
+     "bytes": {
+      "xy": 992077370,
+      "xz": 4642631346,
+      "yz": 4710994110
+     },
+     "bytes_total": 10345702826,
+     "new_bytes_if_kept": 295956510,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:12943-15950 xz:1733-7757 yz:1931-7081"
+    },
+    {
+     "level": 16,
+     "seeds": [
+      {
+       "id": "PHerc0191-s48",
+       "seed_xyz": [
+        5212,
+        5368,
+        15272
+       ]
+      },
+      {
+       "id": "PHerc0191-s49",
+       "seed_xyz": [
+        3110,
+        5151,
+        15266
+       ]
+      },
+      {
+       "id": "PHerc0191-s50",
+       "seed_xyz": [
+        4607,
+        3465,
+        15274
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       13765,
+       16775
+      ],
+      "xz": [
+       1964,
+       6869
+      ],
+      "yz": [
+       1609,
+       6713
+      ]
+     },
+     "bytes": {
+      "xy": 1044698406,
+      "xz": 4247282502,
+      "yz": 4704005670
+     },
+     "bytes_total": 9995986578,
+     "new_bytes_if_kept": 299775466,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:13765-16775 xz:1964-6869 yz:1609-6713"
+    },
+    {
+     "level": 17,
+     "seeds": [
+      {
+       "id": "PHerc0191-s51",
+       "seed_xyz": [
+        4572,
+        5686,
+        16101
+       ]
+      },
+      {
+       "id": "PHerc0191-s52",
+       "seed_xyz": [
+        2830,
+        4115,
+        16099
+       ]
+      },
+      {
+       "id": "PHerc0191-s53",
+       "seed_xyz": [
+        5254,
+        3963,
+        16097
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       14596,
+       17602
+      ],
+      "xz": [
+       2462,
+       7187
+      ],
+      "yz": [
+       1329,
+       6755
+      ]
+     },
+     "bytes": {
+      "xy": 1071047916,
+      "xz": 4116218174,
+      "yz": 4826571200
+     },
+     "bytes_total": 10013837290,
+     "new_bytes_if_kept": 292322178,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:14596-17602 xz:2462-7187 yz:1329-6755"
+    },
+    {
+     "level": 18,
+     "seeds": [
+      {
+       "id": "PHerc0191-s54",
+       "seed_xyz": [
+        6194,
+        4620,
+        16927
+       ]
+      },
+      {
+       "id": "PHerc0191-s55",
+       "seed_xyz": [
+        3609,
+        5839,
+        16923
+       ]
+      },
+      {
+       "id": "PHerc0191-s56",
+       "seed_xyz": [
+        3782,
+        3695,
+        16926
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       15422,
+       18428
+      ],
+      "xz": [
+       2194,
+       7340
+      ],
+      "yz": [
+       2108,
+       7695
+      ]
+     },
+     "bytes": {
+      "xy": 1044085234,
+      "xz": 4320500154,
+      "yz": 4754218392
+     },
+     "bytes_total": 10118803780,
+     "new_bytes_if_kept": 337502150,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:15422-18428 xz:2194-7340 yz:2108-7695"
+    },
+    {
+     "level": 19,
+     "seeds": [
+      {
+       "id": "PHerc0191-s57",
+       "seed_xyz": [
+        5119,
+        5395,
+        17751
+       ]
+      },
+      {
+       "id": "PHerc0191-s58",
+       "seed_xyz": [
+        2919,
+        4849,
+        17753
+       ]
+      },
+      {
+       "id": "PHerc0191-s59",
+       "seed_xyz": [
+        4323,
+        2714,
+        17748
+       ]
+      }
+     ],
+     "ranges": {
+      "xy": [
+       16247,
+       18976
+      ],
+      "xz": [
+       1213,
+       6896
+      ],
+      "yz": [
+       1418,
+       6620
+      ]
+     },
+     "bytes": {
+      "xy": 850937770,
+      "xz": 4512202604,
+      "yz": 4720041000
+     },
+     "bytes_total": 10083181374,
+     "new_bytes_if_kept": 102777864,
+     "sync_cmd": "/opt/hv/bin/python tools/sib/tracer/sync_normalgrids.py s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.normal-grids/ /work/ng/PHerc0191 logs/sib/census/sync/PHerc0191_ng_manifest.jsonl xy:16247-18976 xz:1213-6896 yz:1418-6620"
+    }
+   ],
+   "union_bytes": 15903172502,
+   "max_level_bytes": 10391605514,
+   "time_per_seed_s_measured_scaled": 721.5090910305557,
+   "hours_60_seeds_4_parallel": 3.0062878792939824,
+   "commands": [
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s00 --params /work/census_trace/PHerc0191/params_g75.json --seed 5574 5098 2038",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s01 --params /work/census_trace/PHerc0191/params_g75.json --seed 4692 5126 2048",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s02 --params /work/census_trace/PHerc0191/params_g75.json --seed 4692 4806 2038",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s03 --params /work/census_trace/PHerc0191/params_g75.json --seed 5290 5746 2864",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s04 --params /work/census_trace/PHerc0191/params_g75.json --seed 3564 5556 2866",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s05 --params /work/census_trace/PHerc0191/params_g75.json --seed 4796 4113 2865",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s06 --params /work/census_trace/PHerc0191/params_g75.json --seed 4441 6157 3692",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s07 --params /work/census_trace/PHerc0191/params_g75.json --seed 2758 4620 3692",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s08 --params /work/census_trace/PHerc0191/params_g75.json --seed 5078 4490 3691",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s09 --params /work/census_trace/PHerc0191/params_g75.json --seed 5404 5142 4516",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s10 --params /work/census_trace/PHerc0191/params_g75.json --seed 3602 6361 4519",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s11 --params /work/census_trace/PHerc0191/params_g75.json --seed 3679 4059 4519",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s12 --params /work/census_trace/PHerc0191/params_g75.json --seed 5779 6169 5338",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s13 --params /work/census_trace/PHerc0191/params_g75.json --seed 2940 5488 5346",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s14 --params /work/census_trace/PHerc0191/params_g75.json --seed 4521 4099 5346",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s15 --params /work/census_trace/PHerc0191/params_g75.json --seed 4566 6240 6173",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s16 --params /work/census_trace/PHerc0191/params_g75.json --seed 3038 4300 6173",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s17 --params /work/census_trace/PHerc0191/params_g75.json --seed 5034 4150 6173",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s18 --params /work/census_trace/PHerc0191/params_g75.json --seed 5842 4593 7000",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s19 --params /work/census_trace/PHerc0191/params_g75.json --seed 3553 5684 7002",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s20 --params /work/census_trace/PHerc0191/params_g75.json --seed 3282 3038 7001",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s21 --params /work/census_trace/PHerc0191/params_g75.json --seed 5077 5131 7830",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s22 --params /work/census_trace/PHerc0191/params_g75.json --seed 3166 4717 7828",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s23 --params /work/census_trace/PHerc0191/params_g75.json --seed 4419 2919 7833",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s24 --params /work/census_trace/PHerc0191/params_g75.json --seed 4364 5197 8654",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s25 --params /work/census_trace/PHerc0191/params_g75.json --seed 2552 3584 8655",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s26 --params /work/census_trace/PHerc0191/params_g75.json --seed 5330 3217 8655",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s27 --params /work/census_trace/PHerc0191/params_g75.json --seed 5328 4077 9483",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s28 --params /work/census_trace/PHerc0191/params_g75.json --seed 3390 5467 9480",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s29 --params /work/census_trace/PHerc0191/params_g75.json --seed 3500 2872 9482",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s30 --params /work/census_trace/PHerc0191/params_g75.json --seed 4736 4520 10305",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s31 --params /work/census_trace/PHerc0191/params_g75.json --seed 2576 4502 10309",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s32 --params /work/census_trace/PHerc0191/params_g75.json --seed 4253 2913 10310",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s33 --params /work/census_trace/PHerc0191/params_g75.json --seed 4355 5728 11136",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s34 --params /work/census_trace/PHerc0191/params_g75.json --seed 2665 3349 11136",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s35 --params /work/census_trace/PHerc0191/params_g75.json --seed 4774 3214 11136",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s36 --params /work/census_trace/PHerc0191/params_g75.json --seed 5735 3886 11963",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s37 --params /work/census_trace/PHerc0191/params_g75.json --seed 3454 4924 11963",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s38 --params /work/census_trace/PHerc0191/params_g75.json --seed 2971 2008 11966",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s39 --params /work/census_trace/PHerc0191/params_g75.json --seed 5177 5058 12791",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s40 --params /work/census_trace/PHerc0191/params_g75.json --seed 3379 4377 12792",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s41 --params /work/census_trace/PHerc0191/params_g75.json --seed 4324 2642 12789",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s42 --params /work/census_trace/PHerc0191/params_g75.json --seed 4433 5904 13618",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s43 --params /work/census_trace/PHerc0191/params_g75.json --seed 3353 4171 13618",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s44 --params /work/census_trace/PHerc0191/params_g75.json --seed 5065 3728 13618",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s45 --params /work/census_trace/PHerc0191/params_g75.json --seed 5580 4694 14449",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s46 --params /work/census_trace/PHerc0191/params_g75.json --seed 3432 6256 14445",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s47 --params /work/census_trace/PHerc0191/params_g75.json --seed 3491 3234 14444",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s48 --params /work/census_trace/PHerc0191/params_g75.json --seed 5212 5368 15272",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s49 --params /work/census_trace/PHerc0191/params_g75.json --seed 3110 5151 15266",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s50 --params /work/census_trace/PHerc0191/params_g75.json --seed 4607 3465 15274",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s51 --params /work/census_trace/PHerc0191/params_g75.json --seed 4572 5686 16101",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s52 --params /work/census_trace/PHerc0191/params_g75.json --seed 2830 4115 16099",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s53 --params /work/census_trace/PHerc0191/params_g75.json --seed 5254 3963 16097",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s54 --params /work/census_trace/PHerc0191/params_g75.json --seed 6194 4620 16927",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s55 --params /work/census_trace/PHerc0191/params_g75.json --seed 3609 5839 16923",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s56 --params /work/census_trace/PHerc0191/params_g75.json --seed 3782 3695 16926",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s57 --params /work/census_trace/PHerc0191/params_g75.json --seed 5119 5395 17751",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s58 --params /work/census_trace/PHerc0191/params_g75.json --seed 2919 4849 17753",
+    "docker run --rm --network host --cpus 1 -e OMP_NUM_THREADS=1 -e HTTPS_PROXY=$HTTPS_PROXY -e https_proxy=$HTTPS_PROXY -e HOME=/work/vchome -e SSL_CERT_FILE=/root/.ccr/ca-bundle.crt -e CURL_CA_BUNDLE=/root/.ccr/ca-bundle.crt -v /root/.ccr/ca-bundle.crt:/root/.ccr/ca-bundle.crt:ro -v /home/user:/home/user -v /work:/work ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f /work/villa-gated/volume-cartographer/build/hrc-gated-c2/bin/vc_grow_seg_from_seed --volume s3://vesuvius-challenge-open-data/PHerc0191/representations/predictions/surfaces/20250821151635-surface-20260413222639-surface-m7-L0-th0.2.zarr --target-dir /work/census_trace/PHerc0191/g75/PHerc0191-s59 --params /work/census_trace/PHerc0191/params_g75.json --seed 4323 2714 17748"
+   ]
+  }
+ }
+}

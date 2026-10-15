@@ -1,0 +1,218 @@
+[2026-10-01T02:17:17Z] watchdog: attempt 1
+[2026-10-01T02:17:17Z] env: setup_env_fl2.sh
+[2026-10-01T02:22:19Z] env FAILED (tail:   Caused by: Editable must refer to a local directory, not a Git URL: `git+https://github.com/ScrollPrize/villa@41701aa0eaa1aa765523db3f9f972b5830abf549#egg=vesuvius&subdirectory=vesuvius` /opt/hv-ink/bin/python: No module named pip )
+[2026-10-01T02:27:21Z] watchdog: attempt 2
+[2026-10-01T02:27:21Z] env: setup_env_fl2.sh
+[2026-10-01T02:27:47Z] env: OK
+list: 4 top prefixes, 138 tifxyz segments
+measure: area 16.33 cm2, 41808 quads
+[2026-10-01T02:27:54Z] render auto_grown_20251005230830031
+[2026-10-01T02:31:08Z] infer auto_grown_20251005230830031 (official, both directions, no TTA)
+tiles auto_grown_20251005230830031 forward: kept 3 of 4 grid cells (T=2136 px)
+tiles auto_grown_20251005230830031 reverse: kept 3 of 4 grid cells (T=2136 px)
+enriched 6 rows
+[2026-10-01T02:52:05Z] segment auto_grown_20251005230830031: 6 tiles
+measure: area 8.36 cm2, 22261 quads
+[2026-10-01T02:52:11Z] render auto_grown_20250930104534929
+[2026-10-01T02:54:21Z] infer auto_grown_20250930104534929 (official, both directions, no TTA)
+tiles auto_grown_20250930104534929 forward: kept 1 of 4 grid cells (T=2136 px)
+tiles auto_grown_20250930104534929 reverse: kept 1 of 4 grid cells (T=2136 px)
+enriched 2 rows
+[2026-10-01T03:05:40Z] segment auto_grown_20250930104534929: 2 tiles
+measure: area 7.41 cm2, 20218 quads
+[2026-10-01T03:05:44Z] render auto_grown_20250929222256117
+[2026-10-01T03:07:58Z] infer auto_grown_20250929222256117 (official, both directions, no TTA)
+tiles auto_grown_20250929222256117 forward: kept 1 of 1 grid cells (T=2136 px)
+tiles auto_grown_20250929222256117 reverse: kept 1 of 1 grid cells (T=2136 px)
+enriched 2 rows
+[2026-10-01T03:18:26Z] segment auto_grown_20250929222256117: 2 tiles
+measure: area 3.81 cm2, 10805 quads
+[2026-10-01T03:18:30Z] render auto_grown_20250923163231537
+[2026-10-01T03:19:53Z] infer auto_grown_20250923163231537 (official, both directions, no TTA)
+tiles auto_grown_20250923163231537 forward: kept 1 of 1 grid cells (T=2136 px)
+tiles auto_grown_20250923163231537 reverse: kept 1 of 1 grid cells (T=2136 px)
+enriched 2 rows
+[2026-10-01T03:25:41Z] segment auto_grown_20250923163231537: 2 tiles
+measure: area 3.81 cm2, 10805 quads
+[2026-10-01T03:25:45Z] render auto_grown_20250923164241632
+[2026-10-01T03:27:02Z] infer auto_grown_20250923164241632 (official, both directions, no TTA)
+tiles auto_grown_20250923164241632 forward: kept 1 of 1 grid cells (T=2136 px)
+tiles auto_grown_20250923164241632 reverse: kept 1 of 1 grid cells (T=2136 px)
+enriched 2 rows
+[2026-10-01T03:32:53Z] segment auto_grown_20250923164241632: 2 tiles
+measure: area 3.80 cm2, 10805 quads
+[2026-10-01T03:32:57Z] render auto_grown_20250923164615417
+[2026-10-01T03:34:15Z] infer auto_grown_20250923164615417 (official, both directions, no TTA)
+tiles auto_grown_20250923164615417 forward: kept 1 of 1 grid cells (T=2136 px)
+tiles auto_grown_20250923164615417 reverse: kept 1 of 1 grid cells (T=2136 px)
+enriched 2 rows
+[2026-10-01T03:40:02Z] segment auto_grown_20250923164615417: 2 tiles
+measure: area 6.12 cm2, 16466 quads
+[2026-10-01T03:40:06Z] render auto_grown_20251005230830030
+[2026-10-01T03:41:47Z] infer auto_grown_20251005230830030 (official, both directions, no TTA)
+tiles auto_grown_20251005230830030 forward: kept 1 of 1 grid cells (T=2136 px)
+tiles auto_grown_20251005230830030 reverse: kept 1 of 1 grid cells (T=2136 px)
+enriched 2 rows
+[2026-10-01T03:50:07Z] segment auto_grown_20251005230830030: 2 tiles
+measure: area 3.75 cm2, 10657 quads
+[2026-10-01T03:50:13Z] render auto_grown_20250925165041633
+[2026-10-01T03:51:31Z] infer auto_grown_20250925165041633 (official, both directions, no TTA)
+tiles auto_grown_20250925165041633 forward: kept 1 of 1 grid cells (T=2136 px)
+tiles auto_grown_20250925165041633 reverse: kept 1 of 1 grid cells (T=2136 px)
+enriched 2 rows
+[2026-10-01T03:57:38Z] segment auto_grown_20250925165041633: 2 tiles
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 212, in <module>
+    {"list": lambda: cmd_list(a[1], a[2]),
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 213, in <lambda>
+    "seeds": lambda: cmd_seeds(a[1], a[2], a[3], int(a[4]), a[5]),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 91, in cmd_seeds
+    import requests
+ModuleNotFoundError: No module named 'requests'
+[2026-10-01T03:57:40Z] seeds FAILED
+[2026-10-01T04:02:42Z] watchdog: attempt 3
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 212, in <module>
+    {"list": lambda: cmd_list(a[1], a[2]),
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 213, in <lambda>
+    "seeds": lambda: cmd_seeds(a[1], a[2], a[3], int(a[4]), a[5]),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 91, in cmd_seeds
+    import requests
+ModuleNotFoundError: No module named 'requests'
+[2026-10-01T04:02:42Z] seeds FAILED
+[2026-10-01T04:07:44Z] watchdog: attempt 4
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 212, in <module>
+    {"list": lambda: cmd_list(a[1], a[2]),
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 213, in <lambda>
+    "seeds": lambda: cmd_seeds(a[1], a[2], a[3], int(a[4]), a[5]),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 91, in cmd_seeds
+    import requests
+ModuleNotFoundError: No module named 'requests'
+[2026-10-01T04:07:45Z] seeds FAILED
+[2026-10-01T04:12:47Z] watchdog: attempt 5
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 212, in <module>
+    {"list": lambda: cmd_list(a[1], a[2]),
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 213, in <lambda>
+    "seeds": lambda: cmd_seeds(a[1], a[2], a[3], int(a[4]), a[5]),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 91, in cmd_seeds
+    import requests
+ModuleNotFoundError: No module named 'requests'
+[2026-10-01T04:12:47Z] seeds FAILED
+[2026-10-01T04:17:49Z] watchdog: attempt 6
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 212, in <module>
+    {"list": lambda: cmd_list(a[1], a[2]),
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 213, in <lambda>
+    "seeds": lambda: cmd_seeds(a[1], a[2], a[3], int(a[4]), a[5]),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/sib/census/fl2/fl.py", line 91, in cmd_seeds
+    import requests
+ModuleNotFoundError: No module named 'requests'
+[2026-10-01T04:17:49Z] seeds FAILED
+[2026-10-01T06:07:07Z] watchdog: attempt 1
+[2026-10-01T06:07:08Z] env: docker down after restart; re-running setup_env_fl2.sh (idempotent)
+axis proxy (CT-mask centroid, level 4): [(944.0, 6069, 758), (1888.0, 3729, 2417), (2848.0, 3362, 3126), (3792.0, 3302, 3306), (4736.0, 3257, 3435), (5696.0, 3184, 3633), (6640.0, 3221, 3685), (7584.0, 3254, 3687), (8544.0, 3415, 3702), (9488.0, 3410, 3597), (10432.0, 3461, 3482), (11392.0, 3493, 3518), (12336.0, 3380, 3407), (13280.0, 3363, 3457), (14240.0, 3370, 3411), (15184.0, 3378, 3588), (16128.0, 3554, 3455), (17088.0, 3638, 3550), (18032.0, 3844, 4387)]
+seed [4289.1, 3653.4, 6070.4] r/R 0.497
+seed [3414.6, 4397.7, 8633.6] r/R 0.496
+seed [2380.7, 3510.5, 11196.8] r/R 0.503
+seed [3366.9, 2378.0, 13760.0] r/R 0.491
+[2026-10-01T06:08:24Z] watchdog: attempt 1
+seed [3891.0, 4328.3, 7437.4] r/R 0.5
+seed [2633.0, 4339.2, 10000.6] r/R 0.503
+seed [2717.3, 2760.0, 12563.8] r/R 0.5
+seed [4322.3, 2632.3, 15127.0] r/R 0.499
+seeds: 8
+[2026-10-01T06:08:35Z] grow pherc1203_census_s1 seed (3414.6 4397.7 8633.6)
+axis proxy (CT-mask centroid, level 4): [(944.0, 6069, 758), (1888.0, 3729, 2417), (2848.0, 3362, 3126), (3792.0, 3302, 3306), (4736.0, 3257, 3435), (5696.0, 3184, 3633), (6640.0, 3221, 3685), (7584.0, 3254, 3687), (8544.0, 3415, 3702), (9488.0, 3410, 3597), (10432.0, 3461, 3482), (11392.0, 3493, 3518), (12336.0, 3380, 3407), (13280.0, 3363, 3457), (14240.0, 3370, 3411), (15184.0, 3378, 3588), (16128.0, 3554, 3455), (17088.0, 3638, 3550), (18032.0, 3844, 4387)]
+seed [4289.1, 3653.4, 6070.4] r/R 0.497
+seed [3414.6, 4397.7, 8633.6] r/R 0.496
+seed [2380.7, 3510.5, 11196.8] r/R 0.503
+seed [3366.9, 2378.0, 13760.0] r/R 0.491
+seed [3891.0, 4328.3, 7437.4] r/R 0.5
+seed [2633.0, 4339.2, 10000.6] r/R 0.503
+seed [2717.3, 2760.0, 12563.8] r/R 0.5
+seed [4322.3, 2632.3, 15127.0] r/R 0.499
+seeds: 8
+[2026-10-01T06:09:17Z] grow pherc1203_census_s1 seed (3414.6 4397.7 8633.6)
+measure: area 31.13 cm2, 88209 quads
+[2026-10-01T06:10:42Z] grow pherc1203_census_s1: rc=0 area=31.130857713715802 cm2 selfx=0 kept=true
+[2026-10-01T06:10:44Z] render pherc1203_census_s1
+measure: area 31.14 cm2, 88209 quads
+[2026-10-01T06:11:10Z] grow pherc1203_census_s1: rc=0 area=31.13715457739398 cm2 selfx=0 kept=true
+[2026-10-01T06:11:13Z] render pherc1203_census_s1
+[2026-10-01T06:15:36Z] render pherc1203_census_s1 FAILED
+[2026-10-01T06:15:38Z] grow pherc1203_census_s3 seed (3366.9 2378.0 13760.0)
+[2026-10-01T06:16:34Z] infer pherc1203_census_s1 (official, both directions, no TTA)
+measure: area 22.25 cm2, 62961 quads
+[2026-10-01T06:17:28Z] grow pherc1203_census_s3: rc=0 area=22.25219793571445 cm2 selfx=0 kept=true
+[2026-10-01T06:17:31Z] render pherc1203_census_s3
+[2026-10-01T06:22:29Z] infer pherc1203_census_s3 (official, both directions, no TTA)
+[2026-10-01T06:39:36Z] infer pherc1203_census_s1 FAILED
+[2026-10-01T06:39:38Z] infer pherc1203_census_s3 (official, both directions, no TTA)
+tiles pherc1203_census_s3 forward: kept 4 of 4 grid cells (T=2136 px)
+tiles pherc1203_census_s3 reverse: kept 4 of 4 grid cells (T=2136 px)
+enriched 8 rows
+[2026-10-01T07:25:09Z] segment pherc1203_census_s3: 8 tiles
+[2026-10-01T07:25:14Z] grow pherc1203_census_s5 seed (2633.0 4339.2 10000.6)
+tiles pherc1203_census_s3 forward: kept 4 of 4 grid cells (T=2136 px)
+tiles pherc1203_census_s3 reverse: kept 4 of 4 grid cells (T=2136 px)
+enriched 8 rows
+[2026-10-01T07:25:57Z] segment pherc1203_census_s3: 8 tiles
+[2026-10-01T07:25:59Z] grow pherc1203_census_s5 seed (2633.0 4339.2 10000.6)
+measure: area 26.68 cm2, 75608 quads
+[2026-10-01T07:26:28Z] grow pherc1203_census_s5: rc=0 area=26.684987999029126 cm2 selfx=0 kept=true
+[2026-10-01T07:26:30Z] render pherc1203_census_s5
+measure: area 26.30 cm2, 74523 quads
+[2026-10-01T07:27:13Z] grow pherc1203_census_s5: rc=0 area=26.301027218867553 cm2 selfx=0 kept=true
+[2026-10-01T07:27:16Z] render pherc1203_census_s5
+[2026-10-01T07:31:53Z] infer pherc1203_census_s5 (official, both directions, no TTA)
+[2026-10-01T07:31:59Z] infer pherc1203_census_s5 FAILED
+[2026-10-01T07:32:01Z] grow pherc1203_census_s7 seed (4322.3 2632.3 15127.0)
+[2026-10-01T07:32:17Z] infer pherc1203_census_s5 (official, both directions, no TTA)
+[2026-10-01T07:32:23Z] infer pherc1203_census_s5 FAILED
+[2026-10-01T07:32:25Z] grow pherc1203_census_s7 seed (4322.3 2632.3 15127.0)
+measure: area 25.17 cm2, 71284 quads
+[2026-10-01T07:33:31Z] grow pherc1203_census_s7: rc=0 area=25.174238744713303 cm2 selfx=0 kept=true
+[2026-10-01T07:33:34Z] render pherc1203_census_s7
+measure: area 25.91 cm2, 73422 quads
+[2026-10-01T07:33:44Z] grow pherc1203_census_s7: rc=0 area=25.913107799200645 cm2 selfx=0 kept=true
+[2026-10-01T07:33:47Z] render pherc1203_census_s7
+[2026-10-01T07:38:12Z] render pherc1203_census_s7 FAILED
+[2026-10-01T07:38:14Z] PIPELINE PASS END: lane 1, 4 grow attempts of 8 candidate seeds
+[2026-10-01T07:38:16Z] watchdog: exit (done=yes, attempts=1)
+[2026-10-01T07:40:10Z] watchdog: attempt 1
+[2026-10-01T07:40:11Z] grow pherc1203_census_s1 seed (3414.6 4397.7 8633.6)
+measure: area 31.13 cm2, 88209 quads
+[2026-10-01T07:41:23Z] grow pherc1203_census_s1: rc=0 area=31.130950677616095 cm2 selfx=0 kept=true
+[2026-10-01T07:41:26Z] render pherc1203_census_s1
+[2026-10-01T07:47:08Z] infer pherc1203_census_s1 (official, both directions, no TTA)
+tiles pherc1203_census_s1 forward: kept 4 of 4 grid cells (T=2136 px)
+tiles pherc1203_census_s1 reverse: kept 4 of 4 grid cells (T=2136 px)
+enriched 8 rows
+[2026-10-01T08:15:02Z] segment pherc1203_census_s1: 8 tiles
+[2026-10-01T08:15:07Z] grow pherc1203_census_s5 seed (2633.0 4339.2 10000.6)
+measure: area 25.93 cm2, 73433 quads
+[2026-10-01T08:16:38Z] grow pherc1203_census_s5: rc=0 area=25.932532829845975 cm2 selfx=0 kept=true
+[2026-10-01T08:16:41Z] render pherc1203_census_s5
+[2026-10-01T08:22:01Z] infer pherc1203_census_s5 (official, both directions, no TTA)
+tiles pherc1203_census_s5 forward: kept 4 of 4 grid cells (T=2136 px)
+tiles pherc1203_census_s5 reverse: kept 4 of 4 grid cells (T=2136 px)
+enriched 8 rows
+[2026-10-01T08:48:36Z] segment pherc1203_census_s5: 8 tiles
+[2026-10-01T08:48:40Z] grow pherc1203_census_s7 seed (4322.3 2632.3 15127.0)
+measure: area 25.15 cm2, 71267 quads
+[2026-10-01T08:49:46Z] grow pherc1203_census_s7: rc=0 area=25.153172208846463 cm2 selfx=0 kept=true
+[2026-10-01T08:49:48Z] render pherc1203_census_s7
+[2026-10-01T08:54:39Z] infer pherc1203_census_s7 (official, both directions, no TTA)
+tiles pherc1203_census_s7 forward: kept 4 of 4 grid cells (T=2136 px)
+tiles pherc1203_census_s7 reverse: kept 4 of 4 grid cells (T=2136 px)
+enriched 8 rows
+[2026-10-01T09:21:19Z] segment pherc1203_census_s7: 8 tiles
+[2026-10-01T09:21:22Z] PIPELINE PASS END: lane 1, 4 grow attempts of 8 candidate seeds
+[2026-10-01T09:21:24Z] watchdog: exit (done=yes, attempts=1)

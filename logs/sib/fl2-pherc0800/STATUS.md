@@ -1,0 +1,1 @@
+DONE: no segments in range (0 tiles). PHerc0800 organizer ranks 4-6 measure 1.62 / 1.56 / 0.38 cm2 (all 6 organizer segments <= 2.37 cm2), none >= 16 cm2; auto-grow not applicable (scroll has organizer segments). Evidence: logs/sib/fl2-pherc0800/segments.json. Open question in ASK.md.
