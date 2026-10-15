@@ -1,0 +1,98 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-REMOTE-HARNESS-1 items 4-7",
+ "ref": "origin/claude/gifted-bell-gavnl5-sib-rh-e1",
+ "ref_commit": "b4ba0a5ba40cd26cecc5466bf471d47076f5f4a4",
+ "checks": {
+  "A1_A_before_B": true,
+  "A2_sums": true,
+  "A2_key_shape": true,
+  "A3_img_census": true,
+  "A3_img_null_present": true,
+  "A0_code_hashes": true,
+  "A4_builder_eligible_set": true,
+  "A5_briefs": true,
+  "A5_cover": true,
+  "B1_age_hashes": true,
+  "B2_transcripts": true,
+  "B3_answer_consistency": true
+ },
+ "jobs": {
+  "1dc2a35b-5d0a-4f25-8866-5240b714cd7f": {
+   "brief_ok": true,
+   "brief_sha256": "0334200ce80612fb7ef5ed18ebe249c119c350d05a0d37f09cb4639d0a0ff5ab",
+   "age_sha256": "66e8a0e7ca10d79e3b2371d81d1ab0a7731abb69edacdd169b4b109a8d77d5df",
+   "B1": true,
+   "B2": {
+    "audit_valid": true,
+    "n_violations": 0,
+    "unread": 0,
+    "prompt_eq_brief": true,
+    "after_commit_A": true,
+    "transcript_sha256": "2a8ae17fdebbdc627d882c8220e44417d284cebb8d8547c5eb5ce5ecb1c48aa9"
+   },
+   "B3_consistent": true
+  },
+  "b7fd9ad0-b38c-4fe5-918f-ab8e83956f0c": {
+   "brief_ok": true,
+   "brief_sha256": "7ec63feeb8cc9cf165d118543b591f66fc442c82cc11fd95746375172deaef67",
+   "age_sha256": "6d07991951ae27b999ea458f18d0597e4a596c1f2bd73f5e0461316ad9a1f0c8",
+   "B1": true,
+   "B2": {
+    "audit_valid": true,
+    "n_violations": 0,
+    "unread": 0,
+    "prompt_eq_brief": true,
+    "after_commit_A": true,
+    "transcript_sha256": "cb21bbd7fdbd8d5b69ffdf56456eab05af4ae906bd17124cdcdc5416eca5a1ac"
+   },
+   "B3_consistent": true
+  }
+ },
+ "commit_A": [
+  "24327b7b90b6e96c5aa38f2f761bbe8701c0df92",
+  "2026-09-27T02:41:36+00:00"
+ ],
+ "commit_B": [
+  "f336908b3c406e9885397890c494a199c3c11b9a",
+  "2026-09-27T02:43:08+00:00"
+ ],
+ "key_sha256": {
+  "p4_key_w1.json": "a8a6bebd55c1195a7341e8f315769f104f1ea1564eaa27be79bfb568d2ad8dff",
+  "p4_key_nw1.json": "f3237d4309589b94115d056dac4f3a5ab5163b259e27cf84f66e3cc1df5117cf"
+ },
+ "builder_ref": {
+  "builder_branch": "claude/gifted-bell-gavnl5-sib-p4-tiles-a",
+  "builder_commit": "b59df7ec7060c77c0b8b5bd399954b461a19007d",
+  "manifest": "logs/sib/p4-tiles-a/w1/manifest.json",
+  "tiles_dir": "logs/sib/p4-tiles-a/w1/tiles",
+  "orchestrator_base_commit": "af4cbcae8bfdf82ad2761d46606eb7123216f782",
+  "coverage": false,
+  "task_variant": "block",
+  "rules": "DECL-P4-17-A1, DECL-P4-17-A2 (ASK-4 option a: nw1 = 2 from rot-0 w1 incl. (4,18), one N0 per session)",
+  "null_seed_note": "p4_jobs null seed = 20260926 + sha256(batch)-index = 20296918 (tool semantics per DECL-P4-17-A2), not the 20260927 named in DECL-P4-17-A1",
+  "norm_manifest_sha256": "131b0f791d185bd91ad6558cb1f80a5ee306d046e4e0dda6d91dceaa1dfde4d2",
+  "recipient": "age1vp0tkyj8xecncfmcxj748ceef89mpmwayljccaduapjx3aqhh5rstvvcq5",
+  "key_sha256": {
+   "p4_key_w1.json": "a8a6bebd55c1195a7341e8f315769f104f1ea1564eaa27be79bfb568d2ad8dff",
+   "p4_key_nw1.json": "f3237d4309589b94115d056dac4f3a5ab5163b259e27cf84f66e3cc1df5117cf"
+  },
+  "code_sha256": {
+   "tools/p4/norm_manifest.py": "d2faee660c36db99531755b6f30f4269acd6c5f5b4ebe90ac79ec80d5f596a8f",
+   "tools/p4/p4_jobs.py": "e9f99ce4247e45211b8a6701f42a7ec4e38c9f458b9c23d191bc60cfdf04e45f",
+   "tools/p4/score_p4.py": "9a5b4761a22f6a792eadb38928f8d7adfb217e885fa4ff2655c0bc1b5eb1e24d",
+   "tools/p4/p4_phase2.py": "999cb5534943fdd70b78a35cc0f61957ddc6e5411b9c10b507f0ffa415a94e05",
+   "tools/p4/p4_ext.py": "843a2664913a4a94e95b21635212e1f6d7a4a18d526df4ba10c321ddfed8a8c8",
+   "src/hercules/harness/audit.py": "e36cb995aee6f54461ef8dfc3af57ecd167853c74408f2917d1cbf560426e1f1",
+   "src/hercules/harness/jobs.py": "02d9bd781beb4d3d26bb26efcc8ab4c6fd5c2b1d64bffcba883d2daaf947f0ae",
+   "configs/briefs/keysheet_sigma2.png": "164262e67dfd7589bdd03dddb1b8470267bd7d46d5c40b0af63fc1eb980db438",
+   "configs/briefs/k_d2_task_block.txt": "2995f22f2c5fd5af39a1ce93fb7a3b78f240825e0c8294c06dd8c495e66ac1c5"
+  },
+  "n_images": 402
+ },
+ "n_census": 15,
+ "n_null": 2,
+ "n_eligible_builder": 15,
+ "PASS": true,
+ "installed": true
+}
