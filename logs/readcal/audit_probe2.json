@@ -1,0 +1,524 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "audit_utc": "2026-09-25T05:23:24Z",
+ "repo_head_at_audit": "54f4260edbc1f341167730cb8aa1de5d2853bfe5",
+ "auditor": "fresh auditor agent, no stake in the result",
+ "rules_chain_verify": "OK /home/user/dominion/RULES.md: 74 entries; preamble sha256 f0b331fdd48042aa25f42e9598bb10a3d705e4473102d7b41e89269694dde201; last DECL-D1-A2 sha256 188e7b6b3d55e7e48f05812d51ae30f6386877acec053f107c77f896cf27e773",
+ "audit_of": "PROBE2-RESULT (DECL-READCAL-PROBE2 as re-declared by DECL-READCAL-PROBE2-A1; key sheet METRIC-HASH-12; scorer METRIC-HASH-11)",
+ "checks": {
+  "1_declaration_before_data": {
+   "result": "PASS (with note)",
+   "DECL-READCAL-PROBE2": {
+    "entry_utc": "2026-09-25T03:30:01Z",
+    "commit": "e4937a6 2026-09-25T03:30:01Z"
+   },
+   "METRIC-HASH-12": {
+    "entry_utc": "2026-09-25T03:30:28Z",
+    "commit": "e6b334e 2026-09-25T03:30:28Z"
+   },
+   "DECL-READCAL-PROBE2-A1": {
+    "entry_utc": "2026-09-25T03:34:38Z",
+    "commit": "fb7d9cf 2026-09-25T03:38:03Z"
+   },
+   "jobs_created_utc": "2026-09-25T03:34:38Z (same second as the A1 entry; the orchestrator command ran rules_append for A1 first and then created the 12 jobs, joined by &&; task files 03:34:38.17-.49, arms.json 03:34:38.61)",
+   "readers_launched_utc": [
+    "2026-09-25T03:34:53Z",
+    "2026-09-25T03:36:19Z"
+   ],
+   "sealed_answer_mtime_utc": [
+    "2026-09-25T03:35:20Z",
+    "2026-09-25T03:37:07Z"
+   ],
+   "first_decryption_utc": "2026-09-25T03:39:28Z (probe2-final-scoring, 12)",
+   "result_entry_utc": "2026-09-25T03:41:34Z (commit bd86d4b 03:42:01Z)",
+   "finding": "A1 entry precedes job creation (same command, earlier step) and every sealed answer; its commit (03:38:03Z) precedes the first decryption (03:39:28Z) but follows all 12 sealed writes. No Edit/Write of RULES.md occurred between the append and the commit (orchestrator transcript: only reader launches, git status/diff, commit); the hash chain verifies. Answers were sealed and unreadable until 03:39:28Z."
+  },
+  "2_scorer_integrity": {
+   "src/hercules/scorer/probe1.py": {
+    "sha256": "d5d68ff721205a85fb2c398af2bb981dc46805f369cc2a8c54616c90bcedc1e3",
+    "declared": "METRIC-HASH-11",
+    "equal": true,
+    "git": "only commit f3c3dda 2026-09-25T03:02:13Z (METRIC-HASH-11 commit); blob sha256 equal"
+   },
+   "src/hercules/scorer/consensus.py": {
+    "sha256": "d5ae23ef1af08be1323ad2be21ec6ca411186e8ebe107a2e5c3241b9f60ee594",
+    "declared": "METRIC-HASH-0 (and METRIC-HASH-10)",
+    "equal": true,
+    "git": "last change 15ca995 2026-09-24T21:57:36Z"
+   },
+   "src/hercules/scorer/letters.py": {
+    "declared": "METRIC-HASH-0",
+    "equal": true
+   },
+   "src/hercules/scorer/matching.py": {
+    "declared": "METRIC-HASH-0",
+    "equal": true
+   },
+   "src/hercules/scorer/schema.py": {
+    "declared": "METRIC-HASH-0",
+    "equal": true
+   },
+   "src/hercules/scorer/keyaccess.py": {
+    "declared": "METRIC-HASH-5",
+    "equal": true
+   },
+   "src/hercules/harness/audit.py": {
+    "declared": "METRIC-HASH-5",
+    "equal": true
+   },
+   "src/hercules/harness/collect.py": {
+    "declared": "METRIC-HASH-5",
+    "equal": true
+   },
+   "transcript_scan": "no Edit/Write/shell write to src/hercules/scorer or src/hercules/harness files in any transcript after 2026-09-25T03:02:13Z (only a new file sealpos.py at 05:07:56Z, after all three results)",
+   "result": "PASS",
+   "keysheet": "configs/briefs/probe2_keysheet.png, /work/probe2/keysheet.png and /work/probe1/keysheet_5da96bde.png all sha256 5da96bde... = METRIC-HASH-12"
+  },
+  "3_transcript_audit": {
+   "result": "PASS",
+   "method": "hercules.harness.audit.audit() called directly per job (nothing appended to logs/harness_jobs.tsv), plus auditor checks: each listed image Read exactly once, no other tool, exactly one sealed write matching the permitted form to the job path and scorer recipient, one hand-back, one non-meta prompt whose sha256 equals the job brief_sha256, wire tool inputs equal logged inputs, no tool errors, sealed file sha256 equals job answer_sha256, transcript model equals arm model; orchestrator Agent calls: one launch per job, subagent_type general-purpose, requested model equals arm model, prompt sha256 equals brief_sha256; no SendMessage to any reader.",
+   "n_jobs": 12,
+   "n_all_checks_pass": 12,
+   "violations_total": 0,
+   "unread_images_total": 0,
+   "images_read_per_job": [
+    5
+   ],
+   "sealed_writes_per_job": [
+    1
+   ],
+   "transcript_model_vs_arm": {
+    "match": 12
+   },
+   "readers_per_arm": {
+    "K_D2_A_opus": 3,
+    "K_D2_A_fable": 3,
+    "K_D2_B_opus": 3,
+    "K_D2_B_fable": 3
+   },
+   "distinct_agents": 12
+  },
+  "4_inputs": {
+   "result": "PASS",
+   "image_sha256": "all 12 jobs: first image is the key sheet (sha256 5da96bde05851b0cd9316292e5f7ef95d497a400f582c6869840a66dc6a65f88, exactly once), then the 4 PROBE-1 D2 images of the arm state; every window-image sha256 equals /work/probe1/manifest.json and the files on disk",
+   "order": "window order per job equals arms.json order; 12 distinct orders",
+   "freshness": "12 distinct agent ids, none used in any other job of any probe; one prompt per transcript"
+  },
+  "5_rederivation": {
+   "result": "PASS",
+   "decryptions": {
+    "purpose": "audit-probe2",
+    "n": 12,
+    "first_utc": "2026-09-25T05:17:43Z",
+    "last_utc": "2026-09-25T05:17:43Z"
+   },
+   "answers": 12,
+   "malformed_by_declared_validator": 0,
+   "raw_left_namings": 79,
+   "unknown_identity_namings": 0,
+   "removed_by_per_reader_dedup": 0,
+   "right_side_namings": 0,
+   "items_not_in_key": 0,
+   "namings_on_items_not_in_key": 0,
+   "item_coverage": "every window image answered exactly once; the key-sheet item (listed first, not in the key) was omitted from all 12 answers, so 0 key-sheet namings",
+   "normaliser_check": "auditor's own identity mapping (Unicode names, spec B) vs hercules.scorer.letters.normalize_letter: 0 disagreements in 79 namings",
+   "own_code": "identity from Unicode names; [y,x] = M [iy,ix,1] with the key image_to_levelled_window_px; per-reader same-kind dedup < 150 px (first kept); greedy one-to-one complete-linkage grouping (pairs of different readers within 150 px sorted by distance, rank), >= 2 of 3 readers; firm if >= 2 members firm; identity shuffle within reader, positions fixed, 2000 permutations with python random (not numpy), p = (1 + #null >= obs)/(1 + N); code validated first on synthetic answers against the declared scorer (all counts equal, 60 synthetic answers).",
+   "declared_scorer_rerun": "hercules.scorer.probe1.map_namings/score_arm on the same decrypted answers, reader labels r0-r2 as in the recorded runs",
+   "comparison": {
+    "recorded_cells_compared": 16,
+    "count_differences": [],
+    "p_declared_rerun_equal_recorded_cells": 16,
+    "p_differences": [],
+    "own_code_vs_declared_scorer_count_differences": [],
+    "cells_where_greedy_below_exact_max_grouping": [],
+    "cells_sensitive_to_dedup_boundary": []
+   }
+  },
+  "6_bar": {
+   "result": "PASS (recorded verdict follows from re-derived numbers)",
+   "declared": "lift condition: some arm >= 5 agreed in a window with identity-shuffle p < 0.05 there (reused windows: lifts nothing without fresh replication); SG-FEAS: >= 12 agreed and >= 8 agreed-firm in one window",
+   "cells_meeting_condition_declared_p": [
+    [
+     "K_D2_A_fable",
+     "w039_y2816_x3840"
+    ]
+   ],
+   "cells_meeting_condition_auditor_p": [
+    [
+     "K_D2_A_fable",
+     "w039_y2816_x3840"
+    ]
+   ],
+   "critical_cell": {
+    "arm": "K_D2_A_fable",
+    "window": "w039_y2816_x3840",
+    "agreed": 5,
+    "p_declared": "21/667",
+    "p_auditor_2000": "25/667",
+    "p_auditor_20000": 0.030648
+   },
+   "sg_feas_window_exists": false,
+   "outcome": "condition MET in exactly one cell (K_D2_A_fable w039, 5 agreed, p < 0.05 under both RNGs); SG-FEAS NOT PASSED; windows reused, so nothing lifts until fresh replication",
+   "recorded_verdict": "condition met in one cell; SG-FEAS NOT PASSED; replication required; suspension continues",
+   "verdict_follows": true
+  }
+ },
+ "recomputed": {
+  "windows": [
+   "w030_y2816_x3072",
+   "w035_y1792_x768",
+   "w039_y2816_x3840",
+   "w043_y3072_x4608"
+  ],
+  "arms": {
+   "K_D2_A_fable": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w039_y2816_x3840": {
+      "agreed": 5,
+      "agreed_firm": 0,
+      "named_total": 22,
+      "group_sizes_2_3": [
+       3,
+       2
+      ],
+      "p_auditor_2000": "25/667",
+      "p_auditor_2000_float": 0.03748,
+      "p_declared_scorer": "21/667",
+      "p_declared_float": 0.03148,
+      "p_auditor_20000": 0.030648,
+      "max_one_to_one_groups": 5,
+      "agreed_if_dedup_inclusive_150": 5
+     },
+     "w043_y3072_x4608": {
+      "agreed": 3,
+      "agreed_firm": 0,
+      "named_total": 11,
+      "group_sizes_2_3": [
+       2,
+       1
+      ],
+      "p_auditor_2000": "62/667",
+      "p_auditor_2000_float": 0.09295,
+      "p_declared_scorer": "65/667",
+      "p_declared_float": 0.09745,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 3,
+      "agreed_if_dedup_inclusive_150": 3
+     }
+    },
+    "total": {
+     "agreed": 8,
+     "agreed_firm": 0,
+     "named": 33
+    },
+    "max_agreed_in_window": 5
+   },
+   "K_D2_A_opus": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 4,
+      "group_sizes_2_3": [
+       0,
+       1
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     },
+     "w039_y2816_x3840": {
+      "agreed": 3,
+      "agreed_firm": 0,
+      "named_total": 10,
+      "group_sizes_2_3": [
+       2,
+       1
+      ],
+      "p_auditor_2000": "119/2001",
+      "p_auditor_2000_float": 0.05947,
+      "p_declared_scorer": "113/2001",
+      "p_declared_float": 0.05647,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 3,
+      "agreed_if_dedup_inclusive_150": 3
+     },
+     "w043_y3072_x4608": {
+      "agreed": 3,
+      "agreed_firm": 0,
+      "named_total": 9,
+      "group_sizes_2_3": [
+       2,
+       1
+      ],
+      "p_auditor_2000": "118/2001",
+      "p_auditor_2000_float": 0.05897,
+      "p_declared_scorer": "103/2001",
+      "p_declared_float": 0.05147,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 3,
+      "agreed_if_dedup_inclusive_150": 3
+     }
+    },
+    "total": {
+     "agreed": 7,
+     "agreed_firm": 0,
+     "named": 23
+    },
+    "max_agreed_in_window": 3
+   },
+   "K_D2_B_fable": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w039_y2816_x3840": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 4,
+      "group_sizes_2_3": [
+       0,
+       1
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     },
+     "w043_y3072_x4608": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 3,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     }
+    },
+    "total": {
+     "agreed": 1,
+     "agreed_firm": 0,
+     "named": 7
+    },
+    "max_agreed_in_window": 1
+   },
+   "K_D2_B_opus": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 3,
+      "group_sizes_2_3": [
+       1,
+       0
+      ],
+      "p_auditor_2000": "998/2001",
+      "p_auditor_2000_float": 0.49875,
+      "p_declared_scorer": "330/667",
+      "p_declared_float": 0.49475,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     },
+     "w039_y2816_x3840": {
+      "agreed": 2,
+      "agreed_firm": 0,
+      "named_total": 7,
+      "group_sizes_2_3": [
+       1,
+       1
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 2,
+      "agreed_if_dedup_inclusive_150": 2
+     },
+     "w043_y3072_x4608": {
+      "agreed": 2,
+      "agreed_firm": 0,
+      "named_total": 6,
+      "group_sizes_2_3": [
+       1,
+       1
+      ],
+      "p_auditor_2000": "1019/2001",
+      "p_auditor_2000_float": 0.50925,
+      "p_declared_scorer": "1030/2001",
+      "p_declared_float": 0.51474,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 2,
+      "agreed_if_dedup_inclusive_150": 2
+     }
+    },
+    "total": {
+     "agreed": 5,
+     "agreed_firm": 0,
+     "named": 16
+    },
+    "max_agreed_in_window": 2
+   }
+  },
+  "mirror_check_A_vs_B": {
+   "opus": [
+    7,
+    5
+   ],
+   "fable": [
+    8,
+    1
+   ]
+  },
+  "paired_vs_probe1_D2_summed_agreed": {
+   "A_opus": [
+    6,
+    7
+   ],
+   "A_fable": [
+    6,
+    8
+   ],
+   "B_opus": [
+    6,
+    5
+   ],
+   "B_fable": [
+    3,
+    1
+   ]
+  }
+ },
+ "differences_vs_recorded": {
+  "counts": "none: all 16 arm-window cells and totals equal; own code equals the declared scorer in every cell",
+  "p": "declared-scorer rerun reproduces every recorded p exactly; auditor RNG gives 0.0375 (2000) and 0.0306 (20000) for the critical cell vs recorded 0.0315",
+  "text": []
+ },
+ "bar_outcome": "MET in one cell (K_D2_A_fable w039); SG-FEAS NOT PASSED; no lift (reused windows)",
+ "audit": "PASS",
+ "reasons": [
+  "declaration and re-declaration entered before any job or sealed answer and committed before the first decryption",
+  "scorer and key sheet equal their METRIC-HASH entries",
+  "all 12 transcripts VALID; inputs equal the manifest and key-sheet hash; 12 fresh distinct agents with the declared models",
+  "independent re-derivation reproduces every recorded count; the declared condition applied to re-derived numbers gives the recorded outcome, and the critical p stays below 0.05 under an independent RNG"
+ ],
+ "notes": [
+  "DECL-READCAL-PROBE2-A1 was committed (03:38:03Z) after the 12 sealed answers were written (03:35:20Z-03:37:07Z), though before any decryption; commit-before-readers would be cleaner. Not invalidating: text unchanged between append and commit, answers unreadable until 03:39:28Z.",
+  "Entry utc of A1 equals the job-creation second; ordering established from the single orchestrator command (append, then job creation).",
+  "Re-declaration moved PROBE-2 onto the PROBE-1 windows after PROBE-1 results were known; the declared consequence (no lift without fresh replication) handles this and was applied.",
+  "No multiplicity correction across about 10 cells with a defined p (disclosed caveat in PROBE2-RESULT).",
+  "The result was recorded before this independent audit (AUDIT-OMIT-PROBES, I17)."
+ ]
+}
