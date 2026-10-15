@@ -1,0 +1,27 @@
+TASK rh-e1: remote blind-read harness for P4-E material E1 (raw 1.129 um CT, Paris 4 inner title strip 20260623141924-w010-027) under DECL-REMOTE-HARNESS-1. Read RULES.md DECL-HARNESS-A1, DECL-P4-2 (+A1-A3), DECL-P4-4 (+A1), DECL-P4-5, DECL-P4-5-A1, METRIC-HASH-26, METRIC-HASH-27 and DECL-REMOTE-HARNESS-1 first. The last is your contract; follow it item by item.
+1. Setup:
+   - Verify that the sha256 of tools/p4/*.py equals METRIC-HASH-27.
+   - Create /work/p4/img, /srv/scorer and /work/sealed_io.
+   - Confirm `age` exists; install it if missing.
+2. Material: wait for p4-tiles-b to push the DECL-P4-5-A1 rebuild to origin/claude/gifted-bell-gavnl5-sib-p4-tiles-b (expected at logs/sib/p4-tiles-b/e1a1/manifest.json with tiles/). Poll with git ls-remote every 5 min; never use the superseded e1/ tiles. Then:
+   - python3 tools/p4/norm_manifest.py origin/claude/gifted-bell-gavnl5-sib-p4-tiles-b logs/sib/p4-tiles-b/e1a1/manifest.json logs/sib/p4-tiles-b/e1a1/tiles /work/p4/src_e1 --coverage
+   - python3 tools/p4/p4_jobs.py import 20260623141924-w010-027 /work/p4/src_e1/tiles /work/p4/src_e1/manifest_norm.json e1
+   - python3 tools/p4/p4_jobs.py null ne1 <number of sessions = ceil(n_e1/8)> e1
+   - python3 tools/p4/p4_jobs.py jobs census_e1 e1 ne1 sigma2
+   If the manifest has different key names or paths, adapt only the path arguments. Never change the eligibility rules.
+3. COMMIT A, pushed BEFORE any reader starts, under logs/sib/rh-e1/A/:
+   - copies of /srv/scorer/p4_key_e1.json and p4_key_ne1.json, with sha256;
+   - /work/p4/jobs_census_e1.json;
+   - all /work/p4/brief_*.txt of this batch;
+   - img_manifest.json mapping uuid to sha256 for every /work/p4/img file;
+   - the builder ref sha.
+4. Readers: for each job, one fresh Agent with subagent_type general-purpose and model opus, whose prompt is EXACTLY the text of /work/p4/brief_<job>.txt. Add nothing and change nothing. Launch up to 4 at a time, in the background. Readers write sealed answers to the orchestrator's age key, and you cannot and must not try to read them. The reader's reply should be DONE; ignore anything else it says and never quote it.
+5. Audit: locate each reader's transcript (~/.claude/projects/*/<this session>/subagents/agent-<id>.jsonl) and run hercules.harness.audit.audit(transcript, allowed_images=<the image paths listed in the brief>, sealed_output='/work/sealed_io/<job>.age', recipient='age1vp0tkyj8xecncfmcxj748ceef89mpmwayljccaduapjx3aqhh5rstvvcq5') with PYTHONPATH=src.
+   - Also check prompt == brief: the first user message of the transcript must equal the brief bytes.
+   - An audit-invalid job gets one fresh re-run with the same brief (DECL-P4-2 rerun rule); disclose it.
+6. COMMIT B, under logs/sib/rh-e1/B/:
+   - sealed_io/<job>.age;
+   - audit.json (per job: valid, violations, unread_images, prompt_equals_brief, answer_sha256, brief_sha256, done_utc);
+   - transcripts/<job>.jsonl.gz;
+   - harness_jobs.tsv.
+7. Then, if the P4-D M2a tiles have appeared on p4-tiles-a (logs/sib/p4-tiles-a/m2a/), run the same steps for batches d_a / nd_a / census_da (with --coverage), under logs/sib/rh-e1/M2a/{A,B}. You may hand M2a to a sub-sibling.
