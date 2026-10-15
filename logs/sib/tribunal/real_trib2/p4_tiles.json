@@ -1,0 +1,303 @@
+{
+ "cross_segment": {
+  "T": [
+   8343,
+   8301
+  ],
+  "formulas": "a: scale / (median of all valid edges x voxel); b: scale / (median of row+col valid edges x voxel) - same definition, per-segment values",
+  "px_per_mm": [
+   417.1314650253318,
+   415.0389822320533
+  ]
+ },
+ "manifest_faults": {
+  "extra_png_chunk": {
+   "caught": 200,
+   "n": 200
+  },
+  "offset_8px_origin": {
+   "caught": 200,
+   "n": 200
+  },
+  "swapped_rc": {
+   "caught": 200,
+   "n": 200
+  },
+  "wrong_T": {
+   "caught": 200,
+   "n": 200
+  },
+  "wrong_px_per_mm": {
+   "caught": 200,
+   "n": 200
+  },
+  "wrong_valid_fraction": {
+   "caught": 200,
+   "n": 200
+  },
+  "wrong_voxel": {
+   "caught": 200,
+   "n": 200
+  }
+ },
+ "metadata": {
+  "key": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/metadata.json",
+  "sha256": "881bf77fc0f02a91040755da25d54ad958e290a528ec61489e411937112fba4d",
+  "voxel_mm": 0.0024
+ },
+ "not_opened": "no PNG tile or prediction pixel was opened",
+ "pixel_faults_synthetic": {
+  "clean": {
+   "caught": 0,
+   "diagnosed_as": {},
+   "n": 200
+  },
+  "mirror_lr": {
+   "caught": 200,
+   "diagnosed_as": {
+    "mirror": 200
+   },
+   "n": 200
+  },
+  "n0_rotation_missing": {
+   "caught": 200,
+   "diagnosed_as": {
+    "rot270cw": 200
+   },
+   "n": 200
+  },
+  "offset8": {
+   "caught": 200,
+   "diagnosed_as": {
+    "shift": 200
+   },
+   "n": 200
+  },
+  "rot90": {
+   "caught": 200,
+   "diagnosed_as": {
+    "rot90cw": 200
+   },
+   "n": 200
+  },
+  "wrong_px_per_mm": {
+   "caught": 200,
+   "diagnosed_as": {
+    "T": 179,
+    "mirror": 3,
+    "rot180cw": 4,
+    "rot270cw": 6,
+    "rot90cw": 3,
+    "shift": 5
+   },
+   "n": 200
+  }
+ },
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "real": {
+  "a": {
+   "all_passed": true,
+   "count_checks": [],
+   "grid_checks": [
+    {
+     "T": 8343,
+     "check": "T_rule",
+     "expected": 8343,
+     "passed": true
+    },
+    {
+     "check": "ppm_recomputed",
+     "passed": true,
+     "recomputed": 417.1314650253318,
+     "recorded": 417.1314650253318
+    },
+    {
+     "check": "ppm_vs_nominal",
+     "passed": true,
+     "ratio": 1.0011155160607963
+    },
+    {
+     "check": "voxel_from_metadata",
+     "metadata": 0.0024,
+     "passed": true,
+     "recorded": 0.0024
+    },
+    {
+     "canvas": [
+      69760,
+      170000
+     ],
+     "check": "canvas_eq_grid_x_scale",
+     "grid": [
+      3488,
+      8500
+     ],
+     "passed": true,
+     "scale": [
+      20.0,
+      20.0
+     ]
+    },
+    {
+     "check": "tile_grid_dims",
+     "expected": [
+      9,
+      21
+     ],
+     "passed": true,
+     "recorded": [
+      9,
+      21
+     ]
+    },
+    {
+     "check": "display_px_per_mm",
+     "passed": true,
+     "value": 53.4
+    }
+   ],
+   "n_tiles_listed": 0,
+   "normalized": {
+    "T": 8343,
+    "canvas": [
+     69760,
+     170000
+    ],
+    "grid": [
+     3488,
+     8500
+    ],
+    "median_edge_vox": 19.97771453857422,
+    "px_per_mm": 417.1314650253318,
+    "scale": [
+     20.0,
+     20.0
+    ],
+    "tile_grid": [
+     9,
+     21
+    ],
+    "tile_mm": 20.0,
+    "tiles_read_eligible": null,
+    "tiles_total": null,
+    "voxel_mm": 0.0024
+   },
+   "segment": "20260701183124-w010-027",
+   "tiles_failing": []
+  },
+  "b": {
+   "all_passed": true,
+   "count_checks": [
+    {
+     "check": "valid_matrix_shape",
+     "passed": true,
+     "shape": [
+      9,
+      22
+     ]
+    },
+    {
+     "check": "eligible_count_vs_matrix",
+     "listed": 171,
+     "matrix_eligible": 171,
+     "near_bar": 0,
+     "passed": true,
+     "recorded": 171
+    },
+    {
+     "check": "tiles_total",
+     "passed": true,
+     "total": 198
+    }
+   ],
+   "grid_checks": [
+    {
+     "T": 8301,
+     "check": "T_rule",
+     "expected": 8301,
+     "passed": true
+    },
+    {
+     "check": "ppm_recomputed",
+     "passed": true,
+     "recomputed": 415.0389822320533,
+     "recorded": 415.0389822320533
+    },
+    {
+     "check": "ppm_vs_nominal",
+     "passed": true,
+     "ratio": 0.9960935573569278
+    },
+    {
+     "check": "voxel_from_metadata",
+     "metadata": 0.0024,
+     "passed": true,
+     "recorded": 0.0024
+    },
+    {
+     "canvas": [
+      71600,
+      174640
+     ],
+     "check": "canvas_eq_grid_x_scale",
+     "grid": [
+      3580,
+      8732
+     ],
+     "passed": true,
+     "scale": [
+      20.0,
+      20.0
+     ]
+    },
+    {
+     "check": "tile_grid_dims",
+     "expected": [
+      9,
+      22
+     ],
+     "passed": true,
+     "recorded": [
+      9,
+      22
+     ]
+    },
+    {
+     "check": "display_px_per_mm",
+     "passed": true,
+     "value": 53.4
+    }
+   ],
+   "n_tiles_listed": 171,
+   "normalized": {
+    "T": 8301,
+    "canvas": [
+     71600,
+     174640
+    ],
+    "grid": [
+     3580,
+     8732
+    ],
+    "median_edge_vox": 20.078435255688987,
+    "px_per_mm": 415.0389822320533,
+    "scale": [
+     20.0,
+     20.0
+    ],
+    "tile_grid": [
+     9,
+     22
+    ],
+    "tile_mm": 20.0,
+    "tiles_read_eligible": 171,
+    "tiles_total": 198,
+    "voxel_mm": 0.0024
+   },
+   "segment": null,
+   "tiles_failing": []
+  }
+ },
+ "rule": "REAL-TRIB-2 (iv), PREREG.md",
+ "verdict": "PASS"
+}

@@ -1,0 +1,349 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "inputs": {
+  "logs/sib/tribunal/p4val/census_a_summary.json": "8da07efb4be50b9c9f27b2286bcdc9c9b0aff6cad071a651fb2a145f2e3261bf",
+  "logs/sib/tribunal/p4val/l2_manifest_3f0dcfc.json": "4e28f20123498fd471e790cabdf29beb1ef7d1a84f1bd36061f719f5b423d6d4"
+ },
+ "census_grid_w010_027_letters_or_rowsN": [
+  [
+   5,
+   5,
+   3,
+   3,
+   4,
+   6,
+   null,
+   13,
+   4,
+   8,
+   null,
+   1,
+   2,
+   8,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   11,
+   6,
+   2,
+   6,
+   4,
+   4,
+   null,
+   8,
+   6,
+   9,
+   1,
+   7,
+   8,
+   2,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   12,
+   4,
+   2,
+   4,
+   4,
+   6,
+   1,
+   9,
+   10,
+   6,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   5,
+   9,
+   1,
+   4,
+   4,
+   7,
+   null,
+   7,
+   7,
+   9,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   9,
+   10,
+   null,
+   6,
+   3,
+   6,
+   1,
+   6,
+   4,
+   5,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   5,
+   8,
+   1,
+   10,
+   10,
+   9,
+   2,
+   8,
+   10,
+   4,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   1,
+   0,
+   1,
+   null,
+   5,
+   1,
+   1,
+   0,
+   2,
+   2,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   null,
+   0,
+   null,
+   null,
+   1,
+   1,
+   2,
+   0,
+   null,
+   1,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ]
+ ],
+ "windows": {
+  "last_text_col": 9,
+  "intercolumn_candidates": [
+   2,
+   4,
+   6,
+   8,
+   10,
+   14
+  ],
+  "slots": [
+   {
+    "col": -1,
+    "tile_cols": [
+     7,
+     8,
+     9
+    ],
+    "tolerance_cols": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ]
+   },
+   {
+    "col": -2,
+    "tile_cols": [
+     3,
+     4,
+     5
+    ],
+    "tolerance_cols": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   {
+    "col": -3,
+    "tile_cols": [
+     0,
+     1
+    ],
+    "tolerance_cols": [
+     0,
+     1,
+     2
+    ]
+   }
+  ],
+  "short_block_cols_r0r1": [
+   11,
+   12,
+   13
+  ],
+  "grade": "UNCERTAIN (census counts are unconfirmed reads)",
+  "alternative": "if the r0-r1 block after the last full column is the short last column, shift every published column number by one (col -1 -> the block)"
+ },
+ "p4l_known_text_tiles": {
+  "rule": "strip-a tiles in the known-text slots (c0-c8 gate columns per DECL-P4-12 item 2)",
+  "slots": [
+   {
+    "col": -1,
+    "tile_cols": [
+     7,
+     8,
+     9
+    ],
+    "tolerance_cols": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ]
+   },
+   {
+    "col": -2,
+    "tile_cols": [
+     3,
+     4,
+     5
+    ],
+    "tolerance_cols": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   {
+    "col": -3,
+    "tile_cols": [
+     0,
+     1
+    ],
+    "tolerance_cols": [
+     0,
+     1,
+     2
+    ]
+   }
+  ]
+ },
+ "l2_manifest_check": {
+  "passed": true,
+  "checks": [
+   {
+    "check": "thresholds",
+    "passed": true,
+    "got": {
+     "T_mid": 93,
+     "T_hi": 203,
+     "source": "s3://vesuvius-challenge-open-data/PHercParis4/segments/20260701183125-w028-037/surface-volumes/2.4um-0.22m-78keV-volume-20260411134726.zarr"
+    }
+   },
+   {
+    "check": "slab",
+    "passed": true,
+    "got": {
+     "slices": [
+      48,
+      60
+     ],
+     "centre": 54,
+     "n": 13,
+     "um": [
+      -14.4,
+      14.4
+     ]
+    }
+   },
+   {
+    "check": "display_rule",
+    "passed": true,
+    "got": "clip(255*(max - T_mid)/(T_hi - T_mid), 0, 255), rint, uint8; 0 outside mesh-valid; cv2.INTER_AREA 8343 -> 1068; uint8 PNG IHDR/IDAT/IEND"
+   },
+   {
+    "check": "tiles",
+    "passed": true,
+    "n": 72,
+    "failing": []
+   },
+   {
+    "check": "manifest_flags",
+    "passed": true,
+    "flags": {
+     "n_tiles_built": 72,
+     "n_eligible_ref": 160,
+     "built_subset_of_ref_eligible": true,
+     "all_ref_eligible_built": false,
+     "valid_fraction_equal_e2": true,
+     "valid_px_equal_e2": true,
+     "png_sha256_recomputed_ok": true,
+     "png_only_IHDR_IDAT_IEND": true
+    }
+   }
+  ]
+ }
+}

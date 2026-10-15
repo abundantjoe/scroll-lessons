@@ -1,0 +1,211 @@
+{
+ "current": {
+  "clean_failures": [],
+  "clean_n": 12,
+  "clean_passed": 12,
+  "faults": {
+   "mirror": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "ambiguous",
+     "transform:flip_lr",
+     "transform:flip_ud"
+    ]
+   },
+   "off_by_one": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "ambiguous",
+     "lag:-1",
+     "lag:1"
+    ]
+   },
+   "offset8": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "offset"
+    ]
+   },
+   "swap_depth": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "ambiguous",
+     "reversed"
+    ]
+   },
+   "wrong_voxel": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "metadata_not_of_this_volume",
+     "wrong_voxel_size"
+    ]
+   }
+  },
+  "thresholds": {
+   "DEPTH_MARGIN": 0.02,
+   "MIN_REF_NCC": 0.5,
+   "MIRROR_MARGIN": 0.05,
+   "OFFSET_TOL_PX": 1,
+   "SLICE_MARGIN": 0.02
+  }
+ },
+ "p1_clean": {
+  "best_ncc": 0.9999442906736298,
+  "depth_margin": 0.8523858691230118,
+  "mirror_margin": 0.5442055080498993,
+  "slice_margin": 0.12652379969716213
+ },
+ "posthoc_min_ref_ncc_0p5": {
+  "clean_failures": [],
+  "clean_n": 12,
+  "clean_passed": 12,
+  "faults": {
+   "mirror": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "ambiguous",
+     "transform:flip_lr",
+     "transform:flip_ud"
+    ]
+   },
+   "off_by_one": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "ambiguous",
+     "lag:-1",
+     "lag:1"
+    ]
+   },
+   "offset8": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "offset"
+    ]
+   },
+   "swap_depth": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "ambiguous",
+     "reversed"
+    ]
+   },
+   "wrong_voxel": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "metadata_not_of_this_volume",
+     "wrong_voxel_size"
+    ]
+   }
+  },
+  "thresholds": {
+   "DEPTH_MARGIN": 0.28412862304100395,
+   "MIN_REF_NCC": 0.5,
+   "MIRROR_MARGIN": 0.1814018360166331,
+   "OFFSET_TOL_PX": 1,
+   "SLICE_MARGIN": 0.04217459989905404
+  }
+ },
+ "preregistered_unrounded": {
+  "clean_failures": [],
+  "clean_n": 12,
+  "clean_passed": 12,
+  "faults": {
+   "mirror": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "ambiguous",
+     "transform:flip_lr",
+     "transform:flip_ud"
+    ]
+   },
+   "off_by_one": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 0,
+    "other_checks_fired": [
+     "depth_order",
+     "mirror",
+     "window_offset"
+    ],
+    "own_check_reasons": [
+     "ambiguous",
+     "lag:-1",
+     "lag:1",
+     "unverifiable"
+    ]
+   },
+   "offset8": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "offset"
+    ]
+   },
+   "swap_depth": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "ambiguous",
+     "reversed"
+    ]
+   },
+   "wrong_voxel": {
+    "caught_by_own_check": 12,
+    "n": 12,
+    "only_own_check": 12,
+    "other_checks_fired": [],
+    "own_check_reasons": [
+     "metadata_not_of_this_volume",
+     "wrong_voxel_size"
+    ]
+   }
+  },
+  "thresholds": {
+   "DEPTH_MARGIN": 0.28412862304100395,
+   "MIN_REF_NCC": 0.9997771626945191,
+   "MIRROR_MARGIN": 0.1814018360166331,
+   "OFFSET_TOL_PX": 1,
+   "SLICE_MARGIN": 0.04217459989905404
+  }
+ },
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "raw": "logs/sib/tribunal/real_trib1_raw.json",
+ "rule": "REAL-TRIB-2 (i), PREREG.md"
+}

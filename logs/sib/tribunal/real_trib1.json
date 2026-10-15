@@ -1,0 +1,191 @@
+{
+ "clean": {
+  "margins": {
+   "abs_shift_max_px": 0,
+   "best_ncc": {
+    "max": 0.999979512418156,
+    "median": 0.9999708527952906,
+    "min": 0.9999430459614951,
+    "n": 12,
+    "p1": 0.9999442906736298,
+    "p5": 0.9999492695221688
+   },
+   "depth_margin": {
+    "max": 1.0163593738195846,
+    "median": 0.9657375779442814,
+    "min": 0.8487997687133159,
+    "n": 12,
+    "p1": 0.8523858691230118,
+    "p5": 0.866730270761796
+   },
+   "identity_zero_ncc": {
+    "max": 0.999979512418156,
+    "median": 0.9999708527952906,
+    "min": 0.9999430459614951,
+    "n": 12,
+    "p1": 0.9999442906736298,
+    "p5": 0.9999492695221688
+   },
+   "mirror_margin": {
+    "max": 0.8043743873435063,
+    "median": 0.732486234750572,
+    "min": 0.5399548808576369,
+    "n": 12,
+    "p1": 0.5442055080498993,
+    "p5": 0.5612080168189492
+   },
+   "slice_margin": {
+    "max": 0.2168610823931294,
+    "median": 0.16512700951395454,
+    "min": 0.12567350274441225,
+    "n": 12,
+    "p1": 0.12652379969716213,
+    "p5": 0.12992498750816167
+   }
+  },
+  "n": 12,
+  "passed_current": 12,
+  "passed_posthoc_alternative": 12,
+  "passed_preregistered_rule": 0
+ },
+ "fault_best_ncc": {
+  "mirror": {
+   "max": 0.999979512418156,
+   "median": 0.9999708527952906,
+   "min": 0.9999430459614951,
+   "n": 12,
+   "p1": 0.9999442906736298,
+   "p5": 0.9999492695221688
+  },
+  "off_by_one": {
+   "max": 0.8469071815949792,
+   "median": 0.8004639823523427,
+   "min": 0.740172343869526,
+   "n": 12,
+   "p1": 0.7404207436676244,
+   "p5": 0.7414143428600181
+  },
+  "offset8": {
+   "max": 0.9999796216770105,
+   "median": 0.999970828484398,
+   "min": 0.9999479279176153,
+   "n": 12,
+   "p1": 0.9999486631001777,
+   "p5": 0.9999516038304275
+  },
+  "swap_depth": {
+   "max": 0.999979512418156,
+   "median": 0.9999708527952906,
+   "min": 0.9999430459614951,
+   "n": 12,
+   "p1": 0.9999442906736298,
+   "p5": 0.9999492695221688
+  }
+ },
+ "faults": {
+  "mirror": {
+   "caught_by_gate": 12,
+   "caught_by_own_check": 12,
+   "caught_under_posthoc_alternative": 12,
+   "caught_under_proposed": 12,
+   "n": 12,
+   "only_own_check_under_alternative": 12,
+   "other_checks_fired": []
+  },
+  "off_by_one": {
+   "caught_by_gate": 12,
+   "caught_by_own_check": 12,
+   "caught_under_posthoc_alternative": 12,
+   "caught_under_proposed": 12,
+   "n": 12,
+   "only_own_check_under_alternative": 12,
+   "other_checks_fired": []
+  },
+  "offset8": {
+   "caught_by_gate": 12,
+   "caught_by_own_check": 12,
+   "caught_under_posthoc_alternative": 12,
+   "caught_under_proposed": 12,
+   "n": 12,
+   "only_own_check_under_alternative": 12,
+   "other_checks_fired": []
+  },
+  "swap_depth": {
+   "caught_by_gate": 12,
+   "caught_by_own_check": 12,
+   "caught_under_posthoc_alternative": 12,
+   "caught_under_proposed": 12,
+   "n": 12,
+   "only_own_check_under_alternative": 12,
+   "other_checks_fired": []
+  },
+  "wrong_voxel": {
+   "caught_by_gate": 12,
+   "caught_by_own_check": 12,
+   "caught_under_posthoc_alternative": 12,
+   "caught_under_proposed": 12,
+   "n": 12,
+   "only_own_check_under_alternative": 12,
+   "other_checks_fired": []
+  }
+ },
+ "metadata_sha256": "95917633ca11a1ddff2e6b7d66360c508f8158bbe05be277c8d51477befb5bae",
+ "n33_slices_1_32_equal_n31": true,
+ "n_windows": 12,
+ "preregistered_rule_defect": "MIN_REF_NCC = p1 - 3 (1 - p1) rounds to 1.000 when the reference is exact; it fails every clean record and is NOT proposed",
+ "proposal_rule": "margin thresholds (mirror, depth, slice) = clean 1st percentile / 3 (safety factor 3);\n  MIN_REF_NCC = max(0.5, p1 - 3 (1 - p1)) with p1 the clean 1st percentile of the best NCC;\n  offset tolerance stays 1 px (reported: the clean maximum |shift|).\nThe proposal is valid only if, re-evaluated under the proposed thresholds, every clean\nrecord still passes and every planted fault is still caught by its own check.",
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "raw": "logs/sib/tribunal/real_trib1_raw.json",
+ "renderer_sha256": "473369f96735b3526e8d2999ad84463ba9b76c1c70cd20abce5998d7af7a9f2c",
+ "retrace": {
+  "base_training_same_in_negative_windows": [],
+  "base_training_same_in_positive_windows": [],
+  "caught": 10,
+  "caught_surface_form_alone": 10,
+  "caught_vertex_form_alone": 0,
+  "false_alarms": 0,
+  "negatives": 10,
+  "positives": 10
+ },
+ "rule": "REAL-TRIB-1",
+ "status": "PROPOSED, not declared",
+ "thresholds_current": {
+  "DEPTH_MARGIN": 0.02,
+  "MIN_REF_NCC": 0.5,
+  "MIRROR_MARGIN": 0.05,
+  "OFFSET_TOL_PX": 1,
+  "SLICE_MARGIN": 0.02
+ },
+ "thresholds_preregistered_rule_output": {
+  "DEPTH_MARGIN": 0.284,
+  "MIN_REF_NCC": 1.0,
+  "MIRROR_MARGIN": 0.181,
+  "OFFSET_TOL_PX": 1,
+  "SLICE_MARGIN": 0.042
+ },
+ "thresholds_proposed": {
+  "DEPTH_MARGIN": 0.284,
+  "MIN_REF_NCC": 0.5,
+  "MIRROR_MARGIN": 0.181,
+  "OFFSET_TOL_PX": 1,
+  "SLICE_MARGIN": 0.042
+ },
+ "thresholds_proposed_basis": "POST-HOC: margins by the pre-registered p1 / 3 rule; MIN_REF_NCC kept at 0.5 (below the 0.74-0.85 surface NCC of genuine off-by-one faults)",
+ "verdict": "PASS",
+ "volume": "s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr",
+ "voxel_um": 9.362,
+ "windows": [
+  "w040_y432_x432",
+  "w040_y1584_x1584",
+  "w040_y2352_x6960",
+  "w040_y3504_x5424",
+  "w040_y4656_x2736",
+  "w040_y5808_x2352",
+  "w044_y432_x432",
+  "w044_y1200_x5424",
+  "w044_y2352_x2736",
+  "w044_y3504_x432",
+  "w044_y4272_x5040",
+  "w044_y5424_x2352"
+ ]
+}

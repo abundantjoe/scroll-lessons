@@ -1,0 +1,79 @@
+{
+ "args": {
+  "noise_max": 12.0,
+  "scale_trials": 50,
+  "seed": 32000,
+  "texture_sigma": 3.0,
+  "worlds": 40
+ },
+ "clean": {
+  "false_alarm_rate": 0.0,
+  "min_best_ncc": 0.972652073022687,
+  "min_depth_margin": 0.5966614751141236,
+  "min_mirror_margin": 0.6065642260922868,
+  "min_slice_margin": 0.07576417726278117,
+  "n": 40,
+  "passed": 40
+ },
+ "faults": {
+  "mirror": {
+   "catch_rate": 1.0,
+   "caught_by_gate": 40,
+   "caught_by_own_check": 40,
+   "n": 40,
+   "other_checks_fired": [],
+   "own_check": "mirror"
+  },
+  "off_by_one": {
+   "catch_rate": 1.0,
+   "caught_by_gate": 40,
+   "caught_by_own_check": 40,
+   "n": 40,
+   "other_checks_fired": [],
+   "own_check": "slice_index"
+  },
+  "offset8": {
+   "catch_rate": 1.0,
+   "caught_by_gate": 40,
+   "caught_by_own_check": 40,
+   "n": 40,
+   "other_checks_fired": [],
+   "own_check": "window_offset"
+  },
+  "retrace": {
+   "catch_rate": 1.0,
+   "caught_by_gate": 40,
+   "caught_by_own_check": 40,
+   "n": 40,
+   "other_checks_fired": [],
+   "own_check": "retrace"
+  },
+  "swap_depth": {
+   "catch_rate": 1.0,
+   "caught_by_gate": 40,
+   "caught_by_own_check": 40,
+   "n": 40,
+   "other_checks_fired": [],
+   "own_check": "depth_order"
+  },
+  "wrong_voxel": {
+   "catch_rate": 1.0,
+   "caught_by_gate": 40,
+   "caught_by_own_check": 40,
+   "n": 40,
+   "other_checks_fired": [],
+   "own_check": "voxel_size"
+  }
+ },
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "retrace_at_20vox": {
+  "caught": 50,
+  "caught_by_literal_vertex_rule_alone": 1,
+  "caught_by_surface_rule_alone": 50,
+  "far_same_sheet_false_alarms": 0,
+  "n": 50,
+  "neighbour_false_alarms": 0
+ },
+ "tribunal_version": "tribunal-0.1.0",
+ "verdict": "PASS"
+}

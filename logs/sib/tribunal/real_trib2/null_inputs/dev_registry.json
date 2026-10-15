@@ -1,0 +1,1030 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-25T19:31:59Z",
+ "task": "devloop",
+ "serves": "RULES.md DECL-DEVLOOP (DEV data)",
+ "viewing": "no image was written, opened or displayed; numbers only",
+ "script": {
+  "path": "tools/sib/devloop/registry.py",
+  "sha256": "10518ae29a88b98043f89318169173a91ea80887b4d4cff8cc136c0d8d99cf60"
+ },
+ "devlib_sha256": "b6a7b974930ea053e63aa69874e2bfd213241ffa6d127958f3996ed654d5a696",
+ "rules": "(fixed in this file before it was first run; the run record stores this file's sha256):\nR1 Material. PHerc0139 clean controls w024, w047, w053 (D0-SETTLED item 3; title strip < 2 cm tall, unused);\n   PHerc0814 segments >= 184 vox from base-trained 46527 with >= 10 cm^2 (RCBANK-1). Never PHerc0841 or an\n   eligible scroll. PHerc0009B (MAY protocol) is added later from the reg0009b sibling's registration.\nR2 Sampling. Canvas samples at stride 4 px of the organizer 9 um canvas (pixel P samples grid (P + 0.5) s), 3-D\n   point = bilinear over the 4 quad corners (all valid).\nR3 Base-training papyrus. A sample is same-papyrus with a base-training trace if a point of that trace (mesh\n   densified to <= 4 vox spacing) lies within 6 vox (3-D) AND within 2 vox along that point's normal\n   (DECL-READCAL-A2 rule (a)); such samples plus a 64 px in-plane halo are EXCLUDED (masked from every metric).\n   Base-training traces: 0139 w028, w029, w030, w035, w039, w040, w041, w043, w044, w045 and re-trace w046 (the\n   mesh-only w030 trace has no 9 um mesh; its 9 um twin w030 is used; w028 added from the official ink_9um\n   aligned label list in data/catalogue/checkpoints.json, whose w016 and w017 have no segment on S3 and cannot\n   be certified); 0814 46527 and every 0814 segment that is same-papyrus with it on >= 1000 vox^2.\n   Rule v3 adds: every sample < 16 vox (3-D) from any point of a base-training trace is EXCLUDED as well (the\n   +-15 vox -n 31 training render slab; the same 16 vox as the pairs0139 rule S), because v2 left a w047 window\n   with a sample 2.6 vox from a base-trained trace that the strict same-papyrus test does not flag.\n   Certificate: for every chosen window, the same-papyrus area with EVERY other trace of its scroll is listed.\nR4 Used windows (rule v2). Every window that any earlier record names on PHerc0139 (D1 blanks and J-seal blank\n   candidates, D1 canary, HANDED/PROBE/C3 windows; taken as 2136 px squares from their stated corner, conservative\n   for smaller windows). A sample is FORBIDDEN (a window touching one is rejected) if (a) it lies inside a used\n   window's footprint on the same segment, or is same-papyrus (R3 test) with a used window on another segment;\n   or (b) it lies < 144 vox (3-D) from the still-live w053 blank windows of D1/D3 (y256 x1536, y256 x7168) or the\n   J-seal blank candidates (y256 x1280, y512 x7168).\n   Rule v1 (144 vox from EVERY used window) was run first and stopped: adjacent windings lie 20-40 vox apart, so\n   it forbade 32 / 88 / 49 % of w024 / w047 / w053 and left 3 eligible 0139 windows (runs.jsonl registry_v1).\nR5 Windows (rule v2). 2136 x 2136 px (2.0 cm at 9.362 um) on a 256 px grid of the organizer 9 um canvas.\n   coverage = fraction of samples that are mesh-valid, inside the reference map and not excluded. TEXT: coverage\n   >= 0.90 (0139) or >= 0.75 (0814; RCBANK-1 found no 0814 window >= 0.90), reference ink fraction (sub-samples\n   >= 150 among covered) in [0.03, 0.30], no forbidden sample; taken in the order of a seeded permutation\n   (numpy default_rng(20260925), eligible list sorted by segment, y0, x0), greedy, no 2-D overlap with a chosen\n   window, <= 2 per segment, <= 4 per scroll. Rule v1 ranked by ink fraction (no upper bound) and so preferred\n   saturated reference regions (w024 segment ink fraction 0.377 vs 0.10 / 0.03 on w047 / w053; 0841 organizer\n   segments 0.11-0.14, logs/bank0841/summary.json); v2 bounds the fraction and draws by seed instead of ranking.\n   Rule v3 adds: a text window that is same-papyrus (R3 test, >= 1000 vox^2)\n   with an already chosen DEV window is skipped (v2 chose 0814 windows on 204843 and 165636, which re-trace the\n   same papyrus, 5.0e6 vox^2). BLANK (rule v3): 1068 x 1068 px (1.0 cm) windows on the same 256 px grid (no\n   2 cm window below 1 % reference ink survives R4 on any DEV segment), coverage >= 0.90, ink fraction < 0.01, no\n   forbidden sample, no 2-D overlap with and not same-papyrus with a chosen window; ranked by ink fraction\n   ascending then coverage descending; <= 2 per scroll, <= 1 per segment.\nR6 Hold-out (0814 \"per-arm hold-out\"). Every other 0814 segment that is same-papyrus (R3 test) with a chosen\n   0814 DEV window on >= 1000 vox^2 is listed; a recipe evaluated on DEV must not train on those segments nor on\n   the DEV segments themselves (+ 16 vox, as pairs0139 rule S).",
+ "scrolls": {
+  "PHerc0139": {
+   "voxel_um_9": 9.362,
+   "voxel_um_2": 2.399,
+   "vol9": "20250728140407-9.362um-1.2m-113keV-masked.zarr",
+   "vol2": "20260102150214-2.399um-0.2m-78keV-masked.zarr",
+   "segments": {
+    "w024": {
+     "segment_id": "20260215000000-w024_2026021572",
+     "mesh9": "PHerc0139/segments/20260215000000-w024_2026021572/mesh/20260215000000-on-20250728140407-9.362um.tifxyz",
+     "mesh9_sha256": {
+      "x.tif": "cf7d87d0e0eed753743fe7c500821c482bc8216c6ff2676270dd40b609c1cc6d",
+      "y.tif": "31a5ea67f1b960e699f9b0af30b008aede5ebcfa9cff4aefcd56eaa238c48197",
+      "z.tif": "1eeb247d5e08e15651b560281415aa96aa4d123a018b66b1ab0f3a798a1d2f08",
+      "meta.json": "7a04f5a998cedbbb497c9e8a51ed5855040831ed3ae4a2407435d997aef0fea6"
+     },
+     "ref_map": "PHerc0139/segments/20260215000000-w024_2026021572/ink-detection/PHerc0139-20260215000000-2.399um-0.22m-78keV-volume-20260102150214-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif",
+     "ref_map_sha256": "f6afc62cb73604a0b8be1c27ba40aafe363c9fb8f14ad398265b82a0a98fc7c0",
+     "canvas9": [
+      7100,
+      6620
+     ],
+     "r_yx": [
+      3.887323943661972,
+      3.891238670694864
+     ],
+     "samepap_cm2": 0.0,
+     "slab16_cm2": 0.0,
+     "excluded_cm2": 0.0,
+     "forbidden_cm2": 0.0,
+     "forbidden_samples_by_source": {
+      "live_blank_clearance": 0
+     },
+     "valid_cm2": 33.62,
+     "n_grid_windows": 360
+    },
+    "w047": {
+     "segment_id": "20260206000001-w047_2026020613",
+     "mesh9": "PHerc0139/segments/20260206000001-w047_2026020613/mesh/20260206000001-on-20250728140407-9.362um.tifxyz",
+     "mesh9_sha256": {
+      "x.tif": "198a35df477ccca327144516b896bd98455b24aa3288cf32f80a13defe822ce3",
+      "y.tif": "be1b65c4bb1914acc8dfda73c3ddb11be8889b1b48950e6db6dcb7a475f8ba9f",
+      "z.tif": "fe6491166f17667f1f3a6b3848fe4ce50ca5345d139e63ced6602d24d964dcfd",
+      "meta.json": "e57b5ef2d71998a1a77307b49a887cae613636370fa18e788b33387d6be1bebc"
+     },
+     "ref_map": "PHerc0139/segments/20260206000001-w047_2026020613/ink-detection/PHerc0139-20260206000001-2.399um-0.22m-78keV-volume-20260102150214-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif",
+     "ref_map_sha256": "fa864b0cca83db7fd6f0b7b309ca49766bc60466156e698ae00e0735e40f23b3",
+     "canvas9": [
+      5840,
+      8440
+     ],
+     "r_yx": [
+      3.8904109589041096,
+      3.8862559241706163
+     ],
+     "samepap_cm2": 0.1263,
+     "slab16_cm2": 2.7751,
+     "excluded_cm2": 2.9049,
+     "forbidden_cm2": 4.4368,
+     "forbidden_samples_by_source": {
+      "live_blank_clearance": 316344,
+      "w040_y512_x5376": 40
+     },
+     "valid_cm2": 37.8572,
+     "n_grid_windows": 375
+    },
+    "w053": {
+     "segment_id": "20260220000000-w053_2026022021",
+     "mesh9": "PHerc0139/segments/20260220000000-w053_2026022021/mesh/20260220000000-on-20250728140407-9.362um.tifxyz",
+     "mesh9_sha256": {
+      "x.tif": "31f5b3ff02c97729768bf6a79f66f284c5728600e46374aed66a9b8c77fab077",
+      "y.tif": "659c3a823f7b2936e484602c8a855cbf6da4594243f784133e520d42787161e4",
+      "z.tif": "d1206711c1b2bc909fa6ee20e413e8a6b29a4040c7275e2893d2ea5e0bedf2c7",
+      "meta.json": "320145d8171f19223610459470b808cb9c34ddcbbce48304dfb5df0c5a11a32e"
+     },
+     "ref_map": "PHerc0139/segments/20260220000000-w053_2026022021/ink-detection/PHerc0139-20260220000000-2.399um-0.22m-78keV-volume-20260102150214-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif",
+     "ref_map_sha256": "89b263d4b9cb6e2867310c330ba373553bc97b1de6468083e161f4b0bccc801d",
+     "canvas9": [
+      7440,
+      10360
+     ],
+     "r_yx": [
+      3.89247311827957,
+      3.891891891891892
+     ],
+     "samepap_cm2": 0.0012,
+     "slab16_cm2": 0.0101,
+     "excluded_cm2": 0.0341,
+     "forbidden_cm2": 10.9441,
+     "forbidden_samples_by_source": {
+      "live_blank_clearance": 780413,
+      "w053_y256_x1280": 276757,
+      "w053_y256_x1536": 277192,
+      "w053_y256_x7168": 275370,
+      "w053_y512_x7168": 275786
+     },
+     "valid_cm2": 57.7699,
+     "n_grid_windows": 693
+    }
+   },
+   "windows": [
+    {
+     "segment": "w024",
+     "segment_id": "20260215000000-w024_2026021572",
+     "y0": 256,
+     "x0": 1792,
+     "h": 2136,
+     "w": 2136,
+     "coverage": 0.9652,
+     "ink_frac": 0.2164,
+     "excluded_frac": 0.0,
+     "forbidden": false,
+     "role": "text",
+     "cert_min_dist_live_blanks_vox": 309.22,
+     "cert_min_dist_base_vox": 28.17,
+     "cert_samepap_other_traces": {},
+     "cert_samepap_base_vox2_before_exclusion": 0,
+     "id": "0139_w024_y256_x1792"
+    },
+    {
+     "segment": "w047",
+     "segment_id": "20260206000001-w047_2026020613",
+     "y0": 2560,
+     "x0": 3328,
+     "h": 2136,
+     "w": 2136,
+     "coverage": 0.9188,
+     "ink_frac": 0.1415,
+     "excluded_frac": 0.0812,
+     "forbidden": false,
+     "role": "text",
+     "cert_min_dist_live_blanks_vox": 996.64,
+     "cert_min_dist_base_vox": 4.92,
+     "cert_samepap_other_traces": {
+      "20260219000001-w048_2026021912": {
+       "samepap_vox2": 71120.0,
+       "base_training": false
+      }
+     },
+     "cert_samepap_base_vox2_before_exclusion": 0,
+     "id": "0139_w047_y2560_x3328"
+    },
+    {
+     "segment": "w053",
+     "segment_id": "20260220000000-w053_2026022021",
+     "y0": 3840,
+     "x0": 4096,
+     "h": 2136,
+     "w": 2136,
+     "coverage": 1.0,
+     "ink_frac": 0.0715,
+     "excluded_frac": 0.0,
+     "forbidden": false,
+     "role": "text",
+     "cert_min_dist_live_blanks_vox": 1460.78,
+     "cert_min_dist_base_vox": 56.57,
+     "cert_samepap_other_traces": {
+      "20260206000002-w054_2026020617": {
+       "samepap_vox2": 4896.0,
+       "base_training": false
+      },
+      "20260227000000-w052_2026022705": {
+       "samepap_vox2": 3808.0,
+       "base_training": false
+      }
+     },
+     "cert_samepap_base_vox2_before_exclusion": 0,
+     "id": "0139_w053_y3840_x4096"
+    },
+    {
+     "segment": "w053",
+     "segment_id": "20260220000000-w053_2026022021",
+     "y0": 3584,
+     "x0": 6400,
+     "h": 2136,
+     "w": 2136,
+     "coverage": 1.0,
+     "ink_frac": 0.0459,
+     "excluded_frac": 0.0,
+     "forbidden": false,
+     "role": "text",
+     "cert_min_dist_live_blanks_vox": 893.3,
+     "cert_min_dist_base_vox": 62.05,
+     "cert_samepap_other_traces": {
+      "20260206000002-w054_2026020617": {
+       "samepap_vox2": 4416.0,
+       "base_training": false
+      },
+      "20260227000000-w052_2026022705": {
+       "samepap_vox2": 21104.0,
+       "base_training": false
+      },
+      "20260318000000-w049_20260318": {
+       "samepap_vox2": 1168.0,
+       "base_training": false
+      }
+     },
+     "cert_samepap_base_vox2_before_exclusion": 0,
+     "id": "0139_w053_y3584_x6400"
+    }
+   ],
+   "blanks": [
+    {
+     "segment": "w053",
+     "segment_id": "20260220000000-w053_2026022021",
+     "y0": 256,
+     "x0": 4864,
+     "h": 1068,
+     "w": 1068,
+     "coverage": 0.9871,
+     "ink_frac": 0.0,
+     "excluded_frac": 0.0,
+     "forbidden": false,
+     "role": "blank",
+     "cert_min_dist_live_blanks_vox": 838.53,
+     "cert_min_dist_base_vox": 77.67,
+     "cert_samepap_other_traces": {},
+     "cert_samepap_base_vox2_before_exclusion": 0,
+     "id": "0139_w053_y256_x4864"
+    }
+   ],
+   "base_training_traces": [
+    "20250108000003-w028_2025010836",
+    "20250108000004-w029_2025010827",
+    "20250108000005-w030_2025010818",
+    "20260317000000-w035_2026031718",
+    "20260302000000-w039_2026030210",
+    "20250831000000-w040_2025083102",
+    "20260108000000-w041_2026010816",
+    "20260112000000-w043_2026011217",
+    "20260115000000-w044_2026011522",
+    "20260126000000-w045_2026012619",
+    "20260325000000-w046_20260325"
+   ],
+   "used_windows_live_blanks": [
+    [
+     "w053",
+     256,
+     1536
+    ],
+    [
+     "w053",
+     256,
+     7168
+    ],
+    [
+     "w053",
+     256,
+     1280
+    ],
+    [
+     "w053",
+     512,
+     7168
+    ]
+   ],
+   "text_skipped_samepap": [],
+   "n_blank_grid_windows_1cm": 2004,
+   "n_text_candidates": 449,
+   "candidate_counts": {
+    "grid_windows": 1428,
+    "cov_ok": 1115,
+    "cov_ok_not_forbidden": 813,
+    "ink_quantiles_cov_ok_not_forbidden": [
+     0.0129,
+     0.0257,
+     0.0441,
+     0.079,
+     0.388,
+     0.5226,
+     0.5982
+    ]
+   },
+   "n_blank_candidates": 60
+  },
+  "PHerc0814": {
+   "voxel_um_9": 9.362,
+   "voxel_um_2": 2.399,
+   "vol9": "20250804134230-9.362um-1.2m-113keV-masked.zarr",
+   "vol2": "20260309142202-2.399um-0.2m-78keV-masked.zarr",
+   "segments": {
+    "204843": {
+     "segment_id": "20250925204843-auto_grown_20250925204843950",
+     "mesh9": "PHerc0814/segments/20250925204843-auto_grown_20250925204843950/mesh/20250925204843-on-20250804134230-9.362um.tifxyz",
+     "mesh9_sha256": {
+      "x.tif": "c9a23b69ff0c95222ab6d24c477e0fc9eaf59b483fa38d72f4be54b1f6843719",
+      "y.tif": "73c881e6c22b6dc5eff20d151bd7ddfa4b590677f8524b23ab025b15678dbdef",
+      "z.tif": "6ade2195c60688b33c7ff2f7e0364377197e014262fa42aa1973d30711ea6bb9",
+      "meta.json": "86e4b226c52d92c685ac0ba443069ca2ba2a2e0b13e7af895a313afaf41fa776"
+     },
+     "ref_map": "PHerc0814/segments/20250925204843-auto_grown_20250925204843950/ink-detection/PHerc0814-20250925204843-2.399um-0.22m-78keV-volume-20260309142202-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif",
+     "ref_map_sha256": "5fa235d9676a746a62d5336bca87bf8b78190f9035662b41bebbfbc2c8e19e12",
+     "canvas9": [
+      4640,
+      31860
+     ],
+     "r_yx": [
+      3.8922413793103448,
+      3.8901443816698054
+     ],
+     "samepap_cm2": 0.0,
+     "slab16_cm2": 0.0018,
+     "excluded_cm2": 0.0018,
+     "forbidden_cm2": 0.0,
+     "forbidden_samples_by_source": {},
+     "valid_cm2": 44.3256,
+     "n_grid_windows": 1170
+    },
+    "165636": {
+     "segment_id": "20250926165636-auto_trace_20250926165636789",
+     "mesh9": "PHerc0814/segments/20250926165636-auto_trace_20250926165636789/mesh/20250926165636-on-20250804134230-9.362um.tifxyz",
+     "mesh9_sha256": {
+      "x.tif": "2a2f4fcf441383839eddcb9b606199d20d982472b89270442604df953d07338e",
+      "y.tif": "4b052fbeda51508c3c8a7df16dcae8a8c56bb95b9e971915a2c4edd4dc2a14f8",
+      "z.tif": "c0a2960c7dd77c99833e02da889d08a478ef759f2e7bc6bb2a49cb4d30dd6f2f",
+      "meta.json": "0d8db1c2eafea3beec69de4c15dacc5eaf635d43ff37060156863b581b1176ad"
+     },
+     "ref_map": "PHerc0814/segments/20250926165636-auto_trace_20250926165636789/ink-detection/PHerc0814-20250926165636-2.399um-0.22m-78keV-volume-20260309142202-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif",
+     "ref_map_sha256": "e14d374533d26e4681477093c3217b9c1697f8a79095afe3158e1f4b0df17349",
+     "canvas9": [
+      4820,
+      27220
+     ],
+     "r_yx": [
+      3.892116182572614,
+      3.8897869213813374
+     ],
+     "samepap_cm2": 0.0,
+     "slab16_cm2": 0.0004,
+     "excluded_cm2": 0.0004,
+     "forbidden_cm2": 0.0,
+     "forbidden_samples_by_source": {},
+     "valid_cm2": 41.2835,
+     "n_grid_windows": 1078
+    },
+    "060526": {
+     "segment_id": "20251001060526-auto_grown_20251001060526760",
+     "mesh9": "PHerc0814/segments/20251001060526-auto_grown_20251001060526760/mesh/20251001060526-on-20250804134230-9.362um.tifxyz",
+     "mesh9_sha256": {
+      "x.tif": "282a016ae487c1ea25fbca0598d09b4a20745df4db3bb4eed5c53ead02f0849f",
+      "y.tif": "7ad051ee1271ed6cdfa3b5c76037b642b81a9aedf8bd293c0b4cde13ef6eb665",
+      "z.tif": "6fd63add69c7aef295412a168e5bdd4c2767ffc8275ab3e34915a9ff1f75906c",
+      "meta.json": "e818c3961e1cc783dcf21f981512e1137ca96f81487b5712ada9e02e8c12ddbc"
+     },
+     "ref_map": "PHerc0814/segments/20251001060526-auto_grown_20251001060526760/ink-detection/PHerc0814-20251001060526-2.399um-0.22m-78keV-volume-20260309142202-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif",
+     "ref_map_sha256": "4d17e834f3400bca7385c834a4cd228716aacadfe4cbc40286d8775712d5670d",
+     "canvas9": [
+      4720,
+      24680
+     ],
+     "r_yx": [
+      3.889830508474576,
+      3.8897893030794166
+     ],
+     "samepap_cm2": 0.0,
+     "slab16_cm2": 0.0155,
+     "excluded_cm2": 0.0155,
+     "forbidden_cm2": 0.0,
+     "forbidden_samples_by_source": {},
+     "valid_cm2": 31.9978,
+     "n_grid_windows": 979
+    },
+    "222237": {
+     "segment_id": "20250925222237-auto_grown_20250925222237459",
+     "mesh9": "PHerc0814/segments/20250925222237-auto_grown_20250925222237459/mesh/20250925222237-on-20250804134230-9.362um.tifxyz",
+     "mesh9_sha256": {
+      "x.tif": "72f0e90d4cea386c126a4c8b7a544db58740faee9b55838aa3cadd2a13ab85e0",
+      "y.tif": "b7e9827c1fe1342d91ca9a341eaa805a3c0725b9805b7e776e58772b08e31ea6",
+      "z.tif": "45d5c0ba6a072e99a2705d8da4d433f0c28c7cbdb5e85f85c6a4fdc3ee7e344e",
+      "meta.json": "0e72b8117daf084d646645d6f0d9a902416e1a335e3d5f6e714bf13ea450bdf3"
+     },
+     "ref_map": "PHerc0814/segments/20250925222237-auto_grown_20250925222237459/ink-detection/PHerc0814-20250925222237-2.399um-0.22m-78keV-volume-20260309142202-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif",
+     "ref_map_sha256": "ddc88e7388780beb5a0b03e4727762303498924d896a044435a6978a1329b948",
+     "canvas9": [
+      3920,
+      11900
+     ],
+     "r_yx": [
+      3.892857142857143,
+      3.8907563025210083
+     ],
+     "samepap_cm2": 0.0,
+     "slab16_cm2": 0.0,
+     "excluded_cm2": 0.0,
+     "forbidden_cm2": 0.0,
+     "forbidden_samples_by_source": {},
+     "valid_cm2": 17.0414,
+     "n_grid_windows": 273
+    },
+    "212701": {
+     "segment_id": "20250925212701-auto_grown_20250925212701145",
+     "mesh9": "PHerc0814/segments/20250925212701-auto_grown_20250925212701145/mesh/20250925212701-on-20250804134230-9.362um.tifxyz",
+     "mesh9_sha256": {
+      "x.tif": "d80ab2ed2d6d470571fa79e5a68e6e9583f64400608cfd284fb2699cbd021284",
+      "y.tif": "a2d00deaff661fcdc29e803e8f2f7fbfcaf429b57ff2e5ab3f43772403324345",
+      "z.tif": "2ad6d38a81fde6faf431c73ca2db2e43fdbbe425b74bf26c5806a7ace49acf2c",
+      "meta.json": "ad5b2c1782a0b8c26a799858fee574f5aafe4cdf6308cda5e5cb56f7adfec25b"
+     },
+     "ref_map": "PHerc0814/segments/20250925212701-auto_grown_20250925212701145/ink-detection/PHerc0814-20250925212701-2.399um-0.22m-78keV-volume-20260309142202-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif",
+     "ref_map_sha256": "2705a8187eafe08523f91e93ef3dcc9d51ad959afe48a11dc6a2b3defbe9e685",
+     "canvas9": [
+      4080,
+      6900
+     ],
+     "r_yx": [
+      3.892156862745098,
+      3.889855072463768
+     ],
+     "samepap_cm2": 0.0,
+     "slab16_cm2": 0.0,
+     "excluded_cm2": 0.0,
+     "forbidden_cm2": 0.0,
+     "forbidden_samples_by_source": {},
+     "valid_cm2": 11.0586,
+     "n_grid_windows": 152
+    }
+   },
+   "windows": [
+    {
+     "segment": "165636",
+     "segment_id": "20250926165636-auto_trace_20250926165636789",
+     "y0": 1536,
+     "x0": 23808,
+     "h": 2136,
+     "w": 2136,
+     "coverage": 0.809,
+     "ink_frac": 0.1151,
+     "excluded_frac": 0.0,
+     "forbidden": false,
+     "role": "text",
+     "cert_min_dist_live_blanks_vox": null,
+     "cert_min_dist_base_vox": 90.93,
+     "cert_samepap_other_traces": {
+      "20250925204843-auto_grown_20250925204843950": {
+       "samepap_vox2": 969200.0,
+       "base_training": false
+      }
+     },
+     "cert_samepap_base_vox2_before_exclusion": 0,
+     "id": "0814_165636_y1536_x23808"
+    },
+    {
+     "segment": "165636",
+     "segment_id": "20250926165636-auto_trace_20250926165636789",
+     "y0": 1792,
+     "x0": 2560,
+     "h": 2136,
+     "w": 2136,
+     "coverage": 0.8144,
+     "ink_frac": 0.1553,
+     "excluded_frac": 0.0,
+     "forbidden": false,
+     "role": "text",
+     "cert_min_dist_live_blanks_vox": null,
+     "cert_min_dist_base_vox": 122.65,
+     "cert_samepap_other_traces": {
+      "20250925204843-auto_grown_20250925204843950": {
+       "samepap_vox2": 2176480.0,
+       "base_training": false
+      }
+     },
+     "cert_samepap_base_vox2_before_exclusion": 0,
+     "id": "0814_165636_y1792_x2560"
+    },
+    {
+     "segment": "204843",
+     "segment_id": "20250925204843-auto_grown_20250925204843950",
+     "y0": 1792,
+     "x0": 7680,
+     "h": 2136,
+     "w": 2136,
+     "coverage": 0.8774,
+     "ink_frac": 0.1555,
+     "excluded_frac": 0.0,
+     "forbidden": false,
+     "role": "text",
+     "cert_min_dist_live_blanks_vox": null,
+     "cert_min_dist_base_vox": 113.48,
+     "cert_samepap_other_traces": {
+      "20250926165636-auto_trace_20250926165636789": {
+       "samepap_vox2": 3547840.0,
+       "base_training": false
+      },
+      "20260226123353-auto_grown_20260226123353106": {
+       "samepap_vox2": 17248.0,
+       "base_training": false
+      }
+     },
+     "cert_samepap_base_vox2_before_exclusion": 0,
+     "id": "0814_204843_y1792_x7680"
+    },
+    {
+     "segment": "222237",
+     "segment_id": "20250925222237-auto_grown_20250925222237459",
+     "y0": 512,
+     "x0": 1536,
+     "h": 2136,
+     "w": 2136,
+     "coverage": 0.7668,
+     "ink_frac": 0.1866,
+     "excluded_frac": 0.0,
+     "forbidden": false,
+     "role": "text",
+     "cert_min_dist_live_blanks_vox": null,
+     "cert_min_dist_base_vox": 64.18,
+     "cert_samepap_other_traces": {
+      "20250925212701-auto_grown_20250925212701145": {
+       "samepap_vox2": 8512.0,
+       "base_training": false
+      },
+      "20251001060526-auto_grown_20251001060526760": {
+       "samepap_vox2": 2135680.0,
+       "base_training": false
+      }
+     },
+     "cert_samepap_base_vox2_before_exclusion": 0,
+     "id": "0814_222237_y512_x1536"
+    }
+   ],
+   "blanks": [],
+   "base_retraces_found": [
+    "20250925161630-auto_grown_20250925161630635",
+    "20250925182632-auto_grown_20250925182632715",
+    "20250926051122-auto_grown_20250926051122829",
+    "20250928235953-auto_grown_20250928235953722",
+    "20250928235954-auto_grown_20250928235953722_copy"
+   ],
+   "base_training_traces": [
+    "20260226000000-46527_2um_try2",
+    "20250925161630-auto_grown_20250925161630635",
+    "20250925182632-auto_grown_20250925182632715",
+    "20250926051122-auto_grown_20250926051122829",
+    "20250928235953-auto_grown_20250928235953722",
+    "20250928235954-auto_grown_20250928235953722_copy"
+   ],
+   "text_skipped_samepap": [
+    {
+     "id": "204843_y2048_x27648",
+     "samepap_vox2": 1288272.0
+    }
+   ],
+   "n_blank_grid_windows_1cm": 5426,
+   "n_text_candidates": 185,
+   "candidate_counts": {
+    "grid_windows": 3652,
+    "cov_ok": 185,
+    "cov_ok_not_forbidden": 185,
+    "ink_quantiles_cov_ok_not_forbidden": [
+     0.0446,
+     0.0883,
+     0.1062,
+     0.1268,
+     0.1489,
+     0.1738,
+     0.2023
+    ]
+   },
+   "n_blank_candidates": 0,
+   "holdout_segments": {
+    "dev_segments": [
+     "20250925204843-auto_grown_20250925204843950",
+     "20250925222237-auto_grown_20250925222237459",
+     "20250926165636-auto_trace_20250926165636789"
+    ],
+    "samepap_with_dev": {
+     "20250926165636-auto_trace_20250926165636789": [
+      {
+       "dev_segment": "20250925204843-auto_grown_20250925204843950",
+       "samepap_vox2": 3547840.0
+      }
+     ],
+     "20260226123353-auto_grown_20260226123353106": [
+      {
+       "dev_segment": "20250925204843-auto_grown_20250925204843950",
+       "samepap_vox2": 17248.0
+      }
+     ],
+     "20250925212701-auto_grown_20250925212701145": [
+      {
+       "dev_segment": "20250925222237-auto_grown_20250925222237459",
+       "samepap_vox2": 8512.0
+      }
+     ],
+     "20251001060526-auto_grown_20251001060526760": [
+      {
+       "dev_segment": "20250925222237-auto_grown_20250925222237459",
+       "samepap_vox2": 2135680.0
+      }
+     ],
+     "20250925204843-auto_grown_20250925204843950": [
+      {
+       "dev_segment": "20250926165636-auto_trace_20250926165636789",
+       "samepap_vox2": 3145680.0
+      }
+     ]
+    },
+    "rule": "a recipe evaluated on DEV never trains on these segments"
+   }
+  }
+ },
+ "used_windows_0139": [
+  {
+   "segment": "w030",
+   "y0": 512,
+   "x0": 2816,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w030",
+   "y0": 768,
+   "x0": 256,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w030",
+   "y0": 2816,
+   "x0": 3072,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/audit_probe1.json",
+    "logs/readcal/audit_probe2.json",
+    "logs/readcal/probe1_results.json",
+    "logs/readcal/probe2_results.json",
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w035",
+   "y0": 1792,
+   "x0": 768,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/audit_probe1.json",
+    "logs/readcal/audit_probe2.json",
+    "logs/readcal/probe1_results.json",
+    "logs/readcal/probe2_results.json",
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w039",
+   "y0": 2816,
+   "x0": 512,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w039",
+   "y0": 2816,
+   "x0": 3840,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/audit_probe1.json",
+    "logs/readcal/audit_probe2.json",
+    "logs/readcal/probe1_results.json",
+    "logs/readcal/probe2_results.json",
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w039",
+   "y0": 3072,
+   "x0": 1792,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w039",
+   "y0": 4352,
+   "x0": 1024,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w040",
+   "y0": 256,
+   "x0": 512,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/audit_probe3.json",
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_build_summary.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_results.json"
+   ]
+  },
+  {
+   "segment": "w040",
+   "y0": 256,
+   "x0": 1024,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w040",
+   "y0": 512,
+   "x0": 5376,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w040",
+   "y0": 1490,
+   "x0": 1990,
+   "size": 2136,
+   "sources": [
+    "logs/pipeline/w040_smoke.json",
+    "logs/pipeline/w040_smoke_zasc_c-1.json"
+   ]
+  },
+  {
+   "segment": "w040",
+   "y0": 2048,
+   "x0": 1152,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w040",
+   "y0": 2048,
+   "x0": 2048,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_feasibility.json"
+   ]
+  },
+  {
+   "segment": "w040",
+   "y0": 2560,
+   "x0": 4096,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/audit_probe3.json",
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_build_summary.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json",
+    "logs/readcal/probe3_results.json"
+   ]
+  },
+  {
+   "segment": "w040",
+   "y0": 3072,
+   "x0": 4352,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_feasibility.json"
+   ]
+  },
+  {
+   "segment": "w041",
+   "y0": 512,
+   "x0": 512,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w041",
+   "y0": 768,
+   "x0": 1792,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w041",
+   "y0": 2048,
+   "x0": 256,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w041",
+   "y0": 3584,
+   "x0": 2560,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w043",
+   "y0": 2816,
+   "x0": 768,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w043",
+   "y0": 3072,
+   "x0": 4608,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/audit_probe1.json",
+    "logs/readcal/audit_probe2.json",
+    "logs/readcal/probe1_results.json",
+    "logs/readcal/probe2_results.json",
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w044",
+   "y0": 2816,
+   "x0": 2304,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w044",
+   "y0": 2816,
+   "x0": 2816,
+   "size": 2136,
+   "sources": [
+    "logs/d1/d1_build_gate.json",
+    "logs/d1/d1_build_infer.json",
+    "logs/d1/d1_build_prep.json",
+    "logs/d1/d1_build_render.json",
+    "logs/d1/d1_build_summary.json",
+    "logs/d1/d1_build_summary_v2.json",
+    "logs/d1/d3_e1.json",
+    "logs/d1/d3_e2_dryrun.json",
+    "logs/d1/d3_e2_dryrun_recheck.json",
+    "logs/d1/d3_runs/infer_CTRL.json",
+    "logs/d1/d3_runs/infer_FA.json",
+    "logs/d1/d3_stage2_pre.json",
+    "logs/d1/d3_timing.json",
+    "logs/readcal/audit_probe3.json",
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_build_summary.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_results.json"
+   ]
+  },
+  {
+   "segment": "w044",
+   "y0": 3328,
+   "x0": 2816,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_feasibility.json"
+   ]
+  },
+  {
+   "segment": "w044",
+   "y0": 4096,
+   "x0": 512,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w044",
+   "y0": 4096,
+   "x0": 1024,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_feasibility.json"
+   ]
+  },
+  {
+   "segment": "w045",
+   "y0": 512,
+   "x0": 3584,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w045",
+   "y0": 768,
+   "x0": 5888,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json"
+   ]
+  },
+  {
+   "segment": "w045",
+   "y0": 2560,
+   "x0": 1280,
+   "size": 2136,
+   "sources": [
+    "logs/readcal/probe3_build_checks.json",
+    "logs/readcal/probe3_feasibility.json",
+    "logs/readcal/probe3_feasibility_c3variant.json"
+   ]
+  },
+  {
+   "segment": "w053",
+   "y0": 256,
+   "x0": 1280,
+   "size": 2136,
+   "sources": [
+    "logs/d1/jseal_build_summary.json"
+   ]
+  },
+  {
+   "segment": "w053",
+   "y0": 256,
+   "x0": 1536,
+   "size": 2136,
+   "sources": [
+    "logs/d1/audit_d1_rederive.json",
+    "logs/d1/d1_build_gate.json",
+    "logs/d1/d1_build_infer.json",
+    "logs/d1/d1_build_prep.json",
+    "logs/d1/d1_build_render.json",
+    "logs/d1/d1_build_summary.json",
+    "logs/d1/d1_build_summary_v2.json",
+    "logs/d1/d1_model_summary.json",
+    "logs/d1/d1_ref_summary.json",
+    "logs/d1/d3_e2_dryrun.json",
+    "logs/d1/d3_e2_dryrun_recheck.json",
+    "logs/d1/d3_runs/infer_CTRL.json",
+    "logs/d1/d3_runs/infer_FA.json",
+    "logs/d1/d3_timing.json",
+    "logs/d1/jseal_build_summary.json",
+    "logs/d1/jseal_summary.json"
+   ]
+  },
+  {
+   "segment": "w053",
+   "y0": 256,
+   "x0": 7168,
+   "size": 2136,
+   "sources": [
+    "logs/d1/audit_d1_rederive.json",
+    "logs/d1/d1_build_gate.json",
+    "logs/d1/d1_build_infer.json",
+    "logs/d1/d1_build_prep.json",
+    "logs/d1/d1_build_render.json",
+    "logs/d1/d1_build_summary.json",
+    "logs/d1/d1_build_summary_v2.json",
+    "logs/d1/d1_model_summary.json",
+    "logs/d1/d1_ref_summary.json",
+    "logs/d1/d3_e2_dryrun.json",
+    "logs/d1/d3_e2_dryrun_recheck.json",
+    "logs/d1/d3_runs/infer_CTRL.json",
+    "logs/d1/d3_runs/infer_FA.json",
+    "logs/d1/d3_timing.json",
+    "logs/d1/jseal_build_summary.json",
+    "logs/d1/jseal_summary.json"
+   ]
+  },
+  {
+   "segment": "w053",
+   "y0": 512,
+   "x0": 7168,
+   "size": 2136,
+   "sources": [
+    "logs/d1/jseal_build_summary.json"
+   ]
+  }
+ ],
+ "seconds": 2083.6
+}

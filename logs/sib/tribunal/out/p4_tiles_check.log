@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/tribunal/p4_tiles_check.py", line 166, in <module>
+    main()
+  File "/home/user/dominion/tools/sib/tribunal/p4_tiles_check.py", line 154, in main
+    res["manifest_faults"] = manifest_faults(nb_full, tlb, vox_mm, rng, trials)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/sib/tribunal/p4_tiles_check.py", line 60, in manifest_faults
+    caught += grid_fail(nn, check) if kind == "grid" else tile_fail(tt, nn, check)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/sib/tribunal/p4_tiles_check.py", line 44, in tile_fail
+    return any(cond in r["failed"] for r in TL.check_tiles(nn, tt))
+                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/src/hercules/tribunal/tiles.py", line 98, in check_tiles
+    if n.get("valid_matrix") is not None and abs(round(t["valid_fraction"], 6) - n["valid_matrix"][r][c]) > 1e-9:
+                                                                                 ~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range

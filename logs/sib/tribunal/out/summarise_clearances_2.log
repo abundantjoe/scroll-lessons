@@ -1,0 +1,45 @@
+{
+ "recorded_method_answer": "D3-FEAS counts A and B computed point-to-point distances on DENSE canvas points (1 px = 1 vox, every mesh-valid pixel of J), not on 20-vox vertices; this re-check reproduces the recorded minimum retained distance (w00 128.00015 vox) and shows point minus surface <= 0.0025 vox at that density",
+ "tiles_checked": "every PRIMARY-grid tile (128 px, stride 64, >= 90 % mesh-valid, outside own J window): a superset of the 306 PRIMARY text tiles and 288 pool tiles (text status not recomputed: it needs the 0841 reference ink map)",
+ "tiles_below_128_by_surface_form": 0,
+ "tiles_crossing_144_by_surface_form": 0,
+ "seal_j_d1_blanks_distance_to_J": "not defined: the blanks are on PHerc0139 w053, J is on PHerc0841 (different volumes)",
+ "flags": [
+  {
+   "where": "D3-FEAS pixel exclusion, segment 022814",
+   "declared_margin_vox": 128,
+   "finding": "1 retained canvas pixel(s) at surface distance 127.9994 vox (point distance >= 128)",
+   "shortfall_vox": 0.0006196025331064448,
+   "severity": "negligible (< 0.001 vox)",
+   "tiles_affected": 0
+  },
+  {
+   "where": "D3-FEAS pixel exclusion, segment 214732",
+   "declared_margin_vox": 128,
+   "finding": "2 retained canvas pixel(s) at surface distance 127.9992 vox (point distance >= 128)",
+   "shortfall_vox": 0.0008461351537647488,
+   "severity": "negligible (< 0.001 vox)",
+   "tiles_affected": 0
+  },
+  {
+   "where": "D3-FEAS pixel exclusion, segment w00",
+   "declared_margin_vox": 128,
+   "finding": "1 retained canvas pixel(s) at surface distance 127.9998 vox (point distance >= 128)",
+   "shortfall_vox": 0.00017117170820313277,
+   "severity": "negligible (< 0.001 vox)",
+   "tiles_affected": 0
+  },
+  {
+   "where": "RCBANK-1 w047",
+   "declared": "same-papyrus pixels vs base training excluded (+64 px halo)",
+   "finding": "corrected rule: w047 SAME as base-training w045 (vertex form alone: NOT SAME); w046 misses SAME by the ratio test (c0 4964 < 2 x 2490); area within 2 vox: w045 0.1185 cm^2, w046 0.1219 cm^2 (RCBANK-1 recorded ~0.12 cm^2 strip, excluded)",
+   "severity": "consistent with RCBANK-1 (already excluded); only the literal form would have missed it"
+  },
+  {
+   "where": "SEAL-J-D1 blank_w053_y256_x7168 vs base-training w039",
+   "finding": "not SAME (78 points within 2 vox < 1000) but 0.00109 cm^2 of the blank lies within 2 vox of base-training w039 (min surface distance 0.048 vox): a crossing/contact sliver, ~0.03 % of the blank",
+   "declared_margin": "none declared for blanks vs base training (DECL-D1-A1: outside READ-CAL windows + 128 vox)",
+   "severity": "informational; relevant only to the w053 blob-f180 bar if it is meant to be base-clean"
+  }
+ ]
+}

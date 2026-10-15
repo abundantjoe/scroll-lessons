@@ -1,0 +1,211 @@
+{
+ "band_candidates_after_exclusions": 89,
+ "base_training_traces": [
+  "20250108000003-w028_2025010836",
+  "20250108000004-w029_2025010827",
+  "20250108000005-w030_2025010818",
+  "20260317000000-w035_2026031718",
+  "20260302000000-w039_2026030210",
+  "20250831000000-w040_2025083102",
+  "20260108000000-w041_2026010816",
+  "20260112000000-w043_2026011217",
+  "20260115000000-w044_2026011522",
+  "20260126000000-w045_2026012619",
+  "20260325000000-w046_20260325"
+ ],
+ "centre_curve": {
+  "bands": 37,
+  "median_line_dist_vox_median": 326.4645387126285,
+  "method": "least-squares xy normal-line intersection per 200-vox z-band, 3-band median"
+ },
+ "mock_R": {
+  "segment": "20260215000000-w024_2026021572",
+  "subgrid_origin_rc": [
+   158,
+   51
+  ],
+  "tag": "w024",
+  "window_on_subgrid_canvas": {
+   "h": 2136,
+   "w": 2136,
+   "x0": 48,
+   "y0": 44
+  },
+  "x0": 1068,
+  "y0": 3204
+ },
+ "n_dev_windows": 5,
+ "n_used_windows": 42,
+ "not_used": "no CT, no ink map, no image",
+ "null_set": {
+  "band": {
+   "band_vox": 67.42255001439821,
+   "n_candidates": 89,
+   "n_chosen": 0,
+   "n_eligible": 0,
+   "n_needed": 36,
+   "radius_R_vox": 674.2255001439821,
+   "rejected": {
+    "near_R": 12,
+    "near_exclusion": 0,
+    "other_volume": 0,
+    "out_of_band": 77
+   },
+   "seed": 20260926
+  },
+  "candidate_id": "mockR_w024_y3204_x1068",
+  "n_band": 0,
+  "n_band_min": 20,
+  "n_tiles": 4,
+  "n_total_min": 40,
+  "pitch": {
+   "dt": 0.25,
+   "i0": 240,
+   "m7_scale": 1.0,
+   "max_dist": 60.0,
+   "mean": 21.764736477115118,
+   "n_used": 721,
+   "n_vertices": 841,
+   "own_max": 4.0,
+   "own_sheet_confirmed": 730,
+   "p10": 11.375,
+   "p90": 33.625,
+   "pitch_vox": 20.875,
+   "status": "OK"
+  },
+  "status": "INSUFFICIENT",
+  "tiles": [
+   {
+    "arm": "base",
+    "direction": "reverse",
+    "kind": "R_nontext_order",
+    "match": {
+     "reading": "same D*, P*, reader mix and batches as R",
+     "tile_hw": [
+      2136,
+      2136
+     ],
+     "volume_id": "20250728140407",
+     "voxel_um": 9.362
+    },
+    "null_id": "6712e90c-a720-470d-84da-0365b3b6b9e3",
+    "order": "nontext",
+    "segment_id": "20260215000000-w024_2026021572",
+    "window": {
+     "h": 2136,
+     "w": 2136,
+     "x0": 48,
+     "y0": 44
+    },
+    "window_on_organizer_canvas": {
+     "h": 2136,
+     "w": 2136,
+     "x0": 1068,
+     "y0": 3204
+    }
+   },
+   {
+    "arm": "NULL",
+    "direction": "forward",
+    "kind": "R_null_arm",
+    "match": {
+     "reading": "same D*, P*, reader mix and batches as R",
+     "tile_hw": [
+      2136,
+      2136
+     ],
+     "volume_id": "20250728140407",
+     "voxel_um": 9.362
+    },
+    "null_id": "a305c7c2-d593-4cdb-bec3-fda07dc1d4e1",
+    "order": "text",
+    "segment_id": "20260215000000-w024_2026021572",
+    "window": {
+     "h": 2136,
+     "w": 2136,
+     "x0": 48,
+     "y0": 44
+    },
+    "window_on_organizer_canvas": {
+     "h": 2136,
+     "w": 2136,
+     "x0": 1068,
+     "y0": 3204
+    }
+   },
+   {
+    "arm": "base",
+    "direction": "forward",
+    "kind": "R_offsheet_half_pitch",
+    "match": {
+     "reading": "same D*, P*, reader mix and batches as R",
+     "tile_hw": [
+      2136,
+      2136
+     ],
+     "volume_id": "20250728140407",
+     "voxel_um": 9.362
+    },
+    "mesh_path": "logs/sib/tribunal/real_trib2/null_dryrun/offsheet_meshes/mockR_w024_y3204_x1068_offp",
+    "null_id": "271ba656-5988-451e-945e-f3c536ebaf1d",
+    "offset_vox": 10.4375,
+    "order": "text",
+    "segment_id": "20260215000000-w024_2026021572",
+    "side": "outward",
+    "sign": 1,
+    "uuid": "mockR_w024_y3204_x1068_offp",
+    "window": {
+     "h": 2136,
+     "w": 2136,
+     "x0": 48,
+     "y0": 44
+    },
+    "window_on_organizer_canvas": {
+     "h": 2136,
+     "w": 2136,
+     "x0": 1068,
+     "y0": 3204
+    }
+   },
+   {
+    "arm": "base",
+    "direction": "forward",
+    "kind": "R_offsheet_half_pitch",
+    "match": {
+     "reading": "same D*, P*, reader mix and batches as R",
+     "tile_hw": [
+      2136,
+      2136
+     ],
+     "volume_id": "20250728140407",
+     "voxel_um": 9.362
+    },
+    "mesh_path": "logs/sib/tribunal/real_trib2/null_dryrun/offsheet_meshes/mockR_w024_y3204_x1068_offm",
+    "null_id": "df7079a9-8f04-42a6-af22-ca93ae7134ad",
+    "offset_vox": 10.4375,
+    "order": "text",
+    "segment_id": "20260215000000-w024_2026021572",
+    "side": "inward",
+    "sign": -1,
+    "uuid": "mockR_w024_y3204_x1068_offm",
+    "window": {
+     "h": 2136,
+     "w": 2136,
+     "x0": 48,
+     "y0": 44
+    },
+    "window_on_organizer_canvas": {
+     "h": 2136,
+     "w": 2136,
+     "x0": 1068,
+     "y0": 3204
+    }
+   }
+  ],
+  "tribunal_version": "tribunal-0.1.0"
+ },
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "rule": "REAL-TRIB-2 (ii), PREREG.md",
+ "sampling_note": "band clouds sampled every 20 px; the 192-vox DEV separation is padded by 14.14 + 5.66 vox (fail closed); separations inside build_null_set use its declared values on these samples",
+ "seconds": 433.4
+}

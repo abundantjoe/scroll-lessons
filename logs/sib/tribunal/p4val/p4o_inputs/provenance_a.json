@@ -1,0 +1,76 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-26T18:42:59Z",
+ "task": "ckpt-screen-a P4-O provenance (RULES.md DECL-P4-14 item 1), pushed before any P4-O inference",
+ "rule": "eligible only if the checkpoint's documentation shows no PHerc. Paris 4 / Scroll 1 data; undocumented or ambiguous = NOT eligible",
+ "viewing": "no image, tile, render or CT pixel opened; documentation text and hashes only",
+ "checkpoints": {
+  "ink_9um_seed43_step075000": {
+   "source_url": "https://huggingface.co/scrollprize/ink_9um/blob/7109667e2607db1b90c37c8b09cb876ea7fe7bb1/hybrid_3d2d-seed43/step-075000.pth",
+   "weights_sha256": "2aeaa85a35ef28d7bc7bf3e848c4a6a91385e9132710927fdba41133c4ecb28f",
+   "weights_sha256_matches_catalogue": true,
+   "documentation": [
+    {
+     "source": "https://huggingface.co/scrollprize/ink_9um/blob/7109667e2607db1b90c37c8b09cb876ea7fe7bb1/README.md",
+     "sha256": "ef0f3cf3186e9d05c8816718c4024aeb356e27a8c02d7da1bacdee113c5ef273",
+     "quote": "We trained on the public z-anisotropic 2.399 \u00b5m volumes downsampled to ~9.6 \u00b5m isotropic (level-2 XY, 4x z mean-pooling), with segments from PHerc. 0139 (9), Scroll 1667 (6), PHerc. Paris 4 (8), and PHerc. 0814 (1), plus 5 native 9.362 \u00b5m segments from PHerc. 0139"
+    },
+    {
+     "source": "checkpoint-embedded config, key config.datasets (copy: logs/sib/ckpt-screen-a/sources/ink9_seed43_step075000_embedded_config.json)",
+     "sha256": "d8d1e66c90789b687017008c915e804dd8fb1d3cf43801285f041d46bf9f91bd",
+     "quote": "\"sampling_scroll\": \"Paris4\", \"segments\": [\"phercparis4-w00\", \"phercparis4-w01\", \"phercparis4-w02\", \"phercparis4-w03\", \"phercparis4-w05\", \"phercparis4-w06\", \"phercparis4-w07\", \"phercparis4-w09\"]"
+    }
+   ],
+   "paris4_in_training": "YES (documented, 8 segments)",
+   "eligible": false
+  },
+  "hecate_9.6um": {
+   "source_url": "https://huggingface.co/scrollprize/hecate/blob/9cb86e500e944b11a06a7020403cde5dffb5bcb2/hecate_9.6um.pth",
+   "weights_sha256": "809f4f10f7cb7afa19b4bee0f7d2ab31edd7e11b664f9f210cc9c17f22fcfe5d",
+   "weights_sha256_matches_catalogue": true,
+   "documentation": [
+    {
+     "source": "https://huggingface.co/scrollprize/hecate/blob/9cb86e500e944b11a06a7020403cde5dffb5bcb2/README.md",
+     "sha256": "17d7f029ffcff421dbf767c89e0e36a91f141fdfb5a647cc254e4c88cffabe9e",
+     "quote": "**Moderate 3D supervision on Paris4**, supplied by a precise **[Paris4 ink model](https://huggingface.co/scrollprize/ink_3d_dino_guided)**. We oversampled examples carrying these targets to give the student frequent exposure to reliable volumetric guidance."
+    },
+    {
+     "source": "same README",
+     "quote": "We reduced the special treatment of Paris4 and repeatedly adjusted the balance between 2D and 3D supervision."
+    },
+    {
+     "source": "same README; the named 2-D label set, listing https://huggingface.co/api/buckets/scrollprize/datasets/tree/ink?recursive=false (copy: logs/sib/ckpt-screen-a/sources/hf_bucket_ink_toplevel.json)",
+     "sha256": "bee61cb9fd5690e6abca421b068598f6fc4273304de4f5a23cfa5fccef991c95",
+     "quote": "Development used the **[Scroll Prize ink dataset](https://huggingface.co/buckets/scrollprize/datasets/tree/ink)**",
+     "note": "the listing of that dataset has a top-level folder ink/phercparis4"
+    }
+   ],
+   "paris4_in_training": "YES (documented: Paris 4 3-D supervision; 9.6 um model distilled from the 2.4 um model trained with it)",
+   "eligible": false
+  },
+  "ink_3d_dino_guided": {
+   "source_url": "https://huggingface.co/scrollprize/ink_3d_dino_guided/tree/73a79525466037432191284dfa237baf830c49ec",
+   "weights_sha256": "5a148c2c1bb730bfa683f2b3e3cdfc2000424003605e42300b527ff90118b303 (ckpt_78k_fullsup.pth, catalogue value; weights not downloaded, not needed for a documentation verdict)",
+   "weights_sha256_matches_catalogue": null,
+   "documentation": [
+    {
+     "source": "https://huggingface.co/scrollprize/ink_3d_dino_guided/blob/73a79525466037432191284dfa237baf830c49ec/README.md",
+     "sha256": "2b83f26a7361dc3e23e20926c404845b26c7990bc3c8cabc94d735880396790e",
+     "quote": "Segments ink **directly in 3D** in micro-CT of **PHerc. Paris 4**, where ink is volumetrically visible."
+    },
+    {
+     "source": "same README",
+     "quote": "Trained in stages: **(1)** teacher on 8-scroll surface-conditioned ink labels (PHerc. Paris 4, 0139, 0500P2, 0814, 0841, 1667, MAN5, 9B)"
+    },
+    {
+     "source": "https://huggingface.co/scrollprize/ink_3d_dino_guided/blob/73a79525466037432191284dfa237baf830c49ec/config.json",
+     "sha256": "7f3e817016c581b1827e1aad076a9c3bb1163c41e68d3ab98e380d06baf63849",
+     "quote": "\"volume_path\": \"s3://vesuvius-challenge-open-data/PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/\""
+    }
+   ],
+   "paris4_in_training": "YES (documented; Paris 4 is its training volume)",
+   "eligible": false
+  }
+ },
+ "summary": "0 of 3 checkpoints eligible: each one's own documentation states PHerc. Paris 4 training data. No P4-O inference, input request or tile is made by ckpt-screen-a; no sub-sibling is spawned."
+}

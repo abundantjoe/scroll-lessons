@@ -1,0 +1,157 @@
+{
+ "manifest_version": 1,
+ "batch_id": "EXAMPLE",
+ "status": "EXAMPLE: sigma_mm, ref_ceiling, seal_sha256 and every sha256 to be supplied by the orchestrator after D3; remove any window that lies in a sealed or used set (READ-CAL, PROBE, D1/D3) - those lists are not in this container",
+ "voxel": {
+  "metadata_source": "s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/metadata.json",
+  "voxel_um": null
+ },
+ "display": {
+  "window": "raw",
+  "display_scale": 0.5
+ },
+ "positive_canaries": [
+  {
+   "canary_id": "pc1",
+   "tile": {
+    "scroll": "PHerc0139",
+    "segment": "20260215000000-w024_2026021572",
+    "window": {
+     "y0": 3204,
+     "x0": 1068,
+     "h": 2136,
+     "w": 2136
+    }
+   },
+   "ref_map": {
+    "source": "s3://vesuvius-challenge-open-data/PHerc0139/segments/20260215000000-w024_2026021572/ink-detection/PHerc0139-20260215000000-2.399um-0.22m-78keV-volume-20260102150214-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif -> 9.362 um levelled canvas (labelmap formula), window crop",
+    "sha256": null
+   },
+   "sigma_mm": null,
+   "ref_ceiling": {
+    "recall": null,
+    "rows_found": null
+   },
+   "seal_sha256": null
+  },
+  {
+   "canary_id": "pc2",
+   "tile": {
+    "scroll": "PHerc0139",
+    "segment": "20260215000000-w024_2026021572",
+    "window": {
+     "y0": 3204,
+     "x0": 3204,
+     "h": 2136,
+     "w": 2136
+    }
+   },
+   "ref_map": {
+    "source": "s3://vesuvius-challenge-open-data/PHerc0139/segments/20260215000000-w024_2026021572/ink-detection/PHerc0139-20260215000000-2.399um-0.22m-78keV-volume-20260102150214-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif -> 9.362 um levelled canvas (labelmap formula), window crop",
+    "sha256": null
+   },
+   "sigma_mm": null,
+   "ref_ceiling": {
+    "recall": null,
+    "rows_found": null
+   },
+   "seal_sha256": null
+  }
+ ],
+ "baits": [
+  {
+   "bait_id": "bait_wrong_order",
+   "kind": "wrong_order",
+   "tile": {
+    "scroll": "PHerc0139",
+    "segment": "20260220000000-w053_2026022021",
+    "window": {
+     "y0": 3204,
+     "x0": 0,
+     "h": 2136,
+     "w": 2136
+    }
+   },
+   "map": {
+    "source": "base ink_9um C2-NT map, NON-text (reverse) direction, of the tile",
+    "sha256": null
+   }
+  },
+  {
+   "bait_id": "bait_null_arm",
+   "kind": "null_arm",
+   "tile": {
+    "scroll": "PHerc0139",
+    "segment": "20260220000000-w053_2026022021",
+    "window": {
+     "y0": 3204,
+     "x0": 0,
+     "h": 2136,
+     "w": 2136
+    }
+   },
+   "map": {
+    "source": "NULL-arm checkpoint map, text direction, of the tile",
+    "sha256": null
+   }
+  },
+  {
+   "bait_id": "bait_blank",
+   "kind": "blank",
+   "tile": {
+    "scroll": "PHerc0139",
+    "segment": "20260215000000-w024_2026021572",
+    "window": {
+     "y0": 3204,
+     "x0": 1068,
+     "h": 2136,
+     "w": 2136
+    }
+   },
+   "map": null,
+   "blank_mode": "phase_scramble",
+   "derive_from": "pc1"
+  }
+ ],
+ "mirror_canaries": {
+  "glyphs": "EKRCGBN",
+  "letter_height_mm": 3.0,
+  "sigma_mm": null,
+  "canvas_hw": [
+   2136,
+   2136
+  ],
+  "font_sha256": "ae7b7855e115a5966d8b1b3f80f254ccc117ec86f9965e202ee2940453837280"
+ },
+ "selection": {
+  "rule": "2 x 2 cm squares (2136 px at 9.362 um) on the canvases of the clean bank\nsegments w024 and w053, stride 1068 px, >= 95 % mesh-valid, and no densified (4 vox)\nvertex within 2 + 2*sqrt(2) vox of any base-training trace (a conservative superset of\nthe corrected 2-vox surface rule) inside the window plus a 64 px halo; the SEAL-J-D1\nblank windows (+ halo) are excluded; windows do not overlap; order (segment, y, x).",
+  "base_training_traces": [
+   "20250108000003-w028_2025010836",
+   "20250108000004-w029_2025010827",
+   "20250108000005-w030_2025010818",
+   "20260317000000-w035_2026031718",
+   "20260302000000-w039_2026030210",
+   "20250831000000-w040_2025083102",
+   "20260108000000-w041_2026010816",
+   "20260112000000-w043_2026011217",
+   "20260115000000-w044_2026011522",
+   "20260126000000-w045_2026012619",
+   "20260325000000-w046_20260325"
+  ],
+  "near_vox": 4.82842712474619,
+  "used_dev_d1_windows_excluded": 42,
+  "n_windows": 3
+ },
+ "validation_structure_errors": [],
+ "validation_build_errors": [
+  "voxel.voxel_um missing (take it from metadata.json)",
+  "canary pc1: sigma_mm missing",
+  "canary pc1: ref_ceiling recall/rows_found missing",
+  "canary pc1: ref_map sha256 missing",
+  "canary pc2: sigma_mm missing",
+  "canary pc2: ref_ceiling recall/rows_found missing",
+  "canary pc2: ref_map sha256 missing",
+  "bait bait_wrong_order: map sha256 missing",
+  "bait bait_null_arm: map sha256 missing"
+ ]
+}
