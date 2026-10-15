@@ -1,0 +1,734 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "declaration": "RULES.md DECL-C3-R1 (after C3-RUN1 VOID); metric hashes METRIC-HASH-6 and METRIC-HASH-7",
+ "status": "COMPLETE (steps 1-5). Runner output only; no verdict.",
+ "metric_hash_6_verification": "all 13 listed files (pixel.py + tools/c3/*) match their METRIC-HASH-6 sha256 (checked 2026-09-25T00:05Z)",
+ "step1_mesh_valid": {
+  "path": "/work/c3/r1/mesh_valid.npy",
+  "sha256": "4c47ca23706d962ddc197c7527bc70acd0ae47221874a1dc299e5150c2d9f1e5",
+  "shape": [
+   6400,
+   7980
+  ],
+  "dtype": "bool",
+  "valid_px": 43702800,
+  "method": "4-corner quad rule on the -on- 9.362 um mesh, pixel centre -> grid ((p+0.5)*scale), see docstring",
+  "builder": "/work/c3/r1/build_mesh_valid.py",
+  "builder_sha256": "9a94eeabb3e0dba643056ef54681469ef63b0068f4f5aecc47ed9711defab220",
+  "report": "/work/c3/r1/mesh_valid.json",
+  "report_sha256": "6770e3ad11515d4988938e50d3f30b560b62a96dab8550fb520f2d54e7bd59c6",
+  "record_only": {
+   "record_only_nearest_rule_valid_px": 44018400,
+   "record_only_mask_and_not_nearest_px": 0,
+   "record_only_teamSV_nonzero_px": 43449000,
+   "record_only_mask_and_not_teamSV_nonzero_px": 253800,
+   "record_only_teamSV_nonzero_and_not_mask_px": 0,
+   "record_only_run1_crop_mask_valid_px": 4194304
+  }
+ },
+ "step2_pick_crop": {
+  "command": "/opt/hv/bin/python tools/c3/pick_crop_r1.py /work/c3/data/hf/native9/w040/w040_supervision_mask.zarr/0 /work/c3/r1/mesh_valid.npy",
+  "runs": 1,
+  "start_utc": "2026-09-25T00:06:39Z",
+  "end_utc": "2026-09-25T00:06:53Z",
+  "exit": 0,
+  "output_verbatim": "{\"y0\": 2560, \"x0\": 4096, \"supervision_px\": 311648}",
+  "output_file": "/work/c3/r1/pick_crop_r1.out",
+  "output_file_sha256": "328890354cc760ae31f33f34a7936730f8a5737143befac42ca29458d6322086",
+  "crop": {
+   "x0": 4096,
+   "y0": 2560,
+   "width": 2048,
+   "height": 2048,
+   "x_range": [
+    4096,
+    6143
+   ],
+   "y_range": [
+    2560,
+    4607
+   ]
+  },
+  "record_only_checks": {
+   "overlaps_run1_crop": false,
+   "mesh_valid_px": 4194304,
+   "teamSV_nonzero_px": 4194304,
+   "supervision_px": 311648
+  }
+ },
+ "generated_utc": "2026-09-25T00:59:55Z",
+ "repo_head_at_run": "d5613cbc7362d92fffadcf5c89992fe9753dba5e",
+ "metric_hash_7_verification": "tools/c3/fidelity.py 7c7ce085...b16058 and tools/c3/auc_eval.py fc35c089...f59a15 match METRIC-HASH-7; pixel.py, ledger_run.sh and tif2npy.py match METRIC-HASH-6 (checked 2026-09-25T00:08Z). The diff against a76b0ae shows only the env-var crop origin and import os.",
+ "crop": {
+  "x0": 4096,
+  "y0": 2560,
+  "width": 2048,
+  "height": 2048,
+  "env": "C3_X0=4096 C3_Y0=2560"
+ },
+ "render": {
+  "command": "/work/bin/vc vc_render_tifxyz -v s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/ --remote-url s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/ --segmentation /work/c3/data/s3/PHerc0139/segments/20250831000000-w040_2025083102/mesh/20250831000000-on-20250728140407-9.362um.tifxyz --scale 1 --group-idx 0 --num-slices 28 --slice-step 1 --voxel-size 9.362 --voxel-unit micrometer --flip-normals --crop-x 4096 --crop-y 2560 --crop-width 2048 --crop-height 2048 --cache-gb 4 --zarr-output /work/c3/r1/render/w040_crop_x4096_y2560_2048.zarr",
+  "start_utc": "2026-09-25T00:08:19Z",
+  "end_utc": "2026-09-25T00:09:24Z",
+  "exit": 0,
+  "wall_s": 65.0,
+  "output_sha256": "a9af700eac02b2c934f047b57672d4724a5646b3a8bb0709c71d08c8860318d3",
+  "output": "/work/c3/r1/render/w040_crop_x4096_y2560_2048.zarr",
+  "shape_zyx": [
+   28,
+   2048,
+   2048
+  ],
+  "flags": "identical to run 1 except --crop-x 4096 --crop-y 2560 and the output path"
+ },
+ "fidelity": {
+  "provenance": "Project HERCULES | owner the owner | [id removed]",
+  "render_shape": [
+   28,
+   2048,
+   2048
+  ],
+  "sv_crop_shape": [
+   28,
+   2048,
+   2048
+  ],
+  "sv_full_shape": [
+   28,
+   6400,
+   7980
+  ],
+  "crop": {
+   "x": 4096,
+   "y": 2560,
+   "width": 2048,
+   "height": 2048,
+   "axes": "x=column, y=row on SV canvas"
+  },
+  "render_valid_px": 4194304,
+  "sv_valid_px": 4194304,
+  "joint_valid_px": 4194304,
+  "render_valid_not_sv": 0,
+  "sv_valid_not_render": 0,
+  "exact_equal_voxel_fraction_all": 0.9969459431512016,
+  "mean_abs_diff_all": 0.0030540568487984793,
+  "max_abs_diff_all": 1,
+  "primary_all_pixels": {
+   "per_slice": [
+    0.9999989394435673,
+    0.9999989177038018,
+    0.9999989162562852,
+    0.9999989052644449,
+    0.9999988769886172,
+    0.9999988771477134,
+    0.9999988979300309,
+    0.9999988566551927,
+    0.9999988421873128,
+    0.9999988182402121,
+    0.9999987400838575,
+    0.9999986845613803,
+    0.9999986471721584,
+    0.9999986545648796,
+    0.9999987089648872,
+    0.9999987953269623,
+    0.9999988436438239,
+    0.9999989049053145,
+    0.9999989303083178,
+    0.9999989695942091,
+    0.9999990111296504,
+    0.9999990240803229,
+    0.9999990115187966,
+    0.9999990090370915,
+    0.9999989979443633,
+    0.9999990035704641,
+    0.9999990020436814,
+    0.9999990061364584
+   ],
+   "min": 0.9999986471721584,
+   "argmin_slice": 12,
+   "pooled": 0.9999989108147863
+  },
+  "supp_joint_valid_pixels": {
+   "per_slice": [
+    0.9999989394435673,
+    0.9999989177038018,
+    0.9999989162562852,
+    0.9999989052644449,
+    0.9999988769886172,
+    0.9999988771477134,
+    0.9999988979300309,
+    0.9999988566551927,
+    0.9999988421873128,
+    0.9999988182402121,
+    0.9999987400838575,
+    0.9999986845613803,
+    0.9999986471721584,
+    0.9999986545648796,
+    0.9999987089648872,
+    0.9999987953269623,
+    0.9999988436438239,
+    0.9999989049053145,
+    0.9999989303083178,
+    0.9999989695942091,
+    0.9999990111296504,
+    0.9999990240803229,
+    0.9999990115187966,
+    0.9999990090370915,
+    0.9999989979443633,
+    0.9999990035704641,
+    0.9999990020436814,
+    0.9999990061364584
+   ],
+   "min": 0.9999986471721584,
+   "argmin_slice": 12,
+   "pooled": 0.9999989108147863
+  },
+  "supp_slice_offset_scan_pooled_joint_valid": {
+   "-3": 0.1904787825511632,
+   "-2": 0.5108338863285703,
+   "-1": 0.8497016797489934,
+   "0": 0.9999989108147863,
+   "1": 0.8497016979630677,
+   "2": 0.5108338771395868,
+   "3": 0.19047870341377615
+  },
+  "supp_best_slice_offset": 0,
+  "supp_reversed_slice_order_pooled_joint_valid": 0.05779689493096053,
+  "supp_canvas_shift_scan_pooled_joint_valid_interior": {
+   "best_dy_dx": "0,0",
+   "r_best": 0.999998910373993,
+   "r_zero": 0.999998910373993,
+   "all": {
+    "-4,-4": 0.672940359897951,
+    "-4,-3": 0.7106553580234183,
+    "-4,-2": 0.753563717403991,
+    "-4,-1": 0.7916014409501797,
+    "-4,0": 0.8067253794129737,
+    "-4,1": 0.7888894387087542,
+    "-4,2": 0.7487878780520699,
+    "-4,3": 0.7047414317515925,
+    "-4,4": 0.6665274666880171,
+    "-3,-4": 0.70526491207188,
+    "-3,-3": 0.7482448428533306,
+    "-3,-2": 0.7982490969010632,
+    "-3,-1": 0.8434900167143329,
+    "-3,0": 0.8618660677305913,
+    "-3,1": 0.8406798239813877,
+    "-3,2": 0.7931731679979004,
+    "-3,3": 0.7418186749161281,
+    "-3,4": 0.6982423256939194,
+    "-2,-4": 0.7360152542092802,
+    "-2,-3": 0.7851916073713177,
+    "-2,-2": 0.8442038531975863,
+    "-2,-1": 0.8990341424799443,
+    "-2,0": 0.9219662444830768,
+    "-2,1": 0.8964168567048778,
+    "-2,2": 0.8392809303106245,
+    "-2,3": 0.7788098616205715,
+    "-2,4": 0.7290023977767922,
+    "-1,-4": 0.7593280265320769,
+    "-1,-3": 0.8144535136479044,
+    "-1,-2": 0.8827215907993583,
+    "-1,-1": 0.947940844235693,
+    "-1,0": 0.9761412084683162,
+    "-1,1": 0.9461575391231705,
+    "-1,2": 0.8793757420231337,
+    "-1,3": 0.8100602348917506,
+    "-1,4": 0.7544862082473854,
+    "0,-4": 0.7666277222147935,
+    "0,-3": 0.8245818023380637,
+    "0,-2": 0.897540784077785,
+    "0,-1": 0.9683617317373264,
+    "0,0": 0.999998910373993,
+    "0,1": 0.9683638713712731,
+    "0,2": 0.8975537562259588,
+    "0,3": 0.8246109909500838,
+    "0,4": 0.7666699911488365,
+    "1,-4": 0.754402929917684,
+    "1,-3": 0.8100013541854297,
+    "1,-2": 0.879343619918832,
+    "1,-1": 0.9461449163281382,
+    "1,0": 0.976135748740811,
+    "1,1": 0.9479371810159829,
+    "1,2": 0.8827245134136921,
+    "1,3": 0.8144669502394931,
+    "1,4": 0.7593482276668954,
+    "2,-4": 0.7288520215979599,
+    "2,-3": 0.7786944412564483,
+    "2,-2": 0.839201685067376,
+    "2,-1": 0.8963652650418673,
+    "2,0": 0.9219285186498968,
+    "2,1": 0.8990027850002057,
+    "2,2": 0.8441819773127016,
+    "2,3": 0.7851827211261453,
+    "2,4": 0.7360143000695097,
+    "3,-4": 0.6980001156563337,
+    "3,-3": 0.7416181919035988,
+    "3,-2": 0.7930154523104749,
+    "3,-1": 0.8405566147874047,
+    "3,0": 0.8617635465949713,
+    "3,1": 0.843401049126993,
+    "3,2": 0.7981773345551473,
+    "3,3": 0.7481944967077563,
+    "3,4": 0.7052296216972983,
+    "4,-4": 0.6661775499984249,
+    "4,-3": 0.7044369168242611,
+    "4,-2": 0.7485308139444529,
+    "4,-1": 0.7886729468307258,
+    "4,0": 0.8065365365818277,
+    "4,1": 0.7914340074628091,
+    "4,2": 0.7534222919050587,
+    "4,3": 0.7105449965575844,
+    "4,4": 0.6728543664537607
+   }
+  }
+ },
+ "fidelity_run": {
+  "command": "/opt/hv/bin/python tools/c3/fidelity.py /work/c3/r1/render/w040_crop_x4096_y2560_2048.zarr /work/c3/data/s3/PHerc0139/segments/20250831000000-w040_2025083102/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr /work/c3/r1/fidelity_r1.json",
+  "start_utc": "2026-09-25T00:46:44Z",
+  "end_utc": "2026-09-25T00:58:35Z",
+  "exit": 0,
+  "wall_s": 711.0,
+  "output_sha256": "4111a20a3d0a007bbfdb178ce9674801187adf3f32fb25775901715987ab0874"
+ },
+ "inference": {
+  "direction_mapping": "OUT.tif = forward (layers 6..22 ascending); OUT_reverse.tif = reverse (22..6); infer.py 41701aa resolve_run_directions / resolve_single_output_path",
+  "runs": {
+   "c2_tta": {
+    "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/c3/r1/render/w040_crop_x4096_y2560_2048.zarr /work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth /work/c3/r1/infer/c2_tta/w040_r1.tif --direction both --tta-mirror --batch-size 4 --num-workers 1 --no-compile",
+    "start_utc": "2026-09-25T00:09:33Z",
+    "end_utc": "2026-09-25T00:42:06Z",
+    "exit": 0,
+    "wall_s": 1953.0,
+    "output_sha256": "933de6994ea8702908d61a2542ee3560550fd6a956b9e2e644a4a3489a69a63e",
+    "outputs": {
+     "w040_r1.tif": {
+      "path": "/work/c3/r1/infer/c2_tta/w040_r1.tif",
+      "bytes": 1981077,
+      "sha256": "2ba476e43c71d30ba09e1942fa8101b487e17fb162b71a0a728a6b15d431f612"
+     },
+     "w040_r1.tif.npy": {
+      "path": "/work/c3/r1/infer/c2_tta/w040_r1.tif.npy",
+      "bytes": 4194432,
+      "sha256": "47293a93fee381aa241fa4e9b29a7e597dca7b81c407a57a3cf39f48fd246871"
+     },
+     "w040_r1_reverse.tif": {
+      "path": "/work/c3/r1/infer/c2_tta/w040_r1_reverse.tif",
+      "bytes": 1717495,
+      "sha256": "bf5d03096938ff13fd29c36794ea7eb7d50c850b303ebbab5ced499c68bfd5b8"
+     },
+     "w040_r1_reverse.tif.npy": {
+      "path": "/work/c3/r1/infer/c2_tta/w040_r1_reverse.tif.npy",
+      "bytes": 4194432,
+      "sha256": "b7ca59ab0ce0d088b2865edc9b264079673b44100e3169a08f14f9473b78004f"
+     }
+    },
+    "patches_per_order": 961,
+    "per_order": {
+     "forward": {
+      "layer_indices": "[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]",
+      "output": "/work/c3/r1/infer/c2_tta/w040_r1.tif",
+      "start_utc": "2026-09-25T00:09:37Z",
+      "wall_s": 1196.0
+     },
+     "reverse": {
+      "layer_indices": "[22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6]",
+      "output": "/work/c3/r1/infer/c2_tta/w040_r1_reverse.tif",
+      "start_utc": "2026-09-25T00:29:33Z",
+      "wall_s": 753.0
+     }
+    }
+   },
+   "c2_notta": {
+    "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/c3/r1/render/w040_crop_x4096_y2560_2048.zarr /work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth /work/c3/r1/infer/c2_notta/w040_r1.tif --direction both --batch-size 4 --num-workers 1 --no-compile",
+    "start_utc": "2026-09-25T00:42:06Z",
+    "end_utc": "2026-09-25T00:46:36Z",
+    "exit": 0,
+    "wall_s": 270.0,
+    "output_sha256": "a5266fc5ab5106649f0408ac176b72ef97046f5ec745cc1195fc4de401a8e377",
+    "outputs": {
+     "w040_r1.tif": {
+      "path": "/work/c3/r1/infer/c2_notta/w040_r1.tif",
+      "bytes": 2409368,
+      "sha256": "c74d889953ca229d8915aebad23342fead638f80a58375d323bf26151c66f835"
+     },
+     "w040_r1.tif.npy": {
+      "path": "/work/c3/r1/infer/c2_notta/w040_r1.tif.npy",
+      "bytes": 4194432,
+      "sha256": "488c745a839ef81a79cdb97923d2ddf33412d96d39f7a5b184ba2597bd0e619f"
+     },
+     "w040_r1_reverse.tif": {
+      "path": "/work/c3/r1/infer/c2_notta/w040_r1_reverse.tif",
+      "bytes": 2178989,
+      "sha256": "470abe8a1dd67505341acdd8c5ced7f409084dc87151109a8e33b67e5edec10e"
+     },
+     "w040_r1_reverse.tif.npy": {
+      "path": "/work/c3/r1/infer/c2_notta/w040_r1_reverse.tif.npy",
+      "bytes": 4194432,
+      "sha256": "6919af901844de989cfeeb696517cc9f64514074f06af403e2825e735638f1cb"
+     }
+    },
+    "patches_per_order": 961,
+    "per_order": {
+     "forward": {
+      "layer_indices": "[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]",
+      "output": "/work/c3/r1/infer/c2_notta/w040_r1.tif",
+      "start_utc": "2026-09-25T00:42:10Z",
+      "wall_s": 128.0
+     },
+     "reverse": {
+      "layer_indices": "[22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6]",
+      "output": "/work/c3/r1/infer/c2_notta/w040_r1_reverse.tif",
+      "start_utc": "2026-09-25T00:44:18Z",
+      "wall_s": 138.0
+     }
+    }
+   }
+  }
+ },
+ "auc": {
+  "provenance": "Project HERCULES | owner the owner | [id removed]",
+  "mode": "crop",
+  "label_array_shape": [
+   28,
+   6400,
+   7980
+  ],
+  "label_plane": 14,
+  "label_value_range": [
+   0,
+   255
+  ],
+  "binarisation_threshold": 127.5,
+  "maps": {
+   "c2_tta_forward": {
+    "path": "/work/c3/r1/infer/c2_tta/w040_r1.tif",
+    "sha256": "2ba476e43c71d30ba09e1942fa8101b487e17fb162b71a0a728a6b15d431f612",
+    "shape": [
+     2048,
+     2048
+    ],
+    "dtype": "uint8",
+    "auc_declared_valid": 0.9659572532205206,
+    "supp_auc_within_supervision_mask": 0.9779485292465405,
+    "map_mean_valid": 89.85701203346252
+   },
+   "c2_tta_reverse": {
+    "path": "/work/c3/r1/infer/c2_tta/w040_r1_reverse.tif",
+    "sha256": "bf5d03096938ff13fd29c36794ea7eb7d50c850b303ebbab5ced499c68bfd5b8",
+    "shape": [
+     2048,
+     2048
+    ],
+    "dtype": "uint8",
+    "auc_declared_valid": 0.5217418207002806,
+    "supp_auc_within_supervision_mask": 0.5664835329182967,
+    "map_mean_valid": 79.61969089508057
+   },
+   "c2_notta_forward": {
+    "path": "/work/c3/r1/infer/c2_notta/w040_r1.tif",
+    "sha256": "c74d889953ca229d8915aebad23342fead638f80a58375d323bf26151c66f835",
+    "shape": [
+     2048,
+     2048
+    ],
+    "dtype": "uint8",
+    "auc_declared_valid": 0.9831172674349267,
+    "supp_auc_within_supervision_mask": 0.9934669282914935,
+    "map_mean_valid": 90.02678489685059
+   },
+   "c2_notta_reverse": {
+    "path": "/work/c3/r1/infer/c2_notta/w040_r1_reverse.tif",
+    "sha256": "470abe8a1dd67505341acdd8c5ced7f409084dc87151109a8e33b67e5edec10e",
+    "shape": [
+     2048,
+     2048
+    ],
+    "dtype": "uint8",
+    "auc_declared_valid": 0.5184825441402122,
+    "supp_auc_within_supervision_mask": 0.5814214813934577,
+    "map_mean_valid": 79.24057960510254
+   }
+  },
+  "crop": {
+   "x": 4096,
+   "y": 2560,
+   "width": 2048,
+   "height": 2048
+  },
+  "valid_px": 4194304,
+  "ink_px_valid": 150234,
+  "blank_px_valid": 4044070,
+  "ink_px_valid_in_supervision": 147186,
+  "blank_px_valid_in_supervision": 164462
+ },
+ "auc_run": {
+  "command": "/opt/hv/bin/python tools/c3/auc_eval.py /work/c3/r1/auc_r1.json crop /work/c3/r1/fidelity_r1_render_valid.npy c2_tta_forward=/work/c3/r1/infer/c2_tta/w040_r1.tif c2_tta_reverse=/work/c3/r1/infer/c2_tta/w040_r1_reverse.tif c2_notta_forward=/work/c3/r1/infer/c2_notta/w040_r1.tif c2_notta_reverse=/work/c3/r1/infer/c2_notta/w040_r1_reverse.tif",
+  "start_utc": "2026-09-25T00:58:54Z",
+  "end_utc": "2026-09-25T00:59:09Z",
+  "exit": 0,
+  "wall_s": 15.0,
+  "output_sha256": "7c530e8527cac84cb6839e6c8ea346c1944dff38ebf82373b1bcaef81eb24944"
+ },
+ "label_crops": {
+  "provenance": "Project HERCULES | owner the owner | [id removed]",
+  "crop": {
+   "x0": 4096,
+   "y0": 2560,
+   "width": 2048,
+   "height": 2048,
+   "plane_z": 14
+  },
+  "sources": {
+   "labels": "/work/c3/data/hf/native9/w040/w040_inklabels.zarr/0",
+   "supervision": "/work/c3/data/hf/native9/w040/w040_supervision_mask.zarr/0"
+  },
+  "labels_z14_crop": {
+   "path": "/work/c3/r1/labels/labels_z14_crop.npy",
+   "sha256": "ac6c903b90f082f78e11cfe912e7f95207cf924a10338527b65666cfdcb12dd1",
+   "shape": [
+    2048,
+    2048
+   ],
+   "dtype": "uint8",
+   "values": [
+    0,
+    255
+   ]
+  },
+  "supervision_z14_crop": {
+   "path": "/work/c3/r1/labels/supervision_z14_crop.npy",
+   "sha256": "a124ebdb3b4762281c929b2f2edf01eaac0af7de9669960e5b43789615baeced",
+   "shape": [
+    2048,
+    2048
+   ],
+   "dtype": "uint8",
+   "values": [
+    0,
+    255
+   ]
+  },
+  "counts": {
+   "ink_255": 150234,
+   "blank_0": 4044070,
+   "supervision_px": 311648,
+   "ink_in_supervision": 147186,
+   "blank_in_supervision": 164462,
+   "ink_outside_supervision": 3048
+  }
+ },
+ "auditor_files": {
+  "maps_tif": {
+   "c2_tta_forward": "/work/c3/r1/infer/c2_tta/w040_r1.tif",
+   "c2_tta_reverse": "/work/c3/r1/infer/c2_tta/w040_r1_reverse.tif",
+   "c2_notta_forward": "/work/c3/r1/infer/c2_notta/w040_r1.tif",
+   "c2_notta_reverse": "/work/c3/r1/infer/c2_notta/w040_r1_reverse.tif"
+  },
+  "maps_npy_decoded": {
+   "c2_tta_forward": "/work/c3/r1/infer/c2_tta/w040_r1.tif.npy",
+   "c2_tta_reverse": "/work/c3/r1/infer/c2_tta/w040_r1_reverse.tif.npy",
+   "c2_notta_forward": "/work/c3/r1/infer/c2_notta/w040_r1.tif.npy",
+   "c2_notta_reverse": "/work/c3/r1/infer/c2_notta/w040_r1_reverse.tif.npy"
+  },
+  "maps_npy_sha256": {
+   "c2_tta_forward": "47293a93fee381aa241fa4e9b29a7e597dca7b81c407a57a3cf39f48fd246871",
+   "c2_tta_reverse": "b7ca59ab0ce0d088b2865edc9b264079673b44100e3169a08f14f9473b78004f",
+   "c2_notta_forward": "488c745a839ef81a79cdb97923d2ddf33412d96d39f7a5b184ba2597bd0e619f",
+   "c2_notta_reverse": "6919af901844de989cfeeb696517cc9f64514074f06af403e2825e735638f1cb"
+  },
+  "labels_z14_crop": {
+   "path": "/work/c3/r1/labels/labels_z14_crop.npy",
+   "sha256": "ac6c903b90f082f78e11cfe912e7f95207cf924a10338527b65666cfdcb12dd1",
+   "shape": [
+    2048,
+    2048
+   ],
+   "dtype": "uint8",
+   "values": [
+    0,
+    255
+   ]
+  },
+  "supervision_z14_crop": {
+   "path": "/work/c3/r1/labels/supervision_z14_crop.npy",
+   "sha256": "a124ebdb3b4762281c929b2f2edf01eaac0af7de9669960e5b43789615baeced",
+   "shape": [
+    2048,
+    2048
+   ],
+   "dtype": "uint8",
+   "values": [
+    0,
+    255
+   ]
+  },
+  "render_valid_mask": {
+   "path": "/work/c3/r1/fidelity_r1_render_valid.npy",
+   "sha256": "7e6b2a715f2d6cd833f3d27c2bd6c3446454be93091d736871f6f339fdce5e2e"
+  },
+  "recompute": "AUC = hercules.metrics.pixel.auc(map, lab01, valid & (sup > 0)), lab01 = 1 where label == 255, 0 where label == 0; valid = render_valid_mask (all True here)"
+ },
+ "summary": {
+  "crop_x0_y0": [
+   4096,
+   2560
+  ],
+  "render_pearson_pooled": 0.9999989108147863,
+  "render_pearson_min_slice": 0.9999986471721584,
+  "render_best_slice_offset": 0,
+  "render_best_canvas_shift_dy_dx": "0,0",
+  "auc_in_supervision_mask": {
+   "c2_tta_forward": 0.9779485292465405,
+   "c2_tta_reverse": 0.5664835329182967,
+   "c2_notta_forward": 0.9934669282914935,
+   "c2_notta_reverse": 0.5814214813934577
+  },
+  "auc_run1_declared_definition_for_completeness": {
+   "c2_tta_forward": 0.9659572532205206,
+   "c2_tta_reverse": 0.5217418207002806,
+   "c2_notta_forward": 0.9831172674349267,
+   "c2_notta_reverse": 0.5184825441402122
+  },
+  "declared_bars_DECL_C3_R1": {
+   "pooled_render_pearson": ">= 0.999",
+   "forward_auc_c2_tta_in_mask": ">= 0.987",
+   "reverse_auc_c2_tta_in_mask": "< 0.60"
+  }
+ },
+ "scripts_r1": {
+  "build_mesh_valid.py": "9a94eeabb3e0dba643056ef54681469ef63b0068f4f5aecc47ed9711defab220",
+  "save_label_crops.py": "366e8f29b3789bedcfe4f0598b37a188782bceac61ad6c6e997d231b664a0d41",
+  "run_infer_r1.sh": "0e90861b0e10d06e4b83b5bb64e9338a71a31e62793280ed3e578cbc71b1fa27",
+  "assemble_r1.py": "617d387b59fa4144ff6b0a693bd8afa0b5ebcc3948d5c7d8dd8f2c5eb9b0f891"
+ },
+ "deviations_and_notes": [
+  "Inference was run with the official CLI directly (as instructed), through tools/c3/ledger_run.sh, via the one-off wrapper /work/c3/r1/run_infer_r1.sh (flags identical to run 1).",
+  "A first fidelity launch (00:09:41Z) ran in parallel with inference. It was killed after about 14 s to keep total CPU at 3 threads. The kill also stopped its ledger wrapper, so that row (exit 143) was added by hand. Fidelity was then re-run after inference. The launch produced no output.",
+  "Maps are LZW TIFFs, and /opt/hv has no imagecodecs. auc_eval.py therefore read the tools/c3/tif2npy.py decodes (<map>.tif.npy, produced with /opt/hv-ink) through its hashed fallback. Both files are listed for the auditor.",
+  "Label crops and the supervision crop were saved by /work/c3/r1/save_label_crops.py (new, not a metric script; it reads the official label zarrs unchanged).",
+  "Auditor-style cross-check (/work/c3/r1/auditor_style_check.txt): recomputing the four in-mask AUCs from the saved label/supervision crops and map decodes with pixel.auc gives exactly the auc_eval.py values. Its ledger row start time is approximate (file mtime minus 15 s). Its sha256 in the ledger is for the file before the provenance line was prepended.",
+  "The mesh-valid mask (step 1) uses the 4-corner rule. The renderer default (nearest-vertex) covers a superset. The chosen crop is fully valid under both, and fully nonzero in the team SV."
+ ],
+ "compute_ledger_rows_r1": [
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python /work/c3/r1/build_mesh_valid.py /work/c3/data/s3/PHerc0139/segments/20250831000000-w040_2025083102/mesh/20250831000000-on-20250728140407-9.362um.tifxyz /work/c3/data/s3/PHerc0139/segments/20250831000000-w040_2025083102/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr /work/c3/r1/mesh_valid.npy /work/c3/r1/mesh_valid.json ",
+   "start_utc": "2026-09-25T00:06:26Z",
+   "end_utc": "2026-09-25T00:06:31Z",
+   "exit": "0",
+   "output_sha256": "4c47ca23706d962ddc197c7527bc70acd0ae47221874a1dc299e5150c2d9f1e5"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python tools/c3/pick_crop_r1.py /work/c3/data/hf/native9/w040/w040_supervision_mask.zarr/0 /work/c3/r1/mesh_valid.npy ",
+   "start_utc": "2026-09-25T00:06:39Z",
+   "end_utc": "2026-09-25T00:06:53Z",
+   "exit": "0",
+   "output_sha256": "-"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/work/bin/vc vc_render_tifxyz -v s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/ --remote-url s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/ --segmentation /work/c3/data/s3/PHerc0139/segments/20250831000000-w040_2025083102/mesh/20250831000000-on-20250728140407-9.362um.tifxyz --scale 1 --group-idx 0 --num-slices 28 --slice-step 1 --voxel-size 9.362 --voxel-unit micrometer --flip-normals --crop-x 4096 --crop-y 2560 --crop-width 2048 --crop-height 2048 --cache-gb 4 --zarr-output /work/c3/r1/render/w040_crop_x4096_y2560_2048.zarr ",
+   "start_utc": "2026-09-25T00:08:19Z",
+   "end_utc": "2026-09-25T00:09:24Z",
+   "exit": "0",
+   "output_sha256": "a9af700eac02b2c934f047b57672d4724a5646b3a8bb0709c71d08c8860318d3"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "C3_X0=4096 C3_Y0=2560 OMP_NUM_THREADS=1 /opt/hv/bin/python tools/c3/fidelity.py /work/c3/r1/render/w040_crop_x4096_y2560_2048.zarr /work/c3/data/s3/PHerc0139/segments/20250831000000-w040_2025083102/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr /work/c3/r1/fidelity_r1.json (KILLED by runner to keep total CPU at 3 threads while inference ran; row written by hand because the kill also stopped the ledger wrapper; end time approximate)",
+   "start_utc": "2026-09-25T00:09:41Z",
+   "end_utc": "2026-09-25T00:09:55Z",
+   "exit": "143",
+   "output_sha256": "missing"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/c3/r1/render/w040_crop_x4096_y2560_2048.zarr /work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth /work/c3/r1/infer/c2_tta/w040_r1.tif --direction both --tta-mirror --batch-size 4 --num-workers 1 --no-compile ",
+   "start_utc": "2026-09-25T00:09:33Z",
+   "end_utc": "2026-09-25T00:42:06Z",
+   "exit": "0",
+   "output_sha256": "933de6994ea8702908d61a2542ee3560550fd6a956b9e2e644a4a3489a69a63e"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/c3/r1/render/w040_crop_x4096_y2560_2048.zarr /work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth /work/c3/r1/infer/c2_notta/w040_r1.tif --direction both --batch-size 4 --num-workers 1 --no-compile ",
+   "start_utc": "2026-09-25T00:42:06Z",
+   "end_utc": "2026-09-25T00:46:36Z",
+   "exit": "0",
+   "output_sha256": "a5266fc5ab5106649f0408ac176b72ef97046f5ec745cc1195fc4de401a8e377"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python tools/c3/fidelity.py /work/c3/r1/render/w040_crop_x4096_y2560_2048.zarr /work/c3/data/s3/PHerc0139/segments/20250831000000-w040_2025083102/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr /work/c3/r1/fidelity_r1.json ",
+   "start_utc": "2026-09-25T00:46:44Z",
+   "end_utc": "2026-09-25T00:58:35Z",
+   "exit": "0",
+   "output_sha256": "4111a20a3d0a007bbfdb178ce9674801187adf3f32fb25775901715987ab0874"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv-ink/bin/python tools/c3/tif2npy.py /work/c3/r1/infer/c2_tta/w040_r1.tif /work/c3/r1/infer/c2_tta/w040_r1_reverse.tif /work/c3/r1/infer/c2_notta/w040_r1.tif /work/c3/r1/infer/c2_notta/w040_r1_reverse.tif ",
+   "start_utc": "2026-09-25T00:58:47Z",
+   "end_utc": "2026-09-25T00:58:47Z",
+   "exit": "0",
+   "output_sha256": "-"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python /work/c3/r1/save_label_crops.py 4096 2560 /work/c3/r1/labels ",
+   "start_utc": "2026-09-25T00:58:47Z",
+   "end_utc": "2026-09-25T00:58:48Z",
+   "exit": "0",
+   "output_sha256": "898fc359d530ffb5700912b44696c171bd85cd3f10e957cb46e74094abe00487"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python tools/c3/auc_eval.py /work/c3/r1/auc_r1.json crop /work/c3/r1/fidelity_r1_render_valid.npy c2_tta_forward=/work/c3/r1/infer/c2_tta/w040_r1.tif c2_tta_reverse=/work/c3/r1/infer/c2_tta/w040_r1_reverse.tif c2_notta_forward=/work/c3/r1/infer/c2_notta/w040_r1.tif c2_notta_reverse=/work/c3/r1/infer/c2_notta/w040_r1_reverse.tif ",
+   "start_utc": "2026-09-25T00:58:54Z",
+   "end_utc": "2026-09-25T00:59:09Z",
+   "exit": "0",
+   "output_sha256": "7c530e8527cac84cb6839e6c8ea346c1944dff38ebf82373b1bcaef81eb24944"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python (inline) auditor-style AUC recompute from /work/c3/r1/labels/*.npy and map .npy decodes -> /work/c3/r1/auditor_style_check.txt",
+   "start_utc": "2026-09-25T00:59:08Z",
+   "end_utc": "2026-09-25T00:59:23Z",
+   "exit": "0",
+   "output_sha256": "bc04443a8cca04eeae6a8cd7ec5cdc33304712d37995c29de70d1823e0a076cd"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python /work/c3/r1/assemble_r1.py ",
+   "start_utc": "2026-09-25T00:59:34Z",
+   "end_utc": "2026-09-25T00:59:34Z",
+   "exit": "1",
+   "output_sha256": "f3c3906870ace7bc936f03e2c2298e4671ef180a3f7ace64a2a6c1779b2f9d23"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python /work/c3/r1/assemble_r1.py ",
+   "start_utc": "2026-09-25T00:59:43Z",
+   "end_utc": "2026-09-25T00:59:43Z",
+   "exit": "0",
+   "output_sha256": "42d014ece520c7c7ae668252d3032376f4b540671c9c015a8d662f2c9627c49c"
+  }
+ ],
+ "disk_bytes_work_c3_r1": 244354585,
+ "history": "Stopped after step 2 (2026-09-25T00:07Z) because fidelity.py and auc_eval.py hard-coded the run-1 crop. Resumed after METRIC-HASH-7 (crop origin via env C3_X0/C3_Y0)."
+}

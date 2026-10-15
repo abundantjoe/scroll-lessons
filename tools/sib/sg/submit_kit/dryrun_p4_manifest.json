@@ -1,0 +1,78 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "dry_run": true,
+ "note": "SYNTHETIC DRY RUN P4 manifest for tests only; no value describes real data; no P4 read exists.",
+ "scan_volume_id": "00000000000000",
+ "voxel_size_um": 2.4,
+ "segment_id": "DRYRUN-SEGMENT",
+ "prediction_source": {
+  "model_id": "DRYRUN-MODEL",
+  "volume_id": "00000000000000",
+  "sha256": "3333333333333333333333333333333333333333333333333333333333333333"
+ },
+ "mesh": {
+  "tifxyz_name": "dryrun_p4_crop.tifxyz",
+  "sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+  "crop_margin_mm": 10.0,
+  "flattening_method": "vc_flatten (FLAT-1)",
+  "flat1_quads_within_tol_pct": 95.0
+ },
+ "ct_render": {
+  "volume_id": "00000000000000",
+  "window_pct_low": 1,
+  "window_pct_high": 99
+ },
+ "images": {
+  "prediction_file": "dryrun_p4_crop.tifxyz.prediction.png",
+  "context_file": "dryrun_p4_context.png",
+  "named_after_mesh": true,
+  "scale_bar_1cm": true,
+  "letter_dimensions": [
+   {
+    "px_w": 300,
+    "px_h": 400,
+    "mm_w": 0.72,
+    "mm_h": 0.96
+   }
+  ]
+ },
+ "container": {
+  "image_ref": "dryrun/container:v1",
+  "sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+  "system_requirements": "4 vCPU, 15 GB RAM, no GPU"
+ },
+ "human_in_loop": "none (no manual annotation; the owner files)",
+ "heldout": [],
+ "heldout_note": "no ground truth exists for the title region; the known-text strip was read in the same census as an attention check (DECL-P4-2-A1).",
+ "licence_lineage": {
+  "overall": "BLOCKS",
+  "record": "logs/sib/sg/licence/lineage_base_ink9um.json"
+ },
+ "sg11_refcal": {
+  "record": "not applicable to P4 (no SG)"
+ },
+ "declared_bars": {
+  "source": "DECL-P4-2 items 2-7; DECL-FACTORY FLAT-1",
+  "tile_mm": 20,
+  "min_letters": 5,
+  "null_percentile": 99,
+  "consensus_px": 150,
+  "labelled_adjacent_mm": 1.2,
+  "flat1_tol_pct": 5,
+  "flat1_quads_min_pct": 93.1
+ },
+ "reading": {
+  "key_sheet_variant": "sigma2 (lunate and normal sigma shown)",
+  "key_sheet_sha256": "6666666666666666666666666666666666666666666666666666666666666666"
+ },
+ "material": {
+  "kind": "official_prediction",
+  "volume_id": "00000000000000",
+  "checkpoint_id": "DRYRUN-CKPT",
+  "checkpoint_sha256": "7777777777777777777777777777777777777777777777777777777777777777",
+  "provenance_record": "DRYRUN-PROVENANCE",
+  "variant": "DRYRUN-L3 (depth-calibrated thin slab)",
+  "parameters_record": "DRYRUN-PARAMS",
+  "iteration": "DRYRUN-ITERATION"
+ }
+}

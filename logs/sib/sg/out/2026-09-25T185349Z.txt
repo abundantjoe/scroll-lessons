@@ -1,0 +1,152 @@
+
+==================================== ERRORS ====================================
+________________ ERROR collecting tests/test_display_builder.py ________________
+ImportError while importing test module '/home/user/dominion/tests/test_display_builder.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_display_builder.py:6: in <module>
+    from PIL import Image
+E   ModuleNotFoundError: No module named 'PIL'
+____________ ERROR collecting tests/test_geometry_contamination.py _____________
+ImportError while importing test module '/home/user/dominion/tests/test_geometry_contamination.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_geometry_contamination.py:7: in <module>
+    from hercules.geometry import contamination as CT
+src/hercules/geometry/contamination.py:21: in <module>
+    from .tifxyz import densify, valid_mask
+src/hercules/geometry/tifxyz.py:37: in <module>
+    import tifffile
+E   ModuleNotFoundError: No module named 'tifffile'
+______________ ERROR collecting tests/test_geometry_handedness.py ______________
+ImportError while importing test module '/home/user/dominion/tests/test_geometry_handedness.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_geometry_handedness.py:9: in <module>
+    from hercules.geometry import level_mesh as L
+src/hercules/geometry/level_mesh.py:58: in <module>
+    from .tifxyz import (
+src/hercules/geometry/tifxyz.py:37: in <module>
+    import tifffile
+E   ModuleNotFoundError: No module named 'tifffile'
+________________ ERROR collecting tests/test_geometry_level.py _________________
+ImportError while importing test module '/home/user/dominion/tests/test_geometry_level.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_geometry_level.py:8: in <module>
+    from hercules.geometry import level_mesh as L
+src/hercules/geometry/level_mesh.py:58: in <module>
+    from .tifxyz import (
+src/hercules/geometry/tifxyz.py:37: in <module>
+    import tifffile
+E   ModuleNotFoundError: No module named 'tifffile'
+________________ ERROR collecting tests/test_geometry_tifxyz.py ________________
+ImportError while importing test module '/home/user/dominion/tests/test_geometry_tifxyz.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_geometry_tifxyz.py:8: in <module>
+    import tifffile
+E   ModuleNotFoundError: No module named 'tifffile'
+_________ ERROR collecting tests/test_geometry_truncation_labelmap.py __________
+ImportError while importing test module '/home/user/dominion/tests/test_geometry_truncation_labelmap.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_geometry_truncation_labelmap.py:8: in <module>
+    from hercules.geometry import truncation as TR
+src/hercules/geometry/truncation.py:22: in <module>
+    from .tifxyz import SENTINEL, valid_mask
+src/hercules/geometry/tifxyz.py:37: in <module>
+    import tifffile
+E   ModuleNotFoundError: No module named 'tifffile'
+________________ ERROR collecting tests/test_pipeline_canvas.py ________________
+ImportError while importing test module '/home/user/dominion/tests/test_pipeline_canvas.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_pipeline_canvas.py:21: in <module>
+    from hercules.geometry.tifxyz import TifxyzMesh, vertex_normals, write_tifxyz
+src/hercules/geometry/tifxyz.py:37: in <module>
+    import tifffile
+E   ModuleNotFoundError: No module named 'tifffile'
+________________ ERROR collecting tests/test_pipeline_centre.py ________________
+ImportError while importing test module '/home/user/dominion/tests/test_pipeline_centre.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_pipeline_centre.py:11: in <module>
+    from hercules.geometry.render_synth import cylinder_grid
+src/hercules/geometry/render_synth.py:16: in <module>
+    from .tifxyz import valid_mask
+src/hercules/geometry/tifxyz.py:37: in <module>
+    import tifffile
+E   ModuleNotFoundError: No module named 'tifffile'
+________________ ERROR collecting tests/test_pipeline_window.py ________________
+ImportError while importing test module '/home/user/dominion/tests/test_pipeline_window.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_pipeline_window.py:16: in <module>
+    from hercules.geometry.level_mesh import CentreCurve, iso_z_tilt_deg
+src/hercules/geometry/level_mesh.py:58: in <module>
+    from .tifxyz import (
+src/hercules/geometry/tifxyz.py:37: in <module>
+    import tifffile
+E   ModuleNotFoundError: No module named 'tifffile'
+________________ ERROR collecting tests/test_records_cf_scan.py ________________
+ImportError while importing test module '/home/user/dominion/tests/test_records_cf_scan.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_records_cf_scan.py:17: in <module>
+    from PIL import Image, TiffImagePlugin
+E   ModuleNotFoundError: No module named 'PIL'
+_________________ ERROR collecting tests/test_records_hook.py __________________
+ImportError while importing test module '/home/user/dominion/tests/test_records_hook.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_records_hook.py:22: in <module>
+    from PIL import Image
+E   ModuleNotFoundError: No module named 'PIL'
+=========================== short test summary info ============================
+ERROR tests/test_display_builder.py
+ERROR tests/test_geometry_contamination.py
+ERROR tests/test_geometry_handedness.py
+ERROR tests/test_geometry_level.py
+ERROR tests/test_geometry_tifxyz.py
+ERROR tests/test_geometry_truncation_labelmap.py
+ERROR tests/test_pipeline_canvas.py
+ERROR tests/test_pipeline_centre.py
+ERROR tests/test_pipeline_window.py
+ERROR tests/test_records_cf_scan.py
+ERROR tests/test_records_hook.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 11 errors during collection !!!!!!!!!!!!!!!!!!!
+11 errors in 2.49s

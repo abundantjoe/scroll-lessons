@@ -1,0 +1,126 @@
+........................................................................ [  9%]
+.......ssssss..........................s................................ [ 19%]
+........................................................................ [ 29%]
+........................................................................ [ 39%]
+........................................................................ [ 49%]
+........................................................................ [ 59%]
+........................................................................ [ 69%]
+........................................................................ [ 79%]
+........................................................................ [ 89%]
+........................................................................ [ 99%]
+..EEEE                                                                   [100%]
+==================================== ERRORS ====================================
+_______________________ ERROR at setup of test_ref_stage _______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-5/test_ref_stage0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f4f60bb6750>
+
+    @pytest.fixture
+    def env(tmp_path, monkeypatch):
+>       m = _load()
+            ^^^^^^^
+
+tests/test_tools_score_d1.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tools_score_d1.py:15: in _load
+    spec.loader.exec_module(m)
+<frozen importlib._bootstrap_external>:936: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1073: in get_code
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_frozen_importlib_external.SourceFileLoader object at 0x7f4f60bb70d0>
+path = '/tmp/sg_merged.BLGYaz/tools/d1/score_d1.py'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/tmp/sg_merged.BLGYaz/tools/d1/score_d1.py'
+
+<frozen importlib._bootstrap_external>:1130: FileNotFoundError
+_______ ERROR at setup of test_model_stage_state_b_text_order_and_chance _______
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-5/test_model_stage_state_b_text_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f4f60bbb5d0>
+
+    @pytest.fixture
+    def env(tmp_path, monkeypatch):
+>       m = _load()
+            ^^^^^^^
+
+tests/test_tools_score_d1.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tools_score_d1.py:15: in _load
+    spec.loader.exec_module(m)
+<frozen importlib._bootstrap_external>:936: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1073: in get_code
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_frozen_importlib_external.SourceFileLoader object at 0x7f4f60bba690>
+path = '/tmp/sg_merged.BLGYaz/tools/d1/score_d1.py'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/tmp/sg_merged.BLGYaz/tools/d1/score_d1.py'
+
+<frozen importlib._bootstrap_external>:1130: FileNotFoundError
+___________ ERROR at setup of test_fa_passes_against_silent_controls ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-5/test_fa_passes_against_silent_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f4f65432590>
+
+    @pytest.fixture
+    def env(tmp_path, monkeypatch):
+>       m = _load()
+            ^^^^^^^
+
+tests/test_tools_score_d3.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tools_score_d3.py:18: in _load
+    spec.loader.exec_module(m)
+<frozen importlib._bootstrap_external>:936: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1073: in get_code
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_frozen_importlib_external.SourceFileLoader object at 0x7f4f654310d0>
+path = '/tmp/sg_merged.BLGYaz/tools/d1/score_d3.py'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/tmp/sg_merged.BLGYaz/tools/d1/score_d3.py'
+
+<frozen importlib._bootstrap_external>:1130: FileNotFoundError
+______________ ERROR at setup of test_blob_keys_must_match_blanks ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-5/test_blob_keys_must_match_blan0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f4f653cfc50>
+
+    @pytest.fixture
+    def env(tmp_path, monkeypatch):
+>       m = _load()
+            ^^^^^^^
+
+tests/test_tools_score_d3.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_tools_score_d3.py:18: in _load
+    spec.loader.exec_module(m)
+<frozen importlib._bootstrap_external>:936: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1073: in get_code
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_frozen_importlib_external.SourceFileLoader object at 0x7f4f653ccf90>
+path = '/tmp/sg_merged.BLGYaz/tools/d1/score_d3.py'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/tmp/sg_merged.BLGYaz/tools/d1/score_d3.py'
+
+<frozen importlib._bootstrap_external>:1130: FileNotFoundError
+=========================== short test summary info ============================
+ERROR tests/test_tools_score_d1.py::test_ref_stage - FileNotFoundError: [Errn...
+ERROR tests/test_tools_score_d1.py::test_model_stage_state_b_text_order_and_chance
+ERROR tests/test_tools_score_d3.py::test_fa_passes_against_silent_controls - ...
+ERROR tests/test_tools_score_d3.py::test_blob_keys_must_match_blanks - FileNo...
+715 passed, 7 skipped, 4 errors in 110.40s (0:01:50)

@@ -1,0 +1,341 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "dry_run": true,
+ "p4_status": "EXT-CONFIRMED",
+ "used_fields": [
+  {
+   "ref": "man:scan_volume_id",
+   "value": "00000000000000"
+  },
+  {
+   "ref": "man:voxel_size_um",
+   "value": 2.4
+  },
+  {
+   "ref": "man:scan_volume_id",
+   "value": "00000000000000"
+  },
+  {
+   "ref": "man:voxel_size_um",
+   "value": 2.4
+  },
+  {
+   "ref": "man:prediction_source.model_id",
+   "value": "DRYRUN-MODEL"
+  },
+  {
+   "ref": "man:prediction_source.volume_id",
+   "value": "00000000000000"
+  },
+  {
+   "ref": "man:segment_id",
+   "value": "DRYRUN-SEGMENT"
+  },
+  {
+   "ref": "man:prediction_source.sha256",
+   "value": "3333333333333333333333333333333333333333333333333333333333333333"
+  },
+  {
+   "ref": "man:mesh.tifxyz_name",
+   "value": "dryrun_p4_crop.tifxyz"
+  },
+  {
+   "ref": "man:mesh.sha256",
+   "value": "4444444444444444444444444444444444444444444444444444444444444444"
+  },
+  {
+   "ref": "man:mesh.crop_margin_mm",
+   "value": 10.0
+  },
+  {
+   "ref": "man:mesh.flattening_method",
+   "value": "vc_flatten (FLAT-1)"
+  },
+  {
+   "ref": "bar:flat1_tol_pct",
+   "value": 5
+  },
+  {
+   "ref": "man:mesh.flat1_quads_within_tol_pct",
+   "value": 95.0
+  },
+  {
+   "ref": "bar:flat1_quads_min_pct",
+   "value": 93.1
+  },
+  {
+   "ref": "man:ct_render.window_pct_low",
+   "value": 1
+  },
+  {
+   "ref": "man:ct_render.window_pct_high",
+   "value": 99
+  },
+  {
+   "ref": "man:ct_render.volume_id",
+   "value": "00000000000000"
+  },
+  {
+   "ref": "bar:tile_mm",
+   "value": 20
+  },
+  {
+   "ref": "p4:phase1.n_tiles_read",
+   "value": 171
+  },
+  {
+   "ref": "p4:phase1.area_read_cm2",
+   "value": 684.0
+  },
+  {
+   "ref": "man:reading.key_sheet_variant",
+   "value": "sigma2 (lunate and normal sigma shown)"
+  },
+  {
+   "ref": "man:reading.key_sheet_sha256",
+   "value": "6666666666666666666666666666666666666666666666666666666666666666"
+  },
+  {
+   "ref": "man:container.image_ref",
+   "value": "dryrun/container:v1"
+  },
+  {
+   "ref": "man:container.sha256",
+   "value": "5555555555555555555555555555555555555555555555555555555555555555"
+  },
+  {
+   "ref": "man:container.system_requirements",
+   "value": "4 vCPU, 15 GB RAM, no GPU"
+  },
+  {
+   "ref": "man:human_in_loop",
+   "value": "none (no manual annotation; the owner files)"
+  },
+  {
+   "ref": "p4:phase1.n0_tiles",
+   "value": 44
+  },
+  {
+   "ref": "bar:min_letters",
+   "value": 5
+  },
+  {
+   "ref": "bar:null_percentile",
+   "value": 99
+  },
+  {
+   "ref": "p4:phase1.n0_pctl_letters",
+   "value": 3
+  },
+  {
+   "ref": "p4:phase2.readers_ge_min",
+   "value": 2
+  },
+  {
+   "ref": "p4:phase2.n_readers",
+   "value": 3
+  },
+  {
+   "ref": "bar:min_letters",
+   "value": 5
+  },
+  {
+   "ref": "p4:phase2.best_pair_agreed",
+   "value": 6
+  },
+  {
+   "ref": "bar:consensus_px",
+   "value": 150
+  },
+  {
+   "ref": "p4:phase2.n0_max_agreed",
+   "value": 2
+  },
+  {
+   "ref": "p4:phase2.n_n0_tiles",
+   "value": 16
+  },
+  {
+   "ref": "p4:phase2.positive_control_ok",
+   "value": true
+  },
+  {
+   "ref": "p4:tile.min_dist_to_labelled_mm",
+   "value": 4.8
+  },
+  {
+   "ref": "bar:labelled_adjacent_mm",
+   "value": 1.2
+  },
+  {
+   "ref": "man:heldout_note",
+   "value": "no ground truth exists for the title region; the known-text strip was read in the same census as an attention check (DECL-P4-2-A1)."
+  },
+  {
+   "ref": "p4:phase1.area_read_cm2",
+   "value": 684.0
+  },
+  {
+   "ref": "p4:phase1.n_tiles_read",
+   "value": 171
+  },
+  {
+   "ref": "p4:phase2.n_candidates",
+   "value": 4
+  },
+  {
+   "ref": "p4:phase2.n_not_confirmed",
+   "value": 3
+  },
+  {
+   "ref": "man:licence_lineage.overall",
+   "value": "BLOCKS"
+  },
+  {
+   "ref": "man:licence_lineage.record",
+   "value": "logs/sib/sg/licence/lineage_base_ink9um.json"
+  }
+ ],
+ "missing_fields": [],
+ "tp": [
+  {
+   "id": "TP-01",
+   "requirement": "Mesh in tifxyz with low-distortion flattening",
+   "answered_by": "manifest.meshes + manifest.flattening",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-02",
+   "requirement": "Image of the unwrapped region showing the title",
+   "answered_by": "manifest.image",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-03",
+   "requirement": "Ink predictions in the spatial context of the search",
+   "answered_by": "manifest.context_image",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-04",
+   "requirement": "The papyrologists read the title, not the entrant",
+   "answered_by": "disclosure",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-05",
+   "requirement": "Programmatic image; no manual annotation; no training overlap",
+   "answered_by": "disclosure + training_overlap",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-06",
+   "requirement": "Name the scan",
+   "answered_by": "sheet.scan",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-07",
+   "requirement": "Scale bar and letter dimensions",
+   "answered_by": "manifest.scale_bar + letter_dimensions table",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-08",
+   "requirement": "Image named after the tifxyz mesh",
+   "answered_by": "manifest.image_name_check",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-09",
+   "requirement": "Detailed, reproducible methodology",
+   "answered_by": "methodology",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-10",
+   "requirement": "Docker image and system requirements",
+   "answered_by": "manifest.container",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-11",
+   "requirement": "Human-in-the-loop instructions and video",
+   "answered_by": "methodology",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-12",
+   "requirement": "Accessible download link",
+   "answered_by": "owner (hosting link)",
+   "status": "OWNER"
+  },
+  {
+   "id": "TP-13",
+   "requirement": "False-positive mitigation",
+   "answered_by": "fp_mitigation",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-14",
+   "requirement": "Large windows: letters and words not hallucinated",
+   "answered_by": "fp_mitigation",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-15",
+   "requirement": "No training / prediction overlap",
+   "answered_by": "fp_mitigation + training_overlap",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-16",
+   "requirement": "Held-out validation",
+   "answered_by": "heldout_table",
+   "status": "MISSING DATA"
+  },
+  {
+   "id": "TP-17",
+   "requirement": "Other information",
+   "answered_by": "disclosure",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-18",
+   "requirement": "Review for technical validity and papyrological plausibility",
+   "answered_by": "disclosure",
+   "status": "DRAFTED"
+  },
+  {
+   "id": "TP-19",
+   "requirement": "Open until won",
+   "answered_by": "owner (filing)",
+   "status": "OWNER"
+  },
+  {
+   "id": "TP-20",
+   "requirement": "No public disclosure before the announcement",
+   "answered_by": "owner (confidentiality)",
+   "status": "OWNER"
+  },
+  {
+   "id": "TP-21",
+   "requirement": "Submission through the Title Prize form",
+   "answered_by": "owner (filing)",
+   "status": "OWNER"
+  },
+  {
+   "id": "TP-22",
+   "requirement": "Deadline",
+   "answered_by": "owner (filing date)",
+   "status": "OWNER"
+  },
+  {
+   "id": "PKG-01",
+   "requirement": "Licence lineage permits release of code, data and weights (PRIZE-CHECK-20260925 b)",
+   "answered_by": "man:licence_lineage (tools/sib/sg/licence/lineage.py)",
+   "status": "BLOCKED (owner decision)"
+  }
+ ],
+ "tp_page_sha256": "7e653247be3e9390d23fafd56f293447e17def92291b56c83764fd7dcf635be4"
+}

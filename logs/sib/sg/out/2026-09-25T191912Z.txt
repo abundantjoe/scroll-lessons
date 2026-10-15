@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+_________________ ERROR collecting tests/test_records_hook.py __________________
+tests/test_records_hook.py:269: in <module>
+    [*(REPO / "src" / "hercules" / "records").glob("*.py"),
+tests/test_records_hook.py:270: in <genexpr>
+    *(p for p in (REPO / "tools" / "hooks").iterdir() if p.is_file()),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/pathlib.py:931: in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/tmp/sg_merged.lXHb7q/tools/hooks'
+=========================== short test summary info ============================
+ERROR tests/test_records_hook.py - FileNotFoundError: [Errno 2] No such file ...
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 3.25s

@@ -1,0 +1,15 @@
+w026 29
+w027 28
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/sg/pred_spacing.py", line 149, in <module>
+    main()
+  File "/home/user/dominion/tools/sib/sg/pred_spacing.py", line 117, in main
+    r = segment(seg, work, vox)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/sib/sg/pred_spacing.py", line 95, in segment
+    r = LS.measure_tile(m, px_mm)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/sib/sg/label_spacing.py", line 190, in measure_tile
+    c_new = float(np.sum(np.arange(lo, hi + 1) * w) / w.sum())
+                         ~~~~~~~~~~~~~~~~~~~~~~^~~
+ValueError: operands could not be broadcast together with shapes (0,) (953,) 

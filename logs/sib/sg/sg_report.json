@@ -1,0 +1,824 @@
+{
+ "ask": "logs/sib/sg/ASK.md",
+ "attested_items": [
+  "0",
+  "8",
+  "10",
+  "12",
+  "14_profile",
+  "14_tests"
+ ],
+ "base_commit_at_assembly": "b1e867a94288ab905ffc88265357b5cb98f9f8da",
+ "code_hashes": {
+  "combined_sha256": "62d7aa19ccf3f95db1d4b444be2f61d364c16117bd8d0e948915d3b93b2db568",
+  "files": {
+   "tools/sib/sg/pkg/src/hercules/sg/__init__.py": "b679418a908647dda8e0e565a25371a8a15c080b5ddcc4308ab3b623ac3a4594",
+   "tools/sib/sg/pkg/src/hercules/sg/cli.py": "4f7ad650526667722438f9a3acc5bba0c135a65dec66d5179f0e78e9ba35ec3c",
+   "tools/sib/sg/pkg/src/hercules/sg/constants.py": "1285ed3c3bffa4f7a84f00dbbc07379eea8782508c235b55f13ec581ad770263",
+   "tools/sib/sg/pkg/src/hercules/sg/copytest.py": "e43a9b7dbaac32eff70e593d17e611bc7110e4631dd327449deeb7ff0db5132e",
+   "tools/sib/sg/pkg/src/hercules/sg/copytest_null.py": "62ef2f9f54bab428d9ac43ee0a0de40a6ccb24f7aad5d4dc8daacabc0f14da2e",
+   "tools/sib/sg/pkg/src/hercules/sg/gate.py": "f0e3f51840eb45bf08c520c453325ac2fb49fcaa9a1652bca6ae7b685a253076",
+   "tools/sib/sg/pkg/src/hercules/sg/refcal.py": "669429e06050e1793b4e9eddf18f81c0eabb3ab3642a03cf196d854d7730e99a",
+   "tools/sib/sg/pkg/src/hercules/sg/synth.py": "215b0237795ef36795ae96ae9d8e2b7bdf9fcdef922bd8b137f3da137deb28c5"
+  }
+ },
+ "code_hashes_note": "paths are the staged ones; after the merge hash src/hercules/sg/*.py (same bytes)",
+ "computed_items": [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "9",
+  "11",
+  "13"
+ ],
+ "constants": {
+  "BAR_REL_EPS": 1e-09,
+  "COMPUTED_ITEMS": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "9",
+   "11",
+   "13"
+  ],
+  "CONSENSUS_RADIUS_PX": 150.0,
+  "DISCOVERY_FB_MAX": 1,
+  "DISCOVERY_FDR_MAX": 0.01,
+  "DISCOVERY_K0": 5,
+  "DISCOVERY_MIN_NULL_TILES": 200,
+  "DISCOVERY_NONTEXT_AGREED_MAX": 1,
+  "FRESH_READS": [
+   "discovery",
+   "confirmation",
+   "slice_-1",
+   "slice_+1",
+   "second_lineage",
+   "retrace",
+   "rotation",
+   "arm_NULL",
+   "arm_REV",
+   "arm_CTRL",
+   "band_sealers"
+  ],
+  "MIN_READERS_AGREE": 2,
+  "N_READERS": 3,
+  "PARTIAL_ITEMS": {
+   "14": "rotation part computed; RAW-F/B profile and unit-test parts attested"
+  },
+  "R_AREA_CM2": 4.0,
+  "R_AREA_TOL": 0.01,
+  "R_ASPECT_MAX": 2.0,
+  "R_WIDTH_STEP_MM": 0.25,
+  "SG11_BASELINE_MAX_DEG": 10.0,
+  "SG11_HEIGHT_FRACTION_MIN": null,
+  "SG11_HEIGHT_MM": [
+   2.0,
+   4.0
+  ],
+  "SG11_LINK_DX_H": 2.5,
+  "SG11_LINK_DY_H": 0.5,
+  "SG11_MIN_ROWS": 2,
+  "SG11_MIN_ROWS_FOR_CV": 3,
+  "SG11_PITCH_CV_MAX": 0.2,
+  "SG11_ROW_MIN_LETTERS": 3,
+  "SG13_FRACTION": 0.5,
+  "SG13_RADIUS_PX": 250.0,
+  "SG14_FRACTION": 0.5,
+  "SG14_ROT_DEG": 15.0,
+  "SG1A_MIN_AGREED": 12,
+  "SG1B_MIN_FIRM": 8,
+  "SG1B_MIN_FIRM_READERS": 2,
+  "SG1C_MARGIN": 10,
+  "SG1C_MIN_NULL_TILES": 40,
+  "SG1C_PERCENTILE": 99,
+  "SG1D_ALPHA_NUMERATOR": 0.01,
+  "SG1D_MIN_PERM": 5000,
+  "SG1D_PERM_PER_ALPHA": 20,
+  "SG2_BLANK_MAX_NAMINGS": 1,
+  "SG2_CANARY_FRACTION": 0.7,
+  "SG3_OPPOSITE_MAX_NAMINGS": 2,
+  "SG4_RECONFIRM_FRACTION": 0.8,
+  "SG4_SLICE_OFFSETS": [
+   -1,
+   1
+  ],
+  "SG5_FRACTION": 0.5,
+  "SG6_FRACTION": 0.5,
+  "SG6_OVERLAP_MIN": 0.6,
+  "SG7_ABS_NCC": true,
+  "SG7_FLAT_REL_EPS": 1e-06,
+  "SG7_NCC_MAX": 0.8,
+  "SG7_NEFF_MIN": 30.0,
+  "SG7_NULL_MAX_FALSE_FLAGS": 0,
+  "SG7_NULL_MIN_TILES": 40,
+  "SG7_ROTATIONS_DEG": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "SG7_ROT_STEP_DEG": 15,
+  "SG9_ARMS": [
+   "NULL",
+   "REV",
+   "CTRL"
+  ],
+  "SG9_ARM_MAX_LETTERS": 1,
+  "SG_ITEMS": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12",
+   "13",
+   "14"
+  ],
+  "SG_VERSION": "hercules-sg-1.2.0"
+ },
+ "copytest_null": {
+  "cells": {
+   "d128_s1": {
+    "d": 128,
+    "false_flag_fraction": 0.0,
+    "max_of_max_ncc": 0.1351742601872476,
+    "median_max_ncc": 0.12221342025631171,
+    "n_eff_approx": 1429.7737232337547,
+    "n_patches": 100,
+    "sigma": 1.0
+   },
+   "d128_s2": {
+    "d": 128,
+    "false_flag_fraction": 0.0,
+    "max_of_max_ncc": 0.25179412210911917,
+    "median_max_ncc": 0.23217004207423747,
+    "n_eff_approx": 357.71944890172705,
+    "n_patches": 100,
+    "sigma": 2.0
+   },
+   "d128_s4": {
+    "d": 128,
+    "false_flag_fraction": 0.0,
+    "max_of_max_ncc": 0.47454445480562063,
+    "median_max_ncc": 0.40627305797205104,
+    "n_eff_approx": 109.05837061511511,
+    "n_patches": 100,
+    "sigma": 4.0
+   },
+   "d128_s8": {
+    "d": 128,
+    "false_flag_fraction": 0.0,
+    "max_of_max_ncc": 0.710785014170417,
+    "median_max_ncc": 0.6621577748509282,
+    "n_eff_approx": 31.24193974926051,
+    "n_patches": 100,
+    "sigma": 8.0
+   },
+   "d32_s1": {
+    "d": 32,
+    "false_flag_fraction": 0.0,
+    "max_of_max_ncc": 0.42947515404824,
+    "median_max_ncc": 0.40214662909710763,
+    "n_eff_approx": 89.36085770210967,
+    "n_patches": 100,
+    "sigma": 1.0
+   },
+   "d32_s2": {
+    "d": 32,
+    "false_flag_fraction": 0.0,
+    "max_of_max_ncc": 0.6670943095878545,
+    "median_max_ncc": 0.6481973560721971,
+    "n_eff_approx": 29.78695256736989,
+    "n_patches": 100,
+    "sigma": 2.0
+   },
+   "d32_s4": {
+    "d": 32,
+    "false_flag_fraction": 1.0,
+    "max_of_max_ncc": 0.914865717674868,
+    "median_max_ncc": 0.8613886229107108,
+    "n_eff_approx": 13.407853058943935,
+    "n_patches": 100,
+    "sigma": 4.0
+   },
+   "d32_s8": {
+    "d": 32,
+    "false_flag_fraction": 1.0,
+    "max_of_max_ncc": 0.9904380931258824,
+    "median_max_ncc": 0.9803696497527445,
+    "n_eff_approx": 5.958698321061592,
+    "n_patches": 100,
+    "sigma": 8.0
+   },
+   "d64_s1": {
+    "d": 64,
+    "false_flag_fraction": 0.0,
+    "max_of_max_ncc": 0.23673663185053836,
+    "median_max_ncc": 0.22094037290782365,
+    "n_eff_approx": 357.4434308084387,
+    "n_patches": 100,
+    "sigma": 1.0
+   },
+   "d64_s2": {
+    "d": 64,
+    "false_flag_fraction": 0.0,
+    "max_of_max_ncc": 0.4413512445747582,
+    "median_max_ncc": 0.41018616486583137,
+    "n_eff_approx": 100.62923565281558,
+    "n_patches": 100,
+    "sigma": 2.0
+   },
+   "d64_s2_p1000": {
+    "d": 64,
+    "false_flag_fraction": 0.0,
+    "max_of_max_ncc": 0.45369168680739563,
+    "median_max_ncc": 0.43872478913154267,
+    "n_eff_approx": 110.93071990606718,
+    "n_patches": 1000,
+    "sigma": 2.0
+   },
+   "d64_s4": {
+    "d": 64,
+    "false_flag_fraction": 0.0,
+    "max_of_max_ncc": 0.6914873590158989,
+    "median_max_ncc": 0.6591351120032556,
+    "n_eff_approx": 32.99477822847126,
+    "n_patches": 100,
+    "sigma": 4.0
+   },
+   "d64_s4_p1000": {
+    "d": 64,
+    "false_flag_fraction": 0.0,
+    "max_of_max_ncc": 0.7272495771676293,
+    "median_max_ncc": 0.7117723766942592,
+    "n_eff_approx": 31.244701589761682,
+    "n_patches": 1000,
+    "sigma": 4.0
+   },
+   "d64_s8": {
+    "d": 64,
+    "false_flag_fraction": 1.0,
+    "max_of_max_ncc": 0.9115596838842289,
+    "median_max_ncc": 0.8714654822138888,
+    "n_eff_approx": 11.799681703319052,
+    "n_patches": 100,
+    "sigma": 8.0
+   }
+  },
+  "json_sha256": "bf5875c7f5e1395ed228f8638d89c0f25b2256c19cfcf35eedccc2424217cdb2",
+  "n_crops": 8,
+  "rotations": 24,
+  "seed": 20260925
+ },
+ "copytest_null_abs": {
+  "cells": {
+   "d128_s1": {
+    "d": 128,
+    "false_flag_fraction": 0.0,
+    "max_of_max_abs_ncc": 0.1351742601872476,
+    "median_max_ncc": 0.12636448868612227,
+    "n_eff_approx": 1429.7737232337547,
+    "n_patches": 100,
+    "sigma": 1.0
+   },
+   "d128_s2": {
+    "d": 128,
+    "false_flag_fraction": 0.0,
+    "max_of_max_abs_ncc": 0.25179412210911917,
+    "median_max_ncc": 0.23217004207423747,
+    "n_eff_approx": 357.71944890172705,
+    "n_patches": 100,
+    "sigma": 2.0
+   },
+   "d128_s4": {
+    "d": 128,
+    "false_flag_fraction": 0.0,
+    "max_of_max_abs_ncc": 0.47454445480562063,
+    "median_max_ncc": 0.41018790954845114,
+    "n_eff_approx": 109.05837061511511,
+    "n_patches": 100,
+    "sigma": 4.0
+   },
+   "d128_s8": {
+    "d": 128,
+    "false_flag_fraction": 0.0,
+    "max_of_max_abs_ncc": 0.7300305058181125,
+    "median_max_ncc": 0.6799031823365276,
+    "n_eff_approx": 31.24193974926051,
+    "n_patches": 100,
+    "sigma": 8.0
+   },
+   "d32_s1": {
+    "d": 32,
+    "false_flag_fraction": 0.0,
+    "max_of_max_abs_ncc": 0.4590969201073597,
+    "median_max_ncc": 0.422187487735719,
+    "n_eff_approx": 89.36085770210967,
+    "n_patches": 100,
+    "sigma": 1.0
+   },
+   "d32_s2": {
+    "d": 32,
+    "false_flag_fraction": 0.0,
+    "max_of_max_abs_ncc": 0.7033614472498659,
+    "median_max_ncc": 0.6537021499712594,
+    "n_eff_approx": 29.78695256736989,
+    "n_patches": 100,
+    "sigma": 2.0
+   },
+   "d32_s4": {
+    "d": 32,
+    "false_flag_fraction": 1.0,
+    "max_of_max_abs_ncc": 0.914865717674868,
+    "median_max_ncc": 0.871841021434251,
+    "n_eff_approx": 13.407853058943935,
+    "n_patches": 100,
+    "sigma": 4.0
+   },
+   "d32_s8": {
+    "d": 32,
+    "false_flag_fraction": 1.0,
+    "max_of_max_abs_ncc": 0.9904380931258824,
+    "median_max_ncc": 0.9813514596433247,
+    "n_eff_approx": 5.958698321061592,
+    "n_patches": 100,
+    "sigma": 8.0
+   },
+   "d64_s1": {
+    "d": 64,
+    "false_flag_fraction": 0.0,
+    "max_of_max_abs_ncc": 0.2374149747913084,
+    "median_max_ncc": 0.23152256647295155,
+    "n_eff_approx": 357.4434308084387,
+    "n_patches": 100,
+    "sigma": 1.0
+   },
+   "d64_s2": {
+    "d": 64,
+    "false_flag_fraction": 0.0,
+    "max_of_max_abs_ncc": 0.460846922392844,
+    "median_max_ncc": 0.4319995251285182,
+    "n_eff_approx": 100.62923565281558,
+    "n_patches": 100,
+    "sigma": 2.0
+   },
+   "d64_s2_p1000": {
+    "d": 64,
+    "false_flag_fraction": 0.0,
+    "max_of_max_abs_ncc": 0.4657002077104432,
+    "median_max_ncc": 0.44449679055347335,
+    "n_eff_approx": 110.93071990606718,
+    "n_patches": 1000,
+    "sigma": 2.0
+   },
+   "d64_s4": {
+    "d": 64,
+    "false_flag_fraction": 0.0,
+    "max_of_max_abs_ncc": 0.6914873590158989,
+    "median_max_ncc": 0.6598513520035468,
+    "n_eff_approx": 32.99477822847126,
+    "n_patches": 100,
+    "sigma": 4.0
+   },
+   "d64_s4_p1000": {
+    "d": 64,
+    "false_flag_fraction": 0.0,
+    "max_of_max_abs_ncc": 0.742702160841401,
+    "median_max_ncc": 0.7184269672261966,
+    "n_eff_approx": 31.244701589761682,
+    "n_patches": 1000,
+    "sigma": 4.0
+   },
+   "d64_s8": {
+    "d": 64,
+    "false_flag_fraction": 1.0,
+    "max_of_max_abs_ncc": 0.9280975328611675,
+    "median_max_ncc": 0.8873025159374908,
+    "n_eff_approx": 11.799681703319052,
+    "n_patches": 100,
+    "sigma": 8.0
+   }
+  },
+  "json_sha256": "b4768ab414143232831402df767f86e9f73bb753dd939206504843ea01599c99"
+ },
+ "declarations": [
+  "RULES.md DECL-SG",
+  "RULES.md DECL-EMPNULL"
+ ],
+ "fresh_reads": [
+  "discovery",
+  "confirmation",
+  "slice_-1",
+  "slice_+1",
+  "second_lineage",
+  "retrace",
+  "rotation",
+  "arm_NULL",
+  "arm_REV",
+  "arm_CTRL",
+  "band_sealers"
+ ],
+ "label_spacing_0139_t20_t30": "INVALID as statistics (2-13 blobs per tile); kept as the logged record",
+ "label_survey_0139": {
+  "json_sha256": "bd0cfb31f8f4850cdd540b806ab812bde0091763659dd3dc3185d6fddf2f98ad",
+  "letter_blobs": {
+   "canvas_height": {
+    "frac_in_2_4mm": 0.7794117647058824,
+    "n": 68,
+    "p5_p25_p50_p75_p95": [
+     1.7699822,
+     2.185489,
+     2.480566,
+     3.152286,
+     3.8926174000000002
+    ]
+   },
+   "canvas_width": {
+    "frac_in_2_4mm": 0.75,
+    "n": 68,
+    "p5_p25_p50_p75_p95": [
+     1.5406378,
+     2.269454,
+     2.7348600000000003,
+     3.2986250000000004,
+     4.5614586
+    ]
+   },
+   "max_side": {
+    "frac_in_2_4mm": 0.7647058823529411,
+    "n": 68,
+    "p5_p25_p50_p75_p95": [
+     1.8904120000000002,
+     2.59092,
+     3.075518,
+     3.6680710000000003,
+     5.222622999999999
+    ]
+   },
+   "min_side": {
+    "frac_in_2_4mm": 0.7647058823529411,
+    "n": 68,
+    "p5_p25_p50_p75_p95": [
+     1.5406378,
+     2.08713,
+     2.3078380000000003,
+     2.6245060000000002,
+     3.2592814000000003
+    ]
+   },
+   "min_side_mm": 1.0
+  },
+  "n_components_per_set": {
+   "w030@2.399um-": 138,
+   "w035@2.399um-": 13,
+   "w035@9.362um-": 13,
+   "w039@2.399um-": 6,
+   "w039@9.362um-": 6,
+   "w040@2.399um-": 17,
+   "w040@9.362um-": 17,
+   "w041@2.399um-": 4,
+   "w041@9.362um-": 4,
+   "w043@2.399um-": 6,
+   "w044@2.399um-": 11,
+   "w044@9.362um-": 10,
+   "w045@2.399um-": 25
+  }
+ },
+ "partial_items": {
+  "14": "rotation part computed; RAW-F/B profile and unit-test parts attested"
+ },
+ "proposals": [
+  "logs/sib/sg/proposals/PROPOSAL-SG-CODE-1.md",
+  "logs/sib/sg/proposals/PROPOSAL-SG-LINESPACING-1.md"
+ ],
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "rulings_applied": "logs/sib/sg/rulings_applied.md",
+ "runs": [
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python -m pytest -q tests/sib_sg_gate.py tests/sib_sg_region.py tests/sib_sg_copytest.py",
+   "exit": 0,
+   "output_bytes": 181,
+   "output_sha256": "7c26f18108ec6c9419bdbea516e2afb51eb75bfc9b8951a83dce3505e1df1b4f",
+   "utc": "2026-09-25T18:49:33Z"
+  },
+  {
+   "command": "/opt/hv/bin/python tools/sib/sg/sg_cli.py --synthetic --out logs/sib/sg/synthetic_pass_result.json",
+   "exit": 0,
+   "output_bytes": 138,
+   "output_sha256": "258b40c6f37f671d35f0444513957bdc5809f06b5bc6edcee6d794c3a4cc8a4f",
+   "utc": "2026-09-25T18:50:31Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python tools/sib/sg/copytest_null.py --out logs/sib/sg/copytest_null.json (first sweep)",
+   "exit": 143,
+   "note": "stopped deliberately by SIGTERM after 8 of 12 cells: n_eff definition changed to the measured coherence area; partial output discarded and the sweep rerun from scratch",
+   "output_bytes": 4003,
+   "output_sha256": "d238ae1f9fa0c0f904b72632ab469894a8b4e3f408c290c0b0419bf58a6a3647",
+   "utc": "2026-09-25T18:52:56Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python -m pytest -q -p no:cacheprovider tests",
+   "exit": 2,
+   "output_bytes": 8202,
+   "output_sha256": "dad308b32d79043fb669c75af55816b3a984881833e07ed18b9e5933f0333cb3",
+   "utc": "2026-09-25T18:53:49Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python -m pytest -q -p no:cacheprovider tests",
+   "exit": 0,
+   "output_bytes": 752,
+   "output_sha256": "c03e64072a18127565c6150a3552b552e609d7efed6243ccf512b27ee980ce2a",
+   "utc": "2026-09-25T18:54:47Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python tools/sib/sg/copytest_null.py --out logs/sib/sg/copytest_null.json",
+   "exit": 0,
+   "output_bytes": 244,
+   "output_sha256": "5a7eec7fb25c536feeb85884f6bc7294775405e2e44474f4cd2d02b4564357f9",
+   "utc": "2026-09-25T18:52:56Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python -m pytest -q -p no:cacheprovider tests/sib_sg_gate.py tests/sib_sg_region.py tests/sib_sg_copytest.py tests/sib_sg_cli.py",
+   "exit": 0,
+   "output_bytes": 191,
+   "output_sha256": "7961e392381822ec57a0a981d8ebcdb9d5d57c93e15ba88ea0bf76bd546e0eb1",
+   "utc": "2026-09-25T18:58:58Z"
+  },
+  {
+   "command": "/opt/hv/bin/python tools/sib/sg/sg_cli.py --synthetic --out logs/sib/sg/synthetic_pass_result.json",
+   "exit": 0,
+   "output_bytes": 138,
+   "output_sha256": "e76773eb6208ec9124fba574f0ed67f9b4a9770fe817a8cb7528b5d8777a9f0a",
+   "utc": "2026-09-25T19:00:00Z"
+  },
+  {
+   "command": "/opt/hv/bin/python tools/sib/sg/make_report_json.py",
+   "exit": 0,
+   "output_bytes": 92,
+   "output_sha256": "2a594b80cbd9e1ce5f60f9a410447dabfce3d537495d2525c74fd177c5896d75",
+   "utc": "2026-09-25T19:00:51Z"
+  },
+  {
+   "command": "tools/sib/sg/pkg/run_merged_tests.sh",
+   "exit": 2,
+   "output_bytes": 923,
+   "output_sha256": "c9cc2affb8cb9a7db203326c024c880662d1ee6a0208e1bde60736ba422ef428",
+   "utc": "2026-09-25T19:19:12Z"
+  },
+  {
+   "command": "tools/sib/sg/pkg/run_merged_tests.sh",
+   "exit": 1,
+   "output_bytes": 5597,
+   "output_sha256": "fd1ac61cca9cd6da3e9b7d19e7cebf6195f37f2b9ff9a39183d6f6f1da437bb4",
+   "utc": "2026-09-25T19:19:27Z"
+  },
+  {
+   "command": "tools/sib/sg/pkg/run_merged_tests.sh",
+   "exit": 0,
+   "output_bytes": 923,
+   "output_sha256": "84f7b92c9ce18f2f477988ec9292f749aff731f771a145d65fe2e4ea64c9a9d6",
+   "utc": "2026-09-25T19:21:24Z"
+  },
+  {
+   "command": "/opt/hv/bin/python tools/c3/s3ls.py PHerc0139/segments/20250831000000-w040_2025083102/ink-labels/9.362um-volume-20250728140407/20260918/",
+   "exit": 0,
+   "output_bytes": 238,
+   "output_sha256": "2844b49e7dc927d37694c0bf1760fc812373311fa5675a3f52ce8a494f40106a",
+   "utc": "2026-09-25T19:24:13Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python tools/sib/sg/label_spacing.py --cache /tmp/claude-0/-home-user-dominion/a3b15764-9fa1-580b-aeca-0b00b9bb9549/scratchpad/labels0139 --out logs/sib/sg/label_spacing_0139_t20.json --tile-mm 20",
+   "exit": 1,
+   "output_bytes": 171,
+   "output_sha256": "2bca48c25e17cfcd62739df30ec3bcfc35e1ffa3fe734867d2568067efc7b67b",
+   "utc": "2026-09-25T19:29:37Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python tools/sib/sg/label_spacing.py --cache /tmp/claude-0/-home-user-dominion/a3b15764-9fa1-580b-aeca-0b00b9bb9549/scratchpad/labels0139 --out logs/sib/sg/label_spacing_0139_t20.json --tile-mm 20",
+   "exit": 0,
+   "output_bytes": 19,
+   "output_sha256": "f59fd2dbd92f2c2f1759d210baaf7aba9d0d5922f5d094923368924ce16e5bfa",
+   "utc": "2026-09-25T19:29:44Z"
+  },
+  {
+   "command": "env PYTHONPATH=src:tools/sib/sg/pkg/src/hercules /opt/hv/bin/python -m sg.copytest_null --out logs/sib/sg/copytest_null_abs.json",
+   "exit": 0,
+   "output_bytes": 243,
+   "output_sha256": "f70881917b4109479314bd791c4133654f816f3eee334af0640d4b00e6a16457",
+   "utc": "2026-09-25T19:23:46Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python tools/sib/sg/label_spacing.py --cache /tmp/claude-0/-home-user-dominion/a3b15764-9fa1-580b-aeca-0b00b9bb9549/scratchpad/labels0139 --out logs/sib/sg/label_spacing_0139_t20.json --tile-mm 20",
+   "exit": 0,
+   "output_bytes": 324,
+   "output_sha256": "0890e5d0313f7fd3f865bc02851701e871b822083ad64bbc5bad46879d6d9fe7",
+   "utc": "2026-09-25T19:30:37Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python tools/sib/sg/label_spacing.py --cache /tmp/claude-0/-home-user-dominion/a3b15764-9fa1-580b-aeca-0b00b9bb9549/scratchpad/labels0139 --out logs/sib/sg/label_spacing_0139_t30.json --tile-mm 30",
+   "exit": 0,
+   "output_bytes": 100,
+   "output_sha256": "63be47f243661ed9779661ba16d8fcbe3ee4bae256f2053c10b0f51f81b1eef1",
+   "utc": "2026-09-25T19:30:42Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python tools/sib/sg/label_survey.py --cache /tmp/claude-0/-home-user-dominion/a3b15764-9fa1-580b-aeca-0b00b9bb9549/scratchpad/labels0139 --out logs/sib/sg/label_survey_0139.json",
+   "exit": 0,
+   "output_bytes": 178,
+   "output_sha256": "e8f875aaef69584770740c78d5c73e69ae94911cf23ce832237d77edc32bf655",
+   "utc": "2026-09-25T19:32:10Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python tools/sib/sg/label_survey.py --cache /tmp/claude-0/-home-user-dominion/a3b15764-9fa1-580b-aeca-0b00b9bb9549/scratchpad/labels0139 --out logs/sib/sg/label_survey_0139.json",
+   "exit": 0,
+   "output_bytes": 178,
+   "output_sha256": "e8f875aaef69584770740c78d5c73e69ae94911cf23ce832237d77edc32bf655",
+   "utc": "2026-09-25T19:33:09Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python -m pytest -q -p no:cacheprovider tests/sib_sg_label_spacing.py",
+   "exit": 0,
+   "output_bytes": 98,
+   "output_sha256": "417510ee4fe104888be6809d9149565c9c5b8204d0a95286bac8a64925d6541c",
+   "utc": "2026-09-25T19:34:44Z"
+  },
+  {
+   "command": "env PYTHONPATH=src:tools/sib/sg/pkg/src/hercules /opt/hv/bin/python -m sg.cli --synthetic --out logs/sib/sg/synthetic_pass_result.json",
+   "exit": 0,
+   "output_bytes": 138,
+   "output_sha256": "e74f5c2a2a8a0143e4b120a67c048628b2250b7af088fb57ff5315e89394ba83",
+   "utc": "2026-09-25T19:35:05Z"
+  },
+  {
+   "command": "tools/sib/sg/pkg/run_merged_tests.sh tests/test_sg_gate.py tests/test_sg_region.py tests/test_sg_copytest.py tests/test_sg_cli.py -q",
+   "exit": 0,
+   "output_bytes": 160,
+   "output_sha256": "ea00a3bc20061f3e1451afe7a511de601c578a7c8543a3ac101e0884a38051e5",
+   "utc": "2026-09-25T19:41:32Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python tools/sib/sg/pred_spacing.py --work /tmp/claude-0/-home-user-dominion/a3b15764-9fa1-580b-aeca-0b00b9bb9549/scratchpad/pred0139 --out logs/sib/sg/pred_spacing_0139.json",
+   "exit": 1,
+   "output_bytes": 709,
+   "output_sha256": "10abb583d4aaf649f4bfac473bf2ac8ec94c8a0c57d29c81be0ec3ff8b8ab92c",
+   "utc": "2026-09-25T19:45:24Z"
+  },
+  {
+   "command": "env PYTHONPATH=src:tools/sib/sg/pkg/src/hercules /opt/hv/bin/python -m sg.cli --synthetic --out logs/sib/sg/synthetic_pass_result.json",
+   "exit": 0,
+   "output_bytes": 138,
+   "output_sha256": "61d832c19a44e725038b7d0cddde520461aba4eb05947253fa06a5d09ce546f9",
+   "utc": "2026-09-25T23:32:48Z"
+  },
+  {
+   "command": "env PYTHONPATH=tools/sib/sg/submit_kit /opt/hv/bin/python tools/sib/sg/submit_kit/generate.py --sg logs/sib/sg/synthetic_pass_result.json --manifest tools/sib/sg/submit_kit/dryrun_manifest.json --constants logs/sib/sg/sg_report.json --out logs/sib/sg/submit_kit/dryrun_output",
+   "exit": 0,
+   "output_bytes": 73,
+   "output_sha256": "5d1ac3b8160ed695362651ef3d1e27a8ad85c8880a7a7db762dd659d98923308",
+   "utc": "2026-09-25T23:32:50Z"
+  },
+  {
+   "command": "env PYTHONPATH=src /opt/hv/bin/python tools/sib/sg/pred_spacing.py --work /tmp/claude-0/-home-user-dominion/a3b15764-9fa1-580b-aeca-0b00b9bb9549/scratchpad/pred0139 --out logs/sib/sg/pred_spacing_0139.json",
+   "exit": 0,
+   "output_bytes": 285,
+   "output_sha256": "1a792a8c1ec6a5b41b6f4c163608f4b1ec3a9470537e89df2c91fcc250bbea0c",
+   "utc": "2026-09-25T23:27:12Z"
+  },
+  {
+   "command": "sh -c /opt/hv/bin/python\\ tools/sib/sg/pred_spacing_summary.py\\ \\>\\ logs/sib/sg/pred_spacing_0139_summary.json",
+   "exit": 1,
+   "output_bytes": 532,
+   "output_sha256": "41c33a1c56bda2b29f7e6950ad916a1e40562e9d8b11d99effe5f0a3d8f46d07",
+   "utc": "2026-09-25T23:38:57Z"
+  },
+  {
+   "command": "sh -c PYTHONPATH=src\\ /opt/hv/bin/python\\ tools/sib/sg/pred_spacing_summary.py\\ \\>\\ logs/sib/sg/pred_spacing_0139_summary.json",
+   "exit": 0,
+   "output_bytes": 0,
+   "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "utc": "2026-09-25T23:39:03Z"
+  },
+  {
+   "command": "tools/sib/sg/pkg/run_merged_tests.sh -q",
+   "exit": 0,
+   "output_bytes": 880,
+   "output_sha256": "be2335201fd51ce779e0503e2633b18b5f17db7646fc9371c0671bae89b61fd4",
+   "utc": "2026-09-25T23:42:12Z"
+  },
+  {
+   "command": "tools/sib/sg/pkg/run_merged_tests.sh",
+   "exit": 0,
+   "output_bytes": 923,
+   "output_sha256": "9efaaa166bfeccc5b509859b86ddd46332588d391c604307cdd527f1a09658b5",
+   "utc": "2026-09-25T23:44:56Z"
+  },
+  {
+   "command": "/opt/hv/bin/python tools/sib/sg/licence/lineage.py --out logs/sib/sg/licence/lineage_base_ink9um.json",
+   "exit": 0,
+   "output_bytes": 191,
+   "output_sha256": "d43cbc464a4a0214287573769fa82eeed73bea58cece61276b434b4f350c20be",
+   "utc": "2026-09-26T00:47:18Z"
+  },
+  {
+   "command": "env PYTHONPATH=tools/sib/sg/submit_kit /opt/hv/bin/python tools/sib/sg/submit_kit/generate.py --sg logs/sib/sg/synthetic_pass_result.json --manifest tools/sib/sg/submit_kit/dryrun_manifest.json --constants logs/sib/sg/sg_report.json --out logs/sib/sg/submit_kit/dryrun_output",
+   "exit": 0,
+   "output_bytes": 73,
+   "output_sha256": "5d1ac3b8160ed695362651ef3d1e27a8ad85c8880a7a7db762dd659d98923308",
+   "utc": "2026-09-26T00:51:18Z"
+  },
+  {
+   "command": "env PYTHONPATH=tools/sib/sg/submit_kit /opt/hv/bin/python tools/sib/sg/submit_kit/p4_generate.py --p4 tools/sib/sg/submit_kit/dryrun_p4_record.json --manifest tools/sib/sg/submit_kit/dryrun_p4_manifest.json --out logs/sib/sg/submit_kit/dryrun_p4_output",
+   "exit": 0,
+   "output_bytes": 76,
+   "output_sha256": "05f657d223301aff6ebbeb56d572386010b0f265294162abb03d170cda196471",
+   "utc": "2026-09-26T00:51:18Z"
+  },
+  {
+   "command": "env PYTHONPATH=tools/sib/sg/submit_kit /opt/hv/bin/python tools/sib/sg/submit_kit/p4_generate.py --p4 tools/sib/sg/submit_kit/dryrun_p4_record.json --manifest tools/sib/sg/submit_kit/dryrun_p4_manifest.json --out logs/sib/sg/submit_kit/dryrun_p4_output",
+   "exit": 0,
+   "output_bytes": 76,
+   "output_sha256": "05f657d223301aff6ebbeb56d572386010b0f265294162abb03d170cda196471",
+   "utc": "2026-09-26T00:51:46Z"
+  },
+  {
+   "command": "tools/sib/sg/pkg/run_merged_tests.sh",
+   "exit": 0,
+   "output_bytes": 923,
+   "output_sha256": "c826a5cee2d26ad314a1ae9cbfad282442ad799ccb8109bdde089ba301c9deb9",
+   "utc": "2026-09-26T00:51:56Z"
+  }
+ ],
+ "scorer_modules_reused": {
+  "combined_sha256": "a86d28f15abed96627bd7fb5f787acc95ac8beb6410f8126b8dbeab0da3c08b1",
+  "files": {
+   "src/hercules/scorer/canon.py": "2511ce08a0348edfd7320333a8e1bba9b343dff6fcea2497c39ba4c209280392",
+   "src/hercules/scorer/consensus.py": "d5ae23ef1af08be1323ad2be21ec6ca411186e8ebe107a2e5c3241b9f60ee594",
+   "src/hercules/scorer/constants.py": "ca2755c7d388481ba0f40a3ede0275848b44fad6a1cde5c00ae7a85a22afc622",
+   "src/hercules/scorer/letters.py": "31583fb76aed2491d70e14e39a3ddf2a354db982e2700e454fd86c772f01e713",
+   "src/hercules/scorer/matching.py": "29b43b2ebc89225a959e67c18195a48a1d69cad7d0268451fb050e1e10bc642d"
+  }
+ },
+ "sg_version": "hercules-sg-1.2.0",
+ "synthetic_pass_result_sha256": "899cde52b7827ef20ce6ba529103d78899f0d54a52dfef6d557f156cc4d83183",
+ "task": "sg",
+ "test_hashes": {
+  "combined_sha256": "1f35ffdd9ad63b769ea3b2a6e11d650ea0c91720a823c9051ba8b145ff489577",
+  "files": {
+   "tests/sib_sg_label_spacing.py": "76f778eb5d6f1c6c01848ba67581e1a1903eb5726bbe2e4aafdb78973cb30fd2",
+   "tests/sib_sg_licence.py": "1b6e333acbb8e9f6514cb72b0fd644034e896dfcf1eb0abec990a1ff59284388",
+   "tests/sib_sg_submit_kit.py": "d574b608228351a7a03ef38291cec602818e86e4f1ea221405353061b6a996cb",
+   "tools/sib/sg/pkg/tests/test_sg_cli.py": "d8263b18083cde663f9032fe96da45800691bbef6ef41c92f0b02b262baaf3b7",
+   "tools/sib/sg/pkg/tests/test_sg_copytest.py": "a9287ba4c10288f29e25eed9092ccc56fc3e49ad02dcfdea39c1261388247095",
+   "tools/sib/sg/pkg/tests/test_sg_gate.py": "6f40013d5618d6dda84235a1afdcff48ce04f29ba252b7ab947790ba4437a3bd",
+   "tools/sib/sg/pkg/tests/test_sg_refcal.py": "2f80176dcd0d392775c64f2b10b1ce7c0227c36c3f9442c6b3735077946da6ec",
+   "tools/sib/sg/pkg/tests/test_sg_region.py": "1f4c946d1c90a2f974c28faaa7639f61c8672ba043793f265b0f5d9fc613e628"
+  }
+ },
+ "tool_hashes": {
+  "combined_sha256": "47a8f4908922a360857f4f4147db82964fb6933cb3e3b8faebc20954cdd9263d",
+  "files": {
+   "tools/sib/sg/label_spacing.py": "0e9fbec986cd4490264a778ea7b66b776c9e197691403cbe6a44c836252e8d23",
+   "tools/sib/sg/label_survey.py": "0dc97627ec2204f55146969f3b73d43dd924fe53aec9e97a78b82a93d2cf7749",
+   "tools/sib/sg/logrun.sh": "bd64f7bed5f34c4bd97569f36f8910cf57f463886dea15c815b8f2e62405958f",
+   "tools/sib/sg/make_report_json.py": "35b129c451b45ed723b36dd3dc0ca98f9d8b4c002c4c3e58386054d5061c7877",
+   "tools/sib/sg/pkg/run_merged_tests.sh": "60313a1e642d0715ea0f926ec651be0e3fc170a96ed0bd5db4332d67cffe69bf",
+   "tools/sib/sg/pred_spacing.py": "28613b187d6ffc4fba1d695fbe01aeaf3f9102e4decc58807af9c5f9ddd66c20",
+   "tools/sib/sg/pred_spacing_summary.py": "c8b4bf04c7a40cbd100c7f1122260fd48d466cbce252c572c2d331bfa5d3e2b0"
+  }
+ }
+}

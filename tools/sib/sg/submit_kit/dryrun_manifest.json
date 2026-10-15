@@ -1,0 +1,74 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "dry_run": true,
+ "note": "SYNTHETIC DRY RUN manifest for tests only (the factory sibling has no package manifest yet; ASK Q10). No value here describes real data.",
+ "package_id": "DRYRUN-SYNTH-0001",
+ "scroll": "PHercDRYRUN",
+ "volume_id": "00000000000000",
+ "voxel_size_um": 9.366,
+ "mesh": {
+  "tifxyz_name": "dryrun_mesh.tifxyz",
+  "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "flattening_method": "SLIM (FLAT-1 selection)",
+  "flat1_quads_within_tol_pct": 94.2,
+  "trimming": "none",
+  "mirrored": false
+ },
+ "image": {
+  "file": "dryrun_mesh.tifxyz.png",
+  "named_after_mesh": true,
+  "scale_bar_1cm": true,
+  "rows_annotated": true,
+  "letter_dimensions": [
+   {
+    "ch": "A",
+    "px_w": 280,
+    "px_h": 320,
+    "mm_w": 2.62,
+    "mm_h": 3.0
+   }
+  ]
+ },
+ "ink_model": {
+  "name": "dryrun-base",
+  "checkpoint_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+  "trained_on_this_scroll": false,
+  "training_scrolls": [
+   "PHerc0139",
+   "PHerc0814"
+  ]
+ },
+ "container": {
+  "image_ref": "dryrun/container:v1",
+  "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+  "system_requirements": "4 vCPU, 15 GB RAM, no GPU"
+ },
+ "human_in_loop": "none (fully automated; no manual annotation)",
+ "open_source_plan": "code, data, model weights and results released under a permissive licence after a win (owner to confirm)",
+ "rescans_used": [],
+ "reading": {
+  "area_read_cm2": 48.0,
+  "tiles_read": 12,
+  "candidates_escalated": 1,
+  "candidates_failed": 0
+ },
+ "heldout": [
+  {
+   "benchmark": "DRYRUN-KTLB",
+   "scroll": "PHerc0139",
+   "n_windows": 5,
+   "n_sealed_letters": 40,
+   "metric": "summed mean C_net",
+   "value": 14.2,
+   "ref_ceiling": 31.0,
+   "p": 0.0004
+  }
+ ],
+ "licence_lineage": {
+  "overall": "BLOCKS",
+  "record": "logs/sib/sg/licence/lineage_base_ink9um.json"
+ },
+ "sg11_refcal": {
+  "record": "DRYRUN-REFCAL (synthetic)"
+ }
+}
