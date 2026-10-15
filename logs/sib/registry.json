@@ -1,0 +1,400 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "authority": "owner direct message 2026-09-25 ~18:22Z (compute creation allowed); sibling sessions are builders/trainers only (no seals, scoring, reading or viewing); owner 2026-09-26 ~00:20Z: as many siblings as possible, Opus 5.5; DECL-REMOTE-HARNESS-1 (2026-09-26 17:35Z): rh-* siblings may launch blind reader agents (sealed to the orchestrator key), never read/decrypt/score themselves; owner 2026-09-26 ~17:25Z: siblings may create sub-siblings (<= 3 each, recorded in SUBSIBS.md first, no further nesting)",
+ "environment": "env Winner (anthropic_cloud, 4 vCPU AMX, no GPU)",
+ "sessions": [
+  {
+   "task": "amx",
+   "session": "session_011QbqZBB9k19oh47SD3cfdu",
+   "branch": "claude/gifted-bell-gavnl5-sib-amx",
+   "created_utc": "2026-09-25T18:21:36Z",
+   "goal": "AMX bf16/int8 profile of the base model, encoder/decoder split, cached-feature prototype, amx_gate code + tests, DECL-AMX-1 proposal"
+  },
+  {
+   "task": "tracer",
+   "session": "session_0186WKVwnaMbrHB2LUw9XEsR",
+   "branch": "claude/gifted-bell-gavnl5-sib-tracer",
+   "created_utc": "2026-09-25T18:22:02Z",
+   "goal": "VC3D build, rejection-gated tracer (build c) with unit tests, 1203 dev runs (never the T0 test set)"
+  },
+  {
+   "task": "reg0841",
+   "session": "session_01B1Mcm7zVXx9qcDKviUHsYP",
+   "branch": "claude/gifted-bell-gavnl5-sib-reg0841",
+   "created_utc": "2026-09-25T18:22:25Z",
+   "goal": "PHerc0841 9.366 <-> 2.403 um affine (CT only, J exclusion), bars r >= 0.85, RMS <= 1.5 vox"
+  },
+  {
+   "task": "pairs0139",
+   "session": "session_014Td5Vx7px6vmGbqMe8cS9i",
+   "branch": "claude/gifted-bell-gavnl5-sib-pairs0139",
+   "created_utc": "2026-09-25T18:23:02Z",
+   "goal": "DECL-D2 training pairs on PHerc0139 minus clean controls and neighbours"
+  },
+  {
+   "task": "pairs0814",
+   "session": "session_018vpsU55LqA4PAQN5JbLdf8",
+   "branch": "claude/gifted-bell-gavnl5-sib-pairs0814",
+   "created_utc": "2026-09-25T18:23:45Z",
+   "goal": "protocol check 0814/0500P2/0332/1451; DECL-D2 pairs on PHerc0814"
+  },
+  {
+   "task": "flat1",
+   "session": "session_012PajoPBSZpmnByzzncGKCk",
+   "branch": "claude/gifted-bell-gavnl5-sib-flat1",
+   "created_utc": "2026-09-25T18:23:48Z",
+   "goal": "FLAT-1 flattening benchmark (vc_flatten, SLIM, ARAP) on 0139 bank meshes"
+  },
+  {
+   "task": "chain2um",
+   "session": "session_011RrWfZz5Z3dvqRAoeXDScd",
+   "branch": "claude/gifted-bell-gavnl5-sib-chain2um",
+   "created_utc": "2026-09-25T18:24:25Z",
+   "goal": "2.4 um truth chain on CPU (ink_canonical_2um), 0139 control reproduction, fp32/bf16 cost per cm^2"
+  },
+  {
+   "task": "factory",
+   "session": "session_01JT3cQbn5E1SRMxgGgc2mRj",
+   "branch": "claude/gifted-bell-gavnl5-sib-factory",
+   "created_utc": "2026-09-25T18:25:07Z",
+   "goal": "package factory + mechanical verifier, DRY RUN on a 0139 bank mesh"
+  },
+  {
+   "task": "regrescan",
+   "session": "session_01USRhAAo5Prm8JPQWJDzRaq",
+   "branch": "claude/gifted-bell-gavnl5-sib-regrescan",
+   "created_utc": "2026-09-25T18:26:49Z",
+   "goal": "CT-only affines 1203 and 0846A eligible <-> 2.403 um rescans (no ink model; I11)"
+  },
+  {
+   "task": "reg0009b",
+   "session": "session_01HH7JrwbTkn9dwNmok9D3bx",
+   "branch": "claude/gifted-bell-gavnl5-sib-reg0009b",
+   "created_utc": "2026-09-25T18:27:22Z",
+   "goal": "KTLB-M prep: 0009B per-segment label registration, papyrus units, window counts (no ink model)"
+  },
+  {
+   "task": "census",
+   "session": "session_01FkYMAaqXwtCQvWWKzL2Gvv",
+   "branch": "claude/gifted-bell-gavnl5-sib-census",
+   "created_utc": "2026-09-25T18:27:55Z",
+   "goal": "census plan for 11 JULY eligible volumes: m7/normal-grid inventory, centroids, seeds, sync plan, tractability"
+  },
+  {
+   "task": "trainer",
+   "session": "session_019ijhigb9YTs2Pe7ncpxL4f",
+   "branch": "claude/gifted-bell-gavnl5-sib-trainer",
+   "created_utc": "2026-09-25T18:30:43Z",
+   "goal": "D2 trainer (flags, determinism, 3-D patch registry, reclaim-safe checkpoint shards), throughput, DECL-D2-A1 proposal"
+  },
+  {
+   "task": "devloop",
+   "session": "session_012gt8p9faXQS7nhLGGXwX6x",
+   "branch": "claude/gifted-bell-gavnl5-sib-devloop",
+   "created_utc": "2026-09-25T18:31:02Z",
+   "goal": "DEV-LOOP harness: DEV window registry, sigma_eq evaluator, base baseline"
+  },
+  {
+   "task": "tribunal",
+   "session": "session_01YUHdkQ6ZFAJMnFeavch5Xc",
+   "branch": "claude/gifted-bell-gavnl5-sib-tribunal",
+   "created_utc": "2026-09-25T18:31:21Z",
+   "goal": "planted-fault suite, canary/bait/mirror builders, batch-validity scorer, empirical-null builder"
+  },
+  {
+   "task": "contam",
+   "session": "session_01KAiaxjWZt8XTCBErVPhvEL",
+   "branch": "claude/gifted-bell-gavnl5-sib-contam",
+   "created_utc": "2026-09-25T18:31:38Z",
+   "goal": "KD-tree contamination, fold/shell certificates, FL-09 certificate, 0139 papyrus units"
+  },
+  {
+   "task": "sg",
+   "session": "session_016Rn6suY4vut5JeJTdMMZ8p",
+   "branch": "claude/gifted-bell-gavnl5-sib-sg",
+   "created_utc": "2026-09-25T18:31:58Z",
+   "goal": "SG battery as mechanical code (discovery rule, R rectangle, items 1-7, 11, 14)"
+  },
+  {
+   "task": "handed",
+   "session": "session_01AzryPCp51bY9mCGLY8nFwg",
+   "branch": "claude/gifted-bell-gavnl5-sib-handed",
+   "created_utc": "2026-09-25T18:32:39Z",
+   "goal": "geometric handedness rule, synthetic glyph tests, per-volume table"
+  },
+  {
+   "task": "readcal2",
+   "session": "session_016xXtTKGSN5FYrQWH7tzHeH",
+   "branch": "claude/gifted-bell-gavnl5-sib-readcal2",
+   "created_utc": "2026-09-25T19:28:00Z",
+   "goal": "READCAL-2 reader-acuity programme: exemplar/placebo sheets, multi-scale and row-first displays, fresh bank windows (0139 clean, 0814), REF ladder builder, scoring plan, DECL-READCAL2 proposal"
+  },
+  {
+   "task": "pairs0814b",
+   "session": "session_01NfS4bhpLVnt2ShveEY6pYF",
+   "branch": "claude/gifted-bell-gavnl5-sib-pairs0814b",
+   "created_utc": "2026-09-25T19:38:03Z",
+   "goal": "split of PHerc0814 D2 pair stage B (segments per pairs0814 HANDOVER.md), unchanged pairs0814 code"
+  },
+  {
+   "task": "pairs0139b",
+   "session": "session_01GogJeKgeJGLxJ7fxWtkC1R",
+   "branch": "claude/gifted-bell-gavnl5-sib-pairs0139b",
+   "created_utc": "2026-09-26T00:20:03Z",
+   "goal": "PHerc0139 D2 pair build PART 2 (waits for pairs0139 HANDOVER.md)",
+   "model": "opus 5.5 (owner direction 2026-09-26)"
+  },
+  {
+   "task": "pairs0139c",
+   "session": "session_01WExUmjLWNqGCtG7fwFjhfH",
+   "branch": "claude/gifted-bell-gavnl5-sib-pairs0139c",
+   "created_utc": "2026-09-26T00:20:21Z",
+   "goal": "PHerc0139 D2 pair build PART 3 (waits for pairs0139 HANDOVER.md)",
+   "model": "opus 5.5 (owner direction 2026-09-26)"
+  },
+  {
+   "task": "d2-p128",
+   "session": "session_01TC2AfeFdqDBVnBmpD1VdsJ",
+   "branch": "claude/gifted-bell-gavnl5-sib-d2-p128",
+   "created_utc": "2026-09-26T00:20:45Z",
+   "goal": "D2 fold L-0841 arm P128 seed 1: setup + synthetic smoke now; real training only on GO D2",
+   "model": "opus 5.5 (owner direction 2026-09-26)"
+  },
+  {
+   "task": "d2-p384",
+   "session": "session_01TX4TwCt6hP3htMSfHMQNrw",
+   "branch": "claude/gifted-bell-gavnl5-sib-d2-p384",
+   "created_utc": "2026-09-26T00:22:31Z",
+   "goal": "D2 fold L-0841 arm P384 seed 1: setup + synthetic smoke now; real training only on GO D2",
+   "model": "opus 5.5 (owner direction 2026-09-26)"
+  },
+  {
+   "task": "d2-null",
+   "session": "session_01TFiRjo3qGxRmZyVsCbZ2n6",
+   "branch": "claude/gifted-bell-gavnl5-sib-d2-null",
+   "created_utc": "2026-09-26T00:22:33Z",
+   "goal": "D2 fold L-0841 arm NULL seed 1: setup + synthetic smoke now; real training only on GO D2",
+   "model": "opus 5.5 (owner direction 2026-09-26)"
+  },
+  {
+   "task": "d2-rev",
+   "session": "session_01W8bqTnKicCTkbeHVqm7neN",
+   "branch": "claude/gifted-bell-gavnl5-sib-d2-rev",
+   "created_utc": "2026-09-26T00:22:34Z",
+   "goal": "D2 fold L-0841 arm REV seed 1: setup + synthetic smoke now; real training only on GO D2",
+   "model": "opus 5.5 (owner direction 2026-09-26)"
+  },
+  {
+   "task": "p4-tiles-a",
+   "session": "session_013T89jurH1KzTAc1eE322B5",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-tiles-a",
+   "created_utc": "2026-09-26T00:26:05Z",
+   "goal": "DECL-P4-2 M1 tiles, segment 20260701183124-w010-027 (no viewing)",
+   "model": "opus 5.5 (owner direction 2026-09-26)"
+  },
+  {
+   "task": "p4-tiles-b",
+   "session": "session_01WzaQY5fSJUguCeyeZmPzhx",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-tiles-b",
+   "created_utc": "2026-09-26T00:26:06Z",
+   "goal": "DECL-P4-2 M1 tiles, segment 20260701183125-w028-037 (no viewing)",
+   "model": "opus 5.5 (owner direction 2026-09-26)"
+  },
+  {
+   "task": "p4-excl",
+   "session": "session_01RniFbp6Sjnue4zDUUcENiC",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-excl",
+   "created_utc": "2026-09-26T00:26:07Z",
+   "goal": "DECL-P4-2 labelled-adjacency distances per tile (8 labelled Paris 4 segments)",
+   "model": "opus 5.5 (owner direction 2026-09-26)"
+  },
+  {
+   "task": "ckpt-screen-a",
+   "session": "session_01LmSLu26d8qRfXPDoyZD84d",
+   "branch": "claude/gifted-bell-gavnl5-sib-ckpt-screen-a",
+   "created_utc": "2026-09-26T00:33:34Z",
+   "goal": "DECL-DEVLOOP-SCREEN: ink_9um seed43, hecate_9.6um, ink_3d_dino_guided",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "ckpt-screen-b",
+   "session": "session_01BGxxWNjFuExchYZRDZoTyP",
+   "branch": "claude/gifted-bell-gavnl5-sib-ckpt-screen-b",
+   "created_utc": "2026-09-26T00:33:35Z",
+   "goal": "DECL-DEVLOOP-SCREEN: PHerc.1667-iteration-0..5",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "ckpt-screen-c",
+   "session": "session_01Jpx7ZVorqZaNdHPfs1KiYC",
+   "branch": "claude/gifted-bell-gavnl5-sib-ckpt-screen-c",
+   "created_utc": "2026-09-26T00:33:36Z",
+   "goal": "DECL-DEVLOOP-SCREEN: timesformer x3, resnet50_7.9um, fiber_ink_4class, new releases",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "dev-lcsoft",
+   "session": "session_01WN6ghNprnvpMBng1esTcHT",
+   "branch": "claude/gifted-bell-gavnl5-sib-dev-lcsoft",
+   "created_utc": "2026-09-26T00:34:14Z",
+   "goal": "DECL-DEVLOOP-A1 recipe LC384-SOFT + NULL/REV",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "dev-distft",
+   "session": "session_018MPzKxBJy8gwCSqvMeSeW7",
+   "branch": "claude/gifted-bell-gavnl5-sib-dev-distft",
+   "created_utc": "2026-09-26T00:34:15Z",
+   "goal": "DECL-DEVLOOP-A1 recipe DIST-FT + NULL/REV",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-inner",
+   "session": "session_01AXfmasnYmkW3pgGvTRpDwK",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-inner",
+   "created_utc": "2026-09-26T10:05:21Z",
+   "goal": "Paris 4 reconnaissance of windings w000-w009 (inward of the segmented strips): products, extent, tracing cost; metadata only",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "rh-e1",
+   "session": "session_015TgHhUmDZxB1PoCUiRVgxJ",
+   "branch": "claude/gifted-bell-gavnl5-sib-rh-e1",
+   "created_utc": "2026-09-26T17:38:30Z",
+   "goal": "remote blind-read harness, P4-E E1 (then M2a) under DECL-REMOTE-HARNESS-1",
+   "model": "opus 5.5",
+   "prompt": "logs/sib/orders/COMMON.txt ({NAME}=rh-e1) + logs/sib/orders/rh-e1.txt"
+  },
+  {
+   "task": "rh-e2",
+   "session": "session_01A3X1L6erjPGxEx7rGuWju2",
+   "branch": "claude/gifted-bell-gavnl5-sib-rh-e2",
+   "created_utc": "2026-09-26T17:38:30Z",
+   "goal": "remote blind-read harness, P4-E E2 under DECL-REMOTE-HARNESS-1",
+   "model": "opus 5.5",
+   "prompt": "logs/sib/orders/COMMON.txt ({NAME}=rh-e2) + logs/sib/orders/rh-e2.txt"
+  },
+  {
+   "task": "p4-highz",
+   "session": "session_01VNjbV9Ld1ZdkNhrtoeSzbB",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-highz",
+   "created_utc": "2026-09-26T17:38:30Z",
+   "goal": "DECL-P4-6 P4-F dense/mineral-ink channel: thresholds, numeric screen, MIP tiles",
+   "model": "opus 5.5",
+   "prompt": "logs/sib/orders/COMMON.txt ({NAME}=p4-highz) + logs/sib/orders/p4-highz.txt"
+  },
+  {
+   "task": "p4-core",
+   "session": "session_013MzbEPxfnU1oUwzS6wGBWP",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-core",
+   "created_utc": "2026-09-26T17:38:30Z",
+   "goal": "DECL-P4-7 winding count on 2.4 um (cross-check) + VC3D core-window trace prep",
+   "model": "opus 5.5",
+   "prompt": "logs/sib/orders/COMMON.txt ({NAME}=p4-core) + logs/sib/orders/p4-core.txt"
+  },
+  {
+   "task": "p4-struct",
+   "session": "session_01RWnueFnCea9eDugEG69Gc7",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-struct",
+   "created_utc": "2026-09-26T17:57:52Z",
+   "goal": "DECL-P4-8 P4-I numeric ink-structure screen",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-crackle",
+   "session": "session_014znSqcp9LrrsvdnUg5Hxoo",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-crackle",
+   "created_utc": "2026-09-26T17:57:52Z",
+   "goal": "DECL-P4-9 P4-H 1 um crackle channel, gate first",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "devloop2",
+   "session": "session_01XmfKMsfRzMGj4TuJyZv67G",
+   "branch": "claude/gifted-bell-gavnl5-sib-devloop2",
+   "created_utc": "2026-09-26T17:57:52Z",
+   "goal": "continuation of devloop: DECL-DEVLOOP-A1 + registry v3 freeze, FREEZE.md",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-pig-red",
+   "session": "session_01SJEUv26moCbqfFp36QQYJ4",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-pig-red",
+   "created_utc": "2026-09-26T18:01:24Z",
+   "goal": "DECL-P4-10 RED (HgS, Pb oxides): memo, frozen detector, injection-recovery, scores",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-pig-gold",
+   "session": "session_01JJo8UYrZhFzjiooGE1yLSk",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-pig-gold",
+   "created_utc": "2026-09-26T18:01:24Z",
+   "goal": "DECL-P4-10 GOLD (Au, partial volume, 80.7 keV edge)",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-pig-cu",
+   "session": "session_01BGvjN5PqxUioDsG1cJPaYj",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-pig-cu",
+   "created_utc": "2026-09-26T18:01:24Z",
+   "goal": "DECL-P4-10 CU blue/green (Egyptian blue, CuO): grain-statistics detector",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-pig-fe",
+   "session": "session_01MhMHnWiYgGA4HZhTdjPUXn",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-pig-fe",
+   "created_utc": "2026-09-26T18:01:24Z",
+   "goal": "DECL-P4-10 FE ochre/green earth: weak-contrast surface-layer detector",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-research",
+   "session": "session_01CtaQQfzAQ84iVduQEauDWj",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-research",
+   "created_utc": "2026-09-26T18:01:24Z",
+   "goal": "DECL-P4-10 research dossier: title position/size/ink, organizer rules, where to look",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-l2",
+   "session": "session_01VYfh6gj6Kr8Qyurerayy9B",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-l2",
+   "created_utc": "2026-09-26T18:14:26Z",
+   "goal": "DECL-P4-12 P4-L thin-slab max on 2.4 um E2 volume, all 160 strip-a tiles, r0-r1 first; harness rh-e2",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-layout",
+   "session": "session_0191DUShgpKy22se1NCgd38m",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-layout",
+   "created_utc": "2026-09-26T18:25:57Z",
+   "goal": "DECL-P4-13 P4-M: edge check, organizer-segment mapping, column profile (numbers only)",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-depth",
+   "session": "session_01W5Lm1ZSgpbmxM7ZkrKqx3v",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-depth",
+   "created_utc": "2026-09-26T21:28:06Z",
+   "goal": "DECL-P4-12-A3 P4-L3: ink-depth calibration on the control strip, then depth-offset thin-slab tiles",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-titulus",
+   "session": "session_017S5A89CDcJd5MEFeGXbi6U",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-titulus",
+   "created_utc": "2026-09-26T21:50:59Z",
+   "goal": "Title expert (OWNER-STANDING-ORDER-2 item 6): TITLE_PRIOR (location/vertical/size/decoration/ink priors, graded), REDTEAM of HYPOTHESES.md, QA.md channel; never title words",
+   "model": "opus 5.5"
+  },
+  {
+   "task": "p4-purple",
+   "session": "session_01TBwv1MDQJdjiR9dgoSQhVt",
+   "branch": "claude/gifted-bell-gavnl5-sib-p4-purple",
+   "created_utc": "2026-09-26T21:51:16Z",
+   "goal": "DECL-P4-16 items 1,3,4: colourant attenuation/phase table (purple Br/Ca, lakes, organics), 78/137 keV dual-energy feasibility (control only, freeze before title zone), morphology channel on control",
+   "model": "opus 5.5"
+  }
+ ]
+}

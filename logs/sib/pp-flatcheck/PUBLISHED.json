@@ -1,0 +1,18 @@
+{
+ "repo_url": "https://github.com/abundantjoe/flatcheck",
+ "commit_sha": "948a19d102ed5d623de8958bf53707c0bf7cdfc6",
+ "parent_sha": "7a067be4b755d42a20e669a94ca5ec02530392bb (owner's LICENSE-only initial commit; package added as one commit on top, no force-push)",
+ "tests_passed": "21/21 (pytest, on the exact committed tree via git archive)",
+ "scrub_ok": true,
+ "scrub_file": "logs/sib/pp-flatcheck/scrub.json",
+ "about": "Checks tifxyz scroll-surface flattenings for distortion, fold-overs and collapse, and re-flattens with SLIM or ARAP.",
+ "about_note": "Not set on GitHub: no tool here can edit the repository About field; the owner sets it in the repository settings (gear icon next to About).",
+ "summary": "(1) Data: public PHerc0139 organizer tifxyz meshes (9.362 um; study also 2.399 um) and small PHerc0800/PHerc1447 meshes (8.64 um), geometry only. (2) Letters are read from the flattened surface; flatcheck measures per quad whether the flattening preserves true length (+-5 %), flags fold-overs and collapsed ABF++ maps, shows intrinsic curvature, and re-flattens with SLIM/ARAP, so entrants see where letters will be stretched before rendering. (3) A standard, tested isometry check for tifxyz, plus a scan for the worst windows of a mesh. (4) 21 tests pass; scripts/reproduce.sh reproduces on three public meshes: the grid flattening fails 93.1 % whole-mesh (90.05-92.94 %), and no method reaches it in the most curved windows. Earlier study: ABF++ 0/10, SLIM 3/10, ARAP 4/10 hard windows; SLIM >= ABF++ in 33/33.",
+ "summary_words": 126,
+ "sheet_mismatch": [
+  "SUBMIT_SHEET s1 (4) says the evidence includes 'the full run log including failures': the public repo does NOT contain a run log. It contains per-window tables with segment IDs and mesh sha256 (results/study_summary.json), results/*.json from scripts/reproduce.sh, tests and the CLI demo. Suggest deleting 'the full run log including failures,'.",
+  "33 of 33 is correct, but 8 of the 33 are ties at 100 % on small 1 cm2 PHerc0800/1447 windows (README states this); consider '33 of 33 (8 ties)'.",
+  "All other numbers in s1 match the README: 98.6-99.7 %, 0/10 (22-93 %), 3/10, 4/10, 22-34 %, up to 3.4x (3.36), up to 12 flips, SLIM never flipped, 38 segments at 9.362 um."
+ ],
+ "not_in_sheet_but_in_readme": "Reproducible whole-mesh finding: the distributed grid flattening of PHerc0139 w052/w053/w051 has 90.05/92.94/91.83 % of quads within +-5 % (below 93.1 %)."
+}

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vc-flatcheck"
+version = "0.1.0"
+description = "Flattening-quality checks (isometry, fold-overs, collapse) and SLIM/ARAP re-flattening for tifxyz scroll-surface meshes"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22", "tifffile>=2022.1", "libigl==2.6.3"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+flatcheck = "flatcheck.cli:main"
+
+[tool.setuptools]
+packages = ["flatcheck"]
