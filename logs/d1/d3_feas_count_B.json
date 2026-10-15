@@ -1,0 +1,291 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "id": "B",
+ "rule": "DECL-D3-FEAS",
+ "generated_utc": "2026-09-25T09:23:40Z",
+ "note": "Independent count by builder B, own code; numbers only, no image or pixel array viewed. Did not read any other d3_feas_count_* file.",
+ "method": {
+  "mesh_point": "canvas pixel c -> grid g=(c+0.5)/20 per axis; 3-D point = bilinear interpolation of the <id>-on-20250821151531-9.366um tifxyz x/y/z; pixel has a mesh point iff its quad is in range and all 4 corners != -1 (reproduces bank mesh_valid9 exactly, 0 px differences on all 3 segments)",
+  "J_points": "all full-res mesh-valid canvas pixels inside J1-J5 (2136 px windows on their own segment): 19981692 points",
+  "exclusion": "pixel excluded iff inside its segment's J window(s), or mesh-valid with Euclidean 3-D distance < 128 vox to any J point (all 3 segments vs all J windows)",
+  "distance_computation": "cKDTree over stride-4 subsample of J points (1249074 pts, actual J pixels) gives upper bound d_sub; measured covering radius e=4.5990 vox (max over all full-res J points of distance to nearest subsample point) gives lower bound d_sub-e; d_sub<128 -> excluded, d_sub-e>=128 -> kept, band [128,128+e) resolved exactly with a cKDTree over all 19981692 full-res J points",
+  "tiles": "128x128 px, origins 0,s,2s,... fully inside canvas; eligible: valid9 count >= 0.9*16384 and 0 excluded pixels (excluded counted over all pixels incl. non-valid mesh-valid); TEXT(ref9): count(valid & ref9>=150) >= p% of valid count; TEXT(labels): count(valid & lab9_inklabels.frac>0 & lab9_supervision.frac>0) >= p% of valid count; summed-area tables",
+  "area": "non-excluded valid9 pixels x (9.366e-4 cm)^2",
+  "threads": "2 (OMP_NUM_THREADS=2, cKDTree workers=2)",
+  "runtime_s": 125.3,
+  "script_sha256": "75d155e9ae60700aa092fc87f97817f6fac6eef15d9dbb4fa80ce62c78264abc"
+ },
+ "PRIMARY": {
+  "rule": "stride 64, ref9 >= 2 %",
+  "per_segment": {
+   "20260220213127-w00": {
+    "eligible": 309,
+    "text_ref9": 122
+   },
+   "20260220214732-auto_grown_20260220144552896": {
+    "eligible": 317,
+    "text_ref9": 111
+   },
+   "20260221022814-auto_grown_20260220174252405": {
+    "eligible": 240,
+    "text_ref9": 73
+   }
+  },
+  "total_eligible": 866,
+  "total_text": 306,
+  "decision_threshold": 280,
+  "outcome": "306 >= 280 -> D3 feasible on current material"
+ },
+ "tiles": {
+  "primary_s64_2pct": {
+   "20260220213127-w00": {
+    "n_tiles": 4672,
+    "eligible": 309,
+    "text_ref9": 122,
+    "text_labels": 0,
+    "min_3d_dist_lowerbound_in_eligible_tiles_vox": 128.00549540085748
+   },
+   "20260220214732-auto_grown_20260220144552896": {
+    "n_tiles": 5112,
+    "eligible": 317,
+    "text_ref9": 111,
+    "text_labels": 20,
+    "min_3d_dist_lowerbound_in_eligible_tiles_vox": 128.00241292286861
+   },
+   "20260221022814-auto_grown_20260220174252405": {
+    "n_tiles": 4275,
+    "eligible": 240,
+    "text_ref9": 73,
+    "text_labels": 0,
+    "min_3d_dist_lowerbound_in_eligible_tiles_vox": 128.07048735394338
+   },
+   "total": {
+    "eligible": 866,
+    "text_ref9": 306,
+    "text_labels": 20,
+    "n_tiles": 14059
+   }
+  },
+  "strict_s128_5pct": {
+   "20260220213127-w00": {
+    "n_tiles": 1184,
+    "eligible": 80,
+    "text_ref9": 23,
+    "text_labels": 0,
+    "min_3d_dist_lowerbound_in_eligible_tiles_vox": 128.03367153666542
+   },
+   "20260220214732-auto_grown_20260220144552896": {
+    "n_tiles": 1296,
+    "eligible": 76,
+    "text_ref9": 25,
+    "text_labels": 5,
+    "min_3d_dist_lowerbound_in_eligible_tiles_vox": 128.00241292286861
+   },
+   "20260221022814-auto_grown_20260220174252405": {
+    "n_tiles": 1102,
+    "eligible": 55,
+    "text_ref9": 17,
+    "text_labels": 0,
+    "min_3d_dist_lowerbound_in_eligible_tiles_vox": null
+   },
+   "total": {
+    "eligible": 211,
+    "text_ref9": 65,
+    "text_labels": 5,
+    "n_tiles": 3582
+   }
+  },
+  "generous_s32_1pct": {
+   "20260220213127-w00": {
+    "n_tiles": 18560,
+    "eligible": 1231,
+    "text_ref9": 509,
+    "text_labels": 0,
+    "min_3d_dist_lowerbound_in_eligible_tiles_vox": 128.0040902932176
+   },
+   "20260220214732-auto_grown_20260220144552896": {
+    "n_tiles": 20448,
+    "eligible": 1248,
+    "text_ref9": 479,
+    "text_labels": 88,
+    "min_3d_dist_lowerbound_in_eligible_tiles_vox": 128.00112131076094
+   },
+   "20260221022814-auto_grown_20260220174252405": {
+    "n_tiles": 17100,
+    "eligible": 988,
+    "text_ref9": 353,
+    "text_labels": 0,
+    "min_3d_dist_lowerbound_in_eligible_tiles_vox": 128.00670071252648
+   },
+   "total": {
+    "eligible": 3467,
+    "text_ref9": 1341,
+    "text_labels": 88,
+    "n_tiles": 56108
+   }
+  }
+ },
+ "segments": {
+  "20260220213127-w00": {
+   "canvas_hw": [
+    4220,
+    4760
+   ],
+   "mesh_valid_px": 14535200,
+   "valid9_px": 14261585,
+   "valid9_not_in_mesh": 0,
+   "inJ_px": 4562496,
+   "excluded_3d_px_outside_J": 9432211,
+   "excluded_total_px": 13994707,
+   "ambiguous_band_px": 23606,
+   "ambiguous_resolved_excluded": 4516,
+   "nonexcluded_valid_px": 1711995,
+   "nonexcluded_valid_cm2": 1.5017955006222,
+   "nonexcluded_meshvalid_cm2": 1.6139690746376398,
+   "nonexcluded_valid_refText_cm2": 0.08359551518976,
+   "min_lower_bound_dist_nonexcluded_vox": 128.00015393672064,
+   "min_exact_dist_band_nonexcluded_vox": 128.00015393672064,
+   "min_dsub_nonexcluded_vox": 128.00242062400545
+  },
+  "20260220214732-auto_grown_20260220144552896": {
+   "canvas_hw": [
+    4640,
+    4720
+   ],
+   "mesh_valid_px": 14603600,
+   "valid9_px": 14311038,
+   "valid9_not_in_mesh": 0,
+   "inJ_px": 9124992,
+   "excluded_3d_px_outside_J": 4549668,
+   "excluded_total_px": 13674660,
+   "ambiguous_band_px": 23711,
+   "ambiguous_resolved_excluded": 4455,
+   "nonexcluded_valid_px": 1724802,
+   "nonexcluded_valid_cm2": 1.51303005152712,
+   "nonexcluded_meshvalid_cm2": 1.6253966138457598,
+   "nonexcluded_valid_refText_cm2": 0.10920418580484,
+   "min_lower_bound_dist_nonexcluded_vox": 128.00006382866454,
+   "min_exact_dist_band_nonexcluded_vox": 128.00006382866454,
+   "min_dsub_nonexcluded_vox": 128.01120907328314
+  },
+  "20260221022814-auto_grown_20260220174252405": {
+   "canvas_hw": [
+    3760,
+    4900
+   ],
+   "mesh_valid_px": 13756000,
+   "valid9_px": 13661996,
+   "valid9_not_in_mesh": 0,
+   "inJ_px": 9124992,
+   "excluded_3d_px_outside_J": 3777294,
+   "excluded_total_px": 12902286,
+   "ambiguous_band_px": 24429,
+   "ambiguous_resolved_excluded": 4421,
+   "nonexcluded_valid_px": 1436713,
+   "nonexcluded_valid_cm2": 1.26031274570628,
+   "nonexcluded_meshvalid_cm2": 1.2817669044852,
+   "nonexcluded_valid_refText_cm2": 0.05357706184656,
+   "min_lower_bound_dist_nonexcluded_vox": 128.00026190546458,
+   "min_exact_dist_band_nonexcluded_vox": 128.00026190546458,
+   "min_dsub_nonexcluded_vox": 128.0122465812154
+  }
+ },
+ "totals": {
+  "nonexcluded_valid_cm2": 4.2751382978556,
+  "nonexcluded_valid_refText_cm2": 0.24637676284115997
+ },
+ "min_3d_distance_check": {
+  "e_cover_radius_vox": 4.598982122585468,
+  "per_segment_min_dist_of_nonexcluded_meshvalid_px_vox": {
+   "20260220213127-w00": 128.00015393672064,
+   "20260220214732-auto_grown_20260220144552896": 128.00006382866454,
+   "20260221022814-auto_grown_20260220174252405": 128.00026190546458
+  },
+  "note": "minimum over non-excluded mesh-valid pixels of a certified lower bound (exact distance in the band, d_sub-e elsewhere): all >= 128.00006; per-tile-set minima in tiles.*.min_3d_dist_lowerbound_in_eligible_tiles_vox (null = every pixel's d_sub beyond 128+e+1 query bound, i.e. > 129 vox)"
+ },
+ "J": {
+  "J1": {
+   "segment": "20260220214732-auto_grown_20260220144552896",
+   "n_full": 3832476,
+   "n_sub_stride4": 239456,
+   "n_stride2_offset0": 958414
+  },
+  "J2": {
+   "segment": "20260220213127-w00",
+   "n_full": 3263120,
+   "n_sub_stride4": 204212,
+   "n_stride2_offset0": 815780
+  },
+  "J3": {
+   "segment": "20260220214732-auto_grown_20260220144552896",
+   "n_full": 4368560,
+   "n_sub_stride4": 273060,
+   "n_stride2_offset0": 1092140
+  },
+  "J4": {
+   "segment": "20260221022814-auto_grown_20260220174252405",
+   "n_full": 4562496,
+   "n_sub_stride4": 285156,
+   "n_stride2_offset0": 1140624
+  },
+  "J5": {
+   "segment": "20260221022814-auto_grown_20260220174252405",
+   "n_full": 3955040,
+   "n_sub_stride4": 247190,
+   "n_stride2_offset0": 988760
+  }
+ },
+ "sensitivity_primary_not_deciding": {
+  "20260220213127-w00": {
+   "excl_on_valid_only": {
+    "eligible": 309,
+    "text_ref9": 122
+   },
+   "bank_Tshell_exclusion_diag": {
+    "eligible": 309,
+    "text_ref9": 122
+   }
+  },
+  "20260220214732-auto_grown_20260220144552896": {
+   "excl_on_valid_only": {
+    "eligible": 317,
+    "text_ref9": 111
+   },
+   "bank_Tshell_exclusion_diag": {
+    "eligible": 317,
+    "text_ref9": 111
+   }
+  },
+  "20260221022814-auto_grown_20260220174252405": {
+   "excl_on_valid_only": {
+    "eligible": 240,
+    "text_ref9": 73
+   },
+   "bank_Tshell_exclusion_diag": {
+    "eligible": 240,
+    "text_ref9": 73
+   }
+  }
+ },
+ "diag_vs_bank_Tshell_post_hoc": {
+  "20260220213127-w00": {
+   "Tshell_dtype": "bool",
+   "Tshell_true_frac": 0.6317710780994863,
+   "disagree_px_valid": 5825,
+   "disagree_px_meshvalid": 6041
+  },
+  "20260220214732-auto_grown_20260220144552896": {
+   "Tshell_dtype": "bool",
+   "Tshell_true_frac": 0.5819763661601403,
+   "disagree_px_valid": 6038,
+   "disagree_px_meshvalid": 6206
+  },
+  "20260221022814-auto_grown_20260220174252405": {
+   "Tshell_dtype": "bool",
+   "Tshell_true_frac": 0.6670703430308293,
+   "disagree_px_valid": 6002,
+   "disagree_px_meshvalid": 6060
+  }
+ },
+ "script_source": "\"\"\"DECL-D3-FEAS independent count, builder B.\nStrategy: 3-D exclusion by KD-tree over stride-4 subsampled J mesh points (upper bound on\ndistance), a measured covering radius e (every full-res J point lies within e of a subsample\npoint) giving a lower bound, and an exact full-res KD-tree check only for pixels in the\nambiguous band [128, 128 + e). Tiles counted with summed-area tables. Numbers only.\"\"\"\nimport os, json, time, hashlib\nos.environ.setdefault(\"OMP_NUM_THREADS\", \"2\")\nimport numpy as np, tifffile\nfrom scipy.spatial import cKDTree\n\nBANK = \"/work/bank/0841\"\nT = 128.0\nTILE = 128\nPX_CM2 = (9.366e-4) ** 2\nW = 2  # workers\nt0 = time.time()\nbank = json.load(open(f\"{BANK}/bank_0841.json\"))\nJW = bank[\"J_windows\"]\nSEGS = sorted(bank[\"segments\"].keys())\n\n\ndef mesh(seg):\n    ts = seg.split(\"-\")[0]\n    d = f\"{BANK}/s3/PHerc0841/segments/{seg}/mesh/{ts}-on-20250821151531-9.366um.tifxyz\"\n    xyz = np.stack([tifffile.imread(f\"{d}/{c}.tif\").astype(np.float64) for c in \"xyz\"], -1)\n    return xyz\n\n\ndef canvas_points(xyz, rows, cols):\n    \"\"\"3-D points (len(rows), len(cols), 3) + validity for canvas pixel rows x cols.\n    c -> g = (c + 0.5) / 20, bilinear on the quad; valid iff quad in range and 4 corners != -1.\"\"\"\n    G = xyz.shape[:2]\n    gy = (rows + 0.5) / 20.0; i0 = np.floor(gy).astype(np.int64); fy = gy - i0\n    gx = (cols + 0.5) / 20.0; j0 = np.floor(gx).astype(np.int64); fx = gx - j0\n    okr = i0 + 1 < G[0]; okc = j0 + 1 < G[1]\n    i0 = np.minimum(i0, G[0] - 2); j0 = np.minimum(j0, G[1] - 2)\n    v = xyz[..., 0] != -1\n    q = v[:-1, :-1] & v[1:, :-1] & v[:-1, 1:] & v[1:, 1:]\n    valid = q[i0][:, j0] & okr[:, None] & okc[None, :]\n    fy = fy[:, None, None]; fx = fx[None, :, None]\n    A = xyz[i0][:, j0]; B = xyz[i0][:, j0 + 1]; C = xyz[i0 + 1][:, j0]; D = xyz[i0 + 1][:, j0 + 1]\n    P = (1 - fy) * ((1 - fx) * A + fx * B) + fy * ((1 - fx) * C + fx * D)\n    return P, valid\n\n\nmeshes = {s: mesh(s) for s in SEGS}\nshapes = {s: (meshes[s].shape[0] * 20, meshes[s].shape[1] * 20) for s in SEGS}\n\n# ---- J point clouds: full res and stride-4 subsample (actual pixels, offset 1 within each 4x4 block)\nfull_pts, sub_pts, jinfo = [], [], {}\nfor j in sorted(JW):\n    w = JW[j]; s = w[\"segment\"]; y0, x0, n = w[\"y0\"], w[\"x0\"], w[\"size\"]\n    rows = np.arange(y0, y0 + n); cols = np.arange(x0, x0 + n)\n    P, V = canvas_points(meshes[s], rows, cols)\n    fp = P[V]\n    sp = P[1::4, 1::4][V[1::4, 1::4]]\n    full_pts.append(fp.astype(np.float64)); sub_pts.append(sp)\n    jinfo[j] = {\"segment\": s, \"n_full\": int(len(fp)), \"n_sub_stride4\": int(len(sp)),\n                \"n_stride2_offset0\": int(V[::2, ::2].sum())}\n    del P, V\nfull_pts = np.concatenate(full_pts); sub_pts = np.concatenate(sub_pts)\nsub_tree = cKDTree(sub_pts)\n# covering radius e: max over all full-res J points of distance to nearest subsample point\ne = 0.0\nfor k in range(0, len(full_pts), 2_000_000):\n    d, _ = sub_tree.query(full_pts[k:k + 2_000_000], k=1, workers=W)\n    e = max(e, float(d.max()))\ne_used = e + 1e-6\nprint(f\"J full {len(full_pts)} sub {len(sub_pts)} e={e:.4f}  t={time.time()-t0:.0f}s\", flush=True)\nfull_tree = None  # built lazily for the exact band check\n\nres = {\"segments\": {}}\nmasks = {}\nfor s in SEGS:\n    H, Wd = shapes[s]\n    P, MV = canvas_points(meshes[s], np.arange(H), np.arange(Wd))\n    inJ = np.zeros((H, Wd), bool)\n    for j, w in JW.items():\n        if w[\"segment\"] == s:\n            inJ[w[\"y0\"]:w[\"y0\"] + w[\"size\"], w[\"x0\"]:w[\"x0\"] + w[\"size\"]] = True\n    qmask = MV & ~inJ\n    idx = np.flatnonzero(qmask)\n    Pf = P.reshape(-1, 3)\n    dsub = np.full(H * Wd, np.inf)\n    for k in range(0, len(idx), 2_000_000):\n        ii = idx[k:k + 2_000_000]\n        d, _ = sub_tree.query(Pf[ii], k=1, workers=W, distance_upper_bound=T + e_used + 1.0)\n        dsub[ii] = d\n    # decisions\n    sure_in = dsub < T                       # a real J point is < 128 away\n    sure_out = (dsub - e_used) >= T          # every J point >= 128 away\n    amb = qmask.reshape(-1) & ~sure_in & ~sure_out\n    amb_idx = np.flatnonzero(amb)\n    dex = np.full(len(amb_idx), np.inf)\n    if len(amb_idx):\n        if full_tree is None:\n            full_tree = cKDTree(full_pts)\n            print(f\"full tree built t={time.time()-t0:.0f}s\", flush=True)\n        for k in range(0, len(amb_idx), 1_000_000):\n            d, _ = full_tree.query(Pf[amb_idx[k:k + 1_000_000]], k=1, workers=W, distance_upper_bound=T + e_used + 2.0)\n            dex[k:k + 1_000_000] = d\n    excl3d = sure_in.copy()\n    excl3d[amb_idx] = dex < T\n    excl3d = excl3d.reshape(H, Wd) & qmask\n    excluded = excl3d | inJ\n    # 3-D distance diagnostics for non-excluded mesh-valid pixels\n    keep = (qmask & ~excl3d).reshape(-1)\n    lb = dsub - e_used; lb[amb_idx] = dex\n    lb_keep = lb[keep]\n    amb_keep = dex[dex >= T]\n    valid = np.load(f\"{BANK}/canvas9/{s}/valid9.npy\")\n    ref = np.load(f\"{BANK}/canvas9/{s}/ref9.npy\")\n    ink = np.load(f\"{BANK}/canvas9/{s}/lab9_inklabels.npz\")[\"frac\"]\n    sup = np.load(f\"{BANK}/canvas9/{s}/lab9_supervision.npz\")[\"frac\"]\n    txt_ref = valid & (ref >= 150)\n    txt_lab = valid & (ink > 0) & (sup > 0)\n    del ref, ink, sup, P, Pf\n    masks[s] = dict(valid=valid, excluded=excluded, txt_ref=txt_ref, txt_lab=txt_lab, lb=lb.reshape(H, Wd), MV=MV)\n    res[\"segments\"][s] = {\n        \"canvas_hw\": [H, Wd],\n        \"mesh_valid_px\": int(MV.sum()), \"valid9_px\": int(valid.sum()),\n        \"valid9_not_in_mesh\": int((valid & ~MV).sum()),\n        \"inJ_px\": int(inJ.sum()), \"excluded_3d_px_outside_J\": int(excl3d.sum()),\n        \"excluded_total_px\": int(excluded.sum()),\n        \"ambiguous_band_px\": int(len(amb_idx)), \"ambiguous_resolved_excluded\": int((dex < T).sum()),\n        \"nonexcluded_valid_px\": int((valid & ~excluded).sum()),\n        \"nonexcluded_valid_cm2\": float((valid & ~excluded).sum() * PX_CM2),\n        \"nonexcluded_meshvalid_cm2\": float((MV & ~excluded).sum() * PX_CM2),\n        \"nonexcluded_valid_refText_cm2\": float((txt_ref & ~excluded).sum() * PX_CM2),\n        \"min_lower_bound_dist_nonexcluded_vox\": float(lb_keep.min()) if lb_keep.size else None,\n        \"min_exact_dist_band_nonexcluded_vox\": float(amb_keep.min()) if amb_keep.size else None,\n        \"min_dsub_nonexcluded_vox\": float(dsub[keep].min()) if keep.any() else None,\n    }\n    print(s[:14], res[\"segments\"][s], f\"t={time.time()-t0:.0f}s\", flush=True)\n    del dsub, lb, keep\n\n\ndef sat(m):\n    a = np.zeros((m.shape[0] + 1, m.shape[1] + 1), np.int64)\n    a[1:, 1:] = m.astype(np.int64).cumsum(0).cumsum(1)\n    return a\n\n\ndef boxsum(a, ys, xs):\n    Y = ys[:, None]; X = xs[None, :]\n    return a[Y + TILE, X + TILE] - a[Y, X + TILE] - a[Y + TILE, X] + a[Y, X]\n\n\nvariants = [(\"primary_s64_2pct\", 64, 2), (\"strict_s128_5pct\", 128, 5), (\"generous_s32_1pct\", 32, 1)]\ncounts = {}\nfor s in SEGS:\n    m = masks[s]; H, Wd = m[\"valid\"].shape\n    Sv, Se, Sr, Sl = sat(m[\"valid\"]), sat(m[\"excluded\"]), sat(m[\"txt_ref\"]), sat(m[\"txt_lab\"])\n    lbm = np.where(m[\"MV\"], m[\"lb\"], np.inf)\n    for name, st, pct in variants:\n        ys = np.arange(0, H - TILE + 1, st); xs = np.arange(0, Wd - TILE + 1, st)\n        nv = boxsum(Sv, ys, xs); ne = boxsum(Se, ys, xs)\n        nr = boxsum(Sr, ys, xs); nl = boxsum(Sl, ys, xs)\n        elig = (10 * nv >= 9 * TILE * TILE) & (ne == 0)\n        tr = elig & (100 * nr >= pct * nv)\n        tl = elig & (100 * nl >= pct * nv)\n        # min 3-D distance lower bound over mesh-valid pixels of eligible tiles\n        mind = np.inf\n        for (a, b) in zip(*np.nonzero(elig)):\n            y, x = ys[a], xs[b]\n            mind = min(mind, float(lbm[y:y + TILE, x:x + TILE].min()))\n        counts.setdefault(name, {})[s] = {\n            \"n_tiles\": int(nv.size), \"eligible\": int(elig.sum()),\n            \"text_ref9\": int(tr.sum()), \"text_labels\": int(tl.sum()),\n            \"min_3d_dist_lowerbound_in_eligible_tiles_vox\": (mind if np.isfinite(mind) else None)}\nfor name in counts:\n    tot = {k: sum(counts[name][s][k] for s in SEGS) for k in (\"eligible\", \"text_ref9\", \"text_labels\", \"n_tiles\")}\n    counts[name][\"total\"] = tot\n\nres[\"tiles\"] = counts\nres[\"J\"] = jinfo\nres[\"e_cover_radius_vox\"] = e\nres[\"n_J_full\"] = int(len(full_pts)); res[\"n_J_sub\"] = int(len(sub_pts))\nres[\"totals\"] = {\n    \"nonexcluded_valid_cm2\": sum(res[\"segments\"][s][\"nonexcluded_valid_cm2\"] for s in SEGS),\n    \"nonexcluded_valid_refText_cm2\": sum(res[\"segments\"][s][\"nonexcluded_valid_refText_cm2\"] for s in SEGS),\n}\n# post-hoc diagnostic only: pixel agreement with the bank's T-shell product (not used in counts)\ndiag = {}\nfor s in SEGS:\n    Tsh = np.load(f\"{BANK}/canvas9/{s}/Tshell.npy\")\n    m = masks[s]\n    diag[s] = {\"Tshell_dtype\": str(Tsh.dtype), \"Tshell_true_frac\": float(Tsh.astype(bool).mean()),\n               \"disagree_px_valid\": int(((Tsh.astype(bool) != m[\"excluded\"]) & m[\"valid\"]).sum()),\n               \"disagree_px_meshvalid\": int(((Tsh.astype(bool) != m[\"excluded\"]) & m[\"MV\"]).sum())}\nres[\"diag_vs_bank_Tshell\"] = diag\n# sensitivity (not deciding): PRIMARY rule with (a) exclusion counted on valid9 pixels only,\n# (b) exclusion threshold 126 / 130 not available without recompute -> skipped; (c) bank Tshell as exclusion\nsens = {}\nfor s in SEGS:\n    m = masks[s]; H, Wd = m[\"valid\"].shape\n    ys = np.arange(0, H - TILE + 1, 64); xs = np.arange(0, Wd - TILE + 1, 64)\n    Sv, Sr = sat(m[\"valid\"]), sat(m[\"txt_ref\"]); nv = boxsum(Sv, ys, xs); nr = boxsum(Sr, ys, xs)\n    out = {}\n    for nm, ex in ((\"excl_on_valid_only\", m[\"excluded\"] & m[\"valid\"]),\n                   (\"bank_Tshell_exclusion_diag\", np.load(f\"{BANK}/canvas9/{s}/Tshell.npy\").astype(bool))):\n        ne = boxsum(sat(ex), ys, xs); el = (10 * nv >= 9 * TILE * TILE) & (ne == 0)\n        out[nm] = {\"eligible\": int(el.sum()), \"text_ref9\": int((el & (100 * nr >= 2 * nv)).sum())}\n    sens[s] = out\nres[\"sensitivity_primary\"] = sens\nprint(json.dumps(sens))\nres[\"seconds\"] = time.time() - t0\njson.dump(res, open(os.environ.get(\"OUT\", \"/tmp/d3B.json\"), \"w\"), indent=1)\nprint(json.dumps(counts, indent=1))\nprint(json.dumps(diag, indent=1), res[\"totals\"], res[\"seconds\"])\n"
+}

@@ -1,0 +1,15 @@
+TASK p4-highz: builder for DECL-P4-6 (P4-F dense/mineral-pigment ink channel on the Paris 4 inner strips; owner's hypothesis that the title may be in a different, e.g. red, ink). Read RULES.md DECL-P4-5, DECL-P4-5-A1, DECL-P4-6 and METRIC-HASH-27, and p4-tiles-b's E1 builder (origin/claude/gifted-bell-gavnl5-sib-p4-tiles-b logs/sib/p4-tiles-b/e1/ and tools/sib/p4-tiles-b/) and its grid, which you reuse exactly.
+1. Physics sanity, numbers only, before any tile:
+   - The in-sheet voxel intensity histogram (p50/p99/p99.9/p99.99) of the known-text control 20260623142658-w028-037 1.129 um surface volume, on a >= 5 % random tile subsample, split into the +-15 um sheet slab and the +-(60-120) um gap slabs.
+   - The same numbers on E1.
+   - The fraction of voxels at the dtype maximum (saturation).
+   - Freeze T_mid and T_hi per DECL-P4-6 item 2 in logs/sib/p4-highz/thresholds.json and push it before computing any tile.
+2. Numeric screen (DECL-P4-6 item 3) for every E1 grid tile and for the control strip:
+   - n_hi, the in-sheet fraction, and the 2-4 mm autocorrelation peak of the hi mask;
+   - the same on the rot-90 copy.
+   List DENSE-HOTSPOT tiles in screen.json (numbers only), and push.
+3. Tiles: the P4-F MIP channel at 1068 px (DECL-P4-6 item 2) for all eligible E1 tiles (and, if time allows, E2 via the 2.4 um volume at level 0). Push them as logs/sib/p4-highz/f1/{manifest.json,tiles/} in the manifest format of p4-tiles-b e1 (per-tile png_sha256, valid_fraction, stats incl. frac_mesh_points_outside_1129_volume).
+   - Level 0 is heavy (about 60 tiles x 8872^2 x 13 slices). Split rows across up to 3 sub-siblings.
+   - Commit per row.
+4. REPORT.md: thresholds, screen results vs the control and the rot-90 null, the saturation fraction, and an honest assessment of whether any dense signal is on-sheet and letter-scale.
+Validation you must report: in-sheet vs gap fraction; control vs title-strip distributions (KS statistic); rot-90 null; and a stroke-width estimate of any hotspot's hi mask.
