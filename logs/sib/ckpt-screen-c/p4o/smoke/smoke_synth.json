@@ -1,0 +1,104 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "note": "synthetic random volume (no CT) on 1024 px centred crops of r0 c0 and r1 c0 with the real mesh mask; iteration-5 weights used only because they are the smoke weights at hand (ckpt-screen-b material); tiles not committed",
+ "reader_check": "real level-0 range reads, 512 px centred crop of r0 c0, read-only (no inference): 25/25 chunks 206, (512,512,62) u8, 100% of mesh-valid px nonzero",
+ "rows": [
+  {
+   "r": 0,
+   "c": 0,
+   "valid_fraction": 1.0,
+   "eligible": true,
+   "canvas_rows": [
+    3659,
+    4683
+   ],
+   "canvas_cols": [
+    3659,
+    4683
+   ],
+   "level": 0,
+   "iteration": 5,
+   "order": "index",
+   "synthetic": true,
+   "file": "tiles/20260701183124-w010-027_r0_c0.png",
+   "png_sha256": "74090bf657902c6e73e45726f9e535d86b444bba57aedf668d9793ff8d399b4c",
+   "png_bytes": 6440,
+   "stats": {
+    "domain": "uint8 prediction at mesh-valid canvas px, before downscale",
+    "valid_px": 1048576,
+    "mean": 76.83566188812256,
+    "std": 6.2360178447660735,
+    "p1": 66.0,
+    "p99": 92.0,
+    "frac_ge128": 0.0,
+    "frac_valid_unpredicted": 0.0,
+    "frac_out_zero": 0.0,
+    "out_mean": 76.8338674902395
+   },
+   "windows": 81,
+   "chunks_read": 0,
+   "chunks_missing": 0,
+   "read_s": 0.8,
+   "infer_s": 327.7,
+   "seconds": 328.5,
+   "utc": "2026-09-26T21:29:59Z",
+   "wrapper_sha256": "751d7ec1f8d4681336ed4cf4f68c16885130314447e166662069cb777afc71dc",
+   "b_wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+   "model": {
+    "repo": "scrollprize/PHerc.1667-iteration-5",
+    "commit": "6288ba60115ce827018926bcb0ea8e5696f33d3b"
+   }
+  },
+  {
+   "r": 1,
+   "c": 0,
+   "valid_fraction": 1.0,
+   "eligible": true,
+   "canvas_rows": [
+    12002,
+    13026
+   ],
+   "canvas_cols": [
+    3659,
+    4683
+   ],
+   "level": 0,
+   "iteration": 5,
+   "order": "index",
+   "synthetic": true,
+   "file": "tiles/20260701183124-w010-027_r1_c0.png",
+   "png_sha256": "ed0aa655b0b58069c560b0e1a8ef46db20e552ec4deb06a3c05401dc089fb611",
+   "png_bytes": 6437,
+   "stats": {
+    "domain": "uint8 prediction at mesh-valid canvas px, before downscale",
+    "valid_px": 1048576,
+    "mean": 76.83413314819336,
+    "std": 6.271388403936825,
+    "p1": 65.0,
+    "p99": 92.0,
+    "frac_ge128": 0.0,
+    "frac_valid_unpredicted": 0.0,
+    "frac_out_zero": 0.0,
+    "out_mean": 76.83462502185188
+   },
+   "windows": 81,
+   "chunks_read": 0,
+   "chunks_missing": 0,
+   "read_s": 1.0,
+   "infer_s": 326.9,
+   "seconds": 327.9,
+   "utc": "2026-09-26T21:35:27Z",
+   "wrapper_sha256": "751d7ec1f8d4681336ed4cf4f68c16885130314447e166662069cb777afc71dc",
+   "b_wrapper_sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+   "model": {
+    "repo": "scrollprize/PHerc.1667-iteration-5",
+    "commit": "6288ba60115ce827018926bcb0ea8e5696f33d3b"
+   }
+  }
+ ],
+ "sec_per_window": 4.041,
+ "full_tile_estimate": {
+  "windows": 4356,
+  "cpu_h": 4.89
+ }
+}
