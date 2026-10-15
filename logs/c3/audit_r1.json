@@ -1,0 +1,196 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "audit_of": "C3-R1 (DECL-C3-R1 re-run of the C3 regression gate); runner record logs/c3/c3_r1_results.json (generated 2026-09-25T00:59:55Z, repo head d5613cb)",
+ "auditor": "fresh agent, independent re-derivation; no prior exposure to this run",
+ "audit_utc": "2026-09-25",
+ "hashes_checked": {
+  "tools/c3/pick_crop_r1.py": {
+   "entry": "METRIC-HASH-6",
+   "expected": "b754fc887ea0227dc99ba7893393e441493a5e141b3a72c280101cb3df367ca3",
+   "actual": "b754fc887ea0227dc99ba7893393e441493a5e141b3a72c280101cb3df367ca3",
+   "match": true
+  },
+  "tools/c3/fidelity.py": {
+   "entry": "METRIC-HASH-7",
+   "expected": "7c7ce085be389ebc39759f325a57bee3017a0725ee1eda2ee89aae4a90b16058",
+   "actual": "7c7ce085be389ebc39759f325a57bee3017a0725ee1eda2ee89aae4a90b16058",
+   "match": true
+  },
+  "tools/c3/auc_eval.py": {
+   "entry": "METRIC-HASH-7",
+   "expected": "fc35c089e15a56a04e0271a98d5bad1ffee7ce5f7a287140d9e9a70188f59a15",
+   "actual": "fc35c089e15a56a04e0271a98d5bad1ffee7ce5f7a287140d9e9a70188f59a15",
+   "match": true
+  },
+  "src/hercules/metrics/pixel.py": {
+   "entry": "METRIC-HASH-0 and METRIC-HASH-6",
+   "expected": "a5ab7fed2b83ce005e45a683ba883f8f53073dd9f9818c375bc9ab693fc097c8",
+   "actual": "a5ab7fed2b83ce005e45a683ba883f8f53073dd9f9818c375bc9ab693fc097c8",
+   "match": true
+  }
+ },
+ "hashes_all_match": true,
+ "script_diff_check": "git diff a76b0ae ce554a0 on tools/c3 and src: auc_eval.py and fidelity.py differ only by import os and crop origin from env C3_X0/C3_Y0 (as METRIC-HASH-7 states)",
+ "checkpoint_sha256": {
+  "path": "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth",
+  "actual": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+  "declared_prefix_suffix": "e635558a...9cab",
+  "match": true
+ },
+ "crop_check": {
+  "command": "PYTHONPATH=/home/user/dominion/src /opt/hv/bin/python tools/c3/pick_crop_r1.py /work/c3/data/hf/native9/w040/w040_supervision_mask.zarr/0 /work/c3/r1/mesh_valid.npy",
+  "sup_path_matches_auc_eval_SUP_constant": true,
+  "mesh_valid_npy_sha256": "4c47ca23706d962ddc197c7527bc70acd0ae47221874a1dc299e5150c2d9f1e5",
+  "output": {
+   "y0": 2560,
+   "x0": 4096,
+   "supervision_px": 311648
+  },
+  "expected_y0_x0": [
+   2560,
+   4096
+  ],
+  "match": true,
+  "crop_ranges": {
+   "x": [
+    4096,
+    6143
+   ],
+   "y": [
+    2560,
+    4607
+   ]
+  },
+  "run1_crop_ranges": {
+   "x": [
+    1152,
+    3199
+   ],
+   "y": [
+    2048,
+    4095
+   ]
+  },
+  "overlaps_run1": false,
+  "overlap_reason": "x ranges disjoint (4096 > 3199)",
+  "robustness": "ignoring validity entirely, (y0 2560, x0 4096) still has the maximum supervision count (311,648) among all 237 non-overlapping 256-grid candidates; ties at y0 2816 and 3072 lose on smaller y0. The choice does not depend on the mesh-valid rule (unhashed builder).",
+  "timing": "DECL-C3-R1 00:03:38Z and METRIC-HASH-6 00:03:39Z precede pick_crop 00:06:39Z; METRIC-HASH-7 00:07:54Z precedes the first render of the crop 00:08:19Z"
+ },
+ "inputs_check": {
+  "label_source": "/work/c3/data/hf/native9/w040/w040_inklabels.zarr/0 (LAB in auc_eval.py), shape [28, 6400, 7980], values [0, 255], threshold 127.5",
+  "supervision_source": "/work/c3/data/hf/native9/w040/w040_supervision_mask.zarr/0 (SUP in auc_eval.py), shape [28, 6400, 7980]",
+  "labels_z14_crop_equals_zarr_slice_z14_rows2560_4607_cols4096_6143": true,
+  "supervision_z14_crop_equals_zarr_slice_z14_rows2560_4607_cols4096_6143": true,
+  "note_supervision_planes": "supervision mask differs between Z planes in the crop; plane 14 is used consistently (pick_crop_r1.py uses shape[0]//2 = 14, auc_eval.py uses 14)",
+  "render_valid_npy_equals_recomputed_any_slice_gt0": true,
+  "valid_px": 4194304,
+  "counts_in_mask": {
+   "supervision_px": 311648,
+   "ink_in_mask": 147186,
+   "blank_in_mask": 164462,
+   "ink_all_valid": 150234,
+   "blank_all_valid": 4044070
+  },
+  "maps": {
+   "c2_tta_forward": {
+    "tif_sha256_matches_runner": true,
+    "independent_PIL_LZW_decode_equals_runner_npy": true
+   },
+   "c2_tta_reverse": {
+    "tif_sha256_matches_runner": true,
+    "independent_PIL_LZW_decode_equals_runner_npy": true
+   },
+   "c2_notta_forward": {
+    "tif_sha256_matches_runner": true,
+    "independent_PIL_LZW_decode_equals_runner_npy": true
+   },
+   "c2_notta_reverse": {
+    "tif_sha256_matches_runner": true,
+    "independent_PIL_LZW_decode_equals_runner_npy": true
+   }
+  },
+  "direction_naming": "villa 41701aa infer.py resolve_single_output_path: with --direction both, the forward run writes OUT.tif and only the reverse run gets the _reverse suffix; select_layer_indices reverses indices for reverse. Logs confirm layers 6..22 first (w040_r1.tif = forward) then 22..6 (w040_r1_reverse.tif = reverse); tta_mirror=True in c2_tta log, False in c2_notta log.",
+  "chain": "render and inference flags identical to run 1 except crop origin and output paths; villa HEAD 41701aa"
+ },
+ "recomputed": {
+  "auc_definition": "hercules.metrics.pixel.auc(map, lab01, valid & (sup > 0)); lab01 = 1 where label > 127.5 (=255), 0 where label == 0; maps decoded from the TIFs with PIL",
+  "auc": {
+   "c2_tta_forward": {
+    "auc_in_supervision_mask": 0.9779485292465405,
+    "auc_in_supervision_mask_independent_histogram_check": 0.9779485292465405,
+    "record_only_auc_all_valid_pixels_run1_definition": 0.9659572532205206
+   },
+   "c2_tta_reverse": {
+    "auc_in_supervision_mask": 0.5664835329182967,
+    "auc_in_supervision_mask_independent_histogram_check": 0.5664835329182967,
+    "record_only_auc_all_valid_pixels_run1_definition": 0.5217418207002806
+   },
+   "c2_notta_forward": {
+    "auc_in_supervision_mask": 0.9934669282914935,
+    "auc_in_supervision_mask_independent_histogram_check": 0.9934669282914935,
+    "record_only_auc_all_valid_pixels_run1_definition": 0.9831172674349267
+   },
+   "c2_notta_reverse": {
+    "auc_in_supervision_mask": 0.5814214813934577,
+    "auc_in_supervision_mask_independent_histogram_check": 0.5814214813934577,
+    "record_only_auc_all_valid_pixels_run1_definition": 0.5184825441402122
+   }
+  },
+  "render_fidelity": {
+   "render": "/work/c3/r1/render/w040_crop_x4096_y2560_2048.zarr/0",
+   "team_sv": "/work/c3/data/s3/PHerc0139/segments/20250831000000-w040_2025083102/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr/0 [:, 2560:4608, 4096:6144]",
+   "slices": 28,
+   "voxels": 117440512,
+   "pooled_pearson": 0.9999989108147863,
+   "pooled_pearson_exact_integer_sums_check": 0.9999989108147863,
+   "min_slice_pearson": 0.9999986471721584,
+   "argmin_slice": 12,
+   "exact_equal_voxel_fraction": 0.9969459431512016,
+   "max_abs_diff": 1
+  }
+ },
+ "differences_auditor_minus_runner": {
+  "c2_tta_forward_in_mask": 0.0,
+  "c2_tta_forward_record_only_all_valid": 0.0,
+  "c2_tta_reverse_in_mask": 0.0,
+  "c2_tta_reverse_record_only_all_valid": 0.0,
+  "c2_notta_forward_in_mask": 0.0,
+  "c2_notta_forward_record_only_all_valid": 0.0,
+  "c2_notta_reverse_in_mask": 0.0,
+  "c2_notta_reverse_record_only_all_valid": 0.0,
+  "render_pearson_pooled": 0.0,
+  "render_pearson_min_slice": 0.0,
+  "max_abs": 0.0
+ },
+ "bars_DECL_C3_R1": {
+  "pooled_render_pearson_ge_0.999": {
+   "value": 0.9999989108147863,
+   "outcome": "MET"
+  },
+  "c2_tta_forward_auc_in_mask_ge_0.987": {
+   "value": 0.9779485292465405,
+   "outcome": "NOT MET"
+  },
+  "c2_tta_reverse_auc_in_mask_lt_0.60": {
+   "value": 0.5664835329182967,
+   "outcome": "MET"
+  },
+  "all_bars_met": false,
+  "note": "bars applied exactly as declared; the no-TTA forward AUC (0.9935) is not a bar and does not substitute for the TTA bar"
+ },
+ "audit": "PASS",
+ "audit_reasons": [
+  "All four hashed files match METRIC-HASH-6/7 (pixel.py also METRIC-HASH-0); script change limited to env crop origin.",
+  "Crop re-derived by the hashed rule: y0 2560, x0 4096, 311,648 supervision px, no overlap with run 1; picked and hashed before any render or map of it.",
+  "Label and supervision crops equal the Z=14 zarr slices; forward/reverse file naming confirmed in villa infer.py and the run logs; TIF decodes equal the npy decodes used by the runner.",
+  "All recomputed AUCs and the pooled/min-slice Pearson equal the runner values exactly (difference 0.0).",
+  "Procedure sound; outcome: forward AUC with TTA 0.97795 is below the 0.987 bar (NOT MET); Pearson and reverse bars MET."
+ ],
+ "non_blocking_notes": [
+  "auc_eval.py docstring still says crop x1152 y2048 (text only; code uses env origin).",
+  "A first fidelity launch was killed after about 14 s with no output; its ledger row (exit 143) was added by hand.",
+  "mesh_valid.npy builder is not hashed, but the crop choice is invariant to the validity rule (see crop_check.robustness).",
+  "logs/c3/c3_r1_results.json was committed in eb086c9 during this audit (sha256 1473c540b7199797bb559c9930febdfc56f6f27526a755b31c2f5fed7091aca7); its summary AUC and Pearson values are unchanged from those compared here.",
+  "Out of scope but recorded: eb086c9 also adds tools/c3/pick_crop_nt.py for an undeclared no-TTA gate (DECL-C3-NT), written after the R1 numbers existed. DECL-C3-R1 allowed one re-declaration and sets the bar under C2 WITH TTA; nothing in a later gate changes the R1 bar outcome recorded here."
+ ]
+}
