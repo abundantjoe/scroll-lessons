@@ -1,0 +1,16 @@
+# Provenance: Project HERCULES | owner the owner | [id removed]
+__pycache__/
+*.pyc
+.venv/
+/work/
+/scratch/
+*.zarr/
+*.ckpt
+*.pt
+*.pth
+# never commit keys or plaintext seals
+*.key
+*.agekey
+seals/*.plain*
+seals/*.json
+!seals/*.age
