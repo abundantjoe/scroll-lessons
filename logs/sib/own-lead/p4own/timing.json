@@ -1,0 +1,100 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "declaration": "RULES.md DECL-P4-23 item 4 (CPU timing test, T only, random labels)",
+ "region": {
+  "seg": "20260701183124-w010-027",
+  "tile": [
+   4,
+   2
+  ],
+  "rows": [
+   36372,
+   37716
+  ],
+  "cols": [
+   19686,
+   21030
+  ]
+ },
+ "read": {
+  "chunks_read": 132,
+  "chunks_missing": 0,
+  "chunk_records_sha256": "a44402f1885e5f917cd07226513c89b67f257314db87f72a33406a59834bfbfa"
+ },
+ "read_seconds": 2.77,
+ "read_MBps": 40.5,
+ "input_mean_norm": 0.350661039352417,
+ "threads": 4,
+ "torch": "2.14.0+cpu",
+ "cfgs": {
+  "A": {
+   "cfg": {
+    "w": [
+     8,
+     16,
+     32
+    ],
+    "head": 32,
+    "dil": [
+     1,
+     2,
+     4,
+     8
+    ],
+    "res3": [
+     false,
+     false,
+     true,
+     true
+    ]
+   },
+   "params": 232697,
+   "train_step_s_P128_B16": 0.501,
+   "train_step_s_P192_B16": 1.412,
+   "train_step_s_P256_B16": 2.701,
+   "infer_s_per_Mpx": 1.437,
+   "tile_infer_min_full_valid": 1.7,
+   "out_shape": [
+    1,
+    1,
+    336,
+    336
+   ]
+  },
+  "B": {
+   "cfg": {
+    "w": [
+     8,
+     24,
+     48
+    ],
+    "head": 48,
+    "dil": [
+     1,
+     2,
+     4,
+     8
+    ],
+    "res3": [
+     false,
+     true,
+     true,
+     true
+    ]
+   },
+   "params": 550937,
+   "train_step_s_P128_B16": 0.958,
+   "train_step_s_P192_B16": 2.836,
+   "train_step_s_P256_B16": 5.275,
+   "infer_s_per_Mpx": 2.92,
+   "tile_infer_min_full_valid": 3.4,
+   "out_shape": [
+    1,
+    1,
+    336,
+    336
+   ]
+  }
+ },
+ "utc": "2026-09-27T06:12:36Z"
+}
