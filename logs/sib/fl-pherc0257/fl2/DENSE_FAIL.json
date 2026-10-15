@@ -1,0 +1,20 @@
+{
+ "provenance": "Project HERCULES | [id removed]",
+ "rule": "DECL-FL-2 item 3",
+ "utc": "2026-10-01T02:09:51Z",
+ "status": "DENSE_FAIL",
+ "stage": "download (step a, before sha256 verification, conversion or any load)",
+ "exact_error": "Permission for this action was denied by the Claude Code auto mode classifier. Reason: [Untrusted Code Integration].",
+ "attempted": "curl of https://huggingface.co/Nieuwlaar/ink9um-dense-native/resolve/b894a0493ab2291cc8dc3247020c0d7cb0967a58/{weights/VERIFY.md, weights/dense_native_016000.safetensors, README.md, training/aligned_sources.tsv, training/teacher_sources.tsv, training/configs/*.json, ...}",
+ "repo_revision_seen": "b894a0493ab2291cc8dc3247020c0d7cb0967a58 (HF API; license mit; weights file is .safetensors, i.e. no pickle code path)",
+ "not_done": [
+  "sha256 vs VERIFY.md",
+  "tools/fl2/convert_dense.py",
+  "strict state_dict load",
+  "inference on fl0257_s0",
+  "dense tiles"
+ ],
+ "rules_note": "RULES.md I10 (line 1201 at 7a315a65): 'only our own work and official organizer products are ever used; competitors' models, labels and claims never are'. DECL-FL-2 item 3 adds the Nieuwlaar DENSE arm without stating that it amends I10. The orchestrator/owner should state the relation explicitly.",
+ "to_unblock": "the owner approves this download for the pilot session (session permission rule), or an owner-run session fetches and verifies the weights; the pilot then completes step (a) unchanged.",
+ "workers": "no DENSE_OK.json exists: workers run the OFFICIAL arm only (BRIEF_FL2 item 4)."
+}

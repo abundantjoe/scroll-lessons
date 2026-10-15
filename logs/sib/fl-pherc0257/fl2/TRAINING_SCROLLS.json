@@ -1,0 +1,34 @@
+{
+ "provenance": "Project HERCULES | [id removed]",
+ "rule": "DECL-FL-2 item 3 (training overlap)",
+ "utc": "2026-10-01T02:09:51Z",
+ "official_ink_9um": {
+  "model": "scrollprize/ink_9um hybrid_3d2d-seed42 step-075000 (sha256 e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab)",
+  "source": "https://huggingface.co/scrollprize/ink_9um/resolve/7109667e2607db1b90c37c8b09cb876ea7fe7bb1/README.md (sha256 ef0f3cf3186e9d05c8816718c4024aeb356e27a8c02d7da1bacdee113c5ef273)",
+  "training_scrolls": [
+   "PHerc0139",
+   "PHerc1667 (Scroll 1667)",
+   "PHercParis4",
+   "PHerc0814"
+  ],
+  "training_segments_per_card": {
+   "PHerc0139": "9 (2.4 um, pooled to ~9.6 um) + 5 native 9.362 um",
+   "PHerc1667": 6,
+   "PHercParis4": 8,
+   "PHerc0814": 1
+  },
+  "card_quotes": [
+   "trained on aligned labels across four scrolls",
+   "Every training batch draws a fixed number of patches from each scroll (29/22/11/2 of 64 across PHerc. 0139, Scroll 1667, PHerc. Paris 4, and PHerc. 0814)",
+   "segments from PHerc. 0139 (9), Scroll 1667 (6), PHerc. Paris 4 (8), and PHerc. 0814 (1), plus 5 native 9.362 um segments from PHerc. 0139"
+  ],
+  "segment_ids": "not listed on the card; it points to the ink_9um dataset (huggingface.co/buckets/scrollprize/datasets/tree/ink_9um) and villa configs/aligned21_hybrid_3d2d.json - not fetched here",
+  "PHerc0257_in_training": false
+ },
+ "dense_native_016000": {
+  "status": "NOT RETRIEVED",
+  "reason": "download of the Nieuwlaar repo (incl. training/aligned_sources.tsv and configs) denied by this session's permission classifier; see DENSE_FAIL.json",
+  "training_scrolls": null,
+  "PHerc0257_in_training": "unknown"
+ }
+}

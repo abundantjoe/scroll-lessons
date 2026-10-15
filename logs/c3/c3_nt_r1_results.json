@@ -1,0 +1,704 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "declaration": "RULES.md DECL-C3-NT-R1 (after C3-NT-VERDICT VOID); metric hashes METRIC-HASH-0/6/7/9/10",
+ "status": "COMPLETE. Runner output only; no verdict.",
+ "generated_utc": "2026-09-25T02:16:21Z",
+ "repo_head_at_run": "d85f0216f601e4da33848fb8c3b494f4b5ab062b",
+ "hash_verification": {
+  "tools/c3/pick_crop_seg.py": "f0a52666d9a8d18d1e1be2446bb2f3a81c6c72f848cc991a7ef2b9194f25cfa2",
+  "tools/c3/fidelity.py": "7c7ce085be389ebc39759f325a57bee3017a0725ee1eda2ee89aae4a90b16058",
+  "tools/c3/auc_eval.py": "27fa289bd2b38fdafb447f1d791640a4590b748627ce9255742e4c94ea0042a8",
+  "src/hercules/metrics/pixel.py": "a5ab7fed2b83ce005e45a683ba883f8f53073dd9f9818c375bc9ab693fc097c8",
+  "tools/c3/ledger_run.sh": "47ac67288d2c9b9783d2c265373dab708933d65a606a0808eed32b133fe763b4",
+  "tools/c3/tif2npy.py": "998f1b98314b6b7d52ebbca229d48bfcd5a501ee3f2f96478586e901fef5c5e4",
+  "result": "all match METRIC-HASH-9 (picker), -10 (auc_eval), -7 (fidelity), -6 (ledger_run, tif2npy), -0 (pixel.py); checked 2026-09-25T01:38Z before use",
+  "mesh_valid_npy": {
+   "path": "/work/c3/nt_r1/mesh_valid.npy",
+   "sha256": "cd0f1463e64f31db415fc112ba9d070659fdb63ec49e16568bfa69125f053b9f",
+   "report": {
+    "provenance": "Project HERCULES | owner the owner | [id removed]",
+    "method": "4-corner quad rule on the -on- 9.362 um mesh, pixel centre -> grid ((p+0.5)*scale), see docstring",
+    "mesh_dir": "/work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/mesh/20260115000000-on-20250728140407-9.362um.tifxyz",
+    "grid_rows_cols": [
+     302,
+     408
+    ],
+    "scale": [
+     0.05000000074505806,
+     0.05000000074505806
+    ],
+    "canvas_hw": [
+     6040,
+     8160
+    ],
+    "valid_vertices": 109447,
+    "mask_path": "/work/c3/nt_r1/mesh_valid.npy",
+    "mask_sha256": "cd0f1463e64f31db415fc112ba9d070659fdb63ec49e16568bfa69125f053b9f",
+    "mask_shape": [
+     6040,
+     8160
+    ],
+    "mask_dtype": "bool",
+    "mask_valid_px": 43478000,
+    "record_only_nearest_rule_valid_px": 43778800,
+    "record_only_mask_and_not_nearest_px": 0,
+    "record_only_teamSV_nonzero_px": 43222200,
+    "record_only_mask_and_not_teamSV_nonzero_px": 255800,
+    "record_only_teamSV_nonzero_and_not_mask_px": 0,
+    "record_only_run1_crop_mask_valid_px": 4194304
+   },
+   "builder": "/work/c3/r1/build_mesh_valid.py",
+   "builder_sha256": "9a94eeabb3e0dba643056ef54681469ef63b0068f4f5aecc47ed9711defab220",
+   "method": "same 4-corner rule as C3-R1 (builder unchanged); record_only_run1_crop_* field refers to w040 coordinates and is meaningless here"
+  }
+ },
+ "inputs_w044": {
+  "segment": "s3://vesuvius-challenge-open-data/PHerc0139/segments/20260115000000-w044_2026011522/",
+  "mesh": {
+   "meta.json": {
+    "path": "/work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/mesh/20260115000000-on-20250728140407-9.362um.tifxyz/meta.json",
+    "sha256": "f14ee5f9e633d222cb6548b57726faf7afa24d045be8859873f6813a579ee4cd",
+    "bytes": 419
+   },
+   "x.tif": {
+    "path": "/work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/mesh/20260115000000-on-20250728140407-9.362um.tifxyz/x.tif",
+    "sha256": "d2f87c47ec14d042511b485c1cc56e014256f0fcedd008e442971ce6c7b166e2",
+    "bytes": 492998
+   },
+   "y.tif": {
+    "path": "/work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/mesh/20260115000000-on-20250728140407-9.362um.tifxyz/y.tif",
+    "sha256": "1db5cd79aa264c8eb787f41d5c0d0a37e0843de9219f4279fd92d4f453f8401e",
+    "bytes": 492998
+   },
+   "z.tif": {
+    "path": "/work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/mesh/20260115000000-on-20250728140407-9.362um.tifxyz/z.tif",
+    "sha256": "8a8132efcbf0d92178f450e6aae750811ed49257c8f5ac17dd25826f5e33c82f",
+    "bytes": 492998
+   }
+  },
+  "mesh_grid_rows_cols": [
+   302,
+   408
+  ],
+  "mesh_scale": 0.05,
+  "team_sv": {
+   "prefix": "/work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr/",
+   "zattrs_sha256": "fb8f9872638330a673e4066a0426c14732042337c2817148bb8ff887733d2ad2",
+   "level0_zarray_sha256": "64b36b3feb1f064de76c4ebdac6e1b4afaf332cc2aeae66b78aa55d200c21153",
+   "shape_zyx": [
+    28,
+    6040,
+    8160
+   ],
+   "slice_count": 28,
+   "zattrs_num_slices": 28,
+   "zattrs_slice_step": 1.0,
+   "level0_manifest": "/work/c3/nt_r1/teamSV_L0_manifest.txt",
+   "level0_manifest_sha256": "d87ea7470e86405cc6236c9dc27c5c4a337694e20f5fba1e41a810ce99a174b7",
+   "level0_objects": 2755,
+   "level0_bytes": 1263403212
+  },
+  "labels_native9_w044": {
+   "uri": "hf://buckets/scrollprize/datasets/ink_9um/labels/native9-scrollprizeorg-21slices/w044/",
+   "local": "/work/c3/data/hf/native9/w044/",
+   "files": 8220,
+   "bytes": 1143750,
+   "manifest": "/work/c3/nt_r1/native9_w044_manifest.sha256",
+   "manifest_sha256": "ba618fe8a5c48230a13248f7d341938c0a342e5a103dde34cfcbe2131641c09b",
+   "shape_zyx": [
+    28,
+    6040,
+    8160
+   ],
+   "annotated_plane": 14,
+   "values": [
+    0,
+    255
+   ],
+   "ink_px_total": 455469,
+   "supervision_px_total": 1190307
+  },
+  "canvas": "mesh grid 302 x 408 x 20 = 6040 x 8160 = team SV = labels (same canvas)",
+  "fallback_used": false
+ },
+ "step2_pick_crop": {
+  "command": "/opt/hv/bin/python tools/c3/pick_crop_seg.py /work/c3/data/hf/native9/w044/w044_supervision_mask.zarr/0 /work/c3/nt_r1/mesh_valid.npy",
+  "start_utc": "2026-09-25T01:42:51Z",
+  "end_utc": "2026-09-25T01:43:07Z",
+  "exit": 0,
+  "wall_s": 16.0,
+  "output_sha256": "-",
+  "runs": 1,
+  "output_verbatim": "{\"y0\": 2816, \"x0\": 2304, \"supervision_px\": 1052919}",
+  "output_file": "/work/c3/nt_r1/pick_crop_seg.out",
+  "output_file_sha256": "16d8163e867305e01a1cfeef0671a29140feb8cc9bc01a389c00b7dec0c5cd52"
+ },
+ "crop": {
+  "x0": 2304,
+  "y0": 2816,
+  "width": 2048,
+  "height": 2048,
+  "x_range": [
+   2304,
+   4351
+  ],
+  "y_range": [
+   2816,
+   4863
+  ],
+  "env": "C3_X0=2304 C3_Y0=2816 C3_LAB=/work/c3/data/hf/native9/w044/w044_inklabels.zarr/0 C3_SUP=/work/c3/data/hf/native9/w044/w044_supervision_mask.zarr/0"
+ },
+ "render": {
+  "command": "/work/bin/vc vc_render_tifxyz -v s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/ --remote-url s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/ --segmentation /work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/mesh/20260115000000-on-20250728140407-9.362um.tifxyz --scale 1 --group-idx 0 --num-slices 28 --slice-step 1 --voxel-size 9.362 --voxel-unit micrometer --flip-normals --crop-x 2304 --crop-y 2816 --crop-width 2048 --crop-height 2048 --cache-gb 4 --zarr-output /work/c3/nt_r1/render/w044_crop_x2304_y2816_2048.zarr",
+  "start_utc": "2026-09-25T01:43:16Z",
+  "end_utc": "2026-09-25T01:44:25Z",
+  "exit": 0,
+  "wall_s": 69.0,
+  "output_sha256": "ae421301a9fcc9ad8e474dbe67546daa3f7fe285a1393c09fbcba57c5c0521f2",
+  "output": "/work/c3/nt_r1/render/w044_crop_x2304_y2816_2048.zarr",
+  "shape_zyx": [
+   28,
+   2048,
+   2048
+  ],
+  "flags": "identical to run 1 / R1 / NT except --segmentation (w044 -on- 9.362 um mesh), the crop origin and the output path"
+ },
+ "fidelity": {
+  "provenance": "Project HERCULES | owner the owner | [id removed]",
+  "render_shape": [
+   28,
+   2048,
+   2048
+  ],
+  "sv_crop_shape": [
+   28,
+   2048,
+   2048
+  ],
+  "sv_full_shape": [
+   28,
+   6040,
+   8160
+  ],
+  "crop": {
+   "x": 2304,
+   "y": 2816,
+   "width": 2048,
+   "height": 2048,
+   "axes": "x=column, y=row on SV canvas"
+  },
+  "render_valid_px": 4194304,
+  "sv_valid_px": 4194304,
+  "joint_valid_px": 4194304,
+  "render_valid_not_sv": 0,
+  "sv_valid_not_render": 0,
+  "exact_equal_voxel_fraction_all": 0.9966129234858921,
+  "mean_abs_diff_all": 0.00338707651410784,
+  "max_abs_diff_all": 1,
+  "primary_all_pixels": {
+   "per_slice": [
+    0.9999990323300011,
+    0.9999989912808227,
+    0.9999989524825406,
+    0.9999988808666838,
+    0.9999988699352185,
+    0.9999988779479894,
+    0.9999988864650583,
+    0.9999988825664263,
+    0.9999988347127278,
+    0.999998763974061,
+    0.9999986758142612,
+    0.9999985449870155,
+    0.9999983952041958,
+    0.9999983288509938,
+    0.9999984562908705,
+    0.9999986445582661,
+    0.9999987867621696,
+    0.9999988389942693,
+    0.9999988441103531,
+    0.9999988323498904,
+    0.9999988711002596,
+    0.99999890639176,
+    0.9999989035168438,
+    0.9999989126755524,
+    0.9999989361244771,
+    0.9999989547766412,
+    0.9999989543746588,
+    0.9999989373382592
+   ],
+   "min": 0.9999983288509938,
+   "argmin_slice": 13,
+   "pooled": 0.9999989090025321
+  },
+  "supp_joint_valid_pixels": {
+   "per_slice": [
+    0.9999990323300011,
+    0.9999989912808227,
+    0.9999989524825406,
+    0.9999988808666838,
+    0.9999988699352185,
+    0.9999988779479894,
+    0.9999988864650583,
+    0.9999988825664263,
+    0.9999988347127278,
+    0.999998763974061,
+    0.9999986758142612,
+    0.9999985449870155,
+    0.9999983952041958,
+    0.9999983288509938,
+    0.9999984562908705,
+    0.9999986445582661,
+    0.9999987867621696,
+    0.9999988389942693,
+    0.9999988441103531,
+    0.9999988323498904,
+    0.9999988711002596,
+    0.99999890639176,
+    0.9999989035168438,
+    0.9999989126755524,
+    0.9999989361244771,
+    0.9999989547766412,
+    0.9999989543746588,
+    0.9999989373382592
+   ],
+   "min": 0.9999983288509938,
+   "argmin_slice": 13,
+   "pooled": 0.9999989090025321
+  },
+  "supp_slice_offset_scan_pooled_joint_valid": {
+   "-3": 0.2004920009727415,
+   "-2": 0.5249898503255284,
+   "-1": 0.8553742113014301,
+   "0": 0.9999989090025321,
+   "1": 0.8553744609391288,
+   "2": 0.5249901847275926,
+   "3": 0.200492321413198
+  },
+  "supp_best_slice_offset": 0,
+  "supp_reversed_slice_order_pooled_joint_valid": -0.00338525560547611,
+  "supp_canvas_shift_scan_pooled_joint_valid_interior": {
+   "best_dy_dx": "0,0",
+   "r_best": 0.9999989100944205,
+   "r_zero": 0.9999989100944205,
+   "all": {
+    "-4,-4": 0.7484548153229129,
+    "-4,-3": 0.7756098688020118,
+    "-4,-2": 0.8043143982006514,
+    "-4,-1": 0.827551540763635,
+    "-4,0": 0.8345124481277266,
+    "-4,1": 0.8207848558283356,
+    "-4,2": 0.7941665162687475,
+    "-4,3": 0.7652116366773409,
+    "-4,4": 0.7385869348231899,
+    "-3,-4": 0.7768993897473645,
+    "-3,-3": 0.8076704687951904,
+    "-3,-2": 0.841164172816389,
+    "-3,-1": 0.8694158962426398,
+    "-3,0": 0.8790451574246572,
+    "-3,1": 0.8636133641784812,
+    "-3,2": 0.8322900207862433,
+    "-3,3": 0.7983556421890079,
+    "-3,4": 0.7678036581949438,
+    "-2,-4": 0.8060079129746037,
+    "-2,-3": 0.8412823676469542,
+    "-2,-2": 0.8811854759661112,
+    "-2,-1": 0.9164817731023579,
+    "-2,0": 0.9300012039246127,
+    "-2,1": 0.9120645457478629,
+    "-2,2": 0.8741965050629928,
+    "-2,3": 0.8336707524896707,
+    "-2,4": 0.7982851056780498,
+    "-1,-4": 0.830073664640415,
+    "-1,-3": 0.8699556693959941,
+    "-1,-2": 0.9167732988303385,
+    "-1,-1": 0.9600748830272539,
+    "-1,0": 0.9783388074184755,
+    "-1,1": 0.9576372081586426,
+    "-1,2": 0.9127661415702422,
+    "-1,3": 0.8654181646223355,
+    "-1,4": 0.8253168517026491,
+    "0,-4": 0.8383249876641997,
+    "0,-3": 0.8804499223310256,
+    "0,-2": 0.9307755916533172,
+    "0,-1": 0.9785155948881066,
+    "0,0": 0.9999989100944205,
+    "0,1": 0.9785155200776524,
+    "0,2": 0.9307771710911461,
+    "0,3": 0.880461990328717,
+    "0,4": 0.8383569023962875,
+    "1,-4": 0.8252876985426894,
+    "1,-3": 0.8654063772691934,
+    "1,-2": 0.9127635924647364,
+    "1,-1": 0.957636710152499,
+    "1,0": 0.978338301560305,
+    "1,1": 0.9600729971434058,
+    "1,2": 0.9167714613838598,
+    "1,3": 0.8699638538848798,
+    "1,4": 0.8301023391863784,
+    "2,-4": 0.7982604795638507,
+    "2,-3": 0.8336608541253161,
+    "2,-2": 0.8741946196918597,
+    "2,-1": 0.9120646644137973,
+    "2,0": 0.9300004206938602,
+    "2,1": 0.9164775511995872,
+    "2,2": 0.8811786191015678,
+    "2,3": 0.8412839311032249,
+    "2,4": 0.806029511946898,
+    "3,-4": 0.7677749917938855,
+    "3,-3": 0.7983408698717444,
+    "3,-2": 0.832284092662035,
+    "3,-1": 0.8636107945794996,
+    "3,0": 0.8790414585817672,
+    "3,1": 0.8694068229636337,
+    "3,2": 0.841150358053712,
+    "3,3": 0.8076637504683977,
+    "3,4": 0.7769128785352576,
+    "4,-4": 0.7385392122708506,
+    "4,-3": 0.7651791165744338,
+    "4,-2": 0.7941458018006348,
+    "4,-1": 0.820770418766224,
+    "4,0": 0.8344979050086356,
+    "4,1": 0.8275310842414701,
+    "4,2": 0.8042889402134766,
+    "4,3": 0.7755921433612056,
+    "4,4": 0.7484587949768993
+   }
+  }
+ },
+ "fidelity_run": {
+  "command": "/opt/hv/bin/python tools/c3/fidelity.py /work/c3/nt_r1/render/w044_crop_x2304_y2816_2048.zarr /work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr /work/c3/nt_r1/fidelity_nt_r1.json",
+  "start_utc": "2026-09-25T02:05:40Z",
+  "end_utc": "2026-09-25T02:14:29Z",
+  "exit": 0,
+  "wall_s": 529.0,
+  "output_sha256": "695403cb13b2d98f2a1acd05ebe2672b7a939f14fc4c7828b7e6569108acd2d7"
+ },
+ "inference_c2_nt": {
+  "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/c3/nt_r1/render/w044_crop_x2304_y2816_2048.zarr /work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth /work/c3/nt_r1/infer/c2_nt/w044_nt.tif --direction both --batch-size 4 --num-workers 1 --no-compile",
+  "start_utc": "2026-09-25T01:44:31Z",
+  "end_utc": "2026-09-25T02:02:58Z",
+  "exit": 0,
+  "wall_s": 1107.0,
+  "output_sha256": "74939889bb2a2fbca71643b4b011b1b41409d9853f849cda705f7f2417fdf870",
+  "outputs": {
+   "w044_nt.tif": {
+    "path": "/work/c3/nt_r1/infer/c2_nt/w044_nt.tif",
+    "bytes": 2227713,
+    "sha256": "1d540b92afd1a074d19fb3a0a16b59cb2ffc9eaa16ace1b1338754862bcad237"
+   },
+   "w044_nt.tif.npy": {
+    "path": "/work/c3/nt_r1/infer/c2_nt/w044_nt.tif.npy",
+    "bytes": 4194432,
+    "sha256": "270de391cc2cf77ae3d79c334d2b4a75c0f94e6b9aea39c7dd0b6734ca00faa8"
+   },
+   "w044_nt_reverse.tif": {
+    "path": "/work/c3/nt_r1/infer/c2_nt/w044_nt_reverse.tif",
+    "bytes": 2185711,
+    "sha256": "addbb86663dda20a77a2fe89f3257a4055ed694b68d3017a15f6b453d72f6a77"
+   },
+   "w044_nt_reverse.tif.npy": {
+    "path": "/work/c3/nt_r1/infer/c2_nt/w044_nt_reverse.tif.npy",
+    "bytes": 4194432,
+    "sha256": "ab6b9444e3f70027f861b89ce1dee0655dd47c0f65a2485d9014a1e3825de38e"
+   }
+  },
+  "log_tta_mirror": "False",
+  "patches_per_order": 961,
+  "per_order": {
+   "forward": {
+    "layer_indices": "[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]",
+    "output": "/work/c3/nt_r1/infer/c2_nt/w044_nt.tif",
+    "start_utc": "2026-09-25T01:44:35Z",
+    "wall_s": 435.0
+   },
+   "reverse": {
+    "layer_indices": "[22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6]",
+    "output": "/work/c3/nt_r1/infer/c2_nt/w044_nt_reverse.tif",
+    "start_utc": "2026-09-25T01:51:50Z",
+    "wall_s": 668.0
+   }
+  },
+  "direction_mapping": "OUT.tif = forward (layers 6..22 ascending); OUT_reverse.tif = reverse (22..6)",
+  "tta": "NOT used (C2-NT); the TTA variant was not run on this crop"
+ },
+ "auc": {
+  "provenance": "Project HERCULES | owner the owner | [id removed]",
+  "mode": "crop",
+  "label_array_shape": [
+   28,
+   6040,
+   8160
+  ],
+  "label_plane": 14,
+  "label_value_range": [
+   0,
+   255
+  ],
+  "binarisation_threshold": 127.5,
+  "maps": {
+   "c2_nt_forward": {
+    "path": "/work/c3/nt_r1/infer/c2_nt/w044_nt.tif",
+    "sha256": "1d540b92afd1a074d19fb3a0a16b59cb2ffc9eaa16ace1b1338754862bcad237",
+    "shape": [
+     2048,
+     2048
+    ],
+    "dtype": "uint8",
+    "auc_declared_valid": 0.9888358515906979,
+    "supp_auc_within_supervision_mask": 0.9995971792193425,
+    "map_mean_valid": 92.23085188865662
+   },
+   "c2_nt_reverse": {
+    "path": "/work/c3/nt_r1/infer/c2_nt/w044_nt_reverse.tif",
+    "sha256": "addbb86663dda20a77a2fe89f3257a4055ed694b68d3017a15f6b453d72f6a77",
+    "shape": [
+     2048,
+     2048
+    ],
+    "dtype": "uint8",
+    "auc_declared_valid": 0.5095731563608107,
+    "supp_auc_within_supervision_mask": 0.5855798890491869,
+    "map_mean_valid": 78.94286894798279
+   }
+  },
+  "crop": {
+   "x": 2304,
+   "y": 2816,
+   "width": 2048,
+   "height": 2048
+  },
+  "valid_px": 4194304,
+  "ink_px_valid": 399863,
+  "blank_px_valid": 3794441,
+  "ink_px_valid_in_supervision": 398284,
+  "blank_px_valid_in_supervision": 654635
+ },
+ "auc_run": {
+  "command": "/opt/hv/bin/python tools/c3/auc_eval.py /work/c3/nt_r1/auc_nt_r1.json crop /work/c3/nt_r1/fidelity_nt_r1_render_valid.npy c2_nt_forward=/work/c3/nt_r1/infer/c2_nt/w044_nt.tif c2_nt_reverse=/work/c3/nt_r1/infer/c2_nt/w044_nt_reverse.tif",
+  "start_utc": "2026-09-25T02:16:00Z",
+  "end_utc": "2026-09-25T02:16:14Z",
+  "exit": 0,
+  "wall_s": 14.0,
+  "output_sha256": "9889a47505fb4e868a6329ed4b83a6337965b504eb4fdbca7484944b03c180d5"
+ },
+ "label_crops": {
+  "provenance": "Project HERCULES | owner the owner | [id removed]",
+  "crop": {
+   "x0": 2304,
+   "y0": 2816,
+   "width": 2048,
+   "height": 2048,
+   "plane_z": 14
+  },
+  "sources": {
+   "labels": "/work/c3/data/hf/native9/w044/w044_inklabels.zarr/0",
+   "supervision": "/work/c3/data/hf/native9/w044/w044_supervision_mask.zarr/0"
+  },
+  "labels_z14_crop": {
+   "path": "/work/c3/nt_r1/labels/labels_z14_crop.npy",
+   "sha256": "0572460f98a419d6193ed8a2870efe159bb54e3c4b79a50910e0965785b13beb",
+   "shape": [
+    2048,
+    2048
+   ],
+   "dtype": "uint8",
+   "values": [
+    0,
+    255
+   ]
+  },
+  "supervision_z14_crop": {
+   "path": "/work/c3/nt_r1/labels/supervision_z14_crop.npy",
+   "sha256": "23144bcbaad2a8caad9109372bd33b82dcc9fbcf278c84b4ada8ab553b6e5a13",
+   "shape": [
+    2048,
+    2048
+   ],
+   "dtype": "uint8",
+   "values": [
+    0,
+    255
+   ]
+  },
+  "counts": {
+   "ink_255": 399863,
+   "blank_0": 3794441,
+   "supervision_px": 1052919,
+   "ink_in_supervision": 398284,
+   "blank_in_supervision": 654635,
+   "ink_outside_supervision": 1579
+  }
+ },
+ "auditor_files": {
+  "maps_tif": {
+   "c2_nt_forward": "/work/c3/nt_r1/infer/c2_nt/w044_nt.tif",
+   "c2_nt_reverse": "/work/c3/nt_r1/infer/c2_nt/w044_nt_reverse.tif"
+  },
+  "maps_npy_decoded": {
+   "c2_nt_forward": {
+    "path": "/work/c3/nt_r1/infer/c2_nt/w044_nt.tif.npy",
+    "sha256": "270de391cc2cf77ae3d79c334d2b4a75c0f94e6b9aea39c7dd0b6734ca00faa8"
+   },
+   "c2_nt_reverse": {
+    "path": "/work/c3/nt_r1/infer/c2_nt/w044_nt_reverse.tif.npy",
+    "sha256": "ab6b9444e3f70027f861b89ce1dee0655dd47c0f65a2485d9014a1e3825de38e"
+   }
+  },
+  "labels_z14_crop": {
+   "path": "/work/c3/nt_r1/labels/labels_z14_crop.npy",
+   "sha256": "0572460f98a419d6193ed8a2870efe159bb54e3c4b79a50910e0965785b13beb",
+   "shape": [
+    2048,
+    2048
+   ],
+   "dtype": "uint8",
+   "values": [
+    0,
+    255
+   ]
+  },
+  "supervision_z14_crop": {
+   "path": "/work/c3/nt_r1/labels/supervision_z14_crop.npy",
+   "sha256": "23144bcbaad2a8caad9109372bd33b82dcc9fbcf278c84b4ada8ab553b6e5a13",
+   "shape": [
+    2048,
+    2048
+   ],
+   "dtype": "uint8",
+   "values": [
+    0,
+    255
+   ]
+  },
+  "valid_mask": {
+   "path": "/work/c3/nt_r1/fidelity_nt_r1_render_valid.npy",
+   "sha256": "7e6b2a715f2d6cd833f3d27c2bd6c3446454be93091d736871f6f339fdce5e2e"
+  },
+  "recompute": "AUC = hercules.metrics.pixel.auc(map, lab01, valid & (sup > 0)); lab01 = 1 where label == 255, 0 where label == 0"
+ },
+ "summary": {
+  "crop_x0_y0": [
+   2304,
+   2816
+  ],
+  "render_pearson_pooled": 0.9999989090025321,
+  "render_pearson_min_slice": 0.9999983288509938,
+  "render_best_slice_offset": 0,
+  "render_best_canvas_shift_dy_dx": "0,0",
+  "auc_c2_nt_forward_in_mask": 0.9995971792193425,
+  "auc_c2_nt_reverse_in_mask": 0.5855798890491869,
+  "not_a_bar_run1_declared_definition": {
+   "c2_nt_forward": 0.9888358515906979,
+   "c2_nt_reverse": 0.5095731563608107
+  },
+  "declared_bars_DECL_C3_NT_R1": {
+   "pooled_render_pearson": ">= 0.999",
+   "forward_auc_in_mask": ">= 0.987",
+   "reverse_auc_in_mask": "< 0.60"
+  }
+ },
+ "scripts_nt_r1": {
+  "assemble_nt_r1.py": "4d2c372e379ce203bc321af4f4bf8df89adf4166319ee7b7694e92624a535968",
+  "save_label_crops_seg.py": "8b3baec7241e9bab4c2d92aa4497ce7b5bc24c9bab525cc065826fa66196d38d",
+  "build_mesh_valid.py": "9a94eeabb3e0dba643056ef54681469ef63b0068f4f5aecc47ed9711defab220"
+ },
+ "deviations_and_notes": [
+  "None against DECL-C3-NT-R1. w044 has a team SV (28 slices) and a supervision mask, so no fallback segment was used. Before the picker ran, only the mesh, team SV, labels and supervision mask were fetched and the mesh-valid mask was built; no render or model map of any part of w044 existed (this project had never rendered or mapped w044). The picker was run once. Render, fidelity, inference and AUC all ran sequentially at 3 threads.",
+  "auc_eval.py read the tools/c3/tif2npy.py decodes (<map>.tif.npy) through its hashed fallback, because the /opt/hv environment has no imagecodecs for LZW. Both files are listed.",
+  "Label and supervision crops were saved with /work/c3/nt_r1/save_label_crops_seg.py. It is new: the same code as the R1 helper, but the array paths are arguments (sha256 listed).",
+  "Other project agents were using the CPU during the run, so wall times are indicative only."
+ ],
+ "compute_ledger_rows_nt_r1": [
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python /home/user/dominion/tools/c3/s3sync_prefix.py PHerc0139/segments/20260115000000-w044_2026011522/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr/0/ /work/c3/nt_r1/teamSV_L0_manifest.txt ",
+   "start_utc": "2026-09-25T01:39:14Z",
+   "end_utc": "2026-09-25T01:40:25Z",
+   "exit": "0",
+   "output_sha256": "d87ea7470e86405cc6236c9dc27c5c4a337694e20f5fba1e41a810ce99a174b7"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv-ink/bin/hf buckets sync hf://buckets/scrollprize/datasets/ink_9um/labels/native9-scrollprizeorg-21slices/w044 /work/c3/data/hf/native9/w044 ",
+   "start_utc": "2026-09-25T01:39:16Z",
+   "end_utc": "2026-09-25T01:41:54Z",
+   "exit": "0",
+   "output_sha256": "ba618fe8a5c48230a13248f7d341938c0a342e5a103dde34cfcbe2131641c09b"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python /work/c3/r1/build_mesh_valid.py /work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/mesh/20260115000000-on-20250728140407-9.362um.tifxyz /work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr /work/c3/nt_r1/mesh_valid.npy /work/c3/nt_r1/mesh_valid.json ",
+   "start_utc": "2026-09-25T01:42:41Z",
+   "end_utc": "2026-09-25T01:42:45Z",
+   "exit": "0",
+   "output_sha256": "cd0f1463e64f31db415fc112ba9d070659fdb63ec49e16568bfa69125f053b9f"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python tools/c3/pick_crop_seg.py /work/c3/data/hf/native9/w044/w044_supervision_mask.zarr/0 /work/c3/nt_r1/mesh_valid.npy ",
+   "start_utc": "2026-09-25T01:42:51Z",
+   "end_utc": "2026-09-25T01:43:07Z",
+   "exit": "0",
+   "output_sha256": "-"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/work/bin/vc vc_render_tifxyz -v s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/ --remote-url s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/ --segmentation /work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/mesh/20260115000000-on-20250728140407-9.362um.tifxyz --scale 1 --group-idx 0 --num-slices 28 --slice-step 1 --voxel-size 9.362 --voxel-unit micrometer --flip-normals --crop-x 2304 --crop-y 2816 --crop-width 2048 --crop-height 2048 --cache-gb 4 --zarr-output /work/c3/nt_r1/render/w044_crop_x2304_y2816_2048.zarr ",
+   "start_utc": "2026-09-25T01:43:16Z",
+   "end_utc": "2026-09-25T01:44:25Z",
+   "exit": "0",
+   "output_sha256": "ae421301a9fcc9ad8e474dbe67546daa3f7fe285a1393c09fbcba57c5c0521f2"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/c3/nt_r1/render/w044_crop_x2304_y2816_2048.zarr /work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth /work/c3/nt_r1/infer/c2_nt/w044_nt.tif --direction both --batch-size 4 --num-workers 1 --no-compile ",
+   "start_utc": "2026-09-25T01:44:31Z",
+   "end_utc": "2026-09-25T02:02:58Z",
+   "exit": "0",
+   "output_sha256": "74939889bb2a2fbca71643b4b011b1b41409d9853f849cda705f7f2417fdf870"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python tools/c3/fidelity.py /work/c3/nt_r1/render/w044_crop_x2304_y2816_2048.zarr /work/c3/data/s3/PHerc0139/segments/20260115000000-w044_2026011522/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr /work/c3/nt_r1/fidelity_nt_r1.json ",
+   "start_utc": "2026-09-25T02:05:40Z",
+   "end_utc": "2026-09-25T02:14:29Z",
+   "exit": "0",
+   "output_sha256": "695403cb13b2d98f2a1acd05ebe2672b7a939f14fc4c7828b7e6569108acd2d7"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv-ink/bin/python tools/c3/tif2npy.py /work/c3/nt_r1/infer/c2_nt/w044_nt.tif /work/c3/nt_r1/infer/c2_nt/w044_nt_reverse.tif ",
+   "start_utc": "2026-09-25T02:15:52Z",
+   "end_utc": "2026-09-25T02:15:53Z",
+   "exit": "0",
+   "output_sha256": "-"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python /work/c3/nt_r1/save_label_crops_seg.py /work/c3/data/hf/native9/w044/w044_inklabels.zarr/0 /work/c3/data/hf/native9/w044/w044_supervision_mask.zarr/0 2304 2816 /work/c3/nt_r1/labels ",
+   "start_utc": "2026-09-25T02:15:53Z",
+   "end_utc": "2026-09-25T02:15:53Z",
+   "exit": "0",
+   "output_sha256": "44e4ab22f5dd885ed9dc8ce3b7ef55a6a5f4a7f63fb01f6526fb7261055e44de"
+  },
+  {
+   "host": "vm",
+   "gpu": "cpu",
+   "command": "/opt/hv/bin/python tools/c3/auc_eval.py /work/c3/nt_r1/auc_nt_r1.json crop /work/c3/nt_r1/fidelity_nt_r1_render_valid.npy c2_nt_forward=/work/c3/nt_r1/infer/c2_nt/w044_nt.tif c2_nt_reverse=/work/c3/nt_r1/infer/c2_nt/w044_nt_reverse.tif ",
+   "start_utc": "2026-09-25T02:16:00Z",
+   "end_utc": "2026-09-25T02:16:14Z",
+   "exit": "0",
+   "output_sha256": "9889a47505fb4e868a6329ed4b83a6337965b504eb4fdbca7484944b03c180d5"
+  }
+ ],
+ "disk_bytes_work_c3_nt_r1": 234440385
+}
