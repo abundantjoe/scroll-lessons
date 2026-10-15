@@ -1,0 +1,11 @@
+D2 = TRAIN-1, pooled leave-one-scroll-out (section 6.4), with D2b.
+- Hypothesis: native 9 um input with 2.4 um targets, pooled over JULY-protocol scrolls, with letter-scale context and rotations, makes unseen scrolls legible above chance.
+- Pairs: native 9 um -n 31 render of an organizer mesh + the organizer high-res map via an affine fitted from meshes in both frames; keep a patch only if 9 vs 2.4 um CT NCC >= 0.8 and >= 7 of 9 windows align within 1 px; ink >= 150, blank <= 100, rest ignored.
+- Data: 0139 (minus clean controls and neighbours); 0814; 0332 and 0500P2 once confirmed; 0841 organizer segments outside T/C4/K shells only in the non-0841 fold (checkpoint quarantined from every 0841 set).
+- Folds: L-0841 (no 0841 data; evaluated on J, plus KTLB-4-0841 if sealed); L-0500P2 or L-0332 if that scroll passes its protocol check and its seal gives S >= 30.
+- Arms per fold: P128 (base recipe, batch 32, 12k steps, 24 x 15 deg rotations); P384 (384 px tiles); NULL (P384, shuffled labels); REV (P384, depth-flipped). 3 seeds per arm; seed 1 read; seed variance on pixel metrics. Base reference arm.
+- Bars: PASS: best arm C_net >= base + max(3, 0.1 S) with p_max < 0.01 on every fold that ran; NULL, REV <= base + 1; F_B <= base + 1; blanks <= 1; w053 blob-f180 <= 0.0272; KTLB-4-0841 >= base + 2 net (if not sealed with S >= 30 by the D2 date: the other fold's benchmark; if neither exists: decide on J alone with p_max < 0.005). USABLE: PASS plus absolute C_net >= 0.30 S on >= 1 fold. ALARM: NULL or REV >= base + 2 -> recipe shelved, results voided. FAIL: anything else.
+- On USABLE: final reader R1 trained once (fixed seed, frozen config) on all JULY known text outside T, C4, K shells (+128 vox) and outside READ-CAL and clean-control windows.
+- D2b (only follow-up; only if D2 fails but P384 beats P128 by >= max(3, 0.1 S) net): 512 px tiles, soft teacher targets + clDice, NULL and REV controls, on a FRESH sealed set.
+- Default: FAIL at 24 h past the D2 date in D0-HW. If no GPU is provisioned by 2026-11-15, D2 is recorded NOT RUN (never FAIL, since no data exist) and counts as not-passed for K1.
+- J decisions used: 2 of 3.
