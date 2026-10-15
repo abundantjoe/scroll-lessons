@@ -1,0 +1,302 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "declaration": "RULES.md DECL-P4-13 P4-M item 1 (column profile with pitch validation); numbers only; no tile or pixel viewed (PNG/TIFF decoded to arrays and reduced to 1 mm bin sums only)",
+ "materials": {
+  "M1_a": "official 2.4 um prediction 20260701183124-w010-027 (model 20260417190342), sha256 6f4c9117..; mesh-valid by the strip-a canvas_mask rule",
+  "M1_b": "official 2.4 um prediction 20260701183125-w028-037 (same model); strip-b grid.json (px_per_mm 415.04)",
+  "E2_a": "surface volume 20260701183124-w010-027 2.4um-0.22m-78keV-volume-20260411134726.zarr level 4 (38.4 um in-plane mean), slab slices 32-76 mean (DECL-P4-5 slab)",
+  "L2_a": "p4-l2 L2 tiles (DECL-P4-12 thin-slab max +-14.4 um, global T_mid 93 / T_hi 203 display, 1068 px), 160 of 160, PNG sha256 verified against its manifest (0 mismatches)"
+ },
+ "bins": "1 mm along the canvas column axis (bin 0 = canvas col 0 = strip c0 outer end); tile column c = bins [20c, 20c+20)",
+ "validation_pitch": {
+  "M1_strip_a_c0_c9": {
+   "peak_period_mm_50_120": 76.2,
+   "snr": 64.42,
+   "autocorr_peak_lag_mm_50_120": 79,
+   "autocorr_at_peak": 0.588,
+   "pass_declared_spectral_peak_50_120mm": true,
+   "native_period_resolution_note": "periods near 80 mm are resolved to about +-16 mm (one native bin)"
+  },
+  "M1_strip_b_w028_037_c0_c20": {
+   "peak_period_mm_50_120": 78.1,
+   "snr": 102.18,
+   "autocorr_peak_lag_mm_50_120": 76,
+   "autocorr_at_peak": 0.823,
+   "pass_declared_spectral_peak_50_120mm": true,
+   "native_period_resolution_note": "periods near 80 mm are resolved to about +-8 mm (one native bin)"
+  },
+  "E2_strip_a_c0_c9": {
+   "peak_period_mm_50_120": 118.5,
+   "snr": 5.82,
+   "dominant_period_mm_10_200": 15.5,
+   "peak_is_interior_local_max": false,
+   "pass_declared_spectral_peak_50_120mm": false
+  },
+  "L2_strip_a_c0_c9": {
+   "peak_period_mm_50_120": 118.5,
+   "snr": 7.22,
+   "dominant_period_mm_10_200": 15.5,
+   "peak_is_interior_local_max": false,
+   "pass_declared_spectral_peak_50_120mm": false
+  },
+  "verdict": "M1 PASSES on both known-text spans (period 76-78 mm; SNR 64 and 102; autocorrelation lag 79 and 76 mm). E2 and L2 FAIL (no interior peak in 50-120 mm; dominant periods 12-16 mm): the raw-CT channels carry no column-layout signal at this scale, so only M1 locates intercolumns and the block.",
+  "bar_disclosure": "the interior-local-maximum condition was added after the E2 result (a band-edge maximum); it tightens the declared wording and changed no M1 verdict"
+ },
+ "intercolumns": {
+  "M1_strip_a_deep_minima": [
+   {
+    "mm": 10,
+    "tile_col": 0.5,
+    "depth": 15.01,
+    "per_row_median_mm": 1.5,
+    "per_row_range_mm": [
+     1,
+     10
+    ]
+   },
+   {
+    "mm": 51,
+    "tile_col": 2.55,
+    "depth": 41.14,
+    "per_row_median_mm": 51.0,
+    "per_row_range_mm": [
+     49,
+     54
+    ]
+   },
+   {
+    "mm": 126,
+    "tile_col": 6.3,
+    "depth": 32.41,
+    "per_row_median_mm": 127.0,
+    "per_row_range_mm": [
+     122,
+     136
+    ]
+   },
+   {
+    "mm": 214,
+    "tile_col": 10.7,
+    "depth": 17.3,
+    "per_row_median_mm": 214.5,
+    "per_row_range_mm": [
+     207,
+     224
+    ]
+   }
+  ],
+  "M1_strip_a_all_minima": [
+   {
+    "mm": 10,
+    "tile_col": 0.5,
+    "depth": 15.01,
+    "per_row_median_mm": 1.5,
+    "per_row_range_mm": [
+     1,
+     10
+    ]
+   },
+   {
+    "mm": 51,
+    "tile_col": 2.55,
+    "depth": 41.14,
+    "per_row_median_mm": 51.0,
+    "per_row_range_mm": [
+     49,
+     54
+    ]
+   },
+   {
+    "mm": 126,
+    "tile_col": 6.3,
+    "depth": 32.41,
+    "per_row_median_mm": 127.0,
+    "per_row_range_mm": [
+     122,
+     136
+    ]
+   },
+   {
+    "mm": 214,
+    "tile_col": 10.7,
+    "depth": 17.3,
+    "per_row_median_mm": 214.5,
+    "per_row_range_mm": [
+     207,
+     224
+    ]
+   },
+   {
+    "mm": 282,
+    "tile_col": 14.1,
+    "depth": 13.3,
+    "per_row_median_mm": 283.5,
+    "per_row_range_mm": [
+     281,
+     285
+    ]
+   },
+   {
+    "mm": 322,
+    "tile_col": 16.1,
+    "depth": 6.98,
+    "per_row_median_mm": 323.5,
+    "per_row_range_mm": [
+     312,
+     325
+    ]
+   }
+  ],
+  "M1_strip_b_deep_minima": [
+   {
+    "mm": 84,
+    "tile_col": 4.2,
+    "depth": 45.51,
+    "per_row_median_mm": 81.0,
+    "per_row_range_mm": [
+     76,
+     87
+    ]
+   },
+   {
+    "mm": 163,
+    "tile_col": 8.15,
+    "depth": 43.23,
+    "per_row_median_mm": 163.0,
+    "per_row_range_mm": [
+     156,
+     165
+    ]
+   },
+   {
+    "mm": 237,
+    "tile_col": 11.85,
+    "depth": 41.37,
+    "per_row_median_mm": 240.5,
+    "per_row_range_mm": [
+     237,
+     243
+    ]
+   },
+   {
+    "mm": 315,
+    "tile_col": 15.75,
+    "depth": 36.04,
+    "per_row_median_mm": 313.5,
+    "per_row_range_mm": [
+     309,
+     318
+    ]
+   },
+   {
+    "mm": 388,
+    "tile_col": 19.4,
+    "depth": 40.11,
+    "per_row_median_mm": 388.0,
+    "per_row_range_mm": [
+     386,
+     389
+    ]
+   }
+  ],
+  "note": "strip a: the text intercolumns are at 51, 126 and 214 mm (c2.55, c6.3, c10.7; spacings 75 and 88 mm). The minima at 282 and 322 mm lie in the blank zone (census rows N) and are not intercolumns. Strip b: 84, 163, 237, 315 and 388 mm (spacings 79, 74, 78, 73). Precision: the same minimum located per tile row r0-r5 spans 49-54, 122-136 and 207-224 mm on strip a (+-3 to +-8 mm), and +-1.5 to +-5 mm on strip b. The declared +-1 mm is met only as 1 mm quantisation of the pooled profile, NOT across rows."
+ },
+ "block_c11_c13": {
+  "channel": "M1, rows r0-r1",
+  "background": {
+   "mean": 43.926,
+   "sd": 6.1,
+   "thr_mean_plus_3sd": 62.225
+  },
+  "horizontal_extent_mm": [
+   [
+    217,
+    276
+   ]
+  ],
+  "horizontal_extent_tile_cols": [
+   [
+    10.85,
+    13.85
+   ]
+  ],
+  "width_mm": [
+   60
+  ],
+  "runs_above_threshold_mm": [
+   [
+    217,
+    219
+   ],
+   [
+    221,
+    221
+   ],
+   [
+    223,
+    224
+   ],
+   [
+    226,
+    226
+   ],
+   [
+    228,
+    236
+   ],
+   [
+    239,
+    245
+   ],
+   [
+    247,
+    257
+   ],
+   [
+    259,
+    260
+   ],
+   [
+    262,
+    276
+   ]
+  ],
+  "vertical_extent_mm_from_canvas_top": [
+   [
+    5,
+    38
+   ],
+   [
+    50,
+    50
+   ],
+   [
+    57,
+    57
+   ],
+   [
+    71,
+    71
+   ],
+   [
+    152,
+    153
+   ]
+  ],
+  "mesh_top_edge_mm_from_canvas_top": "2.9-3.9 (first mesh-valid grid row, median, c10-c14; edge_mesh.json)",
+  "E2_and_L2_in_block": "no bin of E2 or L2 in c10.5-c14.5 r0-r1 exceeds its c15-c19 background + 3 sd",
+  "reading": "The above-background M1 signal in r0-r1 spans 217-276 mm (c10.85-c13.8; 60 mm, gaps <= 2 mm merged), starting 3 mm after the c10.7 intercolumn. Vertically it spans canvas 5-38 mm from the top, i.e. it begins within about 1-2 mm of the official mesh top edge (a z cut) and ends about 34 mm down the sheet. So the block is truncated by the mesh top, not closed above."
+ },
+ "interpretation_UNCERTAIN": [
+  "The block is about 60 mm wide, which is the text width of one column slot (pitch 76-78 mm minus a ~16 mm intercolumn; FAQ 4.5-6 cm columns). This fits a short last column of text (DOSSIER H1) at least as well as a narrow centred title (H2). The profile cannot tell text from title.",
+  "The block reaches the mesh top edge. The edge check (edge.json) finds sheet for only about +2 mm above it, and the scroll material ends +3 to +5 mm above. Any lines above the block are therefore at most about 2 mm of surviving sheet, or physically missing, consistent with the organizers statement."
+ ],
+ "files": {
+  "profile/profile_detail.json": "dede3f25f18d9ab80757420d166a44ce24459261aa00c763d60e500f158ca75a"
+ },
+ "code": {
+  "col_profile.py": "335809e57036e58cf2c800369537f2eb42a7fb5e31447a80b965c3bd697f8727",
+  "l2_profile.py": "635776d69866ba587b86a554c7874e99e06c0e52c31d8e1749d76e58adfac952",
+  "profile_analyze.py": "6180ebfee7187128758fdfc60a0059bab308bd6b1637fe9629a5372039099f34"
+ }
+}

@@ -1,0 +1,127 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "declaration": "RULES.md DECL-P4-13 P4-M item 3 (organizer-segment mapping); numbers only",
+ "status": "PARTIAL - the 2024 title-search segments are BLOCKED (ASK-2); the method and transform are validated",
+ "title_search_segments": {
+  "20240102231959": {
+   "half": "1A",
+   "volume": "20230205180739",
+   "mappable": true,
+   "result": "pending ASK-2 (session safety check refused licence use; files deleted, no numbers exist)"
+  },
+  "20240110113230": {
+   "half": "1A",
+   "volume": "20230205180739",
+   "mappable": true,
+   "result": "pending ASK-2"
+  },
+  "20240116164433": {
+   "half": "1A",
+   "volume": "20230205180739",
+   "mappable": true,
+   "result": "pending ASK-2"
+  },
+  "20240101215220": {
+   "half": "1B",
+   "volume": "20230206171837",
+   "mappable": false,
+   "result": "UNMAPPED: no published transform from 20230206171837 to 20260411134726 (recon.json volumes[6]; bucket has none)"
+  },
+  "20240109095720": {
+   "half": "1B",
+   "volume": "20230206171837",
+   "mappable": false,
+   "result": "UNMAPPED: no published transform"
+  },
+  "nov_2024_title_region_segment": {
+   "result": "UNMAPPED: id and location published only via Discord (recon.md)"
+  }
+ },
+ "volume_of_each_segment_source": "segment meta.json on dl.ash2txt.org PHercParis4.volpkg/paths (fetched under OWNER-LICENSE-EDUCELAB-1; files deleted)",
+ "transform": {
+  "used": "inverse of the bucket 20260411134726 transform.json (fixed 20230205180739 7.91 um <- moving 2.4 um; 24 landmarks), applied to x,y,z voxels",
+  "validation": "labelled segment 20231016151002: its 7.91 um tifxyz mapped through the inverse vs the organizers 2.4 um re-mesh, nearest-vertex distance",
+  "residual_um_p10_p50_p90_p99": [
+   8.6,
+   19.1,
+   26.8,
+   32.1
+  ],
+  "wrong_direction_control_um_p50": 131726.3,
+  "verdict": "valid: p99 32 um << half winding pitch (~120-130 um measured on strip a), so a mapped segment can be assigned to a winding"
+ },
+ "method_validation_open_bucket": {
+  "segment": "20231016151002 (organizers labelled segment, 2.4 um re-mesh; not a title-search segment)",
+  "tiles_overlapping_le_0p05mm": [
+   "r0_c10",
+   "r0_c11",
+   "r0_c12",
+   "r0_c13",
+   "r0_c14",
+   "r0_c15",
+   "r0_c9",
+   "r1_c10",
+   "r1_c11",
+   "r1_c12",
+   "r1_c13",
+   "r1_c14",
+   "r1_c15",
+   "r1_c8",
+   "r1_c9",
+   "r2_c10",
+   "r2_c11",
+   "r2_c12",
+   "r2_c13",
+   "r2_c14",
+   "r2_c15",
+   "r2_c6",
+   "r2_c8",
+   "r2_c9",
+   "r3_c10",
+   "r3_c11",
+   "r3_c12",
+   "r3_c13",
+   "r3_c14",
+   "r3_c15",
+   "r3_c7",
+   "r3_c8",
+   "r3_c9"
+  ],
+  "tile_min_mm_c9_c15_r0_r3": {
+   "r0_c9": 0.003,
+   "r0_c10": 0.003,
+   "r0_c11": 0.002,
+   "r0_c12": 0.001,
+   "r0_c13": 0.002,
+   "r0_c14": 0.001,
+   "r0_c15": 0.006,
+   "r1_c9": 0.002,
+   "r1_c10": 0.001,
+   "r1_c11": 0.003,
+   "r1_c12": 0.002,
+   "r1_c13": 0.001,
+   "r1_c14": 0.001,
+   "r1_c15": 0.006,
+   "r2_c9": 0.002,
+   "r2_c10": 0.001,
+   "r2_c11": 0.001,
+   "r2_c12": 0.002,
+   "r2_c13": 0.003,
+   "r2_c14": 0.003,
+   "r2_c15": 0.009,
+   "r3_c9": 0.004,
+   "r3_c10": 0.002,
+   "r3_c11": 0.001,
+   "r3_c12": 0.003,
+   "r3_c13": 0.002,
+   "r3_c14": 0.001,
+   "r3_c15": 0.005
+  },
+  "agrees_with": "p4-excl / DOSSIER 4.3: 0.00 mm at c9-c15 r0-r3 (reproduced: 0.001-0.009 mm)"
+ },
+ "what_this_can_and_cannot_say": "Until the 1A ids are mapped, it is not known whether the organizers 2024 title search covered strip-a window A (c10-c14). The 1B half cannot be mapped with published transforms at all.",
+ "code": {
+  "tools/sib/p4-layout/orgmap.py": "57f4e700903bd1e2abe71f4a687cdbcf2446d96a85d8ae5d9488c176af80a7c7"
+ },
+ "licence_note": "Any numbers later derived from the 2024 meshes use the EduceLab-Scrolls dataset (Parsons et al. 2023, arXiv 2304.02084) under the EduceLab Data License; cite accordingly."
+}
