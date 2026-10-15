@@ -1,0 +1,750 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "manifest_sha256": "d7478e2eaa5803ab4dd51a82eadac4b35033e06e67a9b9d4dd6994f529774a58",
+ "units_sha256": "b188e0bbd95826dcbd572d07df3a22de6a782dfc04c1f738e7c37b0a9f9ddb1d",
+ "rule": "FL-09 primary (R + 64 px halo >= 128 vox, certified)",
+ "results": [
+  {
+   "label": "w045(whole, training) -> R on w046 strip [pair SAME(nd)=True]",
+   "region_segment": "20260325000000-w046_20260325",
+   "rect_px": [
+    3048,
+    1938,
+    5184,
+    4074
+   ],
+   "expect_pass": false,
+   "passed": false,
+   "caught": true,
+   "raw_min": 0.008683310177626337,
+   "certified_min": -5.988446162589394,
+   "n_offending": 400008,
+   "alt_scalar_passed": false,
+   "registry_sha256": "8683a174af2a2053fc7e8ca341b16bf86632242eb1ca502c0cf78788bddb86b0",
+   "region_mesh_sha256": {
+    "x.tif": "3ab134524dc4537791f6efd2ec326468e61e170b9c1799e74148136e29b62634",
+    "y.tif": "de6a40b9e5ca05416a2a1d322d8cef882e3d743216ebfe754eefa28cb0e989a3",
+    "z.tif": "eec2ea34b5acc57685a20c13cd85f057859105022689f2d4865b2cb47a97afc1",
+    "meta.json": "a73ca0a53b3f7350d9119e43349b6a1423e88496511d46367bec61385d6b6ae9"
+   },
+   "n_training_surfaces": 1,
+   "first_offending": [
+    {
+     "patch": "w045_whole",
+     "dist": 0.008683310177626337,
+     "certified": -5.9577988321584225,
+     "train_xyz": [
+      4007.896,
+      4389.917,
+      6225.213
+     ],
+     "train_canvas_px": [
+      3704.0,
+      3884.0
+     ],
+     "region_xyz": [
+      4007.895,
+      4389.919,
+      6225.205
+     ],
+     "region_canvas_px": [
+      3708.0,
+      3884.0
+     ]
+    },
+    {
+     "patch": "w045_whole",
+     "dist": 0.012591598592019167,
+     "certified": -5.988446162589394,
+     "train_xyz": [
+      3990.303,
+      4398.81,
+      6225.231
+     ],
+     "train_canvas_px": [
+      3724.0,
+      3884.0
+     ],
+     "region_xyz": [
+      3990.314,
+      4398.814,
+      6225.236
+     ],
+     "region_canvas_px": [
+      3728.0,
+      3884.0
+     ]
+    },
+    {
+     "patch": "w045_whole",
+     "dist": 0.013560248122069156,
+     "certified": -5.985691460701149,
+     "train_xyz": [
+      3986.285,
+      4399.66,
+      6221.326
+     ],
+     "train_canvas_px": [
+      3728.0,
+      3880.0
+     ],
+     "region_xyz": [
+      3986.28,
+      4399.657,
+      6221.338
+     ],
+     "region_canvas_px": [
+      3732.0,
+      3880.0
+     ]
+    }
+   ],
+   "elapsed_s": 9.7
+  },
+  {
+   "label": "w045(128px patch [3680, 2836, 3808, 2964]) -> R on w046 strip",
+   "region_segment": "20260325000000-w046_20260325",
+   "rect_px": [
+    3048,
+    1938,
+    5184,
+    4074
+   ],
+   "expect_pass": false,
+   "passed": false,
+   "caught": true,
+   "raw_min": 0.9830429510471633,
+   "certified_min": -5.024139500387744,
+   "n_offending": 1089,
+   "alt_scalar_passed": false,
+   "registry_sha256": "4b9b9bae2afa213d64e2a71314ae7ed4d5a1a8dfc482b2663f03edf7e521f534",
+   "region_mesh_sha256": {
+    "x.tif": "3ab134524dc4537791f6efd2ec326468e61e170b9c1799e74148136e29b62634",
+    "y.tif": "de6a40b9e5ca05416a2a1d322d8cef882e3d743216ebfe754eefa28cb0e989a3",
+    "z.tif": "eec2ea34b5acc57685a20c13cd85f057859105022689f2d4865b2cb47a97afc1",
+    "meta.json": "a73ca0a53b3f7350d9119e43349b6a1423e88496511d46367bec61385d6b6ae9"
+   },
+   "n_training_surfaces": 1,
+   "first_offending": [
+    {
+     "patch": "w045_patch",
+     "dist": 0.9830429510471633,
+     "certified": -5.024139500387744,
+     "train_xyz": [
+      3892.802,
+      4376.502,
+      5186.58
+     ],
+     "train_canvas_px": [
+      3808.0,
+      2836.0
+     ],
+     "region_xyz": [
+      3891.892,
+      4376.693,
+      5186.898
+     ],
+     "region_canvas_px": [
+      3812.0,
+      2836.0
+     ]
+    },
+    {
+     "patch": "w045_patch",
+     "dist": 0.9835682848238894,
+     "certified": -5.02265904572171,
+     "train_xyz": [
+      3896.865,
+      4376.29,
+      5186.424
+     ],
+     "train_canvas_px": [
+      3804.0,
+      2836.0
+     ],
+     "region_xyz": [
+      3895.948,
+      4376.412,
+      5186.76
+     ],
+     "region_canvas_px": [
+      3808.0,
+      2836.0
+     ]
+    },
+    {
+     "patch": "w045_patch",
+     "dist": 0.9892219017266616,
+     "certified": -5.016399824376565,
+     "train_xyz": [
+      3900.927,
+      4376.078,
+      5186.268
+     ],
+     "train_canvas_px": [
+      3800.0,
+      2836.0
+     ],
+     "region_xyz": [
+      3900.005,
+      4376.131,
+      5186.621
+     ],
+     "region_canvas_px": [
+      3804.0,
+      2836.0
+     ]
+    }
+   ],
+   "elapsed_s": 0.9
+  },
+  {
+   "label": "w025(whole, training) -> R on w024 strip [pair SAME(nd)=True]",
+   "region_segment": "20260215000000-w024_2026021572",
+   "rect_px": [
+    1980,
+    2416,
+    4116,
+    4552
+   ],
+   "expect_pass": false,
+   "passed": false,
+   "caught": true,
+   "raw_min": 5.33908132539176,
+   "certified_min": -0.6534365177735357,
+   "n_offending": 413406,
+   "alt_scalar_passed": false,
+   "registry_sha256": "8727454516f39e4c894bc4fefbed88789ee998ecd71cd7fffa70622723350215",
+   "region_mesh_sha256": {
+    "x.tif": "cf7d87d0e0eed753743fe7c500821c482bc8216c6ff2676270dd40b609c1cc6d",
+    "y.tif": "31a5ea67f1b960e699f9b0af30b008aede5ebcfa9cff4aefcd56eaa238c48197",
+    "z.tif": "1eeb247d5e08e15651b560281415aa96aa4d123a018b66b1ab0f3a798a1d2f08",
+    "meta.json": "7a04f5a998cedbbb497c9e8a51ed5855040831ed3ae4a2407435d997aef0fea6"
+   },
+   "n_training_surfaces": 1,
+   "first_offending": [
+    {
+     "patch": "w025_whole",
+     "dist": 5.33908132539176,
+     "certified": -0.6534365177735357,
+     "train_xyz": [
+      3767.016,
+      3953.816,
+      5235.097
+     ],
+     "train_canvas_px": [
+      4024.0,
+      3984.0
+     ],
+     "region_xyz": [
+      3763.184,
+      3950.137,
+      5235.634
+     ],
+     "region_canvas_px": [
+      3900.0,
+      3880.0
+     ]
+    },
+    {
+     "patch": "w025_whole",
+     "dist": 5.480144260014769,
+     "certified": -0.5124282947023393,
+     "train_xyz": [
+      3766.239,
+      3953.492,
+      5239.02
+     ],
+     "train_canvas_px": [
+      4024.0,
+      3988.0
+     ],
+     "region_xyz": [
+      3762.337,
+      3949.689,
+      5239.609
+     ],
+     "region_canvas_px": [
+      3900.0,
+      3884.0
+     ]
+    },
+    {
+     "patch": "w025_whole",
+     "dist": 5.502556883835526,
+     "certified": -0.49464312410686917,
+     "train_xyz": [
+      3767.793,
+      3954.141,
+      5231.174
+     ],
+     "train_canvas_px": [
+      4024.0,
+      3980.0
+     ],
+     "region_xyz": [
+      3763.811,
+      3950.367,
+      5231.596
+     ],
+     "region_canvas_px": [
+      3900.0,
+      3876.0
+     ]
+    }
+   ],
+   "elapsed_s": 11.2
+  },
+  {
+   "label": "w025 patch -> w024",
+   "error": "no T sample within 2 vox of R"
+  },
+  {
+   "label": "w047(whole, training) -> R on w048 strip [pair SAME(nd)=False]",
+   "region_segment": "20260219000001-w048_2026021912",
+   "rect_px": [
+    3218,
+    1910,
+    5354,
+    4046
+   ],
+   "expect_pass": false,
+   "passed": false,
+   "caught": true,
+   "raw_min": 0.2582537025858332,
+   "certified_min": -5.623861885898463,
+   "n_offending": 394029,
+   "alt_scalar_passed": false,
+   "registry_sha256": "fc4eecb5effbf095d2ed755d702410d8b61ed0e45f6fed5ede316c46d50a03c4",
+   "region_mesh_sha256": {
+    "x.tif": "095a1a7a38ac5dc81974da947ff4722ef87886bad171d58d99b3ab66bd9099dc",
+    "y.tif": "2ac79fd5d28642d4ac1bc2a2467d39fa91bda9a24d2c9087a23e0c69a5529809",
+    "z.tif": "a718f03def3d5ba4d9899e91c75755eae5821ffb05361f94f540dde3c669766c",
+    "meta.json": "771adf817df23e48e4eb7b8edf8de1d89e1c9c72810c93ccdc179d85117f4a04"
+   },
+   "n_training_surfaces": 1,
+   "first_offending": [
+    {
+     "patch": "w047_whole",
+     "dist": 0.2582537025858332,
+     "certified": -5.623861885898463,
+     "train_xyz": [
+      4151.261,
+      4390.668,
+      6455.4
+     ],
+     "train_canvas_px": [
+      3700.0,
+      4028.0
+     ],
+     "region_xyz": [
+      4151.304,
+      4390.623,
+      6455.15
+     ],
+     "region_canvas_px": [
+      3720.0,
+      3960.0
+     ]
+    },
+    {
+     "patch": "w047_whole",
+     "dist": 0.2713732594944239,
+     "certified": -5.610742328989872,
+     "train_xyz": [
+      4154.635,
+      4388.552,
+      6455.522
+     ],
+     "train_canvas_px": [
+      3696.0,
+      4028.0
+     ],
+     "region_xyz": [
+      4154.686,
+      4388.437,
+      6455.281
+     ],
+     "region_canvas_px": [
+      3716.0,
+      3960.0
+     ]
+    },
+    {
+     "patch": "w047_whole",
+     "dist": 0.29661990800900484,
+     "certified": -5.58565948238272,
+     "train_xyz": [
+      4154.979,
+      4389.354,
+      6459.455
+     ],
+     "train_canvas_px": [
+      3696.0,
+      4032.0
+     ],
+     "region_xyz": [
+      4155.106,
+      4389.35,
+      6459.188
+     ],
+     "region_canvas_px": [
+      3716.0,
+      3964.0
+     ]
+    }
+   ],
+   "elapsed_s": 9.8
+  },
+  {
+   "label": "w047(128px patch [4400, 2828, 4528, 2956]) -> R on w048 strip",
+   "region_segment": "20260219000001-w048_2026021912",
+   "rect_px": [
+    3218,
+    1910,
+    5354,
+    4046
+   ],
+   "expect_pass": false,
+   "passed": false,
+   "caught": true,
+   "raw_min": 0.682973045836557,
+   "certified_min": -5.205039734020888,
+   "n_offending": 1089,
+   "alt_scalar_passed": false,
+   "registry_sha256": "2d003f96e5ec614c60faedf54eff8ea64f289388b85ef94d77ffbfa5f2f52a5b",
+   "region_mesh_sha256": {
+    "x.tif": "095a1a7a38ac5dc81974da947ff4722ef87886bad171d58d99b3ab66bd9099dc",
+    "y.tif": "2ac79fd5d28642d4ac1bc2a2467d39fa91bda9a24d2c9087a23e0c69a5529809",
+    "z.tif": "a718f03def3d5ba4d9899e91c75755eae5821ffb05361f94f540dde3c669766c",
+    "meta.json": "771adf817df23e48e4eb7b8edf8de1d89e1c9c72810c93ccdc179d85117f4a04"
+   },
+   "n_training_surfaces": 1,
+   "first_offending": [
+    {
+     "patch": "w047_patch",
+     "dist": 0.682973045836557,
+     "certified": -5.205039734020888,
+     "train_xyz": [
+      3422.185,
+      4482.659,
+      5266.429
+     ],
+     "train_canvas_px": [
+      4432.0,
+      2828.0
+     ],
+     "region_xyz": [
+      3421.604,
+      4482.763,
+      5266.086
+     ],
+     "region_canvas_px": [
+      4468.0,
+      2760.0
+     ]
+    },
+    {
+     "patch": "w047_patch",
+     "dist": 0.6966843091823722,
+     "certified": -5.191326824298605,
+     "train_xyz": [
+      3418.158,
+      4482.444,
+      5266.637
+     ],
+     "train_canvas_px": [
+      4436.0,
+      2828.0
+     ],
+     "region_xyz": [
+      3417.597,
+      4482.196,
+      5266.306
+     ],
+     "region_canvas_px": [
+      4472.0,
+      2760.0
+     ]
+    },
+    {
+     "patch": "w047_patch",
+     "dist": 0.702774511508949,
+     "certified": -5.185246372565489,
+     "train_xyz": [
+      3422.35,
+      4483.448,
+      5270.352
+     ],
+     "train_canvas_px": [
+      4432.0,
+      2832.0
+     ],
+     "region_xyz": [
+      3421.732,
+      4483.486,
+      5270.019
+     ],
+     "region_canvas_px": [
+      4468.0,
+      2764.0
+     ]
+    }
+   ],
+   "elapsed_s": 0.8
+  },
+  {
+   "label": "w052(whole, training) -> R on w053 strip [pair SAME(nd)=True]",
+   "region_segment": "20260220000000-w053_2026022021",
+   "rect_px": [
+    4246,
+    2784,
+    6382,
+    4920
+   ],
+   "expect_pass": false,
+   "passed": false,
+   "caught": true,
+   "raw_min": 0.972105490776309,
+   "certified_min": -4.893948229755078,
+   "n_offending": 395454,
+   "alt_scalar_passed": false,
+   "registry_sha256": "73f1741dc02a4d0d3a0a4d05dfefd7c3a125f1ff4b0330f56c6063bb8df86e62",
+   "region_mesh_sha256": {
+    "x.tif": "31f5b3ff02c97729768bf6a79f66f284c5728600e46374aed66a9b8c77fab077",
+    "y.tif": "659c3a823f7b2936e484602c8a855cbf6da4594243f784133e520d42787161e4",
+    "z.tif": "d1206711c1b2bc909fa6ee20e413e8a6b29a4040c7275e2893d2ea5e0bedf2c7",
+    "meta.json": "320145d8171f19223610459470b808cb9c34ddcbbce48304dfb5df0c5a11a32e"
+   },
+   "n_training_surfaces": 1,
+   "first_offending": [
+    {
+     "patch": "w052_whole",
+     "dist": 0.972105490776309,
+     "certified": -4.893948229755078,
+     "train_xyz": [
+      2637.227,
+      2530.064,
+      6286.568
+     ],
+     "train_canvas_px": [
+      4168.0,
+      5256.0
+     ],
+     "region_xyz": [
+      2637.833,
+      2530.552,
+      6287.15
+     ],
+     "region_canvas_px": [
+      4288.0,
+      4984.0
+     ]
+    },
+    {
+     "patch": "w052_whole",
+     "dist": 1.0541438644315302,
+     "certified": -4.811868283857294,
+     "train_xyz": [
+      2632.22,
+      2531.152,
+      6284.584
+     ],
+     "train_canvas_px": [
+      4164.0,
+      5252.0
+     ],
+     "region_xyz": [
+      2632.809,
+      2531.76,
+      6285.212
+     ],
+     "region_canvas_px": [
+      4284.0,
+      4980.0
+     ]
+    },
+    {
+     "patch": "w052_whole",
+     "dist": 1.1350231042686592,
+     "certified": -4.720016021942954,
+     "train_xyz": [
+      2630.109,
+      2529.366,
+      6282.011
+     ],
+     "train_canvas_px": [
+      4164.0,
+      5248.0
+     ],
+     "region_xyz": [
+      2630.389,
+      2529.937,
+      6282.951
+     ],
+     "region_canvas_px": [
+      4284.0,
+      4976.0
+     ]
+    }
+   ],
+   "elapsed_s": 17.7
+  },
+  {
+   "label": "w052 patch -> w053",
+   "error": "no T sample within 2 vox of R"
+  },
+  {
+   "label": "control: w045(whole) -> R on farthest segment titl (raw min inf vox)",
+   "region_segment": "20260422000000-title_2026042222_zmid_flatboi",
+   "rect_px": [
+    1650,
+    0,
+    3786,
+    2136
+   ],
+   "expect_pass": true,
+   "passed": true,
+   "caught": true,
+   "raw_min": 1196.8482905344604,
+   "certified_min": 1189.0025699630164,
+   "n_offending": 0,
+   "alt_scalar_passed": true,
+   "registry_sha256": "8683a174af2a2053fc7e8ca341b16bf86632242eb1ca502c0cf78788bddb86b0",
+   "region_mesh_sha256": {
+    "x.tif": "67dfe23966f68ee7aa44ce153367f2bc5ce2be230c139f719e79a5eac19c0da2",
+    "y.tif": "9b32b6c503a837c7549991cfdccd68009cf68dd4ab7df46129adb659f558af22",
+    "z.tif": "5dcfe1ea048ea58360c4210bd9331ffda8ff95886e06ad2c396ab20c64f4bc9e",
+    "meta.json": "47efacaeac9739e59795e9cd511d4202119cf644501cd547d2ac73370e8a4ce0"
+   },
+   "n_training_surfaces": 1,
+   "first_offending": [],
+   "elapsed_s": 29.4
+  },
+  {
+   "label": "w045(whole)+all re-traces -> R on w046 strip",
+   "region_segment": "20260325000000-w046_20260325",
+   "rect_px": [
+    3048,
+    1938,
+    5184,
+    4074
+   ],
+   "expect_pass": false,
+   "passed": false,
+   "caught": true,
+   "raw_min": 0.0,
+   "certified_min": -6.29137435975111,
+   "n_offending": 1082406,
+   "alt_scalar_passed": false,
+   "registry_sha256": "8683a174af2a2053fc7e8ca341b16bf86632242eb1ca502c0cf78788bddb86b0",
+   "region_mesh_sha256": {
+    "x.tif": "3ab134524dc4537791f6efd2ec326468e61e170b9c1799e74148136e29b62634",
+    "y.tif": "de6a40b9e5ca05416a2a1d322d8cef882e3d743216ebfe754eefa28cb0e989a3",
+    "z.tif": "eec2ea34b5acc57685a20c13cd85f057859105022689f2d4865b2cb47a97afc1",
+    "meta.json": "a73ca0a53b3f7350d9119e43349b6a1423e88496511d46367bec61385d6b6ae9"
+   },
+   "n_training_surfaces": 9,
+   "first_offending": [
+    {
+     "patch": "w045_whole@20260325000000-w046_20260325",
+     "dist": 0.0,
+     "certified": -6.002254260133528,
+     "train_xyz": [
+      4001.626,
+      4335.055,
+      5465.954
+     ],
+     "train_canvas_px": [
+      3692.0,
+      3116.0
+     ],
+     "region_xyz": [
+      4001.626,
+      4335.055,
+      5465.954
+     ],
+     "region_canvas_px": [
+      3692.0,
+      3116.0
+     ]
+    },
+    {
+     "patch": "w045_whole@20260325000000-w046_20260325",
+     "dist": 0.0,
+     "certified": -6.017224485868027,
+     "train_xyz": [
+      4049.237,
+      4304.496,
+      5466.122
+     ],
+     "train_canvas_px": [
+      3636.0,
+      3116.0
+     ],
+     "region_xyz": [
+      4049.237,
+      4304.496,
+      5466.122
+     ],
+     "region_canvas_px": [
+      3636.0,
+      3116.0
+     ]
+    },
+    {
+     "patch": "w045_whole@20260325000000-w046_20260325",
+     "dist": 0.0,
+     "certified": -6.017084140776887,
+     "train_xyz": [
+      4045.815,
+      4306.625,
+      5466.097
+     ],
+     "train_canvas_px": [
+      3640.0,
+      3116.0
+     ],
+     "region_xyz": [
+      4045.815,
+      4306.625,
+      5466.097
+     ],
+     "region_canvas_px": [
+      3640.0,
+      3116.0
+     ]
+    }
+   ],
+   "elapsed_s": 416.4
+  },
+  {
+   "label": "control w045(whole)+all re-traces -> farthest",
+   "region_segment": "20260422000000-title_2026042222_zmid_flatboi",
+   "rect_px": [
+    1650,
+    0,
+    3786,
+    2136
+   ],
+   "expect_pass": true,
+   "passed": true,
+   "caught": true,
+   "raw_min": 1196.4718927236836,
+   "certified_min": 1188.4208391611746,
+   "n_offending": 0,
+   "alt_scalar_passed": true,
+   "registry_sha256": "8683a174af2a2053fc7e8ca341b16bf86632242eb1ca502c0cf78788bddb86b0",
+   "region_mesh_sha256": {
+    "x.tif": "67dfe23966f68ee7aa44ce153367f2bc5ce2be230c139f719e79a5eac19c0da2",
+    "y.tif": "9b32b6c503a837c7549991cfdccd68009cf68dd4ab7df46129adb659f558af22",
+    "z.tif": "5dcfe1ea048ea58360c4210bd9331ffda8ff95886e06ad2c396ab20c64f4bc9e",
+    "meta.json": "47efacaeac9739e59795e9cd511d4202119cf644501cd547d2ac73370e8a4ce0"
+   },
+   "n_training_surfaces": 9,
+   "first_offending": [],
+   "elapsed_s": 386.1
+  }
+ ],
+ "all_caught": false
+}
