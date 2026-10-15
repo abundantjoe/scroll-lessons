@@ -1,0 +1,498 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "stage": "D3 stage 1 (DECL-D3-A1): pools, training script, smoke tests; hashed before the full run",
+ "generated_utc": "2026-09-25T10:45:18Z",
+ "viewing": "no image or pixel array was opened, displayed or described; numbers only",
+ "not_read": "/srv/scorer, /work/sealed_io, seals/, /work/jseal/seal_J.age, J-window renders/maps",
+ "scripts_sha256": {
+  "build_pools.py": "18edceff639ec02d80edaf410face5fec3ce92e19fbd9516c9879fb2cce2e111",
+  "build_pools_v1.py": "a08c5b49970039621d699cf1c4166ff56ed89c7e4d5e40abce29f433734857d5",
+  "d3_train.py": "2943b1b6fb7492433fc1476bb57848d306c705f70ccef575bf701342acf6f52f",
+  "fa_tiles.py": "1161c7384cdf15516bf54d9eed03b446075fee505261b40e38cbf3145be2e2c2",
+  "run_arms.sh": "8ac4cb09b41b9e1edfff7eb7ebe0f93e6aacba1a8a3a54ea6618b67218aaa737",
+  "s3_fetch.py": "b3d53f635d454286388ce843fc96b9fe415d33e0658d0931ea48f634112141ba",
+  "smoke_d3.py": "432e2abebdc8322aae07ebea0cc9525841098e1383effb8615ba5f666b9e1e29",
+  "stage1_record.py": "702127609b8172099d878f3273b8e6f2bd0e1e02d6cb9a111cb6c11f5923375c",
+  "start_d3.sh": "e6bcda4e6f61fff2650775feb84fff6400cb18102e0837515d10f20b7f900a99",
+  "vc_d3.sh": "97b534a80e592bed359851d7452dc81cb17cc8b1eb212d19a11a86a1dff79170"
+ },
+ "pools": {
+  "fa": {
+   "manifest": "/work/d3/pool_fa/manifest.json",
+   "manifest_sha256": "8b127e1017d1e9a780f393e8822271ecc838bcb19e5fd4c5cf91515d6f98c040",
+   "n_tiles": 288,
+   "label_px": {
+    "ink": 821768,
+    "blank": 3649908,
+    "ignored": 246916,
+    "total": 4718592
+   },
+   "files_sha256": {
+    "images.npy": "9789fd0010a97e5b201c0a384e32c2a5fb8116559509fe9183c0ac3907083573",
+    "inklabels.npy": "4db09338919aaff56ecc5864c5c362ad8e841e6ba2250954340f78a6f28abdad",
+    "supervision.npy": "e027d5f02ccb2f3342f8dc5335ade561504ccefeecbd445ff5f433fa1567568b"
+   },
+   "shapes": [
+    [
+     288,
+     21,
+     128,
+     128
+    ],
+    [
+     288,
+     128,
+     128
+    ],
+    [
+     288,
+     128,
+     128
+    ]
+   ],
+   "n_primary_text": 306,
+   "n_ge144": 288,
+   "n_kept": 288,
+   "n_dropped_lt144": 18,
+   "dropped": [
+    {
+     "segment": "20260220213127-w00",
+     "y0": 1216,
+     "x0": 1984,
+     "min_3d_dist_vox": 132.73043636945815
+    },
+    {
+     "segment": "20260220213127-w00",
+     "y0": 1216,
+     "x0": 2048,
+     "min_3d_dist_vox": 132.68653307728542
+    },
+    {
+     "segment": "20260220213127-w00",
+     "y0": 3840,
+     "x0": 1984,
+     "min_3d_dist_vox": 133.76543476782734
+    },
+    {
+     "segment": "20260220213127-w00",
+     "y0": 3840,
+     "x0": 2048,
+     "min_3d_dist_vox": 129.43831732074227
+    },
+    {
+     "segment": "20260220214732-auto_grown_20260220144552896",
+     "y0": 640,
+     "x0": 2048,
+     "min_3d_dist_vox": 137.51472960754097
+    },
+    {
+     "segment": "20260220214732-auto_grown_20260220144552896",
+     "y0": 704,
+     "x0": 2048,
+     "min_3d_dist_vox": 135.29391916946895
+    },
+    {
+     "segment": "20260220214732-auto_grown_20260220144552896",
+     "y0": 768,
+     "x0": 2048,
+     "min_3d_dist_vox": 135.22945549966883
+    },
+    {
+     "segment": "20260220214732-auto_grown_20260220144552896",
+     "y0": 832,
+     "x0": 2048,
+     "min_3d_dist_vox": 135.22945549966883
+    },
+    {
+     "segment": "20260220214732-auto_grown_20260220144552896",
+     "y0": 896,
+     "x0": 2048,
+     "min_3d_dist_vox": 134.40538534287026
+    },
+    {
+     "segment": "20260220214732-auto_grown_20260220144552896",
+     "y0": 960,
+     "x0": 2048,
+     "min_3d_dist_vox": 134.26529592183576
+    },
+    {
+     "segment": "20260220214732-auto_grown_20260220144552896",
+     "y0": 1024,
+     "x0": 2048,
+     "min_3d_dist_vox": 134.26529592183576
+    },
+    {
+     "segment": "20260220214732-auto_grown_20260220144552896",
+     "y0": 1408,
+     "x0": 2048,
+     "min_3d_dist_vox": 138.34280746080918
+    },
+    {
+     "segment": "20260220214732-auto_grown_20260220144552896",
+     "y0": 1472,
+     "x0": 2048,
+     "min_3d_dist_vox": 136.63627966675045
+    },
+    {
+     "segment": "20260220214732-auto_grown_20260220144552896",
+     "y0": 1536,
+     "x0": 2048,
+     "min_3d_dist_vox": 136.63627966675045
+    },
+    {
+     "segment": "20260220214732-auto_grown_20260220144552896",
+     "y0": 4288,
+     "x0": 1088,
+     "min_3d_dist_vox": 141.85795423842637
+    },
+    {
+     "segment": "20260221022814-auto_grown_20260220174252405",
+     "y0": 704,
+     "x0": 1920,
+     "min_3d_dist_vox": 136.16617632022232
+    },
+    {
+     "segment": "20260221022814-auto_grown_20260220174252405",
+     "y0": 704,
+     "x0": 1984,
+     "min_3d_dist_vox": 136.16617632022232
+    },
+    {
+     "segment": "20260221022814-auto_grown_20260220174252405",
+     "y0": 3392,
+     "x0": 2048,
+     "min_3d_dist_vox": 139.8243808551142
+    }
+   ],
+   "per_segment_kept": {
+    "20260220213127-w00": 118,
+    "20260220214732-auto_grown_20260220144552896": 100,
+    "20260221022814-auto_grown_20260220174252405": 70
+   },
+   "n_renders": 288,
+   "render_failed_twice_dropped": []
+  },
+  "replay": {
+   "manifest": "/work/d3/pool_replay/manifest.json",
+   "manifest_sha256": "0fc4dd46ed9cbb686f95409d1bd5426fbe1a43ccc58a7c40de372a44b9603ab5",
+   "n_tiles": 2643,
+   "label_px": {
+    "ink": 18709660,
+    "blank": 24131619,
+    "ignored": 461633,
+    "total": 43302912
+   },
+   "files_sha256": {
+    "images.npy": "849abc6369298c3a5254b2a543aced416e23eafa8a58f6d4fe41c91f99680c03",
+    "inklabels.npy": "b614bf642b1ae68925aa376606f28930be5faa4611a22de5a1a2210b908d509f",
+    "supervision.npy": "a1c87fd011568a5e7b7a643e464b9ef4921e4592ce9722219491dbc600f36cd3"
+   },
+   "shapes": [
+    [
+     2643,
+     21,
+     128,
+     128
+    ],
+    [
+     2643,
+     128,
+     128
+    ],
+    [
+     2643,
+     128,
+     128
+    ]
+   ],
+   "candidates": {
+    "20260317000000-w035_2026031718": 540,
+    "20260302000000-w039_2026030210": 305,
+    "20250831000000-w040_2025083102": 756,
+    "20260108000000-w041_2026010816": 321,
+    "20260115000000-w044_2026011522": 721
+   },
+   "quota": {
+    "20260317000000-w035_2026031718": 540,
+    "20260302000000-w039_2026030210": 305,
+    "20250831000000-w040_2025083102": 756,
+    "20260108000000-w041_2026010816": 321,
+    "20260115000000-w044_2026011522": 721
+   },
+   "picked": {
+    "20260317000000-w035_2026031718": 540,
+    "20260302000000-w039_2026030210": 305,
+    "20250831000000-w040_2025083102": 756,
+    "20260108000000-w041_2026010816": 321,
+    "20260115000000-w044_2026011522": 721
+   },
+   "grid_stride": 32,
+   "seed": 20260925,
+   "tiles_overlapping_D1_canary_window_w044": 578,
+   "n_renders": 30,
+   "render_failed_twice_dropped": null
+  }
+ },
+ "inputs": {
+  "fa_tiles_json": {
+   "path": "/work/d3/work/fa_tiles.json",
+   "sha256": "6ee5e8c067e78623fca19cf8efb642885ef3b90a9c771eb40c4272d9cc4ce83c"
+  },
+  "fetch_log_0139": {
+   "path": "/work/d3/logs/fetch_0139.txt",
+   "sha256": "4ddf60da43cf22c285464ace310601a94cf8ef0ae2addbd5f88cb6ec8301ab5e"
+  },
+  "base_checkpoint": {
+   "path": "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth",
+   "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+  },
+  "official_train_py": {
+   "path": "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py",
+   "sha256": "f87f882d3aed60818037abf1b04f42606d5882dcbd087f0b057065335c7061c2"
+  },
+  "vc_render_tifxyz": "473369f96735b3526e8d2999ad84463ba9b76c1c70cd20abce5998d7af7a9f2c",
+  "extra_python_packages": "/work/d3_timing/pylib (scipy, scikit-image, lazy_loader, fft-conv-pytorch, SimpleITK, pandas, connected-components-3d, numba, llvmlite; --no-deps target)"
+ },
+ "smoke": {
+  "results": {
+   "arms": {
+    "CTRL": {
+     "rc": 0,
+     "steps": 5,
+     "finite_loss_steps": 5,
+     "losses": [
+      0.4599481225013733,
+      0.4744061827659607,
+      0.46414756774902344,
+      0.47698715329170227,
+      0.40277886390686035
+     ],
+     "n_fold_a_in_batch": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "checks": {},
+     "derangement": null,
+     "n_fold_a": null,
+     "n_replay": 2643,
+     "median_s_per_step": 2.9976202809993993,
+     "peak_rss_kb": 3990688,
+     "strict_load": "<All keys matched successfully>",
+     "model_final_sha256": "4fcdb41fa9d3d1eaa35dc984f9530257a40d2a233423884443d8d5eae00262e1",
+     "model_final_bytes": 138362335
+    },
+    "FA": {
+     "rc": 0,
+     "steps": 5,
+     "finite_loss_steps": 5,
+     "losses": [
+      0.5587857365608215,
+      0.5185791850090027,
+      0.5035903453826904,
+      0.5308484435081482,
+      0.5048093795776367
+     ],
+     "n_fold_a_in_batch": [
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "checks": {},
+     "derangement": null,
+     "n_fold_a": 288,
+     "n_replay": 2643,
+     "median_s_per_step": 3.001250784000149,
+     "peak_rss_kb": 3974340,
+     "strict_load": "<All keys matched successfully>",
+     "model_final_sha256": "11af0dad36d6989fffd8ba7b958585f34fe513739e2a2d2154971c1323da21c1",
+     "model_final_bytes": 138362463
+    },
+    "NULLA": {
+     "rc": 0,
+     "steps": 5,
+     "finite_loss_steps": 5,
+     "losses": [
+      0.5515062212944031,
+      0.5177479982376099,
+      0.5362871885299683,
+      0.5540136694908142,
+      0.5106396675109863
+     ],
+     "n_fold_a_in_batch": [
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "checks": {
+      "nulla_fixed_points": 0,
+      "nulla_tiles_whose_ink_label_differs_from_own": 288
+     },
+     "derangement": {
+      "rule": "default_rng(20260925).permutation redrawn until no fixed point; tile i gets tile perm[i]'s labels",
+      "attempts": 1,
+      "fixed_points": 0,
+      "perm_sha256": "48e2031af813166b755c00a8769788c6f4c5ae11e172ccce28dd6ff5417cb4cb",
+      "perm_head": [
+       158,
+       56,
+       138,
+       114,
+       1,
+       6,
+       44,
+       241,
+       174,
+       266
+      ]
+     },
+     "n_fold_a": 288,
+     "n_replay": 2643,
+     "median_s_per_step": 3.0939728550001746,
+     "peak_rss_kb": 3992052,
+     "strict_load": "<All keys matched successfully>",
+     "model_final_sha256": "5964e48db180b98798e83698d353e1bafd22711fedc572835485f71664d52893",
+     "model_final_bytes": 138362783
+    },
+    "REVA": {
+     "rc": 0,
+     "steps": 5,
+     "finite_loss_steps": 5,
+     "losses": [
+      0.5502243638038635,
+      0.5247172117233276,
+      0.4989122152328491,
+      0.5397740602493286,
+      0.519761860370636
+     ],
+     "n_fold_a_in_batch": [
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "checks": {
+      "reva_stack_is_exact_depth_reverse": true,
+      "reva_window_exact_reverse_raw": true,
+      "reva_window_exact_reverse_normalized": true
+     },
+     "derangement": null,
+     "n_fold_a": 288,
+     "n_replay": 2643,
+     "median_s_per_step": 2.974769111002388,
+     "peak_rss_kb": 4083540,
+     "strict_load": "<All keys matched successfully>",
+     "model_final_sha256": "5c9b5b7b16aff3cfb13f2c8bf7aca81392384dbcc1b34ebed1c8e442e8e91074",
+     "model_final_bytes": 138362463
+    }
+   },
+   "resume_test": {
+    "rc_reference": 0,
+    "rc_simulated_crash": 99,
+    "checkpoint_present_after_crash": true,
+    "checkpoint_step_after_crash": 8,
+    "rc_resumed": 0,
+    "rc_rerun_after_complete": 0,
+    "noop_message": "arm FA: already complete (/work/d3/work/smoke/resume_FA/model_final.pth); nothing to do",
+    "resumptions": [
+     {
+      "event": "resume",
+      "utc": "2026-09-25T10:44:35Z",
+      "from_step": 8,
+      "checkpoint_sha256": "d2b8d94b3a725589191d71eba9f5b74dfbb1d60ffca4a9755c7a73e16639ef86"
+     }
+    ],
+    "checkpoint_events_resumed_run": [
+     {
+      "event": "checkpoint",
+      "step": 4,
+      "mode": "write-then-replace",
+      "used_before_bytes": 2004180924,
+      "utc": "2026-09-25T10:44:05Z"
+     },
+     {
+      "event": "checkpoint",
+      "step": 8,
+      "mode": "delete-then-write",
+      "used_before_bytes": 2419323460,
+      "utc": "2026-09-25T10:44:18Z"
+     }
+    ],
+    "checkpoint_events_reference": [
+     {
+      "event": "checkpoint",
+      "step": 4,
+      "mode": "write-then-replace",
+      "used_before_bytes": 1865810782,
+      "utc": "2026-09-25T10:43:16Z"
+     },
+     {
+      "event": "checkpoint",
+      "step": 8,
+      "mode": "write-then-replace",
+      "used_before_bytes": 2280953318,
+      "utc": "2026-09-25T10:43:29Z"
+     }
+    ],
+    "resume_file_deleted_after_completion": true,
+    "steps_reference": 12,
+    "steps_resumed": 12,
+    "finite_loss_steps_resumed": 12,
+    "losses_reference": 0.5096759796142578,
+    "final_loss_resumed": 0.5096759796142578,
+    "loss_by_step_reference": {
+     "1": 0.5587857365608215
+    },
+    "loss_by_step_resumed_log": [
+     [
+      1,
+      0,
+      0.5587857365608215
+     ]
+    ],
+    "final_weights_bitwise_identical": true,
+    "final_weights_max_abs_diff": 0.0,
+    "model_final_sha256": {
+     "reference": "0f661966dadda8a8dc99df44b24733eda554faa8cfa4c93349171992c516c8d6",
+     "resumed": "0f661966dadda8a8dc99df44b24733eda554faa8cfa4c93349171992c516c8d6"
+    }
+   },
+   "note": "smoke model_final.pth files were hashed (above) and deleted"
+  },
+  "results_sha256": "947d3423d29a5d96394eddb5dd76e682d3dc8bc8e86bc29e491bc5596b2b5fbe"
+ },
+ "ledger": "/work/d3/work/ledger.tsv",
+ "ledger_render_rows": {
+  "ok": 318,
+  "failed": 1
+ },
+ "governing": [
+  "DECL-D3D4",
+  "DECL-D3-A1",
+  "DECL-D3-A2"
+ ],
+ "disk_bytes": {
+  "/work/d3/pool_fa": 108705887,
+  "/work/d3/pool_replay": 997421057,
+  "/work/d3/work": 845290,
+  "/work/d3/data": 7723168,
+  "/work/d3": 1114845570
+ },
+ "deviations": [
+  "Fold-A pool = 288 of the 306 PRIMARY text tiles (DECL-D3-A2 item 1, accepted): 18 tiles with mesh-valid pixels 128-144 vox from J were not rendered. No tile failed twice: 022814_y128_x2112 failed once at 10:24:22Z (rc 1, cause below), then rendered at 10:29:51Z (rc 0).",
+  "Render failure cause and fix: /work/bin/vc hard-codes the agent proxy as 127.0.0.1:46883. After the ~10:20Z restart the proxy listens on 127.0.0.1:45271, so the render could not reach S3 ('Failed to connect ... via 127.0.0.1 after 0 ms'). Renders from tile 201 on used /work/d3/scripts/vc_d3.sh, which is identical to /work/bin/vc (same image, binaries, mounts) except that the proxy comes from $HTTPS_PROXY. /work/bin/vc itself was NOT changed and is still broken for other users of this session.",
+  "Replay pool = 2643 tiles (DECL-D3-A2 item 2): every stride-32 candidate with >= 90 % supervision; 578 w044 tiles overlap the D1 canary window (reported only). Built by build_pools_v1.py (sha256 a08c5b49...) before the restart; the fold-A pool was finished by build_pools.py v2.",
+  "Sampling, REVA and replay-label definitions exactly as DECL-D3-A2 item 3.",
+  "Restart safety as DECL-D3-A2 item 4: resume_latest.pth (weights, AdamW state, python/numpy/torch RNG states, both sampling generators and stream buffers) every 250 steps, latest only. Disk policy: write-then-replace, but delete-then-write when /work/d3 + /work/d3_timing plus the checkpoint would exceed 3.0e9 bytes (expected only during REVA, when 3 final models are already stored). A crash inside that ~1 s window would restart that arm from step 0. Resumptions are logged in train_log.jsonl, summary.json and run_arms.log.",
+  "Config bookkeeping: the official TrainingConfig validator requires fixed_scroll_prior.seed == seed, so with seed 20260925 fixed_scroll_prior.seed was set to 20260925 too. That base-training sampler is not used; the D3 pools and streams replace it. The saved model_final.pth carries the base checkpoint's embedded config unchanged.",
+  "Trainer as declared: the official train.py inner step without Accelerate; fp32, CPU, 3 threads (torch intra 3, interop 1), data prepared in-process. Extra import dependencies come from /work/d3_timing/pylib (--no-deps target, outside the validated /opt/hv-ink venv).",
+  "Intermediate zarr renders deleted after pooling (288 fold-A, 30 replay); their tree sha256s remain in the pool manifests and the ledger, with the .done.json and .log files kept."
+ ]
+}

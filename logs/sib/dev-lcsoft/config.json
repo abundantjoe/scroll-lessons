@@ -1,0 +1,59 @@
+{
+ "arms": {
+  "CHANCE": "evaluator-side (base map of window i vs reference of window j); no training",
+  "NULL": "forward cache, soft targets (value and mask) of derangement perm[i], seed 20260925, 0 fixed points",
+  "RECIPE": "forward cache, true soft targets",
+  "REV": "reverse-order cache, true soft targets"
+ },
+ "base_ckpt": {
+  "path": "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth",
+  "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+  "verified": true
+ },
+ "code_sha256": {
+  "bench_unfrozen.py": "0d95375c63a5e30a7424b3cbed29929cf1faebe59fd4e5eab96212ad70ee210a",
+  "lc_cache.py": "383723160385509e3b4c1a6eb434f31955acf754e68bfdc74fc90197652ff0e8",
+  "lc_infer.py": "b59128a5cc7903c6370752885d8bd2ce0e1a95eda590a0039f4f269ace55e731",
+  "lc_model.py": "f08c9ed1ae61bb92e401b1d76fd732ff508935612d1fcdd12426be417cf6c530",
+  "lc_pool.py": "75a736698f1282db2960176830588b1d0577b6e59b79f55471b8b92f88a0894f",
+  "lc_train.py": "dc1295a131b5d06cd90fec286bfc9f901713ca96d21e43e4104c3f301b82b603",
+  "run.sh": "a304ab512850fe98a42fde4055741dde0bb32aad37476270b21ef3aa5ac03a6e",
+  "setup_py.sh": "f8470e9a83affa4ba3b70064085fd489243d073658fca1b4f8b2479a445b74e9",
+  "smoke.py": "6b075ccc2e26011dd641a76233be1153f24e6773c4d4f7405e18f2001f62f67a",
+  "soft_targets.py": "c4818862fb945ed16159dceb45ae232b4d0e026c28eef56175f81f910d3f1edc",
+  "test_upstream_lc.py": "79520c5adfa071a24d1929ebf87831373b12ace5f0c2a73d8f31a120504df977"
+ },
+ "definition": "first_recipes.md recipe 2 (devloop 5e7fd18): LC384-FROZEN with soft-teacher targets inkmap/255, BCE, no thresholds, no ignored band",
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "recipe": "LC384-SOFT",
+ "train_args": {
+  "batch": 8,
+  "ckpt_every": 250,
+  "clip": 1.0,
+  "feature_cache_dtype": "fp16",
+  "lr_base": 2e-05,
+  "lr_new": 0.0001,
+  "precision": "fp32",
+  "seed": 20260925,
+  "steps": 2000,
+  "targets": "soft",
+  "threads": 4,
+  "val_every": 250,
+  "variant": "basedec",
+  "wd": 3e-05
+ },
+ "upstream": {
+  "branch": "claude/gifted-bell-gavnl5-sib-amx",
+  "byte_identical": [
+   "lc_model.py",
+   "lc_cache.py",
+   "lc_infer.py",
+   "lc_pool.py"
+  ],
+  "changed": [
+   "lc_train.py (--targets soft switch only)"
+  ],
+  "commit": "d360dd7fa438445b01aae9281dce5bbf5432a3fc",
+  "path": "tools/sib/devloop-r1"
+ }
+}

@@ -1,0 +1,107 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "synthetic": true,
+ "threads": 4,
+ "steps": 20,
+ "torch": "2.14.0+cpu",
+ "torch_threads": 4,
+ "n_tiles": 75,
+ "cache_forward_s": 13.22,
+ "soft_forward": {
+  "tiles": 75,
+  "tiles_full24": 60,
+  "tiles_explicit_valid": 0,
+  "px": 1228800,
+  "px_sup": 1178048,
+  "px_hard": 988288,
+  "px_band": 189760,
+  "px_band_dropped_partial_tiles": 45888,
+  "target_mean": 0.4999063655450772,
+  "target_sd": 0.2947252510513119
+ },
+ "cache_reverse_s": 8.65,
+ "soft_reverse": {
+  "tiles": 75,
+  "tiles_full24": 60,
+  "tiles_explicit_valid": 0,
+  "px": 1228800,
+  "px_sup": 1178048,
+  "px_hard": 988288,
+  "px_band": 189760,
+  "px_band_dropped_partial_tiles": 45888,
+  "target_mean": 0.4999063655450772,
+  "target_sd": 0.2947252510513119
+ },
+ "encode_s_per_tile": 0.1763,
+ "soft_targets_equal_across_orders": true,
+ "rejects_threshold_inconsistency": true,
+ "null_fixed_points": 0,
+ "arms": {
+  "RECIPE": {
+   "rc": 0,
+   "wall_s": 8.9,
+   "median_s_per_step": 0.3595154445000617,
+   "loss_first": 0.7313496470451355,
+   "loss_last": 0.6963062286376953,
+   "losses_finite": true,
+   "val_loss": [
+    0.6987885236740112,
+    0.6948074698448181
+   ],
+   "neighbours_present_frac_last": 0.6666666865348816,
+   "targets": "soft",
+   "null_fixed_points": null,
+   "n_train": 71,
+   "n_val": 4,
+   "final_bytes": 34728239
+  },
+  "NULL": {
+   "rc": 0,
+   "wall_s": 9.0,
+   "median_s_per_step": 0.36207403250011794,
+   "loss_first": 0.7261303067207336,
+   "loss_last": 0.6990620493888855,
+   "losses_finite": true,
+   "val_loss": [
+    0.7030608654022217,
+    0.696653425693512
+   ],
+   "neighbours_present_frac_last": 0.6666666865348816,
+   "targets": "soft",
+   "null_fixed_points": 0,
+   "n_train": 71,
+   "n_val": 4,
+   "final_bytes": 34728239
+  },
+  "REV": {
+   "rc": 0,
+   "wall_s": 9.1,
+   "median_s_per_step": 0.3758531569999377,
+   "loss_first": 0.7485374808311462,
+   "loss_last": 0.6969142556190491,
+   "losses_finite": true,
+   "val_loss": [
+    0.7048565745353699,
+    0.6974194645881653
+   ],
+   "neighbours_present_frac_last": 0.6666666865348816,
+   "targets": "soft",
+   "null_fixed_points": null,
+   "n_train": 71,
+   "n_val": 4,
+   "final_bytes": 34728239
+  }
+ },
+ "null_differs_from_recipe": true,
+ "rev_differs_from_recipe": true,
+ "resume": {
+  "rc_die": 99,
+  "rc_resume": 0,
+  "bitwise_equal": true,
+  "max_abs_diff": 0.0
+ },
+ "hard_default": {
+  "rc": 0,
+  "targets": "hard"
+ }
+}

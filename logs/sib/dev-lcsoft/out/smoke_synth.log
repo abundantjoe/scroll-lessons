@@ -1,0 +1,520 @@
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 64
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"provenance": "Project HERCULES | owner the owner | [id removed]", "n_tiles": 75, "order": "forward", "dtype": "fp16", "window_stack_index": [2, 18], "normalisation": "official normalize_flat_patch tifxyz_robust", "base_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab", "seconds": 9.6, "n_neighbours_present": 432, "code_sha256": {"lc_cache.py": "383723160385509e3b4c1a6eb434f31955acf754e68bfdc74fc90197652ff0e8", "lc_model.py": "f08c9ed1ae61bb92e401b1d76fd732ff508935612d1fcdd12426be417cf6c530"}}
+{"counts": {"tiles": 75, "tiles_full24": 60, "tiles_explicit_valid": 0, "px": 1228800, "px_sup": 1178048, "px_hard": 988288, "px_band": 189760, "px_band_dropped_partial_tiles": 45888, "target_mean": 0.4999063655450772, "target_sd": 0.2947252510513119}, "seconds": 0.1}
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 64
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"provenance": "Project HERCULES | owner the owner | [id removed]", "n_tiles": 75, "order": "reverse", "dtype": "fp16", "window_stack_index": [2, 18], "normalisation": "official normalize_flat_patch tifxyz_robust", "base_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab", "seconds": 8.5, "n_neighbours_present": 432, "code_sha256": {"lc_cache.py": "383723160385509e3b4c1a6eb434f31955acf754e68bfdc74fc90197652ff0e8", "lc_model.py": "f08c9ed1ae61bb92e401b1d76fd732ff508935612d1fcdd12426be417cf6c530"}}
+{"counts": {"tiles": 75, "tiles_full24": 60, "tiles_explicit_valid": 0, "px": 1228800, "px_sup": 1178048, "px_hard": 988288, "px_band": 189760, "px_band_dropped_partial_tiles": 45888, "target_mean": 0.4999063655450772, "target_sd": 0.2947252510513119}, "seconds": 0.1}
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 64
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"step": 1, "loss": 0.7313496470451355, "loss_mean_window": 0.7313496470451355, "grad_norm_preclip": 0.44479063153266907, "s_per_step_window": 0.41580054100001007, "epochs": 0, "neighbours_present_frac": 0.8055555820465088}
+{"step": 5, "loss": 0.718044102191925, "loss_mean_window": 0.7264804005622864, "grad_norm_preclip": 0.4156407415866852, "s_per_step_window": 0.3659307533999936, "epochs": 0, "neighbours_present_frac": 0.7777777910232544}
+{"step": 10, "loss": 0.6983076930046082, "loss_mean_window": 0.713126540184021, "grad_norm_preclip": 0.244123637676239, "s_per_step_window": 0.342846876200008, "epochs": 1, "neighbours_present_frac": 0.8055555820465088, "val_loss": 0.6987885236740112}
+{"step": 15, "loss": 0.702386736869812, "loss_mean_window": 0.7023911476135254, "grad_norm_preclip": 0.2536703050136566, "s_per_step_window": 0.4456969675999858, "epochs": 1, "neighbours_present_frac": 0.875}
+{"step": 20, "loss": 0.6963062286376953, "loss_mean_window": 0.6998339295387268, "grad_norm_preclip": 0.10056350380182266, "s_per_step_window": 0.41023315919999276, "epochs": 2, "neighbours_present_frac": 0.6666666865348816, "val_loss": 0.6948074698448181}
+{"arm": "RECIPE", "variant": "basedec", "targets": "soft", "soft_manifest_sha256": "cb0f774b893ebab2d99f4963cc2c8eff4c6a0af6705f98ce9167d21237bcf152", "steps": 20, "batch": 8, "lr_new": 0.0001, "lr_base": 2e-05, "wd": 3e-05, "seed": 20260925, "feature_dtype": "fp16", "cache_manifest_sha256": "ea053cf0e11a6fe9843613fcdc319b3888fca17537ecbd5321a11186fd093a67", "n_train": 71, "n_val": 4, "null_fixed_points": null, "code_sha256": {"lc_train.py": "dc1295a131b5d06cd90fec286bfc9f901713ca96d21e43e4104c3f301b82b603", "lc_model.py": "f08c9ed1ae61bb92e401b1d76fd732ff508935612d1fcdd12426be417cf6c530", "lc_cache.py": "383723160385509e3b4c1a6eb434f31955acf754e68bfdc74fc90197652ff0e8", "soft_targets.py": "c4818862fb945ed16159dceb45ae232b4d0e026c28eef56175f81f910d3f1edc"}, "final_sha256": "006700cda70edc8f7ebe44e54c3ec261725cb576712cd8ba03a68a920b54586e", "final_bytes": 34728239, "loss_mean_last200": 0.7104580044746399, "median_s_per_step": 0.37161913399998525, "loop_s": 9.0, "threads": 4}
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 64
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"step": 1, "loss": 0.7261303067207336, "loss_mean_window": 0.7261303067207336, "grad_norm_preclip": 0.4347206652164459, "s_per_step_window": 0.46924068600003466, "epochs": 0, "neighbours_present_frac": 0.8055555820465088}
+{"step": 5, "loss": 0.7218341827392578, "loss_mean_window": 0.7270440101623535, "grad_norm_preclip": 0.456093966960907, "s_per_step_window": 0.42852815240001974, "epochs": 0, "neighbours_present_frac": 0.7777777910232544}
+{"step": 10, "loss": 0.7002770304679871, "loss_mean_window": 0.7113458991050721, "grad_norm_preclip": 0.22569052875041962, "s_per_step_window": 0.37035487499997544, "epochs": 1, "neighbours_present_frac": 0.8055555820465088, "val_loss": 0.7030608654022217}
+{"step": 15, "loss": 0.7009152770042419, "loss_mean_window": 0.7018043518066406, "grad_norm_preclip": 0.16750764846801758, "s_per_step_window": 0.4280310850000092, "epochs": 1, "neighbours_present_frac": 0.875}
+{"step": 20, "loss": 0.6990620493888855, "loss_mean_window": 0.700313413143158, "grad_norm_preclip": 0.1226382628083229, "s_per_step_window": 0.42558795480001665, "epochs": 2, "neighbours_present_frac": 0.6666666865348816, "val_loss": 0.696653425693512}
+{"arm": "NULL", "variant": "basedec", "targets": "soft", "soft_manifest_sha256": "cb0f774b893ebab2d99f4963cc2c8eff4c6a0af6705f98ce9167d21237bcf152", "steps": 20, "batch": 8, "lr_new": 0.0001, "lr_base": 2e-05, "wd": 3e-05, "seed": 20260925, "feature_dtype": "fp16", "cache_manifest_sha256": "ea053cf0e11a6fe9843613fcdc319b3888fca17537ecbd5321a11186fd093a67", "n_train": 71, "n_val": 4, "null_fixed_points": 0, "code_sha256": {"lc_train.py": "dc1295a131b5d06cd90fec286bfc9f901713ca96d21e43e4104c3f301b82b603", "lc_model.py": "f08c9ed1ae61bb92e401b1d76fd732ff508935612d1fcdd12426be417cf6c530", "lc_cache.py": "383723160385509e3b4c1a6eb434f31955acf754e68bfdc74fc90197652ff0e8", "soft_targets.py": "c4818862fb945ed16159dceb45ae232b4d0e026c28eef56175f81f910d3f1edc"}, "final_sha256": "968c668c1c887b4a9905afaca57364e5b4de8a791200078ab0ce251340fd42c6", "final_bytes": 34728239, "loss_mean_last200": 0.710126918554306, "median_s_per_step": 0.4007988059999832, "loop_s": 9.4, "threads": 4}
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 64
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"step": 1, "loss": 0.7485374808311462, "loss_mean_window": 0.7485374808311462, "grad_norm_preclip": 0.6350516676902771, "s_per_step_window": 0.4298338150000518, "epochs": 0, "neighbours_present_frac": 0.8055555820465088}
+{"step": 5, "loss": 0.7143406867980957, "loss_mean_window": 0.7306725263595581, "grad_norm_preclip": 0.31734034419059753, "s_per_step_window": 0.39265942220000627, "epochs": 0, "neighbours_present_frac": 0.7777777910232544}
+{"step": 10, "loss": 0.7057024836540222, "loss_mean_window": 0.7078076004981995, "grad_norm_preclip": 0.2949012517929077, "s_per_step_window": 0.4430014098000129, "epochs": 1, "neighbours_present_frac": 0.8055555820465088, "val_loss": 0.7048565745353699}
+{"step": 15, "loss": 0.7002055644989014, "loss_mean_window": 0.7020419001579284, "grad_norm_preclip": 0.18587498366832733, "s_per_step_window": 0.4030283448000091, "epochs": 1, "neighbours_present_frac": 0.875}
+{"step": 20, "loss": 0.6969142556190491, "loss_mean_window": 0.6997667789459229, "grad_norm_preclip": 0.18642522394657135, "s_per_step_window": 0.4262884339999914, "epochs": 2, "neighbours_present_frac": 0.6666666865348816, "val_loss": 0.6974194645881653}
+{"arm": "REV", "variant": "basedec", "targets": "soft", "soft_manifest_sha256": "7fb061774ced0a5abcd8065a56b9b66593f54bff0beed322268b1d1a43520172", "steps": 20, "batch": 8, "lr_new": 0.0001, "lr_base": 2e-05, "wd": 3e-05, "seed": 20260925, "feature_dtype": "fp16", "cache_manifest_sha256": "770a8661ea86c3083c604b0cad0bc255c9df37b9faf541fc0fe2b85d4b913e7f", "n_train": 71, "n_val": 4, "null_fixed_points": null, "code_sha256": {"lc_train.py": "dc1295a131b5d06cd90fec286bfc9f901713ca96d21e43e4104c3f301b82b603", "lc_model.py": "f08c9ed1ae61bb92e401b1d76fd732ff508935612d1fcdd12426be417cf6c530", "lc_cache.py": "383723160385509e3b4c1a6eb434f31955acf754e68bfdc74fc90197652ff0e8", "soft_targets.py": "c4818862fb945ed16159dceb45ae232b4d0e026c28eef56175f81f910d3f1edc"}, "final_sha256": "ec8f9c95a0d8c0a3e133f6bf011ee2939f221a3cefdcf55be9553c97c7492741", "final_bytes": 34728239, "loss_mean_last200": 0.7100722014904022, "median_s_per_step": 0.4098447895000277, "loop_s": 9.4, "threads": 4}
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 64
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"step": 1, "loss": 0.7313496470451355, "loss_mean_window": 0.7313496470451355, "grad_norm_preclip": 0.44479063153266907, "s_per_step_window": 0.3792067629999565, "epochs": 0, "neighbours_present_frac": 0.8055555820465088}
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 64
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"arm": "RECIPE", "variant": "basedec", "targets": "soft", "soft_manifest_sha256": "cb0f774b893ebab2d99f4963cc2c8eff4c6a0af6705f98ce9167d21237bcf152", "steps": 20, "batch": 8, "lr_new": 0.0001, "lr_base": 2e-05, "wd": 3e-05, "seed": 20260925, "feature_dtype": "fp16", "cache_manifest_sha256": "ea053cf0e11a6fe9843613fcdc319b3888fca17537ecbd5321a11186fd093a67", "n_train": 71, "n_val": 4, "null_fixed_points": null, "code_sha256": {"lc_train.py": "dc1295a131b5d06cd90fec286bfc9f901713ca96d21e43e4104c3f301b82b603", "lc_model.py": "f08c9ed1ae61bb92e401b1d76fd732ff508935612d1fcdd12426be417cf6c530", "lc_cache.py": "383723160385509e3b4c1a6eb434f31955acf754e68bfdc74fc90197652ff0e8", "soft_targets.py": "c4818862fb945ed16159dceb45ae232b4d0e026c28eef56175f81f910d3f1edc"}, "final_sha256": "006700cda70edc8f7ebe44e54c3ec261725cb576712cd8ba03a68a920b54586e", "final_bytes": 34728239, "loss_mean_last200": 0.7011125385761261, "median_s_per_step": 0.40863859899999966, "loop_s": 4.2, "threads": 4}
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 64
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/dev-lcsoft/smoke.py", line 130, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/user/dominion/tools/sib/dev-lcsoft/smoke.py", line 121, in main
+    rc = lc_train.main(["--cache", arms["RECIPE"], "--arm", "RECIPE", "--out", f"{R}/run_HARD", "--steps", "5",
+                        "--threads", str(a.threads)])
+  File "/home/user/dominion/tools/sib/dev-lcsoft/lc_train.py", line 177, in main
+    loss, pres = run_batch(idx)
+                 ~~~~~~~~~^^^^^
+  File "/home/user/dominion/tools/sib/dev-lcsoft/lc_train.py", line 169, in run_batch
+    return loss_on(logits, b, ink, loss_fn), pres
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/sib/dev-lcsoft/lc_train.py", line 94, in loss_on
+    from vesuvius.ink_detection.training.train import prepare_loss_inputs
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+    from vesuvius.ink_detection.training.dilation import (
+    ...<2 lines>...
+    )
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+    from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+    import cc3d
+ModuleNotFoundError: No module named 'cc3d'

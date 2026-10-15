@@ -1,0 +1,121 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "audit": "D1 (KTLB-3R) pre-verdict audit",
+ "lens": "adversarial",
+ "utc": "2026-09-25T09:00:19Z",
+ "auditor": "fresh auditor agent, independent of the runner; numbers only; no image viewed",
+ "audit_verdict": "PASS",
+ "recorded_result_stands": {
+  "REF_stage": "NOT VOID (REF0 summed mean C_all R250 16.0 >= 0.5 S' = 10)",
+  "model_stage": "FAIL (best family arm C_net 0 <= 0.10 S' = 2.0; p_max 1 >= 0.05)"
+ },
+ "invalidating_findings": [],
+ "method": {
+  "decryption": "only via hercules.scorer.keyaccess.decrypt_logged / hercules.harness.collect.load_answer, purpose 'audit-d1-adversarial': 38 logged reads (seal 2, D1 answers 30, J-seal picker/sealer answers 4, results 2), 2026-09-25T08:53:20Z-08:58:37Z; no plaintext written anywhere",
+  "images": "PNG pixels loaded as arrays for statistics only; no image opened, displayed or described",
+  "independence": "panel counts, matching, permutation null, seal consensus and label positions recomputed with own code (letter kind normalisation via the hashed hercules.scorer.letters.normalize_letter); runner code used only to decrypt"
+ },
+ "records_and_code": {
+  "rules_chain": "python -m hercules.records.rules_append verify: OK, 88 entries, last D1-RERUN-CHANCE",
+  "metric_hashes": "66 files hashed across all METRIC-HASH records; all match their latest recorded hash (builder.py -> METRIC-HASH-2, audit.py -> METRIC-HASH-5; METRIC-HASH-0/13/14/15/16 files unchanged); git shows no change to scoring code after its hash commit",
+  "record_cited_sha256": "seal ae874fab.. = /work/jseal/seal_J.age = seals/seal_J_d1.age; results_ref 6caf73cc.., results_model 26538c60.. (both copies); d1_build_summary ec5aa8cf.., gate 9cd88a98.., d1_ref_summary 7c3884a2.., jseal_summary d68d50ef.., jseal_manifest 2ddce428..: all match",
+  "image_integrity": "96/96 D1 v2 images and 9/9 J-seal images match their manifests; key uuids = manifest uuids; job records' image sha256 match current files (30/30)",
+  "pushed": "branch in sync with origin"
+ },
+ "tests": {
+  "a_frame_D1_key_vs_seal": {
+   "holds": true,
+   "numbers": {
+    "affines_footprints": "D1 prep record vs jseal key, J1-J5 and both blanks: affine_organizer_to_levelled_window, affine_levelled_window_to_organizer, levelled_footprint_on_organizer_canvas max |diff| 0.0; lev_window_origin (also in d1_key) and levelled_canvas_hw identical; organizer windows, level angles, mirror/flip flags identical; |A_o2l A_l2o - I| <= 4.6e-13; det 0.986-0.994",
+    "pixel_identity": "REF0 display (J1-J5, 2 blanks) vs sealer images: 7/7 pixel-identical (max |diff| 0, Pearson 1.000); vs LR-mirror Pearson -0.058..0.179",
+    "base_vs_seal_labels": "BASE-fwd state A AUC vs seal-frame labels at shift 0: J1 0.714, J2 0.760, J3 0.701, J4 0.745, J5 0.762; LR-mirrored 0.482-0.549; transposed 0.473-0.600; at +-40 display px 0.548-0.588",
+    "window_swap": "BASE-fwd(i) vs labels(j) AUC: diagonal 0.701-0.762, off-diagonal 0.275-0.569",
+    "base_vs_ref_registration": "BASE-fwd vs REF0 cross-correlation peak within <= 4 display px (<= 8 canvas px) of zero in J1-J5 and canary (peak r 0.305-0.482 J, 0.607 canary)",
+    "state_B": "state B = exact LR mirror of state A for all BASE/RAW images of all 8 windows (32/32)",
+    "seal_org_coords": "seal org_x/org_y vs jseal affine: max error 0.000000 px (20 letters)",
+    "convention": "scorer X = 2x + 0.5 equals jseal image_to_levelled_window_px [[2,0,0.5],[0,2,0.5]]",
+    "gate": "NCC grids: maximum at shift (0,0) in all 8 windows; J 0.960-0.973 (>= 0.80)"
+   }
+  },
+  "b_display_signal": {
+   "holds": true,
+   "numbers": {
+    "BASE_fwd_J": "mean 63.9-96.1, std 30.4-48.0, frac>=150 0.037-0.110, frac==0 0.000-0.286, max 210-212, frac==255 0",
+    "BASE_rev_J": "frac>=150 0.015-0.107",
+    "masked_fraction_vs_render_valid": "BASE zero fraction J1 0.188, J2 0.286, J3 0.062, J4 0.000, J5 0.165 = 1 - recorded render-valid fraction (0.811, 0.714, 0.938, 1.000, 0.834)",
+    "canary_BASE_fwd": "mean 91.3, std 40.5, frac>=150 0.131, frac==0 0.000",
+    "REF0_J": "mean 51.5-62.2, std 60.2-71.4, frac>=150 0.106-0.152",
+    "RAW_F_J": "mean 86.7-116.0, std 64.9-77.0, frac>=150 0.276-0.361, frac==255 0.0026-0.0042",
+    "letter_scale_contrast": "DoG(3,12) std: BASE-fwd J 9.95-11.87, canary 14.89; REF0 J 22.1-26.4, canary 24.0",
+    "correlation_with_REF0": "BASE-fwd J 0.27-0.50 vs canary 0.62; BASE-rev J -0.02-0.17; RAW-F about 0 (-0.05-0.10)",
+    "at_seal_letters": "0/20 seal letters on a masked BASE pixel; masked fraction within 100 canvas px of any seal letter 0.000 (max 0.000); BASE-fwd mean within 100 canvas px of seal letters 109.1 vs window means 84.9-102.4; 0/20 on a REF0 zero pixel; 1/20 on a RAW-F zero pixel (1-99 % window clipping, not masking)"
+   },
+   "reading": "the J BASE maps are real, registered, unsaturated and unmasked over every sealed letter; they carry weaker letter-scale structure than the base-trained canary, which readers did read (5-9 namings each) in the same display"
+  },
+  "c_text_order_panel_mapping": {
+   "holds": true,
+   "numbers": {
+    "model_J_panels": "18 readers x 5 J items x 2 panels = 180 panels: 0 namings (left 0, right 0; fwd/F 0, rev/B 0); rows=Y on 0 of 180",
+    "model_blank_panels": "0 namings on 36 blank panels",
+    "canary": "BASE-A 23, BASE-B 20, CHANCE-A 19, CHANCE-B 24, RAW-A 0, RAW-B 0; every canary naming on the fwd panel; rows=Y 3/3 canary fwd panels per BASE/CHANCE arm",
+    "REF": "J namings REF0 82, REF015 95, REF030 79, REF045 98; 0 on the empty right panel; 0 on blanks",
+    "runner_full_output": "D1-FAMILY n_named 0, F_B 0, 60/60 J records scored, 0 ignored items, 0 undeclared readers; D1-CHANCE n_named 0, 30/30 J records scored",
+    "text_order_choice": "display-level AUC BASE-fwd > BASE-rev in every J window (0.70-0.76 vs 0.49-0.66); with 0 namings on both panels no text-order mapping could hide a naming"
+   }
+  },
+  "d_canary_identification": {
+   "holds": true,
+   "numbers": {
+    "item_roles": "30 jobs, 210 items: role canary <=> content window canary_w044 (0 mismatches); each job has 5 window items covering J1-J5 + 1 blank + 1 canary; states and kinds match the arm; CHANCE J items show the next gated window (cyclic), 0 mismatches",
+    "briefs": "30/30 briefs: item id -> LEFT/RIGHT paths identical to the scorer item map; task text = hashed template; prompt received by each agent = brief",
+    "misfiling_test": "canary namings matched to any J seal (reader's state frame, R 250, identity): 0 for all 12 BASE/CHANCE readers (random-placement null mean 0.13-0.68, p95 1-2)",
+    "on_canary_ink": "canary namings sit on bright canary fwd-panel pixels: mean 102-155 vs image mean 91.3",
+    "counts_vs_runner": "own per-reader canary counts equal the runner summaries (0 mismatches of 30)"
+   }
+  },
+  "e_answer_integrity": {
+   "holds": true,
+   "numbers": {
+    "structure": "30/30 answers decrypt and pass own structural validation (0 problems): exact item-id set of the item map, no duplicates, 0 foreign items, all namings inside the image",
+    "truncation": "decrypted answer == heredoc payload in the agent transcript for 30/30",
+    "writes": "each agent exactly 1 Bash write in the exact command form, tool result OK; answer sha256 = job record 30/30; file mtimes 1-3 s after the write, unchanged since",
+    "reads": "each agent read exactly its listed images once, in order (8 REF, 15 model), 0 read errors, 0 other tools",
+    "deaths": "RAW-A r2, RAW-B r0, r1, r2 ended in an API rate-limit error after a successful write; 8 other BASE/RAW agents handed back normally; 6 first CHANCE agents made 0 tool calls; re-runs received the identical brief and output path"
+   }
+  },
+  "f_REF_not_void_frame_inflation": {
+   "holds": true,
+   "numbers": {
+    "independent_rescore": "summed mean C_all R250: REF0 16.0 (R150 15.67), REF015 12.0, REF030 10.33, REF045 6.67; REF0 per window J1 0, J2 4.0, J3 1.67, J4 5.0, J5 5.33; 60/60 (reader, window) cells equal to the runner",
+    "own_null": "identity-permutation null, 2000 perms: E_null 4.64, C_net 11.36 (runner 11.37), p 1/2001, null max 11.0",
+    "frame_perturbations_REF0_C_all": "correct 16.0; seal mirrored 1.33; shifts +-64 x / +-128 y px 15.67-16.33; +250 px 7.0; +500 px 1.0; no half-pixel offset 16.0; scale error 0.33; levelled-canvas origin error 0.0; identity ignored 19.33",
+    "margin": "16.0 vs VOID threshold 10 (0.5 S'); C_net 11.36 also >= 10",
+    "sigma_crit": "own C_net not recomputed per rung; ladder C_all identical to runner, so the runner's sigma_crit 0.30 mm rests on identical inputs"
+   },
+   "reading": "no tested frame error inflates REF recall; every frame error lowers it"
+  },
+  "g_other": {
+   "holds": true,
+   "numbers": {
+    "S_prime_boundary": "S' = 20 is exactly the VOID boundary; re-derived from the 3 sealer answers with own consensus and label rule: 20 groups (3/3 8, 2/3 12, firm 9, label-positioned 10), positions identical to the seal (max diff 0.0000 px); stable for consensus radius 140-160 px; tightest group 64 px inside the 150 px radius",
+    "blanks": "picker: both blanks rows N, 0 letters (confirmed); blank seals blank with 0 letters; blank namings 0 in every arm",
+    "timeline": "seal 05:58:16Z < first J render 06:12:27Z; METRIC-HASH-16 06:06:02Z < REF jobs 07:42:02Z; DECL-D1-A6 and TEXT-ORDER-D1 07:38:29Z < v2 build 07:41Z < first reader 07:42:27Z; REF scored 07:46:36Z after last REF answer 07:46:23Z; D1-REF-RESULT 07:46:58Z < model jobs 07:47:12Z < first model reader 07:47:43Z; D1-RERUN-CHANCE 08:22:54Z < re-runs 08:23:21Z; model scored 08:27:08Z after last answer 08:26:48Z",
+    "key_reads": "no decryption of the seal or any D1 answer between sealing (05:57:44Z) and REF scoring (07:46:36Z) or between REF scoring and model scoring (08:27:08Z)",
+    "image_access": "across all 241 session transcripts only the 30 D1 readers, 3 sealers and 1 picker read D1/J-seal images; orchestrator 0 image reads; 0 reads of the 96 withdrawn v1 images",
+    "v1_v2": "v2 differs from v1 only on render-invalid BASE pixels (0-8.4 % of pixels per window; v1 values there mean 21.8-67.5); REF and RAW v1 = v2 pixel-identical",
+    "outcome_robustness": "FAIL follows from both C_net 0 <= 2.0 and p_max 1 >= 0.05; no reading of any code path yields a nonzero J naming"
+   }
+  }
+ },
+ "notes": [
+  "D1-RERUN-CHANCE says 6 BASE/RAW readers died after the write, before the hand-back; the transcripts show 4 (RAW-A r2, RAW-B r0, r1, r2), and the other 8 handed back normally. The record miscounts, but no answer is affected: all 12 wrote complete answers identical to their transcript payloads.",
+  "The RAW arms have no working attention control. Canary namings were 0 for all 6 RAW readers (the canary is not legible in the RAW display either), and RAW readers spent less time before writing (median 56 s from first read to write, vs 91 s for BASE and 98-142 s for REF). Their attention rests only on each having read all 15 images once. This does not invalidate the result: RAW slab AUC is near chance (pooled 0.526/0.502; per-window display 0.46-0.62) and RAW correlation with the reference is about 0.",
+  "S' = 20 sits exactly on the VOID boundary. It re-derives exactly and is stable over consensus radii 140-160 px (tightest group 64 px inside the radius), so it is robust.",
+  "The v1 display set was built before DECL-D1-A6 and withdrawn unread; no agent read a v1 image. Masking hides no sealed letter: 0 of 20 seal letters lie within 100 canvas px of a masked pixel.",
+  "The J5 BASE-fwd label-AUC peak sits at (-8, +20) display px, but the BASE-vs-REF0 cross-correlation peaks at (0, +4) display px, so this is label noise, not a frame shift. It would not matter at R 250 canvas px and is moot with 0 namings.",
+  "By design, REF0 readers see pixel-identical images to the sealers', so REF recall measures fresh-reader agreement on the same display rather than recovery from an independent source. This is the declared calibration, not a frame error, and it cannot change FAIL.",
+  "The runner decrypted all 18 model answers a second time after scoring ('d1-crosscheck-counts', 08:27:27Z). The reads are logged and came after scoring, so they have no effect.",
+  "TEXT-ORDER-D1 cites the v1 (pre-masking) build summary (ec5aa8cf..). Its AUCs were computed inside supervision on render-valid pixels, so the masking does not change them, and display-level AUCs agree (fwd > rev in every J window)."
+ ],
+ "key_numbers": "S' 20 (J1 0, J2 6, J3 2, J4 5, J5 7; firm 9); REF0 C_all R250 16.0, C_net 11.36-11.37, p 1/5001 (own 1/2001); model arms 0 namings on 180 J panels and 36 blank panels; canary 5-10 per BASE/CHANCE reader, 0 per RAW reader; C_all 0, C_net 0, p_max 1 -> FAIL; frames identical (affine diff 0.0, REF0 = sealer images pixel-identical, BASE-REF peak <= 8 canvas px); answers 30/30 intact"
+}
