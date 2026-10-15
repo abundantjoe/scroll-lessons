@@ -1,0 +1,128 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "id": "reconcile",
+ "rule": "DECL-D3-FEAS",
+ "generated_utc": "2026-09-25T09:24:51Z",
+ "inputs": {
+  "logs/d1/d3_feas_count_A.json": "7517988b8d352619149173686f9086c63efdaa614b7dc9750502e13fc0c21f34",
+  "logs/d1/d3_feas_count_B.json": "a4a8caa7695001ae7e5ae9455c3882fda861e8d48db9c48e65ef780cdf48d94e"
+ },
+ "agreement": "exact",
+ "primary_s64_2pct": {
+  "per_segment": {
+   "20260220213127-w00": {
+    "eligible": 309,
+    "text_ref9": 122
+   },
+   "20260220214732-auto_grown_20260220144552896": {
+    "eligible": 317,
+    "text_ref9": 111
+   },
+   "20260221022814-auto_grown_20260220174252405": {
+    "eligible": 240,
+    "text_ref9": 73
+   }
+  },
+  "total_eligible": 866,
+  "total_text": 306,
+  "n_tiles": 14059
+ },
+ "variants_agree": {
+  "strict_s128_5pct": {
+   "eligible": [
+    80,
+    76,
+    55,
+    211
+   ],
+   "text_ref9": [
+    23,
+    25,
+    17,
+    65
+   ],
+   "text_labels": [
+    0,
+    5,
+    0,
+    5
+   ]
+  },
+  "generous_s32_1pct": {
+   "eligible": [
+    1231,
+    1248,
+    988,
+    3467
+   ],
+   "text_ref9": [
+    509,
+    479,
+    353,
+    1341
+   ],
+   "text_labels": [
+    0,
+    88,
+    0,
+    88
+   ]
+  },
+  "primary_labels": [
+   0,
+   20,
+   0,
+   20
+  ]
+ },
+ "area_cm2_agree": {
+  "nonexcluded_valid": [
+   1.5018,
+   1.513,
+   1.2603,
+   4.2751
+  ],
+  "nonexcluded_ref_text": [
+   0.0836,
+   0.1092,
+   0.0536,
+   0.2464
+  ]
+ },
+ "pixel_level_agreement": {
+  "excluded_total_px": [
+   13994707,
+   13674660,
+   12902286
+  ],
+  "nonexcluded_valid_px": [
+   1711995,
+   1724802,
+   1436713
+  ],
+  "J_points_full": {
+   "J1": 3832476,
+   "J2": 3263120,
+   "J3": 4368560,
+   "J4": 4562496,
+   "J5": 3955040,
+   "total": 19981692
+  },
+  "min_3d_dist_nonexcluded_meshvalid_vox": [
+   128.00015393672064,
+   128.00006382866454,
+   128.00026190546458
+  ]
+ },
+ "method_independence": "A: exact cKDTree over all 19.98M J points (upper bound 132) + brute-force sample check. B: stride-4 subsample cKDTree + measured covering radius 4.599 vox, ambiguous band resolved exactly over full J set. Both agree to the pixel on exclusion counts and to 1e-14 on minimum distances.",
+ "reconciler_checks": "File sha256 match reported hashes; J1-J5 segment, corners (y0,x0) and size 2136 in A match bank_0841.json J_windows, and bank n_points match A's n_points_bank; B in-J px = 2136^2 x windows per segment (w00 1, 214732 2, 022814 2; no overlaps). No recomputation needed since PRIMARY agrees exactly.",
+ "not_verified": "The reconciler did not rerun the pipeline. Both builders used the same interpretation of 'excluded': strict < 128 vox, all mesh-valid px, and J windows excluded on their own segment. B also reports that restricting exclusion to valid9 px, or substituting the bank T shell, leaves PRIMARY unchanged.",
+ "reconciled_primary_text_total": 306,
+ "threshold": 280,
+ "decision": "306 >= 280 -> D3 FEASIBLE on current material (per DECL-D3-FEAS a D3 build and CPU timing test follow). Margin +26 tiles.",
+ "caveats": [
+  "Label-based PRIMARY count is 20 (all on 214732), because official human labels lie almost only inside the T shell; not deciding.",
+  "Strict variant (s128, 5%) gives 65 text tiles; not deciding.",
+  "Stride-64 tiles overlap, so 306 tiles are not 306 independent areas; non-excluded ref text area is 0.246 cm^2 total."
+ ]
+}
