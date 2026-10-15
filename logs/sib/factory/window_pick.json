@@ -1,0 +1,125 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "mesh": "s3://vesuvius-challenge-open-data/PHerc0139/segments/20260317000000-w035_2026031718/mesh/20260317000000-on-20250728140407-9.362um.tifxyz",
+ "grid_shape": [
+  291,
+  262
+ ],
+ "voxel_size_um": 9.362,
+ "rule": {
+  "n_vertices": 108,
+  "lattice": 4,
+  "densify": 5,
+  "g144_min_vox": 150.0,
+  "g40_min_vox": 40.0
+ },
+ "exclusions": {
+  "blank_w053_y256_x1536": {
+   "group": "G144",
+   "grid_rows": [
+    11,
+    122
+   ],
+   "grid_cols": [
+    75,
+    186
+   ],
+   "n_points": 290501
+  },
+  "blank_w053_y256_x7168": {
+   "group": "G144",
+   "grid_rows": [
+    11,
+    122
+   ],
+   "grid_cols": [
+    357,
+    468
+   ],
+   "n_points": 290111
+  },
+  "canary_w044_y2816_x2816": {
+   "group": "G144",
+   "grid_rows": [
+    139,
+    250
+   ],
+   "grid_cols": [
+    139,
+    250
+   ],
+   "n_points": 303601
+  },
+  "title_mesh": {
+   "group": "G144",
+   "n_points": 516156
+  },
+  "w024_mesh": {
+   "group": "G40",
+   "n_points": 2401111
+  },
+  "w047_mesh": {
+   "group": "G40",
+   "n_points": 2703201
+  },
+  "w053_mesh": {
+   "group": "G40",
+   "n_points": 4124390
+  },
+  "w044_mesh": {
+   "group": "G40",
+   "n_points": 2721116
+  },
+  "probe_9362_canvas": {
+   "group": "overlap minimised (not sealed)",
+   "grid_rows": [
+    89.6,
+    196.39999999999998
+   ],
+   "grid_cols": [
+    38.4,
+    145.2
+   ]
+  }
+ },
+ "n_fully_valid_candidates": 1108,
+ "n_passing_candidates": 63,
+ "g144_clearance_quantiles_vox": {
+  "0.0": 84.33,
+  "0.5": 109.69,
+  "0.9": 130.8,
+  "1.0": 257.63
+ },
+ "g40_clearance_quantiles_vox": {
+  "0.0": 69.39,
+  "0.5": 78.54,
+  "0.9": 84.96,
+  "1.0": 92.63
+ },
+ "chosen": {
+  "grid_rows": [
+   20,
+   128
+  ],
+  "grid_cols": [
+   12,
+   120
+  ],
+  "canvas_y0": 400,
+  "canvas_x0": 240,
+  "probe_window_overlap_fraction": 0.2633,
+  "g144_clearance_vox": 257.63,
+  "g144_clearance_mm": 2.412,
+  "clearance_per_exclusion_vox": {
+   "blank_w053_y256_x1536": 733.49,
+   "blank_w053_y256_x7168": 257.63,
+   "canary_w044_y2816_x2816": 286.82,
+   "title_mesh": 3874.3,
+   "w024_mesh": 151.14,
+   "w047_mesh": 131.41,
+   "w053_mesh": 213.26,
+   "w044_mesh": 83.24,
+   "probe_9362_canvas (report only)": 0.0
+  }
+ }
+}

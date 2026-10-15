@@ -1,0 +1,74 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "package": "DRY_RUN_PHerc0139_w035_r020-128_c012-120",
+ "clean_passed": true,
+ "faults": {
+  "hidden_png_text_chunk": {
+   "rejected": true,
+   "expected_check": "png_no_metadata",
+   "expected_check_failed": true,
+   "failed_checks": [
+    "png_no_metadata",
+    "mesh_no_metadata",
+    "voxel_from_metadata",
+    "volume_eligible",
+    "dry_run_marking",
+    "tools_pinned",
+    "linear_display",
+    "scale_bar_measured",
+    "letter_table",
+    "provenance_visible",
+    "fields_wellformed"
+   ],
+   "detail": "PNG rejected: non-whitelisted chunk(s): ['tEXt']"
+  },
+  "scale_bar_6px_short": {
+   "rejected": true,
+   "expected_check": "scale_bar_measured",
+   "expected_check_failed": true,
+   "failed_checks": [
+    "scale_bar_measured"
+   ],
+   "detail": "measured bar 1062 px != 1 cm = 1068.148 px at 9.362 um x scale 1.0"
+  },
+  "cf_char_in_readme": {
+   "rejected": true,
+   "expected_check": "no_cf_characters",
+   "expected_check_failed": true,
+   "failed_checks": [
+    "no_cf_characters"
+   ],
+   "detail": "1 Cf finding(s): ['/work/factory/drill/cf_char_in_readme/packages/dryrun/DRY_RUN_PHerc0139_w035_r020-128_c012-120/README.txt:3:5: U+200B ZERO WIDTH SPACE (Cf) in content']"
+  },
+  "wrong_volume_id": {
+   "rejected": true,
+   "expected_check": "volume_eligible",
+   "expected_check_failed": true,
+   "failed_checks": [
+    "volume_eligible"
+   ],
+   "detail": "scroll/volume_id fields disagree with the volume URL"
+  },
+  "dry_run_relabelled_real": {
+   "rejected": true,
+   "expected_check": "dry_run_marking",
+   "expected_check_failed": true,
+   "failed_checks": [
+    "volume_eligible",
+    "dry_run_marking",
+    "letter_table"
+   ],
+   "detail": "'DRY RUN' in a non-dry-run package: ['text in README.txt', 'text in package.json', 'package_name', 'package_dir', 'header strip has 2863 non-zero px (stamp or text)']"
+  },
+  "gamma_on_ct_panel": {
+   "rejected": true,
+   "expected_check": "linear_display",
+   "expected_check_failed": true,
+   "failed_checks": [
+    "linear_display"
+   ],
+   "detail": "CT panel is not the linear 1-99 % window of the raw render (4395748 px differ)"
+  }
+ },
+ "all_rejected_by_expected_check": true
+}

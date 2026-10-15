@@ -1,0 +1,86 @@
+{
+ "package": "DRY_RUN_PHerc0139_w035_r020-128_c012-120",
+ "passed": true,
+ "checks": [
+  {
+   "check": "package_json_strict",
+   "ok": true,
+   "detail": "strict key sets match"
+  },
+  {
+   "check": "file_layout",
+   "ok": true,
+   "detail": "15 files, exactly the allowed set"
+  },
+  {
+   "check": "sha256_manifest",
+   "ok": true,
+   "detail": "14 files hashed and matching"
+  },
+  {
+   "check": "names_ascii_basename",
+   "ok": true,
+   "detail": "image basename == mesh name == PHerc0139_w035_r020-128_c012-120"
+  },
+  {
+   "check": "no_cf_characters",
+   "ok": true,
+   "detail": "no Unicode Cf character in any name, file content or decoded JSON string"
+  },
+  {
+   "check": "png_no_metadata",
+   "ok": true,
+   "detail": "canonical PNG, chunks ['IHDR', 'IDAT', 'IEND'], no trailing bytes, shape (2320, 2160)"
+  },
+  {
+   "check": "mesh_no_metadata",
+   "ok": true,
+   "detail": "tifxyz grid (108, 108), TIFF tags structural only, meta.json keys exact"
+  },
+  {
+   "check": "voxel_from_metadata",
+   "ok": true,
+   "detail": "voxel 9.362 um from metadata.json (URL token and scanRadix agree)"
+  },
+  {
+   "check": "volume_eligible",
+   "ok": true,
+   "detail": "NOT ELIGIBLE (PHerc0139 20250728140407): allowed only because this is a DRY RUN"
+  },
+  {
+   "check": "dry_run_marking",
+   "ok": true,
+   "detail": "DRY RUN in package dir, package name and image corner (pixel-exact)"
+  },
+  {
+   "check": "tools_pinned",
+   "ok": true,
+   "detail": "package tools byte-identical to the verifier's copies"
+  },
+  {
+   "check": "linear_display",
+   "ok": true,
+   "detail": "panel == linear window [16, 178] of the raw render, pixel-exact"
+  },
+  {
+   "check": "scale_bar_measured",
+   "ok": true,
+   "detail": "measured bar 1068 px; 1 cm = 1068.148 px (106.8148 px/mm); footer pixel-exact"
+  },
+  {
+   "check": "letter_table",
+   "ok": true,
+   "detail": "0 row(s); columns and mm/px consistency OK (dry run: table fields only)"
+  },
+  {
+   "check": "provenance_visible",
+   "ok": true,
+   "detail": "provenance line present as visible text (package.json, README.txt line 1)"
+  },
+  {
+   "check": "fields_wellformed",
+   "ok": true,
+   "detail": "commits, timestamps, hashes and render inputs well-formed"
+  }
+ ]
+}

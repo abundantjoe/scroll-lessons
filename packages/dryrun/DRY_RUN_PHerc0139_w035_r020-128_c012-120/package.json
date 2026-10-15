@@ -1,0 +1,309 @@
+{
+ "commits": {
+  "hercules_repo": "88079a1152db7b7acf724319cbe4923db1df8855",
+  "villa": "41701aa0eaa1aa765523db3f9f972b5830abf549"
+ },
+ "dry_run": true,
+ "image": {
+  "display": {
+   "downscale": "none",
+   "hi_pct": 99.0,
+   "kind": "linear",
+   "lo_pct": 1.0,
+   "valid": "render > 0",
+   "window_hi": 178.0,
+   "window_lo": 16.0
+  },
+  "file": "PHerc0139_w035_r020-128_c012-120.png",
+  "footer_rows": [
+   2224,
+   2320
+  ],
+  "header_rows": [
+   0,
+   64
+  ],
+  "panel_rows": [
+   64,
+   2224
+  ],
+  "panel_sha256": "785b7ddf3f9fef3d90d6f02a3511ced02cf2dcc1f5395e98f14119f366faaab7",
+  "panel_shape": [
+   2160,
+   2160
+  ],
+  "pixels_sha256": "6237d73464e206cef877e8997c4b95134fc66e2c3b501ab1a797489243f80b52",
+  "px_per_mm": 106.81478316599018,
+  "scale": 1.0,
+  "sha256": "f04bc9084bd403f5f212e80ed310ccf0ce12064dad443b45ac4f448322dd7de7",
+  "shape": [
+   2320,
+   2160
+  ],
+  "stamp": {
+   "org": [
+    16,
+    46
+   ],
+   "text": "DRY RUN"
+  }
+ },
+ "letter_table": {
+  "columns": [
+   "letter_id",
+   "identity",
+   "bbox_x_px",
+   "bbox_y_px",
+   "bbox_w_px",
+   "bbox_h_px",
+   "height_mm",
+   "width_mm",
+   "firm",
+   "evidence"
+  ],
+  "rows": [],
+  "units": {
+   "bbox": "image px, origin = top-left of the CT panel",
+   "height_mm": "bbox_h_px / px_per_mm, 3 dp",
+   "width_mm": "bbox_w_px / px_per_mm, 3 dp"
+  }
+ },
+ "mesh": {
+  "dir": "mesh/PHerc0139_w035_r020-128_c012-120",
+  "files_sha256": {
+   "meta.json": "b3c65712aba21dde6a91ee038233ea90e7686351d95773a729cdd2dbb53353c9",
+   "x.tif": "98330674e8c1ec8d102c6b60c9d479436f80604ee756c3c510425d4458f2cf90",
+   "y.tif": "8965b7a3f3976db150a6a829149665bc93093a9da8a14bb9057ddd1003913398",
+   "z.tif": "351d879e8175d8a9b2169e516b18b73eab8e65615ce0ca4a36257945eea8908c"
+  },
+  "grid_shape": [
+   108,
+   108
+  ],
+  "source": {
+   "files_sha256": {
+    "meta.json": "11752e63185cc6bc8842cf6f4d7aef84a7e3ec7b0b4eb5c10bf99842e7cd8dda",
+    "x.tif": "d827a5d2e51035c91da74b5fba4fea55c9df9d8f58c6ec7f534d6012ee2f7b69",
+    "y.tif": "41f1df324572b68450f4da92dcd4598844f602982f1965e5bea67e6de080d664",
+    "z.tif": "b61f8bbcd9cb538f43cd72678fd4d38a25cc1643daa4bcfdd7f2e9954f9a1e81"
+   },
+   "grid_cols": [
+    12,
+    120
+   ],
+   "grid_rows": [
+    20,
+    128
+   ],
+   "url": "s3://vesuvius-challenge-open-data/PHerc0139/segments/20260317000000-w035_2026031718/mesh/20260317000000-on-20250728140407-9.362um.tifxyz/"
+  }
+ },
+ "mesh_name": "PHerc0139_w035_r020-128_c012-120",
+ "package_dir": "DRY_RUN_PHerc0139_w035_r020-128_c012-120",
+ "package_format": "hercules-fl-package/1",
+ "package_name": "DRY RUN PHerc0139 PHerc0139_w035_r020-128_c012-120",
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "raw_render": {
+  "dtype": "uint8",
+  "file": "render/PHerc0139_w035_r020-128_c012-120_raw.npy",
+  "pixels_sha256": "760f516eb5942775321fe761d75740b3110b956d05c08bb13b8dcb1c2921c2f0",
+  "sha256": "639e5dbf0f6f1a805ca814a6cc957b8c7671b5fe82cbbf767c94fc8f38c75203",
+  "shape": [
+   2160,
+   2160
+  ]
+ },
+ "render": {
+  "app": "vc_render_tifxyz",
+  "binary_sha256": "473369f96735b3526e8d2999ad84463ba9b76c1c70cd20abce5998d7af7a9f2c",
+  "command": [
+   "vc",
+   "vc_render_tifxyz",
+   "-v",
+   "s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/",
+   "--remote-url",
+   "s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/",
+   "--segmentation",
+   "/work/factory/dryrun_work/mesh/PHerc0139_w035_r020-128_c012-120",
+   "--scale",
+   "1",
+   "--group-idx",
+   "0",
+   "--num-slices",
+   "1",
+   "--voxel-size",
+   "9.362",
+   "--voxel-unit",
+   "micrometer",
+   "--cache-gb",
+   "2",
+   "--zarr-compressor",
+   "none",
+   "--pyramid",
+   "0",
+   "--zarr-output",
+   "/work/factory/dryrun_work/render/render.zarr"
+  ],
+  "deps_image": "ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f",
+  "utc_end": "2026-09-25T23:47:56Z",
+  "utc_start": "2026-09-25T23:46:59Z",
+  "villa_commit": "41701aa0eaa1aa765523db3f9f972b5830abf549"
+ },
+ "scale_bar": {
+  "formula": "round(10000 / voxel_size_um * scale)",
+  "height_px": 16,
+  "length_exact_px": 1068.1478316599016,
+  "length_px": 1068,
+  "represents_mm": 10.0,
+  "rows": [
+   2280,
+   2296
+  ],
+  "x0": 32
+ },
+ "scroll": "PHerc0139",
+ "selection": {
+  "chosen": {
+   "canvas_x0": 240,
+   "canvas_y0": 400,
+   "clearance_per_exclusion_vox": {
+    "blank_w053_y256_x1536": 733.49,
+    "blank_w053_y256_x7168": 257.63,
+    "canary_w044_y2816_x2816": 286.82,
+    "probe_9362_canvas (report only)": 0.0,
+    "title_mesh": 3874.3,
+    "w024_mesh": 151.14,
+    "w044_mesh": 83.24,
+    "w047_mesh": 131.41,
+    "w053_mesh": 213.26
+   },
+   "g144_clearance_mm": 2.412,
+   "g144_clearance_vox": 257.63,
+   "grid_cols": [
+    12,
+    120
+   ],
+   "grid_rows": [
+    20,
+    128
+   ],
+   "probe_window_overlap_fraction": 0.2633
+  },
+  "exclusions": {
+   "blank_w053_y256_x1536": {
+    "grid_cols": [
+     75,
+     186
+    ],
+    "grid_rows": [
+     11,
+     122
+    ],
+    "group": "G144",
+    "n_points": 290501
+   },
+   "blank_w053_y256_x7168": {
+    "grid_cols": [
+     357,
+     468
+    ],
+    "grid_rows": [
+     11,
+     122
+    ],
+    "group": "G144",
+    "n_points": 290111
+   },
+   "canary_w044_y2816_x2816": {
+    "grid_cols": [
+     139,
+     250
+    ],
+    "grid_rows": [
+     139,
+     250
+    ],
+    "group": "G144",
+    "n_points": 303601
+   },
+   "probe_9362_canvas": {
+    "grid_cols": [
+     38.4,
+     145.2
+    ],
+    "grid_rows": [
+     89.6,
+     196.39999999999998
+    ],
+    "group": "overlap minimised (not sealed)"
+   },
+   "title_mesh": {
+    "group": "G144",
+    "n_points": 516156
+   },
+   "w024_mesh": {
+    "group": "G40",
+    "n_points": 2401111
+   },
+   "w044_mesh": {
+    "group": "G40",
+    "n_points": 2721116
+   },
+   "w047_mesh": {
+    "group": "G40",
+    "n_points": 2703201
+   },
+   "w053_mesh": {
+    "group": "G40",
+    "n_points": 4124390
+   }
+  },
+  "g144_clearance_quantiles_vox": {
+   "0.0": 84.33,
+   "0.5": 109.69,
+   "0.9": 130.8,
+   "1.0": 257.63
+  },
+  "g40_clearance_quantiles_vox": {
+   "0.0": 69.39,
+   "0.5": 78.54,
+   "0.9": 84.96,
+   "1.0": 92.63
+  },
+  "grid_shape": [
+   291,
+   262
+  ],
+  "mesh": "s3://vesuvius-challenge-open-data/PHerc0139/segments/20260317000000-w035_2026031718/mesh/20260317000000-on-20250728140407-9.362um.tifxyz",
+  "n_fully_valid_candidates": 1108,
+  "n_passing_candidates": 63,
+  "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+  "rule": {
+   "densify": 5,
+   "g144_min_vox": 150.0,
+   "g40_min_vox": 40.0,
+   "lattice": 4,
+   "n_vertices": 108
+  },
+  "voxel_size_um": 9.362
+ },
+ "software": {
+  "numpy": "2.4.6",
+  "opencv": "5.0.0",
+  "python": "3.11.15"
+ },
+ "timestamps": {
+  "package_utc": "2026-09-25T23:47:56Z",
+  "render_end_utc": "2026-09-25T23:47:56Z",
+  "render_start_utc": "2026-09-25T23:46:59Z"
+ },
+ "volume_id": "20250728140407",
+ "volume_metadata": {
+  "file": "inputs/volume_metadata.json",
+  "sha256": "95917633ca11a1ddff2e6b7d66360c508f8158bbe05be277c8d51477befb5bae",
+  "source": "s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/metadata.json"
+ },
+ "volume_url": "s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/",
+ "voxel_size_source": "metadata.json scan.tomo.acquisition.detector.samplePixelSize (mm) x 1000",
+ "voxel_size_um": 9.362
+}

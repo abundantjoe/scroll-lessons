@@ -1,0 +1,182 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "status": "DONE (factory task); Paris 4 mode and licence check pending",
+ "package": "packages/dryrun/DRY_RUN_PHerc0139_w035_r020-128_c012-120",
+ "repo_commit_of_package_code": "88079a1152db7b7acf724319cbe4923db1df8855",
+ "window": {
+  "grid_rows": [
+   20,
+   128
+  ],
+  "grid_cols": [
+   12,
+   120
+  ],
+  "canvas_y0": 400,
+  "canvas_x0": 240,
+  "probe_window_overlap_fraction": 0.2633,
+  "g144_clearance_vox": 257.63,
+  "g144_clearance_mm": 2.412,
+  "clearance_per_exclusion_vox": {
+   "blank_w053_y256_x1536": 733.49,
+   "blank_w053_y256_x7168": 257.63,
+   "canary_w044_y2816_x2816": 286.82,
+   "title_mesh": 3874.3,
+   "w024_mesh": 151.14,
+   "w047_mesh": 131.41,
+   "w053_mesh": 213.26,
+   "w044_mesh": 83.24,
+   "probe_9362_canvas (report only)": 0.0
+  }
+ },
+ "window_rule": {
+  "n_vertices": 108,
+  "lattice": 4,
+  "densify": 5,
+  "g144_min_vox": 150.0,
+  "g40_min_vox": 40.0
+ },
+ "n_candidates": 1108,
+ "n_passing": 63,
+ "verify": {
+  "package": "DRY_RUN_PHerc0139_w035_r020-128_c012-120",
+  "passed": true,
+  "checks": [
+   {
+    "check": "package_json_strict",
+    "ok": true,
+    "detail": "strict key sets match"
+   },
+   {
+    "check": "file_layout",
+    "ok": true,
+    "detail": "15 files, exactly the allowed set"
+   },
+   {
+    "check": "sha256_manifest",
+    "ok": true,
+    "detail": "14 files hashed and matching"
+   },
+   {
+    "check": "names_ascii_basename",
+    "ok": true,
+    "detail": "image basename == mesh name == PHerc0139_w035_r020-128_c012-120"
+   },
+   {
+    "check": "no_cf_characters",
+    "ok": true,
+    "detail": "no Unicode Cf character in any name, file content or decoded JSON string"
+   },
+   {
+    "check": "png_no_metadata",
+    "ok": true,
+    "detail": "canonical PNG, chunks ['IHDR', 'IDAT', 'IEND'], no trailing bytes, shape (2320, 2160)"
+   },
+   {
+    "check": "mesh_no_metadata",
+    "ok": true,
+    "detail": "tifxyz grid (108, 108), TIFF tags structural only, meta.json keys exact"
+   },
+   {
+    "check": "voxel_from_metadata",
+    "ok": true,
+    "detail": "voxel 9.362 um from metadata.json (URL token and scanRadix agree)"
+   },
+   {
+    "check": "volume_eligible",
+    "ok": true,
+    "detail": "NOT ELIGIBLE (PHerc0139 20250728140407): allowed only because this is a DRY RUN"
+   },
+   {
+    "check": "dry_run_marking",
+    "ok": true,
+    "detail": "DRY RUN in package dir, package name and image corner (pixel-exact)"
+   },
+   {
+    "check": "tools_pinned",
+    "ok": true,
+    "detail": "package tools byte-identical to the verifier's copies"
+   },
+   {
+    "check": "linear_display",
+    "ok": true,
+    "detail": "panel == linear window [16, 178] of the raw render, pixel-exact"
+   },
+   {
+    "check": "scale_bar_measured",
+    "ok": true,
+    "detail": "measured bar 1068 px; 1 cm = 1068.148 px (106.8148 px/mm); footer pixel-exact"
+   },
+   {
+    "check": "letter_table",
+    "ok": true,
+    "detail": "0 row(s); columns and mm/px consistency OK (dry run: table fields only)"
+   },
+   {
+    "check": "provenance_visible",
+    "ok": true,
+    "detail": "provenance line present as visible text (package.json, README.txt line 1)"
+   },
+   {
+    "check": "fields_wellformed",
+    "ok": true,
+    "detail": "commits, timestamps, hashes and render inputs well-formed"
+   }
+  ]
+ },
+ "reproduce": {
+  "utc_start": "2026-09-25T23:47:58Z",
+  "utc_end": "2026-09-25T23:48:53Z",
+  "workdir": "/work/repro/hrc_repro_3CMq7v/work",
+  "volume_url": "s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/",
+  "volume_url_matches_package": true,
+  "metadata_sha256": "95917633ca11a1ddff2e6b7d66360c508f8158bbe05be277c8d51477befb5bae",
+  "metadata_matches": true,
+  "voxel_size_um": 9.362,
+  "voxel_matches": true,
+  "raw_pixels_sha256": "760f516eb5942775321fe761d75740b3110b956d05c08bb13b8dcb1c2921c2f0",
+  "raw_identical": true,
+  "panel_sha256": "785b7ddf3f9fef3d90d6f02a3511ced02cf2dcc1f5395e98f14119f366faaab7",
+  "panel_identical": true,
+  "png_sha256": "f04bc9084bd403f5f212e80ed310ccf0ce12064dad443b45ac4f448322dd7de7",
+  "png_identical": true,
+  "reproduced_byte_identical": true
+ },
+ "fault_drill": {
+  "hidden_png_text_chunk": {
+   "rejected": true,
+   "expected_check": "png_no_metadata",
+   "expected_check_failed": true
+  },
+  "scale_bar_6px_short": {
+   "rejected": true,
+   "expected_check": "scale_bar_measured",
+   "expected_check_failed": true
+  },
+  "cf_char_in_readme": {
+   "rejected": true,
+   "expected_check": "no_cf_characters",
+   "expected_check_failed": true
+  },
+  "wrong_volume_id": {
+   "rejected": true,
+   "expected_check": "volume_eligible",
+   "expected_check_failed": true
+  },
+  "dry_run_relabelled_real": {
+   "rejected": true,
+   "expected_check": "dry_run_marking",
+   "expected_check_failed": true
+  },
+  "gamma_on_ct_panel": {
+   "rejected": true,
+   "expected_check": "linear_display",
+   "expected_check_failed": true
+  }
+ },
+ "unit_tests": {
+  "file": "tests/sib_factory_verify_test.py",
+  "passed": 49,
+  "full_suite_passed": 638
+ }
+}
