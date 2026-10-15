@@ -1,0 +1,34 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-10 item 2 (RED family detector), frozen before any title-strip number; design basis MEMO.md sections 4 and 6",
+ "status": "FROZEN rules; numeric thresholds marked 'rule' are fixed functions of the CONTROL only, to be evaluated on the control before any E1/E2 value is computed",
+ "materials": {
+  "E1": "20260623141924-w010-027 1.129um-0.23m-78keV L1 surface volume, level 0 (2.258 um), centre slice 58; grid p4-tiles-b e1/grid.json, eligible = p4-highz rule (valid >= 0.5, frac outside < 0.5)",
+  "C": "20260623142658-w028-037 same scan, level 0; grid p4-tiles-b m2b/grid.json; known-text control",
+  "E2": "20260701183124-w010-027 2.4um-0.22m-78keV surface volume, level 1 (4.8 um in-plane, 2.4 um depth), centre slice 54; grid pairs0814b e2/grid.json",
+  "C2": "20260623142658-w028-037 2.4um-0.22m-78keV surface volume, level 1; control for E2 (own gray mapping)"
+ },
+ "slab": {"half_width_um": 20.0, "E1_C_slices": [49, 67], "E2_C2_slices": "centre +- 8 (17 slices)"},
+ "gap_slabs_um": [60, 120],
+ "T_red": {"rule": "p99.99 of CONTROL in-sheet (+-20 um) voxels > 0 at mesh-valid px of eligible control tiles, uint8 percentile rule 'smallest v with CDF >= q'; per scan (C for E1, C2 for E2)", "expected_from_p4_highz": 255, "note": "if the rule gives 255, hi = saturated voxels (== 255)"},
+ "per_px": "h(px) = number of slab voxels >= T_red",
+ "block": {"size_um": 45.2, "E1_px": 20, "E2_level1_px": 9, "d_min_rule": "block hi-px fraction threshold = max(0.05, p99.9 of CONTROL block fractions)"},
+ "components": {"connectivity": 8, "on": "blocks with fraction >= d_min", "min_extent_mm": 0.3, "min_blocks": 6},
+ "planarity": {"depth_iqr_um_max": 10.0, "depth_median_abs_um_max": 15.0, "rule": "depth of hi voxels relative to centre slice, per component"},
+ "tile_score": "S = total area (mm2) of components passing extent, block count and planarity",
+ "hotspot": {"rule": "DECL-P4-10 item 4: non-labelled-adjacent tile (p4-excl excl_d_a for E1, excl_a union for E2), S > p99 of {control tile S} U {rot-90 control tile S}, and in-sheet fraction f_in >= 0.8 recomputed over +-20 um vs 60-120 um gap slabs at the component px"},
+ "injection": {
+  "pigments": {"HgS": {"mu_78_per_cm": 17.1}, "PbO": {"mu_78_per_cm": 22.9}},
+  "thickness_um_solid_equivalent": [0.1, 0.5, 2.0, 5.0, 15.0],
+  "fill": "granular: pigment volume fraction 0.5 within a layer 2x the equivalent thickness, lateral grain texture = Gaussian random field (sigma 5 um) thresholded at its median, seed per location",
+  "letters": "Greek capitals from {A,E,H,I,K,L(Lambda),M,N,O,P(Pi),R(Rho),S(Sigma),T}, polyline glyphs, height U(2,4) mm, stroke U(0.3,0.6) mm, seed 20260926",
+  "depth": "layer top at centre slice + U(-10,+10) um",
+  "psf": "Gaussian, sigma 2 voxels in depth and 1 voxel in-plane (primary); sigma 1 voxel isotropic (secondary)",
+  "calibration": {"primary_pessimistic": {"g0": 65, "rho_pap": 1.2}, "secondary_optimistic": {"g0": 0, "rho_pap": 0.3}, "g_pap": "control in-sheet median (80 from p4-highz)"},
+  "locations": ">= 10 control + >= 10 title-strip, 5 x 5 mm patches drawn by numpy default_rng(20260926) among mesh-valid in-scan tile interiors",
+  "recovered": "the patch's detector S (with the letter) > hotspot threshold AND >= 50 % of the planted letter's area overlaps a passing component",
+  "sensitive_bar": "recovery >= 0.8 at 2 um HgS and PbO under the pessimistic calibration (DECL-P4-10 item 3)"
+ },
+ "false_positive": "fraction of control tiles and rot-90 control tiles with S > hotspot threshold (by construction <= ~1 %); plus per-patch FP on un-injected patches",
+ "utc": "2026-09-26T18:45:00Z"
+}

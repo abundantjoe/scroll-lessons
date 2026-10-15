@@ -1,0 +1,530 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-3 (audit before recording); METRIC-HASH-24; DECL-P4-2 A1-A4; DECL-HARNESS-A1",
+ "audited_file": {
+  "path": "logs/p4/ext1_score.json",
+  "sha256": "9c1e73e883943393fb843c80a80caedaa840dea4c8756cd91b43092f782562de"
+ },
+ "verdict": "VALID",
+ "recorded_outcome": {
+  "EXT_CONFIRMED": false,
+  "auditor": "CONFIRMED (not disputed)",
+  "wording_per_DECL-P4-3_item_4": "phase-2 lead not confirmed by the extended test"
+ },
+ "rules_chain_verify": "OK /home/user/dominion/RULES.md: 125 entries; preamble sha256 f0b331fdd48042aa25f42e9598bb10a3d705e4473102d7b41e89269694dde201; last METRIC-HASH-25 sha256 ca8b6663c3497ff2a135a989953289d918bb7037ea0e13638f493b811cf2523b",
+ "check1_rederive": {
+  "method": "own item lookup, own known-kind filter (hercules.scorer.letters.normalize_letter), own same-kind <=150 px allowed matrix; matching size by hercules max_matching_size and by an own augmenting-path matcher (disagreements 0)",
+  "all_runner_numbers_match": true,
+  "field_match": {
+   "stats": true,
+   "n_u_reads": true,
+   "n_r_reads": true,
+   "u_letters_per_read": true,
+   "r_letters_per_read": true,
+   "u_triples": true,
+   "r_triples": true,
+   "n0_triple_scores": true,
+   "n0_tiles_with_ge2_reads": true,
+   "n0_max": true,
+   "n0_p99_higher": true,
+   "sg1c": true,
+   "u_minus_r_mean_pairwise": true,
+   "crit_i": true,
+   "crit_ii": true,
+   "crit_iii": true,
+   "EXT_CONFIRMED": true
+  },
+  "stats": {
+   "attempts": 18,
+   "used": 18,
+   "missing_items": 1
+  },
+  "pc_rows": {
+   "Y": 18
+  },
+  "missing_item": {
+   "count": 1,
+   "role": "n0",
+   "detail": [
+    {
+     "role": "n0",
+     "unique_near_id_found": true,
+     "edit_distance": 1,
+     "recovered_read_letters": 6,
+     "tile_triple_now": 0,
+     "tile_triple_if_recovered": 0
+    }
+   ],
+   "note": "one answer id is not in its session and is 1 edit from the missing N0 id; recovering it leaves that tile triple at 0; no number changes"
+  },
+  "answers_equal_transcript_heredoc": 18,
+  "u_letters_per_read": [
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   6,
+   7
+  ],
+  "u_firm_per_read": [
+   1,
+   1,
+   1,
+   1,
+   2,
+   2,
+   2,
+   2,
+   3
+  ],
+  "r_letters_per_read": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   1
+  ],
+  "u_triples_session_order": [
+   5,
+   5,
+   5
+  ],
+  "r_triples_session_order": [
+   1,
+   0,
+   0
+  ],
+  "n0_reads_per_tile": {
+   "3": 47,
+   "2": 1
+  },
+  "n0_triple_score_counts": {
+   "0": 33,
+   "1": 4,
+   "2": 8,
+   "3": 1,
+   "7": 2
+  },
+  "n0_max": 7,
+  "n0_p99_higher": 7.0,
+  "max_u_minus_p99": -2.0,
+  "n0_letters_per_read_counts": {
+   "0": 76,
+   "1": 26,
+   "2": 21,
+   "3": 6,
+   "4": 7,
+   "6": 1,
+   "7": 2,
+   "9": 4
+  },
+  "u_mean_pairwise": 4.638888888888889,
+  "r_mean_pairwise": 0.027777777777777776,
+  "u_minus_r": 4.611111111111112,
+  "permutation": {
+   "auditor_seed": 31337,
+   "n": 20000,
+   "ge_count": 1,
+   "p_auditor": 9.99950002499875e-05,
+   "exact_enumeration_labelings": 48620,
+   "exact_ge": 1,
+   "p_exact": 2.0567667626491154e-05,
+   "runner_p": 4.999750012499375e-05,
+   "note": "only the observed labelling reaches the statistic; exact p = 1/48620 is the minimum attainable"
+  },
+  "u_pair_agreement_counts": {
+   "4": 14,
+   "5": 21,
+   "6": 1
+  },
+  "r_pair_agreement_counts": {
+   "0": 35,
+   "1": 1
+  },
+  "u_vs_r_cross_pair_agreement_counts": {
+   "0": 72,
+   "1": 9
+  },
+  "criteria": {
+   "i_median_u_gt_n0max": false,
+   "ii_every_u_triple_ge5": true,
+   "iii_u_gt_r_p001": true,
+   "iii_exact": true,
+   "EXT_CONFIRMED": false
+  },
+  "robustness": {
+   "crit_i_fails_under_any_grouping_of_u_reads": true,
+   "reason": "max U pair agreement 6 < N0 max 7",
+   "n0_max_without_candidate_neighbour_tile": 7
+  },
+  "auditor_decrypts": {
+   "purpose": "audit-p4-ext-rederive",
+   "log_rows": 36,
+   "utc": [
+    "2026-09-26T06:00:13Z",
+    "2026-09-26T06:00:43Z"
+   ],
+   "note": "first run decrypted all 18 then failed writing its numeric output (numpy bool not JSON-serialisable) before producing any result; re-run once"
+  }
+ },
+ "check2_timeline": {
+  "pass": true,
+  "decl_p4_3_utc": "2026-09-26T05:37:52Z",
+  "metric_hash_24_utc": "2026-09-26T05:37:53Z",
+  "key_file_mtime": "2026-09-26T05:38:14.654469+00:00",
+  "key_after_metric_hash": true,
+  "ext1_new_images": 67,
+  "ext1_new_images_min_mtime": "2026-09-26T05:38:04.343199+00:00",
+  "ext1_new_images_max_mtime": "2026-09-26T05:38:14.641892+00:00",
+  "all_new_images_after_metric_hash": true,
+  "u_image_mtime_before_decl(phase-2 file, unchanged)": true,
+  "jobs_created_min": "2026-09-26T05:38:14Z",
+  "jobs_created_max": "2026-09-26T05:38:14Z",
+  "all_jobs_created_after_metric_hash": true,
+  "jobs_file_mtime": "2026-09-26T05:38:14.654921+00:00",
+  "briefs_min_mtime_after_metric_hash": true,
+  "done_utc_min": "2026-09-26T05:42:40Z",
+  "done_utc_max": "2026-09-26T05:51:02Z",
+  "answers_mtime_min": "2026-09-26T05:41:24.835206+00:00",
+  "answers_mtime_max": "2026-09-26T05:50:48.107224+00:00",
+  "answer_sha_unchanged_since_done": 18,
+  "metric_hash_24_current_match": {
+   "tools/p4/p4_ext.py": true,
+   "tests/test_p4_ext.py": true,
+   "tools/p4/p4_phase2.py": true,
+   "tools/p4/p4_jobs.py": false
+  },
+  "p4_jobs_py_mtime": "2026-09-26T05:53:13.238419+00:00",
+  "ext1_answer_decrypt_log_rows": 18,
+  "ext1_decrypt_purposes": {
+   "score-p4-ext": 18
+  },
+  "ext1_first_decrypt_utc": "2026-09-26T05:51:03Z",
+  "ext1_first_decrypt_by_purpose": {
+   "score-p4-ext": "2026-09-26T05:51:03Z"
+  },
+  "score_file_mtime": "2026-09-26T05:51:03.841742+00:00",
+  "decrypt_sha_matches_answer_sha": 18,
+  "note_p4_jobs_py": "hash differs from METRIC-HASH-24: modified 05:53:13Z (after ext1 build 05:38:14Z and score 05:51:03Z) and re-hashed in METRIC-HASH-25 under DECL-P4-4 (commit 3107b3e); the diff touches only cmd_null; _keys and the key-sheet/task constants used by the ext1 build are unchanged, and the N0 draw was reproduced exactly from the keys. Not a defect for ext1.",
+  "p4_ext_py_test_p4_ext_py_p4_phase2_py_unchanged": true,
+  "phase2_audit_file_mtime_after_decl": "2026-09-26T05:49:39Z > 05:37:52Z",
+  "only_scorer_decrypted_before_audit": true
+ },
+ "check3_material": {
+  "pass": true,
+  "census_rot0_tiles": 331,
+  "census_duplicate_positions": 0,
+  "census_duplicate_src_sha": 0,
+  "u_is_p2_candidate_uuid": true,
+  "u_src_is_p2_cand_src": true,
+  "u_src_is_select_candidate": true,
+  "u_sha_equals_phase2_job_records": true,
+  "u_bytes_equal_census_source_file": true,
+  "u_census_src_sha_matches_key": true,
+  "u_key_pos_matches_census": true,
+  "u_dtype_shape_ok": true,
+  "r_equals_rot90_u_cw_exact": true,
+  "r_not_equal_rot90_ccw": true,
+  "r_key_matches_u": true,
+  "n0_count": 48,
+  "n0_checks_pass_counts": {
+   "src_in_census_rot0": 48,
+   "key_pos_matches_census": 48,
+   "src_file_sha_matches_census": 48,
+   "rot90_cw_of_source_exact": 48,
+   "not_candidate_source_uuid": 48,
+   "not_candidate_position": 48,
+   "not_pc_pool_uuid": 48,
+   "not_pc_pool_position": 48,
+   "not_phase2_n0_source_uuid": 48,
+   "not_phase2_n0_position": 48,
+   "png_ihdr_idat_iend_only": 48,
+   "rot_is_90": 48
+  },
+  "n0_distinct_sources": 48,
+  "n0_strip_counts": {
+   "w010-027": 21,
+   "w028-037": 27
+  },
+  "n0_seed": 20280954,
+  "n0_seed_matches_jobs_file": true,
+  "n0_pool_size": 311,
+  "n0_draw_reproduced_same_order": true,
+  "n0_draw_reproduced_same_set": true,
+  "pc_count": 18,
+  "pc_checks_pass_counts": {
+   "src_in_pool": 18,
+   "byte_identical_to_src": 18,
+   "src_sha_matches_census": 18
+  },
+  "pc_distinct_sources": 15,
+  "pc_pool_size": 15,
+  "sessions": 18,
+  "session_checks_pass_counts": {
+   "all_images_in_key": 18,
+   "first_image_is_keysheet_v2": 18,
+   "one_of_U_or_R_not_both": 18,
+   "arm_matches_content": 18,
+   "n0_8": 18,
+   "pc_1": 18,
+   "pc_matches_job_pc": 18,
+   "image_sha_unchanged": 18,
+   "n_images_11": 18
+  },
+  "arms": {
+   "R": 9,
+   "U": 9
+  },
+  "n0_session_count_distribution": {
+   "3": 48
+  },
+  "n0_duplicates_within_a_session": 0,
+  "u_or_r_item_index_distribution": {
+   "0": 2,
+   "1": 1,
+   "2": 1,
+   "4": 3,
+   "6": 4,
+   "7": 2,
+   "8": 2,
+   "9": 3
+  }
+ },
+ "check4_harness": {
+  "pass": true,
+  "agg": {
+   "map_row_single": 18,
+   "map_job_matches": 18,
+   "agent_id_unique_in_map": 18,
+   "job_unique_in_map": 18,
+   "record_valid": 18,
+   "record_no_violations": 18,
+   "record_no_unread": 18,
+   "harness_tsv_one_row_valid": 18,
+   "transcript_exists": 18,
+   "brief_sha_matches_record": 18,
+   "first_prompt_equals_brief": 18,
+   "first_prompt_equals_brief_stripped": 18,
+   "one_non_meta_user_prompt": 18,
+   "agent_id_in_transcript": 18,
+   "model_opus_5_5_only": 18,
+   "transcript_starts_after_job_created": 18,
+   "reads_only_listed_paths": 18,
+   "every_image_read": 18,
+   "every_image_read_at_most_twice": 18,
+   "reads_exactly_once_each": 18,
+   "exactly_one_bash": 18,
+   "bash_is_permitted_sealed_write": 18,
+   "only_read_bash_handback_tools": 18,
+   "one_handback_call": 18,
+   "tool_result_errors_zero": 18,
+   "handback_is_DONE": 18,
+   "final_text_DONE_or_absent": 18,
+   "library_audit_valid": 18
+  },
+  "handback_other_than_DONE": [],
+  "agent_ids_distinct": true,
+  "agent_ids_absent_elsewhere_in_map": true,
+  "transcript_files_distinct": true,
+  "call_count_distribution": {
+   "{\"Bash\": 1, \"Read\": 11, \"SubagentHandback\": 1}": 18
+  }
+ },
+ "check5_adversarial": {
+  "n0_max_tiles": [
+   {
+    "triple": 7,
+    "strip": "w010-027",
+    "labelled_adjacent": true,
+    "min_dist_labelled_mm": 0.0,
+    "census_letters": 10,
+    "census_firm": 7,
+    "census_rows": "Y",
+    "reads": 3,
+    "letters_per_read": [
+     2,
+     9,
+     9
+    ],
+    "pair_agreements": [
+     1,
+     1,
+     7
+    ]
+   },
+   {
+    "triple": 7,
+    "strip": "w010-027",
+    "labelled_adjacent": true,
+    "min_dist_labelled_mm": 0.0,
+    "census_letters": 8,
+    "census_firm": 3,
+    "census_rows": "Y",
+    "reads": 3,
+    "letters_per_read": [
+     6,
+     7,
+     7
+    ],
+    "pair_agreements": [
+     5,
+     5,
+     7
+    ]
+   }
+  ],
+  "n0_max_tiles_grid_relation": [
+   {
+    "census_letters": 10,
+    "chebyshev_tiles_from_candidate": 1,
+    "manhattan_tiles_from_candidate": 1,
+    "note": "the candidate 4-neighbour with 10 census letters named in P4-B-PHASE2-RESULT"
+   },
+   {
+    "census_letters": 8,
+    "chebyshev_tiles_from_candidate": 8,
+    "manhattan_tiles_from_candidate": 13
+   }
+  ],
+  "candidate_4neighbour_census_letters_sorted": [
+   0,
+   1,
+   1,
+   10
+  ],
+  "n0_triples_by_strip_adjacency_descriptive_post_hoc": {
+   "w010-027|adj=False": {
+    "n": 4,
+    "max": 0,
+    "counts": {
+     "0": 4
+    }
+   },
+   "w010-027|adj=True": {
+    "n": 17,
+    "max": 7,
+    "counts": {
+     "0": 12,
+     "2": 2,
+     "3": 1,
+     "7": 2
+    }
+   },
+   "w028-037|adj=False": {
+    "n": 8,
+    "max": 2,
+    "counts": {
+     "0": 7,
+     "2": 1
+    }
+   },
+   "w028-037|adj=True": {
+    "n": 19,
+    "max": 2,
+    "counts": {
+     "0": 10,
+     "1": 4,
+     "2": 5
+    }
+   }
+  },
+  "n0_triples_by_census_letters_descriptive_post_hoc": {
+   "census_letters<5": {
+    "n": 34,
+    "max": 3
+   },
+   "census_letters>=5": {
+    "n": 14,
+    "max": 7
+   }
+  },
+  "u_row_geometry": {
+   "per_triple": [
+    {
+     "best_pair": 5,
+     "n_pairs_tied_at_best": 1,
+     "matched_centre_y_std_mm": 0.121,
+     "matched_centre_x_span_mm": 15.64,
+     "box_height_median_mm": 3.46,
+     "matched_pair_distance_median_mm": 0.24
+    },
+    {
+     "best_pair": 5,
+     "n_pairs_tied_at_best": 1,
+     "matched_centre_y_std_mm": 0.136,
+     "matched_centre_x_span_mm": 15.75,
+     "box_height_median_mm": 3.46,
+     "matched_pair_distance_median_mm": 0.06
+    },
+    {
+     "best_pair": 5,
+     "n_pairs_tied_at_best": 3,
+     "matched_centre_y_std_mm": 0.12,
+     "matched_centre_x_span_mm": 15.68,
+     "box_height_median_mm": 3.46,
+     "matched_pair_distance_median_mm": 0.06
+    }
+   ],
+   "pooled_matched_centre_y_std_mm": 0.131,
+   "pooled_box_height_median_mm": 3.46,
+   "cross_triple": {
+    "0-1": {
+     "mean_centre_distance_mm": 0.08,
+     "mean_y_difference_mm": 0.06,
+     "median_nn_distance_mm": 0.09
+    },
+    "0-2": {
+     "mean_centre_distance_mm": 0.09,
+     "mean_y_difference_mm": 0.08,
+     "median_nn_distance_mm": 0.09
+    },
+    "1-2": {
+     "mean_centre_distance_mm": 0.04,
+     "mean_y_difference_mm": 0.02,
+     "median_nn_distance_mm": 0.07
+    }
+   },
+   "median_of_cross_triple_nn_distance_mm": 0.09,
+   "median_of_cross_triple_mean_centre_distance_mm": 0.08
+  },
+  "u_all_namings_y_std_mm": 1.557,
+  "u_all_namings_box_height_median_mm": 3.46,
+  "consistency": {
+   "u_reads_ge4_with_every_other_u_read": 9,
+   "of": 9,
+   "u_pairs_ge4": 36,
+   "u_pairs_ge5": 22,
+   "u_pairs_total": 36,
+   "u_min_agreement_per_read": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "judgement": [
+   "U vs R: the one-model reader names 5-7 known-kind letters on U upright, all 36 U pairs agree on 4-6, and the best-pair matches fall on one row (centre y std 0.12-0.14 mm, box height median 3.46 mm, x span ~15.7 mm) that recurs in all 3 triples (triple mean centres 0.04-0.09 mm apart); rotated 90 degrees the same pixels give 0-1 letters (R pair agreements 35 x 0, 1 x 1). This shows an orientation-specific, highly reproducible row-like feature that this reader names as letters.",
+   "It does not show writing: a horizontal linear structure (fibre band or fold) is also orientation-specific, the reads come from one model, and matched namings coincide at a median 0.06-0.24 mm, so the 9 reads are strongly correlated and not 9 independent confirmations.",
+   "Failing (i): the upright candidate agreement of 5 does not exceed what the same readers agree on in rotated census tiles. The null maximum 7 comes from two labelled-adjacent w010-027 tiles (census letters 10 and 8, rows Y, min distance to labelled segments 0 mm), one of them the candidate direct neighbour. They are very likely rotated real, training-adjacent text, and rotated text stays partly nameable.",
+   "This makes (i) a strict, conservative comparator (stricter than a pure-chance null) but a correct one for the declared question. It was declared in advance with N0 drawn from all census tiles. The candidate sits beside that text region, and 5 agreed letters is inside the range this reader reaches on text-bearing material shown in the wrong orientation, so it is not diagnostic. Removing the neighbour tile leaves the null max at 7, and max U - P99 = -2 against a bar of 10.",
+   "The subset maxima above are descriptive and post hoc; they do not bear on the outcome. The recorded outcome under DECL-P4-3 stands: not confirmed."
+  ]
+ },
+ "disclosures": [
+  "the ext1 score file was committed in commit 3107b3e (DECL-P4-4) before this audit, as counts only; no ext1 result entry exists in RULES.md",
+  "auditor opened no image, printed no pixel array, letter identity, letter position or answer content; images were compared numerically only",
+  "auditor used at most 2 threads and wrote only this file in the repository (scratch scripts in the session scratchpad); nothing committed"
+ ]
+}
