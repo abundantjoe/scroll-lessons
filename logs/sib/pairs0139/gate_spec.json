@@ -1,0 +1,14 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "task": "pairs0139 (DECL-D2 pair definition, PHerc0139)",
+ "written": "before any gate number was computed",
+ "tile": "128 x 128 px on the 9.362 um render canvas of the organizer 9.362 um mesh (--scale 1 canvas coordinates), stride 128 anchored at canvas (0,0); a tile is a candidate if >= 90 % of its pixels are render-valid (any of 31 slices > 0) and 2.4-um-valid, and it touches no Rule-S pixel",
+ "map_9_to_24": "per-segment affine M (meshfit.py): 9.362 um canvas pixel (row,col) -> 2.399 um canvas pixel; area average = mean of 4 x 4 sub-pixel samples of the 9 um pixel footprint, bilinear on the source grid",
+ "ct_reference": "organizer 2.399 um surface volume, pyramid level 1 (4.798 um in-plane, verified = 2x2 mean of level 0: max |diff| 0.5, r 0.99997), mean of slices 52..56 of 109 (offsets -2..+2 x 2.399 um = +-0.51 of a 9.362 um voxel around the surface slice 54); level-1 coordinate = (level-0 coordinate + 0.5)/2 - 0.5; value 0 = invalid",
+ "ct_ours": "our vc_render_tifxyz -n 31 --flip-normals render, slice 15 (surface, offset 0); 0 = invalid",
+ "gate_ncc": "zero-mean NCC over tile pixels valid in both, at zero shift (the fitted affine as is); PASS iff >= 0.80",
+ "gate_windows": "9 windows of 64 x 64 px at offsets {0,32,64}^2 inside the tile; NCC of ours vs reference at every integer shift within +-4 px; best shift refined by a 1-D parabola per axis through the 3 NCC values; a window aligns iff its best shift is not on the search border and its Euclidean length <= 1.0 px; PASS iff >= 7 of 9 align",
+ "keep": "gate_ncc PASS and gate_windows PASS",
+ "labels": "organizer ink map 20260417190342 (2.399 um canvas) area-averaged onto the tile as above; ink = value >= 150, blank = value <= 100, rest ignored; pixels not render-valid or not 2.4-um-valid ignored",
+ "stored_stack": "render slices 5..25 (21 slices centred on the mesh, surface = stored index 10), uint8"
+}
