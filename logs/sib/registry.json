@@ -1,0 +1,63 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "authority": "owner direct message 2026-09-25 ~18:22Z (compute creation allowed); sibling sessions are builders/trainers only (no seals, scoring, reading or viewing)",
+ "environment": "env Winner (anthropic_cloud, 4 vCPU AMX, no GPU)",
+ "sessions": [
+  {
+   "task": "amx",
+   "session": "session_011QbqZBB9k19oh47SD3cfdu",
+   "branch": "claude/gifted-bell-gavnl5-sib-amx",
+   "created_utc": "2026-09-25T18:21:36Z",
+   "goal": "AMX bf16/int8 profile of the base model, encoder/decoder split, cached-feature prototype, amx_gate code + tests, DECL-AMX-1 proposal"
+  },
+  {
+   "task": "tracer",
+   "session": "session_0186WKVwnaMbrHB2LUw9XEsR",
+   "branch": "claude/gifted-bell-gavnl5-sib-tracer",
+   "created_utc": "2026-09-25T18:22:02Z",
+   "goal": "VC3D build, rejection-gated tracer (build c) with unit tests, 1203 dev runs (never the T0 test set)"
+  },
+  {
+   "task": "reg0841",
+   "session": "session_01B1Mcm7zVXx9qcDKviUHsYP",
+   "branch": "claude/gifted-bell-gavnl5-sib-reg0841",
+   "created_utc": "2026-09-25T18:22:25Z",
+   "goal": "PHerc0841 9.366 <-> 2.403 um affine (CT only, J exclusion), bars r >= 0.85, RMS <= 1.5 vox"
+  },
+  {
+   "task": "pairs0139",
+   "session": "session_014Td5Vx7px6vmGbqMe8cS9i",
+   "branch": "claude/gifted-bell-gavnl5-sib-pairs0139",
+   "created_utc": "2026-09-25T18:23:02Z",
+   "goal": "DECL-D2 training pairs on PHerc0139 minus clean controls and neighbours"
+  },
+  {
+   "task": "pairs0814",
+   "session": "session_018vpsU55LqA4PAQN5JbLdf8",
+   "branch": "claude/gifted-bell-gavnl5-sib-pairs0814",
+   "created_utc": "2026-09-25T18:23:45Z",
+   "goal": "protocol check 0814/0500P2/0332/1451; DECL-D2 pairs on PHerc0814"
+  },
+  {
+   "task": "flat1",
+   "session": "session_012PajoPBSZpmnByzzncGKCk",
+   "branch": "claude/gifted-bell-gavnl5-sib-flat1",
+   "created_utc": "2026-09-25T18:23:48Z",
+   "goal": "FLAT-1 flattening benchmark (vc_flatten, SLIM, ARAP) on 0139 bank meshes"
+  },
+  {
+   "task": "chain2um",
+   "session": "session_011RrWfZz5Z3dvqRAoeXDScd",
+   "branch": "claude/gifted-bell-gavnl5-sib-chain2um",
+   "created_utc": "2026-09-25T18:24:25Z",
+   "goal": "2.4 um truth chain on CPU (ink_canonical_2um), 0139 control reproduction, fp32/bf16 cost per cm^2"
+  },
+  {
+   "task": "factory",
+   "session": "session_01JT3cQbn5E1SRMxgGgc2mRj",
+   "branch": "claude/gifted-bell-gavnl5-sib-factory",
+   "created_utc": "2026-09-25T18:25:07Z",
+   "goal": "package factory + mechanical verifier, DRY RUN on a 0139 bank mesh"
+  }
+ ]
+}
