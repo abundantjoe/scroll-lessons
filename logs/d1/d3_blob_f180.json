@@ -1,0 +1,80 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-25T23:38:49Z",
+ "serves": "RULES.md DECL-D3-A1 item 7, DECL-D3-A3 item 5",
+ "rule": "hercules.metrics.pixel.blob_f180(map_u8, area_cm2, valid) on the decoded official map (uint8) cropped to the 2136 px levelled state-A window (before masking and downscale); valid = render-valid (any of 31 slices nonzero); area_cm2 = n_valid x (voxel mm)^2 / 100; threshold 180, K = max(1, round(10 area_cm2 / 4.717))",
+ "deciding": {
+  "arm": "FA",
+  "order": "fwd (text order, TEXT-ORDER-D1)",
+  "values": {
+   "blank_w053_y256_x1536": 0.0002906913217827732,
+   "blank_w053_y256_x7168": 0.003483686096694993
+  },
+  "file": "/work/d3/blob_f180.json",
+  "file_sha256": "ede64499d3b7daa4128652deee979a984f81484f6d773de737386ad6a2323f48"
+ },
+ "values": {
+  "FA": {
+   "fwd": {
+    "blank_w053_y256_x1536": 0.0002906913217827732,
+    "blank_w053_y256_x7168": 0.003483686096694993
+   },
+   "rev": {
+    "blank_w053_y256_x1536": 0.0007857998768943877,
+    "blank_w053_y256_x7168": 0.0012121678696916083
+   }
+  },
+  "NULLA": {
+   "fwd": {
+    "blank_w053_y256_x1536": 0.003234481590611922,
+    "blank_w053_y256_x7168": 0.012218947158792839
+   },
+   "rev": {
+    "blank_w053_y256_x1536": 0.0016845072679659528,
+    "blank_w053_y256_x7168": 0.0036102272947289714
+   }
+  },
+  "REVA": {
+   "fwd": {
+    "blank_w053_y256_x1536": 0.0005281157921190555,
+    "blank_w053_y256_x7168": 0.00281364008087573
+   },
+   "rev": {
+    "blank_w053_y256_x1536": 0.0010047858217299616,
+    "blank_w053_y256_x7168": 0.0012601106186735163
+   }
+  },
+  "CTRL": {
+   "fwd": {
+    "blank_w053_y256_x1536": 0.004323720411857474,
+    "blank_w053_y256_x7168": 0.01514345484668923
+   },
+   "rev": {
+    "blank_w053_y256_x1536": 0.006019609485688062,
+    "blank_w053_y256_x7168": 0.010741711205787796
+   }
+  }
+ },
+ "blanks": {
+  "blank_w053_y256_x1536": {
+   "n_valid": 4392976,
+   "area_cm2": 3.85031360762944,
+   "k_components": 8,
+   "render_valid_frac": 0.9628448989325141
+  },
+  "blank_w053_y256_x7168": {
+   "n_valid": 4338508,
+   "area_cm2": 3.8025740157035206,
+   "k_components": 8,
+   "render_valid_frac": 0.9509066966853231
+  }
+ },
+ "voxel": {
+  "voxel_size_um": 9.362,
+  "voxel_size_mm": 0.009362,
+  "metadata_json": "/work/handed/data/s3/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/metadata.json",
+  "metadata_sha256": "95917633ca11a1ddff2e6b7d66360c508f8158bbe05be277c8d51477befb5bae",
+  "reader": "hercules.pipeline.window.voxel_size_from_metadata (scan.tomo.acquisition.detector.samplePixelSize, mm)",
+  "same_as_d1": "build_jseal.META0139 = build_r2.META, read the same way in d1_prep.py (asserted 9.362); equal to /work/d1/work/prep.json voxel_size_um of both blanks"
+ }
+}

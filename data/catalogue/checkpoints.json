@@ -1,0 +1,3162 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-24T22:03:12Z",
+ "catalogue": "checkpoints",
+ "sources": {
+  "hf_models_listing": {
+   "url": "https://huggingface.co/api/models?author=scrollprize&limit=500&full=true",
+   "sha256": "de06d1d9eda27c0548e203800411a710ee6f5675f410efb09a690b200bafb1c5",
+   "count": 43
+  },
+  "hf_datasets_listing": {
+   "url": "https://huggingface.co/api/datasets?author=scrollprize",
+   "sha256": "410009e638c6cc1f309c35a5134b753f85d1f7d00f5dabde6d80d33aea52fb61",
+   "count": 1
+  },
+  "hf_spaces_listing": {
+   "url": "https://huggingface.co/api/spaces?author=scrollprize",
+   "count": 0
+  },
+  "hf_bucket_ink_9um_readme": {
+   "url": "hf://buckets/scrollprize/datasets/ink_9um/README.md",
+   "sha256": "c9a88ff970594fcef3788eb588bb75dbbd0e6436f4812f89074e26c0d9fef7a5"
+  },
+  "root_index": {
+   "url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/metadata.json",
+   "sha256_decompressed": "8119d1c2d48b54f880c81bfd7ff9a51eb5edd166c9c06eac754abf15dba7e0ac",
+   "bytes_decompressed": 16999662,
+   "s3_etag_gzip_object": "7b86f3272d4ffa1085fafb4e3e6383bf",
+   "last_modified": "2026-09-23T15:22:11Z"
+  }
+ },
+ "download_policy": "Nothing > 200 MB was downloaded; sizes and sha256 come from the HF tree API (LFS oid = sha256 of file content).",
+ "targets": {
+  "a_ink_9um_hybrid_3d2d_seed42_step075000": {
+   "repo": "scrollprize/ink_9um",
+   "url": "https://huggingface.co/scrollprize/ink_9um",
+   "commit_sha": "7109667e2607db1b90c37c8b09cb876ea7fe7bb1",
+   "last_modified": "2026-08-14T01:02:42.000Z",
+   "created": "2026-08-14T01:02:29.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "file": {
+    "path": "hybrid_3d2d-seed42/step-075000.pth",
+    "bytes": 138360039,
+    "lfs_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+    "git_oid": "b72eef60ec13456b345ef3cac2a6e74ab965ab55",
+    "last_commit_date": "2026-08-14T01:02:42.000Z"
+   },
+   "licence_text": "No LICENSE file in repo; model card YAML \"license: mit\" (repo tag license:mit)",
+   "gating": "not gated, public",
+   "readme_sha256": "ef0f3cf3186e9d05c8816718c4024aeb356e27a8c02d7da1bacdee113c5ef273",
+   "notes": "Released 2026-08-14 (commit 7109667e). Repo also holds seed42 and seed43 steps 010000-075000 (14 x ~138.36 MB). Card: trained on 2.399 um volumes pooled to ~9.6 um + 5 native 9.362 um PHerc0139 segments; code villa @ merge-ink-pipelines."
+  },
+  "b_ink_canonical_2um_r152_3ddec_v2_l5_epoch13": {
+   "repo": "scrollprize/ink_canonical_2um",
+   "url": "https://huggingface.co/scrollprize/ink_canonical_2um",
+   "commit_sha": "075855bc69317ef6febf39a0d9d687b27d2b7c29",
+   "last_modified": "2026-07-07T10:23:57.000Z",
+   "created": "2026-06-24T08:43:18.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "file": {
+    "path": "r152_3ddec_v2_l5_epoch13.ckpt",
+    "bytes": 1549556213,
+    "lfs_sha256": "36dd0de84b7b7aa6590184192c7415466cd8a1ba7c1e59f42c6373846373c3e0",
+    "git_oid": "041ea255fd845812206abb05240a8ca3ac74f6cc",
+    "last_commit_date": "2026-06-24T08:46:23.000Z"
+   },
+   "licence_text": "No LICENSE file in repo; model card YAML \"license: mit\" and card text \"MIT - released by the Vesuvius Challenge. Underlying tomographic data are distributed under CC BY-NC 4.0.\"",
+   "gating": "not gated, public",
+   "readme_sha256": "a9eaef931e8ada20f484700ba355ccc0f926126133623745ca883b8452badc0a",
+   "notes": "Card: ResNet-152 3D encoder + 3D decoder, recipe new_canon_autoresearch_recipe, epoch 13, global step 113,246 (same recipe name as S3 model registry id 20260417190342 used for all current 2.4 um ink maps)."
+  },
+  "c_timesformer_scroll5_27112024": {
+   "repo": "scrollprize/timesformer_scroll5_27112024",
+   "url": "https://huggingface.co/scrollprize/timesformer_scroll5_27112024",
+   "commit_sha": "396d39b9a66cbd21c9cbe453c4540d9516707020",
+   "last_modified": "2024-11-27T19:53:05.000Z",
+   "created": "2024-11-27T17:56:24.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "file": {
+    "path": "timesformer_scroll5_27112024_20241108111522_epoch=19.ckpt",
+    "bytes": 455711244,
+    "lfs_sha256": "3c6b0b4d1b766a69cef2ba86b51574d91c71dded7fa4d9ec7435a1a95c61320f",
+    "git_oid": "94489e7a61b887c64a72c2b1cab85dc852dfa056",
+    "last_commit_date": "2024-11-27T18:00:09.000Z"
+   },
+   "licence_text": "No LICENSE file in repo; model card YAML \"license: mit\"",
+   "gating": "not gated, public",
+   "readme_sha256": "6af52e1cf9ffe0d1c2e9fcef51a2b4637600243dd42d4813edf43311ea67537d",
+   "notes": "Card: pretrained on PHerc.Paris4, finetuned on PHerc0172 segments 20241108120732, 20241025145701, 20241025150211, 20241027095740. S3 registry holds later PHerc0172 timesformers (20250713185324 july_retreat, 20251222202946 november19) used for PHerc0172 ink maps."
+  }
+ },
+ "newer_than_step_075000": {
+  "decision_trigger": true,
+  "items": [
+   {
+    "repo": "scrollprize/hecate",
+    "url": "https://huggingface.co/scrollprize/hecate",
+    "commit_sha": "9cb86e500e944b11a06a7020403cde5dffb5bcb2",
+    "last_modified": "2026-09-15T16:57:14.000Z",
+    "created": "2026-09-15T14:53:02.000Z",
+    "gated": false,
+    "private": false,
+    "card_licence": "mit",
+    "licence_tags": [
+     "license:mit"
+    ],
+    "kind": "official ink checkpoint (9.6 um and 2.4 um), released 2026-09-15",
+    "files": [
+     {
+      "path": "LICENSE",
+      "bytes": 1075,
+      "lfs_sha256": null,
+      "git_oid": "b263f7ab16cdce08e6ad582bc5fd285eff9b0387",
+      "last_commit_date": "2026-09-15T16:11:32.000Z"
+     },
+     {
+      "path": "README.md",
+      "bytes": 12769,
+      "lfs_sha256": null,
+      "git_oid": "94f0407f5706a8ab98e55e4214b99be88ff3a5e1",
+      "last_commit_date": "2026-09-15T16:57:14.000Z"
+     },
+     {
+      "path": "hecate.py",
+      "bytes": 22462,
+      "lfs_sha256": null,
+      "git_oid": "a2d3494361d81107d4bd9268cfe377d80f22cd0a",
+      "last_commit_date": "2026-09-15T16:57:14.000Z"
+     },
+     {
+      "path": "hecate_2.4um.pth",
+      "bytes": 522656918,
+      "lfs_sha256": "fa2de3827ebd247ff2d33df1b6f899ea79d5269036cf16765997c62f0e9988c7",
+      "git_oid": "41ef3ddb488926d7d7a582fc3c25011543292334",
+      "last_commit_date": "2026-09-15T16:11:32.000Z"
+     },
+     {
+      "path": "hecate_9.6um.pth",
+      "bytes": 522576086,
+      "lfs_sha256": "809f4f10f7cb7afa19b4bee0f7d2ab31edd7e11b664f9f210cc9c17f22fcfe5d",
+      "git_oid": "fde6e7f0c48c7e8a8ba03075db3b6a2080c6158c",
+      "last_commit_date": "2026-09-15T16:11:32.000Z"
+     },
+     {
+      "path": "requirements.txt",
+      "bytes": 62,
+      "lfs_sha256": null,
+      "git_oid": "897aa8220778c52a39f2a4c0e420d5e5a397df78",
+      "last_commit_date": "2026-09-15T16:57:14.000Z"
+     }
+    ],
+    "licence_text": "LICENSE file: MIT License, Copyright (c) 2026 Vesuvius Challenge (sha256 85b6c05ee6c6c25c2808ad4396a6e8f1f739cf12369885cc29644b7eaade349b); card YAML license: mit",
+    "gating": "not gated, public",
+    "readme_sha256": "17d7f029ffcff421dbf767c89e0e36a91f141fdfb5a647cc254e4c88cffabe9e",
+    "notes": "Card: \"experimental\"; base_model scrollprize/ink_canonical_2um; 9.6 um model distilled from the 2.4 um model; input 16x64x64 uint8 surface render sampled at 9.6 um in all axes (README warns ~9 um scans must be resampled to 9.6 um); divide by 255; outputs 2D map + 3D probability volume; no new manual labels. hecate_9.6um.pth is 522,576,086 bytes (> 200 MB, not downloaded)."
+   },
+   {
+    "kind": "official 9 um ink LABEL product (not a checkpoint)",
+    "where": "s3://vesuvius-challenge-open-data/PHerc0139/segments/<seg>/ink-labels/9.362um-volume-20250728140407/20260918/ (label_set 20260918)",
+    "segments": [
+     "20250831000000-w040_2025083102",
+     "20260108000000-w041_2026010816",
+     "20260115000000-w044_2026011522",
+     "20260302000000-w039_2026030210",
+     "20260317000000-w035_2026031718"
+    ],
+    "note": "same five segments as the HF ink_9um native9 set; label_set 20260918 also published on 2.399/2.403/2.401/2.215 um renders for PHerc0139 (8), PHerc0841 (3), PHerc0009B (1), PHerc0500P2 (1), PHerc0814 (1), others"
+   }
+  ],
+  "checked_not_ink": [
+   {
+    "repo": "scrollprize/winding_model_9um",
+    "url": "https://huggingface.co/scrollprize/winding_model_9um",
+    "commit_sha": "6e153b0eb51d1637185949750adffe7fa3f4f13e",
+    "last_modified": "2026-08-14T21:22:27.000Z",
+    "created": "2026-08-14T21:21:40.000Z",
+    "gated": false,
+    "private": false,
+    "card_licence": null,
+    "licence_tags": [],
+    "note": "winding model, 2026-08-14 21:22 (after ink_9um); ckpt_final.pth 146,441,803 B; no licence metadata"
+   },
+   {
+    "repo": "scrollprize/lasagna-fiber",
+    "url": "https://huggingface.co/scrollprize/lasagna-fiber",
+    "commit_sha": "a9aaf89cc504206f4dda0f0398a4f3e263fee25f",
+    "last_modified": "2026-09-23T09:11:29.000Z",
+    "created": "2026-09-21T10:35:35.000Z",
+    "gated": false,
+    "private": false,
+    "card_licence": null,
+    "licence_tags": [],
+    "note": "fiber/lasagna model, 2026-09-21..23; no licence metadata"
+   },
+   {
+    "repo": "scrollprize/ink-coverage-32um",
+    "url": "https://huggingface.co/scrollprize/ink-coverage-32um",
+    "commit_sha": "d79c5860674fddd53370a59ee92f229c9b9de88c",
+    "last_modified": "2026-07-13T21:31:49.000Z",
+    "created": "2026-07-13T21:16:37.000Z",
+    "gated": false,
+    "private": false,
+    "card_licence": null,
+    "licence_tags": [],
+    "note": "ink-coverage nnUNet for the spiral metric, 2026-07-13 (older than step-075000); no licence metadata"
+   }
+  ],
+  "s3_model_registry_ink_models": {
+   "20250807020208": {
+    "long_id": "20250807020208-canonical-2um",
+    "architecture": "resnet50",
+    "task": "ink-detection",
+    "res_um": [
+     2.0,
+     3.0
+    ],
+    "compatible_samples": [
+     "none"
+    ]
+   },
+   "20230702185753": {
+    "long_id": "20230702185753",
+    "architecture": "timesformer",
+    "task": "ink-detection",
+    "res_um": [
+     7.0,
+     10.0
+    ],
+    "compatible_samples": [
+     "PHercParis4"
+    ]
+   },
+   "20250713185324": {
+    "long_id": "20250713185324-timesformer_scroll5_july_retreat",
+    "architecture": "timesformer",
+    "task": "ink-detection",
+    "res_um": [
+     7.0,
+     10.0
+    ],
+    "compatible_samples": [
+     "PHerc0172"
+    ]
+   },
+   "20251222202946": {
+    "long_id": "20251222202946-timesformer_scroll5_november19",
+    "architecture": "timesformer",
+    "task": "ink-detection",
+    "res_um": [
+     7.0,
+     10.0
+    ],
+    "compatible_samples": [
+     "PHerc0172"
+    ]
+   },
+   "20260709123958": {
+    "long_id": "20260709123958-mrg20736-1um-s1z2",
+    "architecture": "resnet3d-152",
+    "task": "ink-detection",
+    "res_um": [
+     1.0,
+     1.5
+    ],
+    "compatible_samples": [
+     "PHerc0139",
+     "PHerc0814",
+     "PHerc1667",
+     "PHercMANBp",
+     "PHercParis4"
+    ]
+   },
+   "20260417190342": {
+    "long_id": "20260417190342-new_canon_autoresearch_recipe",
+    "architecture": "resnet3d-152-3d-decoder",
+    "task": "ink-detection",
+    "res_um": [
+     2.0,
+     3.0
+    ],
+    "compatible_samples": [
+     "PHerc0009B",
+     "PHerc0139",
+     "PHerc0343P",
+     "PHerc0500P2",
+     "PHerc0814",
+     "PHerc0841",
+     "PHerc1667",
+     "PHercParis4"
+    ]
+   },
+   "20260428123845": {
+    "long_id": "20260428123845-v3-78k-fullsup",
+    "architecture": "dino3d",
+    "task": "ink-detection-3d",
+    "res_um": [
+     2.0,
+     3.0
+    ],
+    "compatible_samples": []
+   }
+  },
+  "s3_registry_note": "The S3 registry has no 9 um ink model newer than 2025-12-22 (timesformer november19, PHerc0172 only); neither ink_9um nor hecate is registered there as of index 2026-09-23."
+ },
+ "neural_tracing_displacement": {
+  "villa_source": {
+   "commit": "41701aa0eaa1aa765523db3f9f972b5830abf549",
+   "python_registry": {
+    "file": "vesuvius/src/vesuvius/neural_tracing/nets/models.py",
+    "sha256": "3600ec788bfa46b0d82a184761c41474f47dce4302f5bfa26e8ced02e6bd321a",
+    "sentinels": {
+     "extrap_displacement_latest": {
+      "repo_id": "scrollprize/extrap_displacement_latest",
+      "checkpoint_filename": "extrap_displacement_latest.pth"
+     },
+     "copy_displacement_latest": {
+      "repo_id": "scrollprize/copy_displacement_latest",
+      "checkpoint_filename": "copy_displacement_latest.pth"
+     }
+    },
+    "download": "huggingface_hub.snapshot_download into /tmp/vesuvius_hf_models"
+   },
+   "vc3d_cpp_sentinels": [
+    "volume-cartographer/apps/VC3D/segmentation/growth/SegmentationGrower.cpp",
+    "volume-cartographer/apps/VC3D/segmentation/panels/SegmentationNeuralTracerPanel.cpp",
+    "volume-cartographer/apps/VC3D/NeuralTraceServiceManager.cpp"
+   ],
+   "docs": "scrollprize.org/docs/37_2026_open_problems.md: copy_displacement_latest trained on 2.4 um data downscaled once (4.8 um); ps256_copy_baseline offered as comparison",
+   "villa_repo_licence": "MIT (Copyright (c) 2024 Vesuvius Challenge), covers code; weights on HF carry no licence"
+  },
+  "checkpoints": [
+   {
+    "repo": "scrollprize/extrap_displacement_latest",
+    "url": "https://huggingface.co/scrollprize/extrap_displacement_latest",
+    "commit_sha": "f8d3eb93af5b37291fce32f34d2829952e6a0719",
+    "last_modified": "2026-02-18T05:49:27.000Z",
+    "created": "2026-02-18T05:34:32.000Z",
+    "gated": false,
+    "private": false,
+    "card_licence": null,
+    "licence_tags": [],
+    "file": {
+     "path": "extrap_displacement_latest.pth",
+     "bytes": 1228585385,
+     "lfs_sha256": "662f8065031480c8ee611a7fb7cb466a7e839b4b9d0b5d239d94fb82a1aedfbe",
+     "git_oid": "d37036e86f058445cc90254600f86536c901701d",
+     "last_commit_date": "2026-02-18T05:49:27.000Z"
+    },
+    "licence_text": "NONE (no README, no LICENSE, no licence tag)",
+    "gating": "not gated, public"
+   },
+   {
+    "repo": "scrollprize/copy_displacement_latest",
+    "url": "https://huggingface.co/scrollprize/copy_displacement_latest",
+    "commit_sha": "4da532350f40d84347991731fc25124fc07afbc1",
+    "last_modified": "2026-07-01T20:28:03.000Z",
+    "created": "2026-02-19T21:30:39.000Z",
+    "gated": false,
+    "private": false,
+    "card_licence": null,
+    "licence_tags": [],
+    "file": {
+     "path": "copy_displacement_latest.pth",
+     "bytes": 1698235447,
+     "lfs_sha256": "22cf4392f2f61e6a5548c7b68148e97fed4ee772abf4f842cc6b8d1ef3ca1370",
+     "git_oid": "3b75fa03fe2b0d56aec404d1c4457047e673bd4d",
+     "last_commit_date": "2026-05-22T18:12:30.000Z"
+    },
+    "licence_text": "NONE (README has no licence; no LICENSE, no licence tag)",
+    "gating": "not gated, public",
+    "readme_sha256": "2ed51f4ca49869795923f9c16df0358d0fd9f6141388197fd8ac996329af7987",
+    "notes": "README: predicts 3-vector displacement to recto surface of neighbouring windings from a conditioning mesh; trained at 4.8 um, \"performs ok at 2.4um and 9.6um\"; trainer train_rowcol_cond.py, inference infer_rowcol_triplet_wraps.py"
+   },
+   {
+    "repo": "scrollprize/ps256_copy_baseline",
+    "url": "https://huggingface.co/scrollprize/ps256_copy_baseline",
+    "commit_sha": "0935d02386b0f977c3b823ee1d23a453d05823fe",
+    "last_modified": "2026-05-22T18:09:06.000Z",
+    "created": "2026-05-22T18:06:00.000Z",
+    "gated": false,
+    "private": false,
+    "card_licence": null,
+    "licence_tags": [],
+    "file": {
+     "path": "ps256_copy_baseline.pth",
+     "bytes": 1698235447,
+     "lfs_sha256": "22cf4392f2f61e6a5548c7b68148e97fed4ee772abf4f842cc6b8d1ef3ca1370",
+     "git_oid": "3b75fa03fe2b0d56aec404d1c4457047e673bd4d",
+     "last_commit_date": "2026-05-22T18:09:06.000Z"
+    },
+    "licence_text": "NONE",
+    "gating": "not gated, public",
+    "notes": "LFS sha256 IDENTICAL to copy_displacement_latest.pth (same bytes)"
+   }
+  ],
+  "hf_collection": "scrollprize/nt-checkpoints-69954f3d5cc280ace87f2d98 (\"nt checkpoints\") exists but lists no items via API"
+ },
+ "ink_9um_labels_dataset": {
+  "location": "hf://buckets/scrollprize/datasets/ink_9um (web: https://huggingface.co/buckets/scrollprize/datasets/tree/ink_9um)",
+  "bucket_info": "scrollprize/datasets: public, created 2026-07-06, 3,681,163,497,775 bytes, 11,657,418 files (top folders: ink, ink_9um, spiral, surfaces)",
+  "licence": "no licence stated in the ink_9um README or bucket metadata (UNVERIFIED); HF model card of scrollprize/ink_9um is MIT",
+  "readme": {
+   "path": "ink_9um/README.md",
+   "bytes": 10739,
+   "sha256": "c9a88ff970594fcef3788eb588bb75dbbd0e6436f4812f89074e26c0d9fef7a5"
+  },
+  "total_files": 380992,
+  "total_bytes": 33362621,
+  "aligned-scrollprizeorg-21slices": {
+   "segments": [
+    "pherc0139-w016",
+    "pherc0139-w017",
+    "pherc0139-w028",
+    "pherc0139-w029",
+    "pherc0139-w035",
+    "pherc0139-w039",
+    "pherc0139-w040",
+    "pherc0139-w041",
+    "pherc0139-w043",
+    "pherc0814-46527",
+    "pherc1667-w013",
+    "pherc1667-w018",
+    "pherc1667-w023",
+    "pherc1667-w028",
+    "pherc1667-w029",
+    "pherc1667-w031",
+    "phercparis4-w00",
+    "phercparis4-w01",
+    "phercparis4-w02",
+    "phercparis4-w03",
+    "phercparis4-w05",
+    "phercparis4-w06",
+    "phercparis4-w07",
+    "phercparis4-w09"
+   ],
+   "segment_count": 24,
+   "zarr_arrays": 51,
+   "objects": 339727,
+   "bytes": 27590175,
+   "arrays": {
+    "pherc0139-w016_inklabels.zarr": {
+     "objects": 3138,
+     "bytes": 250319
+    },
+    "pherc0139-w016_supervision_mask.zarr": {
+     "objects": 3138,
+     "bytes": 248531
+    },
+    "pherc0139-w016_validation_mask.zarr": {
+     "objects": 3138,
+     "bytes": 247715
+    },
+    "pherc0139-w017_inklabels.zarr": {
+     "objects": 3138,
+     "bytes": 251203
+    },
+    "pherc0139-w017_supervision_mask.zarr": {
+     "objects": 3138,
+     "bytes": 250289
+    },
+    "pherc0139-w028_inklabels.zarr": {
+     "objects": 2901,
+     "bytes": 237354
+    },
+    "pherc0139-w028_supervision_mask.zarr": {
+     "objects": 2901,
+     "bytes": 231853
+    },
+    "pherc0139-w029_inklabels.zarr": {
+     "objects": 2901,
+     "bytes": 231198
+    },
+    "pherc0139-w029_supervision_mask.zarr": {
+     "objects": 2901,
+     "bytes": 231012
+    },
+    "pherc0139-w035_inklabels.zarr": {
+     "objects": 1803,
+     "bytes": 149374
+    },
+    "pherc0139-w035_supervision_mask.zarr": {
+     "objects": 1803,
+     "bytes": 148501
+    },
+    "pherc0139-w039_inklabels.zarr": {
+     "objects": 3838,
+     "bytes": 304830
+    },
+    "pherc0139-w039_supervision_mask.zarr": {
+     "objects": 3838,
+     "bytes": 303958
+    },
+    "pherc0139-w040_inklabels.zarr": {
+     "objects": 2992,
+     "bytes": 249230
+    },
+    "pherc0139-w040_supervision_mask.zarr": {
+     "objects": 2992,
+     "bytes": 245720
+    },
+    "pherc0139-w041_inklabels.zarr": {
+     "objects": 2931,
+     "bytes": 234143
+    },
+    "pherc0139-w041_supervision_mask.zarr": {
+     "objects": 2931,
+     "bytes": 232840
+    },
+    "pherc0139-w043_inklabels.zarr": {
+     "objects": 2917,
+     "bytes": 233547
+    },
+    "pherc0139-w043_supervision_mask.zarr": {
+     "objects": 2917,
+     "bytes": 232152
+    },
+    "pherc0814-46527_inklabels.zarr": {
+     "objects": 462,
+     "bytes": 41219
+    },
+    "pherc0814-46527_supervision_mask.zarr": {
+     "objects": 462,
+     "bytes": 39253
+    },
+    "pherc0814-46527_validation_mask.zarr": {
+     "objects": 462,
+     "bytes": 38397
+    },
+    "pherc1667-w013_inklabels.zarr": {
+     "objects": 12795,
+     "bytes": 1017050
+    },
+    "pherc1667-w013_supervision_mask.zarr": {
+     "objects": 12795,
+     "bytes": 1012276
+    },
+    "pherc1667-w018_inklabels.zarr": {
+     "objects": 15939,
+     "bytes": 1305888
+    },
+    "pherc1667-w018_supervision_mask.zarr": {
+     "objects": 15939,
+     "bytes": 1295060
+    },
+    "pherc1667-w023_inklabels.zarr": {
+     "objects": 16403,
+     "bytes": 1302957
+    },
+    "pherc1667-w023_supervision_mask.zarr": {
+     "objects": 16403,
+     "bytes": 1300532
+    },
+    "pherc1667-w028_inklabels.zarr": {
+     "objects": 4443,
+     "bytes": 353978
+    },
+    "pherc1667-w028_supervision_mask.zarr": {
+     "objects": 4443,
+     "bytes": 351981
+    },
+    "pherc1667-w029_inklabels.zarr": {
+     "objects": 4653,
+     "bytes": 371953
+    },
+    "pherc1667-w029_supervision_mask.zarr": {
+     "objects": 4653,
+     "bytes": 370158
+    },
+    "pherc1667-w029_validation_mask.zarr": {
+     "objects": 4653,
+     "bytes": 366080
+    },
+    "pherc1667-w031_inklabels.zarr": {
+     "objects": 4665,
+     "bytes": 379613
+    },
+    "pherc1667-w031_supervision_mask.zarr": {
+     "objects": 4665,
+     "bytes": 375680
+    },
+    "phercparis4-w00_inklabels.zarr": {
+     "objects": 6429,
+     "bytes": 529646
+    },
+    "phercparis4-w00_supervision_mask.zarr": {
+     "objects": 6429,
+     "bytes": 521286
+    },
+    "phercparis4-w01_inklabels.zarr": {
+     "objects": 7131,
+     "bytes": 599591
+    },
+    "phercparis4-w01_supervision_mask.zarr": {
+     "objects": 7131,
+     "bytes": 585071
+    },
+    "phercparis4-w02_inklabels.zarr": {
+     "objects": 5765,
+     "bytes": 470791
+    },
+    "phercparis4-w02_supervision_mask.zarr": {
+     "objects": 5765,
+     "bytes": 465722
+    },
+    "phercparis4-w03_inklabels.zarr": {
+     "objects": 6770,
+     "bytes": 567408
+    },
+    "phercparis4-w03_supervision_mask.zarr": {
+     "objects": 6770,
+     "bytes": 551067
+    },
+    "phercparis4-w05_inklabels.zarr": {
+     "objects": 14803,
+     "bytes": 1287237
+    },
+    "phercparis4-w05_supervision_mask.zarr": {
+     "objects": 14803,
+     "bytes": 1198269
+    },
+    "phercparis4-w06_inklabels.zarr": {
+     "objects": 7903,
+     "bytes": 683450
+    },
+    "phercparis4-w06_supervision_mask.zarr": {
+     "objects": 7903,
+     "bytes": 657684
+    },
+    "phercparis4-w07_inklabels.zarr": {
+     "objects": 21627,
+     "bytes": 1783228
+    },
+    "phercparis4-w07_supervision_mask.zarr": {
+     "objects": 21627,
+     "bytes": 1741278
+    },
+    "phercparis4-w09_inklabels.zarr": {
+     "objects": 9390,
+     "bytes": 761082
+    },
+    "phercparis4-w09_supervision_mask.zarr": {
+     "objects": 9390,
+     "bytes": 751521
+    }
+   },
+   "note": "annotations transferred to public 2.4 um surface volumes, pooled 4x XYZ to ~9.6 um; 21 slices, annotated at Z=10; validation masks only for pherc0139-w016, pherc0814-46527, pherc1667-w029"
+  },
+  "native9-scrollprizeorg-21slices": {
+   "segments": [
+    "w035",
+    "w039",
+    "w040",
+    "w041",
+    "w044"
+   ],
+   "segment_count": 5,
+   "zarr_arrays": 10,
+   "objects": 41264,
+   "bytes": 5761707,
+   "arrays": {
+    "w035_inklabels.zarr": {
+     "objects": 2564,
+     "bytes": 369430
+    },
+    "w035_supervision_mask.zarr": {
+     "objects": 2564,
+     "bytes": 368403
+    },
+    "w039_inklabels.zarr": {
+     "objects": 5525,
+     "bytes": 755515
+    },
+    "w039_supervision_mask.zarr": {
+     "objects": 5525,
+     "bytes": 756054
+    },
+    "w040_inklabels.zarr": {
+     "objects": 4248,
+     "bytes": 610989
+    },
+    "w040_supervision_mask.zarr": {
+     "objects": 4248,
+     "bytes": 607137
+    },
+    "w041_inklabels.zarr": {
+     "objects": 4185,
+     "bytes": 576133
+    },
+    "w041_supervision_mask.zarr": {
+     "objects": 4185,
+     "bytes": 574296
+    },
+    "w044_inklabels.zarr": {
+     "objects": 4110,
+     "bytes": 576244
+    },
+    "w044_supervision_mask.zarr": {
+     "objects": 4110,
+     "bytes": 567506
+    }
+   },
+   "note": "annotations made directly on native 9.362 um PHerc0139 volume 20250728140407; 28 slices deep, annotated at Z=14 (README); no validation masks"
+  },
+  "name_mapping_note": "README: annotation-set names do not track public w-numbering (e.g. pherc0139-w016 = public segment 20250108000004-w029_2025010827)."
+ },
+ "all_scrollprize_hf_models": [
+  {
+   "repo": "scrollprize/timesformer_scroll5_27112024",
+   "url": "https://huggingface.co/scrollprize/timesformer_scroll5_27112024",
+   "commit_sha": "396d39b9a66cbd21c9cbe453c4540d9516707020",
+   "last_modified": "2024-11-27T19:53:05.000Z",
+   "created": "2024-11-27T17:56:24.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1575,
+     "lfs_sha256": null,
+     "git_oid": "1263b17aaa4d6b0c2a9277f163ab17ae248f8ccc",
+     "last_commit_date": "2024-11-27T18:42:49.000Z"
+    },
+    {
+     "path": "522_predictions.png",
+     "bytes": 14752574,
+     "lfs_sha256": "44c7d8212ba15597837872e05c5a9838c7f863c2f2fb9a9157a1089698adf345",
+     "git_oid": "1086808df00803b768e61bcef827628393f0d474",
+     "last_commit_date": "2024-11-27T18:42:49.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 595,
+     "lfs_sha256": null,
+     "git_oid": "d15104a4e2c3e1990f9a245db46c0309961cd640",
+     "last_commit_date": "2024-11-27T19:53:05.000Z"
+    },
+    {
+     "path": "timesformer_scroll5_27112024_20241108111522_epoch=19.ckpt",
+     "bytes": 455711244,
+     "lfs_sha256": "3c6b0b4d1b766a69cef2ba86b51574d91c71dded7fa4d9ec7435a1a95c61320f",
+     "git_oid": "94489e7a61b887c64a72c2b1cab85dc852dfa056",
+     "last_commit_date": "2024-11-27T18:00:09.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/toymodel_01122024",
+   "url": "https://huggingface.co/scrollprize/toymodel_01122024",
+   "commit_sha": "646ace2221cd162f6a0d24f6d486e31545e45ef6",
+   "last_modified": "2024-12-02T09:25:43.000Z",
+   "created": "2024-12-02T09:25:43.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2024-12-02T09:25:43.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 24,
+     "lfs_sha256": null,
+     "git_oid": "7be5fc7f47d5db027d120b8024982df93db95b74",
+     "last_commit_date": "2024-12-02T09:25:43.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/resnet50_3um_01122024",
+   "url": "https://huggingface.co/scrollprize/resnet50_3um_01122024",
+   "commit_sha": "8680d1c5bb56e163937e4050927bd8a7dc1243b1",
+   "last_modified": "2024-12-17T13:31:37.000Z",
+   "created": "2024-12-12T14:09:50.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2024-12-12T14:09:50.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 663,
+     "lfs_sha256": null,
+     "git_oid": "aafcdfa0a638c6ef8e7df8376ff5c9599fab75d5",
+     "last_commit_date": "2024-12-17T13:31:37.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 414,
+     "lfs_sha256": null,
+     "git_oid": "a327845bf8d163352a5b59544be56be17f2afa53",
+     "last_commit_date": "2024-12-12T14:11:12.000Z"
+    },
+    {
+     "path": "configuration_resnet3d.py",
+     "bytes": 460,
+     "lfs_sha256": null,
+     "git_oid": "79288a52e0e997cf8f93b731cc8aafe5bfdcf90c",
+     "last_commit_date": "2024-12-12T14:11:12.000Z"
+    },
+    {
+     "path": "model.safetensors",
+     "bytes": 342867728,
+     "lfs_sha256": "052670ea5013e1fa67b009e28d4d9d7e63e006ff4c705a43cd90f72f4f5f7b76",
+     "git_oid": "6ac3d4a374b3c34a5329024341172aefaec2a169",
+     "last_commit_date": "2024-12-12T14:11:12.000Z"
+    },
+    {
+     "path": "modeling_resnet3d.py",
+     "bytes": 1788,
+     "lfs_sha256": null,
+     "git_oid": "2880f54af99dc4d8272b96b5d167c85643ad0087",
+     "last_commit_date": "2024-12-12T14:11:12.000Z"
+    },
+    {
+     "path": "resnetall.py",
+     "bytes": 8094,
+     "lfs_sha256": null,
+     "git_oid": "d66074bdf2a77a252916f45668d8cdd7b9796d7f",
+     "last_commit_date": "2024-12-12T14:11:12.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/resnet50_7.9um_scroll1_frags",
+   "url": "https://huggingface.co/scrollprize/resnet50_7.9um_scroll1_frags",
+   "commit_sha": "f3975de34d4734dd507360304f828808b7182139",
+   "last_modified": "2024-12-17T13:32:12.000Z",
+   "created": "2024-12-12T14:12:15.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2024-12-12T14:12:15.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 706,
+     "lfs_sha256": null,
+     "git_oid": "85f396da5f75e843d62df079f94d3251cf9a0a60",
+     "last_commit_date": "2024-12-17T13:32:12.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 414,
+     "lfs_sha256": null,
+     "git_oid": "a327845bf8d163352a5b59544be56be17f2afa53",
+     "last_commit_date": "2024-12-12T14:13:33.000Z"
+    },
+    {
+     "path": "configuration_resnet3d.py",
+     "bytes": 460,
+     "lfs_sha256": null,
+     "git_oid": "79288a52e0e997cf8f93b731cc8aafe5bfdcf90c",
+     "last_commit_date": "2024-12-12T14:13:33.000Z"
+    },
+    {
+     "path": "model.safetensors",
+     "bytes": 342867728,
+     "lfs_sha256": "fa00728db74d714769960dd77e9911a0e0938b3f272933c153632b5bed543c34",
+     "git_oid": "88297d0166730e34fc934e6661f41f74c44d8cc7",
+     "last_commit_date": "2024-12-12T14:13:33.000Z"
+    },
+    {
+     "path": "modeling_resnet3d.py",
+     "bytes": 1788,
+     "lfs_sha256": null,
+     "git_oid": "2880f54af99dc4d8272b96b5d167c85643ad0087",
+     "last_commit_date": "2024-12-12T14:13:33.000Z"
+    },
+    {
+     "path": "resnetall.py",
+     "bytes": 8094,
+     "lfs_sha256": null,
+     "git_oid": "d66074bdf2a77a252916f45668d8cdd7b9796d7f",
+     "last_commit_date": "2024-12-12T14:13:33.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/timesformer_large_scroll1_01122024",
+   "url": "https://huggingface.co/scrollprize/timesformer_large_scroll1_01122024",
+   "commit_sha": "7e8b37ce66b2497b4af1ad07ae3d7d8f5c5fa990",
+   "last_modified": "2024-12-17T13:33:57.000Z",
+   "created": "2024-12-12T14:16:42.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2024-12-12T14:16:42.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 623,
+     "lfs_sha256": null,
+     "git_oid": "3a3fc9c0b4db518e110da0f3d75eabf5e2f26f4e",
+     "last_commit_date": "2024-12-17T13:33:57.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 427,
+     "lfs_sha256": null,
+     "git_oid": "60c4dc7dad348b0e5e5c539499d6e646db92b068",
+     "last_commit_date": "2024-12-12T14:18:16.000Z"
+    },
+    {
+     "path": "model.safetensors",
+     "bytes": 336694640,
+     "lfs_sha256": "c85dd722aad3734476dd6d8f14fae7a249a0a3c019fbd68f894558ae381e3e9d",
+     "git_oid": "852db04b6151a2a5bead0a02c6ac5de147951eee",
+     "last_commit_date": "2024-12-12T14:18:16.000Z"
+    },
+    {
+     "path": "timesformer_config.py",
+     "bytes": 600,
+     "lfs_sha256": null,
+     "git_oid": "b85b56164dafc12798d0c2cb80f1344dc1a8c261",
+     "last_commit_date": "2024-12-12T14:18:16.000Z"
+    },
+    {
+     "path": "timesformer_model.py",
+     "bytes": 1003,
+     "lfs_sha256": null,
+     "git_oid": "19d185ea41857c0c1525ae7ec7e1d9c4a76198fc",
+     "last_commit_date": "2024-12-12T14:18:16.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/timesformer_GP_scroll1",
+   "url": "https://huggingface.co/scrollprize/timesformer_GP_scroll1",
+   "commit_sha": "61b81d31ddb93c89a2b3b00c66769d18bd96ccb2",
+   "last_modified": "2024-12-17T14:55:35.000Z",
+   "created": "2024-12-12T15:18:47.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2024-12-12T15:18:47.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 2711,
+     "lfs_sha256": null,
+     "git_oid": "5b478ccd8b61f410bd9de47176b8f007ff6bf08b",
+     "last_commit_date": "2024-12-17T14:55:35.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 426,
+     "lfs_sha256": null,
+     "git_oid": "ba4ba78e6ead190ec6dc093d179242465a9a41df",
+     "last_commit_date": "2024-12-12T15:19:24.000Z"
+    },
+    {
+     "path": "model.safetensors",
+     "bytes": 151853128,
+     "lfs_sha256": "490a98f9491e1180274ed3a0c0a9c611d73a0109c0e0c0fbba1097562a972488",
+     "git_oid": "84b16718a8453d4154150cd347da6e3993c0402c",
+     "last_commit_date": "2024-12-12T15:19:24.000Z"
+    },
+    {
+     "path": "timesformer_config.py",
+     "bytes": 600,
+     "lfs_sha256": null,
+     "git_oid": "b85b56164dafc12798d0c2cb80f1344dc1a8c261",
+     "last_commit_date": "2024-12-12T15:19:24.000Z"
+    },
+    {
+     "path": "timesformer_model.py",
+     "bytes": 1003,
+     "lfs_sha256": null,
+     "git_oid": "19d185ea41857c0c1525ae7ec7e1d9c4a76198fc",
+     "last_commit_date": "2024-12-12T15:19:24.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/ink_detection_pipeline",
+   "url": "https://huggingface.co/scrollprize/ink_detection_pipeline",
+   "commit_sha": "6ebe1feee70333a515d2fa985575e78856e48ac3",
+   "last_modified": "2024-12-30T04:23:26.000Z",
+   "created": "2024-12-13T00:10:10.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2024-12-13T00:10:10.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 836,
+     "lfs_sha256": null,
+     "git_oid": "960a29c32599bb7e33fab494d5588043b76efb8f",
+     "last_commit_date": "2024-12-17T03:52:26.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 742,
+     "lfs_sha256": null,
+     "git_oid": "d20b9c5dc2e35829034b898f03968145a7eb6b08",
+     "last_commit_date": "2024-12-13T00:10:47.000Z"
+    },
+    {
+     "path": "ink_detection_pipeline.py",
+     "bytes": 5620,
+     "lfs_sha256": null,
+     "git_oid": "4439b0dd715196ba6864fe4089abc1fbb5041108",
+     "last_commit_date": "2024-12-30T04:23:26.000Z"
+    },
+    {
+     "path": "model.safetensors",
+     "bytes": 151853128,
+     "lfs_sha256": "490a98f9491e1180274ed3a0c0a9c611d73a0109c0e0c0fbba1097562a972488",
+     "git_oid": "84b16718a8453d4154150cd347da6e3993c0402c",
+     "last_commit_date": "2024-12-13T00:10:47.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/surface_recto",
+   "url": "https://huggingface.co/scrollprize/surface_recto",
+   "commit_sha": "86f026f8be537db336e2854650db0b40c004ad49",
+   "last_modified": "2025-03-24T13:01:39.000Z",
+   "created": "2025-03-24T13:00:36.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "apache-2.0",
+   "licence_tags": [
+    "license:apache-2.0"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2025-03-24T13:00:36.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 31,
+     "lfs_sha256": null,
+     "git_oid": "7b95401dc46245ac339fc25059d4a56d90b4cde5",
+     "last_commit_date": "2025-03-24T13:00:36.000Z"
+    },
+    {
+     "path": "checkpoint_final.pth",
+     "bytes": 819319514,
+     "lfs_sha256": "2e7e4be80b2e3640ad5cf6bbf84628808c67bf6ef955288b27c2b34be80c776f",
+     "git_oid": "27de20c13e68d088d29d627e79d1a0d81065c412",
+     "last_commit_date": "2025-03-24T13:01:39.000Z"
+    },
+    {
+     "path": "dataset.json",
+     "bytes": 218,
+     "lfs_sha256": null,
+     "git_oid": "b0cbefa435feb188dd3b05a0c24caf1dd6d5a416",
+     "last_commit_date": "2025-03-24T13:01:39.000Z"
+    },
+    {
+     "path": "dataset_fingerprint.json",
+     "bytes": 238968,
+     "lfs_sha256": null,
+     "git_oid": "cb918988c7e43a61f6072152184a14f53e156aa7",
+     "last_commit_date": "2025-03-24T13:01:39.000Z"
+    },
+    {
+     "path": "plans.json",
+     "bytes": 10593,
+     "lfs_sha256": null,
+     "git_oid": "f0594730bb4e822444d0f8a2c384ac83e15da477",
+     "last_commit_date": "2025-03-24T13:01:39.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/surface_recto_verso",
+   "url": "https://huggingface.co/scrollprize/surface_recto_verso",
+   "commit_sha": "c93bb4ab0ba9d37cf7707637109cb7b729a10b24",
+   "last_modified": "2025-03-24T19:38:25.000Z",
+   "created": "2025-03-24T19:37:28.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "apache-2.0",
+   "licence_tags": [
+    "license:apache-2.0"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2025-03-24T19:37:28.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 31,
+     "lfs_sha256": null,
+     "git_oid": "7b95401dc46245ac339fc25059d4a56d90b4cde5",
+     "last_commit_date": "2025-03-24T19:37:28.000Z"
+    },
+    {
+     "path": "checkpoint_final.pth",
+     "bytes": 1132312018,
+     "lfs_sha256": "bddc7d00bfb7d045e7a58ffe2b42257f3dea73936935c2e862a1e16122afdaf8",
+     "git_oid": "55da5f3b80e6ea2a2c1cf29ccec43c8d85dcfd3b",
+     "last_commit_date": "2025-03-24T19:38:25.000Z"
+    },
+    {
+     "path": "dataset.json",
+     "bytes": 269,
+     "lfs_sha256": null,
+     "git_oid": "b9d46115fea1a3c95e473ec7fe6e956aa85836e4",
+     "last_commit_date": "2025-03-24T19:38:25.000Z"
+    },
+    {
+     "path": "dataset_fingerprint.json",
+     "bytes": 4646,
+     "lfs_sha256": null,
+     "git_oid": "7955393d0a91ece85e6a4806d2bb0f3cbebfe221",
+     "last_commit_date": "2025-03-24T19:38:25.000Z"
+    },
+    {
+     "path": "plans.json",
+     "bytes": 11251,
+     "lfs_sha256": null,
+     "git_oid": "c668b06f2dd0cfa5d7c28c0d223ef2ab17d437f5",
+     "last_commit_date": "2025-03-24T19:38:25.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/fiber_hz_vt",
+   "url": "https://huggingface.co/scrollprize/fiber_hz_vt",
+   "commit_sha": "0905e68f14b33d1b98fd32d726f2c97607dea80c",
+   "last_modified": "2025-03-24T19:42:30.000Z",
+   "created": "2025-03-24T19:41:55.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "apache-2.0",
+   "licence_tags": [
+    "license:apache-2.0"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2025-03-24T19:41:56.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 31,
+     "lfs_sha256": null,
+     "git_oid": "7b95401dc46245ac339fc25059d4a56d90b4cde5",
+     "last_commit_date": "2025-03-24T19:41:56.000Z"
+    },
+    {
+     "path": "checkpoint_final.pth",
+     "bytes": 1132287954,
+     "lfs_sha256": "a80d98f1baaaa09fac5e9d499ade91cb6f79982239cf8520fec9c217125ed899",
+     "git_oid": "c2065077528ea835f6e4ed094a6c5b534b6a64ca",
+     "last_commit_date": "2025-03-24T19:42:30.000Z"
+    },
+    {
+     "path": "dataset.json",
+     "bytes": 269,
+     "lfs_sha256": null,
+     "git_oid": "428b8abc6d8a2bfae0a8bc417155c704b9721dce",
+     "last_commit_date": "2025-03-24T19:42:30.000Z"
+    },
+    {
+     "path": "dataset_fingerprint.json",
+     "bytes": 2873,
+     "lfs_sha256": null,
+     "git_oid": "3d4c4c9355ecc0799726b03c786db20d7904b577",
+     "last_commit_date": "2025-03-24T19:42:30.000Z"
+    },
+    {
+     "path": "plans.json",
+     "bytes": 11152,
+     "lfs_sha256": null,
+     "git_oid": "835467de52e5f0633ad89a23f1aa1e6c8866613a",
+     "last_commit_date": "2025-03-24T19:42:30.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/surface_recto_320",
+   "url": "https://huggingface.co/scrollprize/surface_recto_320",
+   "commit_sha": "72756a6e615fd2cb9f86a98ccf71048d7f27dbaa",
+   "last_modified": "2025-05-20T17:59:36.000Z",
+   "created": "2025-05-20T17:58:01.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "apache-2.0",
+   "licence_tags": [
+    "license:apache-2.0"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2025-05-20T17:58:04.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 31,
+     "lfs_sha256": null,
+     "git_oid": "7b95401dc46245ac339fc25059d4a56d90b4cde5",
+     "last_commit_date": "2025-05-20T17:58:04.000Z"
+    },
+    {
+     "path": "checkpoint_final.pth",
+     "bytes": 819214927,
+     "lfs_sha256": "bc345edd322901ddea3903393cadefdb901ef148a756e9365928024c8cefffa2",
+     "git_oid": "3b835de3898685412707bc6b484567f1bc5065a5",
+     "last_commit_date": "2025-05-20T17:59:36.000Z"
+    },
+    {
+     "path": "dataset.json",
+     "bytes": 221,
+     "lfs_sha256": null,
+     "git_oid": "82a069a8e52786f8835d3d61ccf7a9f77202e4ff",
+     "last_commit_date": "2025-05-20T17:59:36.000Z"
+    },
+    {
+     "path": "dataset_fingerprint.json",
+     "bytes": 135336,
+     "lfs_sha256": null,
+     "git_oid": "d97b23567904ca253f5a46a48c973884770121a7",
+     "last_commit_date": "2025-05-20T17:59:36.000Z"
+    },
+    {
+     "path": "plans.json",
+     "bytes": 10770,
+     "lfs_sha256": null,
+     "git_oid": "71d4ce644f1e359e109e51b1ac8d8ad7c8f87dc9",
+     "last_commit_date": "2025-05-20T17:59:36.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/surface_recto_103",
+   "url": "https://huggingface.co/scrollprize/surface_recto_103",
+   "commit_sha": "d2d0191f97bebed154ca8f9670781702e7f2caa6",
+   "last_modified": "2025-08-07T22:49:49.000Z",
+   "created": "2025-08-07T22:48:52.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "apache-2.0",
+   "licence_tags": [
+    "license:apache-2.0"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2025-08-07T22:48:52.000Z"
+    },
+    {
+     "path": "Model_epoch44.pth",
+     "bytes": 821304515,
+     "lfs_sha256": "5e608e8af39a83f13037911e7c4587518ef401457f80fd8c28cc0f5dfff64f7d",
+     "git_oid": "373f7d4d0835f8e8272df2ca381d57ede4a67dc2",
+     "last_commit_date": "2025-08-07T22:49:49.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 31,
+     "lfs_sha256": null,
+     "git_oid": "7b95401dc46245ac339fc25059d4a56d90b4cde5",
+     "last_commit_date": "2025-08-07T22:48:52.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/surface_recto_059_redo",
+   "url": "https://huggingface.co/scrollprize/surface_recto_059_redo",
+   "commit_sha": "2c4d28db91f565fec59118b9f44a94d2ea0ac3ac",
+   "last_modified": "2025-08-17T20:50:21.000Z",
+   "created": "2025-08-17T20:49:30.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2025-08-17T20:49:30.000Z"
+    },
+    {
+     "path": "Model_epoch499.pth",
+     "bytes": 819171665,
+     "lfs_sha256": "f1990a02ac91889c1f989522ae0e45421a91cb666320448aaf579d42b081636f",
+     "git_oid": "7c26bc12dde252684361667b065c5637cd7c57dd",
+     "last_commit_date": "2025-08-17T20:50:21.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/surface_recto_104",
+   "url": "https://huggingface.co/scrollprize/surface_recto_104",
+   "commit_sha": "a80ede49f72140427f8720508800194c34b43f81",
+   "last_modified": "2025-08-24T00:07:05.000Z",
+   "created": "2025-08-24T00:04:41.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1624,
+     "lfs_sha256": null,
+     "git_oid": "8fbb73466fd52b56538aa355f270a6044e17878e",
+     "last_commit_date": "2025-08-24T00:07:05.000Z"
+    },
+    {
+     "path": "checkpoint_final.pth",
+     "bytes": 819310459,
+     "lfs_sha256": "84425d0a69db5ba49a55427eb2b3229c3ca4d28216a9fba053117631ac9ff690",
+     "git_oid": "d368d262fe5f1038f127b8cac71c387ee3028e2a",
+     "last_commit_date": "2025-08-24T00:07:05.000Z"
+    },
+    {
+     "path": "dataset.json",
+     "bytes": 239,
+     "lfs_sha256": null,
+     "git_oid": "11845aee2a38ca3ee2bb4582ba187681c20718a5",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "dataset_fingerprint.json",
+     "bytes": 252294,
+     "lfs_sha256": null,
+     "git_oid": "24769788854bf728ab22a30d9e085fcac7418ddc",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "debug.json",
+     "bytes": 13133,
+     "lfs_sha256": null,
+     "git_oid": "bc9ae3f46630902b640f86dcd78b071e228f1b59",
+     "last_commit_date": "2025-08-24T00:07:05.000Z"
+    },
+    {
+     "path": "fold_0/checkpoint_best.pth",
+     "bytes": 819301071,
+     "lfs_sha256": "0857f609010abebffe51b1de5362a077475384c324f77d37fee695bcdcd5ea70",
+     "git_oid": "a4fbb4fecc8d7d79ff48df0c2c4b9dde9913687b",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "fold_0/checkpoint_final.pth",
+     "bytes": 819310459,
+     "lfs_sha256": "84425d0a69db5ba49a55427eb2b3229c3ca4d28216a9fba053117631ac9ff690",
+     "git_oid": "d368d262fe5f1038f127b8cac71c387ee3028e2a",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "fold_0/debug.json",
+     "bytes": 13133,
+     "lfs_sha256": null,
+     "git_oid": "bc9ae3f46630902b640f86dcd78b071e228f1b59",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "fold_0/progress.png",
+     "bytes": 1018601,
+     "lfs_sha256": "95225a7bbf92a042629a66b073271315f3f2a0225d6a96edb410fe7c0ac23aaf",
+     "git_oid": "52507f5b6ece82948e22a29fa0aab47415e79de6",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "fold_0/training_log_2025_8_23_02_20_27.txt",
+     "bytes": 678,
+     "lfs_sha256": null,
+     "git_oid": "697d579292e130017e508ae0b50c2ce4078947da",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "fold_0/training_log_2025_8_23_02_22_39.txt",
+     "bytes": 3493,
+     "lfs_sha256": null,
+     "git_oid": "b026990e4eb7903ccea8c7ca9cff36dd4941853b",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "fold_0/training_log_2025_8_23_02_27_10.txt",
+     "bytes": 3493,
+     "lfs_sha256": null,
+     "git_oid": "3c19c5491d908b248523f114fc723b8f1468176e",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "fold_0/training_log_2025_8_23_02_34_17.txt",
+     "bytes": 3229,
+     "lfs_sha256": null,
+     "git_oid": "dbc1bb52f51f755c73239122b5a62c58acf4ba13",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "fold_0/training_log_2025_8_23_02_35_03.txt",
+     "bytes": 170941,
+     "lfs_sha256": null,
+     "git_oid": "4f5c56561b745dee3fdba5cbd649e755ac11961a",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "plans.json",
+     "bytes": 10752,
+     "lfs_sha256": null,
+     "git_oid": "2f14016dc4d2f813ac55d90f3c023b6ad889c6e1",
+     "last_commit_date": "2025-08-24T00:05:41.000Z"
+    },
+    {
+     "path": "progress.png",
+     "bytes": 1018601,
+     "lfs_sha256": "95225a7bbf92a042629a66b073271315f3f2a0225d6a96edb410fe7c0ac23aaf",
+     "git_oid": "52507f5b6ece82948e22a29fa0aab47415e79de6",
+     "last_commit_date": "2025-08-24T00:07:05.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/timesformer_scroll5_july_retreat",
+   "url": "https://huggingface.co/scrollprize/timesformer_scroll5_july_retreat",
+   "commit_sha": "5b714296b256b8f993ce69e8e57aea585125d782",
+   "last_modified": "2025-09-24T12:13:09.000Z",
+   "created": "2025-09-23T13:29:38.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2025-09-23T13:29:38.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 168,
+     "lfs_sha256": null,
+     "git_oid": "fdd675060ae288e5fadd58e96ff1e9609df74dae",
+     "last_commit_date": "2025-09-24T12:11:01.000Z"
+    },
+    {
+     "path": "timesformer_scroll5_july_retreat_20241113070770_frepoch=9.ckpt",
+     "bytes": 455707757,
+     "lfs_sha256": "b5f9f48c231728548e906ec52b56434aa2bbe86e90927212be1322314d35b331",
+     "git_oid": "2ff3e18f083cb8190ab0acb3e5aa3530c56e744d",
+     "last_commit_date": "2025-09-24T12:13:09.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/extrap_displacement_latest",
+   "url": "https://huggingface.co/scrollprize/extrap_displacement_latest",
+   "commit_sha": "f8d3eb93af5b37291fce32f34d2829952e6a0719",
+   "last_modified": "2026-02-18T05:49:27.000Z",
+   "created": "2026-02-18T05:34:32.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1582,
+     "lfs_sha256": null,
+     "git_oid": "e391a25e94f0e726ff55b3ffdd2d8e6b7fb6db0a",
+     "last_commit_date": "2026-02-18T05:37:25.000Z"
+    },
+    {
+     "path": "extrap_displacement_latest.pth",
+     "bytes": 1228585385,
+     "lfs_sha256": "662f8065031480c8ee611a7fb7cb466a7e839b4b9d0b5d239d94fb82a1aedfbe",
+     "git_oid": "d37036e86f058445cc90254600f86536c901701d",
+     "last_commit_date": "2026-02-18T05:49:27.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/copy_displacement_latest",
+   "url": "https://huggingface.co/scrollprize/copy_displacement_latest",
+   "commit_sha": "4da532350f40d84347991731fc25124fc07afbc1",
+   "last_modified": "2026-07-01T20:28:03.000Z",
+   "created": "2026-02-19T21:30:39.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-02-19T21:30:39.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 551,
+     "lfs_sha256": null,
+     "git_oid": "27c5612c7180b0cc8b485ac7aa9640e2d056916c",
+     "last_commit_date": "2026-07-01T20:28:03.000Z"
+    },
+    {
+     "path": "copy_displacement_latest.pth",
+     "bytes": 1698235447,
+     "lfs_sha256": "22cf4392f2f61e6a5548c7b68148e97fed4ee772abf4f842cc6b8d1ef3ca1370",
+     "git_oid": "3b75fa03fe2b0d56aec404d1c4457047e673bd4d",
+     "last_commit_date": "2026-05-22T18:12:30.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/dinov2_ps8",
+   "url": "https://huggingface.co/scrollprize/dinov2_ps8",
+   "commit_sha": "b0b2e9de3e61ebc876fa6618268bdf0852c3f34c",
+   "last_modified": "2026-03-21T03:56:15.000Z",
+   "created": "2026-03-18T10:26:18.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "apache-2.0",
+   "licence_tags": [
+    "license:apache-2.0"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-03-18T10:26:18.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 31,
+     "lfs_sha256": null,
+     "git_oid": "7b95401dc46245ac339fc25059d4a56d90b4cde5",
+     "last_commit_date": "2026-03-18T10:26:18.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 4990,
+     "lfs_sha256": null,
+     "git_oid": "509f0d1d6ffe8760371fac0c6837b95fd88ffc9e",
+     "last_commit_date": "2026-03-18T10:32:51.000Z"
+    },
+    {
+     "path": "dinov2_ps8.pt",
+     "bytes": 5013457253,
+     "lfs_sha256": "6554b01b32a88bb8c45c2ff9f7fb2021289daae464cb692554eb5a07f326acaa",
+     "git_oid": "51902a186b8d5cbff5176e1844354ec0084b7efc",
+     "last_commit_date": "2026-03-21T03:56:15.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/dinov2_ps16_crop256",
+   "url": "https://huggingface.co/scrollprize/dinov2_ps16_crop256",
+   "commit_sha": "fccc4eaaa58c45c4d6ef83565ae82e86015fbc54",
+   "last_modified": "2026-03-18T10:39:21.000Z",
+   "created": "2026-03-18T10:33:18.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "apache-2.0",
+   "licence_tags": [
+    "license:apache-2.0"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-03-18T10:33:18.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 31,
+     "lfs_sha256": null,
+     "git_oid": "7b95401dc46245ac339fc25059d4a56d90b4cde5",
+     "last_commit_date": "2026-03-18T10:33:18.000Z"
+    },
+    {
+     "path": "config_ps256.json",
+     "bytes": 3861,
+     "lfs_sha256": null,
+     "git_oid": "3d296d72b5276f09b52e943cf460cff9b121c847",
+     "last_commit_date": "2026-03-18T10:39:21.000Z"
+    },
+    {
+     "path": "dinov2_ps16_crop256.pt",
+     "bytes": 5063000261,
+     "lfs_sha256": "d69324e0cbcc0bc1824c2fbdbb2320a557ef4459db0879c3c86ad1f71756982b",
+     "git_oid": "c2ee385f2e198c3c3baa1fbe16ae79449418667e",
+     "last_commit_date": "2026-03-18T10:39:21.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/ps256_copy_baseline",
+   "url": "https://huggingface.co/scrollprize/ps256_copy_baseline",
+   "commit_sha": "0935d02386b0f977c3b823ee1d23a453d05823fe",
+   "last_modified": "2026-05-22T18:09:06.000Z",
+   "created": "2026-05-22T18:06:00.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-05-22T18:06:00.000Z"
+    },
+    {
+     "path": "ps256_copy_baseline.pth",
+     "bytes": 1698235447,
+     "lfs_sha256": "22cf4392f2f61e6a5548c7b68148e97fed4ee772abf4f842cc6b8d1ef3ca1370",
+     "git_oid": "3b75fa03fe2b0d56aec404d1c4457047e673bd4d",
+     "last_commit_date": "2026-05-22T18:09:06.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/dinovol_v2_ps8_with_paris4_352500",
+   "url": "https://huggingface.co/scrollprize/dinovol_v2_ps8_with_paris4_352500",
+   "commit_sha": "6a8cccbafef191a966da815e22ff5c6eae075aae",
+   "last_modified": "2026-06-04T16:28:11.000Z",
+   "created": "2026-06-04T16:25:05.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-06-04T16:25:05.000Z"
+    },
+    {
+     "path": "LICENSE",
+     "bytes": 1090,
+     "lfs_sha256": null,
+     "git_oid": "7d979e96c0816e066e8283094a2e49e3abd74041",
+     "last_commit_date": "2026-06-04T16:25:07.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 3738,
+     "lfs_sha256": null,
+     "git_oid": "95b2e232383ade3fb580763c69b9b6f0c449ca83",
+     "last_commit_date": "2026-06-04T16:25:06.000Z"
+    },
+    {
+     "path": "checkpoint_step_352500_paris4.pt",
+     "bytes": 5013928741,
+     "lfs_sha256": "5fb1cf4bd831275bdea28ba522ee76641aa1e42f194a61a7fdb25b0c6670083a",
+     "git_oid": "599386665e67f7d75150cab27986e9a83af962ac",
+     "last_commit_date": "2026-06-04T16:28:11.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 950,
+     "lfs_sha256": null,
+     "git_oid": "16bdab1c2066415b3bc9bc1279e2da03f35fb831",
+     "last_commit_date": "2026-06-04T16:25:07.000Z"
+    },
+    {
+     "path": "dinovol_v2_ps8_paris4_step352500_teacher_backbone.pt",
+     "bytes": 863606099,
+     "lfs_sha256": "e041ca870dd2570f8a44d1dd26db1197b3f74121f62023bc774fbc9d40e51a59",
+     "git_oid": "1250b84db44bd173ed5d180defa778ceb8a5f554",
+     "last_commit_date": "2026-06-04T16:25:48.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/PHerc.1667-iteration-5",
+   "url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-5",
+   "commit_sha": "6288ba60115ce827018926bcb0ea8e5696f33d3b",
+   "last_modified": "2026-06-30T15:52:12.000Z",
+   "created": "2026-06-22T13:24:54.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1623,
+     "lfs_sha256": null,
+     "git_oid": "f967fa03d1a6b3c4885bd646cb6b66d419e6d3b1",
+     "last_commit_date": "2026-06-22T14:34:07.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 8362,
+     "lfs_sha256": null,
+     "git_oid": "f1ad6dd8312b455a79ff75d7edb9a15624255d35",
+     "last_commit_date": "2026-06-30T15:52:12.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 648,
+     "lfs_sha256": null,
+     "git_oid": "2863b62ebc4c5448f386e7779e850cff6c083b8f",
+     "last_commit_date": "2026-06-22T13:25:02.000Z"
+    },
+    {
+     "path": "configuration_inkdetection.py",
+     "bytes": 1742,
+     "lfs_sha256": null,
+     "git_oid": "24ac6d12668bfb5cf4b448c8f61723e97264ee25",
+     "last_commit_date": "2026-06-22T13:25:02.000Z"
+    },
+    {
+     "path": "last.ckpt",
+     "bytes": 1008820953,
+     "lfs_sha256": "2c99b5ef73331363a9c42296fbea8a114c73fa5eedcddd6d0b33a0924b14685f",
+     "git_oid": "3103020d3525db637bcb91d0adc17d481ec35744",
+     "last_commit_date": "2026-06-22T13:25:02.000Z"
+    },
+    {
+     "path": "model.safetensors",
+     "bytes": 333531996,
+     "lfs_sha256": "9920d4338e51d38b241cbf48392610be0519e4e19c2e9d987ccfc2e78bd3301b",
+     "git_oid": "f9aeb128c63bb4e3682f71330ec62d959554026a",
+     "last_commit_date": "2026-06-22T13:25:02.000Z"
+    },
+    {
+     "path": "modeling_inkdetection.py",
+     "bytes": 9564,
+     "lfs_sha256": null,
+     "git_oid": "c75143f25652f1e5fe9f7f7dc7b5183f00d37fb5",
+     "last_commit_date": "2026-06-22T13:25:02.000Z"
+    },
+    {
+     "path": "preview_l_2.png",
+     "bytes": 877443,
+     "lfs_sha256": "18985e77f97911d72c75f317120a3d5bcc0a633a2e7bee998db2ff3eeb4eb58b",
+     "git_oid": "f6386d0312f2e44a7521acf7d240d8d59487c60d",
+     "last_commit_date": "2026-06-22T14:34:07.000Z"
+    },
+    {
+     "path": "preview_l_5.png",
+     "bytes": 3071582,
+     "lfs_sha256": "26f9b6732e9af5ed449a803e1303d8c34328939a69cd989ab9bfb1eb8e335220",
+     "git_oid": "7a28d30c5c7d4decf218e243fc61ff8d5dea2be7",
+     "last_commit_date": "2026-06-22T14:34:07.000Z"
+    },
+    {
+     "path": "preview_label.png",
+     "bytes": 98353,
+     "lfs_sha256": null,
+     "git_oid": "bed778a928572b862a277ff44b194d4603978264",
+     "last_commit_date": "2026-06-22T14:34:07.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/PHerc.1667-iteration-0",
+   "url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-0",
+   "commit_sha": "06c306449b39df42c745608ceade243498d24243",
+   "last_modified": "2026-06-30T15:52:01.000Z",
+   "created": "2026-06-22T14:33:17.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1571,
+     "lfs_sha256": null,
+     "git_oid": "c533d1fbc1a6e831a5c0fdf7683550ea44f7c5f0",
+     "last_commit_date": "2026-06-22T14:33:25.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 8532,
+     "lfs_sha256": null,
+     "git_oid": "e93d75d66639aed95a2a8956bf641b2936f6ac92",
+     "last_commit_date": "2026-06-30T15:52:01.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 713,
+     "lfs_sha256": null,
+     "git_oid": "32accd0facbc9424458e5d268460de0f07e6bd7d",
+     "last_commit_date": "2026-06-22T14:33:25.000Z"
+    },
+    {
+     "path": "configuration_inkdetection.py",
+     "bytes": 1742,
+     "lfs_sha256": null,
+     "git_oid": "24ac6d12668bfb5cf4b448c8f61723e97264ee25",
+     "last_commit_date": "2026-06-22T14:33:25.000Z"
+    },
+    {
+     "path": "last.ckpt",
+     "bytes": 1008820953,
+     "lfs_sha256": "212312371c60f93bd1a7d7359c87134390f3aa9b498a6de82753a871f26ebbed",
+     "git_oid": "fa14c629c7bdee3b371ec498978a783a83a4fec5",
+     "last_commit_date": "2026-06-22T14:33:25.000Z"
+    },
+    {
+     "path": "model.safetensors",
+     "bytes": 333531996,
+     "lfs_sha256": "62c43b98f55c169ae874c684a59953b5ce1cb45140129107f861501cce3edaef",
+     "git_oid": "c6f5a527a8810745453a716c430af11d5bb8e683",
+     "last_commit_date": "2026-06-22T14:33:25.000Z"
+    },
+    {
+     "path": "modeling_inkdetection.py",
+     "bytes": 9564,
+     "lfs_sha256": null,
+     "git_oid": "c75143f25652f1e5fe9f7f7dc7b5183f00d37fb5",
+     "last_commit_date": "2026-06-22T14:33:25.000Z"
+    },
+    {
+     "path": "preview_l_2.png",
+     "bytes": 855054,
+     "lfs_sha256": "2adbd68df8c4ff5ce9bcfe16008ceeff2af3ef8dee940fb6984b1850120789c4",
+     "git_oid": "26846669a717fba0f21667ee359376d839597bd5",
+     "last_commit_date": "2026-06-22T14:33:25.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/PHerc.1667-iteration-1",
+   "url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-1",
+   "commit_sha": "f2012ce96ddebcae6888246370c28d458a4d45dd",
+   "last_modified": "2026-06-30T15:52:03.000Z",
+   "created": "2026-06-22T14:33:27.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1623,
+     "lfs_sha256": null,
+     "git_oid": "f967fa03d1a6b3c4885bd646cb6b66d419e6d3b1",
+     "last_commit_date": "2026-06-22T14:33:34.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 8358,
+     "lfs_sha256": null,
+     "git_oid": "2864178425de0353b91ff97ba347fdb2b1770766",
+     "last_commit_date": "2026-06-30T15:52:03.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 646,
+     "lfs_sha256": null,
+     "git_oid": "68ce4bf08b3a1db4086d50eb142b67efccfd8cd7",
+     "last_commit_date": "2026-06-22T14:33:34.000Z"
+    },
+    {
+     "path": "configuration_inkdetection.py",
+     "bytes": 1742,
+     "lfs_sha256": null,
+     "git_oid": "24ac6d12668bfb5cf4b448c8f61723e97264ee25",
+     "last_commit_date": "2026-06-22T14:33:34.000Z"
+    },
+    {
+     "path": "last.ckpt",
+     "bytes": 1008820953,
+     "lfs_sha256": "04274e174463a7feecac912abab2ef62844cecbf93e5de25d3f1e2b971938d0b",
+     "git_oid": "6ebf514823d88df1c163775652c4a956c0aacd1b",
+     "last_commit_date": "2026-06-22T14:33:34.000Z"
+    },
+    {
+     "path": "model.safetensors",
+     "bytes": 333531996,
+     "lfs_sha256": "75e4009673b2c419c23cb388474c87357c226058598f1e2d7cba4e71d22e0fcb",
+     "git_oid": "7c2a243a81cf27eda80235e6cb0c9d82ce15ad62",
+     "last_commit_date": "2026-06-22T14:33:34.000Z"
+    },
+    {
+     "path": "modeling_inkdetection.py",
+     "bytes": 9564,
+     "lfs_sha256": null,
+     "git_oid": "c75143f25652f1e5fe9f7f7dc7b5183f00d37fb5",
+     "last_commit_date": "2026-06-22T14:33:34.000Z"
+    },
+    {
+     "path": "preview_l_2.png",
+     "bytes": 979895,
+     "lfs_sha256": "94ae6e1d049302f258f19102fc20b5a6988748c1274933d46c6f905b4be37802",
+     "git_oid": "062a07133792476cfb33e00d3b4d0155e701c4a0",
+     "last_commit_date": "2026-06-22T14:33:34.000Z"
+    },
+    {
+     "path": "preview_l_5.png",
+     "bytes": 3402547,
+     "lfs_sha256": "83e7fe7e328ef83eb59762c9c101df582db66d9bc5626faae0fce6ba4170b2ae",
+     "git_oid": "8d715cb411c25c5ab22597ff7e8bf77699a0633e",
+     "last_commit_date": "2026-06-22T14:33:34.000Z"
+    },
+    {
+     "path": "preview_label.png",
+     "bytes": 21287,
+     "lfs_sha256": null,
+     "git_oid": "3616172192cd9383849cbf731b8ca495259c8e4c",
+     "last_commit_date": "2026-06-22T14:33:34.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/PHerc.1667-iteration-2",
+   "url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-2",
+   "commit_sha": "bf6053ca28863ca8fb87860803c0392945290fc6",
+   "last_modified": "2026-06-30T15:52:06.000Z",
+   "created": "2026-06-22T14:33:35.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1623,
+     "lfs_sha256": null,
+     "git_oid": "f967fa03d1a6b3c4885bd646cb6b66d419e6d3b1",
+     "last_commit_date": "2026-06-22T14:33:43.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 8256,
+     "lfs_sha256": null,
+     "git_oid": "85572963245648b0ccd6075e65b2647c6e999a3a",
+     "last_commit_date": "2026-06-30T15:52:06.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 647,
+     "lfs_sha256": null,
+     "git_oid": "b94ab4be4efd882d77d02c73d8eec2eae8ed1f6b",
+     "last_commit_date": "2026-06-22T14:33:43.000Z"
+    },
+    {
+     "path": "configuration_inkdetection.py",
+     "bytes": 1742,
+     "lfs_sha256": null,
+     "git_oid": "24ac6d12668bfb5cf4b448c8f61723e97264ee25",
+     "last_commit_date": "2026-06-22T14:33:43.000Z"
+    },
+    {
+     "path": "last.ckpt",
+     "bytes": 1008820953,
+     "lfs_sha256": "2f7dd5fbf352eb8e96070b572b53e695ce2592ece684454e0d1c4c5b5dc3c4f5",
+     "git_oid": "4f1bf7786bccde0b7fe968c1b8c94e979cca7d41",
+     "last_commit_date": "2026-06-22T14:33:43.000Z"
+    },
+    {
+     "path": "model.safetensors",
+     "bytes": 333531996,
+     "lfs_sha256": "485ce6e12cca19071c5746d95327d9aa6f2fd04ea1a2acc95c9530d3ee895b71",
+     "git_oid": "4ca9669377812b3a310353d87c28b5a182fde574",
+     "last_commit_date": "2026-06-22T14:33:43.000Z"
+    },
+    {
+     "path": "modeling_inkdetection.py",
+     "bytes": 9564,
+     "lfs_sha256": null,
+     "git_oid": "c75143f25652f1e5fe9f7f7dc7b5183f00d37fb5",
+     "last_commit_date": "2026-06-22T14:33:43.000Z"
+    },
+    {
+     "path": "preview_l_2.png",
+     "bytes": 963539,
+     "lfs_sha256": "d319062ef6d9ad578949e2ba3ad38834cdf658ed679a8b1dd4ba540db5738c6c",
+     "git_oid": "9749f871a0bc3811396052a4b15218083c748ae6",
+     "last_commit_date": "2026-06-22T14:33:43.000Z"
+    },
+    {
+     "path": "preview_l_5.png",
+     "bytes": 3321035,
+     "lfs_sha256": "abef7b2172bf4077404bd3e8d4b7cd4b21de3fd3f7c915a55bdebde23f0fb3bc",
+     "git_oid": "ce587549ba3c293d5d934f6f4457d7abdeb29ee1",
+     "last_commit_date": "2026-06-22T14:33:43.000Z"
+    },
+    {
+     "path": "preview_label.png",
+     "bytes": 36467,
+     "lfs_sha256": null,
+     "git_oid": "732c7f8a51f6a1a8b1f4ccc71805ebafcaff359f",
+     "last_commit_date": "2026-06-22T14:33:43.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/PHerc.1667-iteration-3",
+   "url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-3",
+   "commit_sha": "ecb158ec66244f55339be33d6299c8d60a466f50",
+   "last_modified": "2026-06-30T15:52:08.000Z",
+   "created": "2026-06-22T14:33:45.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1623,
+     "lfs_sha256": null,
+     "git_oid": "f967fa03d1a6b3c4885bd646cb6b66d419e6d3b1",
+     "last_commit_date": "2026-06-22T14:33:52.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 8248,
+     "lfs_sha256": null,
+     "git_oid": "bf955824d439c90b82e8138460ecb242321b56ae",
+     "last_commit_date": "2026-06-30T15:52:08.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 648,
+     "lfs_sha256": null,
+     "git_oid": "ac13162f1d7102ec9c6c47c6a61c5a9d7d7fd587",
+     "last_commit_date": "2026-06-22T14:33:52.000Z"
+    },
+    {
+     "path": "configuration_inkdetection.py",
+     "bytes": 1742,
+     "lfs_sha256": null,
+     "git_oid": "24ac6d12668bfb5cf4b448c8f61723e97264ee25",
+     "last_commit_date": "2026-06-22T14:33:52.000Z"
+    },
+    {
+     "path": "last.ckpt",
+     "bytes": 1008820953,
+     "lfs_sha256": "a2ab8d85b29377e31928962ae750a7c65fd87bbdd43fe61c375af4693ac88f8a",
+     "git_oid": "996e2e604978b097ce9a555496db8ce3722d6a2b",
+     "last_commit_date": "2026-06-22T14:33:52.000Z"
+    },
+    {
+     "path": "model.safetensors",
+     "bytes": 333531996,
+     "lfs_sha256": "f9b5b8982dd62c7551ba7fe260b9db6c9746cc7d14580877691f558b1875abae",
+     "git_oid": "ed69eec442db71daad3a60dc1cd7ce99084a7a24",
+     "last_commit_date": "2026-06-22T14:33:52.000Z"
+    },
+    {
+     "path": "modeling_inkdetection.py",
+     "bytes": 9564,
+     "lfs_sha256": null,
+     "git_oid": "c75143f25652f1e5fe9f7f7dc7b5183f00d37fb5",
+     "last_commit_date": "2026-06-22T14:33:52.000Z"
+    },
+    {
+     "path": "preview_l_2.png",
+     "bytes": 912768,
+     "lfs_sha256": "a8bb61669e63f7ed13c90da1e2fa4367df7f414801f0ae8c7432b30eadea8af2",
+     "git_oid": "7a82b5cb4e68ba6a62d727a98ed983b38f434134",
+     "last_commit_date": "2026-06-22T14:33:52.000Z"
+    },
+    {
+     "path": "preview_l_5.png",
+     "bytes": 3231587,
+     "lfs_sha256": "1c9879912efff58c75a2b1c7c4bb4f821ef1272696ffd8bf58073db104429138",
+     "git_oid": "6cddb15eac193e4d862a3b47f80d152b60fbda66",
+     "last_commit_date": "2026-06-22T14:33:52.000Z"
+    },
+    {
+     "path": "preview_label.png",
+     "bytes": 54029,
+     "lfs_sha256": null,
+     "git_oid": "dff6227b51a70533cab86376ce7277c23495cc9e",
+     "last_commit_date": "2026-06-22T14:33:52.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/PHerc.1667-iteration-4",
+   "url": "https://huggingface.co/scrollprize/PHerc.1667-iteration-4",
+   "commit_sha": "9ff9913da0f2f8374784dd4d4196fdcf62ba6883",
+   "last_modified": "2026-06-30T15:52:10.000Z",
+   "created": "2026-06-22T14:33:53.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1623,
+     "lfs_sha256": null,
+     "git_oid": "f967fa03d1a6b3c4885bd646cb6b66d419e6d3b1",
+     "last_commit_date": "2026-06-22T14:34:02.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 8248,
+     "lfs_sha256": null,
+     "git_oid": "3151ff98e14645ee457002ef75a1631ec844055d",
+     "last_commit_date": "2026-06-30T15:52:10.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 648,
+     "lfs_sha256": null,
+     "git_oid": "04681ef054c5ea5deac1d83c43ac6004dc9b81d4",
+     "last_commit_date": "2026-06-22T14:34:02.000Z"
+    },
+    {
+     "path": "configuration_inkdetection.py",
+     "bytes": 1742,
+     "lfs_sha256": null,
+     "git_oid": "24ac6d12668bfb5cf4b448c8f61723e97264ee25",
+     "last_commit_date": "2026-06-22T14:34:02.000Z"
+    },
+    {
+     "path": "last.ckpt",
+     "bytes": 1008820953,
+     "lfs_sha256": "300a72217200d8e056f6823ef5f401e6ce2ebe34048619be885cf4a916c60473",
+     "git_oid": "7aa6837cf9245fb072d0e70fe0a4fc184b1e2885",
+     "last_commit_date": "2026-06-22T14:34:02.000Z"
+    },
+    {
+     "path": "model.safetensors",
+     "bytes": 333531996,
+     "lfs_sha256": "a1612b1fc97dea039aec3a1d06ff65fe0ee217b91dbe6db9785eb2e5befb3ffe",
+     "git_oid": "ab4ac031d5fbedad32c0443e1349b8bcf1c7cbb3",
+     "last_commit_date": "2026-06-22T14:34:02.000Z"
+    },
+    {
+     "path": "modeling_inkdetection.py",
+     "bytes": 9564,
+     "lfs_sha256": null,
+     "git_oid": "c75143f25652f1e5fe9f7f7dc7b5183f00d37fb5",
+     "last_commit_date": "2026-06-22T14:34:02.000Z"
+    },
+    {
+     "path": "preview_l_2.png",
+     "bytes": 864364,
+     "lfs_sha256": "3fb7b428b6499f47dd330dc5ee4c6eac7d7131fd81f56e03cdc19c1df60a814a",
+     "git_oid": "631f314d81bc6d04dd8660cd04351259d4159e9e",
+     "last_commit_date": "2026-06-22T14:34:02.000Z"
+    },
+    {
+     "path": "preview_l_5.png",
+     "bytes": 2901608,
+     "lfs_sha256": "bb85248b225694282bfd734cafc6a54cd817dd55957f1d0cecd64d98d54c40fb",
+     "git_oid": "adb83f0d165294a3aaee34e7097802e9c831d406",
+     "last_commit_date": "2026-06-22T14:34:02.000Z"
+    },
+    {
+     "path": "preview_label.png",
+     "bytes": 76885,
+     "lfs_sha256": null,
+     "git_oid": "49639412a55365288367e2f9f616286c88631acd",
+     "last_commit_date": "2026-06-22T14:34:02.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/surface_recto_3dunet",
+   "url": "https://huggingface.co/scrollprize/surface_recto_3dunet",
+   "commit_sha": "8ce8a4627e5104dda0af2b05aaa49820c0888774",
+   "last_modified": "2026-06-30T20:20:28.000Z",
+   "created": "2026-06-24T08:43:17.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-06-30T20:20:28.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 3158,
+     "lfs_sha256": null,
+     "git_oid": "c0d702c4f765e612fc8ecf5b78ddb6a329305195",
+     "last_commit_date": "2026-06-30T20:20:28.000Z"
+    },
+    {
+     "path": "checkpoint_inference_ready.pth",
+     "bytes": 1138388181,
+     "lfs_sha256": "dd36b3a89b2f4e21a6cafa14fea459f775f846a6ed036f75fb8e6b65aee3137b",
+     "git_oid": "3c63db25e4587c707b284e6eb2b697c2ffec4c91",
+     "last_commit_date": "2026-06-30T20:20:28.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 1669,
+     "lfs_sha256": null,
+     "git_oid": "1cbebcbfb90ad671d66d257998fbf73ca35e7db3",
+     "last_commit_date": "2026-06-30T20:20:28.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/ink_canonical_2um",
+   "url": "https://huggingface.co/scrollprize/ink_canonical_2um",
+   "commit_sha": "075855bc69317ef6febf39a0d9d687b27d2b7c29",
+   "last_modified": "2026-07-07T10:23:57.000Z",
+   "created": "2026-06-24T08:43:18.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-06-24T08:43:18.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 2111,
+     "lfs_sha256": null,
+     "git_oid": "e0373e389537373d0f00b26c2a3a41db368f43fb",
+     "last_commit_date": "2026-07-07T10:23:57.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 121,
+     "lfs_sha256": null,
+     "git_oid": "61663e11b86d0f2053a24183b40441059f485c02",
+     "last_commit_date": "2026-06-24T08:46:23.000Z"
+    },
+    {
+     "path": "r152_3ddec_v2_l5_epoch13.ckpt",
+     "bytes": 1549556213,
+     "lfs_sha256": "36dd0de84b7b7aa6590184192c7415466cd8a1ba7c1e59f42c6373846373c3e0",
+     "git_oid": "041ea255fd845812206abb05240a8ca3ac74f6cc",
+     "last_commit_date": "2026-06-24T08:46:23.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/ink_3d_dino_guided",
+   "url": "https://huggingface.co/scrollprize/ink_3d_dino_guided",
+   "commit_sha": "73a79525466037432191284dfa237baf830c49ec",
+   "last_modified": "2026-08-05T15:11:21.000Z",
+   "created": "2026-06-24T08:43:18.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-06-30T20:20:29.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 4307,
+     "lfs_sha256": null,
+     "git_oid": "0a271646828723affd2aebe1b5ce9d1fbf8d3b19",
+     "last_commit_date": "2026-06-30T20:20:29.000Z"
+    },
+    {
+     "path": "avg_ref_embedding.npy",
+     "bytes": 3584,
+     "lfs_sha256": "61bdf93bc5e3fd956eebdbed52618985d27264b8a9e5cb043087d0f234507a81",
+     "git_oid": "d3ec8a87d8cd64bba3d775def5705cff7bb2fbd7",
+     "last_commit_date": "2026-06-30T20:20:29.000Z"
+    },
+    {
+     "path": "ckpt_064000.pth",
+     "bytes": 1703137755,
+     "lfs_sha256": "71f78c0a4e9e3daa2b86608c0be0416d051879b27e68a73b4bfeda1775421825",
+     "git_oid": "4ed0c71add71249ec4783960be4dff940d48e234",
+     "last_commit_date": "2026-08-05T15:11:21.000Z"
+    },
+    {
+     "path": "ckpt_077000.pth",
+     "bytes": 1703137755,
+     "lfs_sha256": "20d9b54824bc23af7a0d4b06da2f40de9fa445cbe6f210b7304b281669137f51",
+     "git_oid": "2b2e05fbf1ddbb39481b4d81b02e719553f6aac7",
+     "last_commit_date": "2026-08-05T15:11:21.000Z"
+    },
+    {
+     "path": "ckpt_78k_fullsup.pth",
+     "bytes": 1703138075,
+     "lfs_sha256": "5a148c2c1bb730bfa683f2b3e3cdfc2000424003605e42300b527ff90118b303",
+     "git_oid": "11fcdaa3d6a3e9a1cea73e8b1537a0e70bbf6b15",
+     "last_commit_date": "2026-06-30T20:20:29.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 3028,
+     "lfs_sha256": null,
+     "git_oid": "b69d66e73329470abb6225721f925c6a7431a438",
+     "last_commit_date": "2026-06-30T20:20:29.000Z"
+    },
+    {
+     "path": "recorded_embeddings.npy",
+     "bytes": 442496,
+     "lfs_sha256": "b9364b8aeb5b598f235fbbab3c0ef29106d20613267fc01a98dfeccd2c5f72de",
+     "git_oid": "2d0147c0dc1d55d9f67fe00e7bb7df7a7d07001e",
+     "last_commit_date": "2026-06-30T20:20:29.000Z"
+    },
+    {
+     "path": "recorded_embeddings_2.npy",
+     "bytes": 442496,
+     "lfs_sha256": "b9364b8aeb5b598f235fbbab3c0ef29106d20613267fc01a98dfeccd2c5f72de",
+     "git_oid": "2d0147c0dc1d55d9f67fe00e7bb7df7a7d07001e",
+     "last_commit_date": "2026-06-30T20:20:29.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/dinovol_v2_ps6_step032350",
+   "url": "https://huggingface.co/scrollprize/dinovol_v2_ps6_step032350",
+   "commit_sha": "2ad412b7bc4ae8f742b811f8d8017381802a1788",
+   "last_modified": "2026-06-30T20:20:29.000Z",
+   "created": "2026-06-24T09:35:17.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-06-30T20:20:29.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 2933,
+     "lfs_sha256": null,
+     "git_oid": "35a88fe134272d0f3b3ea5cf0be2a9d67e3d1aef",
+     "last_commit_date": "2026-06-30T20:20:29.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 1414,
+     "lfs_sha256": null,
+     "git_oid": "005c4c152ae10c8de402b768d96c4e18ba970755",
+     "last_commit_date": "2026-06-30T20:20:29.000Z"
+    },
+    {
+     "path": "dinovol_v2_ps6_step032350_teacher_backbone.pt",
+     "bytes": 862583296,
+     "lfs_sha256": "057469ba14020a89dc295f8aa2c813f1be47fdc07cebc54701e3565bb527f5ce",
+     "git_oid": "8aace26c7815af814dd1c111a2e7f0ab1c455ea5",
+     "last_commit_date": "2026-06-30T20:20:29.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/surface_m7_nnunet",
+   "url": "https://huggingface.co/scrollprize/surface_m7_nnunet",
+   "commit_sha": "cd83ccf7e1d58b70bd9074a9a7e158cd2c894f20",
+   "last_modified": "2026-07-01T15:29:18.000Z",
+   "created": "2026-07-01T15:28:20.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "apache-2.0",
+   "licence_tags": [
+    "license:apache-2.0"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-07-01T15:28:20.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 2816,
+     "lfs_sha256": null,
+     "git_oid": "425c9ab6e1687d996c1effb2853fbd2b62e0ab79",
+     "last_commit_date": "2026-07-01T15:29:18.000Z"
+    },
+    {
+     "path": "dataset.json",
+     "bytes": 244,
+     "lfs_sha256": null,
+     "git_oid": "1d115f18b54285f1b27547d9534371afef1be418",
+     "last_commit_date": "2026-07-01T15:29:18.000Z"
+    },
+    {
+     "path": "dataset_fingerprint.json",
+     "bytes": 107325,
+     "lfs_sha256": null,
+     "git_oid": "d7e39023363054dc2df4d4ac6ca36234d5808ec8",
+     "last_commit_date": "2026-07-01T15:29:18.000Z"
+    },
+    {
+     "path": "fold_0/checkpoint_best.pth",
+     "bytes": 820473701,
+     "lfs_sha256": "17465b77591b794638e671f1a9f79c4cf1e79821f302e6fc235e3725e5da7d7e",
+     "git_oid": "2036d9789b6bc196439870487a7d3ab3c59c7c1e",
+     "last_commit_date": "2026-07-01T15:29:18.000Z"
+    },
+    {
+     "path": "plans.json",
+     "bytes": 10751,
+     "lfs_sha256": null,
+     "git_oid": "a6d8348ab109beb0f0b35418e63cac011adbe146",
+     "last_commit_date": "2026-07-01T15:29:18.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/dinovol_v2_ps8_supcon3class_step362500",
+   "url": "https://huggingface.co/scrollprize/dinovol_v2_ps8_supcon3class_step362500",
+   "commit_sha": "983bf00da2a9a9179078e705f96ae79d28af113d",
+   "last_modified": "2026-07-02T13:34:01.000Z",
+   "created": "2026-07-02T13:28:19.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-07-02T13:28:19.000Z"
+    },
+    {
+     "path": "LICENSE",
+     "bytes": 1090,
+     "lfs_sha256": null,
+     "git_oid": "7d979e96c0816e066e8283094a2e49e3abd74041",
+     "last_commit_date": "2026-07-02T13:28:22.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 10256,
+     "lfs_sha256": null,
+     "git_oid": "617f9b914bbce8949ff80daabe166223e9515ef7",
+     "last_commit_date": "2026-07-02T13:28:21.000Z"
+    },
+    {
+     "path": "avg_fiber_embedding__864d_backbone.npz",
+     "bytes": 3736,
+     "lfs_sha256": "880ce1ceadfb2415c95021cb906f9dd79ce6c3fd4c55dd9f747d92a1f50851a1",
+     "git_oid": "9b6fbf6bb2f6ea796529adee903d4d39ffc0abf6",
+     "last_commit_date": "2026-07-02T13:28:25.000Z"
+    },
+    {
+     "path": "frozen_dino_backbone__3class_supcon__step_362500.pt",
+     "bytes": 5022073293,
+     "lfs_sha256": "164fce257b5fec80cb3ec134c3820a1e863ca132061130111a2df41f4c12af94",
+     "git_oid": "00bfc3cfef90d385887b0b46927de31f259e4207",
+     "last_commit_date": "2026-07-02T13:34:01.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/fiber_selftrain_teacher_epoch30",
+   "url": "https://huggingface.co/scrollprize/fiber_selftrain_teacher_epoch30",
+   "commit_sha": "08ef7a88ab710770c5b961ee39df1879333a2aa9",
+   "last_modified": "2026-07-02T13:31:01.000Z",
+   "created": "2026-07-02T13:28:20.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-07-02T13:28:20.000Z"
+    },
+    {
+     "path": "LICENSE",
+     "bytes": 1090,
+     "lfs_sha256": null,
+     "git_oid": "7d979e96c0816e066e8283094a2e49e3abd74041",
+     "last_commit_date": "2026-07-02T13:28:29.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 3873,
+     "lfs_sha256": null,
+     "git_oid": "b677ac42aa38eee712083fc17de968866ec5f9f1",
+     "last_commit_date": "2026-07-02T13:28:28.000Z"
+    },
+    {
+     "path": "frozen_teacher_unet__selftrain_prom08_demo06_dark70_epoch30.pth",
+     "bytes": 1135424507,
+     "lfs_sha256": "0d110293479c0665842a8a0b95444100836b682439e5baa2d65e229bfa2d96ff",
+     "git_oid": "3cef4ad5d11fd4e1db9b71fe39925e17a042884c",
+     "last_commit_date": "2026-07-02T13:31:01.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/fiber_dinoguided_2class_step010000",
+   "url": "https://huggingface.co/scrollprize/fiber_dinoguided_2class_step010000",
+   "commit_sha": "65e72d37a61170ed5b46494c55da09b5025bd6a4",
+   "last_modified": "2026-07-02T13:31:48.000Z",
+   "created": "2026-07-02T13:28:20.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-07-02T13:28:20.000Z"
+    },
+    {
+     "path": "LICENSE",
+     "bytes": 1090,
+     "lfs_sha256": null,
+     "git_oid": "7d979e96c0816e066e8283094a2e49e3abd74041",
+     "last_commit_date": "2026-07-02T13:28:27.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 10179,
+     "lfs_sha256": null,
+     "git_oid": "521e9deec2b1d1c7756daeba30b1e3ccbc5b0b19",
+     "last_commit_date": "2026-07-02T13:28:26.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 2406,
+     "lfs_sha256": null,
+     "git_oid": "588c1f8912238d57b5bc47c80afa003562a7d478",
+     "last_commit_date": "2026-07-02T13:28:27.000Z"
+    },
+    {
+     "path": "step_010000__post_dark_mask_fix__latest.pth",
+     "bytes": 2260148237,
+     "lfs_sha256": "0cce85560786ed9c868e852255c77a1e6bc22554a424dc78e626b913f8f4b97d",
+     "git_oid": "3fe0de0a725b02a22ffb3d2036a10fbc4f2ed682",
+     "last_commit_date": "2026-07-02T13:31:48.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/fiber_ink_4class_selfdistill",
+   "url": "https://huggingface.co/scrollprize/fiber_ink_4class_selfdistill",
+   "commit_sha": "ec9bbc4dbc65a052fc4d78429f7ce5eff080aafe",
+   "last_modified": "2026-07-02T13:43:41.000Z",
+   "created": "2026-07-02T13:42:06.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1608,
+     "lfs_sha256": null,
+     "git_oid": "1a72d3f9e468c28cb96c4c80b3c223eed6a287f1",
+     "last_commit_date": "2026-07-02T13:42:12.000Z"
+    },
+    {
+     "path": "LICENSE",
+     "bytes": 1090,
+     "lfs_sha256": null,
+     "git_oid": "7d979e96c0816e066e8283094a2e49e3abd74041",
+     "last_commit_date": "2026-07-02T13:42:09.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 11044,
+     "lfs_sha256": null,
+     "git_oid": "a13577f0d037ac8bc51cfaf07aa5abd89324f757",
+     "last_commit_date": "2026-07-02T13:42:07.000Z"
+    },
+    {
+     "path": "images/p4_4class_36pykwky_debug_figure_step29899.png",
+     "bytes": 588296,
+     "lfs_sha256": "87f330b02fc354eca6550501e651427c50169fbfa7385155adc2495bae378dd1",
+     "git_oid": "5eb020a311e4712f38050aa1f37ee301f59d98a4",
+     "last_commit_date": "2026-07-02T13:42:12.000Z"
+    },
+    {
+     "path": "images/p4_4class_36pykwky_debug_mask_step29899.png",
+     "bytes": 43474,
+     "lfs_sha256": null,
+     "git_oid": "8864213d7b99e996f402e3cbe41b527f687fbb11",
+     "last_commit_date": "2026-07-02T13:42:13.000Z"
+    },
+    {
+     "path": "p4_4class_ddp8_20260526_step029000.pth",
+     "bytes": 2260148109,
+     "lfs_sha256": "feef7fad198c5c53ede4193cf2686a515be574beb110cc957bd7984b52085bf2",
+     "git_oid": "c821410d770185b70e3895a635bddcedd19bdea7",
+     "last_commit_date": "2026-07-02T13:43:41.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/ink-coverage-32um",
+   "url": "https://huggingface.co/scrollprize/ink-coverage-32um",
+   "commit_sha": "d79c5860674fddd53370a59ee92f229c9b9de88c",
+   "last_modified": "2026-07-13T21:31:49.000Z",
+   "created": "2026-07-13T21:16:37.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-07-13T21:16:37.000Z"
+    },
+    {
+     "path": "dataset.json",
+     "bytes": 171,
+     "lfs_sha256": null,
+     "git_oid": "726d4271ca11d2b5bb3c9ddb437172fc6537d68b",
+     "last_commit_date": "2026-07-13T21:31:49.000Z"
+    },
+    {
+     "path": "dataset_fingerprint.json",
+     "bytes": 3330,
+     "lfs_sha256": null,
+     "git_oid": "e0a491b2b52afa466edfb4de7c9cacfe039eb12a",
+     "last_commit_date": "2026-07-13T21:31:49.000Z"
+    },
+    {
+     "path": "fold_0/checkpoint_final.pth",
+     "bytes": 469484439,
+     "lfs_sha256": "d695c61b96c71fe90ccd331446358ba732f74210ae87e1f74426104e97a26390",
+     "git_oid": "cfcf47ab17b3c30319bb7fdda0125a2fa0e09d4e",
+     "last_commit_date": "2026-07-13T21:31:49.000Z"
+    },
+    {
+     "path": "fold_1/checkpoint_final.pth",
+     "bytes": 469484503,
+     "lfs_sha256": "363b4dd503972e2666e240ed0a1f33c9227fd5e28f8d9879f92d8dca0297607f",
+     "git_oid": "1128787736a67af86a10d12be93fd6141e971cbc",
+     "last_commit_date": "2026-07-13T21:31:49.000Z"
+    },
+    {
+     "path": "fold_2/checkpoint_final.pth",
+     "bytes": 469484439,
+     "lfs_sha256": "ba3e5e61e8641701cee7289c11d7fdcb90b3de9b58304fb7bc5614e0d7040e05",
+     "git_oid": "0956ebfc35e10a7160cc49ab4fc3d1e3958e275a",
+     "last_commit_date": "2026-07-13T21:31:49.000Z"
+    },
+    {
+     "path": "plans.json",
+     "bytes": 9042,
+     "lfs_sha256": null,
+     "git_oid": "bb2c4671def0b119ff01d999178f5a35665a34f3",
+     "last_commit_date": "2026-07-13T21:31:49.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/sam2-photogrammetry",
+   "url": "https://huggingface.co/scrollprize/sam2-photogrammetry",
+   "commit_sha": "2e34f1d90420fc1932d345921f030f8d029e32cf",
+   "last_modified": "2026-07-14T17:03:12.000Z",
+   "created": "2026-07-14T17:02:51.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "apache-2.0",
+   "licence_tags": [
+    "license:apache-2.0"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1637,
+     "lfs_sha256": null,
+     "git_oid": "fb6c14d7e785fe512d491df8e87a035933a5c5a2",
+     "last_commit_date": "2026-07-14T17:03:12.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 1274,
+     "lfs_sha256": null,
+     "git_oid": "654c8e717de787be91886ed1826bfb70dd1bd800",
+     "last_commit_date": "2026-07-14T17:02:57.000Z"
+    },
+    {
+     "path": "photo2_ruler_t_1000.torch",
+     "bytes": 156042504,
+     "lfs_sha256": "c08a82dbbfd263fc73abccf70e9115ee12d3c4e4ee5009e1beb95b85d4162e0b",
+     "git_oid": "f210d1c8bdfaead8d458bcc0a0533f9740c3b4e7",
+     "last_commit_date": "2026-07-14T17:03:06.000Z"
+    },
+    {
+     "path": "photo2_t_5000.torch",
+     "bytes": 156039654,
+     "lfs_sha256": "084dba5ddd02fdef6a0b95d4bfeb8dd259ce39c2077237f967fa384e2bace0a7",
+     "git_oid": "4ae823a39f1e961fbe15ca48657a376cc4d10c4d",
+     "last_commit_date": "2026-07-14T17:03:12.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/lasagna",
+   "url": "https://huggingface.co/scrollprize/lasagna",
+   "commit_sha": "de45f01147adea9f4ad0f621b1ccd885a1f03760",
+   "last_modified": "2026-07-19T10:26:46.000Z",
+   "created": "2026-07-19T10:17:06.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-07-19T10:17:06.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 21,
+     "lfs_sha256": null,
+     "git_oid": "32897cd3e640101ba184f8c4ccd896981de3804a",
+     "last_commit_date": "2026-07-19T10:17:06.000Z"
+    },
+    {
+     "path": "model_current.pt",
+     "bytes": 558287587,
+     "lfs_sha256": "4cc0c40a846b296769b9f7982470559078662a1a0b0e1f74ff41ed9341c0d600",
+     "git_oid": "7e7cb8fbce7a365e374836fc535d6f85f76741e3",
+     "last_commit_date": "2026-07-19T10:26:46.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/ink_9um",
+   "url": "https://huggingface.co/scrollprize/ink_9um",
+   "commit_sha": "7109667e2607db1b90c37c8b09cb876ea7fe7bb1",
+   "last_modified": "2026-08-14T01:02:42.000Z",
+   "created": "2026-08-14T01:02:29.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-08-14T01:02:29.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 3723,
+     "lfs_sha256": null,
+     "git_oid": "beddfb5412ac64c261ed438b9c100d2fb2c5230d",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed42/step-010000.pth",
+     "bytes": 138360039,
+     "lfs_sha256": "5d0896899092f312299c988de5861a5b6d3669112ee2a4976e2ecf44d4fe3664",
+     "git_oid": "8bc0be65bd46614a9b0350e1009025b5cd708d64",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed42/step-020000.pth",
+     "bytes": 138360039,
+     "lfs_sha256": "c72023e13ea466fe1e579ed012eb209b909d79b501b7e1839a27c58ee6f5c6e4",
+     "git_oid": "f7dfa4d95e12372116e12fa7f99c69b8bd749922",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed42/step-030000.pth",
+     "bytes": 138360039,
+     "lfs_sha256": "ade09944cd02f02fb9a25a135b6a9097366e47813abb18d91ddc4da919535d86",
+     "git_oid": "bb246e02491438e58c306ab7d7ca9e29515009ce",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed42/step-040000.pth",
+     "bytes": 138360039,
+     "lfs_sha256": "f1e2101df567a431d3f39d17503316483084bace64cba55ef9671e5ea24ea76a",
+     "git_oid": "113d77d9fa27a6c560dd05d4e7ec0bc366a588a7",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed42/step-050000.pth",
+     "bytes": 138360039,
+     "lfs_sha256": "c16c75db4c6ea75b929c4db82437098d0a4ca0f3779c77e3aabc228f52ea2238",
+     "git_oid": "f0c4acc2a7edcabf0bfa8a4a0124c95c8b1f3643",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed42/step-060000.pth",
+     "bytes": 138360039,
+     "lfs_sha256": "63cad1fb689a575662b6cc367635ec968ec488b219af12aff0497781488070ab",
+     "git_oid": "9b81622cd7831f52502481577e949b9a9ae10319",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed42/step-075000.pth",
+     "bytes": 138360039,
+     "lfs_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+     "git_oid": "b72eef60ec13456b345ef3cac2a6e74ab965ab55",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed43/step-010000.pth",
+     "bytes": 138360231,
+     "lfs_sha256": "2c08d9e1f833f345cfb7ab2543069829d96e918a668d263099a0972dc5dceeeb",
+     "git_oid": "9390f8159e803c468c88d48c093d58f6dcf32aa8",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed43/step-020000.pth",
+     "bytes": 138360231,
+     "lfs_sha256": "b89b2ebcf49d71712c6c38631eec2306966c1602e80aa6f32a1d6123b0bdf1c9",
+     "git_oid": "a8e13b1f29aa15ea7a43df42aca4f133be589757",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed43/step-030000.pth",
+     "bytes": 138360231,
+     "lfs_sha256": "4d9b6487b7c6b4f2a1d5a7b57cba37c8b0ccee259c74d9b6b04008cc52597b4a",
+     "git_oid": "c2df9f0efd4d1eddb4f7f55eae82ea3dc517d3c8",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed43/step-040000.pth",
+     "bytes": 138360231,
+     "lfs_sha256": "e0b9ec7e5e9cb7caf6c9689bd35159285bb82c629f63e5ec83cb220e8d659978",
+     "git_oid": "b263c2b7d1bc65d4e1add2061c2be121d99ab40e",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed43/step-050000.pth",
+     "bytes": 138360231,
+     "lfs_sha256": "c3c55191dad99849696c980aa7abaf6305514a91d6b8ba898e1e0dbb50eb3ea4",
+     "git_oid": "e07f8c11ae423c219ab05059351da18b02483eb7",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed43/step-060000.pth",
+     "bytes": 138360231,
+     "lfs_sha256": "bf229faf754da3f1fc3026a3f9a9649341aeb3feb7bc89099cad31c55525d270",
+     "git_oid": "f083e05b363be84f2aa1533161663db87843be73",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    },
+    {
+     "path": "hybrid_3d2d-seed43/step-075000.pth",
+     "bytes": 138360231,
+     "lfs_sha256": "2aeaa85a35ef28d7bc7bf3e848c4a6a91385e9132710927fdba41133c4ecb28f",
+     "git_oid": "d235ae5dab887f465c80c4ac75cf669919a862aa",
+     "last_commit_date": "2026-08-14T01:02:42.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/winding_model_9um",
+   "url": "https://huggingface.co/scrollprize/winding_model_9um",
+   "commit_sha": "6e153b0eb51d1637185949750adffe7fa3f4f13e",
+   "last_modified": "2026-08-14T21:22:27.000Z",
+   "created": "2026-08-14T21:21:40.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-08-14T21:21:40.000Z"
+    },
+    {
+     "path": "ckpt_final.pth",
+     "bytes": 146441803,
+     "lfs_sha256": "805a868c5ef518e4edb567ac2ddc63dfbf870f21b1164ae1642baa1781ad8f02",
+     "git_oid": "d11ca6c8291f8e3d2f92cddba1a81b26fcbfc9aa",
+     "last_commit_date": "2026-08-14T21:22:27.000Z"
+    },
+    {
+     "path": "config.json",
+     "bytes": 2894,
+     "lfs_sha256": null,
+     "git_oid": "755d3dc243f050126380d73758eb886643060867",
+     "last_commit_date": "2026-08-14T21:22:27.000Z"
+    },
+    {
+     "path": "metrics.jsonl",
+     "bytes": 40219,
+     "lfs_sha256": null,
+     "git_oid": "44b9066b2e90e74bea1d626f6cf9c2e0b4e29eb8",
+     "last_commit_date": "2026-08-14T21:22:27.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/hecate",
+   "url": "https://huggingface.co/scrollprize/hecate",
+   "commit_sha": "9cb86e500e944b11a06a7020403cde5dffb5bcb2",
+   "last_modified": "2026-09-15T16:57:14.000Z",
+   "created": "2026-09-15T14:53:02.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": "mit",
+   "licence_tags": [
+    "license:mit"
+   ],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1709,
+     "lfs_sha256": null,
+     "git_oid": "c14afbd2e173c283820d972b44fc2ac459ecb560",
+     "last_commit_date": "2026-09-15T16:11:32.000Z"
+    },
+    {
+     "path": "LICENSE",
+     "bytes": 1075,
+     "lfs_sha256": null,
+     "git_oid": "b263f7ab16cdce08e6ad582bc5fd285eff9b0387",
+     "last_commit_date": "2026-09-15T16:11:32.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 12769,
+     "lfs_sha256": null,
+     "git_oid": "94f0407f5706a8ab98e55e4214b99be88ff3a5e1",
+     "last_commit_date": "2026-09-15T16:57:14.000Z"
+    },
+    {
+     "path": "assets/hecate-2.4um.png",
+     "bytes": 1669728,
+     "lfs_sha256": "c5d0c3a683e5203e8d5276341cc31e93edff920e7c0df58e64fd4918cc6821e7",
+     "git_oid": "ff1c1fde1875a22354068268a6ae6b0b876507c6",
+     "last_commit_date": "2026-09-15T16:11:32.000Z"
+    },
+    {
+     "path": "assets/hecate-9.6um.png",
+     "bytes": 1743923,
+     "lfs_sha256": "70500023d9f139631bd9def1d6c64bf0744d863d999d688a7d05e3b1bfd4c62f",
+     "git_oid": "f3b616e2146044da84a3d30b955eceae8cb967df",
+     "last_commit_date": "2026-09-15T16:11:32.000Z"
+    },
+    {
+     "path": "assets/pherc139-cross-section.png",
+     "bytes": 528927,
+     "lfs_sha256": "8a90ebbdc24bdb352d8c88b91380a73b4c9c22a5d8a3b7d324dff482b67ee817",
+     "git_oid": "993b6c199c34dbb0e3cbb6418e446ed13122e07b",
+     "last_commit_date": "2026-09-15T16:11:32.000Z"
+    },
+    {
+     "path": "hecate.py",
+     "bytes": 22462,
+     "lfs_sha256": null,
+     "git_oid": "a2d3494361d81107d4bd9268cfe377d80f22cd0a",
+     "last_commit_date": "2026-09-15T16:57:14.000Z"
+    },
+    {
+     "path": "hecate_2.4um.pth",
+     "bytes": 522656918,
+     "lfs_sha256": "fa2de3827ebd247ff2d33df1b6f899ea79d5269036cf16765997c62f0e9988c7",
+     "git_oid": "41ef3ddb488926d7d7a582fc3c25011543292334",
+     "last_commit_date": "2026-09-15T16:11:32.000Z"
+    },
+    {
+     "path": "hecate_9.6um.pth",
+     "bytes": 522576086,
+     "lfs_sha256": "809f4f10f7cb7afa19b4bee0f7d2ab31edd7e11b664f9f210cc9c17f22fcfe5d",
+     "git_oid": "fde6e7f0c48c7e8a8ba03075db3b6a2080c6158c",
+     "last_commit_date": "2026-09-15T16:11:32.000Z"
+    },
+    {
+     "path": "requirements.txt",
+     "bytes": 62,
+     "lfs_sha256": null,
+     "git_oid": "897aa8220778c52a39f2a4c0e420d5e5a397df78",
+     "last_commit_date": "2026-09-15T16:57:14.000Z"
+    }
+   ]
+  },
+  {
+   "repo": "scrollprize/lasagna-fiber",
+   "url": "https://huggingface.co/scrollprize/lasagna-fiber",
+   "commit_sha": "a9aaf89cc504206f4dda0f0398a4f3e263fee25f",
+   "last_modified": "2026-09-23T09:11:29.000Z",
+   "created": "2026-09-21T10:35:35.000Z",
+   "gated": false,
+   "private": false,
+   "card_licence": null,
+   "licence_tags": [],
+   "files": [
+    {
+     "path": ".gitattributes",
+     "bytes": 1519,
+     "lfs_sha256": null,
+     "git_oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+     "last_commit_date": "2026-09-21T10:35:35.000Z"
+    },
+    {
+     "path": "5scroll_json_eligible_refinement_128_sd1_16x8_ema_20260915_212757/snapshots/best_ema_0p999.pt",
+     "bytes": 220206229,
+     "lfs_sha256": "67edd3a1bde162c7105ee37d849a0f0b60a9b840dd37fc7ff6e17e0c3a2e9742",
+     "git_oid": "cd03df05e3b5d980e623df56398cfc91366683b0",
+     "last_commit_date": "2026-09-23T09:02:33.000Z"
+    },
+    {
+     "path": "README.md",
+     "bytes": 10786,
+     "lfs_sha256": null,
+     "git_oid": "98a9e56059d5346d54b04ab800f49ff0ac671104",
+     "last_commit_date": "2026-09-21T11:17:15.000Z"
+    },
+    {
+     "path": "s1a_128_1_single_8x8_20260801_084232_best91_5k.pt",
+     "bytes": 344225753,
+     "lfs_sha256": "f389da7914a6da34506f92204bf5441964e96599339dfe79dfc9c48b67165e17",
+     "git_oid": "62b6936999acd439217dc6d176b2d014b1f1b5aa",
+     "last_commit_date": "2026-09-21T11:16:06.000Z"
+    },
+    {
+     "path": "s1a_128_2_single_8x8_20260728_094259_best_25_9k.pt",
+     "bytes": 344225753,
+     "lfs_sha256": "2528a46e38844c06e591084f1dc1af9442ccb45a17aae9b2a68441e6028bbdd6",
+     "git_oid": "e97e60e29a3d3dd1810f5052323b4e122bc72ffa",
+     "last_commit_date": "2026-09-21T10:37:19.000Z"
+    }
+   ]
+  }
+ ]
+}
