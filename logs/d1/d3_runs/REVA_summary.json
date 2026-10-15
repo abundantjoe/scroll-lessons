@@ -1,0 +1,121 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "arm": "REVA",
+ "smoke": false,
+ "started_utc": "2026-09-25T17:07:36Z",
+ "finished_utc": "2026-09-25T19:01:54Z",
+ "steps": 2000,
+ "finite_loss_steps": 2000,
+ "loss_first": 0.5502243638038635,
+ "loss_last": 0.44244545698165894,
+ "loss_mean_last50": 0.48089348554611205,
+ "median_s_per_step": 3.354668259500613,
+ "loop_s": 6852.1,
+ "peak_rss_kb": 4255264,
+ "base_checkpoint": {
+  "path": "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth",
+  "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+ },
+ "strict_load": "<All keys matched successfully>",
+ "recipe": {
+  "optimizer": "AdamW",
+  "lr": 2e-05,
+  "weight_decay": 3e-05,
+  "betas": [
+   0.9,
+   0.999
+  ],
+  "schedule": "constant",
+  "grad_clip": 1.0,
+  "batch": 8,
+  "fold_a_per_batch": 4,
+  "replay_per_batch": 4,
+  "precision": "fp32",
+  "seed": 20260925,
+  "z_window": "stack 2..18 (render 7..23) +-2 official jitter",
+  "augmentation": "official default",
+  "threads": {
+   "intra": 3,
+   "interop": 1
+  }
+ },
+ "sampling": {
+  "fold_a_epochs": 28,
+  "replay_epochs": 4
+ },
+ "resumptions": [],
+ "checkpoint_events": [
+  {
+   "event": "checkpoint",
+   "step": 250,
+   "mode": "write-then-replace",
+   "used_before_bytes": 2655350185,
+   "utc": "2026-09-25T17:21:38Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 500,
+   "mode": "delete-then-write",
+   "used_before_bytes": 3089864386,
+   "utc": "2026-09-25T17:35:44Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 750,
+   "mode": "delete-then-write",
+   "used_before_bytes": 3110865495,
+   "utc": "2026-09-25T17:50:35Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1000,
+   "mode": "delete-then-write",
+   "used_before_bytes": 3135761708,
+   "utc": "2026-09-25T18:04:56Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1250,
+   "mode": "delete-then-write",
+   "used_before_bytes": 3156306811,
+   "utc": "2026-09-25T18:20:40Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1500,
+   "mode": "delete-then-write",
+   "used_before_bytes": 3177257162,
+   "utc": "2026-09-25T18:34:37Z"
+  },
+  {
+   "event": "checkpoint",
+   "step": 1750,
+   "mode": "delete-then-write",
+   "used_before_bytes": 3199087355,
+   "utc": "2026-09-25T18:48:33Z"
+  }
+ ],
+ "ckpt_every": 250,
+ "loop_s_note": "",
+ "meta": {
+  "arm": "REVA",
+  "replay_manifest_sha256": "0fc4dd46ed9cbb686f95409d1bd5426fbe1a43ccc58a7c40de372a44b9603ab5",
+  "n_replay": 2643,
+  "fa_manifest_sha256": "8b127e1017d1e9a780f393e8822271ecc838bcb19e5fd4c5cf91515d6f98c040",
+  "n_fold_a": 288
+ },
+ "checks": {
+  "reva_stack_is_exact_depth_reverse": true
+ },
+ "train_log": "/work/d3/runs/REVA/train_log.jsonl",
+ "train_log_sha256": "43605ab11353dc5a90b3a037845bb35bed6bf6dbfc870896331c35a33ec07601",
+ "script": {
+  "path": "/work/d3/scripts/d3_train.py",
+  "sha256": "2943b1b6fb7492433fc1476bb57848d306c705f70ccef575bf701342acf6f52f"
+ },
+ "model_final": {
+  "path": "/work/d3/runs/REVA/model_final.pth",
+  "sha256": "94c8ba522e9f55f0ff4168380e13e65e28847914d3b754560c33106652af866f",
+  "bytes": 138362463
+ }
+}
