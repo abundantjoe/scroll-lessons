@@ -1,0 +1,596 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-25T11:21:18Z",
+ "rule": "DECL-D3-A3 item 6 (LABEL-EQUIV, reported, never deciding)",
+ "viewing": "no image or pixel array was opened, displayed or described; numbers only",
+ "teacher": "ref9 >= 150 AND valid9 = ink; ref9 <= 100 AND valid9 = blank; rest ignored (build_pools.py build_fa)",
+ "human": {
+  "label_set": "20260918 (official 2.403 um inklabels/supervision, area-averaged to the 9.366 um canvas: bank lab9_*.npz frac)",
+  "primary_gt0": "ink = inkfrac > 0 AND supfrac > 0; blank = supfrac > 0 without ink (D3-FEAS count A text_lab_gt0 literal reading)",
+  "extra_ge0p5": "ink = inkfrac >= 0.5 AND supfrac >= 0.5; blank = supfrac >= 0.5 without ink (count A text_lab_ge0p5; extra, not declared)"
+ },
+ "tiles": {
+  "pool288": 288,
+  "primary306": 306,
+  "pool_teacher_labels_equal_pool_arrays": 288,
+  "fa_tiles": "/work/d3/work/fa_tiles.json",
+  "fa_tiles_sha256": "6ee5e8c067e78623fca19cf8efb642885ef3b90a9c771eb40c4272d9cc4ce83c",
+  "pool_manifest_sha256": "8b127e1017d1e9a780f393e8822271ecc838bcb19e5fd4c5cf91515d6f98c040"
+ },
+ "counting": {
+  "tile_summed": "per tile, as the pool stores the labels (overlapping stride-64 tiles counted once per tile)",
+  "unique_px": "union of the tiles on each segment canvas"
+ },
+ "input_sha256": {
+  "20260220213127-w00": {
+   "ref9.npy": "70ad7555e8978156af32b32f4f88e39e19331ee762a534a9ece6637511c3a865",
+   "valid9.npy": "3323e783989c094ad3969b3bdc4179b3ce39df5e2675143f2d913338150f54f1",
+   "lab9_inklabels.npz": "b9661e66a1fec5353ec399c17fcab74476e385cc38a79f4575466d202dde332c",
+   "lab9_supervision.npz": "904bb0d4c82db62905f9a9ac019d2f650343a5ceb79e820ce2b8390a1d4be1f1"
+  },
+  "20260220214732-auto_grown_20260220144552896": {
+   "ref9.npy": "4d52b3807a6673c01b34e63e457ac27fe08881c4453c45bbf8fcd70bbdc4250f",
+   "valid9.npy": "134cfffb3b63a2d748dac8d08832baa8ea6dacc2638b437297871d01b5355848",
+   "lab9_inklabels.npz": "5e104f3a20ecf84a8817bebcf2ec77b9ebd7d527d9f372713e501bf80ca40dc8",
+   "lab9_supervision.npz": "330fc9e03bc4a70da01134d814c3f691e43551d2ba8a9f137b5270802b735a02"
+  },
+  "20260221022814-auto_grown_20260220174252405": {
+   "ref9.npy": "18434c16da1d758957755620092d23649d82f29803bd474a7fd98f29d9480873",
+   "valid9.npy": "6b00af30be2f362d973f78acd9b6c24003ab015597810f6a55bd043039606351",
+   "lab9_inklabels.npz": "5d0e92dafd6c6b04e9939da343db0fbee73552485375eaba2fb512eb11bf9813",
+   "lab9_supervision.npz": "fd98fa48b32abbf80e184063e0472b93619086862dee57925f775d2b9329d0b5"
+  }
+ },
+ "bank_0841_json_sha256": "7e3b715f942daa4dda047feef33cccea5f61776f87b9afb5fe52f1eaa4d16b85",
+ "results": {
+  "primary_gt0": {
+   "pool288": {
+    "tile_summed": {
+     "teacher_defined_px": 4471676,
+     "human_defined_px": 210292,
+     "overlap_px": 199612,
+     "confusion": {
+      "teacher_ink_human_ink": 67734,
+      "teacher_ink_human_blank": 33350,
+      "teacher_blank_human_ink": 9919,
+      "teacher_blank_human_blank": 88609
+     },
+     "agreement": 0.7832344748812696,
+     "cohen_kappa": 0.567697626738845,
+     "expected_agreement": 0.4985789148379674,
+     "teacher_ink_frac_in_overlap": 0.5064024206961505,
+     "human_ink_frac_in_overlap": 0.3890196982145362
+    },
+    "unique_px": {
+     "teacher_defined_px": 1939990,
+     "human_defined_px": 67477,
+     "overlap_px": 64273,
+     "confusion": {
+      "teacher_ink_human_ink": 21501,
+      "teacher_ink_human_blank": 8729,
+      "teacher_blank_human_ink": 3517,
+      "teacher_blank_human_blank": 30526
+     },
+     "agreement": 0.8094689838656979,
+     "cohen_kappa": 0.6138637544590952,
+     "expected_agreement": 0.50657049594657,
+     "teacher_ink_frac_in_overlap": 0.4703374667434226,
+     "human_ink_frac_in_overlap": 0.3892458730726744
+    },
+    "n_tiles": 288,
+    "n_tiles_with_overlap": 26,
+    "n_unique_px_in_tiles": 2023424,
+    "per_segment": {
+     "20260220213127-w00": {
+      "n_tiles": 118,
+      "n_tiles_with_overlap": 0,
+      "tile_summed": {
+       "teacher_defined_px": 1834797,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      },
+      "unique_px": {
+       "teacher_defined_px": 775544,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      }
+     },
+     "20260220214732-auto_grown_20260220144552896": {
+      "n_tiles": 100,
+      "n_tiles_with_overlap": 26,
+      "tile_summed": {
+       "teacher_defined_px": 1553554,
+       "human_defined_px": 210292,
+       "overlap_px": 199612,
+       "confusion": {
+        "teacher_ink_human_ink": 67734,
+        "teacher_ink_human_blank": 33350,
+        "teacher_blank_human_ink": 9919,
+        "teacher_blank_human_blank": 88609
+       },
+       "agreement": 0.7832344748812696,
+       "cohen_kappa": 0.567697626738845,
+       "expected_agreement": 0.4985789148379674,
+       "teacher_ink_frac_in_overlap": 0.5064024206961505,
+       "human_ink_frac_in_overlap": 0.3890196982145362
+      },
+      "unique_px": {
+       "teacher_defined_px": 668789,
+       "human_defined_px": 67477,
+       "overlap_px": 64273,
+       "confusion": {
+        "teacher_ink_human_ink": 21501,
+        "teacher_ink_human_blank": 8729,
+        "teacher_blank_human_ink": 3517,
+        "teacher_blank_human_blank": 30526
+       },
+       "agreement": 0.8094689838656979,
+       "cohen_kappa": 0.6138637544590952,
+       "expected_agreement": 0.50657049594657,
+       "teacher_ink_frac_in_overlap": 0.4703374667434226,
+       "human_ink_frac_in_overlap": 0.3892458730726744
+      }
+     },
+     "20260221022814-auto_grown_20260220174252405": {
+      "n_tiles": 70,
+      "n_tiles_with_overlap": 0,
+      "tile_summed": {
+       "teacher_defined_px": 1083325,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      },
+      "unique_px": {
+       "teacher_defined_px": 495657,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      }
+     }
+    }
+   },
+   "primary306": {
+    "tile_summed": {
+     "teacher_defined_px": 4749772,
+     "human_defined_px": 295882,
+     "overlap_px": 281732,
+     "confusion": {
+      "teacher_ink_human_ink": 106460,
+      "teacher_ink_human_blank": 41626,
+      "teacher_blank_human_ink": 18681,
+      "teacher_blank_human_blank": 114965
+     },
+     "agreement": 0.785941959024889,
+     "cohen_kappa": 0.5743194804583708,
+     "expected_agreement": 0.49713921321650384,
+     "teacher_ink_frac_in_overlap": 0.5256271917992986,
+     "human_ink_frac_in_overlap": 0.44418454417673536
+    },
+    "unique_px": {
+     "teacher_defined_px": 2053405,
+     "human_defined_px": 92416,
+     "overlap_px": 88545,
+     "confusion": {
+      "teacher_ink_human_ink": 31729,
+      "teacher_ink_human_blank": 12084,
+      "teacher_blank_human_ink": 5922,
+      "teacher_blank_human_blank": 38810
+     },
+     "agreement": 0.7966457733355921,
+     "cohen_kappa": 0.5926592342964339,
+     "expected_agreement": 0.5007761466909139,
+     "teacher_ink_frac_in_overlap": 0.4948105483087695,
+     "human_ink_frac_in_overlap": 0.4252188152916596
+    },
+    "n_tiles": 306,
+    "n_tiles_with_overlap": 33,
+    "n_unique_px_in_tiles": 2142208,
+    "per_segment": {
+     "20260220213127-w00": {
+      "n_tiles": 122,
+      "n_tiles_with_overlap": 0,
+      "tile_summed": {
+       "teacher_defined_px": 1896856,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      },
+      "unique_px": {
+       "teacher_defined_px": 810822,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      }
+     },
+     "20260220214732-auto_grown_20260220144552896": {
+      "n_tiles": 111,
+      "n_tiles_with_overlap": 33,
+      "tile_summed": {
+       "teacher_defined_px": 1724583,
+       "human_defined_px": 295882,
+       "overlap_px": 281732,
+       "confusion": {
+        "teacher_ink_human_ink": 106460,
+        "teacher_ink_human_blank": 41626,
+        "teacher_blank_human_ink": 18681,
+        "teacher_blank_human_blank": 114965
+       },
+       "agreement": 0.785941959024889,
+       "cohen_kappa": 0.5743194804583708,
+       "expected_agreement": 0.49713921321650384,
+       "teacher_ink_frac_in_overlap": 0.5256271917992986,
+       "human_ink_frac_in_overlap": 0.44418454417673536
+      },
+      "unique_px": {
+       "teacher_defined_px": 727065,
+       "human_defined_px": 92416,
+       "overlap_px": 88545,
+       "confusion": {
+        "teacher_ink_human_ink": 31729,
+        "teacher_ink_human_blank": 12084,
+        "teacher_blank_human_ink": 5922,
+        "teacher_blank_human_blank": 38810
+       },
+       "agreement": 0.7966457733355921,
+       "cohen_kappa": 0.5926592342964339,
+       "expected_agreement": 0.5007761466909139,
+       "teacher_ink_frac_in_overlap": 0.4948105483087695,
+       "human_ink_frac_in_overlap": 0.4252188152916596
+      }
+     },
+     "20260221022814-auto_grown_20260220174252405": {
+      "n_tiles": 73,
+      "n_tiles_with_overlap": 0,
+      "tile_summed": {
+       "teacher_defined_px": 1128333,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      },
+      "unique_px": {
+       "teacher_defined_px": 515518,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      }
+     }
+    }
+   }
+  },
+  "extra_ge0p5": {
+   "pool288": {
+    "tile_summed": {
+     "teacher_defined_px": 4471676,
+     "human_defined_px": 208740,
+     "overlap_px": 198084,
+     "confusion": {
+      "teacher_ink_human_ink": 67246,
+      "teacher_ink_human_blank": 33146,
+      "teacher_blank_human_ink": 9072,
+      "teacher_blank_human_blank": 88620
+     },
+     "agreement": 0.7868681973304255,
+     "cohen_kappa": 0.5750653240869823,
+     "expected_agreement": 0.49843631327182686,
+     "teacher_ink_frac_in_overlap": 0.5068152904828255,
+     "human_ink_frac_in_overlap": 0.3852809919024252
+    },
+    "unique_px": {
+     "teacher_defined_px": 1939990,
+     "human_defined_px": 67003,
+     "overlap_px": 63805,
+     "confusion": {
+      "teacher_ink_human_ink": 21354,
+      "teacher_ink_human_blank": 8703,
+      "teacher_blank_human_ink": 3231,
+      "teacher_blank_human_blank": 30517
+     },
+     "agreement": 0.8129613666640545,
+     "cohen_kappa": 0.6208924813136484,
+     "expected_agreement": 0.5066343342805374,
+     "teacher_ink_frac_in_overlap": 0.4710759344878928,
+     "human_ink_frac_in_overlap": 0.38531463051484993
+    },
+    "n_tiles": 288,
+    "n_tiles_with_overlap": 26,
+    "n_unique_px_in_tiles": 2023424,
+    "per_segment": {
+     "20260220213127-w00": {
+      "n_tiles": 118,
+      "n_tiles_with_overlap": 0,
+      "tile_summed": {
+       "teacher_defined_px": 1834797,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      },
+      "unique_px": {
+       "teacher_defined_px": 775544,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      }
+     },
+     "20260220214732-auto_grown_20260220144552896": {
+      "n_tiles": 100,
+      "n_tiles_with_overlap": 26,
+      "tile_summed": {
+       "teacher_defined_px": 1553554,
+       "human_defined_px": 208740,
+       "overlap_px": 198084,
+       "confusion": {
+        "teacher_ink_human_ink": 67246,
+        "teacher_ink_human_blank": 33146,
+        "teacher_blank_human_ink": 9072,
+        "teacher_blank_human_blank": 88620
+       },
+       "agreement": 0.7868681973304255,
+       "cohen_kappa": 0.5750653240869823,
+       "expected_agreement": 0.49843631327182686,
+       "teacher_ink_frac_in_overlap": 0.5068152904828255,
+       "human_ink_frac_in_overlap": 0.3852809919024252
+      },
+      "unique_px": {
+       "teacher_defined_px": 668789,
+       "human_defined_px": 67003,
+       "overlap_px": 63805,
+       "confusion": {
+        "teacher_ink_human_ink": 21354,
+        "teacher_ink_human_blank": 8703,
+        "teacher_blank_human_ink": 3231,
+        "teacher_blank_human_blank": 30517
+       },
+       "agreement": 0.8129613666640545,
+       "cohen_kappa": 0.6208924813136484,
+       "expected_agreement": 0.5066343342805374,
+       "teacher_ink_frac_in_overlap": 0.4710759344878928,
+       "human_ink_frac_in_overlap": 0.38531463051484993
+      }
+     },
+     "20260221022814-auto_grown_20260220174252405": {
+      "n_tiles": 70,
+      "n_tiles_with_overlap": 0,
+      "tile_summed": {
+       "teacher_defined_px": 1083325,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      },
+      "unique_px": {
+       "teacher_defined_px": 495657,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      }
+     }
+    }
+   },
+   "primary306": {
+    "tile_summed": {
+     "teacher_defined_px": 4749772,
+     "human_defined_px": 294066,
+     "overlap_px": 279940,
+     "confusion": {
+      "teacher_ink_human_ink": 105578,
+      "teacher_ink_human_blank": 41816,
+      "teacher_blank_human_ink": 17400,
+      "teacher_blank_human_blank": 115146
+     },
+     "agreement": 0.7884689576337787,
+     "cohen_kappa": 0.5796445473334998,
+     "expected_agreement": 0.4967805436461295,
+     "teacher_ink_frac_in_overlap": 0.5265199685646924,
+     "human_ink_frac_in_overlap": 0.4393012788454669
+    },
+    "unique_px": {
+     "teacher_defined_px": 2053405,
+     "human_defined_px": 91890,
+     "overlap_px": 88025,
+     "confusion": {
+      "teacher_ink_human_ink": 31435,
+      "teacher_ink_human_blank": 12205,
+      "teacher_blank_human_ink": 5559,
+      "teacher_blank_human_blank": 38826
+     },
+     "agreement": 0.7981936949730191,
+     "cohen_kappa": 0.5958419213283795,
+     "expected_agreement": 0.5006748208763405,
+     "teacher_ink_frac_in_overlap": 0.49576824765691563,
+     "human_ink_frac_in_overlap": 0.420266969610906
+    },
+    "n_tiles": 306,
+    "n_tiles_with_overlap": 33,
+    "n_unique_px_in_tiles": 2142208,
+    "per_segment": {
+     "20260220213127-w00": {
+      "n_tiles": 122,
+      "n_tiles_with_overlap": 0,
+      "tile_summed": {
+       "teacher_defined_px": 1896856,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      },
+      "unique_px": {
+       "teacher_defined_px": 810822,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      }
+     },
+     "20260220214732-auto_grown_20260220144552896": {
+      "n_tiles": 111,
+      "n_tiles_with_overlap": 33,
+      "tile_summed": {
+       "teacher_defined_px": 1724583,
+       "human_defined_px": 294066,
+       "overlap_px": 279940,
+       "confusion": {
+        "teacher_ink_human_ink": 105578,
+        "teacher_ink_human_blank": 41816,
+        "teacher_blank_human_ink": 17400,
+        "teacher_blank_human_blank": 115146
+       },
+       "agreement": 0.7884689576337787,
+       "cohen_kappa": 0.5796445473334998,
+       "expected_agreement": 0.4967805436461295,
+       "teacher_ink_frac_in_overlap": 0.5265199685646924,
+       "human_ink_frac_in_overlap": 0.4393012788454669
+      },
+      "unique_px": {
+       "teacher_defined_px": 727065,
+       "human_defined_px": 91890,
+       "overlap_px": 88025,
+       "confusion": {
+        "teacher_ink_human_ink": 31435,
+        "teacher_ink_human_blank": 12205,
+        "teacher_blank_human_ink": 5559,
+        "teacher_blank_human_blank": 38826
+       },
+       "agreement": 0.7981936949730191,
+       "cohen_kappa": 0.5958419213283795,
+       "expected_agreement": 0.5006748208763405,
+       "teacher_ink_frac_in_overlap": 0.49576824765691563,
+       "human_ink_frac_in_overlap": 0.420266969610906
+      }
+     },
+     "20260221022814-auto_grown_20260220174252405": {
+      "n_tiles": 73,
+      "n_tiles_with_overlap": 0,
+      "tile_summed": {
+       "teacher_defined_px": 1128333,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      },
+      "unique_px": {
+       "teacher_defined_px": 515518,
+       "human_defined_px": 0,
+       "overlap_px": 0,
+       "confusion": {
+        "teacher_ink_human_ink": 0,
+        "teacher_ink_human_blank": 0,
+        "teacher_blank_human_ink": 0,
+        "teacher_blank_human_blank": 0
+       },
+       "agreement": null,
+       "cohen_kappa": null
+      }
+     }
+    }
+   }
+  }
+ },
+ "seconds": 5.0,
+ "script": {
+  "path": "/work/d3/scripts/label_equiv.py",
+  "sha256": "4352125e45f6f1d9675fc157e7049806ee11bb11e0b6b2dd2e7f26b2f384f889"
+ }
+}

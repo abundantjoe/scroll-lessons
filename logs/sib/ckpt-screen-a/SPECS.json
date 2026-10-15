@@ -1,0 +1,328 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-26T00:54:49Z",
+ "task": "ckpt-screen-a (DECL-DEVLOOP-SCREEN phase 1: specs, wrappers, smoke, cost; no DEV map made)",
+ "viewing": "no image, map, render or CT pixel was opened, viewed or described; arrays summarised by hashes and counts",
+ "wrapper": {
+  "path": "tools/sib/ckpt-screen-a/screen_wrap.py",
+  "sha256": "71d119cf5f7573ce828645e38fea46c03b9793f57ea873362b3055f9a05b6e45",
+  "selftest": "screen_wrap.py selftest (geometry; see runs.jsonl label wrap_selftest)"
+ },
+ "map_format": "devloop evaluate.py load_map: <out>/<wid>.tif (forward) and <out>/<wid>_reverse.tif, 2-D uint8 TIFF in the Y,X frame of the devloop render.zarr (31 slices, 9.362 um, --flip-normals)",
+ "sources_sha256": {
+  "hf_bucket_ink_0139.json": "f972cbb69cfb7303be8699dd026892de2f0dbfb4d8b0432fc2a07d66cf533e49",
+  "hf_bucket_ink_814.json": "2d2ade15b9d2dbea25d67096d6e9951c2df7e87a0bfb9840626f6a30a628cae5",
+  "hf_bucket_ink_toplevel.json": "bee61cb9fd5690e6abca421b068598f6fc4273304de4f5a23cfa5fccef991c95",
+  "hf_bucket_ink_unused.json": "1952da54b0aae0d9ebbfb6926402ec5479cdea8104c6f69b33823b4e08a6b916",
+  "ink9_seed43_step075000_embedded_config.json": "d8d1e66c90789b687017008c915e804dd8fb1d3cf43801285f041d46bf9f91bd",
+  "ink_3d_dino_guided_config.json": "7f3e817016c581b1827e1aad076a9c3bb1163c41e68d3ab98e380d06baf63849"
+ },
+ "window_cost_basis": {
+  "window_px": 2136,
+  "render_crop_px": 2648,
+  "voxel_um": 9.362,
+  "note": "synthetic smoke, every tile non-empty (real windows skip empty tiles: cost is an upper bound); fp32, CPU, 4 threads"
+ },
+ "checkpoints": {
+  "ink_9um_seed43_step075000": {
+   "repo": "scrollprize/ink_9um",
+   "commit": "7109667e2607db1b90c37c8b09cb876ea7fe7bb1",
+   "file": "hybrid_3d2d-seed43/step-075000.pth",
+   "bytes": 138360231,
+   "sha256": "2aeaa85a35ef28d7bc7bf3e848c4a6a91385e9132710927fdba41133c4ecb28f",
+   "sha256_catalogue": "2aeaa85a35ef28d7bc7bf3e848c4a6a91385e9132710927fdba41133c4ecb28f",
+   "sha256_match": true,
+   "licence": "MIT (card YAML); not gated",
+   "card_readme_sha256": "ef0f3cf3186e9d05c8816718c4024aeb356e27a8c02d7da1bacdee113c5ef273",
+   "status": "SCREENABLE",
+   "official_code": {
+    "repo": "ScrollPrize/villa",
+    "commit": "41701aa0eaa1aa765523db3f9f972b5830abf549",
+    "module": "vesuvius.ink_detection.inference.infer",
+    "note": "card names koine_machines.inference.infer on branch merge-ink-pipelines; the pinned villa commit carries the same checkpoint-driven flat inference as vesuvius.ink_detection.inference.infer (weights load strictly: 0 missing, 0 unexpected keys; same module and flags as the devloop base run)"
+   },
+   "input_spec": {
+    "voxel_um": "~9 um isotropic surface volume (card: native 9.362 um renders work directly; trained on 2.399 um pooled to ~9.6 um plus 5 native 9.362 um segments)",
+    "slices": "checkpoint patch depth 17 (training window 17 of 21 with z jitter +-2); the official infer centre-crops 17 of the render slices: indices 7..23 of 31 (centre 15 = mesh surface)",
+    "normalisation": "robust_mad, percentiles 1/99 (checkpoint config; infer preprocessing tifxyz_robust)",
+    "orientation": "forward = render slice order (index 7 -> 23); reverse = 23 -> 7 (--direction both); the card and code document no ink-side orientation: text order UNDOCUMENTED",
+    "tile": "128 x 128, stride 64 (infer default overlap 0.5), Hann blend, no TTA, fp32 on CPU",
+    "output": "2-D uint8 TIFF, probability x 255 truncated; BCE label smoothing 0.5 (card: no-ink floor near 0.25 -> ~64)"
+   },
+   "training_data": {
+    "status": "DOCUMENTED (embedded checkpoint config, datasets[].segments)",
+    "source": "sources/ink9_seed43_step075000_embedded_config.json",
+    "segments": {
+     "PHerc0139 (2.399 um pooled)": [
+      "w016",
+      "w017",
+      "w028",
+      "w029",
+      "w035",
+      "w039",
+      "w040",
+      "w041",
+      "w043"
+     ],
+     "PHerc0139 (native 9.362 um)": [
+      "w035",
+      "w039",
+      "w040",
+      "w041",
+      "w044"
+     ],
+     "PHerc0814": [
+      "46527"
+     ],
+     "PHerc1667": [
+      "w013",
+      "w018",
+      "w023",
+      "w028",
+      "w029",
+      "w031"
+     ],
+     "PHercParis4": [
+      "w00",
+      "w01",
+      "w02",
+      "w03",
+      "w05",
+      "w06",
+      "w07",
+      "w09"
+     ]
+    },
+    "reserved_validation_cases": [
+     "pherc0139-w016",
+     "pherc0139-w028",
+     "pherc0139-w029",
+     "pherc0814-46527",
+     "pherc1667-w018",
+     "pherc1667-w023",
+     "pherc1667-w028",
+     "pherc1667-w029",
+     "pherc1667-w031"
+    ],
+    "guard_note": "fail-closed: every listed segment (validation cases included) is treated as training papyrus. DEV scrolls PHerc0139 and PHerc0814 are in the list, so the guard is per window: same-papyrus with a listed segment -> IN-SAMPLE. The list equals the devloop registry base-training traces (0139 w028-w044, 0814 46527; registry adds w030, w045, w046 and marks w016/w017 as having no S3 segment); DEV segments 0139 w024, w047, w053 and 0814 165636, 204843 are not in it by name."
+   },
+   "smoke": {
+    "input": "synthetic (31, 512, 512) uint8, seed 20260926 (make_synth.py)",
+    "seconds": 34.2,
+    "threads": 4,
+    "returncode": 0,
+    "outputs": {
+     "synth512.tif": {
+      "file_sha256": "1d01e040db848f1a2daf57f00c7d6c2e1c400583e6d5ef30f0edacbada6b72fe",
+      "mean": 135.7725,
+      "nonzero_frac": 1.0,
+      "p50": 136,
+      "p99": 186,
+      "sha256": "e7ca6d8a4601a03c5706778db60153741a273858eafa6ff4d14909d469afdf57",
+      "shape": [
+       512,
+       512
+      ]
+     },
+     "synth512_reverse.tif": {
+      "file_sha256": "d4c1c159dbf468db63948634091b466a75236e60e4a2c5a84d91ef3676ee8e2a",
+      "mean": 136.1753,
+      "nonzero_frac": 1.0,
+      "p50": 136,
+      "p99": 184,
+      "sha256": "78a83d8722e05a0bf2d9084d090a0ecb392c5c94cee1488e002427dc231fa1d5",
+      "shape": [
+       512,
+       512
+      ]
+     }
+    }
+   },
+   "cost_per_window": {
+    "tiles_per_direction": 1681,
+    "directions": 2,
+    "seconds_per_tile_measured": 0.349,
+    "wall_minutes_4threads": 19.6,
+    "cpu_minutes_upper": 78.2
+   }
+  },
+  "hecate_9.6um": {
+   "repo": "scrollprize/hecate",
+   "commit": "9cb86e500e944b11a06a7020403cde5dffb5bcb2",
+   "file": "hecate_9.6um.pth",
+   "bytes": 522576086,
+   "sha256": "809f4f10f7cb7afa19b4bee0f7d2ab31edd7e11b664f9f210cc9c17f22fcfe5d",
+   "sha256_catalogue": "809f4f10f7cb7afa19b4bee0f7d2ab31edd7e11b664f9f210cc9c17f22fcfe5d",
+   "sha256_match": true,
+   "licence": "MIT (LICENSE file sha256 85b6c05e...; card YAML); not gated",
+   "card_readme_sha256": "17d7f029ffcff421dbf767c89e0e36a91f141fdfb5a647cc254e4c88cffabe9e",
+   "status": "SCREENABLE",
+   "official_code": {
+    "file": "hecate.py (repo scrollprize/hecate, same commit)",
+    "sha256": "c232c18a1a86cfb91257a00db13288202bb8ae33732ba26f7291a9b8adb8da59",
+    "run": "unchanged; sha256 checked by the wrapper before every run"
+   },
+   "input_spec": {
+    "voxel_um": "9.6 um in all three axes (card; script checks --spacing-um within 2 % and does not resample)",
+    "slices": "16 planes (patch 16 x 64 x 64); script takes the central 16 of the input depth. Wrapper input = the 16 planes a native vc_render_tifxyz -n 16 --slice-step 9.6 um render holds: offsets (j - 7.5) x 9.6 um = -72..+72 um about the mesh (render slices 7.309..22.691 of 31), in-plane 9.6 um pixel centres, trilinear from the 9.362 um devloop render",
+    "normalisation": "divide by 255, no clipping (checkpoint config checked by load_model)",
+    "orientation": "input Z,Y,X uint8; --reverse flips the full depth before the central planes; card: \"if the correct direction is unknown, run both\": text order UNDOCUMENTED",
+    "tile": "64 x 64, stride 32 (half patch), floored Hann blend, batch 1, fp32 on CPU; empty CT columns -> 0",
+    "output": "2-D PNG round(255 p) on the 9.6 um grid -> wrapper maps back to the 9.362 um render grid (inverse pixel-centre bilinear, uint8 TIFF)",
+    "deviation_from_prior_screen": "HECATE-SCREEN (0841) rendered natively at 9.6 um with vc_render_tifxyz; this wrapper resamples the shared 31-slice DEV render (self-test: round-trip centroid shift <= 0.006 px, affine error 2e-5)"
+   },
+   "training_data": {
+    "status": "UNKNOWN (card names no segment list)",
+    "card_says": "no new manual labels; 2-D supervision from \"the Scroll Prize ink dataset\" (hf bucket scrollprize/datasets/ink); 3-D teachers ink_3d_dino_guided (Paris 4) and an unnamed weaker model on other scrolls; 9.6 um targets from the 2.4 um model; native coarse renders aligned where both scans exist (scrolls not named); base scrollprize/ink_canonical_2um",
+    "named_dataset_listing": {
+     "top_level": [
+      "0009b",
+      "0139",
+      "0500p2",
+      "1667",
+      "814",
+      "841",
+      "man5",
+      "phercparis4",
+      "unused"
+     ],
+     "PHerc0139": [
+      "w016",
+      "w017",
+      "w028",
+      "w029",
+      "w030",
+      "w035",
+      "w039",
+      "w040",
+      "w041",
+      "w043",
+      "w044"
+     ],
+     "PHerc0814": [
+      "46527"
+     ],
+     "listing_files": "sources/hf_bucket_ink_*.json",
+     "refused": "listing of ink/unused/0139 was refused by the session permission layer; recorded, not worked around"
+    },
+    "guard_note": "both DEV scrolls (0139, 0814) appear in the named dataset, so per DECL-DEVLOOP-SCREEN item 3 every DEV window is UNKNOWN and cannot count toward FINALIST (reported only). By name the dataset segments on DEV scrolls are the registry base-training traces (already masked by R3), but the card does not say which were used, and the native coarse-scan alignment set is unnamed."
+   },
+   "smoke": {
+    "input": "synthetic (31, 512, 512) uint8, seed 20260926 (make_synth.py)",
+    "seconds": 849.3,
+    "threads": 4,
+    "returncode": 0,
+    "resample": {
+     "ratio": 1.0254219183935056,
+     "shape_in": [
+      31,
+      512,
+      512
+     ],
+     "shape_out": [
+      16,
+      499,
+      499
+     ],
+     "z_index": [
+      7.3093,
+      8.3348,
+      9.3602,
+      10.3856,
+      11.411,
+      12.4364,
+      13.4619,
+      14.4873,
+      15.5127,
+      16.5381,
+      17.5636,
+      18.589,
+      19.6144,
+      20.6398,
+      21.6652,
+      22.6907
+     ]
+    },
+    "input96_sha256": "8aa26812d722b7606a7c9f4ad60e89861fbf6eec705b637ad2303b28c73bf76e",
+    "runs": {
+     "forward": {
+      "seconds": 422.6,
+      "returncode": 0,
+      "map96": {
+       "mean": 249.6771,
+       "nonzero_frac": 1.0,
+       "p50": 253,
+       "p99": 255,
+       "sha256": "01d14f165b1b1c6999dc975cd56378655c49c49f397fcdca24813ccb8b4949d8",
+       "shape": [
+        499,
+        499
+       ]
+      },
+      "output": {
+       "file": "synth512.tif",
+       "file_sha256": "f70f4dc8a22f953180c0bc56d1000b19fca2a6fe55287f7db8c93c986246f10e",
+       "mean": 249.6572,
+       "nonzero_frac": 1.0,
+       "p50": 253,
+       "p99": 255,
+       "sha256": "eb4cab466e73389fbc6b38199856b76cd5641c705238983b9a87ee84c21c7231",
+       "shape": [
+        512,
+        512
+       ]
+      }
+     },
+     "reverse": {
+      "seconds": 424.5,
+      "returncode": 0,
+      "map96": {
+       "mean": 249.9366,
+       "nonzero_frac": 1.0,
+       "p50": 253,
+       "p99": 255,
+       "sha256": "f75d5d01a74ec810a69b981ab803ee92e352b3c402e34ef866412262d9fc9d01",
+       "shape": [
+        499,
+        499
+       ]
+      },
+      "output": {
+       "file": "synth512_reverse.tif",
+       "file_sha256": "e0893b83d08b9ac4c7635cb1f503587084494ec1044521e2ed18438530facd62",
+       "mean": 249.9185,
+       "nonzero_frac": 1.0,
+       "p50": 253,
+       "p99": 255,
+       "sha256": "3fe75c988f4e757704bfe0ff68623ac9ce19b99ed00dd01b71377ca04c05160c",
+       "shape": [
+        512,
+        512
+       ]
+      }
+     }
+    }
+   },
+   "cost_per_window": {
+    "grid_px_9p6": 2582,
+    "tiles_per_direction": 6400,
+    "directions": 2,
+    "seconds_per_tile_measured": 1.8824,
+    "wall_minutes_4threads": 401.6,
+    "cpu_minutes_upper": 1606.4
+   }
+  },
+  "ink_3d_dino_guided": {
+   "repo": "scrollprize/ink_3d_dino_guided",
+   "commit": "73a79525466037432191284dfa237baf830c49ec",
+   "status": "NOT SCREENED (card and config document a 2.400 um input only; DECL-DEVLOOP-SCREEN item 1 screens it only if the card documents a 9-10 um input)",
+   "card_readme_sha256": "2b83f26a7361dc3e23e20926c404845b26c7990bc3c8cabc94d735880396790e",
+   "config_json_sha256": "7f3e817016c581b1827e1aad076a9c3bb1163c41e68d3ab98e380d06baf63849",
+   "evidence": "config datasets[0].volume_path = PHercParis4 20260411134726-2.400um volume, volume_scale 0; patch 256^3 full-3D, percentile_minmax; card: trained on 8-scroll surface labels + Paris 4",
+   "weights_downloaded": false,
+   "weights_sha256_catalogue": {
+    "ckpt_78k_fullsup.pth": "5a148c2c1bb730bfa683f2b3e3cdfc2000424003605e42300b527ff90118b303"
+   }
+  }
+ }
+}

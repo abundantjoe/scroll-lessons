@@ -1,0 +1,131 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "make": {
+  "generated_utc": "2026-09-25T11:04:06Z",
+  "stage": "E1 make BASE0",
+  "viewing": "no image was opened; numbers only",
+  "construction": "as d3_train.py final save (make_model + load_model_state + strict load of the base model; config = deepcopy of the base embedded config; step 0)",
+  "d3_train": {
+   "path": "/work/d3/scripts/d3_train.py",
+   "sha256": "2943b1b6fb7492433fc1476bb57848d306c705f70ccef575bf701342acf6f52f"
+  },
+  "base_checkpoint": {
+   "path": "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth",
+   "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+  },
+  "base_top_keys": [
+   "config",
+   "model",
+   "step"
+  ],
+  "strict_load": "<All keys matched successfully>",
+  "n_tensors": 508,
+  "n_base_tensors": 508,
+  "key_order_equal": true,
+  "key_set_equal": true,
+  "n_tensors_bitwise_equal_to_base": 508,
+  "config_equal_to_base": true,
+  "saved_top_keys": [
+   "config",
+   "d3",
+   "model",
+   "step"
+  ],
+  "saved_step": 0,
+  "saved_d3": {
+   "arm": "BASE0",
+   "purpose": "E1 equivalence pre-check"
+  },
+  "model_final": {
+   "path": "/work/d3/runs/BASE0/model_final.pth",
+   "sha256": "dd1a75c634a0654afa46c09bb54fa18f4a053fdf8a804a56e638e0b656dc9262",
+   "bytes": 138361311
+  },
+  "script": {
+   "path": "/work/d3/scripts/d3_e1.py",
+   "sha256": "9ebab8254ab2eb931b7c57307bdca93d13974d014b36a473cc52b1f803e3d6c6"
+  }
+ },
+ "compare": {
+  "generated_utc": "2026-09-25T11:20:27Z",
+  "stage": "E1 compare",
+  "viewing": "no image or pixel array was opened or displayed; numbers only",
+  "d1_threads": 2,
+  "e1_threads": 1,
+  "base0_checkpoint": {
+   "path": "/work/d3/runs/BASE0/model_final.pth",
+   "sha256": "dd1a75c634a0654afa46c09bb54fa18f4a053fdf8a804a56e638e0b656dc9262",
+   "summary_model_final_sha256": null
+  },
+  "rule": "PASS if both orders bitwise identical, or max |diff| <= 1 (uint8) on <= 0.1 % of px",
+  "orders": {
+   "fwd": {
+    "d1": {
+     "path": "/work/d1/work/infer/canary_w044_y2816_x2816/canary_w044_y2816_x2816.tif.npy",
+     "dtype": "uint8",
+     "shape": [
+      2648,
+      2648
+     ],
+     "sha256": "70a4cb3dc2f2ca9b46b15a9a2ecdc197ece7ac0608888d0fd6b39f2b00cf1612",
+     "tif_sha256": "84e1c0ccb4e012657ffae2a3f19387d88dfcae72e0d2a86445876c9aa4d121f6"
+    },
+    "e1": {
+     "path": "/work/d3/infer/BASE0/canary_w044_y2816_x2816/canary_w044_y2816_x2816.tif.npy",
+     "dtype": "uint8",
+     "shape": [
+      2648,
+      2648
+     ],
+     "sha256": "c1a92e47aec96b860e1be3c92514f7def8bcc668a5e1ab3b9f5fa036adf3334c",
+     "tif_sha256": "2021a2e7d3d03e52236610a2dc305bc46e7753f7efc60c4ae3aa63e905c68551"
+    },
+    "same_dtype_shape": true,
+    "bitwise_equal": false,
+    "n_px": 7011904,
+    "n_diff_px": 108,
+    "frac_diff": 1.5402378583620083e-05,
+    "max_abs_diff": 1,
+    "n_diff_gt1": 0,
+    "sum_abs_diff": 108,
+    "pass": true
+   },
+   "rev": {
+    "d1": {
+     "path": "/work/d1/work/infer/canary_w044_y2816_x2816/canary_w044_y2816_x2816_reverse.tif.npy",
+     "dtype": "uint8",
+     "shape": [
+      2648,
+      2648
+     ],
+     "sha256": "44c4cbc150e3d31288bf9c94e61f9030830b38a71a294535bd95a499a50e67f7",
+     "tif_sha256": "a27c010976f3b1f202b4e98f8311da1dfd7652c6a7a78842232cc1d856b24b1b"
+    },
+    "e1": {
+     "path": "/work/d3/infer/BASE0/canary_w044_y2816_x2816/canary_w044_y2816_x2816_reverse.tif.npy",
+     "dtype": "uint8",
+     "shape": [
+      2648,
+      2648
+     ],
+     "sha256": "c426eeebc1875130e3f15c00939be9251e0b80d47d1f6ce0f6f835e23133fc9c",
+     "tif_sha256": "96979371d704d39bc570d67b4b0a9cd7e4aad3ba71615f3f596157a16af7d3b1"
+    },
+    "same_dtype_shape": true,
+    "bitwise_equal": false,
+    "n_px": 7011904,
+    "n_diff_px": 71,
+    "frac_diff": 1.0125637772565054e-05,
+    "max_abs_diff": 1,
+    "n_diff_gt1": 0,
+    "sum_abs_diff": 71,
+    "pass": true
+   }
+  },
+  "E1_pass": true,
+  "script": {
+   "path": "/work/d3/scripts/d3_e1.py",
+   "sha256": "9ebab8254ab2eb931b7c57307bdca93d13974d014b36a473cc52b1f803e3d6c6"
+  }
+ }
+}
