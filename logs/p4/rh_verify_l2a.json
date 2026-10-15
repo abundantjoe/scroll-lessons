@@ -1,0 +1,211 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-REMOTE-HARNESS-1 items 4-7",
+ "ref": "origin/claude/gifted-bell-gavnl5-sib-rh-e2",
+ "ref_commit": "30d73320200bd12a3647b3d240b155b6cfea0a88",
+ "checks": {
+  "A1_A_before_B": true,
+  "A2_sums": true,
+  "A2_key_shape": true,
+  "A3_img_census": true,
+  "A3_img_null_present": true,
+  "A0_code_hashes": true,
+  "A4_builder_eligible_set": true,
+  "A5_briefs": true,
+  "A5_cover": true,
+  "B1_age_hashes": true,
+  "B2_transcripts": true,
+  "B3_answer_consistency": true
+ },
+ "jobs": {
+  "54e6b5f4-5a28-45b9-9bcc-fba0b41e31c6": {
+   "brief_ok": true,
+   "brief_sha256": "4061d6aa844087ff459b65cac7f4ae23018fde646c39739d1715a557a629317d",
+   "age_sha256": "6e881fce20e862dfc7867d7d3aa2250778e315302c6e14ffb39673a8d62d1fbe",
+   "B1": true,
+   "B2": {
+    "audit_valid": true,
+    "n_violations": 0,
+    "unread": 0,
+    "prompt_eq_brief": true,
+    "after_commit_A": true,
+    "transcript_sha256": "d9e47ca9c1369cfbbeb41471f2359d252d174b540ab6d9a8aaf8720d78d80e63"
+   },
+   "B3_consistent": true
+  },
+  "ccc9bb07-b302-4d3a-8a00-ca3ec72edd20": {
+   "brief_ok": true,
+   "brief_sha256": "6b7f428a7f7cd6cc541263108c12de3944fef91f9dc18362aa7a304abf2caf08",
+   "age_sha256": "c16368a32d7d399e2e9b926d19926f2cc669cdb6d45a0dbabd937cf42eb38da9",
+   "B1": true,
+   "B2": {
+    "audit_valid": true,
+    "n_violations": 0,
+    "unread": 0,
+    "prompt_eq_brief": true,
+    "after_commit_A": true,
+    "transcript_sha256": "bf6e5cd7bf2635cdecc5b6ba40799209231bc6e3694fddb7194d994d6ac281bf"
+   },
+   "B3_consistent": true
+  },
+  "f9c75d53-9f44-4418-ae04-2086fe7befbf": {
+   "brief_ok": true,
+   "brief_sha256": "a1080e3a24372887bfdf7b81fc3b16e5808d51c98a385d019cc26e3e38746b7f",
+   "age_sha256": "9347af38f620ccd09b852ff6f22ee07e9ecf258bcdc82b1db6840b1a9f9752cc",
+   "B1": true,
+   "B2": {
+    "audit_valid": true,
+    "n_violations": 0,
+    "unread": 0,
+    "prompt_eq_brief": true,
+    "after_commit_A": true,
+    "transcript_sha256": "52c0a265326091f4d2f85347a126522efc86777657d318db128194016171d606"
+   },
+   "B3_consistent": true
+  }
+ },
+ "commit_A": [
+  "663cda827799ba7db2bb08684ba6400f54e5c8c0",
+  "2026-09-26T18:39:04+00:00"
+ ],
+ "commit_B": [
+  "30d73320200bd12a3647b3d240b155b6cfea0a88",
+  "2026-09-26T18:40:28+00:00"
+ ],
+ "key_sha256": {
+  "p4_key_l2a.json": "7d2af1d010f0ce239811095471fb6049db608a1042ae24f836e4d8ef137493e7",
+  "p4_key_nl2a.json": "c05250c83e75146c9ba7109b8c65ca7c919e151deaa48a0b90e9d8fc42879528"
+ },
+ "builder_ref": {
+  "batch": "l2a",
+  "builder_branch": "claude/gifted-bell-gavnl5-sib-p4-l2",
+  "builder_commit": "d0b8360e32ecdd516853a21c024485bdf0c9da77",
+  "builder_manifest_partial": true,
+  "manifest": "logs/sib/p4-l2/l2/manifest.json",
+  "tiles_dir": "logs/sib/p4-l2/l2/tiles",
+  "orchestrator_base_commit": "f7630de23905acbe3c7bb6ec32ca599afaeb0a76",
+  "variant": "sigma2t",
+  "recipient": "age1vp0tkyj8xecncfmcxj748ceef89mpmwayljccaduapjx3aqhh5rstvvcq5",
+  "key_sha256": {
+   "p4_key_l2a.json": "7d2af1d010f0ce239811095471fb6049db608a1042ae24f836e4d8ef137493e7",
+   "p4_key_nl2a.json": "c05250c83e75146c9ba7109b8c65ca7c919e151deaa48a0b90e9d8fc42879528"
+  },
+  "code_sha256": {
+   "tools/p4/norm_manifest.py": "d2faee660c36db99531755b6f30f4269acd6c5f5b4ebe90ac79ec80d5f596a8f",
+   "tools/p4/p4_jobs.py": "7966d6b1a9616cae8ec23530dee8256c175cbd1c87498a778d09ce2050fec8fd",
+   "tools/p4/score_p4.py": "581bc41e0229b9316dc1cdf42667d2291038bfb34bcb54eece5be7092303bf86",
+   "tools/p4/p4_phase2.py": "df93f9bffe0df6cfbfdf0b7b836f8a57b877ddeed467a791a15a573d2d9c2431",
+   "tools/p4/p4_ext.py": "b58d555ded7bd7f6d5f42affb619d4621511bd2970a779594bbc6ebbc7b5a344",
+   "src/hercules/harness/audit.py": "e36cb995aee6f54461ef8dfc3af57ecd167853c74408f2917d1cbf560426e1f1",
+   "src/hercules/harness/jobs.py": "02d9bd781beb4d3d26bb26efcc8ab4c6fd5c2b1d64bffcba883d2daaf947f0ae",
+   "configs/briefs/keysheet_sigma2.png": "164262e67dfd7589bdd03dddb1b8470267bd7d46d5c40b0af63fc1eb980db438",
+   "configs/briefs/k_d2_task_sigma2t.txt": "f07fbdffab8ee0d62afb946fafc13b6a794ef5ab5e8506bdfbd5ae90c4f8bea0",
+   "logs/p4/ref_brief_sigma2t.txt": "627ebb0fb6dc6d1714cacc27bf35343f95d2e02967def7756872cb0dfe826700"
+  },
+  "n_images": 27,
+  "tiles_rc": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    0,
+    4
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    0,
+    6
+   ],
+   [
+    0,
+    7
+   ],
+   [
+    0,
+    8
+   ],
+   [
+    0,
+    9
+   ],
+   [
+    0,
+    10
+   ],
+   [
+    0,
+    11
+   ],
+   [
+    0,
+    12
+   ],
+   [
+    0,
+    13
+   ],
+   [
+    0,
+    14
+   ],
+   [
+    0,
+    15
+   ],
+   [
+    0,
+    16
+   ],
+   [
+    0,
+    17
+   ],
+   [
+    0,
+    18
+   ],
+   [
+    0,
+    19
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    1,
+    3
+   ]
+  ],
+  "briefs_match_ref_sigma2t_template": true
+ },
+ "n_census": 24,
+ "n_null": 3,
+ "n_eligible_builder": 24,
+ "PASS": true,
+ "installed": true
+}
