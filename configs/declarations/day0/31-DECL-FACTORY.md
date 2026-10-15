@@ -1,0 +1,4 @@
+T-FACTORY and FLAT-1 (section 9.3).
+Dry run under packages/dryrun/ only, on a bank window outside every sealed set, stamped DRY RUN, in two versions (base map; reference as ideal-reader stand-in).
+FLAT-1: on 5 bank meshes cut to 4.00 cm^2 rectangles compare vc_flatten (ABF++), libigl SLIM and ARAP on the levelled tifxyz. Metric: % of quads whose edges all lie within +-5 % of their 3-D lengths. Adopt the first method with >= 93.1 % on >= 4 of 5; else crop to R + 2 mm margin, SLIM, then trim distorted quads outside the letters by a coded rule.
+Factory bars: (a) verifier passes; (b) a fresh agent rebuilds the image from the tarball and README alone within 4 h: CT byte-identical, map Pearson >= 0.999, <= 2 grey levels; (c) 0 of >= 40 null tiles reach SG 1; (d) on the reference stand-ins readers confirm >= 70 % of sealed letters in >= 4 of 5 windows. Pass -> freeze container v1. Default: not passed.
