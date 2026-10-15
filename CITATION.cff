@@ -1,0 +1,74 @@
+cff-version: 1.2.0
+message: "If you use these lessons, images, code or findings, please cite this repository as below, and cite the scroll data you use as listed under references (Vesuvius Challenge data is CC BY-NC 4.0; EduceLab-Scrolls data carries its own citation requirement)."
+title: "Scroll Lessons (Dominion): every experiment and lesson from an AI-run search for ink in the Herculaneum scrolls"
+version: 1.0.0
+date-released: 2026-10-15
+license: MIT  # code; lessons text, images, results and experiment records are CC BY-NC 4.0, see DATA_LICENSE.md
+repository-code: "https://github.com/abundantjoe/scroll-lessons"
+url: "https://github.com/abundantjoe/scroll-lessons"
+abstract: "Dominion was directed by Joseph Balmaceda and run by Claude research agents (Anthropic) from September to October 2026. This repository holds MASTER_LESSONS.md, every lesson, experiment verdict and retracted claim from the programme in one file meant to be given to an AI system as context, plus one scrubbed snapshot branch per experiment, ink-model images of unread scroll areas, and the stripqc finding (blank render margins corrupt villa ink inference on thin strips)."
+keywords: ["Herculaneum papyri", "Vesuvius Challenge", "ink detection", "virtual unwrapping", "lessons learned", "AI research agents"]
+authors:
+  - given-names: "Joseph"
+    family-names: "Balmaceda"
+    alias: "abundantjoe"
+  - name: "Claude research agents (Anthropic)"
+preferred-citation:
+  type: software
+  title: "Scroll Lessons (Dominion): every experiment and lesson from an AI-run search for ink in the Herculaneum scrolls"
+  authors:
+    - given-names: "Joseph"
+      family-names: "Balmaceda"
+    - name: "Claude research agents (Anthropic)"
+  year: 2026
+  url: "https://github.com/abundantjoe/scroll-lessons"
+references:
+  - type: data
+    title: "Vesuvius Challenge - CT Scans of Herculaneum Papyri"
+    authors:
+      - name: "Giorgio Angelotti"
+      - name: "Stephen Parsons"
+      - name: "Sean Johnson"
+      - name: "Elian Rafael Dal Prà"
+      - name: "Johannes Rudolph"
+      - name: "Paul Tafforeau"
+      - name: "Alessandro Mirone"
+      - name: "Paul Henderson"
+      - name: "Hendrik Schilling"
+      - name: "Forrest McDonald"
+      - name: "David Josey"
+      - name: "Youssef Nader"
+      - name: "C. Seth Parker"
+      - name: "W. Brent Seales"
+    publisher:
+      name: "Vesuvius Challenge"
+    url: "https://scrollprize.org/data"
+    license: CC-BY-NC-4.0
+  - type: article
+    title: "EduceLab-Scrolls: Verifiable Recovery of Text from Herculaneum Papyri using X-ray CT"
+    authors:
+      - family-names: "Parsons"
+        given-names: "Stephen"
+      - family-names: "Parker"
+        given-names: "C. Seth"
+      - family-names: "Chapman"
+        given-names: "Christy"
+      - family-names: "Hayashida"
+        given-names: "Mami"
+      - family-names: "Seales"
+        given-names: "W. Brent"
+    year: 2023
+    journal: "arXiv [cs.CV]"
+    doi: "10.48550/arXiv.2304.02084"
+  - type: software
+    title: "villa (vesuvius, volume-cartographer)"
+    authors:
+      - name: "Vesuvius Challenge contributors"
+    url: "https://github.com/ScrollPrize/villa"
+  - type: software
+    title: "pherc343-first-letters (PHerc0343 First Letters segment, letter boxes and dense_native ink model)"
+    authors:
+      - given-names: "Erwin"
+        family-names: "Nieuwlaar"
+    url: "https://github.com/Nieuwlaar/pherc343-first-letters"
+    license: MIT
