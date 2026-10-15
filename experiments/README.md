@@ -125,3 +125,5 @@ every lesson is also in [MASTER_LESSONS.md](../MASTER_LESSONS.md).
 | [`sib-trainer`](https://github.com/abundantjoe/scroll-lessons/tree/sib-trainer) | D2 trainer build and tests | passed | Prove the trainer bitwise; CPU-only arms take weeks. |
 | [`sib-trainer-ckpt`](https://github.com/abundantjoe/scroll-lessons/tree/sib-trainer-ckpt) | Trainer checkpoint-shard push test | passed | A test artifact pushed to a remote needs a cleanup route. |
 | [`sib-tribunal`](https://github.com/abundantjoe/scroll-lessons/tree/sib-tribunal) | Clearance re-check under the corrected re-trace rule | passed | Re-check clearances whenever the distance rule changes. |
+| [`hercules`](https://github.com/abundantjoe/scroll-lessons/tree/hercules) | Hercules: earlier programme (48 experiments) | see branch | lessons in MASTER_LESSONS.md |
+| [`megara`](https://github.com/abundantjoe/scroll-lessons/tree/megara) | Megara: earlier programme (30 experiments) | see branch | lessons in MASTER_LESSONS.md |

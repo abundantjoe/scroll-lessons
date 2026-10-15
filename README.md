@@ -5,11 +5,11 @@
 **Download [`MASTER_LESSONS.md`](MASTER_LESSONS.md) ([raw](https://raw.githubusercontent.com/abundantjoe/scroll-lessons/main/MASTER_LESSONS.md)) and give it to your AI system as context. That is the whole point of this repository.**
 
 Dominion was a two-month, AI-run research programme (September-October 2026) on the Vesuvius Challenge: finding ink inside
-carbonized Herculaneum scrolls. It ran 309 experiments on 118 branches, across PHerc0268, PHerc. Paris 4 and
+carbonized Herculaneum scrolls. It ran 387 experiments on 118 branches plus two earlier programmes (Hercules and Megara), across PHerc0268, PHerc. Paris 4 and
 the 22 volumes of a First Letters push. We did not build a pipeline that reads every scroll. What we built is the record of what
 works, what fails and why, with the evidence for each answer.
 
-`MASTER_LESSONS.md` puts all of it in one file: 508 lessons (each a trap, its evidence and its fix), the verdict of every
+`MASTER_LESSONS.md` puts all of it in one file: 656 lessons (each a trap, its evidence and its fix), the verdict of every
 experiment, every claim we had to retract, a start-to-finish timeline, and where to pick up. Paste it into Claude or any other
 model before you start, and your session begins where we stopped instead of rediscovering our dead ends.
 
@@ -30,7 +30,7 @@ model before you start, and your session begins where we stopped instead of redi
 | Where | What |
 |---|---|
 | [`MASTER_LESSONS.md`](MASTER_LESSONS.md) | every lesson, verdict, retracted claim and open problem, with a table of contents |
-| [`worlds-first/`](worlds-first/README.md) | 3,892 never-before-published ink-model images of scroll areas that have never been read |
+| [`worlds-first/`](worlds-first/README.md) | 3,971 never-before-published ink-model images of scroll areas that have never been read |
 | [`experiments/`](experiments/README.md) | one page per experiment branch: question, verdict, lesson, link to its branch and quick-start |
 | branch `dominion-release` | the October 2026 Progress Prize release: the stripqc finding (blank render margins corrupt villa ink inference on thin strips), its code, tests and one-command reproduction |
 | branch `research-log` | the hash-chained decision log of the whole programme |
