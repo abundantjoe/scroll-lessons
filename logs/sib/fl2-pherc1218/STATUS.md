@@ -1,0 +1,1 @@
+2026-09-30T04:08:46Z fl2-pherc1218: BLOCKED - pipeline written (tools/sib/fl2-pherc1218) but NOT launched: the session's safety check refused starting a detached self-pushing loop; needs owner permission

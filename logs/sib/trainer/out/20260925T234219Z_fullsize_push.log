@@ -1,0 +1,63 @@
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 1
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"step": 1, "loss": 0.6022133231163025, "grad_norm_preclip": 5.542337894439697, "s_per_step": 0.48549569500028156, "supervised_frac": 0.79449462890625, "epochs": [1], "run_index": 0, "sample_digest": "1dabb3af40ef717944d108bbc864604beb7903f488b0c7b58a75e68fea4bbd37", "loss_mean_window": 0.6022133231163025}
+{"event": "checkpoint", "step": 1, "utc": "2026-09-25T23:42:26Z", "local_bytes": 414963964, "remote": {"commit": "8f73971e92a6ee680c6cd27d07239ce6de7926e3", "pushed": true, "ref": "refs/heads/claude/gifted-bell-gavnl5-sib-trainer-ckpt", "n_shards": 5, "total_bytes": 414952758, "total_sha256": "e0fdbef0539077d34d463d39a918e223d49e9bc47f213269e2b93f9711c4cfd5", "max_shard_bytes": 90000000}, "seconds": 90.31}
+{"step": 2, "loss": 0.5806412696838379, "grad_norm_preclip": 3.5804409980773926, "s_per_step": 0.3833847820023948, "supervised_frac": 0.78021240234375, "epochs": [1], "run_index": 0, "sample_digest": "25e3f2090f4494416e8786d8e85758462676ee6473931fdc96c0e886294210c6", "loss_mean_window": 0.5806412696838379}
+SUMMARY {"provenance": "Provenance: Project HERCULES | owner the owner | [id removed]", "arm": "P128", "seed": 1, "config_sha256": "c24f1f548ef9edef3bf40b42f854fee57ae4ee16cbc83ea8438c22319fb39ed3", "started_utc": "2026-09-25T23:42:19Z", "finished_utc": "2026-09-25T23:44:22Z", "steps": 2, "finite_loss_steps": 2, "loss_first": 0.6022133231163025, "loss_last": 0.5806412696838379, "median_s_per_step": 0.43444023850133817, "loop_s": 116.6, "wall_s": 122.6, "peak_rss_kb": 2358728, "strict_load": "<All keys matched successfully>", "threads": {"intra": 4, "interop": 1}, "sample_digest_final": "25e3f2090f4494416e8786d8e85758462676ee6473931fdc96c0e886294210c6", "checks": {"rot_margin_full": true, "subtiles_per_patch": {"syn": 1}}, "resumptions": [], "checkpoint_events": [{"event": "checkpoint", "step": 1, "utc": "2026-09-25T23:42:26Z", "local_bytes": 414963964, "remote": {"commit": "8f73971e92a6ee680c6cd27d07239ce6de7926e3", "pushed": true, "ref": "refs/heads/claude/gifted-bell-gavnl5-sib-trainer-ckpt", "n_shards": 5, "total_bytes": 414952758, "total_sha256": "e0fdbef0539077d34d463d39a918e223d49e9bc47f213269e2b93f9711c4cfd5", "max_shard_bytes": 90000000}, "seconds": 90.31}], "model_final": {"path": "/work/sib/pushrun/model_final.pth", "sha256": "4e3572c7b3ec58316edd1fe5cefe7cbeb175bb2715ec1761abdfcb6af80d9490", "bytes": 138362143, "remote": {"commit": "46d858dddbe6e13229b9075db4c4574ccfba4f44", "pushed": true, "ref": "refs/heads/claude/gifted-bell-gavnl5-sib-trainer-ckpt", "n_shards": 2, "total_bytes": 138362143, "total_sha256": "4e3572c7b3ec58316edd1fe5cefe7cbeb175bb2715ec1761abdfcb6af80d9490", "max_shard_bytes": 90000000}}, "checkpoint_registry_sha256": "ddb99e72e605a7238e51f1b7e67a9ad6a201b0c5bcdead297b898a48d5937ddf", "script": {"path": "/home/user/dominion/tools/sib/trainer/d2_train.py", "sha256": "fdbe236cc2cf46664c3d0558e58c7594220a4ce105fde3b5453d634680496f24"}}

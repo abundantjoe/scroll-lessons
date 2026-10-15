@@ -1,0 +1,264 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "task": "trainer",
+ "branch": "claude/gifted-bell-gavnl5-sib-trainer",
+ "status": "DONE",
+ "viewing": "no image, rendered slice or ink map opened, written or described; synthetic data only; no real data trained on",
+ "code_sha256": {
+  "tools/sib/trainer/bench_throughput.py": "a30101ccbd05b7cb6d4fc862301ea57ce3d46d183f8f466ebc01ab0e942b5181",
+  "tools/sib/trainer/ckpt_shards.py": "ba6db9991e14000b9ba051244c6ae2fa59928b4c6094cc64316ca559cbf3b974",
+  "tools/sib/trainer/contam_check.py": "0e30cabbc762979f5b197c0365815dc5915048626c6a01ffb571c643b9f1321e",
+  "tools/sib/trainer/d2_data.py": "e23ac6e69963d7472af71920c418b8f6df9170a9e5450b1a312e4709c60479a2",
+  "tools/sib/trainer/d2_train.py": "2c94ca54ab7699487868a32090d9646040a8f0ef93598fe0b288c4a7bedb4531",
+  "tools/sib/trainer/full_conv_check.py": "2191d1a37036433eb43a5cce7ba46d04a6cc6ce7fdab822926968a268079eb1f",
+  "tools/sib/trainer/holdouts_from_registry.py": "ffe6ec77297f983f0dbc4c7a414cffb30d08f8921e82aee99cd551b1b074f685",
+  "tools/sib/trainer/pair_freeze.py": "4e407f53d697db33272a4e3cf623a9b50cbb4ea12431051db3772502e0768f64",
+  "tools/sib/trainer/param_diff_384.py": "9f41f497925b0d3fbe268b82140c62fa66cb5aef3999649077cf9d1fa1919cfe",
+  "tools/sib/trainer/runlog.sh": "44805ecfe195bc3cd08d0139bbb3a9d2ebcbf2de880f97150b4674c64b715b2c",
+  "tests/sib_trainer_integration_test.py": "162a48a7754c3a867854f0ffe06d47ffa6ec4679ab41939e6301d80b493df4b6",
+  "tests/sib_trainer_units_test.py": "f0e360040453808f4fcc9ee2c97e17a65c51e4a00b5a7762334dcd5cb62043cd"
+ },
+ "base": {
+  "tools/d3/d3_train.py": "2943b1b6fb7492433fc1476bb57848d306c705f70ccef575bf701342acf6f52f",
+  "villa": "41701aa0eaa1aa765523db3f9f972b5830abf549",
+  "base_checkpoint_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+  "base_checkpoint_source": "HF scrollprize/ink_9um rev 7109667e2607db1b90c37c8b09cb876ea7fe7bb1 (official)"
+ },
+ "tests": {
+  "final_run": "runs.jsonl label pytest_all_2",
+  "passed": 26,
+  "failed": 0,
+  "wall_s": 775,
+  "units": 14,
+  "integration": 12,
+  "integration_items": [
+   "determinism x3 (P128; NULL + micro-batch; REV + stitched): identical losses and bitwise weights, fp32 1 thread",
+   "seed changes the run",
+   "paired sampling: P384/NULL/REV identical sample digest, different losses",
+   "subtile P128 covers the 3x3 grid",
+   "resume from local state and from remote shards only: bitwise identical to uninterrupted",
+   "D3 equivalence CTRL/FA/NULLA/REVA: per-step losses and final weights bitwise equal to tools/d3/d3_train.py",
+   "bf16 training refused without gate and with pass:false; bench bf16 runs"
+  ]
+ },
+ "throughput": {
+  "source": "logs/sib/trainer/throughput.json",
+  "batch": 32,
+  "threads": 4,
+  "rot24": true,
+  "data": "SYNTHETIC",
+  "cells": [
+   {
+    "tile": 128,
+    "precision": "fp32",
+    "forward": "full",
+    "micro_batch": 32,
+    "rc": 0,
+    "wall_s": 61.7,
+    "median_s_per_step": 11.936267328999747,
+    "steps_per_hour": 301.6018241526497,
+    "peak_rss_GB": 7.151468544,
+    "projected_h_12k_steps": 39.787557763332494,
+    "projected_days_12k_steps": 1.6578149068055206
+   },
+   {
+    "tile": 128,
+    "precision": "bf16",
+    "forward": "full",
+    "micro_batch": 32,
+    "rc": 0,
+    "wall_s": 33.3,
+    "median_s_per_step": 6.788412335999965,
+    "steps_per_hour": 530.3154584332867,
+    "peak_rss_GB": 5.06753024,
+    "projected_h_12k_steps": 22.62804111999988,
+    "projected_days_12k_steps": 0.9428350466666617
+   },
+   {
+    "tile": 384,
+    "precision": "fp32",
+    "forward": "full",
+    "micro_batch": 4,
+    "rc": 0,
+    "wall_s": 426.8,
+    "median_s_per_step": 103.98001449399999,
+    "steps_per_hour": 34.62203787447763,
+    "peak_rss_GB": 9.89124608,
+    "projected_h_12k_steps": 346.6000483133333,
+    "projected_days_12k_steps": 14.44166867972222
+   },
+   {
+    "tile": 384,
+    "precision": "bf16",
+    "forward": "full",
+    "micro_batch": 8,
+    "rc": 0,
+    "wall_s": 265.3,
+    "median_s_per_step": 64.11031267199996,
+    "steps_per_hour": 56.15321232978937,
+    "peak_rss_GB": 10.416132096,
+    "projected_h_12k_steps": 213.70104223999988,
+    "projected_days_12k_steps": 8.904210093333328
+   },
+   {
+    "tile": 384,
+    "precision": "fp32",
+    "forward": "stitched",
+    "micro_batch": 8,
+    "rc": 0,
+    "wall_s": 423.1,
+    "median_s_per_step": 103.65808118399991,
+    "steps_per_hour": 34.72956434153709,
+    "peak_rss_GB": 4.388622336,
+    "projected_h_12k_steps": 345.5269372799997,
+    "projected_days_12k_steps": 14.396955719999987
+   },
+   {
+    "tile": 384,
+    "precision": "bf16",
+    "forward": "stitched",
+    "micro_batch": 8,
+    "rc": 0,
+    "wall_s": 256.4,
+    "median_s_per_step": 62.16653796799983,
+    "steps_per_hour": 57.90896706927924,
+    "peak_rss_GB": 3.741773824,
+    "projected_h_12k_steps": 207.2217932266661,
+    "projected_days_12k_steps": 8.63424138444442
+   },
+   {
+    "tile": 512,
+    "precision": "fp32",
+    "forward": "full",
+    "micro_batch": 2,
+    "rc": 0,
+    "wall_s": 736.3,
+    "median_s_per_step": 180.85026150500016,
+    "steps_per_hour": 19.905970663473255,
+    "peak_rss_GB": 9.77463296,
+    "projected_h_12k_steps": 602.8342050166673,
+    "projected_days_12k_steps": 25.11809187569447
+   },
+   {
+    "tile": 512,
+    "precision": "bf16",
+    "forward": "full",
+    "micro_batch": 1,
+    "rc": -15,
+    "wall_s": 12936.2
+   }
+  ],
+  "failures": [
+   "384 fp32 full micro-batch 8: OOM-killed at 13.9 GB anon RSS (dmesg uptime 2486 s); micro-batch 4 used",
+   "512 fp32 full micro-batch 4: OOM-killed (dmesg uptime 3951 s); micro-batch 2 used",
+   "512 bf16 full micro-batch 4 and 2: exited after 26 s and 19 s, before any step, no traceback, no OOM record (likely native crash; rc not kept by the driver); micro-batch 1: no step in 3.6 h at 400 % CPU, stopped (rc -15)"
+  ],
+  "contention_note": "three short unit-test runs (3-5 s each) overlapped bench cells at 19:07:42Z, 19:11:57Z and 19:25:19Z"
+ },
+ "projections_12k_steps_h": {
+  "measured": {
+   "P128": {
+    "fp32": 39.8,
+    "bf16": 22.6
+   },
+   "P384_full": {
+    "fp32": 346.6,
+    "bf16": 213.7
+   },
+   "P384_stitched": {
+    "fp32": 345.5,
+    "bf16": 207.2
+   },
+   "P512_full": {
+    "fp32": 602.8,
+    "bf16": null
+   }
+  },
+  "from_amx_sibling": {
+   "inputs_s_per_step_batch8": {
+    "fp32": 2.87,
+    "bf16": 1.57,
+    "bf16_channels_last": 1.41
+   },
+   "P128": {
+    "fp32": 38.3,
+    "bf16": 20.9,
+    "bf16_channels_last": 18.8
+   },
+   "P384_NULL_REV_x9_pixels": {
+    "fp32": 344.4,
+    "bf16": 188.4,
+    "bf16_channels_last": 169.2
+   }
+  },
+  "NULL_REV": "as P384",
+  "total_session_days": {
+   "fp32": 135,
+   "bf16": 83
+  }
+ },
+ "checkpoint_push": {
+  "ref": "refs/heads/claude/gifted-bell-gavnl5-sib-trainer-ckpt",
+  "resume_state_bytes": 414952758,
+  "shards": 5,
+  "max_shard_bytes": 90000000,
+  "save_push_prune_s": 90.31,
+  "final_weights_bytes": 138362143,
+  "final_shards": 2,
+  "fetch_back_sha256": "4e3572c7b3ec58316edd1fe5cefe7cbeb175bb2715ec1761abdfcb6af80d9490",
+  "fetch_back_equal": true,
+  "ref_commit_count": 1,
+  "current_ref_content": "final weights of a synthetic 2-step P128 test run (commit 46d858dd); test only"
+ },
+ "rotation_ignored_fraction": {
+  "P384_on_384px_mean": 0.1139,
+  "P384_on_384px_max_45deg": 0.1717,
+  "P128_subtile_on_384px_mean": 0.038
+ },
+ "architecture_check": "make_model from patch_size [17,384,384] gives parameter shapes different from the base (128); the 128-built base model accepts a 384x384 input (fully convolutional)",
+ "sibling_data": {
+  "pairs0814": "stage B in progress (no shards yet); 'stagec' adapter tested on a synthetic fixture",
+  "pairs0139": "builder present, no shards yet; 'tilegrid' / 'tilegrid3' adapters tested on a synthetic fixture"
+ },
+ "rules_applied": [
+  "CORR-RETRACE-RULE: contam_check.py point-to-surface clearance and fail-closed same-papyrus; old point-to-point helper removed"
+ ],
+ "asks": "logs/sib/trainer/ASK.md",
+ "proposal": "logs/sib/trainer/proposals/decl_d2_a1.txt",
+ "proposal_sha256": "375ca1f7b8ef02fe685e7f018c89497fe159567effc2742bdde8e8cd1b5b857b",
+ "ask_sha256": "54e54efc39368e173448459eb36681c72b7bb74ba2572d683d864cbcb2df59ca",
+ "addendum_2026_09_26": {
+  "q6_remote_guard": true,
+  "ckpt_ref_delete": "refused by safety check; owner/orchestrator to delete refs/heads/claude/gifted-bell-gavnl5-sib-trainer-ckpt",
+  "full_conv_check": "logs/sib/trainer/full_conv_check.json (pass)",
+  "blockpairs_real_0814": {
+   "commit": "c5fe80c",
+   "patches": 329,
+   "segments": 11,
+   "label_mismatch_px": 0
+  },
+  "pair_freeze": {
+   "tool": "tools/sib/trainer/pair_freeze.py",
+   "spec": "logs/sib/trainer/PAIR_FREEZE_SPEC.md",
+   "dryrun": "logs/sib/trainer/freeze_dryrun/pair_freeze.json"
+  },
+  "tests_after_guard": {
+   "label": "pytest_all_3",
+   "passed": 29,
+   "failed": 0,
+   "wall_s": 902
+  }
+ },
+ "addendum_2026_09_26_0540": {
+  "q1": "OPEN",
+  "param_diff": "logs/sib/trainer/param_diff_384.json: +106 tensors, 40 shape mismatches, +13,324,800 params, strict load fails",
+  "freeze_dryrun_union": "logs/sib/trainer/freeze_dryrun_u0814/pair_freeze.json (564 patches, 180/180 hashes, 0 label mismatch)",
+  "holdout_candidates": {
+   "base_same": 7,
+   "base_within_64": 205,
+   "base_within_128": 282,
+   "dedupe_groups": 222
+  },
+  "unit_tests": 19
+ }
+}

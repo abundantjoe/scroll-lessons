@@ -1,0 +1,403 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "base_sha256_prefix": "e635558a",
+ "strict_load_base_build": "<All keys matched successfully>",
+ "n_state_tensors": {
+  "base128": 508,
+  "build384": 614
+ },
+ "n_params": {
+  "base128": 34546498,
+  "build384": 47871298,
+  "diff": 13324800
+ },
+ "keys_only_in_base128": 0,
+ "keys_only_in_build384": 106,
+ "same_key_shape_mismatch": 40,
+ "total_differing_tensors": 146,
+ "only_in_base128_by_module": {},
+ "only_in_build384_by_module": {
+  "network.shared_decoder.stages.5": 8,
+  "network.shared_decoder.transpconvs.5": 2,
+  "network.shared_encoder.stages.6": 96
+ },
+ "shape_mismatch_examples": [
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.all_modules.0.bias",
+   "base128": [
+    256
+   ],
+   "build384": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.all_modules.0.weight",
+   "base128": [
+    256,
+    512,
+    3,
+    3
+   ],
+   "build384": [
+    320,
+    640,
+    3,
+    3
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.all_modules.1.bias",
+   "base128": [
+    256
+   ],
+   "build384": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.all_modules.1.weight",
+   "base128": [
+    256
+   ],
+   "build384": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.conv.bias",
+   "base128": [
+    256
+   ],
+   "build384": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.conv.weight",
+   "base128": [
+    256,
+    512,
+    3,
+    3
+   ],
+   "build384": [
+    320,
+    640,
+    3,
+    3
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.norm.bias",
+   "base128": [
+    256
+   ],
+   "build384": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.norm.weight",
+   "base128": [
+    256
+   ],
+   "build384": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.all_modules.0.bias",
+   "base128": [
+    128
+   ],
+   "build384": [
+    256
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.all_modules.0.weight",
+   "base128": [
+    128,
+    256,
+    3,
+    3
+   ],
+   "build384": [
+    256,
+    512,
+    3,
+    3
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.all_modules.1.bias",
+   "base128": [
+    128
+   ],
+   "build384": [
+    256
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.all_modules.1.weight",
+   "base128": [
+    128
+   ],
+   "build384": [
+    256
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.conv.bias",
+   "base128": [
+    128
+   ],
+   "build384": [
+    256
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.conv.weight",
+   "base128": [
+    128,
+    256,
+    3,
+    3
+   ],
+   "build384": [
+    256,
+    512,
+    3,
+    3
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.norm.bias",
+   "base128": [
+    128
+   ],
+   "build384": [
+    256
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.norm.weight",
+   "base128": [
+    128
+   ],
+   "build384": [
+    256
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.all_modules.0.bias",
+   "base128": [
+    64
+   ],
+   "build384": [
+    128
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.all_modules.0.weight",
+   "base128": [
+    64,
+    128,
+    3,
+    3
+   ],
+   "build384": [
+    128,
+    256,
+    3,
+    3
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.all_modules.1.bias",
+   "base128": [
+    64
+   ],
+   "build384": [
+    128
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.all_modules.1.weight",
+   "base128": [
+    64
+   ],
+   "build384": [
+    128
+   ]
+  }
+ ],
+ "only_in_build384_examples": [
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.all_modules.0.bias",
+   "shape": [
+    32
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.all_modules.0.weight",
+   "shape": [
+    32,
+    64,
+    3,
+    3
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.all_modules.1.bias",
+   "shape": [
+    32
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.all_modules.1.weight",
+   "shape": [
+    32
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.conv.bias",
+   "shape": [
+    32
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.conv.weight",
+   "shape": [
+    32,
+    64,
+    3,
+    3
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.norm.bias",
+   "shape": [
+    32
+   ]
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.norm.weight",
+   "shape": [
+    32
+   ]
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.5.bias",
+   "shape": [
+    32
+   ]
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.5.weight",
+   "shape": [
+    64,
+    32,
+    2,
+    2
+   ]
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.all_modules.0.bias",
+   "shape": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.all_modules.0.weight",
+   "shape": [
+    320,
+    320,
+    3,
+    3
+   ]
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.all_modules.1.bias",
+   "shape": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.all_modules.1.weight",
+   "shape": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.conv.bias",
+   "shape": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.conv.weight",
+   "shape": [
+    320,
+    320,
+    3,
+    3
+   ]
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.norm.bias",
+   "shape": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.norm.weight",
+   "shape": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv2.all_modules.0.bias",
+   "shape": [
+    320
+   ]
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv2.all_modules.0.weight",
+   "shape": [
+    320,
+    320,
+    3,
+    3
+   ]
+  }
+ ],
+ "network_log_base128": [
+  "Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]",
+  "features_per_stage: [32, 64, 128, 256, 320, 320]",
+  "num_stages: 6",
+  "n_blocks_per_stage: [1, 3, 4, 6, 6, 6]",
+  "n_conv_per_stage_decoder: [1, 1, 1, 1, 1]",
+  "pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]",
+  "squeeze_excitation_add_maxpool: False",
+  "pool_type: conv",
+  "num_pool_per_axis: [5, 5]",
+  "guide_stage_keys: None",
+  "guide_fusion_stage: None"
+ ],
+ "network_log_build384": [
+  "Patch size adjusted from (384, 384) to (384, 384) to ensure divisibility by pooling factors [64 64]",
+  "features_per_stage: [32, 64, 128, 256, 320, 320, 320]",
+  "num_stages: 7",
+  "n_blocks_per_stage: [1, 3, 4, 6, 6, 6, 6]",
+  "n_conv_per_stage_decoder: [1, 1, 1, 1, 1, 1]",
+  "pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]",
+  "squeeze_excitation_add_maxpool: False",
+  "pool_type: conv",
+  "num_pool_per_axis: [6, 6]",
+  "guide_stage_keys: None",
+  "guide_fusion_stage: None"
+ ],
+ "strict_load_into_build384": "fails (RuntimeError)"
+}

@@ -1,0 +1,68 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "base_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+ "config_patch_size": [
+  17,
+  128,
+  128
+ ],
+ "strict_load": "<All keys matched successfully>",
+ "data": "SYNTHETIC N(0,1) input",
+ "tiles": {
+  "128": {
+   "full_eval_out_shape": [
+    1,
+    1,
+    128,
+    128
+   ],
+   "stitched_eval_out_shape": [
+    1,
+    1,
+    128,
+    128
+   ],
+   "full_finite": true,
+   "full_vs_stitched_max_abs_diff": 0.0,
+   "train_backward_ok": true
+  },
+  "384": {
+   "full_eval_out_shape": [
+    1,
+    1,
+    384,
+    384
+   ],
+   "stitched_eval_out_shape": [
+    1,
+    1,
+    384,
+    384
+   ],
+   "full_finite": true,
+   "full_vs_stitched_max_abs_diff": 2.003467559814453,
+   "train_backward_ok": true
+  },
+  "512": {
+   "full_eval_out_shape": [
+    1,
+    1,
+    512,
+    512
+   ],
+   "stitched_eval_out_shape": [
+    1,
+    1,
+    512,
+    512
+   ],
+   "full_finite": true,
+   "full_vs_stitched_max_abs_diff": 2.1008262634277344,
+   "train_backward_ok": true
+  }
+ },
+ "built_from_384_same_param_shapes": false,
+ "built_from_384_n_params_differ": 146,
+ "built_from_384_strict_load": "fails: RuntimeError",
+ "verdict": "the unchanged base architecture (built from its own 128 config, strict load) runs 384 and 512 tiles fully convolutionally: True"
+}

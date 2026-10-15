@@ -1,0 +1,117 @@
+Provenance: Project HERCULES | owner the owner | [id removed]
+
+PROPOSAL (not a declaration; the orchestrator declares, seals, scores and decides): DECL-D2-A1, D2 = TRAIN-1 on CPU sessions.
+Written 2026-09-25 by the sibling trainer session (builder only). Every number below comes from logs/sib/trainer/throughput.json and
+logs/sib/trainer/report.json (synthetic data, 4 vCPU Intel Xeon with AMX, 15 GB RAM). No real data was trained on, and no image was opened.
+
+0. Why an amendment is needed
+   D0-HW dates D2 at "6 days after a GPU is provisioned; NOT RUN if none by 2026-11-15". No GPU exists. CPU sibling sessions do exist now
+   (logs/sib/registry.json). DECL-D2 (arms, bars, folds, J decisions 2 of 3) is unchanged by this proposal. It only proposes how the arms
+   run on CPU sessions and a D2 date that CPU sessions can meet. If nothing is declared, the default stands: D2 NOT RUN at 2026-11-15,
+   which counts as not-passed for K1.
+
+1. Trainer (frozen before launch; hashes are recorded at freeze time, not now)
+   tools/sib/trainer/d2_train.py, d2_data.py and ckpt_shards.py (sha256 in logs/sib/trainer/report.json).
+   - Model, loss and optimizer: official villa 41701aa components, started from base ink_9um hybrid_3d2d seed42 step-075000
+     (sha256 e635558a...9cab) only.
+   - Bitwise equivalence to tools/d3/d3_train.py: with tile 128, no rotation and the D3 layout, the per-step losses and final
+     weights of CTRL, FA, NULLA and REVA are bitwise identical to D3's on the same synthetic pools
+     (tests/sib_trainer_integration_test.py::test_d3_equivalence).
+   - Determinism: same config and data give identical loss curves and weights (fp32, 1 thread; P128, NULL with micro-batching,
+     REV with stitched forward).
+   - Resume: a resume from local state, or from the remote git shards alone after the run dir is deleted, is bitwise identical to an
+     uninterrupted run.
+   - Paired sampling: P384, NULL and REV with the same seed draw an identical (patch, z offset, rotation) sequence (sample_digest).
+
+2. Arms (DECL-D2 unchanged: K6 = 4 candidate arms + base reference; 3 seeds each; seed 1 read, seeds 2-3 give variance on pixel metrics)
+   Common config (make-config flags):
+     --batch 32 --steps 12000 --rot24 --subtile --threads 4 --z-jitter 2 --z-centre-offset 0 --lr 2e-5 --weight-decay 3e-5
+     --log-every 50 --ckpt-every 250 --remote-ref refs/heads/<session branch>-ckpt --hash-sources
+     sources, pooled (no per-batch quotas), all role train:
+       pairs0139 = tilegrid3:<pairs0139 output dir>   (complete grid-aligned 3 x 3 blocks of kept 128 px tiles = exact 384 px
+                   render crops; ASK 3; not published at the time of writing)
+       pairs0814 = stagec:logs/sib/pairs0814  (+ --allow-ids pairs0814=<declared filter>, see 4c)
+       (+ 0332 / 0500P2 only if their protocol check passes and they are declared)
+   P128 : --arm P128 --micro-batch 32                                    (tile 128)
+   P384 : --arm P384 --micro-batch 4 [fp32] / 8 [bf16]  --forward F384 (stitched: --micro-batch 8 in both precisions)   (tile 384)
+   NULL : --arm NULL (= P384 + one fixed label derangement over all pooled train patches, no fixed point)
+   REV  : --arm REV  (= P384 + every 21-slice input stack reversed in depth, labels unchanged)
+   Seeds: --seed 1, 2, 3 (literal). Sampling, jitter, rotation and augmentation streams derive from the seed only, so arms that share
+   a seed and a tile are paired.
+   Base reference arm: the base checkpoint itself; it needs no training.
+
+3. Sessions and wall time (one arm-seed per 4-vCPU session; 12000 steps x s/step; restarts, inference and reads excluded)
+   Measured by this session: batch 32, 24 x 15 deg rotations on, 4 threads, synthetic data (logs/sib/trainer/throughput.json).
+     P128              fp32 11.94 s/step -> 39.8 h (1.66 d)     bf16 6.79 s/step -> 22.6 h (0.94 d)
+     P384 full         fp32 103.98 s/step -> 346.6 h (14.4 d)   bf16 64.11 s/step -> 213.7 h (8.9 d)    (micro-batch 4 fp32 / 8 bf16)
+     P384 stitched     fp32 103.66 s/step -> 345.5 h (14.4 d)   bf16 62.17 s/step -> 207.2 h (8.6 d)    (micro-batch 8; peak RAM 3.7-4.4 GB)
+     NULL, REV         the same as P384 (identical config apart from labels or depth order)
+     P512 full (D2b)   fp32 180.85 s/step -> 602.8 h (25.1 d)   bf16 not measurable (see ASK 8)
+   From the AMX sibling's numbers (real base training step, batch 8, 4 AMX threads: fp32 2.87 s, bf16 1.57 s, bf16 channels_last 1.41 s),
+   scaled linearly to batch 32 and by 9x pixels for 384 px tiles. The measured 384/128 ratios here are 8.7 (fp32) and 9.4 (bf16).
+     P128              fp32 38.3 h (1.59 d)    bf16 20.9 h (0.87 d)    bf16 + channels_last 18.8 h (0.78 d)
+     P384, NULL, REV   fp32 344 h (14.3 d)     bf16 188 h (7.8 d)      bf16 + channels_last 169 h (7.0 d)
+   The two sources agree within 4 % at fp32. At bf16 the sibling's number is 8-12 % faster.
+   channels_last is not implemented in the trainer. Adopting it changes float summation order, so it would need its own equivalence
+   check against the frozen trainer before use.
+   There are 12 arm-seed sessions (4 arms x 3 seeds). Seed 1 of each arm launches first (4 sessions). Seeds 2 and 3 (8 sessions) start
+   at the same time if the owner allows 12 concurrent sessions, otherwise as seed-1 sessions free up.
+   Total compute: 3 seeds x (P128 + 3 x P384-type) = 3 x (1.66 + 3 x 14.4) = 135 session-days at fp32, or
+   3 x (0.94 + 3 x 8.9) = 83 session-days at bf16.
+
+4. Decisions the orchestrator must make before freezing (the trainer implements every option)
+   a. F384, the forward mode for the P384, NULL and REV arms. Both modes train, but they mean different things:
+      - "full": the model sees the whole 384 px tile. The base architecture is fully convolutional and accepts 384 x 384 unchanged.
+        This is the only mode that gives the "letter-scale context" of the DECL-D2 hypothesis. However, the official infer rebuilds
+        the model from the checkpoint config and tiles at 128 px. Building from patch_size 384 is not possible: it changes the
+        architecture (measured: parameter shapes differ). A full-mode model therefore needs a 384 px tile inference path. That path
+        is not official, so it needs its own gate before any D2 map: on the base model, 384-tile inference vs official 128-tile
+        inference on a control window, with a declared tolerance.
+      - "stitched": the official trainer's stitch_factor 3 semantics. The model sees nine independent 128 px crops, and the loss is
+        taken over the 384 px tile. Official 128 px inference applies unchanged. P384 then tests loss- and normalisation-scale
+        context, not receptive-field context.
+      Recommendation (for the orchestrator to judge): declare "full" together with a 384 px inference gate, since it is the arm that
+      tests the hypothesis. Also report the "stitched" number as the cost bound.
+   b. Optimiser recipe. The default is the section 4.D2 archive fine-tune recipe that D3 used (AdamW 2e-5 constant, weight decay 3e-5,
+      clip 1.0). DECL-D2 says "base recipe", and the base itself was trained with SGD lr 0.01, cosine schedule, 1000 warm-up steps and
+      batch 64. The amendment must pin one. Only AdamW with a constant rate is implemented and tested.
+   c. Data filters. Examples: exclude base-training papyrus (pairs0814 annotates the same-papyrus fraction with the 46527 re-trace)
+      and duplicate groups. Declare them as patch_id allowlists with a pinned sha256 (--allow-ids).
+   d. Stored patch context. pairs0814 stores 384 px patches (xyz only inside the patch, every 24 px). With 24 x 15 deg rotations:
+      - P384 on a 384 px patch loses a mean 11.4 % of pixels to ignore (17.2 % at 45 deg);
+      - P128 with --subtile loses 3.8 %;
+      - P512 cannot run on 384 px patches at all.
+      Remedy, if declared: the pairs sessions re-render with an 81 px margin (546 px stored) so that every arm gets corner-free
+      rotations. Otherwise the asymmetry is declared and reported as it is.
+   e. FL-09 reading (CORR-RETRACE-RULE applies: tools/sib/trainer/contam_check.py uses point-to-triangulated-surface
+      clearance and the fail-closed vertex-OR-surface same-papyrus rule). "128 vox plus a 64 px halo" can mean (i) the patch dilated by 64 px on its canvas, then >= 128 vox in 3-D, or
+      (ii) >= 192 vox. pairs0814 xyz has no halo, so reading (i) needs the halo added by the checker; (ii) is conservative. Declare one.
+   f. bf16. Use it only if the orchestrator's AMX gate passes. The config then carries the gate record (path + sha256, pass: true);
+      the trainer refuses bf16 training otherwise. bf16 arms are not bitwise comparable with fp32 arms, so all arms use the same precision.
+
+5. Reclaim safety and repo growth (measured 2026-09-25 on refs/heads/claude/gifted-bell-gavnl5-sib-trainer-ckpt)
+   - A local resume state (weights + AdamW moments + all RNG and stream states) is saved every 250 steps: 414,963,964 bytes.
+   - The same state is force-pushed as one parentless commit of 5 shards (max 90,000,000 bytes, 414,952,758 bytes in total).
+     Save + push + local prune took 90.3 s.
+   - At completion, the final weights (138,362,143 bytes, 2 shards) replace it on the ref.
+   - A fresh bare fetch returned the final weights byte-identical (sha256 4e3572c7...), and the ref holds exactly 1 commit.
+   - Tests show that a resume from the shards alone is bitwise identical to an uninterrupted run.
+   - Repo growth: superseded states stay on GitHub as unreachable objects until its own garbage collection.
+     Pushing every 24 h gives about 14 pushes per P384 fp32 session (9 bf16) and 2 per P128 session.
+     Over 12 sessions that is about 55 GB at fp32 (35 GB at bf16), far above GitHub's ~5 GB guidance (DECL-OFFLOAD-1).
+   - Proposal: every 72 h (about 18 GB at fp32, 12 GB at bf16), or remote pushes only when a check-in finds the session at risk.
+     The owner decides (ASK 6).
+
+6. Timeline (proposed D2 date; each decision's default runs 24 h after its date per D0-HW)
+   T0 = the day both pair registries are published and the ASK items are declared.
+   State at writing: pairs0139 builder code exists but no shards; pairs0814 is in stage B with no shards yet.
+   T0        freeze: filters, F384, optimiser, precision, FL-09 reading. The config sha256 of all 12 arm-seeds is recorded before any
+             training step. If "full" is declared, the 384 px inference gate is run.
+   T0        launch P128-s1, P384-s1, NULL-s1 and REV-s1 (plus seeds 2-3 if 12 sessions are allowed).
+   T0+1-2 d  P128-s1 done (bf16 / fp32).
+   T0+9 d (bf16) or T0+14.5 d (fp32)   P384/NULL/REV-s1 done.
+   +2-3 d    maps of each seed-1 arm on J (C2-NT, both orders; the 384 px inference path if "full"), displays as D1/D3, reads (fresh
+             frozen-reader readers per READCAL-FREEZE, sealed output), score, audit, D2-VERDICT.
+   Proposed D2 date: T0 + 11 d (bf16) or T0 + 18 d (fp32). The NOT-RUN default of 2026-11-15 is kept: D2 cannot finish in time
+   unless T0 <= 2026-11-04 (bf16) or T0 <= 2026-10-28 (fp32).
+   Seeds 2-3 finish about 9-15 d after they start. They are variance reports and are not needed for the seed-1 read.

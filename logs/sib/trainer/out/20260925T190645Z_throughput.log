@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/trainer/bench_throughput.py", line 90, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/user/dominion/tools/sib/trainer/bench_throughput.py", line 82, in main
+    c = cell(a.work, regs[tile], tile, prec, fwd, ml, a.steps, a.threads)
+  File "/home/user/dominion/tools/sib/trainer/bench_throughput.py", line 30, in cell
+    subprocess.run([PY, os.path.join(HERE, "d2_train.py"), "make-config", "--arm", f"BENCH{tile}", "--seed", "1",
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    "--tile", str(tile), "--rot24", "--batch", "32", "--micro-batch", str(micro), "--steps", "12000",
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    "--forward", fwd, "--precision", prec, "--threads", str(threads),
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    "--source", f"syn=pairs:{reg}", "--out", cfgp], check=True, capture_output=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/opt/hv-ink/bin/python', '/home/user/dominion/tools/sib/trainer/d2_train.py', 'make-config', '--arm', 'BENCH128', '--seed', '1', '--tile', '128', '--rot24', '--batch', '32', '--micro-batch', '32', '--steps', '12000', '--forward', 'full', '--precision', 'fp32', '--threads', '4', '--source', 'syn=pairs:/work/sib/bench/syn560/registry.json', '--out', '/work/sib/bench/t128_fp32_full_m32.json']' returned non-zero exit status 1.
