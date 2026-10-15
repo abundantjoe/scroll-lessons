@@ -1,0 +1,2 @@
+- 2026-09-30T03:54Z fl-pherc0490b: 0 organizer tifxyz on S3 (only photos/ representations/ volumes/); detached pipeline launched (tools/sib/fl-pherc0490b/pipeline.sh loop): env -> 4 auto-grow attempts on surface-m7 (keep 0 transverse self-intersections, >= 16 cm^2) -> C2-NT render -n 31 --flip-normals -> ink_9um step-075000 both dirs no TTA CPU -> 2x2 cm tiles; pushes per unit.
+- 2026-10-01T02:13:53Z fl-pherc0490b: DECL-FL-1 lane superseded by DECL-FL-2 (it had died in env setup at a container restart; 0 segments grown, 0 tiles).
