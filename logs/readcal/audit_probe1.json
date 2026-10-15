@@ -1,0 +1,1135 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "audit_utc": "2026-09-25T05:23:24Z",
+ "repo_head_at_audit": "54f4260edbc1f341167730cb8aa1de5d2853bfe5",
+ "auditor": "fresh auditor agent, no stake in the result",
+ "rules_chain_verify": "OK /home/user/dominion/RULES.md: 74 entries; preamble sha256 f0b331fdd48042aa25f42e9598bb10a3d705e4473102d7b41e89269694dde201; last DECL-D1-A2 sha256 188e7b6b3d55e7e48f05812d51ae30f6386877acec053f107c77f896cf27e773",
+ "audit_of": "PROBE1-RESULT (DECL-READCAL-PROBE1, -A1, -A2; scorer METRIC-HASH-11)",
+ "checks": {
+  "1_declaration_before_data": {
+   "result": "PASS",
+   "DECL-READCAL-PROBE1": {
+    "entry_utc": "2026-09-24T23:58:42Z",
+    "commit": "3dea6b6 2026-09-24T23:58:42Z"
+   },
+   "DECL-READCAL-PROBE1-A1": {
+    "entry_utc": "2026-09-25T02:40:40Z",
+    "commit": "46813c5 2026-09-25T02:40:40Z"
+   },
+   "DECL-READCAL-PROBE1-A2": {
+    "entry_utc": "2026-09-25T03:07:35Z",
+    "commit": "9275104 2026-09-25T03:07:35Z"
+   },
+   "METRIC-HASH-11": {
+    "entry_utc": "2026-09-25T03:02:13Z",
+    "commit": "f3c3dda 2026-09-25T03:02:13Z"
+   },
+   "images_and_key_built_utc": "2026-09-25T03:00:35Z (manifest generated_utc; no image viewed by anyone but readers: logs/views.tsv empty, no image Read by the orchestrator in its transcript)",
+   "jobs_created_utc": [
+    "2026-09-25T03:07:51Z",
+    "2026-09-25T03:07:53Z"
+   ],
+   "readers_launched_utc": [
+    "2026-09-25T03:08:30Z",
+    "2026-09-25T03:17:22Z"
+   ],
+   "sealed_answer_mtime_utc": [
+    "2026-09-25T03:09:01Z",
+    "2026-09-25T03:28:12Z"
+   ],
+   "first_decryption_utc": "2026-09-25T03:14:11Z (purpose probe1-interim-D2-N2, 24 answers); final scoring 03:28:39Z-03:28:40Z (36)",
+   "result_entry_utc": "2026-09-25T03:29:21Z (commit 82211b6)",
+   "finding": "every declaration entry and its commit precede every job creation, every sealed-answer mtime and the first decryption"
+  },
+  "2_scorer_integrity": {
+   "src/hercules/scorer/probe1.py": {
+    "sha256": "d5d68ff721205a85fb2c398af2bb981dc46805f369cc2a8c54616c90bcedc1e3",
+    "declared": "METRIC-HASH-11",
+    "equal": true,
+    "git": "only commit f3c3dda 2026-09-25T03:02:13Z (METRIC-HASH-11 commit); blob sha256 equal"
+   },
+   "src/hercules/scorer/consensus.py": {
+    "sha256": "d5ae23ef1af08be1323ad2be21ec6ca411186e8ebe107a2e5c3241b9f60ee594",
+    "declared": "METRIC-HASH-0 (and METRIC-HASH-10)",
+    "equal": true,
+    "git": "last change 15ca995 2026-09-24T21:57:36Z"
+   },
+   "src/hercules/scorer/letters.py": {
+    "declared": "METRIC-HASH-0",
+    "equal": true
+   },
+   "src/hercules/scorer/matching.py": {
+    "declared": "METRIC-HASH-0",
+    "equal": true
+   },
+   "src/hercules/scorer/schema.py": {
+    "declared": "METRIC-HASH-0",
+    "equal": true
+   },
+   "src/hercules/scorer/keyaccess.py": {
+    "declared": "METRIC-HASH-5",
+    "equal": true
+   },
+   "src/hercules/harness/audit.py": {
+    "declared": "METRIC-HASH-5",
+    "equal": true
+   },
+   "src/hercules/harness/collect.py": {
+    "declared": "METRIC-HASH-5",
+    "equal": true
+   },
+   "transcript_scan": "no Edit/Write/shell write to src/hercules/scorer or src/hercules/harness files in any transcript after 2026-09-25T03:02:13Z (only a new file sealpos.py at 05:07:56Z, after all three results)",
+   "result": "PASS"
+  },
+  "3_transcript_audit": {
+   "result": "PASS",
+   "method": "hercules.harness.audit.audit() called directly per job (nothing appended to logs/harness_jobs.tsv), plus auditor checks: each listed image Read exactly once, no other tool, exactly one sealed write matching the permitted form to the job path and scorer recipient, one hand-back, one non-meta prompt whose sha256 equals the job brief_sha256, wire tool inputs equal logged inputs, no tool errors, sealed file sha256 equals job answer_sha256, transcript model equals arm model; orchestrator Agent calls: one launch per job, subagent_type general-purpose, requested model equals arm model, prompt sha256 equals brief_sha256; no SendMessage to any reader.",
+   "n_jobs": 36,
+   "n_all_checks_pass": 36,
+   "violations_total": 0,
+   "unread_images_total": 0,
+   "images_read_per_job": [
+    4,
+    16,
+    36
+   ],
+   "sealed_writes_per_job": [
+    1
+   ],
+   "transcript_model_vs_arm": {
+    "match": 36
+   },
+   "readers_per_arm": {
+    "D2_A_opus": 3,
+    "D2_A_fable": 3,
+    "D2_B_opus": 3,
+    "D2_B_fable": 3,
+    "D1Q_A_opus": 3,
+    "D1Q_A_fable": 3,
+    "D1Q_B_opus": 3,
+    "D1Q_B_fable": 3,
+    "N2_A_opus": 3,
+    "N2_A_fable": 3,
+    "N2_B_opus": 3,
+    "N2_B_fable": 3
+   },
+   "distinct_agents": 36
+  },
+  "4_inputs": {
+   "result": "PASS",
+   "image_sha256": "all 36 job records: every image sha256 equals /work/probe1/manifest.json; all 112 manifest files re-hashed on disk equal; key image ids equal manifest stems",
+   "arm_structure": "each arm: 3 jobs with identical image sets of the arm display and state (D2 4, D1Q 36, N2 16 images) covering the 4 windows; key affine display/state/mirror consistent",
+   "freshness": "36 distinct agent ids, one job each; no agent id appears in two jobs across PROBE-1/2/3 or anywhere in /work/jobs/agent_map.txt; each transcript has exactly one prompt (fresh agent)"
+  },
+  "5_rederivation": {
+   "result": "PASS",
+   "decryptions": {
+    "purpose": "audit-probe1",
+    "n": 36,
+    "first_utc": "2026-09-25T05:17:41Z",
+    "last_utc": "2026-09-25T05:17:42Z"
+   },
+   "answers": 36,
+   "malformed_by_declared_validator": 0,
+   "raw_left_namings": 173,
+   "unknown_identity_namings": 0,
+   "removed_by_per_reader_dedup": 23,
+   "right_side_namings": 0,
+   "items_not_in_key": 0,
+   "namings_on_items_not_in_key": 0,
+   "item_coverage": "every window image of every job answered exactly once",
+   "normaliser_check": "auditor's own identity mapping (Unicode names, spec B) vs hercules.scorer.letters.normalize_letter: 0 disagreements in 173 namings",
+   "own_code": "identity from Unicode names; [y,x] = M [iy,ix,1] with the key image_to_levelled_window_px; per-reader same-kind dedup < 150 px (first kept); greedy one-to-one complete-linkage grouping (pairs of different readers within 150 px sorted by distance, rank), >= 2 of 3 readers; firm if >= 2 members firm; identity shuffle within reader, positions fixed, 2000 permutations with python random (not numpy), p = (1 + #null >= obs)/(1 + N); code validated first on synthetic answers against the declared scorer (all counts equal, 60 synthetic answers).",
+   "declared_scorer_rerun": "hercules.scorer.probe1.map_namings/score_arm on the same decrypted answers, reader labels r0-r2 as in the recorded runs",
+   "comparison": {
+    "recorded_cells_compared": 48,
+    "count_differences": [],
+    "p_declared_rerun_equal_recorded_cells": 48,
+    "p_differences": [],
+    "own_code_vs_declared_scorer_count_differences": [],
+    "cells_where_greedy_below_exact_max_grouping": [],
+    "cells_sensitive_to_dedup_boundary": []
+   }
+  },
+  "6_bar": {
+   "result": "PASS (recorded verdict follows from re-derived numbers)",
+   "declared": "SG-FEAS PASSED only if the best (display, model) reaches >= 12 agreed with >= 8 agreed-firm in one window; if no arm reaches >= 5 agreed in any window: \"REF not blind-legible at any tested display\", SG-FEAS NOT PASSED",
+   "max_agreed_any_arm_window": 4,
+   "any_arm_window_ge5": false,
+   "sg_feas_window_exists": false,
+   "summed_display_model": {
+    "D1Q_fable": 7,
+    "D1Q_opus": 3,
+    "D2_fable": 9,
+    "D2_opus": 12,
+    "N2_fable": 0,
+    "N2_opus": 0
+   },
+   "best_display_model": "D2_opus",
+   "min_p_declared_scorer": 0.11744,
+   "min_p_auditor": 0.11244,
+   "outcome": "SG-FEAS NOT PASSED; \"REF not blind-legible at any tested display\" applies",
+   "recorded_verdict": "SG-FEAS NOT PASSED; REF not blind-legible; letter-reading decisions suspended",
+   "verdict_follows": true
+  }
+ },
+ "recomputed": {
+  "windows": [
+   "w030_y2816_x3072",
+   "w035_y1792_x768",
+   "w039_y2816_x3840",
+   "w043_y3072_x4608"
+  ],
+  "arms": {
+   "D1Q_A_fable": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 2,
+      "agreed_firm": 0,
+      "named_total": 7,
+      "group_sizes_2_3": [
+       2,
+       0
+      ],
+      "p_auditor_2000": "75/667",
+      "p_auditor_2000_float": 0.11244,
+      "p_declared_scorer": "235/2001",
+      "p_declared_float": 0.11744,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 2,
+      "agreed_if_dedup_inclusive_150": 2
+     },
+     "w039_y2816_x3840": {
+      "agreed": 2,
+      "agreed_firm": 0,
+      "named_total": 11,
+      "group_sizes_2_3": [
+       1,
+       1
+      ],
+      "p_auditor_2000": "643/2001",
+      "p_auditor_2000_float": 0.32134,
+      "p_declared_scorer": "215/667",
+      "p_declared_float": 0.32234,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 2,
+      "agreed_if_dedup_inclusive_150": 2
+     },
+     "w043_y3072_x4608": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 5,
+      "group_sizes_2_3": [
+       1,
+       0
+      ],
+      "p_auditor_2000": "220/667",
+      "p_auditor_2000_float": 0.32984,
+      "p_declared_scorer": "670/2001",
+      "p_declared_float": 0.33483,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     }
+    },
+    "total": {
+     "agreed": 5,
+     "agreed_firm": 0,
+     "named": 23
+    },
+    "max_agreed_in_window": 2
+   },
+   "D1Q_A_opus": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 1,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w039_y2816_x3840": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 2,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w043_y3072_x4608": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 2,
+      "group_sizes_2_3": [
+       1,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     }
+    },
+    "total": {
+     "agreed": 1,
+     "agreed_firm": 0,
+     "named": 5
+    },
+    "max_agreed_in_window": 1
+   },
+   "D1Q_B_fable": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 1,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w039_y2816_x3840": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 1,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w043_y3072_x4608": {
+      "agreed": 2,
+      "agreed_firm": 0,
+      "named_total": 5,
+      "group_sizes_2_3": [
+       1,
+       1
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 2,
+      "agreed_if_dedup_inclusive_150": 2
+     }
+    },
+    "total": {
+     "agreed": 2,
+     "agreed_firm": 0,
+     "named": 7
+    },
+    "max_agreed_in_window": 2
+   },
+   "D1Q_B_opus": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 1,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w039_y2816_x3840": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 2,
+      "group_sizes_2_3": [
+       1,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     },
+     "w043_y3072_x4608": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 3,
+      "group_sizes_2_3": [
+       0,
+       1
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     }
+    },
+    "total": {
+     "agreed": 2,
+     "agreed_firm": 0,
+     "named": 6
+    },
+    "max_agreed_in_window": 1
+   },
+   "D2_A_fable": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 3,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w039_y2816_x3840": {
+      "agreed": 4,
+      "agreed_firm": 0,
+      "named_total": 16,
+      "group_sizes_2_3": [
+       1,
+       3
+      ],
+      "p_auditor_2000": "242/2001",
+      "p_auditor_2000_float": 0.12094,
+      "p_declared_scorer": "238/2001",
+      "p_declared_float": 0.11894,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 4,
+      "agreed_if_dedup_inclusive_150": 4
+     },
+     "w043_y3072_x4608": {
+      "agreed": 2,
+      "agreed_firm": 0,
+      "named_total": 13,
+      "group_sizes_2_3": [
+       1,
+       1
+      ],
+      "p_auditor_2000": "901/2001",
+      "p_auditor_2000_float": 0.45027,
+      "p_declared_scorer": "285/667",
+      "p_declared_float": 0.42729,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 2,
+      "agreed_if_dedup_inclusive_150": 2
+     }
+    },
+    "total": {
+     "agreed": 6,
+     "agreed_firm": 0,
+     "named": 32
+    },
+    "max_agreed_in_window": 4
+   },
+   "D2_A_opus": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 4,
+      "group_sizes_2_3": [
+       0,
+       1
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     },
+     "w039_y2816_x3840": {
+      "agreed": 3,
+      "agreed_firm": 0,
+      "named_total": 10,
+      "group_sizes_2_3": [
+       1,
+       2
+      ],
+      "p_auditor_2000": "235/2001",
+      "p_auditor_2000_float": 0.11744,
+      "p_declared_scorer": "236/2001",
+      "p_declared_float": 0.11794,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 3,
+      "agreed_if_dedup_inclusive_150": 3
+     },
+     "w043_y3072_x4608": {
+      "agreed": 2,
+      "agreed_firm": 0,
+      "named_total": 8,
+      "group_sizes_2_3": [
+       1,
+       1
+      ],
+      "p_auditor_2000": "475/2001",
+      "p_auditor_2000_float": 0.23738,
+      "p_declared_scorer": "448/2001",
+      "p_declared_float": 0.22389,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 2,
+      "agreed_if_dedup_inclusive_150": 2
+     }
+    },
+    "total": {
+     "agreed": 6,
+     "agreed_firm": 0,
+     "named": 22
+    },
+    "max_agreed_in_window": 3
+   },
+   "D2_B_fable": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 1,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w039_y2816_x3840": {
+      "agreed": 2,
+      "agreed_firm": 0,
+      "named_total": 17,
+      "group_sizes_2_3": [
+       1,
+       1
+      ],
+      "p_auditor_2000": "233/667",
+      "p_auditor_2000_float": 0.34933,
+      "p_declared_scorer": "224/667",
+      "p_declared_float": 0.33583,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 2,
+      "agreed_if_dedup_inclusive_150": 2
+     },
+     "w043_y3072_x4608": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 11,
+      "group_sizes_2_3": [
+       1,
+       0
+      ],
+      "p_auditor_2000": "844/2001",
+      "p_auditor_2000_float": 0.42179,
+      "p_declared_scorer": "262/667",
+      "p_declared_float": 0.3928,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     }
+    },
+    "total": {
+     "agreed": 3,
+     "agreed_firm": 0,
+     "named": 29
+    },
+    "max_agreed_in_window": 2
+   },
+   "D2_B_opus": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 1,
+      "agreed_firm": 0,
+      "named_total": 7,
+      "group_sizes_2_3": [
+       0,
+       1
+      ],
+      "p_auditor_2000": "505/667",
+      "p_auditor_2000_float": 0.75712,
+      "p_declared_scorer": "1486/2001",
+      "p_declared_float": 0.74263,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 1,
+      "agreed_if_dedup_inclusive_150": 1
+     },
+     "w039_y2816_x3840": {
+      "agreed": 2,
+      "agreed_firm": 0,
+      "named_total": 5,
+      "group_sizes_2_3": [
+       2,
+       0
+      ],
+      "p_auditor_2000": "213/667",
+      "p_auditor_2000_float": 0.31934,
+      "p_declared_scorer": "222/667",
+      "p_declared_float": 0.33283,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 2,
+      "agreed_if_dedup_inclusive_150": 2
+     },
+     "w043_y3072_x4608": {
+      "agreed": 3,
+      "agreed_firm": 0,
+      "named_total": 8,
+      "group_sizes_2_3": [
+       1,
+       2
+      ],
+      "p_auditor_2000": "455/2001",
+      "p_auditor_2000_float": 0.22739,
+      "p_declared_scorer": "478/2001",
+      "p_declared_float": 0.23888,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 3,
+      "agreed_if_dedup_inclusive_150": 3
+     }
+    },
+    "total": {
+     "agreed": 6,
+     "agreed_firm": 0,
+     "named": 20
+    },
+    "max_agreed_in_window": 3
+   },
+   "N2_A_fable": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w039_y2816_x3840": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w043_y3072_x4608": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     }
+    },
+    "total": {
+     "agreed": 0,
+     "agreed_firm": 0,
+     "named": 0
+    },
+    "max_agreed_in_window": 0
+   },
+   "N2_A_opus": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w039_y2816_x3840": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w043_y3072_x4608": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 3,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     }
+    },
+    "total": {
+     "agreed": 0,
+     "agreed_firm": 0,
+     "named": 3
+    },
+    "max_agreed_in_window": 0
+   },
+   "N2_B_fable": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w039_y2816_x3840": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w043_y3072_x4608": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     }
+    },
+    "total": {
+     "agreed": 0,
+     "agreed_firm": 0,
+     "named": 0
+    },
+    "max_agreed_in_window": 0
+   },
+   "N2_B_opus": {
+    "n_readers": 3,
+    "per_window": {
+     "w030_y2816_x3072": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w035_y1792_x768": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 1,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w039_y2816_x3840": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 0,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": null,
+      "p_auditor_2000_float": null,
+      "p_declared_scorer": null,
+      "p_declared_float": null,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     },
+     "w043_y3072_x4608": {
+      "agreed": 0,
+      "agreed_firm": 0,
+      "named_total": 2,
+      "group_sizes_2_3": [
+       0,
+       0
+      ],
+      "p_auditor_2000": "1",
+      "p_auditor_2000_float": 1.0,
+      "p_declared_scorer": "1",
+      "p_declared_float": 1.0,
+      "p_auditor_20000": null,
+      "max_one_to_one_groups": 0,
+      "agreed_if_dedup_inclusive_150": 0
+     }
+    },
+    "total": {
+     "agreed": 0,
+     "agreed_firm": 0,
+     "named": 3
+    },
+    "max_agreed_in_window": 0
+   }
+  },
+  "mirror_check_A_vs_B": {
+   "D2_opus": [
+    6,
+    6
+   ],
+   "D2_fable": [
+    6,
+    3
+   ],
+   "D1Q_opus": [
+    1,
+    2
+   ],
+   "D1Q_fable": [
+    5,
+    2
+   ],
+   "N2_opus": [
+    0,
+    0
+   ],
+   "N2_fable": [
+    0,
+    0
+   ]
+  }
+ },
+ "differences_vs_recorded": {
+  "counts": "none: agreed, agreed-firm and named equal the recorded values in all 48 arm-window cells and all totals; own code equals the declared scorer in every cell",
+  "p": "declared-scorer rerun reproduces every recorded p exactly (same seed); auditor RNG p differ by Monte Carlo noise only (no cell crosses 0.05)",
+  "text": [
+   "PROBE1-RESULT says \"every value >= 0.107\"; the smallest recorded p is 235/2001 = 0.117 (auditor 0.112); the bound is true but the figure matches no computed value",
+   "probe1_results.json best_arm = \"D2_A_fable\" (first of four arms tied at 6); the RULES text correctly reports the declared (display, model) summed over states, D2_opus 12; no effect"
+  ]
+ },
+ "bar_outcome": "NOT PASSED (max 4 agreed in any arm-window, 0 agreed-firm everywhere)",
+ "audit": "PASS",
+ "reasons": [
+  "declarations (and amendments) entered and committed before any job, sealed answer or decryption",
+  "scorer files equal their METRIC-HASH entries and were unchanged at scoring time",
+  "all 36 transcripts VALID under an independent audit; inputs equal the manifest; 36 fresh distinct agents with the declared models",
+  "independent re-derivation reproduces every recorded count; the declared bar applied to the re-derived numbers gives the recorded verdict"
+ ],
+ "notes": [
+  "Undeclared interim look: 24 D2/N2 answers decrypted at 03:14:11Z (probe1-interim-D2-N2) while 9 D1Q readers were still to be launched (03:14:50Z-03:17:20Z). Their briefs were fixed at 03:07:5xZ (brief sha256 equal in job records, launches and transcripts); no reader, rule or arm changed; the outcome is the declared default. No effect on the verdict.",
+  "Declared localisation report (fraction of agreed letters within 20 px of human ink) was not computed; disclosed in METRIC-HASH-11 and PROBE1-RESULT; not a bar.",
+  "PROBE1-A2 (models reduced to opus/fable, both mirror states as arms) was entered after images were built but before any job or reader; nothing had been viewed.",
+  "The result was recorded before this independent audit (AUDIT-OMIT-PROBES, I17); this audit is the remedy.",
+  "Greedy grouping equals the exact maximum one-to-one grouping in every cell; no cell changes if the dedup boundary is inclusive (<= 150 px)."
+ ]
+}
