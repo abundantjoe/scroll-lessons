@@ -1,0 +1,68 @@
+# p4v-15 FL2 STATUS (RULES.md DECL-FL-2; PHerc0358 second worker, seed lane 1)
+Provenance: Project HERCULES | [id removed]
+
+- 2026-10-01T02:13:25Z start. Brief tools/fl2/BRIEF_FL2.md sha256 0e07b757... and logs/fl2/assign.json ffb22500... verified (origin/claude/gifted-bell-gavnl5 7a315a6). Prior job DECL-P4-26-A2 verso was complete before this order (REPRO PASS; 10 maps pushed 00:57Z); no lanes were stopped. Template 54b29c96: pipeline.sh 7c85a0f8a20a191b..., fl.py cc129e8f4b236d1d..., watchdog.sh 917dd42da48ebdc8.... Adapted copies in tools/sib/p4v-15/fl2/ (pipeline.sh d86cc80d1d91145a..., fl.py f30a95cf78c05280...).
+- Parameters: CT PHerc0358/volumes/20250821151737-9.362um-1.2m-113keV-masked.zarr (voxel 9.362 um as template); SURF 20250821151737-surface-20260413222639-surface-m7-L0-th0.2.zarr (the only surface-m7 L0); UMB none (bucket has photos/ representations/ volumes/ only; no organizer segments). NCAND 48, NSEEDS 40, MIN_AREA 16 cm2, 0 self-intersections; lane 1 = seed index % 2 == 1; names pherc0358_p4v-15_s<k>.
+- Disclosed deviations from a literal template copy: (a) fl.py seeds has a hardcoded 8-entry (z, azimuth) plan, so "48 seeds" needs a 48-entry table: the template's 8 first, unchanged, then (z_i, az_((i+k) mod 8)) for k = 1..5 (48 distinct pairs). The primary (p4v-05) should use the same table for the even/odd split to be disjoint. (b) per-segment flow grow->render->infer->tiles->push (brief item 6) instead of grow-all-first; (c) direction labels forward/reverse and tiles_<arm>/ manifest fields per brief item 5, added after cmd_tiles (tiling untouched); (d) DENSE arm wired, off until the pilot's DENSE_OK.json exists. Env: setup_env.sh's vc_build.sh hardcodes proxy port 46883; this container's proxy is on another port, so only the working copy /work/scripts/vc_build.sh was patched (repo files unchanged).
+- 2026-10-01T02:14:29Z primary p4v-05 kept fl.py byte-identical (8-entry plan) and flagged the 48-seed table as needing a declaration. Disjointness holds: indices 0-7 are the same template seeds in both tables (p4v-05 even, p4v-15 odd), and p4v-05 has no index >= 8. Template seeds run first here. Every segment and tile from an extension seed carries seed_plan=ext48 (grow json + manifest row), so the orchestrator can include or drop them by that field. DENSE: pilot DENSE_FAIL.json (download denied), so the dense arm stays off. Official model training scrolls (pilot TRAINING_SCROLLS.json): PHerc0139, PHerc1667, PHercParis4, PHerc0814; PHerc0358 not among them, so it is eligible.
+- 2026-10-01T02:23:42Z env: orchestrator fixes 21bf4bd3 (vc_build proxy from $HTTPS_PROXY), 7168f33d and 9c28079 (hv-ink freeze without stale pins, vesuvius via pip --ignore-requires-python, imagecodecs) taken from origin/claude/gifted-bell-gavnl5; setup_env.sh rc=0; vesuvius infer importable (torch 2.14.1+cpu). Watchdog attempts 1-2 (02:17Z, 02:22Z) stopped at the env check (vesuvius not importable), so no unit ran; relaunched. DECL-FL-2-E1: DENSE withdrawn, OFFICIAL only (dense arm never enabled here). Voxel 9.362 um for this volume (not MAY 8.64 um).
+- 2026-10-01T02:23:47Z env OK (villa 41701aa0eaa1aa765523db3f9f972b5830abf549 ckpt_sha256 e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab torch 2.14.1+cpu )
+- 2026-10-01T02:23:49Z s3 list: 0 organizer tifxyz segments
+- 2026-10-01T02:25:34Z seeds: 48 of 48 candidates; lane 1 takes index % 2 == 1
+- 2026-10-01T02:26:37Z grow pherc0358_p4v-15_s1: rc=0 area=31.133288664178945 cm2 selfx=0 kept=true
+- 2026-10-01T02:55:22Z segment pherc0358_p4v-15_s1 official: 8 tiles
+- 2026-10-01T02:56:27Z grow pherc0358_p4v-15_s3: rc=0 area=31.130540379111114 cm2 selfx=0 kept=true
+- 2026-10-01T03:27:43Z segment pherc0358_p4v-15_s3 official: 8 tiles
+- 2026-10-01T03:28:50Z grow pherc0358_p4v-15_s5: rc=0 area=31.132160080226313 cm2 selfx=0 kept=true
+- 2026-10-01T03:52:21Z segment pherc0358_p4v-15_s5 official: 8 tiles
+- 2026-10-01T03:53:25Z grow pherc0358_p4v-15_s7: rc=0 area=31.131470984299117 cm2 selfx=0 kept=true
+- 2026-10-01T04:19:17Z segment pherc0358_p4v-15_s7 official: 8 tiles
+- 2026-10-01T04:20:20Z grow pherc0358_p4v-15_s9: rc=0 area=31.13126655514168 cm2 selfx=0 kept=true
+- 2026-10-01T06:07:41Z container restart (~04:3xZ, during infer s9; uptime 0 at 06:05Z) killed the pipeline; no unit lost (s1-s7 pushed, s9 grow pushed, s9 render marker kept). Watchdog restarted 06:06Z: docker/env re-setup OK, s9 infer resumed. A stray repo dir '2/' (byte-identical copy of s1 tifxyz, written 02:26:40, never committed) moved to /work/fl2/stray_2_copy_of_s1.
+- 2026-10-01T06:31:39Z segment pherc0358_p4v-15_s9 official: 8 tiles
+- 2026-10-01T06:33:59Z grow pherc0358_p4v-15_s11: rc=0 area=31.238134914517943 cm2 selfx=190 kept=false
+- 2026-10-01T06:34:55Z grow pherc0358_p4v-15_s13: rc=0 area=30.70521108706561 cm2 selfx=0 kept=true
+- 2026-10-01T07:00:10Z segment pherc0358_p4v-15_s13 official: 8 tiles
+- 2026-10-01T07:01:11Z grow pherc0358_p4v-15_s15: rc=0 area=31.130430194701933 cm2 selfx=0 kept=true
+- 2026-10-01T07:39:58Z segment pherc0358_p4v-15_s15 official: 8 tiles
+- 2026-10-01T07:41:03Z grow pherc0358_p4v-15_s17: rc=0 area=31.13058557712079 cm2 selfx=0 kept=true
+- 2026-10-01T08:12:21Z segment pherc0358_p4v-15_s17 official: 8 tiles
+- 2026-10-01T08:13:09Z grow pherc0358_p4v-15_s19: rc=0 area=23.309337842307276 cm2 selfx=0 kept=true
+- 2026-10-01T08:41:54Z segment pherc0358_p4v-15_s19 official: 8 tiles
+- 2026-10-01T08:42:54Z grow pherc0358_p4v-15_s21: rc=0 area=31.13425408296475 cm2 selfx=0 kept=true
+- 2026-10-01T09:14:32Z segment pherc0358_p4v-15_s21 official: 8 tiles
+- 2026-10-01T09:15:54Z grow pherc0358_p4v-15_s23: rc=0 area=31.164307101443118 cm2 selfx=0 kept=true
+- 2026-10-01T09:38:13Z segment pherc0358_p4v-15_s23 official: 8 tiles
+- 2026-10-01T09:39:17Z grow pherc0358_p4v-15_s25: rc=0 area=31.130404760375956 cm2 selfx=0 kept=true
+- 2026-10-01T10:03:24Z segment pherc0358_p4v-15_s25 official: 8 tiles
+- 2026-10-01T10:04:07Z grow pherc0358_p4v-15_s27: rc=0 area=20.12284183488713 cm2 selfx=0 kept=true
+- 2026-10-01T10:26:03Z segment pherc0358_p4v-15_s27 official: 8 tiles
+- 2026-10-01T10:27:02Z grow pherc0358_p4v-15_s29: rc=0 area=31.130334222622274 cm2 selfx=0 kept=true
+- 2026-10-01T10:54:25Z segment pherc0358_p4v-15_s29 official: 8 tiles
+- 2026-10-01T10:55:07Z grow pherc0358_p4v-15_s31: rc=0 area=19.144670537614445 cm2 selfx=0 kept=true
+- 2026-10-01T11:20:08Z segment pherc0358_p4v-15_s31 official: 8 tiles
+- 2026-10-01T11:21:12Z grow pherc0358_p4v-15_s33: rc=0 area=31.132411941723394 cm2 selfx=0 kept=true
+- 2026-10-01T11:51:03Z segment pherc0358_p4v-15_s33 official: 8 tiles
+- 2026-10-01T11:52:09Z grow pherc0358_p4v-15_s35: rc=0 area=31.130424039074445 cm2 selfx=0 kept=true
+- 2026-10-01T12:28:01Z segment pherc0358_p4v-15_s35 official: 8 tiles
+- 2026-10-01T12:29:09Z grow pherc0358_p4v-15_s37: rc=0 area=31.130571644733323 cm2 selfx=0 kept=true
+- 2026-10-01T13:07:49Z segment pherc0358_p4v-15_s37 official: 8 tiles
+- 2026-10-01T13:08:55Z grow pherc0358_p4v-15_s39: rc=0 area=31.130045646385902 cm2 selfx=0 kept=true
+- 2026-10-01T13:41:59Z segment pherc0358_p4v-15_s39 official: 8 tiles
+- 2026-10-01T13:42:51Z grow pherc0358_p4v-15_s41: rc=0 area=24.781508557832037 cm2 selfx=0 kept=true
+- 2026-10-01T14:06:59Z segment pherc0358_p4v-15_s41 official: 8 tiles
+- 2026-10-01T14:08:44Z grow pherc0358_p4v-15_s43: rc=0 area=31.151357021262044 cm2 selfx=0 kept=true
+- 2026-10-01T14:42:19Z segment pherc0358_p4v-15_s43 official: 8 tiles
+- 2026-10-01T14:43:27Z grow pherc0358_p4v-15_s45: rc=0 area=31.135206900989235 cm2 selfx=0 kept=true
+- 2026-10-01T15:16:09Z segment pherc0358_p4v-15_s45 official: 8 tiles
+- 2026-10-01T15:17:19Z grow pherc0358_p4v-15_s47: rc=0 area=31.1318768852513 cm2 selfx=0 kept=true
+- 2026-10-01T15:46:30Z segment pherc0358_p4v-15_s47 official: 8 tiles
+- 2026-10-01T15:46:34Z PIPELINE COMPLETE (arms: official): source=auto segments=23
+- 2026-10-01T15:48:31Z round 0 complete: 24 lane-1 grow attempts, 23 kept, 184 official tiles (PIPELINE COMPLETE 15:46:34Z). Extended per orchestrator keepalive order 06:00Z step 2: seed round 1 = the same fl.py seeds with FL_SEED_ROUND=1 (every plan azimuth + 22.5 deg; 48 pairs, none shared with round 0; round 0 unchanged), file seeds_r1.json, names pherc0358_p4v-15_r1_s<k>, seed_plan=round1, same lane rule (index % 2 == 1); NSEEDS 40 -> 80 (cumulative). Model, inference options and tiler unchanged. Also: vc_tifxyz_selfcross now runs from /work/fl2 (it had dropped tifxyz copies as '2/' into the repo cwd; never committed). PIPELINE_DONE removed. Context: FL-2 gate NOT SENSITIVE (waves 1-2); these tiles feed DECL-FL-3 windows.
+- 2026-10-01T15:50:45Z seeds: 48 of 48 candidates (round 1); lane 1 takes index % 2 == 1
+- 2026-10-01T15:51:44Z grow pherc0358_p4v-15_r1_s1: rc=0 area=31.13031525944628 cm2 selfx=0 kept=true
+- 2026-10-01T16:26:26Z segment pherc0358_p4v-15_r1_s1 official: 8 tiles
+- 2026-10-01T16:27:29Z grow pherc0358_p4v-15_r1_s3: rc=0 area=31.130869153830638 cm2 selfx=0 kept=true
+- 2026-10-01T17:02:40Z segment pherc0358_p4v-15_r1_s3 official: 8 tiles
+- 2026-10-01T17:03:44Z grow pherc0358_p4v-15_r1_s5: rc=0 area=31.132683823519834 cm2 selfx=0 kept=true
+- 2026-10-01T17:21:22Z FL-2 stopped by DECL-FL-4-A1 (orchestrator order 17:20Z; go.sh killed the FL-2 watchdog/pipeline and keepalive). Round 1 at stop: 3 grow records pushed; any unit in flight was not committed (incomplete units leave no marker). Round 0 stands complete (23 segments, 184 official tiles). This worker moves to PHerc0490A lane 7/16 (logs/sib/p4v-15/fl4/).
