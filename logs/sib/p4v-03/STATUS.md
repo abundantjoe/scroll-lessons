@@ -1,0 +1,36 @@
+# p4v-03 STATUS (DECL-P4-26-A2, tools/p4/BRIEF_VERSO.md sha256 377fa355...)
+Provenance: Project HERCULES | [id removed]
+START 2026-09-30T23:30:01Z
+sha256 infer_verso.py a1bd1f248cc6b49263f9a01dd7041b1123864f571b129fad643779c4ccb92b90
+sha256 infer.py 36a64e1ac07eea859bb586a484300ace048e732420167f9bf77516befaccdf2e
+sha256 own_common.py ddf9077087a85a7bce44139b6ea56e6ea1dbed37353c30e3a25af58ba1daf3b9
+sha256 ckpt-screen-b p4o_tiles.py a32d7e86... infer_1667.py 29444f37... (= own_common CKB_SHA; copied verbatim from origin/claude/gifted-bell-gavnl5 fc5442c, since 98cd075 is not fetchable here)
+sha256 model_final.pth bfa9f7a62097374b93e87c7b406a9c3eba6b77dca3d9f79c10300fa0114daea5 (verified)
+sha256 verso_assign.json f3364896476b5ab8f1ef2218236877067852f93ef44718b95e3a866955941d6a; tiles new.p4v-03 (6 verso, 6 forward, same list)
+env /opt/ckb py3.11: torch cpu, numpy, opencv-python-headless, tifffile, imagecodecs, zarr<3, requests, scipy, pillow
+REPRO-ATTEMPT-1 ABORTED (infer error, not a hash result) 2026-09-30T23:30:20Z: missing git ref origin/claude/gifted-bell-gavnl5-sib-pairs0814b read by p4o_tiles.py; no map was produced. Retried after fetching the ref.
+REPRO PASS 2026-09-30T23:38:09Z r0c11 forward png_sha256 6954db7da54cb2bb818842042b789c974bd908fc446a4902de4ee70d6f534102 (own-lead 6954db7da54cb2bb818842042b789c974bd908fc446a4902de4ee70d6f534102)
+verso 20260701183124-w010-027_r8_c1 2026-09-30T23:40:43Z lane B png_sha256 c0f1fa1802f981f8e5fe16af1cf731cfe76cdaecdc913422f4d674134cb0beaf
+fwd 20260701183124-w010-027_r8_c1 2026-09-30T23:43:18Z lane B png_sha256 8298188b7a5756742216bd25a3482e4f1da75fd6785f73a0b873ba3fc128886c
+verso 20260701183124-w010-027_r2_c0 2026-09-30T23:45:27Z lane A png_sha256 9a5b4cb302b2b21c357c09338b91caae8396a1ab76ac69ff9a9c0a04de15cb7c
+verso 20260701183124-w010-027_r2_c5 2026-09-30T23:50:48Z lane B png_sha256 a315d3a6f368453a6085c4dbc040c7744ff1ab4a4a114ab0ccfe47824ac25469
+fwd 20260701183124-w010-027_r2_c0 2026-09-30T23:52:59Z lane A png_sha256 1c13a17a1e0f86492a21b29443e24e632c1df117761a534a31990325923b2245
+fwd 20260701183124-w010-027_r2_c5 2026-09-30T23:58:24Z lane B png_sha256 a0737454aa2b1982fda825920062fbfe6d28343105670798e17f41f5c7b579bf
+verso 20260701183124-w010-027_r5_c3 2026-10-01T00:00:37Z lane A png_sha256 3a9e64556a6a0941bae7730bcb5fdb8b8dd9a97c7c3e517de0914b91dd5f3009
+verso 20260701183124-w010-027_r5_c8 2026-10-01T00:06:21Z lane B png_sha256 137c7c76a5557572fe65bd879e1dffbcf39f454e1f0e5c3b4a633f0b4380f8f3
+fwd 20260701183124-w010-027_r5_c3 2026-10-01T00:08:24Z lane A png_sha256 e3a0ac893b639a8a6ba037fedfc4748b59917c8f7764ad4fca69e0a12c31f528
+verso 20260701183124-w010-027_r8_c6 2026-10-01T00:10:52Z lane A png_sha256 08127678cea1412c3c90735f1077f79dd6ad0c71b5608aebab73268ec8c9be23
+fwd 20260701183124-w010-027_r8_c6 2026-10-01T00:13:28Z lane A png_sha256 d0dc2611bd7f6edbc35436c7807c3cb26ab0c2dfb1d451626429f240a3438af0
+fwd 20260701183124-w010-027_r5_c8 2026-10-01T00:14:08Z lane B png_sha256 ddcdf82debf091c00beb7999e03d7449b3b0c4932d34c97deab3bbee1b3cfc98
+END 2026-10-01T00:14:10Z verso 6/6 forward 6/6
+START-EXTRA 2026-10-01T00:26:36Z DECL-P4-26-A2-E2 verso_assign_x.json sha256 a3a7083d...; extra.p4v-03 verso [7,13 2,12 6,10 1,9] forward [6,10]
+verso 20260701183124-w010-027_r7_c13 2026-10-01T00:34:46Z lane A png_sha256 2b1f8c57faf5f23ff8326102633e446f2c61b2d808f2920c6a2bc23214ef3230
+verso 20260701183124-w010-027_r2_c12 2026-10-01T00:34:46Z lane B png_sha256 33ff7b5ce8ff4c4e914eb8a8ea308bcb7019e5b3103a099de00411e1ee9ed26d
+verso 20260701183124-w010-027_r6_c10 2026-10-01T00:42:39Z lane A png_sha256 1508d3aa08f559723005140abab4280b7f842437de79da9a74bb579001118992
+verso 20260701183124-w010-027_r1_c9 2026-10-01T00:43:10Z lane B png_sha256 497abe3aa8a28d7b4421e7ff2f7459b63ab094f694f74a777235e1157fde3aef
+fwd 20260701183124-w010-027_r6_c10 2026-10-01T00:50:28Z lane A png_sha256 45f4eb36287ad97d08c89a3d837c5ac2db3d62a00961565b088f3ab247a97e30
+END-EXTRA 2026-10-01T00:50:31Z (DECL-P4-26-A2-E2 extra 4 verso + 1 forward) totals verso 10/10 forward 7/7
+START-EXTRA2 2026-10-01T01:03:26Z DECL-P4-26-A2-E3 verso_assign_x2.json sha256 f11f3f79...; extra.p4v-03 verso [1,8] forward [1,8]
+verso 20260701183124-w010-027_r1_c8 2026-10-01T01:11:22Z lane A png_sha256 0ade16524c1cee29ce099d4a65aac6a0a3ed63c72b3c3f6b57ef82f698fad3e8
+fwd 20260701183124-w010-027_r1_c8 2026-10-01T01:19:25Z lane A png_sha256 0c1fd2c5cdd7ca0a3b82a18d55744510f8daa7455ce4b4f8128cc7ecea1ae474
+END-EXTRA2 2026-10-01T01:19:27Z (DECL-P4-26-A2-E3 extra2 1 verso + 1 forward) totals verso 11/11 forward 8/8
