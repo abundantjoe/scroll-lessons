@@ -1,0 +1,2 @@
+2026-09-30T04:10:06Z fl2-pherc0846a PASS 2 (BRIEF_PASS dcb6a6ba): no organizer segments in bucket -> auto-grow <= 4 GrowPatch seeds on surface-m7 in the OUTER third (0.667-0.98 R, target 0.83 R; CT-mask-centroid axis proxy), keep 0 self-x and >= 16 cm2; C2-NT render, ink_9um both directions no TTA; pipeline detached (watchdog.sh -> pipeline.sh, state /work/fl2_0846a), pushes per unit, appends DONE <n tiles> when finished; restart after container restart: setsid nohup bash tools/sib/fl2-pherc0846a/watchdog.sh &
+DONE 0

@@ -1,0 +1,38 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "strip_a_grid_json_sha256": "35a319b2a2eb44f69318abe9612d8a3a9995a2d377ded09a8c45d7247cea1f33",
+ "strip_a_manifest_json_sha256": "b079a05b8b4f9d96020aaa1924386c884c522134846553d5c77d346ad1c56981",
+ "strip_a_commit": "e25635c",
+ "segment": "20260701183124-w010-027",
+ "voxel_size_mm": 0.0024,
+ "grid_shape": [
+  3488,
+  8500
+ ],
+ "canvas_shape": [
+  69760,
+  170000
+ ],
+ "px_per_mm": 417.1314650253318,
+ "T_canvas_px": 8343,
+ "tile_grid": {
+  "n_rows": 9,
+  "n_cols": 21,
+  "rule": "tile (r,c) = rows [r*T,(r+1)*T), cols [c*T,(c+1)*T) from (0,0); pixels beyond the canvas count as not mesh-valid and are 0"
+ },
+ "canvas_mask_rule": "canvas px (i,j) -> grid (floor(i*gh/H), floor(j*gw/W)) nearest neighbour (= i//20, j//20 here)",
+ "sv_mapping": {
+  "level0_shape_zyx": [
+   109,
+   69760,
+   170000
+  ],
+  "zattrs_canvas_size_wh": [
+   170000,
+   69760
+  ],
+  "canvas_to_level0": "canvas px (i, j) = level-0 (row i, col j); in-plane shape equal to canvas_shape",
+  "level2": "shape (109, 17440, 42500), scale (2.4, 9.6, 9.6) um, downsampling_method mean; canvas px (i, j) -> level-2 (i // 4, j // 4)",
+  "depth": "109 slices at 2.4 um at every level; centre slice 54 = mesh surface (DECL-P4-5); slab 32..76"
+ }
+}
