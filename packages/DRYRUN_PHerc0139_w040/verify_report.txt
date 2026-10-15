@@ -1,0 +1,21 @@
+PASS window area 4.00 cm^2 +-1%: 2136x2136 px at 9.362 um/px = 3.9989 cm^2 (side round(20000/um) = 2136)
+PASS forward window byte-identical to source crop: /home/user/hercules_data/gates/w040_dryrun_read/forward.tif [1500:3636, 2000:4136] vs forward_window.tif; source distinct from window file, sha256 matches recorded value
+PASS reverse order present: reverse_window.tif (2136, 2136), reverse_window.png
+PASS both orders in package.json: {'forward': 'forward_window.tif', 'reverse': 'reverse_window.tif'}
+PASS mesh present (x/y/z.tif + meta.json): /home/user/hercules/packages/DRYRUN_PHerc0139_w040/mesh/mesh
+PASS mesh SHA-256 hashes match: 4 files hashed
+PASS mesh flattened flag: meta.json flattened={'tool': 'team mesh (dry run only; not flattened by us)', 'recorded_by': 'package_submission.py'}, dir name mesh
+PASS image named after the mesh: mesh.png
+PASS 1 cm bar in mesh.png: measured 1068 px, expected round(10000/um) = 1068 +-1; bar row 2148, map rows 0..2135
+PASS 1 cm bar in reverse_window.png: measured 1068 px, expected round(10000/um) = 1068 +-1; bar row 2148, map rows 0..2135
+PASS 1 cm bar in ct_window.png: measured 1068 px, expected round(10000/um) = 1068 +-1; bar row 2148, map rows 0..2135
+PASS 1 cm bar in rows.png: measured 1068 px, expected round(10000/um) = 1068 +-1; bar row 2148, map rows 0..2135
+PASS mesh.png map pixels equal the window TIFF: mesh.png
+PASS reverse_window.png map pixels equal the window TIFF: reverse_window.png
+PASS rows.png map pixels equal forward window outside 1 px baselines: 0 baseline rows, 1 px thin, outside letters
+PASS ct_window.png map pixels equal the render slice crop: /home/user/hercules_data/gates/w040_dryrun_read/render.zarr slice 14
+FAIL >= 10 letters inside the window with sizes: 0 letters inside with px+mm sizes and a reading (0 listed) -- fewer than 10 letters
+PASS heldout.md non-empty: 539 chars
+PASS method.md non-empty: 455 chars
+PASS checkpoint and exact call recorded: scrollprize/ink_9um:hybrid_3d2d-seed42/step-075000.pth | python -m vesuvius.ink_detection.inference.infer <stack.zarr> <ckpt> <out.tif> --direction both --batch-size 4 --no-compile --num-workers 3 | ghcr.io/scrollprize/villa/volume-cartographer:builder-ubuntu-26.04+hercules-vc_install
+FAIL scroll eligible with matching volume: PHerc0139 20250728140407 -- not eligible (section 1 list)

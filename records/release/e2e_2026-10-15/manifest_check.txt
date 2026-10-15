@@ -1,0 +1,15 @@
+# Manifest check of the end-to-end run (2026-10-15), from the repository root
+# e2e inputs manifest: written by scripts/fetch_control_w040.py (step 1); e2e labels manifest: written by
+#   python scripts/fetch_control_w040.py <work>/labels/w040 --manifest-only
+$ sha256sum <work>/inputs/MANIFEST.sha256 <work>/labels/w040/MANIFEST.sha256
+cf8b283adee7af62bba3a8e11d19c0682dce2723a0a153134ae5a1d210258d84  inputs/MANIFEST.sha256
+dfb49aa7d10f84f88c1df12aacfe8231520b04678b13d83900a448a302c71d98  labels/w040/MANIFEST.sha256
+$ wc -l (files listed)
+   2776 inputs/MANIFEST.sha256
+   8496 labels/w040/MANIFEST.sha256
+$ cmp <work>/inputs/MANIFEST.sha256 records/release/repro_2026-10-15/w040_inputs_MANIFEST.sha256
+identical
+$ cmp <work>/labels/w040/MANIFEST.sha256 records/release/repro_2026-10-15/w040_labels_MANIFEST.sha256
+identical
+$ sha256sum <work>/models/ink_9um/hybrid_3d2d-seed42/step-075000.pth
+e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab  models/ink_9um/hybrid_3d2d-seed42/step-075000.pth

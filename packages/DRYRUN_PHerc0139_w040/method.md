@@ -1,0 +1,2 @@
+# Method (dry run)
+Renderer: vc_render_tifxyz (villa 5ab585f) 28 slices, step 1, --flip-normals on team meshes. Model: scrollprize/ink_9um hybrid_3d2d-seed42/step-075000.pth via `python -m vesuvius.ink_detection.inference.infer <stack.zarr> <ckpt> <out.tif> --direction both --batch-size 4 --no-compile --num-workers 3` (patch 128, stride 64, Hann blend, robust_mad 1-99 %). Both depth orders always read. Rule 5.5 screen. See METHOD.md in the repository.

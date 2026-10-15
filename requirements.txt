@@ -1,0 +1,15 @@
+# Analysis tools (scripts/*.py, examples/, scripts/tests): reader, rule 5.5, map integrity, power, statistics.
+# Versions are the ones the full test suite passed with on 2026-10-15 (Python 3.13.16); the complete environment is
+# frozen in records/release/env_tools_freeze.txt. Newer versions are expected to work but were not tested.
+numpy==2.5.4
+scipy==1.18.1
+tifffile==2026.9.20
+imagecodecs==2026.10.10   # the inference writes LZW-compressed TIFFs; tifffile needs this to read them
+zarr==3.4.1
+numcodecs==0.17.0
+opencv-python-headless==5.0.0.93
+pillow==12.3.0
+matplotlib==3.11.2
+scikit-learn==1.9.1
+requests==2.34.2
+pytest==9.1.1

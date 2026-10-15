@@ -1,0 +1,49 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite it as below. If you use the scroll data, also cite the Vesuvius Challenge
+  dataset as described in DATA_NOTICE.md.
+title: "hercules: controlled, falsifiable ink reads for Herculaneum scroll segments"
+abstract: >-
+  Quality control for ink-detection reads on Vesuvius Challenge segments. The tools pair every forward read with its
+  depth-reversed read as a matched negative control, refuse truncated prediction maps, mask by CT, tile a frozen
+  pre-registered unit rule, fire a tripwire on mirrored surfaces, and compute the layout-aware probability that a
+  surface could produce a candidate at all. Included: a known-text control on a training-set sheet of the ink model,
+  re-created byte for byte in a fresh container; a pre-registered held-out known-text test on an unseen scroll
+  (PHerc0841: pixel AUC 0.8393 forward, 0.5486 reverse; the frozen unit screen flags 1 of 60 units); and 37
+  documented lessons.
+type: software
+authors:
+  - alias: abundantjoe
+repository-code: "https://github.com/abundantjoe/hercules"
+license: MIT
+version: "2026.10"
+date-released: "2026-10-15"
+keywords:
+  - Vesuvius Challenge
+  - Herculaneum papyri
+  - ink detection
+  - quality control
+  - negative controls
+  - reproducibility
+references:
+  - type: data
+    title: "Vesuvius Challenge - CT Scans of Herculaneum Papyri"
+    authors:
+      - name: "Giorgio Angelotti"
+      - name: "Stephen Parsons"
+      - name: "Sean Johnson"
+      - name: "Elian Rafael Dal Prà"
+      - name: "Johannes Rudolph"
+      - name: "Paul Tafforeau"
+      - name: "Alessandro Mirone"
+      - name: "Paul Henderson"
+      - name: "Hendrik Schilling"
+      - name: "Forrest McDonald"
+      - name: "David Josey"
+      - name: "Youssef Nader"
+      - name: "C. Seth Parker"
+      - name: "W. Brent Seales"
+    publisher:
+      name: "Vesuvius Challenge"
+    url: "https://scrollprize.org/data"
+    license: CC-BY-NC-4.0

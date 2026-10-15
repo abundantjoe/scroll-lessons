@@ -1,0 +1,275 @@
+{
+ "scroll": "PHerc0306B",
+ "vol": "20250521133212",
+ "pred_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0306B/representations/predictions/surfaces/20250521133212-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+ "ct_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0306B/volumes/20250521133212-8.640um-1.2m-116keV-masked.zarr",
+ "ct_level": 4,
+ "um": 8.64,
+ "um_metadata_json": 8.64,
+ "um_catalogue": 8.64,
+ "level": 3,
+ "zarray_level3": {
+  "chunks": [
+   192,
+   192,
+   192
+  ],
+  "compressor": {
+   "blocksize": 0,
+   "clevel": 1,
+   "cname": "zstd",
+   "id": "blosc",
+   "shuffle": 1
+  },
+  "dtype": "|u1",
+  "fill_value": 0,
+  "filters": null,
+  "order": "C",
+  "shape": [
+   1988,
+   1107,
+   1107
+  ],
+  "zarr_format": 2,
+  "dimension_separator": "/",
+  "_level": 3
+ },
+ "zarray_ct_level4": {
+  "shape": [
+   994,
+   554,
+   554
+  ],
+  "chunks": [
+   128,
+   128,
+   128
+  ],
+  "fill_value": 0,
+  "order": "C",
+  "filters": null,
+  "dimension_separator": "/",
+  "compressor": null,
+  "zarr_format": 2,
+  "dtype": "|u1",
+  "_level": 4
+ },
+ "threshold": 128,
+ "min_dist_l3": 40,
+ "ct_gate": "candidates restricted to predicted voxels with level-4 CT > 0 (5.8)",
+ "bar_px_l3": 145,
+ "bands": [
+  {
+   "z0": 7452,
+   "z1": 8452,
+   "slices": [
+    {
+     "slice_l3": 952,
+     "n_pred": 80528,
+     "n_seeds": 3,
+     "n_pred_total": 132872,
+     "n_pred_on_ct": 80528,
+     "ct_l4_slice": 476
+    },
+    {
+     "slice_l3": 973,
+     "n_pred": 79646,
+     "n_seeds": 3,
+     "n_pred_total": 130809,
+     "n_pred_on_ct": 79646,
+     "ct_l4_slice": 486
+    },
+    {
+     "slice_l3": 994,
+     "n_pred": 76835,
+     "n_seeds": 2,
+     "n_pred_total": 130867,
+     "n_pred_on_ct": 76835,
+     "ct_l4_slice": 497
+    },
+    {
+     "slice_l3": 1015,
+     "n_pred": 76688,
+     "n_seeds": 2,
+     "n_pred_total": 127561,
+     "n_pred_on_ct": 76688,
+     "ct_l4_slice": 507
+    },
+    {
+     "slice_l3": 1036,
+     "n_pred": 72210,
+     "n_seeds": 2,
+     "n_pred_total": 129677,
+     "n_pred_on_ct": 72210,
+     "ct_l4_slice": 518
+    }
+   ],
+   "n_seeds": 12,
+   "by_radius": {
+    "outer": 4,
+    "middle": 4,
+    "inner": 4
+   },
+   "png": "PHerc0306B_smoke_mid_band_7452_8452.png",
+   "bar_px": 145
+  }
+ ],
+ "seeds": [
+  {
+   "x": 7224,
+   "y": 4656,
+   "z": 7616,
+   "radius": "outer",
+   "slice_l3": 952,
+   "row_l3": 582,
+   "col_l3": 903,
+   "band": [
+    7452,
+    8452
+   ]
+  },
+  {
+   "x": 2336,
+   "y": 4056,
+   "z": 7616,
+   "radius": "middle",
+   "slice_l3": 952,
+   "row_l3": 507,
+   "col_l3": 292,
+   "band": [
+    7452,
+    8452
+   ]
+  },
+  {
+   "x": 4976,
+   "y": 2728,
+   "z": 7616,
+   "radius": "inner",
+   "slice_l3": 952,
+   "row_l3": 341,
+   "col_l3": 622,
+   "band": [
+    7452,
+    8452
+   ]
+  },
+  {
+   "x": 2280,
+   "y": 5104,
+   "z": 7784,
+   "radius": "outer",
+   "slice_l3": 973,
+   "row_l3": 638,
+   "col_l3": 285,
+   "band": [
+    7452,
+    8452
+   ]
+  },
+  {
+   "x": 6656,
+   "y": 3672,
+   "z": 7784,
+   "radius": "middle",
+   "slice_l3": 973,
+   "row_l3": 459,
+   "col_l3": 832,
+   "band": [
+    7452,
+    8452
+   ]
+  },
+  {
+   "x": 3920,
+   "y": 2744,
+   "z": 7784,
+   "radius": "inner",
+   "slice_l3": 973,
+   "row_l3": 343,
+   "col_l3": 490,
+   "band": [
+    7452,
+    8452
+   ]
+  },
+  {
+   "x": 6408,
+   "y": 4800,
+   "z": 7952,
+   "radius": "middle",
+   "slice_l3": 994,
+   "row_l3": 600,
+   "col_l3": 801,
+   "band": [
+    7452,
+    8452
+   ]
+  },
+  {
+   "x": 2976,
+   "y": 3936,
+   "z": 7952,
+   "radius": "inner",
+   "slice_l3": 994,
+   "row_l3": 492,
+   "col_l3": 372,
+   "band": [
+    7452,
+    8452
+   ]
+  },
+  {
+   "x": 3216,
+   "y": 1952,
+   "z": 8120,
+   "radius": "outer",
+   "slice_l3": 1015,
+   "row_l3": 244,
+   "col_l3": 402,
+   "band": [
+    7452,
+    8452
+   ]
+  },
+  {
+   "x": 5688,
+   "y": 6256,
+   "z": 8120,
+   "radius": "middle",
+   "slice_l3": 1015,
+   "row_l3": 782,
+   "col_l3": 711,
+   "band": [
+    7452,
+    8452
+   ]
+  },
+  {
+   "x": 4584,
+   "y": 6808,
+   "z": 8288,
+   "radius": "outer",
+   "slice_l3": 1036,
+   "row_l3": 851,
+   "col_l3": 573,
+   "band": [
+    7452,
+    8452
+   ]
+  },
+  {
+   "x": 4680,
+   "y": 2736,
+   "z": 8288,
+   "radius": "inner",
+   "slice_l3": 1036,
+   "row_l3": 342,
+   "col_l3": 585,
+   "band": [
+    7452,
+    8452
+   ]
+  }
+ ]
+}

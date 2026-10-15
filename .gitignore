@@ -1,0 +1,29 @@
+# never commit data, caches, renders, stacks, TIFF maps, normal grids
+.venv/
+external/
+*.tif
+*.tiff
+*.zarr/
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.h5
+cache/
+caches/
+renders/
+stacks/
+patches/
+normal-grids/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.log
+*.part
+# allowed: PNG sheets, stats JSON, records, code
+!review_sheets/**/*.png
+!records/**/*.json
+
+# The review folder rewrites this marker on every loop pass; it is a local liveness marker, not a record.
+review_sheets/.review_complete
+examples/out/

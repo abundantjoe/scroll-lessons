@@ -1,0 +1,322 @@
+{
+ "control": {
+  "k": 7,
+  "n": 71,
+  "what": "w040 known-text control, flagged 0.5 cm2 units / valid units (frozen rule 5.5)",
+  "source": "RULES.md R-CTRL55, 'Authoritative result' (2026-09-19 03:05 UTC)",
+  "rate": 0.09859154929577464,
+  "cp95": [
+   0.0405,
+   0.1927
+  ],
+  "wilson95": [
+   0.0485,
+   0.1899
+  ]
+ },
+ "comparisons": [
+  {
+   "name": "R-DEFICIT",
+   "k": 1,
+   "n": 113,
+   "what": "eligible-scroll corpus, screening reads (30 surfaces, 56.50 cm2 of valid units)",
+   "source": "RULES.md R-DEFICIT (2026-09-19 08:30)",
+   "rate": 0.008849557522123894,
+   "cp95": [
+    0.0002,
+    0.0484
+   ],
+   "wilson95": [
+    0.0015,
+    0.0485
+   ],
+   "expected_at_control_rate": 11.14,
+   "fisher_one_sided_p": 0.00576,
+   "binomial_p_le_k_at_control_rate": 0.000108,
+   "rate_ratio_upper_cp95": 0.491,
+   "cluster_collapsed_fisher_one_sided_p": 0.161,
+   "cluster_collapsed_binomial_p": 0.0455,
+   "expected_at_heldout_rate": 1.88,
+   "fisher_one_sided_p_vs_heldout": 0.575,
+   "expected_at_heldout_text_rate": 7.53,
+   "fisher_one_sided_p_vs_heldout_text": 0.221
+  },
+  {
+   "name": "R-CREST-POWER PHerc1203 half",
+   "k": 0,
+   "n": 64,
+   "what": "3 team surfaces of PHerc1203, crest veto off, 36.54 cm2 on-sheet",
+   "source": "RULES.md 'R-CREST-POWER: the PHerc1203 half is COMPLETE' (2026-09-19 12:32)",
+   "rate": 0.0,
+   "cp95": [
+    0.0,
+    0.0561
+   ],
+   "wilson95": [
+    0.0,
+    0.0567
+   ],
+   "expected_at_control_rate": 6.31,
+   "fisher_one_sided_p": 0.00961,
+   "binomial_p_le_k_at_control_rate": 0.0013,
+   "rate_ratio_upper_cp95": 0.57,
+   "cluster_collapsed_fisher_one_sided_p": 0.143,
+   "cluster_collapsed_binomial_p": 0.0631,
+   "expected_at_heldout_rate": 1.07,
+   "fisher_one_sided_p_vs_heldout": 0.484,
+   "expected_at_heldout_text_rate": 4.27,
+   "fisher_one_sided_p_vs_heldout_text": 0.19
+  },
+  {
+   "name": "R-CREST-POWER phase 1, 6 of 12",
+   "k": 0,
+   "n": 114,
+   "what": "first 6 members, 92.62 cm2 on-sheet",
+   "source": "RULES.md 'R-CREST-POWER at the HALFWAY mark' (2026-09-19 14:49)",
+   "rate": 0.0,
+   "cp95": [
+    0.0,
+    0.0319
+   ],
+   "wilson95": [
+    0.0,
+    0.0326
+   ],
+   "expected_at_control_rate": 11.24,
+   "fisher_one_sided_p": 0.00101,
+   "binomial_p_le_k_at_control_rate": 7.26e-06,
+   "rate_ratio_upper_cp95": 0.324,
+   "cluster_collapsed_fisher_one_sided_p": 0.0551,
+   "cluster_collapsed_binomial_p": 0.00729,
+   "expected_at_heldout_rate": 1.9,
+   "fisher_one_sided_p_vs_heldout": 0.345,
+   "expected_at_heldout_text_rate": 7.6,
+   "fisher_one_sided_p_vs_heldout_text": 0.116
+  },
+  {
+   "name": "R-CREST-POWER phase 1, 11 of 12",
+   "k": 0,
+   "n": 190,
+   "what": "11 of 12 members (member 12 incomplete), 150.67 cm2 on-sheet",
+   "source": "LEDGER.md rows for keys '...|ink9um_seed42+plain+nocrest|both' (valid counts 28+18+18+19+14+17+19+20+18+10+9); area from commit ecf1dd8 message",
+   "rate": 0.0,
+   "cp95": [
+    0.0,
+    0.0193
+   ],
+   "wilson95": [
+    0.0,
+    0.0199
+   ],
+   "expected_at_control_rate": 18.73,
+   "fisher_one_sided_p": 8.81e-05,
+   "binomial_p_le_k_at_control_rate": 2.72e-09,
+   "rate_ratio_upper_cp95": 0.196,
+   "cluster_collapsed_fisher_one_sided_p": 0.0195,
+   "cluster_collapsed_binomial_p": 0.000274,
+   "expected_at_heldout_rate": 3.17,
+   "fisher_one_sided_p_vs_heldout": 0.24,
+   "expected_at_heldout_text_rate": 12.67,
+   "fisher_one_sided_p_vs_heldout_text": 0.0732
+  }
+ ],
+ "proportions": [
+  {
+   "name": "R-SMALL-2 readable fraction",
+   "k": 2,
+   "n": 40,
+   "bar": 0.3,
+   "what": "interior traces at the reduced budget that were readable",
+   "source": "RULES.md 'R-SMALL-2 FINAL' (2026-09-19 12:01)",
+   "rate": 0.05,
+   "cp95": [
+    0.0061,
+    0.1692
+   ],
+   "wilson95": [
+    0.0138,
+    0.1651
+   ],
+   "binomial_two_sided_p_vs_bar": 0.000183
+  },
+  {
+   "name": "R-ORIENT positive margins",
+   "k": 60,
+   "n": 118,
+   "bar": 0.5,
+   "what": "corpus unit margins > 0 (50.8 % recorded)",
+   "source": "RULES.md R-ORIENT (2026-09-19 08:45)",
+   "rate": 0.5084745762711864,
+   "cp95": [
+    0.4148,
+    0.6017
+   ],
+   "wilson95": [
+    0.4194,
+    0.597
+   ],
+   "binomial_two_sided_p_vs_bar": 0.927
+  },
+  {
+   "name": "Depth-swap tripwire firings",
+   "k": 0,
+   "n": 52,
+   "what": "reads carrying the swapped table on which the tripwire fired",
+   "source": "RULES.md R-ORIENT (2026-09-19 08:45)",
+   "rate": 0.0,
+   "cp95": [
+    0.0,
+    0.0685
+   ],
+   "wilson95": [
+    0.0,
+    0.0688
+   ]
+  },
+  {
+   "name": "Rule 5.5 self-test, w028 text units",
+   "k": 5,
+   "n": 5,
+   "what": "strict text units flagged on the w028 pooled map",
+   "source": "RULES.md R-5.5 result (2026-09-17)",
+   "rate": 1.0,
+   "cp95": [
+    0.4781,
+    1.0
+   ],
+   "wilson95": [
+    0.5655,
+    1.0
+   ]
+  },
+  {
+   "name": "Rule 5.5 self-test, w028 blank units",
+   "k": 0,
+   "n": 8,
+   "what": "strict blank units flagged on the w028 pooled map",
+   "source": "RULES.md R-5.5 result (2026-09-17)",
+   "rate": 0.0,
+   "cp95": [
+    0.0,
+    0.3695
+   ],
+   "wilson95": [
+    0.0,
+    0.3245
+   ]
+  }
+ ],
+ "recorded_checks": [
+  {
+   "check": "Fisher one-sided 1/113 vs 7/71",
+   "printed": 0.0058,
+   "printed_sig_figs": 2,
+   "where": "RULES.md:2230",
+   "recomputed": 0.005762144751230121,
+   "ok": true
+  },
+  {
+   "check": "binomial P(<=1) for 1/113 at 7/71",
+   "printed": 0.00011,
+   "printed_sig_figs": 2,
+   "where": "RULES.md:2231",
+   "recomputed": 0.00010762912155329526,
+   "ok": true
+  },
+  {
+   "check": "binomial P(0) for 0/64 at 7/71",
+   "printed": 0.0013,
+   "printed_sig_figs": 2,
+   "where": "RULES.md:3134",
+   "recomputed": 0.0013031188197513777,
+   "ok": true
+  },
+  {
+   "check": "Fisher one-sided 0/64 vs 7/71",
+   "printed": 0.0096,
+   "printed_sig_figs": 2,
+   "where": "RULES.md:3134",
+   "recomputed": 0.00960678319662501,
+   "ok": true
+  },
+  {
+   "check": "binomial P(0) for 0/83 at 7/71",
+   "printed": 0.000181,
+   "printed_sig_figs": 3,
+   "where": "RULES.md:3162",
+   "recomputed": 0.00018134053679801323,
+   "ok": true
+  },
+  {
+   "check": "Fisher one-sided 0/83 vs 7/71 (the corrected value)",
+   "printed": 0.00375,
+   "printed_sig_figs": 3,
+   "where": "RULES.md:3162",
+   "recomputed": 0.0037469211792164154,
+   "ok": true
+  },
+  {
+   "check": "binomial P(0) for 0/97 at 7/71",
+   "printed": 4.24e-05,
+   "printed_sig_figs": 3,
+   "where": "RULES.md:3190",
+   "recomputed": 4.2403104158558366e-05,
+   "ok": true
+  },
+  {
+   "check": "Fisher one-sided 0/97 vs 7/71",
+   "printed": 0.00201,
+   "printed_sig_figs": 3,
+   "where": "RULES.md:3190",
+   "recomputed": 0.0020141055905894896,
+   "ok": true
+  },
+  {
+   "check": "binomial P(0) for 0/114 at 7/71",
+   "printed": 7.26e-06,
+   "printed_sig_figs": 3,
+   "where": "RULES.md:3197",
+   "recomputed": 7.2621510894044545e-06,
+   "ok": true
+  },
+  {
+   "check": "Fisher one-sided 0/114 vs 7/71",
+   "printed": 0.00101,
+   "printed_sig_figs": 3,
+   "where": "RULES.md:3198",
+   "recomputed": 0.0010137487856391343,
+   "ok": true
+  }
+ ],
+ "heldout_reference": {
+  "k": 1,
+  "n": 60,
+  "what": "PHerc0841 held-out known text, flagged / valid 0.5 cm2 units (frozen rule, auto grid)",
+  "source": "records/release/heldout_2026-10-15/rheldout.json; RULES.md R-HELDOUT RESULT",
+  "rate": 0.016666666666666666,
+  "cp95": [
+   0.0004,
+   0.0894
+  ],
+  "wilson95": [
+   0.0029,
+   0.0886
+  ],
+  "fisher_one_sided_p_vs_control": 0.0523
+ },
+ "heldout_text_reference": {
+  "k": 1,
+  "n": 15,
+  "what": "PHerc0841 held-out known text, flagged / text-bearing (phi >= 0.02) valid units",
+  "source": "records/release/heldout_2026-10-15/rheldout.json (pooled.text_units); RULES.md:3309",
+  "rate": 0.06666666666666667,
+  "cp95": [
+   0.0016,
+   0.3195
+  ],
+  "wilson95": [
+   0.0118,
+   0.2982
+  ]
+ }
+}

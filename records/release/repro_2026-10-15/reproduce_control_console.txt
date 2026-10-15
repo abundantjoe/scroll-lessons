@@ -1,0 +1,25 @@
+[2026-10-15T07:02:33Z] 1. inputs
+checkpoint sha256 e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab  (Hugging Face LFS record: e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab)
+[2026-10-15T07:02:33Z] 2. inference, both depth orders
+inference wall time: 5958 s
+{"forward": "w040_full_plain.tif", "reverse": "w040_full_plain_reverse.tif", "nonzero_forward": 0.907008, "nonzero_reverse": 0.907008, "mtime_skew_s": 2796.8, "infer_s": null}
+SOUND
+[2026-10-15T07:02:35Z] 3. Gate A
+w040_full_plain.tif          AUC 0.99659 (record 0.99659)  n_supervised 1629734 (record 1629734)  mean on ink 0.758  on blank 0.252
+w040_full_plain_reverse.tif  AUC 0.49633 (record 0.49633)  n_supervised 1629734 (record 1629734)  mean on ink 0.304  on blank 0.304
+[2026-10-15T07:03:02Z] 4. R-CTRL55 (frozen rule 5.5, full canvas)
+maps (6400, 7980) ; on-sheet footprint 46322688 px = 40.60 cm2 (90.7 % of canvas)
+frozen best_origin (mask only): (94, 188) -> 71 valid units at 755 px
+
+valid units 71 ; FLAGGED 7 ; clusters [4, 2, 1] ; largest cluster 4
+
+the 15 units with the most labelled ink (phi = true ink area fraction of the unit):
+[2026-10-15T07:04:07Z] 5. the ordinary reader on the same maps (independent path)
+| 2026-10-15 | PHerc0139\|w040_full\|0\|ink9um_seed42+plain\|both | 0.3354 | 0.3099 | 0.12349 | 0.02669 | 7/71 | 4 | PROMISING CANDIDATE | /home/user/hdata/repr
+[2026-10-15T07:05:36Z] 6. bit-identity against the September record (window [1500:3636, 2000:4136])
+forward  window sha256 4eced8f47248bc97917fde970faf912c2f2f0f2fc4e7ca77cdbe60b752c443a2  IDENTICAL to the 2026-09-17 record
+reverse  window sha256 2522e6827513f358270a5b2fc72d70565a6239cf940357ceb47a747d276630f5  IDENTICAL to the 2026-09-17 record
+[2026-10-15T07:05:38Z] 7. output checksums
+31f001f4f90d42b679d8f57a363ce0b90c4926ec0737dc436db4d7c376d671dc  w040_full_plain.tif
+a5425879eb1a1999c15c6c4fde18cdf3aa3e8f2cf5c3e561c1470a06da51b2af  w040_full_plain_reverse.tif
+[2026-10-15T07:05:38Z] done

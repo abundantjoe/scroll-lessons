@@ -1,0 +1,30 @@
+name: tests and quick start
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Install the analysis tools
+        run: pip install -r requirements.txt
+      - name: Quick start on the committed known-text window (10 checks against recorded values)
+        run: bash examples/quickstart.sh /tmp/quickstart_out
+      - name: Recompute every release statistic (must reproduce the 10 printed in RULES.md)
+        run: python scripts/release_stats.py
+      - name: Test suite (3 integration tests skip without the public data)
+        env:
+          HERCULES_DATA: /tmp/no_data
+        run: python -m pytest scripts/tests -q -rs
