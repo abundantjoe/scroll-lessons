@@ -1,0 +1,335 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-25T11:22:58Z",
+ "serves": "RULES.md DECL-D3-A3 items 1-3 and 6 (stage 2 pre-checks, scripts, watcher)",
+ "scripts": {
+  "/work/d3/scripts/d3_infer.py": "77b7662438d013e663ed938d49d39f9df879c30b9c18d554d75c8ad3ccb05efe",
+  "/work/d3/scripts/d3_build.py": "a5b928c743c294df7d03bcb03b98fc7909f41d57bb0cd79f7391a725de3afb6b",
+  "/work/d3/scripts/label_equiv.py": "4352125e45f6f1d9675fc157e7049806ee11bb11e0b6b2dd2e7f26b2f384f889",
+  "/work/d3/scripts/infer_arms.sh": "2c6d1fe83dbf2e6dad85d1123b0ce2eaf7e1e4b8aacc147840e9719297850abb",
+  "/work/d3/scripts/start_d3_stage2.sh": "c17c975557fcd891b0b083e1cb2b6e60650b6f5d0c99feeccf266e45a5f41779",
+  "/work/d3/scripts/d3_e1.py": "9ebab8254ab2eb931b7c57307bdca93d13974d014b36a473cc52b1f803e3d6c6",
+  "/work/d3/scripts/d3_ledger_run.sh": "6a0d341bb475600f96838f2fdd7ffd9300d9630106cb60325f50de90af17f84a"
+ },
+ "E1": {
+  "rule": "PASS if both orders bitwise identical, or max |diff| <= 1 (uint8) on <= 0.1 % of px",
+  "threads_d1": 2,
+  "threads_e1": 1,
+  "base0_checkpoint": {
+   "path": "/work/d3/runs/BASE0/model_final.pth",
+   "sha256": "dd1a75c634a0654afa46c09bb54fa18f4a053fdf8a804a56e638e0b656dc9262",
+   "bytes": 138361311
+  },
+  "base0_tensors_bitwise_equal_to_base": 508,
+  "base0_n_tensors": 508,
+  "orders": {
+   "fwd": {
+    "d1": {
+     "path": "/work/d1/work/infer/canary_w044_y2816_x2816/canary_w044_y2816_x2816.tif.npy",
+     "dtype": "uint8",
+     "shape": [
+      2648,
+      2648
+     ],
+     "sha256": "70a4cb3dc2f2ca9b46b15a9a2ecdc197ece7ac0608888d0fd6b39f2b00cf1612",
+     "tif_sha256": "84e1c0ccb4e012657ffae2a3f19387d88dfcae72e0d2a86445876c9aa4d121f6"
+    },
+    "e1": {
+     "path": "/work/d3/infer/BASE0/canary_w044_y2816_x2816/canary_w044_y2816_x2816.tif.npy",
+     "dtype": "uint8",
+     "shape": [
+      2648,
+      2648
+     ],
+     "sha256": "c1a92e47aec96b860e1be3c92514f7def8bcc668a5e1ab3b9f5fa036adf3334c",
+     "tif_sha256": "2021a2e7d3d03e52236610a2dc305bc46e7753f7efc60c4ae3aa63e905c68551"
+    },
+    "same_dtype_shape": true,
+    "bitwise_equal": false,
+    "n_px": 7011904,
+    "n_diff_px": 108,
+    "frac_diff": 1.5402378583620083e-05,
+    "max_abs_diff": 1,
+    "n_diff_gt1": 0,
+    "sum_abs_diff": 108,
+    "pass": true
+   },
+   "rev": {
+    "d1": {
+     "path": "/work/d1/work/infer/canary_w044_y2816_x2816/canary_w044_y2816_x2816_reverse.tif.npy",
+     "dtype": "uint8",
+     "shape": [
+      2648,
+      2648
+     ],
+     "sha256": "44c4cbc150e3d31288bf9c94e61f9030830b38a71a294535bd95a499a50e67f7",
+     "tif_sha256": "a27c010976f3b1f202b4e98f8311da1dfd7652c6a7a78842232cc1d856b24b1b"
+    },
+    "e1": {
+     "path": "/work/d3/infer/BASE0/canary_w044_y2816_x2816/canary_w044_y2816_x2816_reverse.tif.npy",
+     "dtype": "uint8",
+     "shape": [
+      2648,
+      2648
+     ],
+     "sha256": "c426eeebc1875130e3f15c00939be9251e0b80d47d1f6ce0f6f835e23133fc9c",
+     "tif_sha256": "96979371d704d39bc570d67b4b0a9cd7e4aad3ba71615f3f596157a16af7d3b1"
+    },
+    "same_dtype_shape": true,
+    "bitwise_equal": false,
+    "n_px": 7011904,
+    "n_diff_px": 71,
+    "frac_diff": 1.0125637772565054e-05,
+    "max_abs_diff": 1,
+    "n_diff_gt1": 0,
+    "sum_abs_diff": 71,
+    "pass": true
+   }
+  },
+  "record": "/work/d3/work/e1.json",
+  "record_sha256": "222d1170033565c9bdee199ea88a73985f0de7c853e2a20ccab4974cbe030483",
+  "pass": true
+ },
+ "E2": {
+  "n_png": 32,
+  "n_sha_found_in_d1_manifest": 32,
+  "n_distinct_sha": 32,
+  "per_order_state": {
+   "fwd|B": {
+    "n": 8,
+    "found_in_d1_manifest": 8
+   },
+   "rev|B": {
+    "n": 8,
+    "found_in_d1_manifest": 8
+   },
+   "rev|A": {
+    "n": 8,
+    "found_in_d1_manifest": 8
+   },
+   "fwd|A": {
+    "n": 8,
+    "found_in_d1_manifest": 8
+   }
+  },
+  "disk_check": {
+   "n_png_files": 32,
+   "memory_equals_disk": true
+  },
+  "deletion": {
+   "command": "rm -rf /work/d3/dryrun_e2",
+   "start_utc": "2026-09-25T11:20:48Z",
+   "end_utc": "2026-09-25T11:20:48Z",
+   "returncode": 0,
+   "folder_exists_after": false,
+   "deleted_tree_sha256": "705e0f66d3f74cc410f0923f57644e113759fb04f947e2ed29a65bae2824f486"
+  },
+  "record": "/work/d3/work/e2_dryrun.json",
+  "record_sha256": "5a2896f12ee49136b201e865c50f3f0862b49d758f3128ac2c2fea49ed4f7ca9",
+  "pass": true
+ },
+ "LABEL_EQUIV": {
+  "file": "/home/user/dominion/logs/d1/d3_label_equiv.json",
+  "sha256": "db2d529286efab68fe870a53432946143aa19fe2ada73c0d92d0b434e1980911",
+  "summary": {
+   "primary_gt0": {
+    "pool288": {
+     "n_tiles": 288,
+     "n_tiles_with_overlap": 26,
+     "tile_summed": {
+      "overlap_px": 199612,
+      "confusion": {
+       "teacher_ink_human_ink": 67734,
+       "teacher_ink_human_blank": 33350,
+       "teacher_blank_human_ink": 9919,
+       "teacher_blank_human_blank": 88609
+      },
+      "agreement": 0.7832344748812696,
+      "cohen_kappa": 0.567697626738845
+     },
+     "unique_px": {
+      "overlap_px": 64273,
+      "confusion": {
+       "teacher_ink_human_ink": 21501,
+       "teacher_ink_human_blank": 8729,
+       "teacher_blank_human_ink": 3517,
+       "teacher_blank_human_blank": 30526
+      },
+      "agreement": 0.8094689838656979,
+      "cohen_kappa": 0.6138637544590952
+     }
+    },
+    "primary306": {
+     "n_tiles": 306,
+     "n_tiles_with_overlap": 33,
+     "tile_summed": {
+      "overlap_px": 281732,
+      "confusion": {
+       "teacher_ink_human_ink": 106460,
+       "teacher_ink_human_blank": 41626,
+       "teacher_blank_human_ink": 18681,
+       "teacher_blank_human_blank": 114965
+      },
+      "agreement": 0.785941959024889,
+      "cohen_kappa": 0.5743194804583708
+     },
+     "unique_px": {
+      "overlap_px": 88545,
+      "confusion": {
+       "teacher_ink_human_ink": 31729,
+       "teacher_ink_human_blank": 12084,
+       "teacher_blank_human_ink": 5922,
+       "teacher_blank_human_blank": 38810
+      },
+      "agreement": 0.7966457733355921,
+      "cohen_kappa": 0.5926592342964339
+     }
+    }
+   },
+   "extra_ge0p5": {
+    "pool288": {
+     "n_tiles": 288,
+     "n_tiles_with_overlap": 26,
+     "tile_summed": {
+      "overlap_px": 198084,
+      "confusion": {
+       "teacher_ink_human_ink": 67246,
+       "teacher_ink_human_blank": 33146,
+       "teacher_blank_human_ink": 9072,
+       "teacher_blank_human_blank": 88620
+      },
+      "agreement": 0.7868681973304255,
+      "cohen_kappa": 0.5750653240869823
+     },
+     "unique_px": {
+      "overlap_px": 63805,
+      "confusion": {
+       "teacher_ink_human_ink": 21354,
+       "teacher_ink_human_blank": 8703,
+       "teacher_blank_human_ink": 3231,
+       "teacher_blank_human_blank": 30517
+      },
+      "agreement": 0.8129613666640545,
+      "cohen_kappa": 0.6208924813136484
+     }
+    },
+    "primary306": {
+     "n_tiles": 306,
+     "n_tiles_with_overlap": 33,
+     "tile_summed": {
+      "overlap_px": 279940,
+      "confusion": {
+       "teacher_ink_human_ink": 105578,
+       "teacher_ink_human_blank": 41816,
+       "teacher_blank_human_ink": 17400,
+       "teacher_blank_human_blank": 115146
+      },
+      "agreement": 0.7884689576337787,
+      "cohen_kappa": 0.5796445473334998
+     },
+     "unique_px": {
+      "overlap_px": 88025,
+      "confusion": {
+       "teacher_ink_human_ink": 31435,
+       "teacher_ink_human_blank": 12205,
+       "teacher_blank_human_ink": 5559,
+       "teacher_blank_human_blank": 38826
+      },
+      "agreement": 0.7981936949730191,
+      "cohen_kappa": 0.5958419213283795
+     }
+    }
+   }
+  }
+ },
+ "watcher": {
+  "script": "/work/d3/scripts/infer_arms.sh",
+  "pid": 20143,
+  "start_utc": "2026-09-25T11:21:35Z",
+  "log": "/work/d3/logs/infer_arms.log"
+ },
+ "ledger_rows_added": [
+  {
+   "cpu": "cpus=1/1 Intel(R) Xeon(R) Processor @ 2.10GHz",
+   "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 env PYTHONPATH=/work/d3_timing/pylib /opt/hv-ink/bin/python /work/d3/scripts/d3_e1.py make ",
+   "start_utc": "2026-09-25T11:04:02Z",
+   "end_utc": "2026-09-25T11:04:07Z",
+   "exit": "0",
+   "output_sha256": "dd1a75c634a0654afa46c09bb54fa18f4a053fdf8a804a56e638e0b656dc9262"
+  },
+  {
+   "cpu": "cpus=1/4 Intel(R) Xeon(R) Processor @ 2.10GHz",
+   "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/hv-ink/bin/python -m vesuvius.ink_detection.inference.infer /work/d1/work/render/canary_w044_y2816_x2816.zarr /work/d3/runs/BASE0/model_final.pth /work/d3/infer/BASE0/canary_w044_y2816_x2816/canary_w044_y2816_x2816",
+   "start_utc": "2026-09-25T11:04:13Z",
+   "end_utc": "2026-09-25T11:19:07Z",
+   "exit": "0",
+   "output_sha256": "3e75f960225a8c0c877f746d538c1931b38191d03e4d21bd4c5c2f49097b2ac0"
+  },
+  {
+   "cpu": "cpus=1/4 Intel(R) Xeon(R) Processor @ 2.10GHz",
+   "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/hv-ink/bin/python /home/user/dominion/tools/c3/tif2npy.py /work/d3/infer/BASE0/canary_w044_y2816_x2816/canary_w044_y2816_x2816.tif /work/d3/infer/BASE0/canary_w044_y2816_x2816/canary_w044_y2816_x2816_reverse.tif",
+   "start_utc": "2026-09-25T11:19:07Z",
+   "end_utc": "2026-09-25T11:19:07Z",
+   "exit": "0",
+   "output_sha256": "bdcf5eb19e35923d23683ecc377ddf27c9e07880d3f42fbfc715f0ce67fd1549"
+  },
+  {
+   "cpu": "cpus=1/1 Intel(R) Xeon(R) Processor @ 2.10GHz",
+   "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/hv-ink/bin/python /work/d3/scripts/d3_infer.py --arm BASE0 --threads 1 --windows canary_w044_y2816_x2816 ",
+   "start_utc": "2026-09-25T11:04:13Z",
+   "end_utc": "2026-09-25T11:19:07Z",
+   "exit": "0",
+   "output_sha256": "1f29c3ff9297ae50cc0c68aeb1db12ac76bb9e26a06e3cb3e20204636f81a942"
+  },
+  {
+   "cpu": "cpus=1/1 Intel(R) Xeon(R) Processor @ 2.10GHz",
+   "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/hv-ink/bin/python /work/d3/scripts/d3_e1.py compare ",
+   "start_utc": "2026-09-25T11:20:26Z",
+   "end_utc": "2026-09-25T11:20:27Z",
+   "exit": "0",
+   "output_sha256": "222d1170033565c9bdee199ea88a73985f0de7c853e2a20ccab4974cbe030483"
+  },
+  {
+   "cpu": "cpus=1/4 Intel(R) Xeon(R) Processor @ 2.10GHz",
+   "command": "/opt/hv/bin/python /work/d3/scripts/d3_build.py --dry-run-e2 --threads 1 (write phase: 32 PNG + key to /work/d3/dryrun_e2)",
+   "start_utc": "2026-09-25T11:20:35Z",
+   "end_utc": "2026-09-25T11:20:48Z",
+   "exit": "0",
+   "output_sha256": "705e0f66d3f74cc410f0923f57644e113759fb04f947e2ed29a65bae2824f486"
+  },
+  {
+   "cpu": "cpus=1/4 Intel(R) Xeon(R) Processor @ 2.10GHz",
+   "command": "rm -rf /work/d3/dryrun_e2",
+   "start_utc": "2026-09-25T11:20:48Z",
+   "end_utc": "2026-09-25T11:20:48Z",
+   "exit": "0",
+   "output_sha256": "-"
+  },
+  {
+   "cpu": "cpus=1/1 Intel(R) Xeon(R) Processor @ 2.10GHz",
+   "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/hv/bin/python /work/d3/scripts/d3_build.py --dry-run-e2 --threads 1 ",
+   "start_utc": "2026-09-25T11:20:35Z",
+   "end_utc": "2026-09-25T11:20:48Z",
+   "exit": "0",
+   "output_sha256": "5a2896f12ee49136b201e865c50f3f0862b49d758f3128ac2c2fea49ed4f7ca9"
+  },
+  {
+   "cpu": "cpus=1/4 Intel(R) Xeon(R) Processor @ 2.10GHz",
+   "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/hv/bin/python /work/d3/scripts/label_equiv.py ",
+   "start_utc": "2026-09-25T11:21:13Z",
+   "end_utc": "2026-09-25T11:21:18Z",
+   "exit": "0",
+   "output_sha256": "db2d529286efab68fe870a53432946143aa19fe2ada73c0d92d0b434e1980911"
+  }
+ ],
+ "n_ledger_rows_added": 9,
+ "viewing": "no image or pixel array was opened, displayed or described; numbers only",
+ "notes": [
+  "Ledger: 4 rows written by d3_ledger_run.sh before 11:21Z (BASE0 make, BASE0 infer wrapper, E1 compare, E2 wrapper) show 'cpus=1/1': GNU nproc honours the exported OMP_NUM_THREADS=1; the host has 4 CPUs and each job ran at 1 thread. Rows left unedited; the wrapper and infer_arms.sh now use getconf _NPROCESSORS_ONLN.",
+  "E1 differences (fwd 108 px, rev 71 px, all |diff| = 1) are attributed to thread count: D1 ran at 2 threads, E1 at 1; the BASE0 weights are bitwise equal to the base checkpoint (508/508 tensors) and the embedded config is identical.",
+  "Key windows gate: J windows carry gate.json 'passed' (all True); blanks and canary carry null (their D1 gate was non-binding, binding=False in gate.json), per the stage-2 brief.",
+  "/work/d3/blob_f180.json is written without a provenance field because tools/d1/score_d3.py asserts its keys equal the 2 blank ids.",
+  "DECL-D3-A3 names tools/d3/d3_infer.py and tools/d3/d3_build.py; the scripts live in /work/d3/scripts (the orchestrator mirrors them into tools/d3).",
+  "Disk: BASE0 (138 MB checkpoint + 21 MB maps) and the stage-2 maps count toward d3_train.py's --budget-bytes 3e9 (/work/d3 + /work/d3_timing = 2.44 GB at 11:22Z); later arms' resumable checkpoints may therefore use the declared delete-then-write mode."
+ ]
+}

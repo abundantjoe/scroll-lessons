@@ -1,0 +1,87 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "decision": "D1 (KTLB-3R)",
+ "lens": "synthesis",
+ "audit": "PASS",
+ "utc": "2026-09-25T09:04:40Z",
+ "recorded_result_stands": {
+  "REF_stage": "NOT VOID: REF0 summed mean C_all (R250) 16.0 >= 0.5 S' = 10 (S' = 20, not < 20); sigma_crit 0.30 mm (REF030 C_net 6.42-6.45 >= 0.5 x 11.37 = 5.68 > REF045 4.30)",
+  "model_stage": "FAIL: best family arm BASE-A C_net 0 <= 0.10 S' = 2.0 and p_max 1 >= 0.05 (both FAIL conditions of DECL-D1 hold)"
+ },
+ "lenses": {
+  "rederive": {
+   "file": "logs/d1/audit_d1_rederive.json",
+   "sha256": "f89f79c69c8cd6a677e645ce09674155b66339f2364d3d57728d3af53a3a83e6",
+   "audit": "PASS",
+   "invalidating": 0,
+   "logged_decryptions": 33
+  },
+  "timeline": {
+   "file": "logs/d1/audit_d1_timeline.json",
+   "sha256": "a7b6eacf947e1740911f676b899f21abd4872742031c4a0aab74db55f7ec3e4f",
+   "audit": "PASS",
+   "invalidating": 0,
+   "logged_decryptions": 0
+  },
+  "harness": {
+   "file": "logs/d1/audit_d1_harness.json",
+   "sha256": "b4cec0a4c7fda86ca44b850d2c268aea73dbc9a96b99f51a53d36019c596d239",
+   "audit": "PASS",
+   "invalidating": 0,
+   "logged_decryptions": 34
+  },
+  "adversarial": {
+   "file": "logs/d1/audit_d1_adversarial.json",
+   "sha256": "3e0ffb0b48f38036f4672d3af5c5f2e3577cbde0138d7eff0e8756e13c3bc20e",
+   "audit": "PASS",
+   "invalidating": 0,
+   "logged_decryptions": 38
+  }
+ },
+ "lens_files_present": "4/4; sha256 of each file recomputed by the synthesis auditor and equal to the value each lens reported",
+ "invalidating_findings": [],
+ "disagreements_resolved": [
+  {
+   "point": "Number of BASE/RAW model readers that died after the write and before the hand-back (D1-RERUN-CHANCE says 6; harness and adversarial say 4).",
+   "own_check": "Tool-use blocks counted in the 18 model reader transcripts (via /work/jobs/agent_map.txt): 14 have a SubagentHandback (17 tool calls); 4 have none (16 tool calls, 1 API-error block each): RAW-A r2, RAW-B r0, r1, r2. The 6 CHANCE slots map to re-run agents that all handed back.",
+   "resolution": "4 is correct; D1-RERUN-CHANCE miscounts (6). Record error only; every answer was written before the error and audits VALID. Note."
+  },
+  {
+   "point": "RAW v2 images are byte-identical to the withdrawn v1 set although DECL-D1-A6 re-specifies RAW (timeline and rederive flagged; adversarial said v2 differs only on BASE).",
+   "own_check": "d1_build.py (v1) already called builder.linear_window_ct(arr, valid=rv), so the 1-99 % window was already over render-valid pixels. RAW window lower bounds are 31.6-39.2 for every window and side, and render-invalid pixels have slab mean 0, so they clip to 0 before masking: v2 build record display_mask_A6 gives RAW fullres_max_invalid 0 on the 12 window-sides with invalid pixels (None on J4 and canary, render-valid fraction 1.0). v2 summary: RAW identical to v1 16/16 per state; BASE identical 4/16 per state (J4 and canary, render-valid 1.0); REF 32/32.",
+   "resolution": "A6 was applied to RAW and was a no-op there by construction; v2 RAW = v1 RAW is expected. Not a defect."
+  },
+  {
+   "point": "C_net and p differ slightly between lenses and the runner (exact enumeration vs Monte Carlo).",
+   "own_check": "Runner REF0 C_net 11.3671 (MC 5000) vs rederive exact 11.3714 vs adversarial 11.36; REF045 p 4/5001 vs exact 0.000200.",
+   "resolution": "Sampling noise; no bar moves (VOID threshold, sigma_crit, FAIL unchanged). Note."
+  }
+ ],
+ "own_verification": {
+  "rules_chain": "python -m hercules.records.rules_append verify: OK, 88 entries, last D1-RERUN-CHANCE",
+  "seal": "seal_J.age and seals/seal_J_d1.age sha256 ae874fab... = SEAL-J-D1",
+  "ref_summary_and_results": "d1_ref_summary.json sha256 7c3884a2... and results_ref.age 6caf73cc... = D1-REF-RESULT citations; results_model.age 26538c60... = model summary full_results_sha256",
+  "driver_code": "5/5 files equal METRIC-HASH-16 (d1drive.py, score_d1.py, d1_jobs.py, 2 tests)",
+  "outcome_rule": "DECL-D1 FAIL: C_net <= 0.10 S' or p_max >= 0.05; DECL-D1-A3 item 6: canary is attention only, never a bar (RAW canary 0 cannot discard or change the outcome); S' = 20 is in the 20 <= S' < 30 band (run with p_max < 0.005), not VOID",
+  "model_summary": "family BASE-A/BASE-B/RAW-A/RAW-B and CHANCE-A/B: C_all 0, C_net 0, p 1, n_named 0, blank namings 0; outcome FAIL with c_net and p checks false",
+  "key_reads": "D1-related logged decryptions: jseal-make 3 + blank-confirmation 1 (05:57:44), d1-score-ref 13 (07:46:36), d1-score-model 19 (08:27:08), d1-crosscheck-counts 18 (08:27:27), audit lenses 33 + 34 + 38 = 105 (08:32:24-08:58:37); 0 D1 answer or seal decryptions before scoring; synthesis auditor decryptions 0",
+  "git": "HEAD 8d159ac; working tree: logs/key_reads.tsv +105 lines (audit decryptions only) and the 5 untracked audit files; nothing committed"
+ },
+ "notes": [
+  "D1-RERUN-CHANCE miscount: 4 (not 6) BASE/RAW readers died after the write (RAW-A r2, RAW-B r0-r2); answers complete and VALID (harness, adversarial, synthesis).",
+  "FAIL is degenerate: 18 model readers named 0 letters on 180 J panels and 36 blank panels, so C_all, E_null and C_net are 0 and p = 5001/5001 (recorded 'p_exact 1/1').",
+  "RAW arms have no working attention control: canary namings 0 for all 6 RAW readers (BASE/CHANCE 5-10 each); RAW median read-to-write 56 s vs BASE 91 s. Canary is attention only by declaration; adversarial reports RAW label AUC near chance (0.50-0.53), so the FAIL does not rest on inattention alone.",
+  "BASE J displays are weak, not broken: frame identical to the seal (affine diff 0.0; BASE-fwd label AUC 0.70-0.76 vs 0.48-0.55 mirrored), no saturation, 0/20 seal letters near masked pixels (adversarial).",
+  "72/96 v2 images byte-identical to withdrawn v1 (REF 32, RAW 32, BASE 8); explained above; 0 v1 images in any job or read.",
+  "DECL-D1-A4 cites /work/jseal/work/check.json sha256 03e5d55..., overwritten at 05:50:11 by the post-A4 blank check (now 39bfbefa...); J1-J5 state-A fields identical; traceability only (timeline).",
+  "Runner decrypted the 18 model answers again at 08:27:27 (purpose d1-crosscheck-counts) after the hashed driver's outputs were final; logged but undisclosed in the summary and commit; cannot affect the outcome.",
+  "B0841-BANK (09-24, before the seal and before the SEALED_SCROLLS bar) read official 0841 surface-volume slices incl. J for numeric NCC diagnostics; no image viewed, no J render, disclosed (timeline).",
+  "REF scoring decryption (07:46:36) and the last REF audit done_utc fall in the same second; that answer was written 07:46:23 and audits VALID.",
+  "18 model-stage brief files carry a trailing newline absent from the delivered prompt, so prompt sha256 != brief_sha256; content otherwise identical (harness).",
+  "J-seal picker images lay under /work/jseal/blank/ (folder name visible), before DECL-D1-A5 item 2; the D1 blank bar uses reader namings, not the picker's (harness).",
+  "src/hercules/harness/jobs.py (brief header) is in no METRIC-HASH record; all 34 D1 headers rebuilt exactly (harness).",
+  "Harness lens could not open /srv/scorer key/item maps (permission denied); item-map and display-key checks are covered by rederive and adversarial (30 jobs, 0 mismatches).",
+  "BASE-A r0 and r2 wrote one 50-character text block before any image read; not a tool call, no answer content (harness)."
+ ],
+ "key_numbers": "S' 20 (J1 0, J2 6, J3 2, J4 5, J5 7); REF0 C_all 16.0 (VOID bar 10), C_net 11.37 (exact 11.3714), p 1/5001; sigma_crit 0.30 mm; model family and CHANCE arms C_all 0, C_net 0, p_max 1, 0 namings on 180 J + 36 blank panels -> FAIL; canary 5-10 per BASE/CHANCE reader, 0 per RAW reader; lenses PASS 4/4, invalidating 0; dead-after-write readers 4 (record says 6); RAW v1=v2 16/16 per state with RAW invalid-pixel max 0; driver hashes 5/5; rules chain 88 OK"
+}

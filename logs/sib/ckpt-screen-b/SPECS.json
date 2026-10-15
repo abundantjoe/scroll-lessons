@@ -1,0 +1,695 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-26T05:35:25Z",
+ "task": "ckpt-screen-b PHASE 1 (RULES.md DECL-DEVLOOP-SCREEN item 1)",
+ "viewing": "no image was written for viewing, opened or displayed; no CT data was read in PHASE 1; preview_*.png files of the HF repos were never downloaded",
+ "sources": {
+  "hf_card_and_code": "verbatim copies kept outside the repo (/work/cards; they carry personal names and links); fetched by tools/sib/ckpt-screen-b/fetch.py cards, git blob oids equal to catalogue; sha256 per checkpoint in card_files_sha256",
+  "villa_head": "f4570bfa6c2b357fd24a17b46f8a43becf87ea8d",
+  "villa_pinned_env": "41701aa0eaa1aa765523db3f9f972b5830abf549",
+  "villa_files_sha256": {
+   "deprecated/ink-detection/metadata.json": "6cfaf7c64cd286da9e9f302df663e86d36573ec17b25a89dd64ff3c2644deaf8",
+   "deprecated/ink-detection/train_resnet3d_3d_decoder.py": "3b36d25e479bf9980d1ca5945a4c8c7554b6f64f6c6679848b69a1e3d74e5b69",
+   "deprecated/ink-detection/inference_resnet3d_3d_decoder.py": "ed9220c1097b16902fabafdfecb9af890e684a10eecc42031e53281bcb66f7f4",
+   "deprecated/ink-detection/train_resnet3d_lib/data_ops.py": "89deefebfadd4374e6335e4687e7e32b1d202d403ea6316293738e91a9b09119",
+   "deprecated/ink-detection/train_resnet3d_lib/config.py": "a33411204eb5918aa8dfbd3ca54d87748b81141a726cca7896d59027979fe82b"
+  }
+ },
+ "architecture": "ResNet3D-50 (Kinetics-700 r3d50_KM_200ep init, conv1 summed to 1 channel) + per-stage torch.max over z + 2-D U-Net decoder; 83,317,825 parameters; all six share modeling_inkdetection.py (git oid c75143f2...) and configuration_inkdetection.py",
+ "input_spec_common": {
+  "tensor": "(B, 1, D=62, H=256, W=256) float32 (config.json input_depth 62, input_size 256; modeling docstring)",
+  "dtype_source": "uint8 surface-volume layers (card tiling snippet: \"(H, W, D) uint8 stack of the 62 layers\")",
+  "normalisation": "clip(0, 200) then /255 (card training text: \"clipped raw uint8 layers to [0, 200] then applied Normalize(mean=0, std=1)\"; villa train_resnet3d_lib data_ops.py np.clip(.., 0, 200) and config.py A.Normalize(mean=[0]*in_chans, std=[1]*in_chans), albumentations max_pixel_value 255). DISCREPANCIES: modeling docstring says \"z-score normalised\"; the card tiling snippet feeds raw 0..255 floats without clip or /255. Resolved by the weights: see bn1_input_scale.",
+  "voxel_size": {
+   "card": "UNKNOWN (not stated in card, config or modeling code)",
+   "code": "~2 um class: villa deprecated/ink-detection/metadata.json dataset_name \"2um_dataset\" (\"Collection of 2um resolution segments\"), which lists all four iteration-0 training segments; train_resnet3d_3d_decoder.py maps l_2 to base_path \"2um_dataset/s4_2um\". Exact per-segment voxel size is not documented.",
+   "used_by_wrapper_spec_mode_um": 2.399,
+   "why_2399": "the 2 um-class spacing of the DEV scrolls (dev_registry voxel_um_2 = 2.399 for PHerc0139 and PHerc0814); an assumption inside the documented class, flagged"
+  },
+  "slices": "62 consecutive layers at 1 layer = 1 voxel spacing, centred crop of the segment layer range (villa _compute_selected_layer_indices / vesuvius select_layer_indices); organizer surface volumes use layer_range [1, 63) i.e. layers 1..62 around the surface layer ~32 (metadata.json)",
+  "orientation_order": {
+   "documented": "per training segment: l_2 reverse_layers False (inference_resnet3d_3d_decoder.py segments_to_infer ('l_2', False, '2um_dataset/s4_2um')); 500p2a and 658 reverse_layers True; 9b segments False (metadata.json, train_resnet3d_3d_decoder.py); iteration-0 card: \"l_2 inference uses reverse_layers=True to match the training-segment convention\"",
+   "relative_to_devloop_render": "UNDOCUMENTED: no card or code relates organizer layer order to the devloop vc_render_tifxyz -n 31 --flip-normals slice order, so both orders are mapped and reported (DECL-DEVLOOP-SCREEN item 2) and the order is not chosen from DEV. Documented relation inside the family: iteration-0 text order = reverse of the l_2 native order; iterations 1-5 = l_2 native order; i.e. iteration-0 and 1-5 expect OPPOSITE orders on the same input."
+  },
+  "tile": {
+   "window": 256,
+   "stride": 128,
+   "output": "(B,1,64,64) logits, quarter resolution; sigmoid; F.interpolate x4 bilinear; overlap mean; tiles with any fmask==0 pixel skipped; image padded to multiples of 256",
+   "output_format": "uint8 = clip(pred*255) truncated (card); wrapper writes the devloop format <wid>.tif (forward) and <wid>_reverse.tif, 2-D uint8, LZW"
+  },
+  "wrapper_modes": {
+   "spec": "render resampled to 2.399 um in x, y and z (zoom 3.9025; 62 layers = 148.7 um centred on render slice 15; render slices 7.18..22.82 used); map area-averaged back to the 9.362 um grid",
+   "native": "OUT OF SPEC in voxel size: 16 central render slices (7..22, official centre crop, 150 um) fed at 9.362 um; D = 16 instead of 62 (the network is depth-agnostic: max over z per stage)"
+  }
+ },
+ "wrapper": {
+  "path": "tools/sib/ckpt-screen-b/infer_1667.py",
+  "sha256": "431067ee40ff5cb2b0b1303bdc80c218a4838f395320c94a1505b44b47bfd5f6",
+  "env": "python 3.11, torch 2.14.0+cpu, transformers 4.57.6 (config transformers_version; 5.x cannot import the official PreTrainedModel file), safetensors, numpy, opencv-python-headless, tifffile + imagecodecs, zarr<3"
+ },
+ "smoke_summary": {
+  "file": "logs/sib/ckpt-screen-b/smoke.json",
+  "sha256": "001f0d9174543f9d3033eb50dfe269f1a22daa57c108a5f6ef8cf7698a63af30",
+  "T1_resampler_max_abs_err": 6.12432472735236e-05,
+  "T2_card_tiling_vs_direct_max_abs_diff": 0.0
+ },
+ "cost_estimate_2x2cm": {
+  "text_window_2x2cm": {
+   "render_crop_px": 2648,
+   "spec": {
+    "model_grid_px": 10334,
+    "tiles": 6561,
+    "cpu_min_per_order": 394.0,
+    "cpu_min_both_orders": 788.0
+   },
+   "native": {
+    "tiles": 441,
+    "cpu_min_per_order": 6.7,
+    "cpu_min_both_orders": 13.3
+   }
+  },
+  "blank_1x1cm": {
+   "render_crop_px": 1580,
+   "spec": {
+    "model_grid_px": 6166,
+    "tiles": 2401,
+    "cpu_min_per_order": 144.2,
+    "cpu_min_both_orders": 288.4
+   },
+   "native": {
+    "tiles": 169,
+    "cpu_min_per_order": 2.6,
+    "cpu_min_both_orders": 5.1
+   }
+  },
+  "assumptions": "4 threads, fp32, batch 1, torch CPU; every tile valid (holes only lower the count); wall minutes on this 4-vCPU container = the figures (all 4 threads used); per-tile seconds measured in smoke.json (spec = 62 layers, native = 16 layers)"
+ },
+ "sec_per_tile_measured": {
+  "spec_62_layers_median": 3.6029999999999998,
+  "native_16_layers_median": 0.906
+ },
+ "open_decisions_for_orchestrator": [
+  "geometry: spec mode (documented ~2 um class, 2.399 um assumed) costs ~394 CPU-min per order per 2x2 cm window (~13 h both orders); native 9.362 um mode ~7 min per order but is out of the documented voxel size (DECL-DEVLOOP-SCREEN item 1 takes the voxel size from card/code)",
+  "text order: undocumented relative to the devloop render; iteration-0 and iterations 1-5 are documented to expect opposite orders on the same segment; both orders will be mapped",
+  "in-sample: iteration-0 trained on PHerc0009B, PHerc0500P2 and PHerc0343P segments (scroll attribution from villa code): its 0009B/0500P2 DEV windows are UNKNOWN unless certified not same-papyrus; iterations 1-5 (l_2, PHerc1667 only) are out-of-sample for every DEV scroll",
+  "normalisation: clip(0,200)/255 (training text, villa code, bn1 statistics) instead of the card snippet raw 0..255 input"
+ ],
+ "checkpoints": {
+  "PHerc.1667-iteration-0": {
+   "repo": "scrollprize/PHerc.1667-iteration-0",
+   "commit": "06c306449b39df42c745608ceade243498d24243",
+   "licence": "mit",
+   "gated": false,
+   "weights": {
+    "file": "model.safetensors",
+    "bytes": 333531996,
+    "sha256": "62c43b98f55c169ae874c684a59953b5ce1cb45140129107f861501cce3edaef",
+    "sha256_matches_catalogue": true
+   },
+   "last_ckpt": {
+    "sha256": "212312371c60f93bd1a7d7359c87134390f3aa9b498a6de82753a871f26ebbed",
+    "verified": true,
+    "tensors_equal_to_safetensors": true,
+    "n_common": 338,
+    "only_in_ckpt": [
+     "backbone.fc.bias",
+     "backbone.fc.weight"
+    ],
+    "global_step": 12396,
+    "epoch": 5,
+    "note": "fc head unused by forward(); file deleted after the check"
+   },
+   "card_files_sha256": {
+    "README.md": "b7f406cdc51a7874ca3f786961f744286221c890f307e043255c41577e962a78",
+    "config.json": "8fdb5c7903cc3dce2c37a93b028028582fef9134b6a826870e3bfab544f5be79",
+    "configuration_inkdetection.py": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990",
+    "modeling_inkdetection.py": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+   },
+   "input_spec": "see input_spec_common (identical code and config apart from provenance fields)",
+   "documented_text_order": "reverse of l_2 native (card: \"l_2 inference uses reverse_layers=True to match the training-segment convention\")",
+   "training_data": {
+    "documented_in": "card (Training summary; model family table) and config.json train_segment / train_inklabels",
+    "segments": [
+     "500p2a",
+     "658",
+     "20250910185200",
+     "20250919125754-auto_grown_20250919055754487_inp_hr"
+    ],
+    "label": "(cross-segment baseline; no l_2 labels)",
+    "tiles": 20075,
+    "steps": 12396,
+    "scrolls": [
+     "PHerc0009B",
+     "PHerc0343P",
+     "PHerc0500P2"
+    ],
+    "scroll_attribution": {
+     "500p2a": "metadata.json base_path '500p2a'; reverse_layers True",
+     "658": "metadata.json base_path '343P' (original_path train_scrolls/658); reverse_layers True",
+     "20250910185200": "metadata.json base_path '9b' (original_path new_traces9b/david_9b); layer_range [1,108]",
+     "20250919125754-auto_grown_20250919055754487_inp_hr": "metadata.json base_path '9b'; train_resnet3d_3d_decoder.py '2um_dataset/9b_2um'"
+    },
+    "scroll_attribution_source": "villa code (not the card), except l_2 whose repo name also says PHerc.1667",
+    "encoder_pretraining": "Kinetics-700 video (no papyrus)",
+    "pherc1667_note": "no current DEV window is on PHerc1667 (base-training scroll, w028 in base training); l_2 could only matter for a 1667 window"
+   },
+   "in_sample_guard": {
+    "PHerc0139": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0814": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0009B": "SCROLL IN TRAINING LIST: IN-SAMPLE for any DEV window same-papyrus (+16 vox) with ['20250910185200', '20250919125754-auto_grown_20250919055754487_inp_hr']; those segment ids have no public organizer mesh identified here, so certification is not possible -> UNKNOWN (never counts toward FINALIST) unless the orchestrator certifies otherwise",
+    "PHerc0500P2": "SCROLL IN TRAINING LIST: IN-SAMPLE for any DEV window same-papyrus (+16 vox) with ['500p2a']; those segment ids have no public organizer mesh identified here, so certification is not possible -> UNKNOWN (never counts toward FINALIST) unless the orchestrator certifies otherwise",
+    "PHerc0332": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc1451": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE"
+   },
+   "bn1_input_scale": {
+    "method": "conv1 is linear and bias-free, so bn1.running_mean[c] = sum(w_c) * E[x] for stationary input; least squares over the 64 channels gives E[x] in the units the model was trained in",
+    "est_mean_input": 0.303,
+    "corr_wsum_vs_running_mean": 0.9989,
+    "median_sqrt_running_var_over_wnorm": 0.2086,
+    "verdict": "training scale is [0,1]-type (clip 0..200 then /255 gives mean ~0.2-0.3); raw 0..255 input (the card snippet as written) would be ~255x off-scale"
+   },
+   "smoke": {
+    "native": {
+     "k": 3,
+     "sec_per_tile": 1.194,
+     "deterministic": true,
+     "fwd_ne_rev": true,
+     "zero_where_uncovered": true,
+     "map_shape": [
+      400,
+      400
+     ],
+     "fwd_sha": "e5426903e588cab5f026f05730574a4e36e4abc3fe9e42e39cbc18096656a958",
+     "rev_sha": "ed731fa54844088bab236758baaf37cbb96ae8d2ad6f10cae27612344369d71f"
+    },
+    "spec": {
+     "tiles": 24,
+     "sec_per_tile": 4.085,
+     "fwd_ne_rev": true,
+     "map_shape": [
+      200,
+      200
+     ],
+     "model_grid_hw": [
+      780,
+      780
+     ],
+     "zero_where_uncovered": true,
+     "fwd_sha": "07daa862dacad8da702d342f03f39320debe88612777830b9ad8cfdb7dcf4d70",
+     "rev_sha": "7436dcc3955ac16d08c4d98799152c26ef725f6787b13f202acb0cb4fb676991"
+    }
+   },
+   "cost": "see cost_estimate_2x2cm (identical architecture; per-checkpoint seconds per tile in smoke)"
+  },
+  "PHerc.1667-iteration-1": {
+   "repo": "scrollprize/PHerc.1667-iteration-1",
+   "commit": "f2012ce96ddebcae6888246370c28d458a4d45dd",
+   "licence": "mit",
+   "gated": false,
+   "weights": {
+    "file": "model.safetensors",
+    "bytes": 333531996,
+    "sha256": "75e4009673b2c419c23cb388474c87357c226058598f1e2d7cba4e71d22e0fcb",
+    "sha256_matches_catalogue": true
+   },
+   "last_ckpt": {
+    "sha256": "04274e174463a7feecac912abab2ef62844cecbf93e5de25d3f1e2b971938d0b",
+    "verified": true,
+    "tensors_equal_to_safetensors": true,
+    "n_common": 338,
+    "only_in_ckpt": [
+     "backbone.fc.bias",
+     "backbone.fc.weight"
+    ],
+    "global_step": 12396,
+    "epoch": 30,
+    "note": "fc head unused by forward(); file deleted after the check"
+   },
+   "card_files_sha256": {
+    "README.md": "c872ad88cc4defc7ec69ed7cf6c8a62b413ff6d042e3d96ed52ecf79531ffecb",
+    "config.json": "885c280718577acceb58162089cd3801bfdf81f8274fea7e38e6706bdcf3e165",
+    "configuration_inkdetection.py": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990",
+    "modeling_inkdetection.py": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+   },
+   "input_spec": "see input_spec_common (identical code and config apart from provenance fields)",
+   "documented_text_order": "l_2 native order (reverse_layers False); relation to devloop render: UNDOCUMENTED",
+   "training_data": {
+    "documented_in": "card (Training summary; model family table) and config.json train_segment / train_inklabels",
+    "segments": [
+     "l_2"
+    ],
+    "label": "l_2_inklabels.png",
+    "tiles": 3396,
+    "steps": 12396,
+    "scrolls": [
+     "PHerc1667"
+    ],
+    "scroll_attribution": {
+     "l_2": "repo name PHerc.1667; train_resnet3d_3d_decoder.py and inference_resnet3d_3d_decoder.py base_path '2um_dataset/s4_2um' (Scroll 4 = PHerc. 1667)"
+    },
+    "scroll_attribution_source": "villa code (not the card), except l_2 whose repo name also says PHerc.1667",
+    "encoder_pretraining": "Kinetics-700 video (no papyrus)",
+    "pherc1667_note": "no current DEV window is on PHerc1667 (base-training scroll, w028 in base training); l_2 could only matter for a 1667 window"
+   },
+   "in_sample_guard": {
+    "PHerc0139": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0814": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0009B": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0500P2": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0332": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc1451": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE"
+   },
+   "bn1_input_scale": {
+    "method": "conv1 is linear and bias-free, so bn1.running_mean[c] = sum(w_c) * E[x] for stationary input; least squares over the 64 channels gives E[x] in the units the model was trained in",
+    "est_mean_input": 0.2286,
+    "corr_wsum_vs_running_mean": 0.9991,
+    "median_sqrt_running_var_over_wnorm": 0.1881,
+    "verdict": "training scale is [0,1]-type (clip 0..200 then /255 gives mean ~0.2-0.3); raw 0..255 input (the card snippet as written) would be ~255x off-scale"
+   },
+   "smoke": {
+    "native": {
+     "k": 3,
+     "sec_per_tile": 0.876,
+     "deterministic": true,
+     "fwd_ne_rev": true,
+     "zero_where_uncovered": true,
+     "map_shape": [
+      400,
+      400
+     ],
+     "fwd_sha": "f6a6590808777f5a0434d0f19647fd602cb87f57a84cebc0e2daf7216a56d25a",
+     "rev_sha": "1e05df0c61014d20316e1e8d4f18ceae3c9442188d28abc250063f1b024f63af"
+    },
+    "spec": {
+     "tiles": 24,
+     "sec_per_tile": 3.611,
+     "fwd_ne_rev": true,
+     "map_shape": [
+      200,
+      200
+     ],
+     "model_grid_hw": [
+      780,
+      780
+     ],
+     "zero_where_uncovered": true,
+     "fwd_sha": "26ea8069e8b1e6e6879ded21ad0d6bd108e98ea23931ef27e45a2054398932c9",
+     "rev_sha": "199fed52c83e2274d88e3cac10dc74a7479b3f06d05968e1d4a9015166b5f4d4"
+    }
+   },
+   "cost": "see cost_estimate_2x2cm (identical architecture; per-checkpoint seconds per tile in smoke)"
+  },
+  "PHerc.1667-iteration-2": {
+   "repo": "scrollprize/PHerc.1667-iteration-2",
+   "commit": "bf6053ca28863ca8fb87860803c0392945290fc6",
+   "licence": "mit",
+   "gated": false,
+   "weights": {
+    "file": "model.safetensors",
+    "bytes": 333531996,
+    "sha256": "485ce6e12cca19071c5746d95327d9aa6f2fd04ea1a2acc95c9530d3ee895b71",
+    "sha256_matches_catalogue": true
+   },
+   "last_ckpt": {
+    "sha256": "2f7dd5fbf352eb8e96070b572b53e695ce2592ece684454e0d1c4c5b5dc3c4f5",
+    "verified": true,
+    "tensors_equal_to_safetensors": true,
+    "n_common": 338,
+    "only_in_ckpt": [
+     "backbone.fc.bias",
+     "backbone.fc.weight"
+    ],
+    "global_step": 12396,
+    "epoch": 12,
+    "note": "fc head unused by forward(); file deleted after the check"
+   },
+   "card_files_sha256": {
+    "README.md": "7ec327edb9eb9f7c1ce7fd1421399bef88b5d328643dacb55dd98b426677487b",
+    "config.json": "36bb9c4ee2bc049a6cf78feaa4adea5112752f2042067b657710bb71a1bd6bc0",
+    "configuration_inkdetection.py": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990",
+    "modeling_inkdetection.py": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+   },
+   "input_spec": "see input_spec_common (identical code and config apart from provenance fields)",
+   "documented_text_order": "l_2 native order (reverse_layers False); relation to devloop render: UNDOCUMENTED",
+   "training_data": {
+    "documented_in": "card (Training summary; model family table) and config.json train_segment / train_inklabels",
+    "segments": [
+     "l_2"
+    ],
+    "label": "l_2_inklabels2.png",
+    "tiles": 8970,
+    "steps": 12396,
+    "scrolls": [
+     "PHerc1667"
+    ],
+    "scroll_attribution": {
+     "l_2": "repo name PHerc.1667; train_resnet3d_3d_decoder.py and inference_resnet3d_3d_decoder.py base_path '2um_dataset/s4_2um' (Scroll 4 = PHerc. 1667)"
+    },
+    "scroll_attribution_source": "villa code (not the card), except l_2 whose repo name also says PHerc.1667",
+    "encoder_pretraining": "Kinetics-700 video (no papyrus)",
+    "pherc1667_note": "no current DEV window is on PHerc1667 (base-training scroll, w028 in base training); l_2 could only matter for a 1667 window"
+   },
+   "in_sample_guard": {
+    "PHerc0139": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0814": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0009B": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0500P2": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0332": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc1451": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE"
+   },
+   "bn1_input_scale": {
+    "method": "conv1 is linear and bias-free, so bn1.running_mean[c] = sum(w_c) * E[x] for stationary input; least squares over the 64 channels gives E[x] in the units the model was trained in",
+    "est_mean_input": 0.2276,
+    "corr_wsum_vs_running_mean": 0.9993,
+    "median_sqrt_running_var_over_wnorm": 0.2289,
+    "verdict": "training scale is [0,1]-type (clip 0..200 then /255 gives mean ~0.2-0.3); raw 0..255 input (the card snippet as written) would be ~255x off-scale"
+   },
+   "smoke": {
+    "native": {
+     "k": 3,
+     "sec_per_tile": 0.963,
+     "deterministic": true,
+     "fwd_ne_rev": true,
+     "zero_where_uncovered": true,
+     "map_shape": [
+      400,
+      400
+     ],
+     "fwd_sha": "12683f6f36ba43937ec3c4b8ad22bee7ed59f6b24ead5243f4e945acf38f1d8c",
+     "rev_sha": "55b371b523dfbe22585cb0d8242726a223a0bf3266488f9ce8f7741ceeea27ca"
+    },
+    "spec": {
+     "tiles": 24,
+     "sec_per_tile": 3.526,
+     "fwd_ne_rev": true,
+     "map_shape": [
+      200,
+      200
+     ],
+     "model_grid_hw": [
+      780,
+      780
+     ],
+     "zero_where_uncovered": true,
+     "fwd_sha": "6d8c7417cdfb7f2c265e90ba7619f179663eb0e432acba0f5966315f42f51920",
+     "rev_sha": "78ab0a4e8e0874a2070d2921595b7575cddd5fa742926570861f735ee911565d"
+    }
+   },
+   "cost": "see cost_estimate_2x2cm (identical architecture; per-checkpoint seconds per tile in smoke)"
+  },
+  "PHerc.1667-iteration-3": {
+   "repo": "scrollprize/PHerc.1667-iteration-3",
+   "commit": "ecb158ec66244f55339be33d6299c8d60a466f50",
+   "licence": "mit",
+   "gated": false,
+   "weights": {
+    "file": "model.safetensors",
+    "bytes": 333531996,
+    "sha256": "f9b5b8982dd62c7551ba7fe260b9db6c9746cc7d14580877691f558b1875abae",
+    "sha256_matches_catalogue": true
+   },
+   "last_ckpt": {
+    "sha256": "a2ab8d85b29377e31928962ae750a7c65fd87bbdd43fe61c375af4693ac88f8a",
+    "verified": true,
+    "tensors_equal_to_safetensors": true,
+    "n_common": 338,
+    "only_in_ckpt": [
+     "backbone.fc.bias",
+     "backbone.fc.weight"
+    ],
+    "global_step": 12396,
+    "epoch": 7,
+    "note": "fc head unused by forward(); file deleted after the check"
+   },
+   "card_files_sha256": {
+    "README.md": "318214605e47ad65518a906d0a1421314bba9e32c4263e33e2c8e25cfd97e7a4",
+    "config.json": "e6d2edf4a1f52b5b6672ed31cdb04a412b8540aea59073cf2ab0146f17da28d2",
+    "configuration_inkdetection.py": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990",
+    "modeling_inkdetection.py": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+   },
+   "input_spec": "see input_spec_common (identical code and config apart from provenance fields)",
+   "documented_text_order": "l_2 native order (reverse_layers False); relation to devloop render: UNDOCUMENTED",
+   "training_data": {
+    "documented_in": "card (Training summary; model family table) and config.json train_segment / train_inklabels",
+    "segments": [
+     "l_2"
+    ],
+    "label": "l_2_inklabels3.png",
+    "tiles": 15286,
+    "steps": 12396,
+    "scrolls": [
+     "PHerc1667"
+    ],
+    "scroll_attribution": {
+     "l_2": "repo name PHerc.1667; train_resnet3d_3d_decoder.py and inference_resnet3d_3d_decoder.py base_path '2um_dataset/s4_2um' (Scroll 4 = PHerc. 1667)"
+    },
+    "scroll_attribution_source": "villa code (not the card), except l_2 whose repo name also says PHerc.1667",
+    "encoder_pretraining": "Kinetics-700 video (no papyrus)",
+    "pherc1667_note": "no current DEV window is on PHerc1667 (base-training scroll, w028 in base training); l_2 could only matter for a 1667 window"
+   },
+   "in_sample_guard": {
+    "PHerc0139": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0814": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0009B": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0500P2": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0332": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc1451": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE"
+   },
+   "bn1_input_scale": {
+    "method": "conv1 is linear and bias-free, so bn1.running_mean[c] = sum(w_c) * E[x] for stationary input; least squares over the 64 channels gives E[x] in the units the model was trained in",
+    "est_mean_input": 0.2229,
+    "corr_wsum_vs_running_mean": 0.9992,
+    "median_sqrt_running_var_over_wnorm": 0.1892,
+    "verdict": "training scale is [0,1]-type (clip 0..200 then /255 gives mean ~0.2-0.3); raw 0..255 input (the card snippet as written) would be ~255x off-scale"
+   },
+   "smoke": {
+    "native": {
+     "k": 3,
+     "sec_per_tile": 0.93,
+     "deterministic": true,
+     "fwd_ne_rev": true,
+     "zero_where_uncovered": true,
+     "map_shape": [
+      400,
+      400
+     ],
+     "fwd_sha": "cc671f3b35b8bc7e4481310b998e56074d6b70e9fdbd8df2381e9e0974f0e8ed",
+     "rev_sha": "1204ffb8baec986f29c490581b5003dd9727c289525b4086a07965adc6b41e52"
+    },
+    "spec": {
+     "tiles": 24,
+     "sec_per_tile": 3.585,
+     "fwd_ne_rev": true,
+     "map_shape": [
+      200,
+      200
+     ],
+     "model_grid_hw": [
+      780,
+      780
+     ],
+     "zero_where_uncovered": true,
+     "fwd_sha": "32635806c0f0aeec43b7ac8f87f23484614c3b3d1a605a4604eca03554108302",
+     "rev_sha": "da1b8e027f18cc3c2e833e073bec5b214f9ccf1dc5bec479b4ac84bbf9787932"
+    }
+   },
+   "cost": "see cost_estimate_2x2cm (identical architecture; per-checkpoint seconds per tile in smoke)"
+  },
+  "PHerc.1667-iteration-4": {
+   "repo": "scrollprize/PHerc.1667-iteration-4",
+   "commit": "9ff9913da0f2f8374784dd4d4196fdcf62ba6883",
+   "licence": "mit",
+   "gated": false,
+   "weights": {
+    "file": "model.safetensors",
+    "bytes": 333531996,
+    "sha256": "a1612b1fc97dea039aec3a1d06ff65fe0ee217b91dbe6db9785eb2e5befb3ffe",
+    "sha256_matches_catalogue": true
+   },
+   "last_ckpt": {
+    "sha256": "300a72217200d8e056f6823ef5f401e6ce2ebe34048619be885cf4a916c60473",
+    "verified": true,
+    "tensors_equal_to_safetensors": true,
+    "n_common": 338,
+    "only_in_ckpt": [
+     "backbone.fc.bias",
+     "backbone.fc.weight"
+    ],
+    "global_step": 12396,
+    "epoch": 5,
+    "note": "fc head unused by forward(); file deleted after the check"
+   },
+   "card_files_sha256": {
+    "README.md": "5b5e1f7798c9b43355f43161717f9ceb6d8e074e4c726ff67012ea0d70475ed3",
+    "config.json": "46dd83a3d5cef7e52b62bf8b879d902a3a090c8e6be1b19954719caee1b7b79a",
+    "configuration_inkdetection.py": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990",
+    "modeling_inkdetection.py": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+   },
+   "input_spec": "see input_spec_common (identical code and config apart from provenance fields)",
+   "documented_text_order": "l_2 native order (reverse_layers False); relation to devloop render: UNDOCUMENTED",
+   "training_data": {
+    "documented_in": "card (Training summary; model family table) and config.json train_segment / train_inklabels",
+    "segments": [
+     "l_2"
+    ],
+    "label": "l_2_inklabels4.png",
+    "tiles": 24773,
+    "steps": 12396,
+    "scrolls": [
+     "PHerc1667"
+    ],
+    "scroll_attribution": {
+     "l_2": "repo name PHerc.1667; train_resnet3d_3d_decoder.py and inference_resnet3d_3d_decoder.py base_path '2um_dataset/s4_2um' (Scroll 4 = PHerc. 1667)"
+    },
+    "scroll_attribution_source": "villa code (not the card), except l_2 whose repo name also says PHerc.1667",
+    "encoder_pretraining": "Kinetics-700 video (no papyrus)",
+    "pherc1667_note": "no current DEV window is on PHerc1667 (base-training scroll, w028 in base training); l_2 could only matter for a 1667 window"
+   },
+   "in_sample_guard": {
+    "PHerc0139": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0814": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0009B": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0500P2": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0332": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc1451": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE"
+   },
+   "bn1_input_scale": {
+    "method": "conv1 is linear and bias-free, so bn1.running_mean[c] = sum(w_c) * E[x] for stationary input; least squares over the 64 channels gives E[x] in the units the model was trained in",
+    "est_mean_input": 0.247,
+    "corr_wsum_vs_running_mean": 0.9994,
+    "median_sqrt_running_var_over_wnorm": 0.2031,
+    "verdict": "training scale is [0,1]-type (clip 0..200 then /255 gives mean ~0.2-0.3); raw 0..255 input (the card snippet as written) would be ~255x off-scale"
+   },
+   "smoke": {
+    "native": {
+     "k": 3,
+     "sec_per_tile": 0.849,
+     "deterministic": true,
+     "fwd_ne_rev": true,
+     "zero_where_uncovered": true,
+     "map_shape": [
+      400,
+      400
+     ],
+     "fwd_sha": "5d678ce32dfe6f1d36ed63db919ff54c2e6c21ddb02812f00ce3f1b33bf338bb",
+     "rev_sha": "812e96ccf1f61a88d0001b316d4d463603420b152edf4d3771a1eef898c7cc1f"
+    },
+    "spec": {
+     "tiles": 24,
+     "sec_per_tile": 3.606,
+     "fwd_ne_rev": true,
+     "map_shape": [
+      200,
+      200
+     ],
+     "model_grid_hw": [
+      780,
+      780
+     ],
+     "zero_where_uncovered": true,
+     "fwd_sha": "725336e637c750792fbb3de4322b4932fae221f16b11cedb851d50c0053f0bc8",
+     "rev_sha": "3a08b430ce11219a4cad9169c4807476fb108c7ef6b8454b51af5f9a4b4b89ce"
+    }
+   },
+   "cost": "see cost_estimate_2x2cm (identical architecture; per-checkpoint seconds per tile in smoke)"
+  },
+  "PHerc.1667-iteration-5": {
+   "repo": "scrollprize/PHerc.1667-iteration-5",
+   "commit": "6288ba60115ce827018926bcb0ea8e5696f33d3b",
+   "licence": "mit",
+   "gated": false,
+   "weights": {
+    "file": "model.safetensors",
+    "bytes": 333531996,
+    "sha256": "9920d4338e51d38b241cbf48392610be0519e4e19c2e9d987ccfc2e78bd3301b",
+    "sha256_matches_catalogue": true
+   },
+   "last_ckpt": {
+    "sha256": "2c99b5ef73331363a9c42296fbea8a114c73fa5eedcddd6d0b33a0924b14685f",
+    "verified": true,
+    "tensors_equal_to_safetensors": true,
+    "n_common": 338,
+    "only_in_ckpt": [
+     "backbone.fc.bias",
+     "backbone.fc.weight"
+    ],
+    "global_step": 12396,
+    "epoch": 3,
+    "note": "fc head unused by forward(); file deleted after the check"
+   },
+   "card_files_sha256": {
+    "README.md": "197fb980175f5d52408d719e700d41e39a17fa819ebf4839b3445d357657b396",
+    "config.json": "941f69c2487b51bc9eb9fc638cc6c4b4af2d30e25ccd45044751ce7eaabcd35e",
+    "configuration_inkdetection.py": "e9d8efd18c1ee7d9cda59eda0aa1c2b6e9eab31f3e715f3e351fa0fd0f0c0990",
+    "modeling_inkdetection.py": "2264e9882f4a9b695f10e74d0dcd031ce58fc88f253d14bee8f89d328851ec16"
+   },
+   "input_spec": "see input_spec_common (identical code and config apart from provenance fields)",
+   "documented_text_order": "l_2 native order (reverse_layers False); relation to devloop render: UNDOCUMENTED",
+   "training_data": {
+    "documented_in": "card (Training summary; model family table) and config.json train_segment / train_inklabels",
+    "segments": [
+     "l_2"
+    ],
+    "label": "l_2_inklabels5.png",
+    "tiles": 33061,
+    "steps": 12396,
+    "scrolls": [
+     "PHerc1667"
+    ],
+    "scroll_attribution": {
+     "l_2": "repo name PHerc.1667; train_resnet3d_3d_decoder.py and inference_resnet3d_3d_decoder.py base_path '2um_dataset/s4_2um' (Scroll 4 = PHerc. 1667)"
+    },
+    "scroll_attribution_source": "villa code (not the card), except l_2 whose repo name also says PHerc.1667",
+    "encoder_pretraining": "Kinetics-700 video (no papyrus)",
+    "pherc1667_note": "no current DEV window is on PHerc1667 (base-training scroll, w028 in base training); l_2 could only matter for a 1667 window"
+   },
+   "in_sample_guard": {
+    "PHerc0139": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0814": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0009B": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0500P2": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc0332": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE",
+    "PHerc1451": "scroll absent from every training list the card or code names -> OUT-OF-SAMPLE"
+   },
+   "bn1_input_scale": {
+    "method": "conv1 is linear and bias-free, so bn1.running_mean[c] = sum(w_c) * E[x] for stationary input; least squares over the 64 channels gives E[x] in the units the model was trained in",
+    "est_mean_input": 0.2321,
+    "corr_wsum_vs_running_mean": 0.9992,
+    "median_sqrt_running_var_over_wnorm": 0.1893,
+    "verdict": "training scale is [0,1]-type (clip 0..200 then /255 gives mean ~0.2-0.3); raw 0..255 input (the card snippet as written) would be ~255x off-scale"
+   },
+   "smoke": {
+    "native": {
+     "k": 3,
+     "sec_per_tile": 0.882,
+     "deterministic": true,
+     "fwd_ne_rev": true,
+     "zero_where_uncovered": true,
+     "map_shape": [
+      400,
+      400
+     ],
+     "fwd_sha": "141554104ed3ff6d92e0cebeced8d21d3e67849b8b19a895f4de77b25df4381e",
+     "rev_sha": "2e1be72fd97d4ab4db9baaf778941220a5bd18b16a7281035e35798d04f68602"
+    },
+    "spec": {
+     "tiles": 24,
+     "sec_per_tile": 3.6,
+     "fwd_ne_rev": true,
+     "map_shape": [
+      200,
+      200
+     ],
+     "model_grid_hw": [
+      780,
+      780
+     ],
+     "zero_where_uncovered": true,
+     "fwd_sha": "a1a325ea9b161989db619d25d99fe84bebc53ff514d3b9adbc990e2cb3d6651d",
+     "rev_sha": "50c64a4bafdf9f4a0f1afb8fb40ba99e1d5a60826fbe79efa2a5626f207f45f2"
+    }
+   },
+   "cost": "see cost_estimate_2x2cm (identical architecture; per-checkpoint seconds per tile in smoke)"
+  }
+ }
+}

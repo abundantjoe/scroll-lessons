@@ -1,0 +1,60 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "test": "per-tile affine input re-normalisation to bn1 training statistics (undeclared, numbers only, orchestrator suggestion 06:53Z)",
+ "tile": [
+  0,
+  7
+ ],
+ "region_canvas": {
+  "rows": [
+   3659,
+   4683
+  ],
+  "cols": [
+   62060,
+   63084
+  ],
+  "core": 768
+ },
+ "mesh_valid_frac": 1.0,
+ "input_norm_stats": {
+  "mean": 0.26700400439430605,
+  "std": 0.1414620764582384,
+  "n_windows": 16
+ },
+ "bn1_fit": {
+  "a": 1.152049011967484,
+  "b": -0.06466731847536883,
+  "corr_mean_before": 0.9999829098968669,
+  "median_var_ratio": 1.3272169259752562,
+  "implied_training_input": {
+   "mean": 0.2429343809784532,
+   "std": 0.16297124541458224
+  }
+ },
+ "chunks": {
+  "chunks_read": 81,
+  "chunks_missing": 0,
+  "chunk_records_sha256": "f64d24e494a395331195fb844d79f1e1e8b34ad2b016987d5150ca8267d6b6b6"
+ },
+ "checkpoint_sha256": "9920d4338e51d38b241cbf48392610be0519e4e19c2e9d987ccfc2e78bd3301b",
+ "baseline": {
+  "mean": 124.88468254937067,
+  "std": 54.233995700363145,
+  "p5": 60.0,
+  "p95": 217.0,
+  "frac_gt_127": 0.425262451171875,
+  "coverage": 1.0,
+  "sha256": "ecbbca793c26b30e03b65e6dd83c2d6ff5d0984904b213d11600934f30e5a8b0"
+ },
+ "renorm": {
+  "mean": 106.59768507215712,
+  "std": 45.996336190812414,
+  "p5": 59.0,
+  "p95": 200.0,
+  "frac_gt_127": 0.2926228841145833,
+  "coverage": 1.0,
+  "sha256": "b2817586f706a7b24aff8a462045518fe5e2b1c9cb6486b0e62f03ca498d48e1"
+ },
+ "seconds": 620.3
+}

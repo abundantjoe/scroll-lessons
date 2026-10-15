@@ -1,0 +1,4 @@
+T-RESCAN (section 6.13), after CHAIN VALID.
+Rebuild affines per C6 (incl. 0846A tilt). Trace 150 mid-radius seeds per band with the gated build; expand the 1203 team meshes into the band. Commit each band's 9 um calls and candidate list from the Route Z cache BEFORE opening any 2.4 um result (I11). 2.4 um chain both orders, order from rule R on 0841. Read 2 x 2 cm tiles at 1/4-1/8 scale, both orders side by side; 3 fresh readers; batches <= 8 + an 0841 positive + 1 blank.
+TEXT FOUND: one tile with >= 5 letters in rows in one order only, same identity within 150 px from >= 2 of 3 readers, net of the in-band empirical null; opposite order <= 1; reproduced by an independent overlapping core. BAND NEGATIVE: >= 300 cm^2 clean in-band surface (>= 40 % at wrap 0.35-0.70) in valid batches with 0 text tiles ("no text found by this reader"). Otherwise extend once to 600 cm^2.
+Default: neither (band UNRESOLVED) at 24 h past the date in D0-HW.
