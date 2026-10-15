@@ -1,0 +1,17 @@
+- 2026-10-01T02:21:10Z env: setup_env.sh
+- 2026-10-01T02:21:17Z env: OK
+- 2026-10-01T02:21:19Z source: auto (no organizer tifxyz segments in the bucket)
+- 2026-10-01T02:22:06Z grow pherc0257_p4v-14_s5 seed (3451.3 4225.0 9949.8)
+- 2026-10-01T02:23:56Z grow pherc0257_p4v-14_s5: rc=0 area=31.203436491007487 cm2 selfx=0 kept=true
+- 2026-10-01T02:23:58Z grow pherc0257_p4v-14_s7 seed (5001.9 3931.4 15047.4)
+- 2026-10-01T02:25:03Z grow pherc0257_p4v-14_s7: rc=0 area=31.130305606826667 cm2 selfx=0 kept=true
+- 2026-10-01T02:25:06Z segments to render (auto): pherc0257_p4v-14_s5 pherc0257_p4v-14_s7
+- 2026-10-01T02:25:06Z render pherc0257_p4v-14_s5
+- 2026-10-01T02:30:44Z infer pherc0257_p4v-14_s5 (both directions, no TTA)
+- 2026-10-01T02:54:12Z segment pherc0257_p4v-14_s5: official tiles done (8 tiles)
+- 2026-10-01T02:54:16Z render pherc0257_p4v-14_s7
+- 2026-10-01T03:00:27Z infer pherc0257_p4v-14_s7 (both directions, no TTA)
+- 2026-10-01T03:27:15Z segment pherc0257_p4v-14_s7: official tiles done (8 tiles)
+- 2026-10-01T03:27:18Z PIPELINE COMPLETE: source=auto segments=pherc0257_p4v-14_s5 pherc0257_p4v-14_s7
+- 2026-10-01T03:28:36Z end: PHerc0257 lane 1 complete. Seeds s5, s7 (s1, s3 = primary's fl0257_s1, s3; fl.py seeds plan has 8 entries, so 48 candidates gives 8). Both kept (31.20 / 31.13 cm2, 0 self-intersections), 8 + 8 OFFICIAL tiles, manifests checked (14 fields, png sha256 re-verified). DENSE withdrawn (DECL-FL-2-E1). Env: torch 2.14.1+cpu (primary 2.14.0). A stray duplicate of s5's tifxyz written by vc_tifxyz_selfcross into the repo root was removed (not committed).
+- 2026-10-01T06:05:58Z keepalive order (06:00Z): NOT extended. fl.py cmd_seeds has a fixed 8-entry (z_frac, azimuth) plan and is deterministic, so a new round of 'fl.py seeds ... 48' returns the same 8 seeds already used (s0-s3 primary, s5/s7 here); regrowing them would only duplicate segments in the census. New seeds need a change to fl.py seed logic, which BRIEF_FL2 item 2 forbids: needs an orchestrator decision (e.g. a declared extra plan). Manifests already carry model=official, model_sha256=e635558a... on every row (16/16). keepalive.sh not armed: with PIPELINE_DONE present it exits at once.
