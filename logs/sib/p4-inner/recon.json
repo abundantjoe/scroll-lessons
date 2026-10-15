@@ -1,0 +1,1206 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "generated_utc": "2026-09-26T10:15:00Z",
+ "serves": "sibling p4-inner recon for DECL-P4-1/P4-2 (inner windings w000-w009)",
+ "viewing": "No image, CT slice, render, ink map or photo was downloaded, opened or viewed. Only listings, JSON metadata, HTTP HEAD sizes, and mesh coordinate TIFFs (x/y/z vertex positions, streamed to memory, not saved) were read.",
+ "title_words_policy": "none recorded",
+ "frames": "All radii are in the 20260411134726 2.4 um voxel frame (x,y,z); r = horizontal distance from the umbilicus polyline (S3 umbilicus JSON, linear interp in z). 1 vox = 2.4 um.",
+ "q1_products_inward_of_w010": {
+  "answer": "No official mesh, segment, strip, or 2-D ink prediction covers w000-w009 on either 20260411134726 or 20260608103018. The dense volume-wide 3-D products (surface predictions, lasagna, fibers, 3-D ink) span the whole 2.4 um volume and have non-trivial chunks written at the umbilicus, so they do cover the core, but they are volumes, not a traced sheet.",
+  "segments": {
+   "innermost_strips": [
+    "PHercParis4/segments/20260701183124-w010-027/",
+    "PHercParis4/segments/20260623141924-w010-027/"
+   ],
+   "listing": "81 segment dirs under PHercParis4/segments/; w-strips inward of w038 are only w010-027 and w028-037 (both sets); no wNNN with NNN<010.",
+   "20260623141924-w010-027": {
+    "meshes": [
+     "-on-20260411134726-2.4um.tifxyz (x/y/z.tif 76504070 B each)",
+     "-on-20260608103018-1.129um.tifxyz (345137134 B each; meta bbox x 18598-33189 y 12604-37865 z -310-84876 in 1.129 vox; area_vx2 3.2567e10)",
+     "-on-20260310170716-45.532um.tifxyz",
+     "-on-20230205180739-7.91um.tifxyz"
+    ],
+    "ink_detection": [
+     "...-1.129um-...-volume-20260608103018-L1-20260709123958-mrg20736-1um-s1z2-tile256-stride128.tif (1177580667 B)",
+     "...-2.4um-...-volume-20260411134726-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif (681659276 B)"
+    ],
+    "surface_volumes": [
+     "1.129um-0.23m-78keV-volume-20260608103018-L1.zarr",
+     "2.4um-0.22m-78keV-volume-20260411134726.zarr",
+     "45.532um-11.0m-74keV-volume-20260310170716.zarr"
+    ]
+   },
+   "20260701183124-w010-027": {
+    "meshes": [
+     "-on-20260411134726-2.4um.tifxyz (118592134 B each; meta bbox x 11305-21584 y 11250-24170 z 11953-72051; area_vx2 1.1136e10 = 641.4 cm2)",
+     "45.532um, 7.91um"
+    ],
+    "ink_detection": [
+     "...-2.4um-...-20260417190342-new_canon_autoresearch_recipe-tile256-stride128.tif (1070196417 B)"
+    ],
+    "no_1129_mesh": true
+   }
+  },
+  "radial_extent_mm_vs_umbilicus_pct_0_1_5_50_95_99_100": {
+   "20260701183124-w010-027": [
+    0.27,
+    0.97,
+    1.49,
+    3.62,
+    6.29,
+    7.21,
+    9.19
+   ],
+   "20260623141924-w010-027": [
+    0.27,
+    1.01,
+    1.57,
+    3.67,
+    6.24,
+    7.16,
+    8.72
+   ],
+   "20260701183125-w028-037": [
+    2.05,
+    2.83,
+    3.61,
+    6.22,
+    9.1,
+    10.22,
+    13.44
+   ]
+  },
+  "z_extent_mm": {
+   "20260701183124-w010-027": [
+    28.7,
+    172.9
+   ],
+   "20260623141924-w010-027": [
+    67.1,
+    163.4
+   ],
+   "20260701183125-w028-037": [
+    28.7,
+    172.8
+   ]
+  },
+  "w010_027_inner_edge_per_10mm_z_r_mm_p1_p5_p50": {
+   "20": [
+    1.09,
+    1.44,
+    3.28
+   ],
+   "30": [
+    1.11,
+    1.6,
+    3.51
+   ],
+   "40": [
+    0.93,
+    1.38,
+    3.46
+   ],
+   "50": [
+    0.86,
+    1.21,
+    3.16
+   ],
+   "60": [
+    0.82,
+    1.32,
+    3.47
+   ],
+   "70": [
+    1.33,
+    1.76,
+    3.68
+   ],
+   "80": [
+    1.03,
+    1.49,
+    3.35
+   ],
+   "90": [
+    0.7,
+    1.11,
+    3.09
+   ],
+   "100": [
+    0.72,
+    1.24,
+    3.38
+   ],
+   "110": [
+    1.34,
+    1.81,
+    3.96
+   ],
+   "120": [
+    1.04,
+    1.56,
+    3.75
+   ],
+   "130": [
+    1.0,
+    1.53,
+    3.75
+   ],
+   "140": [
+    1.35,
+    1.76,
+    3.88
+   ],
+   "150": [
+    1.48,
+    1.9,
+    4.0
+   ],
+   "160": [
+    1.23,
+    1.73,
+    3.94
+   ],
+   "170": [
+    1.62,
+    1.97,
+    4.1
+   ]
+  },
+  "dense_products": {
+   "surface_m7_L2": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/representations/predictions/surfaces/20260411134726-surface-20260413222639-surface-m7-L2-th0.2.zarr (L0 shape [18946,8174,8174] = 2.4um L2 grid, chunks 192^3, blosc zstd)",
+   "surface_recto_L0": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/representations/predictions/surfaces/20260411134726-surface-20260413141734-surface-recto-2um-ps256-L0-th0.45.zarr (+ .normal-grids/) (L0 [75784,32693,32693], chunks 256^3)",
+   "lasagna_L2": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHercParis4/representations/predictions/lasagna/20260411134726-lasagna-20260419180421-L2/ (cos L3/L4/L5, grad_mag, nx, ny; base_shape = full 2.4um volume)",
+   "fibers": [
+    "PHercParis4/representations/predictions/fibers/20260411134726-fibers-20260801084232-L1/",
+    "PHercParis4/representations/predictions/fibers/20260411134726-fibers-20260915212757-L1/ (presence/nx/ny at L3,L4)"
+   ],
+   "ink3d": "PHercParis4/representations/predictions/ink-3d/20260411134726-ink3d-20260428123845-v3-78k-fullsup.zarr (L0 = full 2.4um)",
+   "umbilicus": "PHercParis4/representations/umbilicus/20260411134726-umbilicus-20260524235033.json (10690 B, 146 pts, z 2252-72960; sha256 5759e460...; identical points x4 to dl.ash2txt.org spiral_datasets/PHercParis4/umbilicus.json which is in 9.6 um units)",
+   "core_chunk_probe": {
+    "method": "HTTP HEAD of the chunk containing the umbilicus (r=0), r=0.75 mm (two sides), r=5 mm and r=20 mm, at z = 50/80/110/140/160 mm. Byte sizes only; contents not read. Compressed chunk sizes of 16 kB-4.2 MB (vs a few kB for a constant chunk) indicate non-constant content.",
+    "results": {
+     "surface_m7_L2": [
+      [
+       50,
+       0,
+       440554
+      ],
+      [
+       50,
+       0.75,
+       440554
+      ],
+      [
+       50,
+       0.75,
+       474626
+      ],
+      [
+       50,
+       5,
+       581351
+      ],
+      [
+       50,
+       20,
+       431217
+      ],
+      [
+       80,
+       0,
+       233268
+      ],
+      [
+       80,
+       0.75,
+       233268
+      ],
+      [
+       80,
+       0.75,
+       233268
+      ],
+      [
+       80,
+       5,
+       277305
+      ],
+      [
+       80,
+       20,
+       349881
+      ],
+      [
+       110,
+       0,
+       250664
+      ],
+      [
+       110,
+       0.75,
+       250664
+      ],
+      [
+       110,
+       0.75,
+       250664
+      ],
+      [
+       110,
+       5,
+       278354
+      ],
+      [
+       110,
+       20,
+       49306
+      ],
+      [
+       140,
+       0,
+       187396
+      ],
+      [
+       140,
+       0.75,
+       187396
+      ],
+      [
+       140,
+       0.75,
+       390863
+      ],
+      [
+       140,
+       5,
+       309779
+      ],
+      [
+       140,
+       20,
+       321795
+      ],
+      [
+       160,
+       0,
+       157797
+      ],
+      [
+       160,
+       0.75,
+       157797
+      ],
+      [
+       160,
+       0.75,
+       389386
+      ],
+      [
+       160,
+       5,
+       345065
+      ],
+      [
+       160,
+       20,
+       55327
+      ]
+     ],
+     "surface_recto_L0_lvl2": [
+      [
+       50,
+       0,
+       1602971
+      ],
+      [
+       50,
+       0.75,
+       1602971
+      ],
+      [
+       50,
+       0.75,
+       1602971
+      ],
+      [
+       50,
+       5,
+       1845822
+      ],
+      [
+       50,
+       20,
+       1514812
+      ],
+      [
+       80,
+       0,
+       1205411
+      ],
+      [
+       80,
+       0.75,
+       1205411
+      ],
+      [
+       80,
+       0.75,
+       1205411
+      ],
+      [
+       80,
+       5,
+       1089101
+      ],
+      [
+       80,
+       20,
+       1533032
+      ],
+      [
+       110,
+       0,
+       795914
+      ],
+      [
+       110,
+       0.75,
+       795914
+      ],
+      [
+       110,
+       0.75,
+       795914
+      ],
+      [
+       110,
+       5,
+       973513
+      ],
+      [
+       110,
+       20,
+       560192
+      ],
+      [
+       140,
+       0,
+       938765
+      ],
+      [
+       140,
+       0.75,
+       938765
+      ],
+      [
+       140,
+       0.75,
+       938765
+      ],
+      [
+       140,
+       5,
+       828696
+      ],
+      [
+       140,
+       20,
+       1145921
+      ],
+      [
+       160,
+       0,
+       1058250
+      ],
+      [
+       160,
+       0.75,
+       1058250
+      ],
+      [
+       160,
+       0.75,
+       1058250
+      ],
+      [
+       160,
+       5,
+       1141450
+      ],
+      [
+       160,
+       20,
+       "404"
+      ]
+     ],
+     "lasagna_cos_L3": [
+      [
+       50,
+       0,
+       262160
+      ],
+      [
+       50,
+       0.75,
+       262160
+      ],
+      [
+       50,
+       0.75,
+       262160
+      ],
+      [
+       50,
+       5,
+       262160
+      ],
+      [
+       50,
+       20,
+       257067
+      ],
+      [
+       80,
+       0,
+       206481
+      ],
+      [
+       80,
+       0.75,
+       260098
+      ],
+      [
+       80,
+       0.75,
+       206481
+      ],
+      [
+       80,
+       5,
+       262160
+      ],
+      [
+       80,
+       20,
+       259475
+      ],
+      [
+       110,
+       0,
+       232815
+      ],
+      [
+       110,
+       0.75,
+       223602
+      ],
+      [
+       110,
+       0.75,
+       232815
+      ],
+      [
+       110,
+       5,
+       228112
+      ],
+      [
+       110,
+       20,
+       "404"
+      ],
+      [
+       140,
+       0,
+       252998
+      ],
+      [
+       140,
+       0.75,
+       255200
+      ],
+      [
+       140,
+       0.75,
+       252998
+      ],
+      [
+       140,
+       5,
+       232013
+      ],
+      [
+       140,
+       20,
+       227988
+      ],
+      [
+       160,
+       0,
+       233537
+      ],
+      [
+       160,
+       0.75,
+       233537
+      ],
+      [
+       160,
+       0.75,
+       251644
+      ],
+      [
+       160,
+       5,
+       256008
+      ],
+      [
+       160,
+       20,
+       "404"
+      ]
+     ],
+     "fibers0915_presence_L3": [
+      [
+       50,
+       0,
+       79683
+      ],
+      [
+       50,
+       0.75,
+       83910
+      ],
+      [
+       50,
+       0.75,
+       79683
+      ],
+      [
+       50,
+       5,
+       82475
+      ],
+      [
+       50,
+       20,
+       132506
+      ],
+      [
+       80,
+       0,
+       15878
+      ],
+      [
+       80,
+       0.75,
+       48426
+      ],
+      [
+       80,
+       0.75,
+       15878
+      ],
+      [
+       80,
+       5,
+       68482
+      ],
+      [
+       80,
+       20,
+       107378
+      ],
+      [
+       110,
+       0,
+       25714
+      ],
+      [
+       110,
+       0.75,
+       26331
+      ],
+      [
+       110,
+       0.75,
+       25714
+      ],
+      [
+       110,
+       5,
+       83540
+      ],
+      [
+       110,
+       20,
+       "404"
+      ],
+      [
+       140,
+       0,
+       35461
+      ],
+      [
+       140,
+       0.75,
+       44635
+      ],
+      [
+       140,
+       0.75,
+       35461
+      ],
+      [
+       140,
+       5,
+       57845
+      ],
+      [
+       140,
+       20,
+       100930
+      ],
+      [
+       160,
+       0,
+       16013
+      ],
+      [
+       160,
+       0.75,
+       16013
+      ],
+      [
+       160,
+       0.75,
+       46746
+      ],
+      [
+       160,
+       5,
+       63392
+      ],
+      [
+       160,
+       20,
+       "404"
+      ]
+     ],
+     "fibers0801_presence_L3": [
+      [
+       50,
+       0,
+       203023
+      ],
+      [
+       50,
+       0.75,
+       184246
+      ],
+      [
+       50,
+       0.75,
+       203023
+      ],
+      [
+       50,
+       5,
+       135317
+      ],
+      [
+       50,
+       20,
+       236565
+      ],
+      [
+       80,
+       0,
+       57727
+      ],
+      [
+       80,
+       0.75,
+       153125
+      ],
+      [
+       80,
+       0.75,
+       57727
+      ],
+      [
+       80,
+       5,
+       115127
+      ],
+      [
+       80,
+       20,
+       223278
+      ],
+      [
+       110,
+       0,
+       63455
+      ],
+      [
+       110,
+       0.75,
+       94545
+      ],
+      [
+       110,
+       0.75,
+       63455
+      ],
+      [
+       110,
+       5,
+       111999
+      ],
+      [
+       110,
+       20,
+       "404"
+      ],
+      [
+       140,
+       0,
+       118857
+      ],
+      [
+       140,
+       0.75,
+       135071
+      ],
+      [
+       140,
+       0.75,
+       118857
+      ],
+      [
+       140,
+       5,
+       124647
+      ],
+      [
+       140,
+       20,
+       215517
+      ],
+      [
+       160,
+       0,
+       37149
+      ],
+      [
+       160,
+       0.75,
+       37149
+      ],
+      [
+       160,
+       0.75,
+       107169
+      ],
+      [
+       160,
+       5,
+       174088
+      ],
+      [
+       160,
+       20,
+       "404"
+      ]
+     ],
+     "ink3d_lvl2": [
+      [
+       50,
+       0,
+       4214966
+      ],
+      [
+       50,
+       0.75,
+       4214966
+      ],
+      [
+       50,
+       0.75,
+       4214966
+      ],
+      [
+       50,
+       5,
+       4320365
+      ],
+      [
+       50,
+       20,
+       5422315
+      ],
+      [
+       80,
+       0,
+       3565463
+      ],
+      [
+       80,
+       0.75,
+       3565463
+      ],
+      [
+       80,
+       0.75,
+       3565463
+      ],
+      [
+       80,
+       5,
+       4287662
+      ],
+      [
+       80,
+       20,
+       3696839
+      ],
+      [
+       110,
+       0,
+       3059496
+      ],
+      [
+       110,
+       0.75,
+       3059496
+      ],
+      [
+       110,
+       0.75,
+       3059496
+      ],
+      [
+       110,
+       5,
+       3776448
+      ],
+      [
+       110,
+       20,
+       1112174
+      ],
+      [
+       140,
+       0,
+       2627515
+      ],
+      [
+       140,
+       0.75,
+       2627515
+      ],
+      [
+       140,
+       0.75,
+       2627515
+      ],
+      [
+       140,
+       5,
+       3997155
+      ],
+      [
+       140,
+       20,
+       4179797
+      ],
+      [
+       160,
+       0,
+       2938412
+      ],
+      [
+       160,
+       0.75,
+       2938412
+      ],
+      [
+       160,
+       0.75,
+       2938412
+      ],
+      [
+       160,
+       5,
+       3363379
+      ],
+      [
+       160,
+       20,
+       "404"
+      ]
+     ]
+    }
+   },
+   "no_products_on_20260608103018": "No representations/ product exists on the 1.129 um volume; it has only per-segment surface volumes and 1 um ink TIFFs for the 20260623 strip set. Every dense product is on 20260411134726 only."
+  },
+  "spiral_inputs": {
+   "host": "https://dl.ash2txt.org/datasets/spiral_datasets/PHercParis4/",
+   "files": {
+    "abs_winding.json": "19.6 KiB, sha256 4e566731..., 59 absolute-winding points, winding range 10-63 (none <10)",
+    "umbilicus.json": "12.1 KiB",
+    "relative_windings.json": "755.4 KiB",
+    "same_windings.json": "1.6 MiB",
+    "fiber_directions.npz": "2.6 GiB",
+    "verified_patches/": "89237 entries; none named w000-w009 (only e.g. 0000_w010_spliced_flatboi_...)",
+    "outer_shell/": "x/y/z.tif 3.5 MiB each",
+    "winding_inference/": "shard_0..",
+    "lasagna_inputs/": "3 zarrs + mask_report.json, verification.json",
+    "eval_fibers/": "dir"
+   },
+   "fitted_windings_published": false,
+   "note": "Only the fit's inputs are published. The per-winding output meshes wNNN / wNNN_spliced for w000-w009 are not in the bucket or on this host listing."
+  }
+ },
+ "q2_area_w000_009": {
+  "method": "Per 10 mm z bin of the 20260701 w010-027 2.4 um mesh: r_in = p5 of vertex radius (proxy for w010), r_med = p50. Model windings k=0..9 as r_k = r_in*(k+0.5)/10.5 (innermost wraps umbilicus, uniform pitch inside w010). Area = tau * sum_z 2*pi*dz*sum_k r_k, with tortuosity tau calibrated so that 18 windings at r_med reproduce the mesh area of w010-027. Range: r_k proportional to k (low) or k+1 (high).",
+  "abs_winding_check": "abs_winding.json gives r(w) ~ 0.222 mm/winding * w - 0.43 mm over w10-63 (59 pts, mostly one z); w010 at r=1.46 mm, z=153 mm. Mesh gives w010-027 p5 r = 0.70-1.62 mm per z bin. So w000-009 lie within r ~0.7-1.6 mm of the umbilicus: implied inner pitch ~0.07-0.15 mm (30-65 vox at 2.4 um, 60-140 vox at 1.129 um), tighter than the ~0.22 mm pitch outside. Possibly compressed or damaged core; unverified.",
+  "estimates_cm2": {
+   "20260701_based": {
+    "tau": 0.982,
+    "A_inner_cm2_full_mesh_z": 72.9,
+    "A_inner_cm2_written_z38_163": 58.2,
+    "A_inner_cm2_in_1129_z67_135": 30.8,
+    "range_cm2": [
+     65.6,
+     80.2
+    ],
+    "ratio_check_sum_r": 93.8,
+    "per_z_r_mm_p1_p5_p50": {
+     "20": [
+      1.09,
+      1.44,
+      3.28
+     ],
+     "30": [
+      1.11,
+      1.6,
+      3.51
+     ],
+     "40": [
+      0.93,
+      1.38,
+      3.46
+     ],
+     "50": [
+      0.86,
+      1.21,
+      3.16
+     ],
+     "60": [
+      0.82,
+      1.32,
+      3.47
+     ],
+     "70": [
+      1.33,
+      1.76,
+      3.68
+     ],
+     "80": [
+      1.03,
+      1.49,
+      3.35
+     ],
+     "90": [
+      0.7,
+      1.11,
+      3.09
+     ],
+     "100": [
+      0.72,
+      1.24,
+      3.38
+     ],
+     "110": [
+      1.34,
+      1.81,
+      3.96
+     ],
+     "120": [
+      1.04,
+      1.56,
+      3.75
+     ],
+     "130": [
+      1.0,
+      1.53,
+      3.75
+     ],
+     "140": [
+      1.35,
+      1.76,
+      3.88
+     ],
+     "150": [
+      1.48,
+      1.9,
+      4.0
+     ],
+     "160": [
+      1.23,
+      1.73,
+      3.94
+     ],
+     "170": [
+      1.62,
+      1.97,
+      4.1
+     ]
+    }
+   },
+   "20260623_based": {
+    "tau": 0.913,
+    "A_inner_cm2_full_mesh_z": 48.8,
+    "A_inner_cm2_written_z38_163": 48.8,
+    "A_inner_cm2_in_1129_z67_135": 28.9,
+    "range_cm2": [
+     43.9,
+     53.6
+    ],
+    "ratio_check_sum_r": 60.7,
+    "per_z_r_mm_p1_p5_p50": {
+     "60": [
+      1.39,
+      1.8,
+      3.6
+     ],
+     "70": [
+      1.34,
+      1.79,
+      3.67
+     ],
+     "80": [
+      1.04,
+      1.5,
+      3.35
+     ],
+     "90": [
+      0.7,
+      1.11,
+      3.08
+     ],
+     "100": [
+      0.73,
+      1.23,
+      3.37
+     ],
+     "110": [
+      1.36,
+      1.83,
+      3.96
+     ],
+     "120": [
+      1.04,
+      1.57,
+      3.74
+     ],
+     "130": [
+      1.03,
+      1.55,
+      3.74
+     ],
+     "140": [
+      1.35,
+      1.76,
+      3.87
+     ],
+     "150": [
+      1.49,
+      1.92,
+      3.99
+     ],
+     "160": [
+      1.37,
+      1.8,
+      3.87
+     ]
+    }
+   }
+  },
+  "summary": "w000-w009 total ~66-80 cm2 over z 28.7-172.9 mm (~58 cm2 inside the written region z 38.4-163.2 mm); w004-009 alone ~84% of that (~55-67 cm2 full z).",
+  "inside_1129_footprint": {
+   "answer": "Partly. In x,y the umbilicus stays >= 3.9 mm inside the 1.129 um footprint over its z range, so the whole r < 1.6 mm core is in x,y. In z the footprint covers only 67.4-135.3 mm, i.e. ~54% of the written region. Inner area inside the footprint ~29-31 cm2.",
+   "detail": {
+    "z_vox_range": [
+     28078,
+     56359
+    ],
+    "umb_x": [
+     16572,
+     19632
+    ],
+    "umb_y": [
+     13472,
+     17768
+    ],
+    "min_margin_mm": 3.92
+   }
+  }
+ },
+ "q3_cost": {
+  "tracing": {
+   "official_whole_scroll_tool": "villa/spiral-fitting fit_spiral.py. Tutorial: 'You'll need Python >= 3.14 and an NVIDIA GPU'; the dataset is ~90 GB. Not runnable in a 4-CPU no-GPU container.",
+   "cpu_alternative": "VC3D (volume-cartographer) patch growth (GrowPatch / vc_grow_seg_from_seed) seeded at w010's inner edge on the surface_m7 L2 prediction, with lasagna cos/nx/ny + fibers as guides. VC3D binaries are not installed in this container (which vc_render_tifxyz: none); a build is needed.",
+   "inputs_streamed": {
+    "surface_m7_L2_core": "core cylinder r<1.6 mm follows the umbilicus: ~2x2 chunks of 192^3 (1.84 mm) per 1.84 mm z slab, ~68 slabs x 4 x ~0.25-0.45 MB ~= 70-120 MB",
+    "lasagna_cos_L3": "64^3 chunks at 19.2 um (1.23 mm): ~3x3 x 102 slabs x ~0.25 MB ~= 230 MB",
+    "fibers_presence_L3": "same grid, ~16-200 kB chunks ~= 50-150 MB",
+    "raw_2.4um_L2": "~1.6 GB for the core cylinder z 38-163 mm",
+    "raw_2.4um_L0": "~100 GB (not feasible to stage; stream windows only)",
+    "raw_1.129um_L0": "~430 GB for z 67-135 mm (not feasible; L2 ~7 GB)"
+   },
+   "cpu_h": "Unmeasured. Order of magnitude: patch growth on L2 predictions is minutes-hours of CPU per 10 cm2 in VC3D; the dominant cost is human/automated verification of winding assignment in a ~0.1 mm pitch core. Estimate 4-40 CPU-h plus validation; risk high.",
+   "disk": "< 1 GB staged (predictions + L2 windows), mesh output ~50-150 MB"
+  },
+  "render": {
+   "surface_volume_2.4um_L0_31_layers": "0.54 GB/cm2 (recon) -> ~30-36 GB for w004-009 full z (~55-67 cm2); must stream in windows",
+   "ink_9um_input_L2_21_slices": "23 MB/cm2 -> ~1.3-1.5 GB",
+   "1.129um_L1": "~4.5x the 2.4 um L0 per cm2 -> only small windows feasible"
+  },
+  "ink_checkpoints": {
+   "ink_9um step-075000": "public (HF scrollprize/ink_9um, updated 2026-08-14). Measured here (logs/c3/README.md): 2048x2048 px at 9.362 um (3.68 cm2) in 8.8 min wall no-TTA on 4 cores under contention -> ~2.4 min/cm2, ~0.16 CPU-h/cm2 -> w004-009 ~55-67 cm2 ~= 2.2-2.7 h wall (~9-11 CPU-h). Caveat: trained on all 8 labelled Paris 4 segments.",
+   "20260417190342 new_canon_autoresearch_recipe (2.4 um)": "HF scrollprize/ink_canonical_2um card states Recipe new_canon_autoresearch_recipe, ResNet-152 3D encoder + 3D decoder, r152_3ddec_v2_l5_epoch13.ckpt (public, MIT). Linking it to run id 20260417190342 rests on the recipe-name match only. CPU cost unmeasured; estimate ~5-20 CPU-h/cm2 (ResNet-152 3D at tile256 stride128 on 2.4 um) -> 300-1300 CPU-h for the strip; feasible only on a few 2x2 cm windows.",
+   "20260709123958 (1 um)": "No public card or weights: HF API search for '20260709123958' returns none; none of the 43 scrollprize models is a 1 um ink model (list checked 2026-09-26). Not runnable."
+  }
+ },
+ "q4_official_statements": [
+  {
+   "quote": "The expected title region has shown no detectable ink so far — possibly a different ink, and the top rows are physically missing — so finding it may take better methods, higher resolution, or looking somewhere new.",
+   "url": "https://scrollprize.org/prizes",
+   "fetched_utc": "2026-09-26T10:13:11Z",
+   "sha256_prefix": "9d2fb28d0493682f"
+  },
+  {
+   "quote": "The title often follows the end of the primary text, in a subsequent column that can be otherwise blank. When the final column of the primary text is short, it may also appear below this last column.",
+   "url": "https://scrollprize.substack.com/p/30k-first-title-prize",
+   "via": "logs/p4/recon.json"
+  },
+  {
+   "quote": "We know from the opened ones that Herculaneum scrolls often contain a final title at the end of the roll.",
+   "url": "https://scrollprize.substack.com/p/30k-first-title-prize",
+   "via": "logs/p4/recon.json"
+  },
+  {
+   "note": "No official page gives a winding number, radius, segment id or coordinates for the title region, nor states whether it lies inward of w010. 'Inward of the end of the text' is the orchestrator's/DECL-P4-2 derivation, not an organizer statement."
+  }
+ ],
+ "gaps": [
+  "Chunk HEAD sizes show non-constant content, not that sheets are resolved in the core; contents not read.",
+  "The p5 radius is a proxy for w010; per-vertex winding labels were not available.",
+  "Inner pitch 0.07-0.15 mm is inferred, not measured; the core may be crushed, so w000-009 may not be traceable at 2.4 um.",
+  "The 2.4 um ResNet-152 CPU cost is an estimate, not a benchmark.",
+  "abs_winding points cluster at one z (~150 mm); r(w) fit is local."
+ ]
+}
