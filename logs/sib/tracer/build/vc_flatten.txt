@@ -1,0 +1,20 @@
+vc_flatten - ABF++ mesh flattening
+
+Usage:
+  -h [ --help ]          Show this help message
+  -i [ --input ] arg     Input TIFXYZ directory
+  -o [ --output ] arg    Output TIFXYZ directory (default: <input>_flat)
+  --iterations arg (=10) Maximum ABF++ iterations (default: 10)
+  --downsample arg (=1)  Downsample factor for faster computation (1=full, 
+                         2=half, 4=quarter)
+  --lscm-only            Use only LSCM, skip ABF++ angle optimization
+  --no-scale             Don't scale output to match original 3D surface area
+  --uv-only              Only compute and save UV channel, don't create new 
+                         surface
+
+
+Examples:
+  vc_flatten /path/to/segment
+  vc_flatten -i segment -o segment_flat --iterations 20
+  vc_flatten segment --lscm-only
+  vc_flatten segment --uv-only  # Store UV channel without rasterizing

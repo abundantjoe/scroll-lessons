@@ -1,0 +1,436 @@
+[2026-09-25T18:25:37+00:00] start build SHA=41701aa0eaa1aa765523db3f9f972b5830abf549 image=ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f targets=vc_render_tifxyz vc_grow_seg_from_seed vc_grow_seg_from_segments vc_tifxyz_selfcross vc_calc_surface_metrics vc_flatten vc_gen_normalgrids
+-- The C compiler identification is GNU 15.2.0
+-- The CXX compiler identification is GNU 15.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+-- Found Threads: TRUE
+-- Found AMD headers in: /usr/include/suitesparse
+-- Found AMD library: /usr/lib/x86_64-linux-gnu/libamd.so
+-- Found CAMD headers in: /usr/include/suitesparse
+-- Found CAMD library: /usr/lib/x86_64-linux-gnu/libcamd.so
+-- Found CCOLAMD headers in: /usr/include/suitesparse
+-- Found CCOLAMD library: /usr/lib/x86_64-linux-gnu/libccolamd.so
+-- Found CHOLMOD headers in: /usr/include/suitesparse
+-- Found CHOLMOD library: /usr/lib/x86_64-linux-gnu/libcholmod.so
+-- Found COLAMD headers in: /usr/include/suitesparse
+-- Found COLAMD library: /usr/lib/x86_64-linux-gnu/libcolamd.so
+-- Found SPQR headers in: /usr/include/suitesparse
+-- Found SPQR library: /usr/lib/x86_64-linux-gnu/libspqr.so
+-- Found Config headers in: /usr/include/suitesparse
+-- Found Config library: /usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so
+-- Found Intel Thread Building Blocks (TBB) library (2022.3 / ) include location: . Assuming SuiteSparseQR was compiled with TBB.
+-- Looking for shm_open in rt
+-- Looking for shm_open in rt - found
+-- Adding librt to SuiteSparse_config libraries (required on Linux & Unix [not OSX] if SuiteSparse is compiled with timing).
+-- Could NOT find METIS (missing: METIS_INCLUDE_DIR) 
+-- Looking for cholmod_metis
+-- Looking for cholmod_metis - found
+-- Found SuiteSparse: /usr/include/suitesparse (found suitable version "7.12.2", minimum required is "7.11.0") found components: AMD CAMD CCOLAMD CHOLMOD COLAMD SPQR Config
+-- Found required Ceres dependency: Eigen version 3.4.0 in /usr/share/eigen3/cmake
+-- Found required Ceres dependency: glog
+-- Found required Ceres dependency: gflags
+-- Found Ceres version: 2.2.0 installed in: /usr with components: [EigenSparse, SparseLinearAlgebraLibrary, LAPACK, SuiteSparse, SchurSpecializations]
+-- Found OpenCV: /usr (found version "4.10.0")
+-- Found nlohmann_json: /usr/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake (found version "3.11.3")
+-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "8.18.0")
+-- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.7.0")
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.3.1")
+-- Found PkgConfig: /usr/bin/pkg-config (found version "2.5.1")
+-- Checking for module 'libzstd'
+--   Found libzstd, version 1.5.7
+-- Checking for module 'liblz4'
+--   Found liblz4, version 1.10.0
+-- Targeting Ninja
+-- Using /usr/bin/g++ compiler.
+-- Boost include dirs: /usr/include
+-- Boost libraries:    
+-- Using gcc version 4 or later. Adding -frounding-math
+-- Found OpenMP_C: -fopenmp (found version "4.5")
+-- Found OpenMP_CXX: -fopenmp (found version "4.5")
+-- Found OpenMP: TRUE (found version "4.5")
+-- Creating target: igl::core (igl_core)
+-- Checking for module 'avahi-client'
+--   Found avahi-client, version 0.8
+-- Configuring done (6.0s)
+-- Generating done (0.3s)
+-- Build files have been written to: /src/build/hrc-release-gcc
+
+real	0m6.329s
+user	0m3.640s
+sys	0m1.469s
+[1/123] Creating directories for 'libbacktrace_build'
+[2/123] Automatic MOC and UIC for target vc_delta3d
+[3/123] Automatic MOC and UIC for target c3d
+[4/123] Building CXX object _deps/vc_delta3d-build/CMakeFiles/vc_delta3d.dir/vc_delta3d_autogen/mocs_compilation.cpp.o
+[5/123] Building CXX object libs/c3d/CMakeFiles/c3d.dir/c3d_autogen/mocs_compilation.cpp.o
+[6/123] Performing download step (git clone) for 'libbacktrace_build'
+Cloning into 'libbacktrace_build'...
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+[7/123] Performing disconnected update step for 'libbacktrace_build'
+[8/123] No patch_disconnected step for 'libbacktrace_build'
+[9/123] Building C object libs/c3d/CMakeFiles/c3d.dir/c3d.c.o
+[10/123] Building CXX object _deps/vc_delta3d-build/CMakeFiles/vc_delta3d.dir/src/codec.cpp.o
+[11/123] Linking CXX shared library libs/c3d/libc3d.so
+[12/123] Performing configure step for 'libbacktrace_build'
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/install-sh -c -d
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking for ranlib... ranlib
+checking for gawk... (cached) mawk
+checking for dwz... no
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/x86_64-linux-gnu-ld
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /usr/bin/x86_64-linux-gnu-ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for ar... ar
+checking for strip... strip
+checking for ranlib... (cached) ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking unwind.h usability... yes
+checking unwind.h presence... yes
+checking for unwind.h... yes
+checking for _Unwind_Backtrace... yes
+checking for -funwind-tables option... yes
+checking for -frandom-seed=string option... yes
+checking whether gcc supports -W... yes
+checking whether gcc supports -Wall... yes
+checking whether gcc supports -Wwrite-strings... yes
+checking whether gcc supports -Wstrict-prototypes... yes
+checking whether gcc supports -Wmissing-prototypes... yes
+checking whether gcc supports -Wold-style-definition... yes
+checking whether gcc supports -Wmissing-format-attribute... yes
+checking whether gcc supports -Wcast-qual... yes
+checking whether gcc supports -Wattributes... yes
+checking whether gcc supports -Wunknown-attributes... no
+checking whether gcc supports -Wpointer-arith... yes
+checking for _Unwind_GetIPInfo... yes
+checking __sync extensions... yes
+checking __atomic extensions... yes
+checking output filetype... elf64
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking for mmap... yes
+checking link.h usability... yes
+checking link.h presence... yes
+checking for link.h... yes
+checking sys/link.h usability... no
+checking sys/link.h presence... no
+checking for sys/link.h... no
+checking for dl_iterate_phdr... yes
+checking mach-o/dyld.h usability... no
+checking mach-o/dyld.h presence... no
+checking for mach-o/dyld.h... no
+checking sys/ldr.h usability... no
+checking sys/ldr.h presence... no
+checking for sys/ldr.h... no
+checking windows.h usability... no
+checking windows.h presence... no
+checking for windows.h... no
+checking for tlhelp32.h... no
+checking for fcntl... yes
+checking whether strnlen is declared... yes
+checking whether getpagesize is declared... yes
+checking for lstat... yes
+checking for readlink... yes
+checking for getexecname... no
+checking whether _pgmptr is declared... no
+checking for KERN_PROC... no
+checking for KERN_PROG_ARGS... no
+checking for clock_gettime... yes
+checking whether -pthread is supported... yes
+checking whether -gdwarf-5 is supported... yes
+checking for compress in -lz... yes
+checking whether --build-id is supported... yes
+checking whether --compress-debug-sections=zlib-gnu is supported... yes
+checking whether --compress-debug-sections=zlib-gabi is supported... yes
+checking for ZSTD_compress in -lzstd... yes
+checking whether --compress-debug-sections=zstd is supported... yes
+checking for objcopy... objcopy
+checking for readelf... readelf
+checking whether objcopy supports --strip-debug... yes
+checking whether objcopy supports debuglink... yes
+checking for dsymutil... dsymutil
+checking for nm... /usr/bin/nm -B
+checking for xz... xz
+checking for comm... comm
+checking for lzma_auto_decoder in -llzma... yes
+checking whether tests can run... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating backtrace-supported.h
+config.status: creating install-debuginfo-for-buildid.sh
+config.status: creating config.h
+config.status: executing libtool commands
+config.status: executing default commands
+[13/123] Building CXX object utils/CMakeFiles/utils.dir/src/zarr.cpp.o
+[14/123] Building CXX object utils/CMakeFiles/utils.dir/src/Json.cpp.o
+[15/123] Performing build step for 'libbacktrace_build'
+make  all-am
+make[1]: Entering directory '/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build-build'
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=atomic.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o atomic.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/atomic.c
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=dwarf.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o dwarf.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/dwarf.c
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=fileline.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o fileline.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/fileline.c
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=posix.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o posix.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/posix.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=dwarf.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/dwarf.c  -fPIC -DPIC -o dwarf.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=atomic.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/atomic.c  -fPIC -DPIC -o atomic.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=fileline.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/fileline.c  -fPIC -DPIC -o fileline.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=posix.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/posix.c  -fPIC -DPIC -o posix.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=print.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o print.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/print.c
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=sort.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o sort.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/sort.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=print.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/print.c  -fPIC -DPIC -o print.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=sort.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/sort.c  -fPIC -DPIC -o sort.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=state.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o state.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/state.c
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=backtrace.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o backtrace.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/backtrace.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=state.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/state.c  -fPIC -DPIC -o state.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=backtrace.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/backtrace.c  -fPIC -DPIC -o backtrace.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=simple.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o simple.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/simple.c
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=elf.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o elf.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/elf.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=elf.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/elf.c  -fPIC -DPIC -o elf.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=simple.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/simple.c  -fPIC -DPIC -o simple.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=mmapio.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o mmapio.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/mmapio.c
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=mmap.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2 -c -o mmap.lo /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/mmap.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=mmapio.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/mmapio.c  -fPIC -DPIC -o mmapio.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=mmap.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g -O2 -c /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/mmap.c  -fPIC -DPIC -o mmap.o
+/bin/bash ./libtool  --tag=CC   --mode=link gcc -funwind-tables -frandom-seed=libbacktrace.la -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g -O2   -o libbacktrace.la -rpath /src/build/hrc-release-gcc/_deps/libbacktrace-install/lib atomic.lo dwarf.lo fileline.lo posix.lo print.lo sort.lo state.lo backtrace.lo simple.lo elf.lo mmapio.lo mmap.lo 
+libtool: link: ar --plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so cru .libs/libbacktrace.a  atomic.o dwarf.o fileline.o posix.o print.o sort.o state.o backtrace.o simple.o elf.o mmapio.o mmap.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib --plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so .libs/libbacktrace.a
+libtool: link: ( cd ".libs" && rm -f "libbacktrace.la" && ln -s "../libbacktrace.la" "libbacktrace.la" )
+make[1]: Leaving directory '/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build-build'
+[16/123] Building CXX object utils/CMakeFiles/utils.dir/src/aws_auth.cpp.o
+[17/123] Performing install step for 'libbacktrace_build'
+make[1]: Entering directory '/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build-build'
+ /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/install-sh -c -d '/src/build/hrc-release-gcc/_deps/libbacktrace-install/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   libbacktrace.la '/src/build/hrc-release-gcc/_deps/libbacktrace-install/lib'
+libtool: install: /usr/bin/install -c .libs/libbacktrace.lai /src/build/hrc-release-gcc/_deps/libbacktrace-install/lib/libbacktrace.la
+libtool: install: /usr/bin/install -c .libs/libbacktrace.a /src/build/hrc-release-gcc/_deps/libbacktrace-install/lib/libbacktrace.a
+libtool: install: chmod 644 /src/build/hrc-release-gcc/_deps/libbacktrace-install/lib/libbacktrace.a
+libtool: install: ranlib --plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so /src/build/hrc-release-gcc/_deps/libbacktrace-install/lib/libbacktrace.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /src/build/hrc-release-gcc/_deps/libbacktrace-install/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /src/build/hrc-release-gcc/_deps/libbacktrace-install/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/install-sh -c -d '/src/build/hrc-release-gcc/_deps/libbacktrace-install/include'
+ /usr/bin/install -c -m 644 /src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build/backtrace.h backtrace-supported.h '/src/build/hrc-release-gcc/_deps/libbacktrace-install/include'
+make[1]: Leaving directory '/src/build/hrc-release-gcc/_deps/libbacktrace/src/libbacktrace_build-build'
+[18/123] Linking CXX static library _deps/vc_delta3d-build/libvc_delta3d.a
+[19/123] Completed 'libbacktrace_build'
+[20/123] Building CXX object utils/CMakeFiles/utils_c3d_codec.dir/src/c3d_codec.cpp.o
+[21/123] Linking CXX shared library utils/libutils_c3d_codec.so
+[22/123] Building CXX object utils/CMakeFiles/utils.dir/src/http_fetch.cpp.o
+[23/123] Linking CXX shared library utils/libutils.so
+[24/123] Automatic MOC and UIC for target vc_core
+[25/123] Building CXX object core/CMakeFiles/vc_common_pch.dir/cmake_pch.hxx.gch
+[26/123] Building CXX object core/CMakeFiles/vc_core.dir/vc_core_autogen/mocs_compilation.cpp.o
+[27/123] Building CXX object core/CMakeFiles/vc_common_pch.dir/vc_common_pch.cpp.o
+[28/123] Building CXX object core/CMakeFiles/vc_core.dir/src/NormalGridVolume.cpp.o
+[29/123] Building CXX object core/CMakeFiles/vc_core.dir/src/GridStore.cpp.o
+[30/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Segmentation.cpp.o
+[31/123] Building CXX object core/CMakeFiles/vc_core.dir/src/normalgridtools.cpp.o
+[32/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Volume.cpp.o
+[33/123] Building CXX object core/CMakeFiles/vc_core.dir/src/VolumePkg.cpp.o
+[34/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Logging.cpp.o
+[35/123] Building CXX object core/CMakeFiles/vc_core.dir/src/CrashHandler.cpp.o
+/src/core/src/CrashHandler.cpp: In function 'void {anonymous}::crashHandler(int, siginfo_t*, void*)':
+/src/core/src/CrashHandler.cpp:867:16: warning: ignoring return value of 'ssize_t write(int, const void*, size_t)' declared with attribute 'warn_unused_result' [-Wunused-result]
+  867 |         ::write(OUT_FD, msg, sizeof(msg) - 1);
+      |         ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[36/123] Building CXX object core/CMakeFiles/vc_core.dir/src/MemMap.cpp.o
+[37/123] Building CXX object core/CMakeFiles/vc_core.dir/src/UnixSocket.cpp.o
+[38/123] Building CXX object core/CMakeFiles/vc_core.dir/src/PointIndex.cpp.o
+[39/123] Building CXX object core/CMakeFiles/vc_core.dir/src/VolpkgConvert.cpp.o
+[40/123] Building CXX object core/CMakeFiles/vc_core.dir/src/VoxelSizeMetadata.cpp.o
+[41/123] Building CXX object core/CMakeFiles/vc_core.dir/src/SparseChunkSpool.cpp.o
+[42/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Compositing.cpp.o
+[43/123] Building CXX object core/CMakeFiles/vc_core.dir/src/SurfacePatchIndex.cpp.o
+[44/123] Building CXX object core/CMakeFiles/vc_core.dir/src/AffineTransform.cpp.o
+[45/123] Building CXX object core/CMakeFiles/vc_core.dir/src/PlaneSurface.cpp.o
+[46/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Surface.cpp.o
+[47/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Slicing.cpp.o
+[48/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Tiff.cpp.o
+[49/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Render.cpp.o
+[50/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Zarr.cpp.o
+[51/123] Building CXX object core/CMakeFiles/vc_core.dir/src/QuadSurface.cpp.o
+[52/123] Building CXX object core/CMakeFiles/vc_core.dir/src/LoadJson.cpp.o
+[53/123] Building CXX object core/CMakeFiles/vc_core.dir/src/RemoteUrl.cpp.o
+[54/123] Building CXX object core/CMakeFiles/vc_core.dir/src/VcDataset.cpp.o
+[55/123] Building CXX object core/CMakeFiles/vc_core.dir/src/HttpFetch.cpp.o
+[56/123] Building CXX object core/CMakeFiles/vc_core.dir/src/RemoteCacheSettings.cpp.o
+[57/123] Building CXX object core/CMakeFiles/vc_core.dir/src/S3AuthFallback.cpp.o
+[58/123] Building CXX object core/CMakeFiles/vc_core.dir/src/RemoteFileCache.cpp.o
+[59/123] Building CXX object core/CMakeFiles/vc_core.dir/src/PostProcess.cpp.o
+[60/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Geometry.cpp.o
+[61/123] Building CXX object core/CMakeFiles/vc_core.dir/src/PointCollections.cpp.o
+[62/123] Building CXX object core/CMakeFiles/vc_core.dir/src/surface_metrics.cpp.o
+[63/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Thinning.cpp.o
+[64/123] Building CXX object core/CMakeFiles/vc_core.dir/src/Umbilicus.cpp.o
+[65/123] Building CXX object core/CMakeFiles/vc_core.dir/src/ScrollUmbilicus.cpp.o
+[66/123] Building CXX object core/CMakeFiles/vc_core.dir/src/render/ChunkRequestScheduler.cpp.o
+[67/123] Building CXX object core/CMakeFiles/vc_core.dir/src/render/DecodedChunkCacheBudget.cpp.o
+[68/123] Building CXX object core/CMakeFiles/vc_core.dir/src/render/PersistentZarrCacheBudget.cpp.o
+[69/123] Building CXX object core/CMakeFiles/vc_core.dir/src/render/SurfaceCache.cpp.o
+[70/123] Building CXX object core/CMakeFiles/vc_core.dir/src/render/Colormaps.cpp.o
+[71/123] Building CXX object core/CMakeFiles/vc_core.dir/src/render/ChunkedPlaneSampler.cpp.o
+[72/123] Building CXX object core/CMakeFiles/vc_core.dir/src/render/PostProcess.cpp.o
+[73/123] Building CXX object core/CMakeFiles/vc_core.dir/src/render/ChunkCache.cpp.o
+[74/123] Building CXX object core/CMakeFiles/vc_core.dir/src/render/ZarrDownloadBenchmark.cpp.o
+[75/123] Linking CXX static library core/libvc_common_pch.a
+[76/123] Building CXX object core/CMakeFiles/vc_core.dir/Version.cpp.o
+[77/123] Building CXX object core/CMakeFiles/vc_core.dir/src/render/ZarrChunkFetcher.cpp.o
+[78/123] Building CXX object core/CMakeFiles/vc_core.dir/__/apps/src/vc_merge_tifxyz_grid.cpp.o
+[79/123] Linking CXX shared library core/libvc_core.so
+[80/123] Automatic MOC and UIC for target vc_calc_surface_metrics
+[81/123] Automatic MOC and UIC for target vc_tifxyz_selfcross
+[82/123] Automatic MOC and UIC for target vc_gen_normalgrids
+[83/123] Automatic MOC and UIC for target vc_flattening
+[84/123] Building CXX object apps/CMakeFiles/vc_calc_surface_metrics.dir/vc_calc_surface_metrics_autogen/mocs_compilation.cpp.o
+[85/123] Building CXX object apps/CMakeFiles/vc_tifxyz_selfcross.dir/vc_tifxyz_selfcross_autogen/mocs_compilation.cpp.o
+[86/123] Building CXX object core/CMakeFiles/vc_flattening.dir/vc_flattening_autogen/mocs_compilation.cpp.o
+[87/123] Building CXX object apps/CMakeFiles/vc_calc_surface_metrics.dir/src/vc_calc_surface_metrics.cpp.o
+[88/123] Building CXX object apps/CMakeFiles/vc_gen_normalgrids.dir/vc_gen_normalgrids_autogen/mocs_compilation.cpp.o
+[89/123] Building CXX object apps/CMakeFiles/vc_tifxyz_selfcross.dir/src/vc_tifxyz_selfcross.cpp.o
+[90/123] Linking CXX executable bin/vc_tifxyz_selfcross
+[91/123] Building CXX object apps/CMakeFiles/vc_gen_normalgrids.dir/src/vc_gen_normalgrids.cpp.o
+[92/123] Linking CXX executable bin/vc_calc_surface_metrics
+[93/123] Building CXX object apps/CMakeFiles/vc_gen_normalgrids.dir/diffusion/support.cpp.o
+[94/123] Building CXX object core/CMakeFiles/vc_flattening.dir/src/ABFFlattening.cpp.o
+[95/123] Linking CXX executable bin/vc_gen_normalgrids
+[96/123] Linking CXX shared library core/libvc_flattening.so
+[97/123] Automatic MOC and UIC for target vc_flatten
+[98/123] Automatic MOC and UIC for target vc_tracer
+[99/123] Automatic MOC and UIC for target vc_render_tifxyz
+[100/123] Building CXX object apps/CMakeFiles/vc_flatten.dir/vc_flatten_autogen/mocs_compilation.cpp.o
+[101/123] Building CXX object core/CMakeFiles/vc_tracer.dir/vc_tracer_autogen/mocs_compilation.cpp.o
+[102/123] Building CXX object apps/CMakeFiles/vc_flatten.dir/src/vc_flatten.cpp.o
+[103/123] Building CXX object core/CMakeFiles/vc_tracer.dir/src/NeuralTracerConnection.cpp.o
+[104/123] Building CXX object core/CMakeFiles/vc_tracer.dir/src/SurfTrackerData.cpp.o
+[105/123] Building CXX object core/CMakeFiles/vc_tracer.dir/src/growth_strategies/CandidateOrdering.cpp.o
+[106/123] Building CXX object core/CMakeFiles/vc_tracer.dir/src/ChunkedTensor.cpp.o
+[107/123] Building CXX object core/CMakeFiles/vc_tracer.dir/src/growth_strategies/ComponentPruning.cpp.o
+[108/123] Building CXX object core/CMakeFiles/vc_tracer.dir/src/growth_strategies/GrowthConfig.cpp.o
+[109/123] Building CXX object apps/CMakeFiles/vc_render_tifxyz.dir/vc_render_tifxyz_autogen/mocs_compilation.cpp.o
+[110/123] Linking CXX executable bin/vc_flatten
+[111/123] Building CXX object apps/CMakeFiles/vc_render_tifxyz.dir/src/vc_render_tifxyz.cpp.o
+[112/123] Building CXX object core/CMakeFiles/vc_tracer.dir/src/GrowSurface.cpp.o
+[113/123] Building CXX object core/CMakeFiles/vc_tracer.dir/src/GrowPatch.cpp.o
+[114/123] Linking CXX executable bin/vc_render_tifxyz
+[115/123] Linking CXX shared library core/libvc_tracer.so
+[116/123] Automatic MOC and UIC for target vc_grow_seg_from_segments
+[117/123] Automatic MOC and UIC for target vc_grow_seg_from_seed
+[118/123] Building CXX object apps/CMakeFiles/vc_grow_seg_from_seed.dir/vc_grow_seg_from_seed_autogen/mocs_compilation.cpp.o
+[119/123] Building CXX object apps/CMakeFiles/vc_grow_seg_from_segments.dir/vc_grow_seg_from_segments_autogen/mocs_compilation.cpp.o
+[120/123] Building CXX object apps/CMakeFiles/vc_grow_seg_from_seed.dir/src/vc_grow_seg_from_seed.cpp.o
+[121/123] Building CXX object apps/CMakeFiles/vc_grow_seg_from_segments.dir/src/vc_grow_seg_from_segments.cpp.o
+[122/123] Linking CXX executable bin/vc_grow_seg_from_seed
+[123/123] Linking CXX executable bin/vc_grow_seg_from_segments
+
+real	2m46.962s
+user	8m29.967s
+sys	1m11.304s
+total 88752
+drwxr-xr-x  2 root root     4096 Sep 25 18:28 .
+drwxr-xr-x 10 root root     4096 Sep 25 18:28 ..
+-rwxr-xr-x  1 root root  8496616 Sep 25 18:27 vc_calc_surface_metrics
+-rwxr-xr-x  1 root root  8292616 Sep 25 18:27 vc_flatten
+-rwxr-xr-x  1 root root 24218944 Sep 25 18:27 vc_gen_normalgrids
+-rwxr-xr-x  1 root root 12499712 Sep 25 18:28 vc_grow_seg_from_seed
+-rwxr-xr-x  1 root root 15049552 Sep 25 18:28 vc_grow_seg_from_segments
+-rwxr-xr-x  1 root root 12950544 Sep 25 18:28 vc_render_tifxyz
+-rwxr-xr-x  1 root root  9352672 Sep 25 18:27 vc_tifxyz_selfcross
+[2026-09-25T18:28:31+00:00] build finished rc=0

@@ -1,0 +1,90 @@
+vc_render_tifxyz: Render volume data using segmentation surfaces
+
+Usage:
+
+Required arguments:
+  -v [ --volume ] arg                 Path to the OME-Zarr volume
+  --scale arg                         Pixels per level-g voxel (Pg)
+  -g [ --group-idx ] arg              OME-Zarr group index
+
+Optional arguments:
+  -h [ --help ]                       Show this help message
+  -s [ --segmentation ] arg           Path to a single tifxyz segmentation 
+                                      folder
+  --cache-gb arg (=16)                Zarr chunk cache size in GB
+  --prefetch-remote                   Prefetch the chunks this render reads 
+                                      into the shared remote cache before 
+                                      rendering
+  --remote-url arg                    Remote OME-Zarr URL for remote cache 
+                                      streaming/prefetch; fetched chunks 
+                                      persist under the shared remote cache 
+                                      root (optional if --volume cache already 
+                                      records it)
+  --log-path arg                      Log all output to file instead of 
+                                      stdout/stderr
+  --timeout arg (=0)                  Kill process if not finished within N 
+                                      minutes
+  -n [ --num-slices ] arg (=1)        Number of slices to render
+  --slice-step arg (=1)               Spacing between slices along normal
+  --accum arg (=0)                    Accumulation sub-step (0 = disabled)
+  --accum-type arg (=max)             Reducer: max, mean, median, alpha, 
+                                      beerlambert
+  --crop-x arg (=0)                   Crop X
+  --crop-y arg (=0)                   Crop Y
+  --crop-width arg (=0)               Crop width
+  --crop-height arg (=0)              Crop height
+  --auto-crop                         Auto-crop to valid surface bbox
+  --affine arg                        Affine JSON files (append :inv to invert)
+  --affine-invert arg                 0-based indices to invert
+  --affine-transform arg              [DEPRECATED] Single affine JSON
+  --invert-affine                     [DEPRECATED] Invert single affine
+  --scale-segmentation arg (=1)       Scale segmentation
+  --rotate arg (=0)                   Rotate output (0/90/180/270)
+  --flip arg (=-1)                    Flip: 0=V, 1=H, 2=Both
+  --flip-normals                      Negate surface normals (reverses slice 
+                                      ordering along the normal)
+  --zarr-output arg                   Output path for .zarr (optional)
+  --zarr-compressor arg (=blosc)      Zarr compressor: blosc, zstd, gzip, lz4, 
+                                      none
+  --zarr-compression-level arg (=-1)  Zarr compression level (<=0 = compressor 
+                                      default)
+  --zarr-separator arg (=/)           Zarr chunk dimension separator: / or .
+  --tif-output arg                    Output path for per-slice TIFFs 
+                                      (optional)
+  --quick-tif                         Fast TIF: PACKBITS + zero low nibble
+  --flatten                           ABF++ flattening
+  --flatten-iterations arg (=10)      ABF++ iterations
+  --flatten-downsample arg (=1)       ABF++ downsample factor
+  --alpha-min arg (=0)                Alpha min (0-255)
+  --alpha-max arg (=255)              Alpha max (0-255)
+  --alpha-opacity arg (=230)          Alpha opacity (0-255)
+  --alpha-cutoff arg (=9950)          Alpha cutoff (0-10000)
+  --bl-extinction arg (=1.5)          Beer-Lambert extinction
+  --bl-emission arg (=1.5)            Beer-Lambert emission
+  --bl-ambient arg (=0.100000001)     Beer-Lambert ambient
+  --iso-cutoff arg (=0)               Highpass (0-255)
+  --composite-start arg               Composite start offset
+  --composite-end arg                 Composite end offset
+  --composite-collapse                Collapse the sampled band into a single 
+                                      image using --accum-type as the reducer 
+                                      (max/mean/median, in addition to the 
+                                      implicit alpha/beerlambert). The band 
+                                      spans [--composite-start, 
+                                      --composite-end] layers along the normal 
+                                      at --slice-step spacing; use a symmetric 
+                                      range (e.g. --composite-start=-54 
+                                      --composite-end=54) for a centered 
+                                      projection.
+  --num-parts arg (=1)                Parts for multi-VM
+  --part-id arg (=0)                  Part ID (0-indexed)
+  --merge-tiff-parts                  Merge partial TIFFs from multi-VM render
+  --pyramid arg (=1)                  Build pyramid levels L1-L5 (default: 
+                                      true)
+  --resume                            Skip chunks that already exist on disk
+  --pre                               Create zarr + all level datasets
+  --voxel-size arg                    Physical voxel size for OME-Zarr scale 
+                                      metadata (reads from volume metadata if 
+                                      omitted)
+  --voxel-unit arg (=nanometer)       Physical unit for OME-Zarr axes (e.g. 
+                                      nanometer, micrometer)
+

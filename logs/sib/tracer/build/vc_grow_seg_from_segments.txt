@@ -1,0 +1,35 @@
+Allowed options:
+  -h [ --help ]                         produce help message
+  -v [ --volume ] arg                   OME-Zarr volume path
+  -s [ --src-dir ] arg                  Directory containing source segments
+  -t [ --target-dir ] arg               Target directory for output traces
+  -p [ --params ] arg                   JSON parameters file (required unless 
+                                        --sweep is used)
+  --src-segment arg                     Source segment path to grow from
+  --seed-coord arg                      3D seed coordinate x,y,z. May be 
+                                        repeated
+  --seed-coords arg                     File containing seed coordinates as 
+                                        JSON [[x,y,z],...] or text lines x,y,z
+  --max-width arg                       Override grow params max_width
+  --sweep arg                           Target tifxyz surface to fill; enables 
+                                        parameter sweep mode
+  --sweep-ranges arg                    JSON file describing parameter 
+                                        values/ranges for --sweep
+  --sweep-strategy arg (=grid)          Sweep strategy: grid or lhs
+  --sweep-max-runs arg (=0)             Maximum runs for --sweep-strategy lhs
+  --sweep-max-gen arg (=-1)             Maximum grow generations per sweep run
+  --sweep-max-width arg (=-1)           Seed-only sweep max_width; skips target
+                                        comparison metrics
+  --sweep-max-height arg (=-1)          Seed-only sweep max_height
+  --sweep-min-area arg (=1)             Minimum area in cm^2 for seed-only best
+                                        complete mesh selection
+  --sweep-seed arg (=1)                 Deterministic seed for sampled sweep 
+                                        strategies
+  --sweep-cutout-cm arg (=5)            Center cutout edge length used as sweep
+                                        seed
+  --sweep-metric-tolerance arg (=10)    Distance tolerance in voxels for sweep 
+                                        coverage metrics
+  --sweep-max-distance-samples arg (=20000)
+                                        Maximum sampled points per direction 
+                                        for sweep distance metrics
+

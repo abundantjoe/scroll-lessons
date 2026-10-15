@@ -1,0 +1,24 @@
+Census a tifxyz surface for non-adjacent transverse self-intersections.
+Report-only: nothing is modified:
+  -h [ --help ]                        Print help
+  --surface arg                        Input tifxyz surface directory
+  -o [ --output ] arg                  Output report file (.json)
+  --collection arg                     Also write crossing sites as a point 
+                                       collection (.json), loadable in VC3D
+  --exclude arg (=1)                   Chebyshev grid-index adjacency 
+                                       exclusion; 1 = shared-vertex neighbours
+  --maxedge arg (=60)                  Drop quads with any edge longer than 
+                                       this (voxels); a triangle built across a
+                                       grid discontinuity crosses everything it
+                                       passes through. 0 disables
+  --cell arg (=40)                     Broad-phase cell size (voxels); affects 
+                                       speed, never contact verdicts or counts 
+                                       (bucket ranges are expanded by the touch
+                                       tolerance)
+  --threads arg (=0)                   Worker threads; 0 = hardware concurrency
+  --max-collection-points arg (=10000) Cap on overlay points written to 
+                                       --collection
+  --fail-on-crossing                   Exit with code 3 if any transverse 
+                                       contact is found, for use as a gate in 
+                                       scripts
+

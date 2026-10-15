@@ -1,0 +1,100 @@
+{
+    "census": [
+        {
+            "coplanar": 0,
+            "diagonal": 0,
+            "grazing": 0,
+            "pairs_tested": 3906766,
+            "quads_dropped_for_edge_length": 0,
+            "transverse": 1,
+            "transverse_contacts": [
+                {
+                    "angle_deg": 6.547603130340576,
+                    "penetration_vx": 6.8999738693237305,
+                    "quad1": [
+                        106,
+                        118
+                    ],
+                    "quad2": [
+                        108,
+                        49
+                    ],
+                    "site": [
+                        807.6904284610266,
+                        1244.0111418822873,
+                        3825.6924662258125
+                    ],
+                    "tri1": 1,
+                    "tri2": 1
+                }
+            ],
+            "triangles": 124806
+        },
+        {
+            "coplanar": 0,
+            "diagonal": 1,
+            "grazing": 0,
+            "pairs_tested": 3914963,
+            "quads_dropped_for_edge_length": 0,
+            "transverse": 2,
+            "transverse_contacts": [
+                {
+                    "angle_deg": 9.601963996887207,
+                    "penetration_vx": 4.1906280517578125,
+                    "quad1": [
+                        106,
+                        118
+                    ],
+                    "quad2": [
+                        108,
+                        49
+                    ],
+                    "site": [
+                        808.5494755792065,
+                        1244.138786369295,
+                        3824.5317749060996
+                    ],
+                    "tri1": 0,
+                    "tri2": 1
+                },
+                {
+                    "angle_deg": 9.4623441696167,
+                    "penetration_vx": 3.7887885570526123,
+                    "quad1": [
+                        106,
+                        118
+                    ],
+                    "quad2": [
+                        108,
+                        49
+                    ],
+                    "site": [
+                        806.0268514007885,
+                        1243.90503089484,
+                        3827.493120090404
+                    ],
+                    "tri1": 1,
+                    "tri2": 1
+                }
+            ],
+            "triangles": 124806
+        }
+    ],
+    "clean_of_transverse_self_intersection": false,
+    "grid_cols": 248,
+    "grid_rows": 313,
+    "note": "'clean' means zero non-adjacent transverse contacts under both quad triangulations, on the surface as loaded here (z <= 0 invalid, mask applied). Coplanar and grazing contacts are reported but are not crossings: two sheets pressed flat against each other are coplanar.",
+    "parameters": {
+        "cell": 40.0,
+        "diagonals": [
+            0,
+            1
+        ],
+        "exclude": 1,
+        "maxedge": 60.0,
+        "touch_tolerance": 0.001
+    },
+    "report_only": true,
+    "surface": "/work/p424/runs/trace_20260927T121847Z/hybrid_L2.tifxyz",
+    "tool": "vc_tifxyz_selfcross"
+}

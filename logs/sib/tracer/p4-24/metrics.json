@@ -1,0 +1,112 @@
+{
+ "run": "/work/p424/runs/trace_20260927T121847Z",
+ "official_fixed_vertices_unchanged": true,
+ "n_P_valid_official": 11025,
+ "n_hole_vertices": 11022,
+ "n_hole_filled": 251,
+ "hole_fill_frac": 0.022772636545091634,
+ "selfcross_pairs_touching_P": {
+  "retrace": 1,
+  "official": 6
+ },
+ "selfcross_pairs_total_crop": {
+  "retrace": 1,
+  "official": 6
+ },
+ "seam_normal_residual_vox": {
+  "retrace_hole_borders": {
+   "n": 29,
+   "median": 12.030585371405987,
+   "p90": 21.620824114722176
+  },
+  "official_same_positions": {
+   "n": 420,
+   "median": 9.125482655479054,
+   "p90": 27.511885472399403
+  }
+ },
+ "neighbour_winding": {
+  "excl_grid": 40,
+  "retrace": {
+   "n": 254,
+   "frac_ge_0p6": 0.889763779527559,
+   "frac_lt_0p3": 0.05905511811023622,
+   "min": 0.020115970491912962,
+   "p1": 0.030823387534766235
+  },
+  "official": {
+   "n": 11024,
+   "frac_ge_0p6": 0.8606676342525399,
+   "frac_lt_0p3": 0.011701741654571843,
+   "min": 0.04820119088932919,
+   "p1": 0.2894741688750532
+  },
+  "spacing_by_tile_vox": {
+   "r1_c19": 58.782694163608404,
+   "r2_c18": 47.76315028064267,
+   "r2_c19": 47.62134310375508
+  }
+ },
+ "flattening_SLIM_on_P": {
+  "retrace": {
+   "pct_quads_within_5pct": 100.0,
+   "angle_err_mean_deg": 0.09328781784696168,
+   "angle_err_p99_deg": 0.5577838427865212,
+   "area_abs_log_mean": 0.0017470525758601161,
+   "flipped": 0,
+   "n_quads": 85,
+   "slim": {
+    "iterations": 50,
+    "energy_history": [
+     4.001918636780989,
+     4.000106980213787,
+     4.0000786798171015,
+     4.000072061288312,
+     4.000069042593246,
+     4.000067196827297,
+     4.000065950724998,
+     4.000065078223555,
+     4.000064456968754,
+     4.000064010502204,
+     4.000063687853865
+    ],
+    "converged": true
+   }
+  },
+  "official": {
+   "pct_quads_within_5pct": 82.43343195266272,
+   "angle_err_mean_deg": 1.1495599583281564,
+   "angle_err_p99_deg": 5.126865958388531,
+   "area_abs_log_mean": 0.03106315802599035,
+   "flipped": 0,
+   "n_quads": 10816,
+   "slim": {
+    "iterations": 35,
+    "energy_history": [
+     4.021478939265056,
+     4.008853584713106,
+     4.008610883669866,
+     4.008578596123269,
+     4.008572114096361,
+     4.008570504991604,
+     4.008570067979391,
+     4.008569944628084
+    ],
+    "converged": true
+   }
+  }
+ },
+ "offsheet": {
+  "n_tested": 54,
+  "offsheet_frac_retraced": 0.05555555555555555,
+  "offsheet_frac_official_in_P": 0.22321995464852606,
+  "normals_note": "re-traced vertices: central-difference normals of the hybrid SUB-4 grid"
+ },
+ "adoption": {
+  "selfcross_zero": false,
+  "seam_no_worse": false,
+  "neighbour_winding_no_worse": true,
+  "flattening_no_worse": true,
+  "ADOPT": false
+ }
+}

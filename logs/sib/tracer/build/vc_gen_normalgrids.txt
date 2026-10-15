@@ -1,0 +1,44 @@
+vc_gen_normalgrids: Generate and manage normal grids for volume data.
+
+Usage: vc_gen_normalgrids [command] [options]
+
+Commands:
+  generate   Generate normal grids for all slices in a Zarr volume (default).
+  convert    Recursively find and convert GridStore files to the latest version.
+  pyramid    Derive lower-resolution normal-grid levels from existing grids.
+
+Examples:
+  vc_gen_normalgrids -i /path/to/volume.zarr -o /path/to/output/
+  vc_gen_normalgrids -i vol.zarr -o out/ --sparse-volume 4
+  vc_gen_normalgrids convert -i /path/to/grids/
+  vc_gen_normalgrids pyramid -i /path/to/normal_grids -o /path/to/normal_grids_ms
+
+Generate options:
+  -i, --input         Input Zarr volume path (required)
+  -o, --output        Output directory path (required unless --print-plan)
+  --level            Input OME-Zarr pyramid level (default: 0)
+  --spiral-step       Spiral step for resampling paths (default: 20.0)
+  --grid-step         Grid cell size for spatial indexing (default: 64)
+  --direction         Single slice direction: xy, xz, or yz (default: all three)
+  --num-parts         Total shard count for distributed runs (default: 1)
+  --part-id           This shard's index in [0, num-parts) (default: 0)
+  --sparse-volume     Process every N-th slice, 1 = all (default: 1)
+  --chunk-budget-mib  Max chunk batch budget per direction (default: 512)
+  --io-threads        OMP team size for the chunk-read loop, 0 = OMP default (default: 0)
+  --preview-every     Write preview image every N written slices, 0 disables (default: 100)
+  --verify-grid-save  Verify GridStore save by reloading each file (default: false)
+  --debug-per-slice   Emit a stdout log line for every slice (existing/empty/written) (default: false)
+  --metrics-json      Write structured metrics json
+  --print-plan        Print partition plan as JSON to stdout and exit (no work done)
+
+Convert options:
+  -i, --input         Input directory to scan for .grid files (required)
+  --grid-step         New grid cell size (default: 64)
+
+Pyramid options:
+  -i, --input         Source normal_grids root with xy/xz/yz .grid files (required)
+  -o, --output        Output root, containing xy/<level>, xz/<level>, yz/<level> (required)
+  --max-level         Highest derived level to write (default: 5)
+  --min-level         Lowest level to write (default: 0)
+  --overwrite         Replace existing derived files (default: false)
+  --no-images         Do not derive preview images from *_img folders

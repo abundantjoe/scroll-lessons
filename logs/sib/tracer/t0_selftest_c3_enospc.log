@@ -1,0 +1,36 @@
+0 9604
+500 9604
+1000 9604
+1500 9604
+2000 9604
+2500 9604
+3000 9604
+3500 9604
+4000 9604
+4500 9604
+5000 9604
+5500 9604
+6000 9604
+6500 9604
+7000 9604
+7500 9604
+8000 9604
+8500 9604
+9000 9604
+9500 9604
+done 9604
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/tracer/t0_run.py", line 90, in <module>
+    main()
+  File "/home/user/dominion/tools/sib/tracer/t0_run.py", line 83, in main
+    r = dev_run.run(cfg, seg, generations=gens, allow_t0=bool(a.declaration),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/dominion/tools/sib/tracer/dev_run.py", line 91, in run
+    (d / "result.json").write_text(json.dumps(res, indent=1) + "\n")
+  File "/usr/lib/python3.11/pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+OSError: [Errno 28] No space left on device

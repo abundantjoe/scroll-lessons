@@ -1,0 +1,20 @@
+  File "/opt/hv-ink/lib/python3.14/site-packages/pydantic/_internal/_fields.py", line 265, in collect_model_fields
+    type_hints = _typing_extra.get_model_type_hints(cls, ns_resolver=ns_resolver)
+  File "/opt/hv-ink/lib/python3.14/site-packages/pydantic/_internal/_typing_extra.py", line 368, in get_model_type_hints
+    hints[name] = try_eval_type(value, globalns, localns)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv-ink/lib/python3.14/site-packages/pydantic/_internal/_typing_extra.py", line 423, in try_eval_type
+    return eval_type_backport(value, globalns, localns), True
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hv-ink/lib/python3.14/site-packages/pydantic/_internal/_typing_extra.py", line 474, in eval_type_backport
+    return _eval_type_backport(value, globalns, localns, type_params)
+  File "/opt/hv-ink/lib/python3.14/site-packages/pydantic/_internal/_typing_extra.py", line 511, in _eval_type_backport
+    return _eval_type(value, globalns, localns, type_params)
+  File "/opt/hv-ink/lib/python3.14/site-packages/pydantic/_internal/_typing_extra.py", line 543, in _eval_type
+    evaluated = typing._eval_type(  # type: ignore
+        value,
+    ...<9 lines>...
+        prefer_fwd_module=True,
+    )
+TypeError: _eval_type() got an unexpected keyword argument 'prefer_fwd_module'
+Unable to evaluate type annotation "Literal['PageInfo']".

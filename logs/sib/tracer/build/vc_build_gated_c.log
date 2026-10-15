@@ -1,0 +1,57 @@
+[2026-09-25T18:38:50+00:00] start build SHA=41701aa0eaa1aa765523db3f9f972b5830abf549 image=ghcr.io/scrollprize/vc3d-deps/linux:sha-0c371b1d472c5281b703d65517e980d945da693f targets=vc_render_tifxyz vc_grow_seg_from_seed vc_grow_seg_from_segments vc_tifxyz_selfcross vc_calc_surface_metrics vc_flatten vc_gen_normalgrids
+-- Found AMD headers in: /usr/include/suitesparse
+-- Found AMD library: /usr/lib/x86_64-linux-gnu/libamd.so
+-- Found CAMD headers in: /usr/include/suitesparse
+-- Found CAMD library: /usr/lib/x86_64-linux-gnu/libcamd.so
+-- Found CCOLAMD headers in: /usr/include/suitesparse
+-- Found CCOLAMD library: /usr/lib/x86_64-linux-gnu/libccolamd.so
+-- Found CHOLMOD headers in: /usr/include/suitesparse
+-- Found CHOLMOD library: /usr/lib/x86_64-linux-gnu/libcholmod.so
+-- Found COLAMD headers in: /usr/include/suitesparse
+-- Found COLAMD library: /usr/lib/x86_64-linux-gnu/libcolamd.so
+-- Found SPQR headers in: /usr/include/suitesparse
+-- Found SPQR library: /usr/lib/x86_64-linux-gnu/libspqr.so
+-- Found Config headers in: /usr/include/suitesparse
+-- Found Config library: /usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so
+-- Found Intel Thread Building Blocks (TBB) library (2022.3 / ) include location: . Assuming SuiteSparseQR was compiled with TBB.
+-- Adding librt to SuiteSparse_config libraries (required on Linux & Unix [not OSX] if SuiteSparse is compiled with timing).
+-- Could NOT find METIS (missing: METIS_INCLUDE_DIR) 
+-- Found required Ceres dependency: Eigen version 3.4.0 in /usr/share/eigen3/cmake
+-- Found required Ceres dependency: glog
+-- Found required Ceres dependency: gflags
+-- Found Ceres version: 2.2.0 installed in: /usr with components: [EigenSparse, SparseLinearAlgebraLibrary, LAPACK, SuiteSparse, SchurSpecializations]
+-- Targeting Ninja
+-- Using /usr/bin/g++ compiler.
+-- Boost include dirs: /usr/include
+-- Boost libraries:    
+-- Using gcc version 4 or later. Adding -frounding-math
+-- Creating target: igl::core (igl_core)
+-- Configuring done (0.8s)
+-- Generating done (0.3s)
+-- Build files have been written to: /src/build/hrc-gated-c
+
+real	0m1.132s
+user	0m0.785s
+sys	0m0.332s
+[1/8] Building CXX object core/CMakeFiles/vc_common_pch.dir/vc_common_pch.cpp.o
+[2/8] Linking CXX static library core/libvc_common_pch.a
+[3/8] Automatic MOC and UIC for target vc_tracer
+[4/7] Building CXX object core/CMakeFiles/vc_tracer.dir/src/GrowPatch.cpp.o
+[5/7] Linking CXX shared library core/libvc_tracer.so
+[6/7] Linking CXX executable bin/vc_grow_seg_from_seed
+[7/7] Linking CXX executable bin/vc_grow_seg_from_segments
+
+real	0m37.483s
+user	1m21.144s
+sys	0m5.849s
+total 88752
+drwxr-xr-x  2 root root     4096 Sep 25 18:39 .
+drwxr-xr-x 10 root root     4096 Sep 25 18:39 ..
+-rwxr-xr-x  1 root root  8496600 Sep 25 18:34 vc_calc_surface_metrics
+-rwxr-xr-x  1 root root  8292600 Sep 25 18:35 vc_flatten
+-rwxr-xr-x  1 root root 24218928 Sep 25 18:34 vc_gen_normalgrids
+-rwxr-xr-x  1 root root 12499696 Sep 25 18:39 vc_grow_seg_from_seed
+-rwxr-xr-x  1 root root 15049536 Sep 25 18:39 vc_grow_seg_from_segments
+-rwxr-xr-x  1 root root 12950528 Sep 25 18:35 vc_render_tifxyz
+-rwxr-xr-x  1 root root  9352656 Sep 25 18:34 vc_tifxyz_selfcross
+[2026-09-25T18:39:29+00:00] build finished rc=0

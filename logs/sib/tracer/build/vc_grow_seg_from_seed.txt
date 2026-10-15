@@ -1,0 +1,19 @@
+Allowed options:
+  -h [ --help ]            produce help message
+  -v [ --volume ] arg      OME-Zarr volume path
+  -t [ --target-dir ] arg  Target directory for output
+  -p [ --params ] arg      JSON parameters file
+  -s [ --seed ] arg        Seed coordinates (x y z)
+  --resume arg             Path to a tifxyz surface to resume from
+  --rewind-gen arg         Generation to rewind to
+  --correct arg            JSON file with point-based corrections for resume 
+                           mode
+  --skip-overlap-check     Do not perform overlap check with other surfaces 
+                           after tracing
+  --inpaint                perform automatic inpainting on all detected holes.
+  --resume-opt arg         Resume optimization option (skip, local, global)
+  --resume-generations arg Number of additional generations to grow from 
+                           current (overrides JSON generations)
+  --segment-name arg       Output segment name (uses target-dir directly 
+                           instead of creating subfolder)
+

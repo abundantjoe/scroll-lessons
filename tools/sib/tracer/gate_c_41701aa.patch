@@ -1,0 +1,400 @@
+diff --git a/volume-cartographer/core/src/GrowPatch.cpp b/volume-cartographer/core/src/GrowPatch.cpp
+index 2d1aa964..75404d0b 100644
+--- a/volume-cartographer/core/src/GrowPatch.cpp
++++ b/volume-cartographer/core/src/GrowPatch.cpp
+@@ -3749,6 +3749,28 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+     trace_params.dpoints = cv::Mat_<cv::Vec3d>(size,cv::Vec3f(-1,-1,-1));
+     trace_params.state = cv::Mat_<uint8_t>(size,0);
+     cv::Mat_<uint16_t> generations(size, (uint16_t)0);
++
++    // HRC build (c): rejection gate. A candidate is rejected (and counted as filled, STATE_FAIL)
++    // if the worst-case thresholded distance to the surface prediction, at the point and at T
++    // samples along every edge to a valid 4-neighbour, is >= reject_dist_th, or if the final
++    // cost of its own local loss problem is >= reject_cost_th. Candidates that are not compact
++    // are deferred (not filled); the curr_ref_min relaxation loop re-offers them.
++    const bool gate_enabled = params.value("gate_enabled", true);
++    const double gate_reject_dist_th = params.value("reject_dist_th", 1.5);
++    const double gate_reject_cost_th = params.value("reject_cost_th", 0.1);
++    const bool gate_compact = params.value("compactness", true);
++    const int gate_ref_max = params.value("compact_ref_max", 6);
++    const bool gate_channels = params.value("gate_channels", true);
++    int gate_curr_ref_min = gate_ref_max;
++    long gate_n_eval = 0, gate_n_rej_dist = 0, gate_n_rej_cost = 0, gate_n_defer = 0, gate_n_relax = 0;
++    cv::Mat_<uint8_t> gate_reject(size, (uint8_t)0);   // bit 1: distance, bit 2: cost
++    cv::Mat_<float> gate_dist(size, -1.0f);            // worst-case distance of the last evaluation
++    cv::Mat_<float> gate_cost(size, -1.0f);            // local cost of the last evaluation
++    cv::Mat_<cv::Vec3f> gate_rej_xyz(size, cv::Vec3f(-1, -1, -1));  // where a rejected candidate was solved
++    // Negative control for tests only: rejected cells NOT counted as filled and hole-fill on fresh
++    // growth (the suspected freeze of an archived gate patch). Never set in production presets.
++    const bool gate_negctl_freeze = params.value("gate_negctl_freeze", false);
++    const uint8_t gate_filled_mask = (gate_enabled && !gate_negctl_freeze) ? (STATE_LOC_VALID | STATE_FAIL) : STATE_LOC_VALID;
+     cv::Mat_<cv::Vec3d> surface_normals(size, cv::Vec3d(0,0,0));  // Consistently oriented surface normals
+     cv::Mat_<cv::Vec3d> reopt_anchors;
+     cv::Mat_<cv::Vec3d> reopt_normals;
+@@ -3775,6 +3797,16 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+         auto surf = new QuadSurface(points_crop, {1/T, 1/T});
+         surf->setDpi(voxelSizeToDpi(voxelsize));
+         surf->setChannel("generations", generations_crop.clone());
++        if (gate_enabled && gate_channels) {
++            surf->setChannel("gate_reject", gate_reject(used_area_safe).clone());
++            surf->setChannel("gate_dist", gate_dist(used_area_safe).clone());
++            surf->setChannel("gate_cost", gate_cost(used_area_safe).clone());
++            std::vector<cv::Mat> rej_xyz;
++            cv::split(gate_rej_xyz(used_area_safe), rej_xyz);
++            surf->setChannel("gate_rej_x", rej_xyz[0].clone());
++            surf->setChannel("gate_rej_y", rej_xyz[1].clone());
++            surf->setChannel("gate_rej_z", rej_xyz[2].clone());
++        }
+ 
+         if (params.value("vis_losses", false)) {
+             cv::Mat_<float> loss_dist(generations_crop.size(), 0.0f);
+@@ -4688,7 +4720,7 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+         auto append_candidate = [&](const cv::Vec2i& p) {
+             if (!bounds.contains(cv::Point(p[1], p[0])) ||
+                 (trace_params.state(p) & STATE_PROCESSING) != 0 ||
+-                (trace_params.state(p) & STATE_LOC_VALID) != 0) {
++                (trace_params.state(p) & gate_filled_mask) != 0) {
+                 return;
+             }
+             if (!trace_data.allowed_growth_mask.empty() &&
+@@ -4704,14 +4736,15 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+         bool used_area_fully_valid = true;
+         for (int j = used_area.y; j < used_area.br().y && used_area_fully_valid; ++j) {
+             for (int i = used_area.x; i < used_area.br().x; ++i) {
+-                if ((trace_params.state(j, i) & STATE_LOC_VALID) == 0) {
++                if ((trace_params.state(j, i) & gate_filled_mask) == 0) {
+                     used_area_fully_valid = false;
+                     break;
+                 }
+             }
+         }
+ 
+-        if (!used_area_fully_valid) {
++        if (!used_area_fully_valid && (resume_surf || !gate_enabled || gate_negctl_freeze)) {
++            // HRC gate: hole-fill only on resumed surfaces.
+             // Irregular resumed patches should fill holes within the existing grid before
+             // growing the bounding rectangle. For right growth, this means every valid
+             // point with an invalid point immediately to its right contributes that
+@@ -4748,6 +4781,9 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+         int succ_gen = 0;
+         std::vector<cv::Vec2i> succ_gen_ps;
+ 
++        if (gate_enabled && gate_compact && generation % 10 == 0)
++            gate_curr_ref_min = std::min(gate_curr_ref_min, 5);
++
+         if (neural_tracer && generation > pre_neural_gens) {
+             std::unordered_set<cv::Vec2i> cands_processed;  // subset of cands we've already passed to the neural tracer in this gen
+             while (true) {
+@@ -4808,6 +4844,8 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+ 
+                     if (trace_params.state(p) & (STATE_LOC_VALID | STATE_COORD_VALID))
+                         continue;
++                    if (gate_enabled && (trace_params.state(p) & STATE_FAIL))
++                        continue;
+ 
+                     // p is now a 2D point we consider adding to the patch; find the best 3D point to map it to
+ 
+@@ -4824,7 +4862,7 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+                             }
+ 
+                     // Of those adjacent points, find the one that itself has most adjacent in-patch points
+-                    cv::Vec2i best_l = srcs[0];
++                    cv::Vec2i best_l = srcs.empty() ? p : srcs[0];
+                     int best_ref_l = -1;
+                     int rec_ref_sum = 0;
+                     for(cv::Vec2i l : srcs) {
+@@ -4842,6 +4880,33 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+                         }
+                     }
+ 
++                    if (gate_enabled) {
++                        // Compactness on filled cells (valid or rejected): rejected cells count as
++                        // filled so growth continues around them. Geometry uses valid cells only.
++                        auto filled = [&](int oy, int ox) {
++                            return (trace_params.state(oy, ox) & gate_filled_mask) != 0;
++                        };
++                        int fill_count = 0;
++                        for(int oy=std::max(p[0]-r,0);oy<=std::min(p[0]+r,trace_params.dpoints.rows-1);oy++)
++                            for(int ox=std::max(p[1]-r,0);ox<=std::min(p[1]+r,trace_params.dpoints.cols-1);ox++)
++                                if (filled(oy, ox))
++                                    fill_count++;
++                        int rec_fill_sum = 0;
++                        for(cv::Vec2i l : srcs)
++                            for(int oy=std::max(l[0]-r,0);oy<=std::min(l[0]+r,trace_params.dpoints.rows-1);oy++)
++                                for(int ox=std::max(l[1]-r,0);ox<=std::min(l[1]+r,trace_params.dpoints.cols-1);ox++)
++                                    if (filled(oy, ox))
++                                        rec_fill_sum++;
++                        const bool not_compact = gate_compact &&
++                            (fill_count < 2 || fill_count + 0.35 * rec_fill_sum < gate_curr_ref_min);
++                        if (ref_count == 0 || not_compact) {
++                            trace_params.state(p) &= ~STATE_PROCESSING;
++                            #pragma omp atomic
++                            gate_n_defer++;
++                            continue;
++                        }
++                    }
++
+                     avg /= ref_count;
+ 
+                     //"fast" skip based on avg xyz value out of limits
+@@ -4852,6 +4917,17 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+ 
+ 
+ 
++                    // Snapshot every cell local_optimization may move (Euclidean radius local_opt_r
++                    // around p; OmpThreadPointCol keeps other threads' movable cells disjoint).
++                    std::vector<std::pair<cv::Vec2i, cv::Vec3d>> gate_snapshot;
++                    if (gate_enabled) {
++                        const int gr = std::max(local_opt_r, 1);
++                        for(int oy=std::max(p[0]-gr,0);oy<=std::min(p[0]+gr,trace_params.dpoints.rows-1);oy++)
++                            for(int ox=std::max(p[1]-gr,0);ox<=std::min(p[1]+gr,trace_params.dpoints.cols-1);ox++)
++                                if (cv::norm(p-cv::Vec2i(oy,ox)) <= gr)
++                                    gate_snapshot.push_back({cv::Vec2i(oy,ox), trace_params.dpoints(oy,ox)});
++                    }
++
+                     cv::Vec3d init = trace_params.dpoints(best_l) + random_perturbation();
+                     trace_params.dpoints(p) = init;
+ 
+@@ -4880,6 +4956,59 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+                     if (local_opt_r > 1)
+                         local_optimization(local_opt_r, p, trace_params, trace_data, loss_settings, true, false);
+ 
++                    if (gate_enabled) {
++                        // Worst-case distance to the surface prediction at the point and at T samples
++                        // along every edge to a valid neighbour (edge samples i/T, i = 1..T-1, plus p).
++                        // Neighbours include the quad diagonals, so a candidate attached only
++                        // diagonally is still checked along a segment to the patch.
++                        static const cv::Vec2i gate_edges[] = {{-1,0}, {1,0}, {0,-1}, {0,1},
++                                                               {-1,-1}, {-1,1}, {1,-1}, {1,1}};
++                        const int gate_T = std::max(1, (int)std::lround(T));
++                        const cv::Vec3d lp = trace_params.dpoints(p);
++                        double dist = 0;
++                        interp.Evaluate(lp[2], lp[1], lp[0], &dist);
++                        for (const auto& off : gate_edges) {
++                            const cv::Vec2i n = p + off;
++                            if (!bounds.contains(cv::Point(n[1], n[0])) ||
++                                (trace_params.state(n) & STATE_LOC_VALID) == 0)
++                                continue;
++                            const cv::Vec3d ln = trace_params.dpoints(n);
++                            for (int i = 1; i < gate_T; i++) {
++                                const double f1 = double(i) / gate_T;
++                                const cv::Vec3d l = lp * f1 + ln * (1.0 - f1);
++                                double d2 = 0;
++                                interp.Evaluate(l[2], l[1], l[0], &d2);
++                                dist = std::max(dist, d2);
++                            }
++                        }
++                        double cost = 0;
++                        problem.Evaluate(ceres::Problem::EvaluateOptions(), &cost, nullptr, nullptr, nullptr);
++                        gate_dist(p) = static_cast<float>(dist);
++                        gate_cost(p) = static_cast<float>(cost);
++                        // NaN-safe: anything not proven below threshold is rejected.
++                        const bool rej_d = !(dist < gate_reject_dist_th);
++                        const bool rej_c = !(cost < gate_reject_cost_th);
++                        #pragma omp atomic
++                        gate_n_eval++;
++                        if (rej_d || rej_c) {
++                            gate_rej_xyz(p) = cv::Vec3f(lp[0], lp[1], lp[2]);
++                            for (const auto& sv : gate_snapshot)
++                                trace_params.dpoints(sv.first) = sv.second;
++                            trace_params.dpoints(p) = cv::Vec3d(-1, -1, -1);
++                            trace_params.state(p) = STATE_FAIL;
++                            gate_reject(p) = (rej_d ? 1 : 0) | (rej_c ? 2 : 0);
++                            if (rej_d) {
++                                #pragma omp atomic
++                                gate_n_rej_dist++;
++                            }
++                            if (rej_c) {
++                                #pragma omp atomic
++                                gate_n_rej_cost++;
++                            }
++                            continue;
++                        }
++                    }
++
+                     generations(p) = generation;
+ 
+                     #pragma omp critical
+@@ -4913,6 +5042,25 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+             }
+         }
+ 
++        if (gate_enabled && gate_compact) {
++            // curr_ref_min relaxation (as in 24cacf5): if nothing was accepted, lower the
++            // compactness requirement and re-offer the neighbours of every valid point.
++            if (fringe.empty() && gate_curr_ref_min > 2) {
++                gate_curr_ref_min--;
++                gate_n_relax++;
++                for (int j = used_area.y; j < used_area.br().y; j++)
++                    for (int i = used_area.x; i < used_area.br().x; i++)
++                        if (trace_params.state(j, i) & STATE_LOC_VALID)
++                            fringe.push_back({j, i});
++                std::cout << "gate: new compactness limit " << gate_curr_ref_min << " fringe " << fringe.size() << std::endl;
++            } else if (!fringe.empty()) {
++                gate_curr_ref_min = gate_ref_max;
++            }
++        }
++        if (gate_enabled && generation % 5 == 0)
++            std::cout << "gate: gen " << generation << " eval " << gate_n_eval << " rej_dist " << gate_n_rej_dist
++                      << " rej_cost " << gate_n_rej_cost << " deferred " << gate_n_defer << " relax " << gate_n_relax << std::endl;
++
+         if (neural_tracer && generation > pre_neural_gens) {
+             // Skip optimizations
+         } else if (!global_opt) {
+@@ -4993,8 +5141,156 @@ QuadSurface *tracer(Volume& volume, float scale, int level, cv::Vec3f origin, co
+     }  // end while fringe is non-empty
+     delete timer;
+ 
++    long gate_n_audit = 0;
++    if (gate_enabled && params.value("gate_final_audit", true)) {
++        // Final audit: later local optimisations move accepted points. Re-apply the distance gate
++        // to every vertex at its final position: a vertex whose own distance is >= reject_dist_th
++        // is removed; for an edge (8-neighbourhood) whose worst sample is >= reject_dist_th the
++        // endpoint with the later generation is removed (both on a tie).
++        CachedChunked3dInterpolator<uint8_t,thresholdedDistance> ainterp(proc_tensor);
++        static const cv::Vec2i aedges[] = {{0,1}, {1,0}, {1,1}, {1,-1}};
++        const int aT = std::max(1, (int)std::lround(T));
++        std::vector<cv::Vec2i> kill;
++        for (int j = used_area.y; j < used_area.br().y; j++)
++            for (int i = used_area.x; i < used_area.br().x; i++) {
++                const cv::Vec2i p{j, i};
++                if (!(trace_params.state(p) & STATE_LOC_VALID))
++                    continue;
++                const cv::Vec3d lp = trace_params.dpoints(p);
++                double d0 = 0;
++                ainterp.Evaluate(lp[2], lp[1], lp[0], &d0);
++                if (!(d0 < gate_reject_dist_th)) {
++                    kill.push_back(p);
++                    continue;
++                }
++                for (const auto& off : aedges) {
++                    const cv::Vec2i n = p + off;
++                    if (!bounds.contains(cv::Point(n[1], n[0])) || !(trace_params.state(n) & STATE_LOC_VALID))
++                        continue;
++                    const cv::Vec3d ln = trace_params.dpoints(n);
++                    double dm = 0;
++                    for (int k = 1; k < aT; k++) {
++                        const double f = double(k) / aT;
++                        const cv::Vec3d l = lp * f + ln * (1.0 - f);
++                        double d2 = 0;
++                        ainterp.Evaluate(l[2], l[1], l[0], &d2);
++                        dm = std::max(dm, d2);
++                    }
++                    if (!(dm < gate_reject_dist_th)) {
++                        if (generations(p) >= generations(n)) kill.push_back(p);
++                        if (generations(n) >= generations(p)) kill.push_back(n);
++                    }
++                }
++            }
++        for (const auto& p : kill) {
++            if (!(trace_params.state(p) & STATE_LOC_VALID))
++                continue;
++            gate_rej_xyz(p) = cv::Vec3f(trace_params.dpoints(p)[0], trace_params.dpoints(p)[1], trace_params.dpoints(p)[2]);
++            trace_params.dpoints(p) = cv::Vec3d(-1, -1, -1);
++            trace_params.state(p) = STATE_FAIL;
++            generations(p) = 0;
++            gate_reject(p) |= 4;
++            gate_n_audit++;
++        }
++        // A vertex with no valid 8-neighbour has no edge that could be gated (and spans no quad):
++        // remove it too, repeating until none is left.
++        bool removed_isolated = true;
++        while (removed_isolated) {
++            removed_isolated = false;
++            for (int j = used_area.y; j < used_area.br().y; j++)
++                for (int i = used_area.x; i < used_area.br().x; i++) {
++                    const cv::Vec2i p{j, i};
++                    if (!(trace_params.state(p) & STATE_LOC_VALID))
++                        continue;
++                    bool has_nb = false;
++                    for (int oy = -1; oy <= 1 && !has_nb; oy++)
++                        for (int ox = -1; ox <= 1 && !has_nb; ox++) {
++                            const cv::Vec2i n = p + cv::Vec2i(oy, ox);
++                            if ((oy || ox) && bounds.contains(cv::Point(n[1], n[0])) &&
++                                (trace_params.state(n) & STATE_LOC_VALID))
++                                has_nb = true;
++                        }
++                    if (!has_nb) {
++                        gate_rej_xyz(p) = cv::Vec3f(trace_params.dpoints(p)[0], trace_params.dpoints(p)[1], trace_params.dpoints(p)[2]);
++                        trace_params.dpoints(p) = cv::Vec3d(-1, -1, -1);
++                        trace_params.state(p) = STATE_FAIL;
++                        generations(p) = 0;
++                        gate_reject(p) |= 8;
++                        gate_n_audit++;
++                        removed_isolated = true;
++                    }
++                }
++        }
++        // Keep only the component connected to the seed through quad edges (4-connectivity): an
++        // island left after the audit cut its link is no longer supported by growth from the seed.
++        // Fresh growth only: a resumed surface may legitimately have several components.
++        if (!resume_surf) {
++            cv::Vec2i start{-1, -1};
++            if (trace_params.state(y0, x0) & STATE_LOC_VALID) {
++                start = {y0, x0};
++            } else {
++                double best = 1e30;
++                for (int j = used_area.y; j < used_area.br().y; j++)
++                    for (int i = used_area.x; i < used_area.br().x; i++)
++                        if ((trace_params.state(j, i) & STATE_LOC_VALID) &&
++                            double(j - y0) * (j - y0) + double(i - x0) * (i - x0) < best) {
++                            best = double(j - y0) * (j - y0) + double(i - x0) * (i - x0);
++                            start = {j, i};
++                        }
++            }
++            cv::Mat_<uint8_t> keep(trace_params.state.size(), (uint8_t)0);
++            if (start[0] >= 0) {
++                std::vector<cv::Vec2i> stack{start};
++                keep(start) = 1;
++                static const cv::Vec2i n4[] = {{-1,0}, {1,0}, {0,-1}, {0,1}};
++                while (!stack.empty()) {
++                    const cv::Vec2i q = stack.back();
++                    stack.pop_back();
++                    for (const auto& o : n4) {
++                        const cv::Vec2i n = q + o;
++                        if (bounds.contains(cv::Point(n[1], n[0])) && !keep(n) &&
++                            (trace_params.state(n) & STATE_LOC_VALID)) {
++                            keep(n) = 1;
++                            stack.push_back(n);
++                        }
++                    }
++                }
++            }
++            for (int j = used_area.y; j < used_area.br().y; j++)
++                for (int i = used_area.x; i < used_area.br().x; i++) {
++                    const cv::Vec2i p{j, i};
++                    if ((trace_params.state(p) & STATE_LOC_VALID) && !keep(p)) {
++                        gate_rej_xyz(p) = cv::Vec3f(trace_params.dpoints(p)[0], trace_params.dpoints(p)[1], trace_params.dpoints(p)[2]);
++                        trace_params.dpoints(p) = cv::Vec3d(-1, -1, -1);
++                        trace_params.state(p) = STATE_FAIL;
++                        generations(p) = 0;
++                        gate_reject(p) |= 16;
++                        gate_n_audit++;
++                    }
++                }
++        }
++        std::cout << "gate: final audit removed " << gate_n_audit << " vertices" << std::endl;
++    }
++
+     QuadSurface* surf = create_surface_from_state();
+ 
++    if (gate_enabled) {
++        surf->meta["hrc_n_audit_removed"] = (double)gate_n_audit;
++        surf->meta["hrc_gate_build"] = "c";
++        surf->meta["hrc_reject_dist_th"] = gate_reject_dist_th;
++        surf->meta["hrc_reject_cost_th"] = gate_reject_cost_th;
++        surf->meta["hrc_compactness"] = gate_compact;
++        surf->meta["hrc_negctl_freeze"] = gate_negctl_freeze;
++        surf->meta["hrc_ref_max"] = gate_ref_max;
++        surf->meta["hrc_n_eval"] = (double)gate_n_eval;
++        surf->meta["hrc_n_rej_dist"] = (double)gate_n_rej_dist;
++        surf->meta["hrc_n_rej_cost"] = (double)gate_n_rej_cost;
++        surf->meta["hrc_n_deferred"] = (double)gate_n_defer;
++        surf->meta["hrc_n_relax"] = (double)gate_n_relax;
++        surf->meta["hrc_final_generation"] = generation;
++        surf->meta["hrc_accepted"] = succ;
++    }
++
+     const double area_est_vx2 = vc::surface::computeSurfaceAreaVox2(*surf);
+     const auto area_est_cm2 = vc::surface::areaCm2FromVox2(
+         area_est_vx2, static_cast<double>(voxelsize));
