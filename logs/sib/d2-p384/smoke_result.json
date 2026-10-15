@@ -1,0 +1,121 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "data": "SYNTHETIC (d2_data.write_synthetic_registry n=40 size=560 seed=101)",
+ "config_sha256": "37c0d81572ab2259f981daf408c4c2b5717665ebfe56a8a62da94f8a188b1ce2",
+ "config_sha256_B": "37c0d81572ab2259f981daf408c4c2b5717665ebfe56a8a62da94f8a188b1ce2",
+ "steps": 10,
+ "losses_A": [
+  0.6234780102968216,
+  0.5707686468958855,
+  0.5550295263528824,
+  0.5493539571762085,
+  0.5404410734772682,
+  0.5317952856421471,
+  0.5244642794132233,
+  0.5187786296010017,
+  0.5168877094984055,
+  0.5114671885967255
+ ],
+ "losses_B": [
+  0.6234780102968216,
+  0.5707686468958855,
+  0.5550295263528824,
+  0.5493539571762085,
+  0.5404410734772682,
+  0.5317952856421471,
+  0.5244642794132233,
+  0.5187786296010017,
+  0.5168877094984055,
+  0.5114671885967255
+ ],
+ "losses_equal": true,
+ "max_abs_loss_diff": 0.0,
+ "final_weights_bitwise_equal": true,
+ "final_weights_max_abs_diff": 0.0,
+ "model_final_sha256_A": "99987caf4272656bb3ec5a0599ba73213efef91c4667218469e47b68dcfe9d02",
+ "model_final_sha256_B": "99987caf4272656bb3ec5a0599ba73213efef91c4667218469e47b68dcfe9d02",
+ "resumptions_B": [
+  {
+   "event": "resume",
+   "utc": "2026-09-26T06:25:17Z",
+   "from_step": 5,
+   "source": "local"
+  }
+ ],
+ "checkpoint_events_A": [
+  {
+   "event": "checkpoint",
+   "step": 5,
+   "utc": "2026-09-26T05:59:03Z",
+   "local_bytes": 414961596,
+   "seconds": 0.38
+  }
+ ],
+ "checkpoint_events_B": [],
+ "s_per_step_A": [
+  134.39172797599895,
+  127.13804241500111,
+  127.74100149600054,
+  129.53094827699897,
+  126.10750111299785,
+  129.8720177369978,
+  128.17780107,
+  129.22249291499975,
+  129.10484262799946,
+  130.78533760899882
+ ],
+ "median_s_per_step_A": 129.1636677714996,
+ "median_s_per_step_A_excl_step1": 129.10484262799946,
+ "grad_norm_preclip_A": [
+  1.842729091644287,
+  1.230124831199646,
+  1.0056779384613037,
+  0.9239468574523926,
+  0.8940285444259644,
+  0.8452315330505371,
+  0.8116592168807983,
+  0.7148614525794983,
+  0.6456306576728821,
+  0.5802195072174072
+ ],
+ "supervised_frac_A": [
+  0.7844306156039238,
+  0.7835856527090073,
+  0.7830702438950539,
+  0.7830219268798828,
+  0.7834057211875916,
+  0.7847800776362419,
+  0.7822653576731682,
+  0.782986119389534,
+  0.7834341302514076,
+  0.7820290327072144
+ ],
+ "finite_loss_steps_A": 10,
+ "peak_rss_GB_A_time": 9.885585408,
+ "peak_rss_GB_B1_time": 9.955749888,
+ "peak_rss_GB_B2_time": 10.0268032,
+ "peak_rss_GB_A_self": 9.885585408,
+ "wall_s_A": 1298.52,
+ "wall_s_B1": 919.37,
+ "wall_s_B2": 660.56,
+ "loop_s_A": 1292.7,
+ "strict_load": "<All keys matched successfully>",
+ "threads": {
+  "intra": 4,
+  "interop": 1
+ },
+ "checks": {
+  "rot_margin_full": "per-subtile (edge sub-tiles padded, padding ignored)",
+  "subtiles_per_patch": {
+   "syn": 1
+  }
+ },
+ "sample_digest_A": "446f43683cf70609bbe82bd265daa2aaca5f70e1aeae51b6e74d3a09315ce661",
+ "sample_digest_B": "446f43683cf70609bbe82bd265daa2aaca5f70e1aeae51b6e74d3a09315ce661",
+ "trainer_script": {
+  "path": "/home/user/dominion/tools/sib/d2-p384/trainer/d2_train.py",
+  "sha256": "fdbe236cc2cf46664c3d0558e58c7594220a4ce105fde3b5453d634680496f24"
+ },
+ "projected_h_12k_steps": 430.54555923833203,
+ "projected_days_12k_steps": 17.93939830159717
+}

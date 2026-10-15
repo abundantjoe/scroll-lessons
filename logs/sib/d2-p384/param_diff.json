@@ -1,0 +1,1736 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "base_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+ "data": "SYNTHETIC N(0,1) input",
+ "config_patch_size": [
+  17,
+  128,
+  128
+ ],
+ "model_type": "vesuvius_unet_3d_stem_2d",
+ "build_128": {
+  "state_keys": 508,
+  "n_params": 34546498,
+  "strict_load": "<All keys matched successfully>"
+ },
+ "build_384": {
+  "state_keys": 614,
+  "n_params": 47871298,
+  "strict_load_of_base": "fails: RuntimeError (14524 chars)"
+ },
+ "n_keys_differ": 146,
+ "n_param_tensors_differ": 24,
+ "numel_differ_128": 3636512,
+ "numel_differ_384": 29876192,
+ "keys_only_in_128": 0,
+ "keys_only_in_384": 106,
+ "differ_by_module": {
+  "network.shared_decoder": 50,
+  "network.shared_encoder": 96
+ },
+ "differing": [
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.all_modules.0.bias",
+   "shape_128": [
+    256
+   ],
+   "shape_384": [
+    320
+   ],
+   "numel_128": 256,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.all_modules.0.weight",
+   "shape_128": [
+    256,
+    512,
+    3,
+    3
+   ],
+   "shape_384": [
+    320,
+    640,
+    3,
+    3
+   ],
+   "numel_128": 1179648,
+   "numel_384": 1843200,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.all_modules.1.bias",
+   "shape_128": [
+    256
+   ],
+   "shape_384": [
+    320
+   ],
+   "numel_128": 256,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.all_modules.1.weight",
+   "shape_128": [
+    256
+   ],
+   "shape_384": [
+    320
+   ],
+   "numel_128": 256,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.conv.bias",
+   "shape_128": [
+    256
+   ],
+   "shape_384": [
+    320
+   ],
+   "numel_128": 256,
+   "numel_384": 320,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.conv.weight",
+   "shape_128": [
+    256,
+    512,
+    3,
+    3
+   ],
+   "shape_384": [
+    320,
+    640,
+    3,
+    3
+   ],
+   "numel_128": 1179648,
+   "numel_384": 1843200,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.norm.bias",
+   "shape_128": [
+    256
+   ],
+   "shape_384": [
+    320
+   ],
+   "numel_128": 256,
+   "numel_384": 320,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.1.convs.0.norm.weight",
+   "shape_128": [
+    256
+   ],
+   "shape_384": [
+    320
+   ],
+   "numel_128": 256,
+   "numel_384": 320,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.all_modules.0.bias",
+   "shape_128": [
+    128
+   ],
+   "shape_384": [
+    256
+   ],
+   "numel_128": 128,
+   "numel_384": 256,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.all_modules.0.weight",
+   "shape_128": [
+    128,
+    256,
+    3,
+    3
+   ],
+   "shape_384": [
+    256,
+    512,
+    3,
+    3
+   ],
+   "numel_128": 294912,
+   "numel_384": 1179648,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.all_modules.1.bias",
+   "shape_128": [
+    128
+   ],
+   "shape_384": [
+    256
+   ],
+   "numel_128": 128,
+   "numel_384": 256,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.all_modules.1.weight",
+   "shape_128": [
+    128
+   ],
+   "shape_384": [
+    256
+   ],
+   "numel_128": 128,
+   "numel_384": 256,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.conv.bias",
+   "shape_128": [
+    128
+   ],
+   "shape_384": [
+    256
+   ],
+   "numel_128": 128,
+   "numel_384": 256,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.conv.weight",
+   "shape_128": [
+    128,
+    256,
+    3,
+    3
+   ],
+   "shape_384": [
+    256,
+    512,
+    3,
+    3
+   ],
+   "numel_128": 294912,
+   "numel_384": 1179648,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.norm.bias",
+   "shape_128": [
+    128
+   ],
+   "shape_384": [
+    256
+   ],
+   "numel_128": 128,
+   "numel_384": 256,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.2.convs.0.norm.weight",
+   "shape_128": [
+    128
+   ],
+   "shape_384": [
+    256
+   ],
+   "numel_128": 128,
+   "numel_384": 256,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.all_modules.0.bias",
+   "shape_128": [
+    64
+   ],
+   "shape_384": [
+    128
+   ],
+   "numel_128": 64,
+   "numel_384": 128,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.all_modules.0.weight",
+   "shape_128": [
+    64,
+    128,
+    3,
+    3
+   ],
+   "shape_384": [
+    128,
+    256,
+    3,
+    3
+   ],
+   "numel_128": 73728,
+   "numel_384": 294912,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.all_modules.1.bias",
+   "shape_128": [
+    64
+   ],
+   "shape_384": [
+    128
+   ],
+   "numel_128": 64,
+   "numel_384": 128,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.all_modules.1.weight",
+   "shape_128": [
+    64
+   ],
+   "shape_384": [
+    128
+   ],
+   "numel_128": 64,
+   "numel_384": 128,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.conv.bias",
+   "shape_128": [
+    64
+   ],
+   "shape_384": [
+    128
+   ],
+   "numel_128": 64,
+   "numel_384": 128,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.conv.weight",
+   "shape_128": [
+    64,
+    128,
+    3,
+    3
+   ],
+   "shape_384": [
+    128,
+    256,
+    3,
+    3
+   ],
+   "numel_128": 73728,
+   "numel_384": 294912,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.norm.bias",
+   "shape_128": [
+    64
+   ],
+   "shape_384": [
+    128
+   ],
+   "numel_128": 64,
+   "numel_384": 128,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.3.convs.0.norm.weight",
+   "shape_128": [
+    64
+   ],
+   "shape_384": [
+    128
+   ],
+   "numel_128": 64,
+   "numel_384": 128,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.4.convs.0.all_modules.0.bias",
+   "shape_128": [
+    32
+   ],
+   "shape_384": [
+    64
+   ],
+   "numel_128": 32,
+   "numel_384": 64,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.4.convs.0.all_modules.0.weight",
+   "shape_128": [
+    32,
+    64,
+    3,
+    3
+   ],
+   "shape_384": [
+    64,
+    128,
+    3,
+    3
+   ],
+   "numel_128": 18432,
+   "numel_384": 73728,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.4.convs.0.all_modules.1.bias",
+   "shape_128": [
+    32
+   ],
+   "shape_384": [
+    64
+   ],
+   "numel_128": 32,
+   "numel_384": 64,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.4.convs.0.all_modules.1.weight",
+   "shape_128": [
+    32
+   ],
+   "shape_384": [
+    64
+   ],
+   "numel_128": 32,
+   "numel_384": 64,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.4.convs.0.conv.bias",
+   "shape_128": [
+    32
+   ],
+   "shape_384": [
+    64
+   ],
+   "numel_128": 32,
+   "numel_384": 64,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.4.convs.0.conv.weight",
+   "shape_128": [
+    32,
+    64,
+    3,
+    3
+   ],
+   "shape_384": [
+    64,
+    128,
+    3,
+    3
+   ],
+   "numel_128": 18432,
+   "numel_384": 73728,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.4.convs.0.norm.bias",
+   "shape_128": [
+    32
+   ],
+   "shape_384": [
+    64
+   ],
+   "numel_128": 32,
+   "numel_384": 64,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.4.convs.0.norm.weight",
+   "shape_128": [
+    32
+   ],
+   "shape_384": [
+    64
+   ],
+   "numel_128": 32,
+   "numel_384": 64,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    32
+   ],
+   "numel_128": null,
+   "numel_384": 32,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    32,
+    64,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 18432,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    32
+   ],
+   "numel_128": null,
+   "numel_384": 32,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    32
+   ],
+   "numel_128": null,
+   "numel_384": 32,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    32
+   ],
+   "numel_128": null,
+   "numel_384": 32,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    32,
+    64,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 18432,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    32
+   ],
+   "numel_128": null,
+   "numel_384": 32,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.stages.5.convs.0.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    32
+   ],
+   "numel_128": null,
+   "numel_384": 32,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.1.bias",
+   "shape_128": [
+    256
+   ],
+   "shape_384": [
+    320
+   ],
+   "numel_128": 256,
+   "numel_384": 320,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.1.weight",
+   "shape_128": [
+    320,
+    256,
+    2,
+    2
+   ],
+   "shape_384": [
+    320,
+    320,
+    2,
+    2
+   ],
+   "numel_128": 327680,
+   "numel_384": 409600,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.2.bias",
+   "shape_128": [
+    128
+   ],
+   "shape_384": [
+    256
+   ],
+   "numel_128": 128,
+   "numel_384": 256,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.2.weight",
+   "shape_128": [
+    256,
+    128,
+    2,
+    2
+   ],
+   "shape_384": [
+    320,
+    256,
+    2,
+    2
+   ],
+   "numel_128": 131072,
+   "numel_384": 327680,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.3.bias",
+   "shape_128": [
+    64
+   ],
+   "shape_384": [
+    128
+   ],
+   "numel_128": 64,
+   "numel_384": 128,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.3.weight",
+   "shape_128": [
+    128,
+    64,
+    2,
+    2
+   ],
+   "shape_384": [
+    256,
+    128,
+    2,
+    2
+   ],
+   "numel_128": 32768,
+   "numel_384": 131072,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.4.bias",
+   "shape_128": [
+    32
+   ],
+   "shape_384": [
+    64
+   ],
+   "numel_128": 32,
+   "numel_384": 64,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.4.weight",
+   "shape_128": [
+    64,
+    32,
+    2,
+    2
+   ],
+   "shape_384": [
+    128,
+    64,
+    2,
+    2
+   ],
+   "numel_128": 8192,
+   "numel_384": 32768,
+   "is_parameter": true
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.5.bias",
+   "shape_128": null,
+   "shape_384": [
+    32
+   ],
+   "numel_128": null,
+   "numel_384": 32,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_decoder.transpconvs.5.weight",
+   "shape_128": null,
+   "shape_384": [
+    64,
+    32,
+    2,
+    2
+   ],
+   "numel_128": null,
+   "numel_384": 8192,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv1.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv2.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv2.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv2.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv2.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv2.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv2.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv2.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.0.conv2.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv1.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv1.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv1.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv1.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv1.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv1.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv1.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv1.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv2.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv2.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv2.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv2.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv2.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv2.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv2.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.1.conv2.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv1.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv1.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv1.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv1.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv1.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv1.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv1.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv1.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv2.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv2.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv2.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv2.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv2.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv2.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv2.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.2.conv2.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv1.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv1.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv1.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv1.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv1.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv1.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv1.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv1.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv2.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv2.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv2.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv2.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv2.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv2.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv2.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.3.conv2.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv1.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv1.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv1.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv1.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv1.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv1.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv1.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv1.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv2.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv2.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv2.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv2.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv2.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv2.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv2.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.4.conv2.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv1.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv1.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv1.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv1.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv1.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv1.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv1.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv1.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv2.all_modules.0.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv2.all_modules.0.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv2.all_modules.1.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv2.all_modules.1.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv2.conv.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv2.conv.weight",
+   "shape_128": null,
+   "shape_384": [
+    320,
+    320,
+    3,
+    3
+   ],
+   "numel_128": null,
+   "numel_384": 921600,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv2.norm.bias",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  },
+  {
+   "key": "network.shared_encoder.stages.6.blocks.5.conv2.norm.weight",
+   "shape_128": null,
+   "shape_384": [
+    320
+   ],
+   "numel_128": null,
+   "numel_384": 320,
+   "is_parameter": false
+  }
+ ],
+ "build_128_forward_384": {
+  "out_shape": [
+   1,
+   1,
+   384,
+   384
+  ],
+  "finite": true,
+  "train_backward_finite": true
+ }
+}

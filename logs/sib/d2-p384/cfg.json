@@ -1,0 +1,64 @@
+{
+ "amx_gate": null,
+ "arm": "P384",
+ "base_checkpoint": {
+  "name": "ink_9um hybrid_3d2d seed42 step-075000 (HF scrollprize/ink_9um rev 7109667e)",
+  "path": "/work/ckpt/ink_9um/hybrid_3d2d-seed42/step-075000.pth",
+  "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+ },
+ "batch": 32,
+ "ckpt": {
+  "every": 5,
+  "remote_ref": null,
+  "shard_bytes": 90000000
+ },
+ "deterministic": true,
+ "forward": "full",
+ "label_rule": {
+  "blank_max": 100,
+  "ink_min": 150
+ },
+ "lineage": {
+  "decl": "SMOKE-SYNTHETIC (not a declared recipe)",
+  "parent": "base",
+  "parent_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab"
+ },
+ "log_every": 1,
+ "micro_batch": 4,
+ "null": false,
+ "optimizer": {
+  "betas": [
+   0.9,
+   0.999
+  ],
+  "grad_clip": 1.0,
+  "lr": 2e-05,
+  "name": "adamw",
+  "schedule": "constant",
+  "weight_decay": 3e-05
+ },
+ "precision": "fp32",
+ "rev": false,
+ "rot24": true,
+ "schema": "hercules-d2-trainer-config/1",
+ "seed": 1,
+ "sources": [
+  {
+   "kind": "pairs",
+   "name": "syn",
+   "path": "/work/d2/smoke/syn560/registry.json",
+   "role": "train",
+   "sha256": "9d3d265c9817bce82f50da1b33d1159391cebef6b1b6c80676b3b4556f80f6f3"
+  }
+ ],
+ "steps": 10,
+ "subtile": true,
+ "threads": 4,
+ "tile": 384,
+ "z": {
+  "centre_offset": 0,
+  "jitter": 2,
+  "stack_depth": 21,
+  "window": 17
+ }
+}

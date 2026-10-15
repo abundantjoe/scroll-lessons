@@ -1,0 +1,37 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "data": "SYNTHETIC",
+ "trainer_d2_train_sha256": "fdbe236cc2cf46664c3d0558e58c7594220a4ce105fde3b5453d634680496f24",
+ "config_fields_differing_from_P384": {
+  "NULL": [
+   "arm",
+   "null"
+  ],
+  "REV": [
+   "arm",
+   "rev"
+  ]
+ },
+ "paired": true,
+ "allow_ids_pinned_in_config": {
+  "path": true,
+  "sha256": "ecf722377ab40e6f9cd3ae0926c817604ec74135c6fdb42425f4554181014dc3"
+ },
+ "allow_ids_applied_by_pairs_kind": false,
+ "tilegrid_holdouts_before_block_test": true,
+ "adapters_in_pinned": [
+  "tilegrid3",
+  "stagec",
+  "pairs"
+ ],
+ "spec_kinds_missing_in_pinned": [
+  "blockpairs"
+ ],
+ "stagec_data_root_supported": false,
+ "allow_ids_measured": {
+  "kind": "pairs",
+  "allowlist_n": 34,
+  "loaded_n": 40,
+  "finding": "FAIL-OPEN: load_source passes allow_ids only for tilegrid*/stagec; kinds pairs and d3_pool ignore it silently although make-config pins its path and sha256. Same code at trainer tip 08d7e42. The freeze spec uses tilegrid3/blockpairs/stagec, so a declared freeze is unaffected unless a pairs or d3_pool source is listed."
+ }
+}

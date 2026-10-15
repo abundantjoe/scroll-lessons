@@ -1,0 +1,243 @@
+/work/d2/smoke/syn560/registry.json
+{"config": "/work/d2/smoke/cfg.json", "sha256": "37c0d81572ab2259f981daf408c4c2b5717665ebfe56a8a62da94f8a188b1ce2"}
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 32
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"step": 1, "loss": 0.6234780102968216, "grad_norm_preclip": 1.842729091644287, "s_per_step": 134.39172797599895, "supervised_frac": 0.7844306156039238, "epochs": [1], "run_index": 0, "sample_digest": "850919bffb1f26ad2caea110529d4f9a7fcb6a7fd6756d2ded7efedadbaa19db", "loss_mean_window": 0.6234780102968216}
+{"step": 2, "loss": 0.5707686468958855, "grad_norm_preclip": 1.230124831199646, "s_per_step": 127.13804241500111, "supervised_frac": 0.7835856527090073, "epochs": [2], "run_index": 0, "sample_digest": "3477769b2b2fe860c4d6a5b745a336f3591aa3ef842fc13022787aafc5e7a03e", "loss_mean_window": 0.5707686468958855}
+{"step": 3, "loss": 0.5550295263528824, "grad_norm_preclip": 1.0056779384613037, "s_per_step": 127.74100149600054, "supervised_frac": 0.7830702438950539, "epochs": [3], "run_index": 0, "sample_digest": "46127159e900c77b94d7f9e1d5bb1604edac0aa83bb60e6f61c021929ebb07a2", "loss_mean_window": 0.5550295263528824}
+{"step": 4, "loss": 0.5493539571762085, "grad_norm_preclip": 0.9239468574523926, "s_per_step": 129.53094827699897, "supervised_frac": 0.7830219268798828, "epochs": [4], "run_index": 0, "sample_digest": "d5643e01d214a7508cf91b3f1fe3fbef196412ae6307ab482f37a1cd728f5aac", "loss_mean_window": 0.5493539571762085}
+{"step": 5, "loss": 0.5404410734772682, "grad_norm_preclip": 0.8940285444259644, "s_per_step": 126.10750111299785, "supervised_frac": 0.7834057211875916, "epochs": [4], "run_index": 0, "sample_digest": "4a30905c97debb9a4f92c097645406c292a62232bcb631db684bce8a5f2680ee", "loss_mean_window": 0.5404410734772682}
+{"event": "checkpoint", "step": 5, "utc": "2026-09-26T05:59:03Z", "local_bytes": 414961596, "seconds": 0.38}
+{"step": 6, "loss": 0.5317952856421471, "grad_norm_preclip": 0.8452315330505371, "s_per_step": 129.8720177369978, "supervised_frac": 0.7847800776362419, "epochs": [5], "run_index": 0, "sample_digest": "fbedc5666ff1ce6df74cac0313dcde4af4055b60478d20605f24c4cce6f2f5f5", "loss_mean_window": 0.5317952856421471}
+{"step": 7, "loss": 0.5244642794132233, "grad_norm_preclip": 0.8116592168807983, "s_per_step": 128.17780107, "supervised_frac": 0.7822653576731682, "epochs": [6], "run_index": 0, "sample_digest": "8b7e3fd47609e632bb5d236e3a5b9cdc8f33698d3f48bfa2c5172b2286c04001", "loss_mean_window": 0.5244642794132233}
+{"step": 8, "loss": 0.5187786296010017, "grad_norm_preclip": 0.7148614525794983, "s_per_step": 129.22249291499975, "supervised_frac": 0.782986119389534, "epochs": [7], "run_index": 0, "sample_digest": "0965f38f9a69bb43a6cfcbdddeb42c9f078cb3fc6b47ddf4bdd2cbba0defec59", "loss_mean_window": 0.5187786296010017}
+{"step": 9, "loss": 0.5168877094984055, "grad_norm_preclip": 0.6456306576728821, "s_per_step": 129.10484262799946, "supervised_frac": 0.7834341302514076, "epochs": [8], "run_index": 0, "sample_digest": "47838ebeec646ba3d8c280fce708a62f411ed6dfe48c37168363b65029d3eb38", "loss_mean_window": 0.5168877094984055}
+{"step": 10, "loss": 0.5114671885967255, "grad_norm_preclip": 0.5802195072174072, "s_per_step": 130.78533760899882, "supervised_frac": 0.7820290327072144, "epochs": [8], "run_index": 0, "sample_digest": "446f43683cf70609bbe82bd265daa2aaca5f70e1aeae51b6e74d3a09315ce661", "loss_mean_window": 0.5114671885967255}
+SUMMARY {"provenance": "Provenance: Project HERCULES | owner the owner | [id removed]", "arm": "P384", "seed": 1, "config_sha256": "37c0d81572ab2259f981daf408c4c2b5717665ebfe56a8a62da94f8a188b1ce2", "started_utc": "2026-09-26T05:48:14Z", "finished_utc": "2026-09-26T06:09:51Z", "steps": 10, "finite_loss_steps": 10, "loss_first": 0.6234780102968216, "loss_last": 0.5114671885967255, "median_s_per_step": 129.1636677714996, "loop_s": 1292.7, "wall_s": 1297.3, "peak_rss_kb": 9653892, "strict_load": "<All keys matched successfully>", "threads": {"intra": 4, "interop": 1}, "sample_digest_final": "446f43683cf70609bbe82bd265daa2aaca5f70e1aeae51b6e74d3a09315ce661", "checks": {"rot_margin_full": "per-subtile (edge sub-tiles padded, padding ignored)", "subtiles_per_patch": {"syn": 1}}, "resumptions": [], "checkpoint_events": [{"event": "checkpoint", "step": 5, "utc": "2026-09-26T05:59:03Z", "local_bytes": 414961596, "seconds": 0.38}], "model_final": {"path": "/work/d2/smoke/A/model_final.pth", "sha256": "99987caf4272656bb3ec5a0599ba73213efef91c4667218469e47b68dcfe9d02", "bytes": 138362207}, "checkpoint_registry_sha256": "bf47df4c68a00eda4f4dcd4d12972c9816a12aca85b271e8940c59cc6cd9a3ff", "script": {"path": "/home/user/dominion/tools/sib/d2-p384/trainer/d2_train.py", "sha256": "fdbe236cc2cf46664c3d0558e58c7594220a4ce105fde3b5453d634680496f24"}}
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 32
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"step": 1, "loss": 0.6234780102968216, "grad_norm_preclip": 1.842729091644287, "s_per_step": 129.11930586299786, "supervised_frac": 0.7844306156039238, "epochs": [1], "run_index": 0, "sample_digest": "850919bffb1f26ad2caea110529d4f9a7fcb6a7fd6756d2ded7efedadbaa19db", "loss_mean_window": 0.6234780102968216}
+{"step": 2, "loss": 0.5707686468958855, "grad_norm_preclip": 1.230124831199646, "s_per_step": 131.2044441479993, "supervised_frac": 0.7835856527090073, "epochs": [2], "run_index": 0, "sample_digest": "3477769b2b2fe860c4d6a5b745a336f3591aa3ef842fc13022787aafc5e7a03e", "loss_mean_window": 0.5707686468958855}
+{"step": 3, "loss": 0.5550295263528824, "grad_norm_preclip": 1.0056779384613037, "s_per_step": 129.0744880989987, "supervised_frac": 0.7830702438950539, "epochs": [3], "run_index": 0, "sample_digest": "46127159e900c77b94d7f9e1d5bb1604edac0aa83bb60e6f61c021929ebb07a2", "loss_mean_window": 0.5550295263528824}
+{"step": 4, "loss": 0.5493539571762085, "grad_norm_preclip": 0.9239468574523926, "s_per_step": 133.2334926270014, "supervised_frac": 0.7830219268798828, "epochs": [4], "run_index": 0, "sample_digest": "d5643e01d214a7508cf91b3f1fe3fbef196412ae6307ab482f37a1cd728f5aac", "loss_mean_window": 0.5493539571762085}
+{"step": 5, "loss": 0.5404410734772682, "grad_norm_preclip": 0.8940285444259644, "s_per_step": 128.40968351999982, "supervised_frac": 0.7834057211875916, "epochs": [4], "run_index": 0, "sample_digest": "4a30905c97debb9a4f92c097645406c292a62232bcb631db684bce8a5f2680ee", "loss_mean_window": 0.5404410734772682}
+{"event": "checkpoint", "step": 5, "utc": "2026-09-26T06:20:49Z", "local_bytes": 414961596, "seconds": 0.39}
+{"step": 6, "loss": 0.5317952856421471, "grad_norm_preclip": 0.8452315330505371, "s_per_step": 132.92139170000155, "supervised_frac": 0.7847800776362419, "epochs": [5], "run_index": 0, "sample_digest": "fbedc5666ff1ce6df74cac0313dcde4af4055b60478d20605f24c4cce6f2f5f5", "loss_mean_window": 0.5317952856421471}
+{"step": 7, "loss": 0.5244642794132233, "grad_norm_preclip": 0.8116592168807983, "s_per_step": 129.71340081400194, "supervised_frac": 0.7822653576731682, "epochs": [6], "run_index": 0, "sample_digest": "8b7e3fd47609e632bb5d236e3a5b9cdc8f33698d3f48bfa2c5172b2286c04001", "loss_mean_window": 0.5244642794132233}
+TEST: simulated crash after step 7
+B1 exit code: 99 (99 = simulated crash)
+total 406188
+drwxr-xr-x 2 root root      4096 Sep 26 06:20 .
+drwxr-xr-x 5 root root      4096 Sep 26 06:25 ..
+-rw-r--r-- 1 root root      1348 Sep 26 06:09 config.json
+-rw-r--r-- 1 root root    952006 Sep 26 06:09 patch_registry_pool.npz
+-rw-r--r-- 1 root root 414961596 Sep 26 06:20 resume_latest.pth
+-rw-r--r-- 1 root root      2274 Sep 26 06:25 train_log.jsonl
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 32
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"step": 6, "loss": 0.5317952856421471, "grad_norm_preclip": 0.8452315330505371, "s_per_step": 133.50529648799784, "supervised_frac": 0.7847800776362419, "epochs": [5], "run_index": 1, "sample_digest": "fbedc5666ff1ce6df74cac0313dcde4af4055b60478d20605f24c4cce6f2f5f5", "loss_mean_window": 0.5317952856421471}
+{"step": 7, "loss": 0.5244642794132233, "grad_norm_preclip": 0.8116592168807983, "s_per_step": 129.98608375099866, "supervised_frac": 0.7822653576731682, "epochs": [6], "run_index": 1, "sample_digest": "8b7e3fd47609e632bb5d236e3a5b9cdc8f33698d3f48bfa2c5172b2286c04001", "loss_mean_window": 0.5244642794132233}
+{"step": 8, "loss": 0.5187786296010017, "grad_norm_preclip": 0.7148614525794983, "s_per_step": 129.09251826999753, "supervised_frac": 0.782986119389534, "epochs": [7], "run_index": 1, "sample_digest": "0965f38f9a69bb43a6cfcbdddeb42c9f078cb3fc6b47ddf4bdd2cbba0defec59", "loss_mean_window": 0.5187786296010017}
+{"step": 9, "loss": 0.5168877094984055, "grad_norm_preclip": 0.6456306576728821, "s_per_step": 131.19288994999806, "supervised_frac": 0.7834341302514076, "epochs": [8], "run_index": 1, "sample_digest": "47838ebeec646ba3d8c280fce708a62f411ed6dfe48c37168363b65029d3eb38", "loss_mean_window": 0.5168877094984055}
+{"step": 10, "loss": 0.5114671885967255, "grad_norm_preclip": 0.5802195072174072, "s_per_step": 130.46854860999883, "supervised_frac": 0.7820290327072144, "epochs": [8], "run_index": 1, "sample_digest": "446f43683cf70609bbe82bd265daa2aaca5f70e1aeae51b6e74d3a09315ce661", "loss_mean_window": 0.5114671885967255}
+SUMMARY {"provenance": "Provenance: Project HERCULES | owner the owner | [id removed]", "arm": "P384", "seed": 1, "config_sha256": "37c0d81572ab2259f981daf408c4c2b5717665ebfe56a8a62da94f8a188b1ce2", "started_utc": "2026-09-26T06:25:12Z", "finished_utc": "2026-09-26T06:36:11Z", "steps": 10, "finite_loss_steps": 10, "loss_first": 0.6234780102968216, "loss_last": 0.5114671885967255, "median_s_per_step": 130.22731618049875, "loop_s": 654.5, "wall_s": 659.4, "peak_rss_kb": 9791800, "strict_load": "<All keys matched successfully>", "threads": {"intra": 4, "interop": 1}, "sample_digest_final": "446f43683cf70609bbe82bd265daa2aaca5f70e1aeae51b6e74d3a09315ce661", "checks": {"rot_margin_full": "per-subtile (edge sub-tiles padded, padding ignored)", "subtiles_per_patch": {"syn": 1}}, "resumptions": [{"event": "resume", "utc": "2026-09-26T06:25:17Z", "from_step": 5, "source": "local"}], "checkpoint_events": [], "model_final": {"path": "/work/d2/smoke/B/model_final.pth", "sha256": "99987caf4272656bb3ec5a0599ba73213efef91c4667218469e47b68dcfe9d02", "bytes": 138362207}, "checkpoint_registry_sha256": "88a03f69d78edc8977ce8c13d843b02bb1b302bbde7d7c62503a877182dffe8d", "script": {"path": "/home/user/dominion/tools/sib/d2-p384/trainer/d2_train.py", "sha256": "fdbe236cc2cf46664c3d0558e58c7594220a4ce105fde3b5453d634680496f24"}}
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "data": "SYNTHETIC (d2_data.write_synthetic_registry n=40 size=560 seed=101)",
+ "config_sha256": "37c0d81572ab2259f981daf408c4c2b5717665ebfe56a8a62da94f8a188b1ce2",
+ "config_sha256_B": "37c0d81572ab2259f981daf408c4c2b5717665ebfe56a8a62da94f8a188b1ce2",
+ "steps": 10,
+ "losses_equal": true,
+ "max_abs_loss_diff": 0.0,
+ "final_weights_bitwise_equal": true,
+ "final_weights_max_abs_diff": 0.0,
+ "model_final_sha256_A": "99987caf4272656bb3ec5a0599ba73213efef91c4667218469e47b68dcfe9d02",
+ "model_final_sha256_B": "99987caf4272656bb3ec5a0599ba73213efef91c4667218469e47b68dcfe9d02",
+ "median_s_per_step_A": 129.1636677714996,
+ "median_s_per_step_A_excl_step1": 129.10484262799946,
+ "finite_loss_steps_A": 10,
+ "peak_rss_GB_A_time": 9.885585408,
+ "peak_rss_GB_B1_time": 9.955749888,
+ "peak_rss_GB_B2_time": 10.0268032,
+ "peak_rss_GB_A_self": 9.885585408,
+ "wall_s_A": 1298.52,
+ "wall_s_B1": 919.37,
+ "wall_s_B2": 660.56,
+ "loop_s_A": 1292.7,
+ "strict_load": "<All keys matched successfully>",
+ "sample_digest_A": "446f43683cf70609bbe82bd265daa2aaca5f70e1aeae51b6e74d3a09315ce661",
+ "sample_digest_B": "446f43683cf70609bbe82bd265daa2aaca5f70e1aeae51b6e74d3a09315ce661",
+ "projected_h_12k_steps": 430.54555923833203,
+ "projected_days_12k_steps": 17.93939830159717
+}
