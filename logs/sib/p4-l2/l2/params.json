@@ -1,0 +1,60 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "declaration": "RULES.md DECL-P4-12 (P4-L) item 1; channel of DECL-P4-6 item 2",
+ "written_utc": "2026-09-26T18:19:09Z",
+ "written_before": "any threshold voxel and any tile pixel is computed",
+ "segment": "20260701183124-w010-027",
+ "surface_volume": "s3://vesuvius-challenge-open-data/PHercParis4/segments/20260701183124-w010-027/surface-volumes/2.4um-0.22m-78keV-volume-20260411134726.zarr",
+ "level_used": 0,
+ "level_choice_reason": "native 2.4 um voxels, no in-plane pre-averaging before the max; measured throughput (4 processes x 16 range-request threads, ~500 req/s, ~100 MB/s) makes all 160 level-0 tiles feasible in about 30-40 min, so level 1 is not needed for time",
+ "slab": {
+  "centre_slice": 54,
+  "slices_inclusive": [
+   48,
+   60
+  ],
+  "n": 13,
+  "um": [
+   -14.4,
+   14.4
+  ],
+  "rule": "+-15 um around the mesh surface at 2.4 um/slice -> +-6 slices (DECL-P4-6 item 2: 13 slices at 2.4 um)"
+ },
+ "projection": "per canvas px, max over the 13 slab slices of the level-0 uint8 voxels (canvas px (i, j) = level-0 (row i, col j)); a missing chunk (404) is fill 0; px beyond the level-0 array are 0",
+ "display": {
+  "value": "clip(255*(max - T_mid)/(T_hi - T_mid), 0, 255), rounded half-to-even (np.rint) to uint8; 0 outside mesh-valid",
+  "downscale": "cv2.INTER_AREA 8343 x 8343 -> 1068 x 1068",
+  "png": "uint8 grey, IHDR/IDAT/IEND only (hercules.display.builder.png_bytes)"
+ },
+ "grid": {
+  "source": "pairs0814b e2 (origin/claude/gifted-bell-gavnl5-sib-pairs0814b cc81a677) logs/sib/pairs0814b/e2/grid.json sha256 9703b4e26d39e9c25ae9cc0736f90a000cbce7bfaccf271ef7d7322ef8aacb96",
+  "T_canvas_px": 8343,
+  "origin": [
+   0,
+   0
+  ],
+  "n_rows": 9,
+  "n_cols": 21,
+  "mesh_valid": "strip-a canvas_mask rule verbatim (canvas px (i,j) -> grid (i*gh//H, j*gw//W)) on the official tifxyz 20260701183124-on-20260411134726-2.4um",
+  "eligibility": "valid_fraction >= 0.5; must reproduce exactly the 160 eligible (r, c) of the pairs0814b e2 manifest (sha256 462909e1310369194e6321513aef3010f922dcea1d33c29afe627c48a8850210), with identical valid_fraction and valid_px; otherwise the build stops",
+  "mesh_sha256": {
+   "meta.json": "8a61b3e69cc1108bb8241614e3e61e4a3d5cfff2e4006c0692e106d754262a24",
+   "x.tif": "c304cdfd975587864cfcb2147aff1db0ddc9f3240260204cce6b2891c9910165",
+   "y.tif": "9a4eefdae0705ad0f0b59e79093bf48f63dad7760a1ce0be5030e408c8f94139",
+   "z.tif": "a06716afd74c973d80c8f9275737fe95d776edd25537ae3076b07deb46c034f8"
+  }
+ },
+ "thresholds_method": {
+  "material": "known-text control 20260701183125-w028-037, surface volume 2.4um-0.22m-78keV-volume-20260411134726.zarr (exists in the bucket: level-0 shape (109, 71600, 174640))",
+  "level": 0,
+  "slab": "same slices 48..60 (13)",
+  "mesh": "official tifxyz 20260701183125-on-20260411134726-2.4um (sha256 x da81.. see thresholds.json)",
+  "voxels": "all 13 slab voxels at every mesh-valid canvas px (same canvas_mask rule) of the sampled control tiles",
+  "tile_subsample": "control canvas tiled with the same T = 8343 from (0, 0); eligible = valid_fraction >= 0.5; sample n = ceil(0.10 * n_eligible) tiles (>= 5 %) drawn by numpy.random.default_rng(20260926).choice(n_eligible, n, replace=False) over the eligible list in (r, c) order",
+  "statistics": "exact, from the integer histogram of the uint8 voxels: T_mid = the median, T_hi = the 99.9th percentile, both as the inverted-CDF quantile (smallest v with CDF(v) >= q)",
+  "frozen": "thresholds.json is pushed before any E2 tile is computed and is never changed afterwards"
+ },
+ "per_tile_numbers": "valid_fraction, valid_px, stats of the slab max at mesh-valid px (mean, std, p1, p50, p99, p99.9, min, max), frac of valid px with max > T_hi, n_hi = slab voxels > T_hi at valid px, frac of valid px with max == 0, frac of output px == 0 / == 255, chunks read / missing; numbers only",
+ "order": "rows r0 and r1 first (DECL-P4-12 item 5), then r2..r8; 4 worker processes on one tile queue",
+ "viewing": "no tile, slice or pixel is ever opened, viewed or described by the builder"
+}

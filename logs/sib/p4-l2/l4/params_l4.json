@@ -1,0 +1,29 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "declaration": "RULES.md DECL-P4-18 (P4-L4)",
+ "written_utc": "2026-09-27T01:47:16Z",
+ "written_before": "any L4 number (control or title strip)",
+ "level": 1,
+ "level_reason": "L4 needs all 109 slices per px: level 0 would be ~500 GB of reads for the control and ~1.2 TB for w010-027; level 1 (4.8 um in-plane, depth still 2.4 um/slice, 2x2 mean) is ~4x less and keeps depth resolution, which is what the 10-20 um deposit and the face detection need",
+ "canvas_mapping": "canvas px (i, j) -> level-1 (i // 2, j // 2); mesh-valid by the strip-a canvas_mask rule evaluated at canvas px (2i, 2j)",
+ "surface": {
+  "smoothing": "Gaussian along the slice axis, sigma 1 slice, kernel radius 4, edge-replicate; on the level-1 uint8 voxels as float32",
+  "sheet": "runs of consecutive slices with smoothed value > 93 (T_mid, frozen); the run containing slice 54, else the run whose nearest slice is closest to 54 (ties -> the lower-slice run)",
+  "invalid": "no run slice within +-25 slices (+-60 um) of slice 54",
+  "faces": "s_minus = first slice of the run, s_plus = last slice of the run"
+ },
+ "values": {
+  "L4-": "max of the RAW (unsmoothed) level-1 voxels over slices [s_minus - 8, s_minus + 2] (20 um = 8.3 -> 8 slices, 5 um = 2.1 -> 2), clipped to 0..108",
+  "L4+": "max over [s_plus - 2, s_plus + 8], clipped"
+ },
+ "pregate": {
+  "strip": "control 20260701183125-w028-037 only; tiles = block_ctl.tile_plan (24 intercol c11/c15/c19 + 40 text, seed 20260927)",
+  "cells": "4 x 4 per tile (~5 mm) on the level-1 grid, used iff >= 50 % mesh-valid and >= 50 % L4-valid",
+  "detector": "block_freeze.py rules verbatim (tile split seed 20260928, T in 140..254, F = train intercol p95, T_d = argmax train recall), per face",
+  "sensitivity": "held-out recall >= 0.90 at FPR <= 0.05",
+  "specificity_rot90": "frozen (T_d, F) applied to the cells of the rot-90 copies of all control tiles; flagged <= 5 %",
+  "specificity_synthetic": "100 synthetic no-ink sheets (one 512 x 512 cell each), matched noise: per-class voxel mean/std (sheet interior, 0-20 um outside each face, air) estimated from the control tiles, sheet centre wandering as a smooth field, thickness drawn from the control's s_plus - s_minus distribution; flagged <= 5 %",
+  "verdict_per_face": "PASS iff sensitivity and both specificity bars hold"
+ },
+ "title_strip": "only for a face that passes, after PREGATE_L4.json is pushed"
+}

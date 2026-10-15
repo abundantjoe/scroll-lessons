@@ -1,0 +1,83 @@
+{
+ "provenance": "Project HERCULES | owner the owner | [id removed]",
+ "declaration": "RULES.md DECL-P4-18 item 3",
+ "level": 1,
+ "n_tiles": {
+  "text": 40,
+  "intercol": 24
+ },
+ "synthetic": {
+  "n": 100,
+  "thickness_slices_p10_50_90": [
+   3.0,
+   12.0,
+   34.0
+  ],
+  "centre_offset_abs_p90_slices": 19.5,
+  "class_voxel_medians": {
+   "interior": 118,
+   "near": 69,
+   "air": 73
+  },
+  "class_voxel_p999": {
+   "interior": 255,
+   "near": 157,
+   "air": 202
+  }
+ },
+ "faces": {
+  "L4-": {
+   "T_d": 250,
+   "F_cell_fraction": 0.0003280610002356943,
+   "train_recall": 0.0924092409240924,
+   "held_out_recall": 0.07357859531772576,
+   "held_out_fpr": 0.053763440860215055,
+   "rot90_flagged": 0.0703205791106515,
+   "synthetic_flagged": 1.0,
+   "n_cells": {
+    "train_text": 303,
+    "train_intercol": 179,
+    "held_text": 299,
+    "held_intercol": 186
+   },
+   "verdict": "FAIL"
+  },
+  "L4+": {
+   "T_d": 219,
+   "F_cell_fraction": 0.0006546914252258218,
+   "train_recall": 0.04950495049504951,
+   "held_out_recall": 0.033444816053511704,
+   "held_out_fpr": 0.021505376344086023,
+   "rot90_flagged": 0.038262668045501554,
+   "synthetic_flagged": 1.0,
+   "n_cells": {
+    "train_text": 303,
+    "train_intercol": 179,
+    "held_text": 299,
+    "held_intercol": 186
+   },
+   "verdict": "FAIL"
+  }
+ },
+ "face_offsets_um_median_of_tile_p10_p50_p90": {
+  "s_minus": [
+   -64.8,
+   -21.599999999999998,
+   9.6
+  ],
+  "s_plus": [
+   -21.599999999999998,
+   9.6,
+   48.0
+  ],
+  "thickness": [
+   7.199999999999999,
+   28.799999999999997,
+   72.0
+  ]
+ },
+ "frac_l4_valid_median": 0.9732232262996785,
+ "note_rot90": "the cell statistic is a per-cell pixel fraction, invariant under rotating the tile with its cell lattice; the rot-90 flagged rate therefore equals the flagged rate over ALL control cells (text and intercolumn), so a detector with high text recall cannot pass it. Computed as declared; raised in ASK.md.",
+ "note_synthetic": "synthetic sheets draw voxels i.i.d. from the control's empirical class histograms (interior p99.9 = 255) with no spatial correlation, so the max over 11 slices is inflated and every synthetic cell exceeds the tiny frozen F; the 100 % synthetic flag rate is therefore a weakness of the generator, not evidence about the channel. The verdict FAIL for both faces holds on sensitivity alone (held-out recall 0.074 / 0.033 vs bar 0.90).",
+ "decision": "both faces FAIL: no w010-027 L4 number, tile or window is computed (DECL-P4-18 item 3)"
+}
