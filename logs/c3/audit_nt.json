@@ -1,0 +1,187 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "audit_of": "DECL-C3-NT (C3 gate for chain variant C2-NT, no --tta-mirror); runner results logs/c3/c3_nt_results.json",
+ "c3_nt_results_sha256": "8ae1e73eb7f39b6f6a1387131f79a24f27e0a878191ec18e070af7bafa41e8e7",
+ "auditor": "fresh agent, independent re-derivation; no prior exposure to this run; no images viewed; no repo files edited except this one",
+ "audit_utc": "2026-09-25T01:37:08Z",
+ "rules_read": [
+  "DECL-C3",
+  "METRIC-HASH-0",
+  "C3-RUN1",
+  "DECL-C3-R1",
+  "METRIC-HASH-6",
+  "METRIC-HASH-7",
+  "C3-R1-VERDICT",
+  "DECL-C3-NT",
+  "METRIC-HASH-8"
+ ],
+ "hashes": {
+  "tools/c3/pick_crop_nt.py": {
+   "declared": "686370fdeafe9c8545483fbad8a2fd0a8cdc28ce8a9e3b339d8e9db1d6244929",
+   "entry": "METRIC-HASH-8",
+   "actual": "686370fdeafe9c8545483fbad8a2fd0a8cdc28ce8a9e3b339d8e9db1d6244929",
+   "match": true
+  },
+  "tools/c3/fidelity.py": {
+   "declared": "7c7ce085be389ebc39759f325a57bee3017a0725ee1eda2ee89aae4a90b16058",
+   "entry": "METRIC-HASH-7",
+   "actual": "7c7ce085be389ebc39759f325a57bee3017a0725ee1eda2ee89aae4a90b16058",
+   "match": true
+  },
+  "tools/c3/auc_eval.py": {
+   "declared": "fc35c089e15a56a04e0271a98d5bad1ffee7ce5f7a287140d9e9a70188f59a15",
+   "entry": "METRIC-HASH-7",
+   "actual": "fc35c089e15a56a04e0271a98d5bad1ffee7ce5f7a287140d9e9a70188f59a15",
+   "match": true
+  },
+  "src/hercules/metrics/pixel.py": {
+   "declared": "a5ab7fed2b83ce005e45a683ba883f8f53073dd9f9818c375bc9ab693fc097c8",
+   "entry": "METRIC-HASH-0 (and -6)",
+   "actual": "a5ab7fed2b83ce005e45a683ba883f8f53073dd9f9818c375bc9ab693fc097c8",
+   "match": true
+  }
+ },
+ "hashes_all_match": true,
+ "other_inputs": {
+  "base_checkpoint_step-075000.pth_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab (matches DECL-C3 e635558a...9cab)",
+  "mesh_valid_npy_sha256": "4c47ca23706d962ddc197c7527bc70acd0ae47221874a1dc299e5150c2d9f1e5 (same file as C3-R1 step 1, mtime 2026-09-25T00:06:30Z)",
+  "map_and_label_file_sha256_match_results_json": true,
+  "tif_npy_decodes_equal_tif (read with imagecodecs in /opt/hv-ink)": true
+ },
+ "crop_check": {
+  "command": "PYTHONPATH=/home/user/dominion/src /opt/hv/bin/python tools/c3/pick_crop_nt.py /work/c3/data/hf/native9/w040/w040_supervision_mask.zarr/0 /work/c3/r1/mesh_valid.npy",
+  "sup_path_equals_auc_eval_SUP_constant": true,
+  "output": {
+   "y0": 512,
+   "x0": 5376,
+   "supervision_px": 278595
+  },
+  "expected_y0_512_x0_5376": true,
+  "matches_runner_output_file": "/work/c3/nt/pick_crop_nt.out (identical text)",
+  "picker_plane": "middle plane index 14 of 28 = auc_eval Z plane 14",
+  "crop_rows_cols": {
+   "rows": [
+    512,
+    2559
+   ],
+   "cols": [
+    5376,
+    7423
+   ]
+  },
+  "overlap_with_run1_y2048_x1152": false,
+  "overlap_reason_run1": "cols disjoint (5376 > 3199)",
+  "overlap_with_r1_y2560_x4096": false,
+  "overlap_reason_r1": "rows disjoint (2559 < 2560; adjacent, no shared pixel)",
+  "candidates_non_overlapping": 64,
+  "candidates_fully_mesh_valid": 5,
+  "runner_up_fully_valid": {
+   "y0": 512,
+   "x0": 5120,
+   "supervision_px": 185018
+  },
+  "note": "unlike R1, the choice depends on the mesh-valid rule: ignoring validity the maximum would be (y0 0, x0 5632, 295,334 px). The mesh-valid file is the unchanged C3-R1 file built before the NT picker existed, so this is recorded, not a defect."
+ },
+ "label_check": {
+  "labels_crop_equals_source_zarr_z14_rows512_2559_cols5376_7423": true,
+  "supervision_crop_equals_source_zarr_z14": true,
+  "label_values": [
+   0,
+   255
+  ],
+  "supervision_values": [
+   0,
+   255
+  ],
+  "ink_in_mask": 75874,
+  "blank_in_mask": 202721,
+  "supervision_px": 278595,
+  "valid_px": 4194304,
+  "render_valid_npy_recomputed_from_render_equal": true
+ },
+ "inference_check": {
+  "log": "/work/c3/nt/infer_c2_nt.log",
+  "tta_mirror_in_log": "False (both orders)",
+  "command_flags": "--direction both --batch-size 4 --num-workers 1 --no-compile, no --tta-mirror; checkpoint step-075000 (as DECL-C3-NT C2-NT)",
+  "forward_file": "/work/c3/nt/infer/c2_nt/w040_nt.tif (layers 6..22 ascending)",
+  "reverse_file": "/work/c3/nt/infer/c2_nt/w040_nt_reverse.tif (layers 22..6)",
+  "naming_source": "villa 41701aa src/vesuvius/ink_detection/inference/infer.py (the module /opt/hv-ink imports): resolve_run_directions(\"both\") = (forward, reverse); resolve_single_output_path keeps OUT.tif for forward and appends _reverse for reverse; select_layer_indices reverses indices only for direction == reverse"
+ },
+ "recomputed": {
+  "render_pearson_pooled_28_slices": 0.9999993427644711,
+  "render_pearson_min_slice": 0.9999990169777856,
+  "render_pearson_argmin_slice": 12,
+  "render_exact_equal_voxel_fraction": 0.997970598084586,
+  "render_max_abs_diff": 1,
+  "render_path": "/work/c3/nt/render/w040_crop_x5376_y512_2048.zarr/0 (28 x 2048 x 2048)",
+  "sv_path": "/work/c3/data/s3/PHerc0139/segments/20250831000000-w040_2025083102/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr/0 [:, 512:2560, 5376:7424]",
+  "c2_nt_forward_auc_in_supervision_mask": 0.9992568178362614,
+  "c2_nt_reverse_auc_in_supervision_mask": 0.5652832886206588,
+  "not_a_bar_all_valid_forward": 0.9866372287309478,
+  "not_a_bar_all_valid_reverse": 0.5736639839188933,
+  "method": "hercules.metrics.pixel.auc(map, lab01, valid & (sup > 0)); lab01 = 1 where label > 127.5 (all 255), 0 where label == 0; pearson = hercules.metrics.pixel.pearson over all crop voxels"
+ },
+ "differences_vs_runner": {
+  "render_pearson_pooled": 0.0,
+  "render_pearson_min_slice": 0.0,
+  "forward_auc_in_mask": 0.0,
+  "reverse_auc_in_mask": 0.0,
+  "forward_all_valid_not_a_bar": 0.0,
+  "reverse_all_valid_not_a_bar": 0.0
+ },
+ "bar_outcomes_on_recomputed_numbers": {
+  "pooled_render_pearson_ge_0.999": {
+   "value": 0.9999993427644711,
+   "met": true
+  },
+  "c2_nt_forward_auc_ge_0.987": {
+   "value": 0.9992568178362614,
+   "met": true
+  },
+  "c2_nt_reverse_auc_lt_0.60": {
+   "value": 0.5652832886206588,
+   "met": true
+  },
+  "all_bars_met": true
+ },
+ "ordering_check": {
+  "clause": "DECL-C3-NT: crop = output of tools/c3/pick_crop_nt.py ..., run once, before any render or map of it exists",
+  "timeline_utc": {
+   "2026-09-24T23:02:01Z-23:58Z": "gpu_ledger row 37: base step-075000, --direction both, NO --tta-mirror, batch 4, --no-compile, on the FULL team SV canvas 6400 x 7980 -> /work/c3/infer/teamsv_notta/w040_teamsv.tif (mtime 23:33:18Z) and w040_teamsv_reverse.tif (mtime 23:58:26Z); log tta_mirror=False, layers 6..22 / 22..6",
+   "2026-09-24T23:59:40Z-2026-09-25T00:00:30Z": "gpu_ledger row 41: whole-canvas in-mask AUC of that map 0.99659 / 0.49633, recorded in C3-RUN1",
+   "2026-09-25T00:59:55Z": "C3-R1 results (no-TTA crop numbers 0.99347 / 0.58142)",
+   "2026-09-25T01:00:51Z": "tools/c3/pick_crop_nt.py mtime (commit eb086c9 01:01:02Z)",
+   "2026-09-25T01:06:18Z": "DECL-C3-NT and METRIC-HASH-8 (commit d945b5f)",
+   "2026-09-25T01:06:42Z-01:06:59Z": "gpu_ledger row 61: picker, single logged run; /work/c3/nt/pick_crop_nt.out 01:06:59Z",
+   "2026-09-25T01:07:07Z": "gpu_ledger row 62: render of the crop starts (first zarr file 01:07:12Z)",
+   "2026-09-25T01:08:22Z": "gpu_ledger row 63: C2-NT inference starts (maps 01:16:21Z, 01:18:28Z)"
+  },
+  "within_nt_run_order_ok": true,
+  "within_nt_run_note": "picker -> render -> maps -> fidelity -> AUC in order; no earlier render of this crop by our chain found (search of /work, /home/user, /srv, /tmp); one picker row in the ledger. An unlogged picker run between 01:00:51Z and 01:06:42Z cannot be excluded from ledger and mtimes alone.",
+  "pre_existing_map_of_crop": true,
+  "pre_existing_map_detail": {
+   "path": "/work/c3/infer/teamsv_notta/w040_teamsv.tif (+ _reverse)",
+   "recipe": "identical to C2-NT (same checkpoint, no TTA, both orders, batch 4, --no-compile); input is the team SV, which matches our render of this crop at pooled r 0.9999993",
+   "covers_nt_crop": true,
+   "nt_crop_share_of_whole_canvas_supervision_px": 0.17094507447227583,
+   "auditor_supplementary_auc_of_that_map_on_nt_crop_in_mask": {
+    "forward": 0.9992888054119858,
+    "reverse": 0.5450319775030731
+   },
+   "pearson_of_that_map_crop_vs_c2_nt_maps": {
+    "forward": 0.9837626875127148,
+    "reverse": 0.9743558857075909
+   },
+   "disclosed_in_DECL-C3-NT": false,
+   "contrast_with_R1": "the same full-canvas map also covered the R1 crop, but R1 gated C2 WITH TTA, a recipe that map did not use (\"our C2 map of the new crop has never been computed\" held); for C2-NT the pre-existing map is the gated recipe itself"
+  },
+  "ordering_constraint_met": false
+ },
+ "audit": "VOID",
+ "reasons": [
+  "Procedural defect (ordering / fresh-data precondition): DECL-C3-NT requires the crop picker to run before any render or map of the crop exists. A C2-NT-recipe map (base step-075000, no TTA, both orders) of the full w040 team SV canvas, which contains the whole NT crop, existed from 2026-09-24T23:33:18Z / 23:58:26Z (gpu_ledger row 37), about 1.5 h before the picker ran (2026-09-25T01:06:42Z) and before DECL-C3-NT was written (01:06:18Z). Its whole-canvas in-mask AUC (0.99659 / 0.49633; this crop is 17.1 % of those supervision pixels) was recorded in C3-RUN1 before the no-TTA variant was chosen, and the DECL-C3-NT disclosure names only the two excluded crops. On this crop that map already gives forward 0.99929 / reverse 0.54503 in the mask, so the gate outcome was contained in pre-existing data. The runner note \"picker run once, before any render or map of the crop existed\" is therefore not correct.",
+  "Everything else checks out: hashes match METRIC-HASH-8/7/0; crop re-derived (y0 512, x0 5376, 278,595 supervision px), no overlap with either earlier crop; label and supervision crops equal the Z = 14 source slices; no TTA in the inference log; w040_nt.tif = forward and w040_nt_reverse.tif = reverse per villa infer.py; all numbers re-derived with difference 0.0.",
+  "Bar outcomes on the re-derived numbers (recorded, not a verdict): pooled Pearson 0.9999993 MET (>= 0.999); forward AUC 0.99926 MET (>= 0.987); reverse AUC 0.56528 MET (< 0.60).",
+  "For the decision-maker: if the clause is read narrowly as \"no render or map by OUR chain of OUR render of the crop\", the within-run order holds and the procedure would be sound; the auditor reads \"any ... map of it\" literally, and the pre-existing map is the gated recipe on near-identical input, so the crop was not fresh for C2-NT."
+ ]
+}

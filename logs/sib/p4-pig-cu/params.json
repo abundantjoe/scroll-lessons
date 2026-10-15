@@ -1,0 +1,287 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "serves": "RULES.md DECL-P4-10 item 2 (CU family detector parameters), frozen before any title-strip (w010-027) number",
+ "status": "FROZEN",
+ "code": "tools/sib/p4-pig-cu/cu.py (detector, scoring, on-sheet) and tools/sib/p4-pig-cu/inject.py (injection-recovery); sha256 in params_freeze.json",
+ "materials": {
+  "C1": {
+   "role": "control (known text, carbon ink) for E1",
+   "seg": "20260623142658-w028-037",
+   "sv_key": "PHercParis4/segments/20260623142658-w028-037/surface-volumes/1.129um-0.23m-78keV-volume-20260608103018-L1.zarr",
+   "level": 0,
+   "nz": 116,
+   "centre": 58,
+   "um_per_slice": 2.258,
+   "sheet": [
+    49,
+    68
+   ],
+   "gaps": [
+    [
+     5,
+     32
+    ],
+    [
+     85,
+     112
+    ]
+   ],
+   "T_g": 233,
+   "T_g_source": "p4-highz thresholds.json T_hi (control p99.9, frozen a9eead1)",
+   "cell": 44,
+   "cell_mm": 0.0992,
+   "mesh_key": "PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260608103018-1.129um.tifxyz",
+   "mesh_div": 10,
+   "grid": {
+    "ref": "origin/claude/gifted-bell-gavnl5-sib-p4-tiles-b",
+    "grid": "logs/sib/p4-tiles-b/m2b/grid.json",
+    "manifest": "logs/sib/p4-tiles-b/m2b/manifest.json",
+    "coverage": true
+   }
+  },
+  "E1": {
+   "role": "title strip, 1.129 um scan",
+   "seg": "20260623141924-w010-027",
+   "sv_key": "PHercParis4/segments/20260623141924-w010-027/surface-volumes/1.129um-0.23m-78keV-volume-20260608103018-L1.zarr",
+   "level": 0,
+   "nz": 116,
+   "centre": 58,
+   "um_per_slice": 2.258,
+   "sheet": [
+    49,
+    68
+   ],
+   "gaps": [
+    [
+     5,
+     32
+    ],
+    [
+     85,
+     112
+    ]
+   ],
+   "T_g": 233,
+   "T_g_source": "p4-highz thresholds.json T_hi (same scan as C1)",
+   "cell": 44,
+   "cell_mm": 0.0992,
+   "mesh_key": "PHercParis4/segments/20260623141924-w010-027/mesh/20260623141924-on-20260608103018-1.129um.tifxyz",
+   "mesh_div": 10,
+   "grid": {
+    "ref": "origin/claude/gifted-bell-gavnl5-sib-p4-tiles-b",
+    "grid": "logs/sib/p4-tiles-b/e1/grid.json",
+    "manifest": "logs/sib/p4-tiles-b/e1a1/manifest.json",
+    "coverage": true
+   },
+   "labelled_adjacency": "p4-excl excl_d_a.json (union flag) when published"
+  },
+  "C2": {
+   "role": "control (known text) for E2",
+   "seg": "20260623142658-w028-037",
+   "sv_key": "PHercParis4/segments/20260623142658-w028-037/surface-volumes/2.4um-0.22m-78keV-volume-20260411134726.zarr",
+   "level": 1,
+   "nz": 109,
+   "centre": 54,
+   "um_per_slice": 2.4,
+   "sheet": [
+    46,
+    63
+   ],
+   "gaps": [
+    [
+     4,
+     30
+    ],
+    [
+     79,
+     105
+    ]
+   ],
+   "T_g": 199,
+   "T_g_source": "t2_control.json: control C2 level-1 sheet-slab p99.9 of voxels > 0 (DECL-P4-6 rule)",
+   "cell": 21,
+   "cell_mm": 0.1008,
+   "mesh_key": "PHercParis4/segments/20260623142658-w028-037/mesh/20260623142658-on-20260411134726-2.4um.tifxyz",
+   "mesh_div": 20,
+   "grid": {
+    "ref": null,
+    "T": 8343,
+    "rule": "origin (0,0), eligible >= 50 % mesh-valid over T x T"
+   }
+  },
+  "E2": {
+   "role": "title strip, 2.4 um scan",
+   "seg": "20260701183124-w010-027",
+   "sv_key": "PHercParis4/segments/20260701183124-w010-027/surface-volumes/2.4um-0.22m-78keV-volume-20260411134726.zarr",
+   "level": 1,
+   "nz": 109,
+   "centre": 54,
+   "um_per_slice": 2.4,
+   "sheet": [
+    46,
+    63
+   ],
+   "gaps": [
+    [
+     4,
+     30
+    ],
+    [
+     79,
+     105
+    ]
+   ],
+   "T_g": 199,
+   "T_g_source": "as C2 (same scan)",
+   "cell": 21,
+   "cell_mm": 0.1008,
+   "mesh_key": "PHercParis4/segments/20260701183124-w010-027/mesh/20260701183124-on-20260411134726-2.4um.tifxyz",
+   "mesh_div": 20,
+   "grid": {
+    "ref": "origin/claude/gifted-bell-gavnl5-sib-pairs0814b",
+    "grid": "logs/sib/pairs0814b/e2/grid.json",
+    "manifest": "logs/sib/pairs0814b/e2/manifest.json",
+    "coverage": false
+   },
+   "labelled_adjacency": "p4-excl excl_a.json (union flag)"
+  }
+ },
+ "level_note": "E1/C1 at level 0 (2.258 um). E2/C2 at level 1 (4.8 um in-plane mean of 2x2, 2.4 um in z), allowed by DECL-P4-10 item 2; this halves in-plane resolution and lowers small-grain sensitivity, which the injection-recovery measures on the same level.",
+ "slab_note": "sheet = mesh surface +-20 um (E1/C1: 19 slices = +-20.3 um; E2/C2: 17 slices = +-19.2 um). gaps = offsets 60-120 um on both sides.",
+ "grain": {
+  "min_voxels": 2,
+  "max_z_slices": 13,
+  "connectivity": "3-D 26-connected, per chunk (components cut by chunk borders in-plane are split; voxel counts are unaffected)",
+  "rule": "voxels > T_g in 26-connected components with >= 2 voxels and z-extent <= 13 slices (~30 um); thicker bodies are 3-D inclusions, not a pen-stroke pigment layer. No lateral size cap. Each kept component counts once, at its bbox-centre px."
+ },
+ "detector": {
+  "smooth_cells": 3,
+  "bg_cells": 31,
+  "z_c": 3.0,
+  "min_cells": 4,
+  "ext_min_cells": 5,
+  "ext_max_cells": 50,
+  "min_scored_cells": 400,
+  "summary": "cell ~0.1 mm; statistic OCC = cell holds >= 1 grain centroid; stroke-scale mean over 3x3 cells (0.3 mm); local background = median over 31x31 cells (3.1 mm); sigma = max(1.4826 MAD(R), sqrt(max(B, 1/9)/9)); z > 3; 8-connected clusters of >= 4 cells with bbox extent 0.5-5 mm; score = sum z over cluster; tile score = max cluster score",
+  "statistic": "OCC",
+  "sigma_floor_min": 0.1111111111111111
+ },
+ "nulls": {
+  "rot90": "np.rot90 of cell arrays (isotropic detector: equal by construction, reported as a check)",
+  "perm": "valid-cell permutation, seed = sha256('MAT:r:c')[:8]"
+ },
+ "hotspot": {
+  "threshold": "thr_M = numpy.percentile(control tile scores + control rot-90 tile scores, 99) (linear); E1 uses C1, E2 uses C2",
+  "rule": "score > thr_M AND in-sheet fraction of the top cluster >= 0.8 AND not labelled-adjacent (p4-excl union flag)"
+ },
+ "onsheet": {
+  "ring_mm": 1.0,
+  "rule": "f_in = E_sheet / (E_sheet + E_gap_lo + E_gap_hi), E = sum over cluster cells of (g - median g over ring cells outside the 2-cell-dilated cluster), each slab processed with the same grain rule; negative E clipped to 0; raw counts (sheet 19/17 slices vs gaps 27+27 / 26+26); depth-uniform baseline 0.26/0.25"
+ },
+ "injection": {
+  "sites_per_material": 12,
+  "materials": [
+   "C1",
+   "E1",
+   "C2",
+   "E2"
+  ],
+  "block_mm": 8.0,
+  "seed": 20260926,
+  "site_rule": "tile uniform among eligible tiles, block centre uniform such that the block lies inside the tile, >= 90 % of block px mesh-valid (redraw up to 200 times)",
+  "letters": [
+   "A",
+   "Gamma",
+   "Delta",
+   "E",
+   "H",
+   "K",
+   "Lambda",
+   "M",
+   "N",
+   "Pi",
+   "Sigma",
+   "T"
+  ],
+  "height_mm": [
+   2.0,
+   4.0
+  ],
+  "stroke_mm": [
+   0.3,
+   0.6
+  ],
+  "grain_diam_um": {
+   "dist": "lognormal",
+   "median": 8.0,
+   "sigma_ln": 0.6,
+   "clip": [
+    1.0,
+    "layer thickness"
+   ]
+  },
+  "densities": {
+   "D1": {
+    "layer_um": 5,
+    "vol_frac": 0.05
+   },
+   "D2": {
+    "layer_um": 10,
+    "vol_frac": 0.15
+   },
+   "D3": {
+    "layer_um": 20,
+    "vol_frac": 0.3
+   },
+   "D4": {
+    "layer_um": 30,
+    "vol_frac": 0.5
+   },
+   "S1": {
+    "layer_um": 5,
+    "vol_frac": 0.01,
+    "note": "sparse"
+   },
+   "S2": {
+    "layer_um": 5,
+    "vol_frac": 0.002,
+    "note": "very sparse"
+   },
+   "F2": {
+    "layer_um": 10,
+    "vol_frac": 0.15,
+    "grain_median_um": 2.0,
+    "note": "fine-ground (pale) Egyptian blue at D2 loading"
+   },
+   "F1": {
+    "layer_um": 3,
+    "vol_frac": 0.05,
+    "grain_median_um": 1.5,
+    "note": "fine, thin, dilute"
+   }
+  },
+  "layer_position": "centred on the mesh surface (centre slice), grain centres uniform within the layer",
+  "contrast": {
+   "nominal": {
+    "V": 816,
+    "basis": "v_air 41 + 11.4 x (109-41); Egyptian blue vs papyrus rho 0.5"
+   },
+   "conservative": {
+    "V": 524,
+    "basis": "papyrus rho 0.8 (ratio 7.1)"
+   }
+  },
+  "forward_model": "occupancy by Monte-Carlo volume splat (64 pts/grain) on the native voxel grid (2.258 or 2.4 um), clipped to 1, Gaussian PSF sigma 0.7 voxel (3-D), v = clip(bg + occ (V - bg), 0, 255) rounded; level 1 = 2x2 in-plane mean of the level-0 forward values with bg = the level-1 voxel",
+  "detection": "a kept cluster (detector rule) with zsum > thr_M whose cells overlap the letter mask dilated by 2 cells",
+  "false_positive": "uninjected block: any kept cluster with zsum > thr_M",
+  "plausible_level": "D3 at conservative contrast (primary); D2 also reported. Sensitivity < 0.8 at D3-conservative => detector reported as INSENSITIVE (DECL-P4-10 item 3)",
+  "detection_limit": "lowest density level with sensitivity >= 0.8 (per material, per contrast)",
+  "density_note": "D1-D4 = plausible loading range (MEMO section 2); S1, S2, F1, F2 were added pre-freeze after a CONTROL-only code check (C1 sites 0-1) showed D1-D4 all recovered, so that a detection limit can be located. Grain median defaults to grain_diam_um.median unless grain_median_um is given.",
+  "psf_sigma_vox": 0.7
+ },
+ "run": {
+  "nproc": 4
+ },
+ "design_history": "Pre-freeze, on CONTROL C1 tiles r2 c0-c6 only: grain-voxel sum (G) and footprint (FP) statistics were heavy-tailed (permutation-null scores 190-1000), grain count NC had permutation null ~0-60, occupancy OCC (3x3) had permutation null 0 on all 7 tiles. OCC with 3x3 smoothing chosen. No title-strip number existed at that time.",
+ "frozen_utc": "2026-09-26T18:26:11Z"
+}
