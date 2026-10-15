@@ -1,0 +1,17 @@
+Cloning into '/work/villa'...
+From https://github.com/ScrollPrize/villa
+ * branch              41701aa0eaa1aa765523db3f9f972b5830abf549 -> FETCH_HEAD
+41701aa0eaa1aa765523db3f9f972b5830abf549
+error: Unsupported editable requirement in `docker/env/hv-ink-freeze.txt`
+  Caused by: Editable must refer to a local directory, not a Git URL: `git+https://github.com/ScrollPrize/villa@41701aa0eaa1aa765523db3f9f972b5830abf549#egg=vesuvius&subdirectory=vesuvius`
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import torch,vesuvius,numpy;print(torch.__version__,numpy.__version__,vesuvius.__file__)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/villa/vesuvius/src/vesuvius/__init__.py", line 3, in <module>
+    from . import data, install
+  File "/work/villa/vesuvius/src/vesuvius/data/__init__.py", line 4, in <module>
+    from .volume import Volume
+  File "/work/villa/vesuvius/src/vesuvius/data/volume.py", line 4, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'

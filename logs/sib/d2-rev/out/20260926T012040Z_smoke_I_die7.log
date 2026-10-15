@@ -1,0 +1,68 @@
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 32
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+{"step": 1, "loss": 0.6244565173983574, "grad_norm_preclip": 1.8595685958862305, "s_per_step": 152.96843605699996, "supervised_frac": 0.7847684174776077, "epochs": [1], "run_index": 0, "sample_digest": "850919bffb1f26ad2caea110529d4f9a7fcb6a7fd6756d2ded7efedadbaa19db", "loss_mean_window": 0.6244565173983574}
+{"step": 2, "loss": 0.5715485662221909, "grad_norm_preclip": 1.2948096990585327, "s_per_step": 147.715889349, "supervised_frac": 0.783184252679348, "epochs": [2], "run_index": 0, "sample_digest": "3477769b2b2fe860c4d6a5b745a336f3591aa3ef842fc13022787aafc5e7a03e", "loss_mean_window": 0.5715485662221909}
+{"step": 3, "loss": 0.55739875882864, "grad_norm_preclip": 1.0426660776138306, "s_per_step": 150.8316209579998, "supervised_frac": 0.7866253405809402, "epochs": [3], "run_index": 0, "sample_digest": "46127159e900c77b94d7f9e1d5bb1604edac0aa83bb60e6f61c021929ebb07a2", "loss_mean_window": 0.55739875882864}
+{"step": 4, "loss": 0.5495472997426987, "grad_norm_preclip": 0.9417016506195068, "s_per_step": 147.65702640000018, "supervised_frac": 0.7840576097369194, "epochs": [4], "run_index": 0, "sample_digest": "d5643e01d214a7508cf91b3f1fe3fbef196412ae6307ab482f37a1cd728f5aac", "loss_mean_window": 0.5495472997426987}
+{"step": 5, "loss": 0.5402858853340149, "grad_norm_preclip": 0.8997668623924255, "s_per_step": 143.90718341500042, "supervised_frac": 0.7829388529062271, "epochs": [4], "run_index": 0, "sample_digest": "4a30905c97debb9a4f92c097645406c292a62232bcb631db684bce8a5f2680ee", "loss_mean_window": 0.5402858853340149}
+{"event": "checkpoint", "step": 5, "utc": "2026-09-26T01:33:09Z", "local_bytes": 414961596, "seconds": 0.26}
+{"step": 6, "loss": 0.5315660759806633, "grad_norm_preclip": 0.8476821184158325, "s_per_step": 149.11923736500012, "supervised_frac": 0.7850013375282288, "epochs": [5], "run_index": 0, "sample_digest": "fbedc5666ff1ce6df74cac0313dcde4af4055b60478d20605f24c4cce6f2f5f5", "loss_mean_window": 0.5315660759806633}
+{"step": 7, "loss": 0.5237425044178963, "grad_norm_preclip": 0.8158310651779175, "s_per_step": 145.42925835499955, "supervised_frac": 0.7846084162592888, "epochs": [6], "run_index": 0, "sample_digest": "8b7e3fd47609e632bb5d236e3a5b9cdc8f33698d3f48bfa2c5172b2286c04001", "loss_mean_window": 0.5237425044178963}
+TEST: simulated crash after step 7

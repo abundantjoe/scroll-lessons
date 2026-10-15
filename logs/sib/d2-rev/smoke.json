@@ -1,0 +1,183 @@
+{
+ "provenance": "Provenance: Project HERCULES | owner the owner | [id removed]",
+ "id": "d2rev_phase1_smoke",
+ "data": "SYNTHETIC (d2_data.write_synthetic_registry n 40, S 546, seed 11)",
+ "arm": "REV",
+ "seed": 1,
+ "config_sha256": "343e7118267ef2773ccd49c61b337670b62de8b2adfadcd081cd13923d170e48",
+ "config": {
+  "tile": 384,
+  "rot24": true,
+  "null": false,
+  "rev": true,
+  "subtile": true,
+  "batch": 32,
+  "micro_batch": 4,
+  "steps": 10,
+  "forward": "full",
+  "precision": "fp32",
+  "threads": 4,
+  "z": {
+   "centre_offset": 0,
+   "jitter": 2,
+   "stack_depth": 21,
+   "window": 17
+  },
+  "optimizer": {
+   "betas": [
+    0.9,
+    0.999
+   ],
+   "grad_clip": 1.0,
+   "lr": 2e-05,
+   "name": "adamw",
+   "schedule": "constant",
+   "weight_decay": 3e-05
+  },
+  "ckpt": {
+   "every": 5,
+   "remote_ref": null,
+   "shard_bytes": 90000000
+  },
+  "log_every": 1
+ },
+ "steps": 10,
+ "finite_loss_steps": 10,
+ "losses_U": [
+  0.6244565173983574,
+  0.5715485662221909,
+  0.55739875882864,
+  0.5495472997426987,
+  0.5402858853340149,
+  0.5315660759806633,
+  0.5237425044178963,
+  0.5187403932213783,
+  0.5180603638291359,
+  0.5120292901992798
+ ],
+ "median_s_per_step": 147.7848642995,
+ "s_per_step_U": [
+  149.08146338799997,
+  151.01573359199983,
+  148.02551078199986,
+  147.4960421259998,
+  147.1579834170002,
+  147.54421781700012,
+  147.35824955199996,
+  148.25490962999993,
+  148.5930646720003,
+  145.63556255000003
+ ],
+ "peak_rss_kb_U": 9542768,
+ "peak_rss_gb_U": 9.101,
+ "peak_rss_kb_I_resumed": 9825080,
+ "wall_s_U": 1487.4,
+ "threads": {
+  "intra": 4,
+  "interop": 1
+ },
+ "checks": {
+  "rev_syn_exact_depth_reverse": true,
+  "rot_margin_full": "per-subtile (edge sub-tiles padded, padding ignored)",
+  "subtiles_per_patch": {
+   "syn": 1
+  }
+ },
+ "checkpoint_events_U": [
+  {
+   "event": "checkpoint",
+   "step": 5,
+   "utc": "2026-09-26T01:08:20Z",
+   "local_bytes": 414961596,
+   "seconds": 0.28
+  }
+ ],
+ "resumptions_I": [
+  {
+   "event": "resume",
+   "utc": "2026-09-26T01:38:11Z",
+   "from_step": 5,
+   "source": "local"
+  }
+ ],
+ "resume": {
+  "losses_I": [
+   0.6244565173983574,
+   0.5715485662221909,
+   0.55739875882864,
+   0.5495472997426987,
+   0.5402858853340149,
+   0.5315660759806633,
+   0.5237425044178963,
+   0.5187403932213783,
+   0.5180603638291359,
+   0.5120292901992798
+  ],
+  "per_step_equal": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "losses_bitwise_equal": true,
+  "model_final_sha256_U": "02f4c02cd575d230fc707835c1fe7225f930f0c21069f53edc5c85d032d7209a",
+  "model_final_sha256_I": "02f4c02cd575d230fc707835c1fe7225f930f0c21069f53edc5c85d032d7209a",
+  "final_weights_bitwise_equal": true,
+  "sample_digest_equal": true,
+  "resumed_from_step": 5
+ },
+ "pairing": {
+  "pass_": true,
+  "steps": 2,
+  "batch": 32,
+  "micro_batch": 4,
+  "per_step": [
+   {
+    "step": 1,
+    "x_B_eq_C": true,
+    "x_B_ne_A_all_micro": true,
+    "labels_equal_ABC": true,
+    "rng_equal_ABC": true,
+    "srcs_equal_ABC": true,
+    "digest_equal_ABC": true,
+    "loss_B_eq_C": true,
+    "gn_B_eq_C": true,
+    "loss": {
+     "A": 0.6244643181562424,
+     "B": 0.6244565173983574,
+     "C": 0.6244565173983574
+    },
+    "n_micro": 8
+   },
+   {
+    "step": 2,
+    "x_B_eq_C": true,
+    "x_B_ne_A_all_micro": true,
+    "labels_equal_ABC": true,
+    "rng_equal_ABC": true,
+    "srcs_equal_ABC": true,
+    "digest_equal_ABC": true,
+    "loss_B_eq_C": true,
+    "gn_B_eq_C": true,
+    "loss": {
+     "A": 0.5709025114774704,
+     "B": 0.5715485438704491,
+     "C": 0.5715485438704491
+    },
+    "n_micro": 8
+   }
+  ],
+  "rev_trainer_checks": {
+   "rev_syn_exact_depth_reverse": true
+  },
+  "pairing_check_json_sha256": "90ff5a477e7e576e639b039cde21c59cf50119d78c53a23fb5f86ff4139f1c00"
+ },
+ "note": "model weights stay local (/work); never pushed",
+ "pass_": true
+}

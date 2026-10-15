@@ -1,0 +1,134 @@
+..FFFF........                                                           [100%]
+=================================== FAILURES ===================================
+______________________ test_patch_registry_and_clearance _______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_patch_registry_and_cleara0')
+
+    def test_patch_registry_and_clearance(tmp_path):
+>       import contam_check
+
+tests/sib_trainer_units_test.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    # Provenance: Project HERCULES | owner the owner | [id removed]
+    """Contamination checks on a D2 training-patch registry (patch_registry*.npz), per RULES.md CORR-RETRACE-RULE.
+    
+    Surfaces: every source's mesh points in the registry are triangulated.
+      grid       mesh_xyz (N, G, H, 3): each grid cell (quad) -> 2 triangles; cells with a NaN vertex are dropped
+      tilequads  mesh_xyz (N, Q, 2, 2, 3): per tile the 2 x 2 lattice of its corner pixel centres -> 2 triangles
+    Clearance (>= 128 vox exclusions, FL-09 halo): exact point-to-triangulated-surface distance (no sampling bound).
+    Same papyrus (fail-closed): a training segment is SAME as a window if EITHER
+      (a) nearest-vertex distances to the segment's surface densified 5 x 5 (literal form), OR
+      (b) point-to-triangulated-surface distances
+    give >= 1000 window points within 2 vox and count[0,1) >= 2 x count[2,3).
+    Limits (reported, not hidden): the triangulated surface is only as fine as the registry lattice (stagec: every 24 px;
+    tilegrid: tile corners only, 127 px apart); a sheet curving between lattice points is approximated by planes. For a
+    certificate that must hold at that scale, the checker is re-run on the segment mesh (registry keeps segment and
+    canvas box). Numbers only."""
+    from __future__ import annotations
+    
+    import numpy as np
+>   from scipy.spatial import cKDTree
+E   ModuleNotFoundError: No module named 'scipy'
+
+tools/sib/trainer/contam_check.py:19: ModuleNotFoundError
+______________________ test_point_triangle_distance_exact ______________________
+
+    def test_point_triangle_distance_exact():
+>       import contam_check
+
+tests/sib_trainer_units_test.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    # Provenance: Project HERCULES | owner the owner | [id removed]
+    """Contamination checks on a D2 training-patch registry (patch_registry*.npz), per RULES.md CORR-RETRACE-RULE.
+    
+    Surfaces: every source's mesh points in the registry are triangulated.
+      grid       mesh_xyz (N, G, H, 3): each grid cell (quad) -> 2 triangles; cells with a NaN vertex are dropped
+      tilequads  mesh_xyz (N, Q, 2, 2, 3): per tile the 2 x 2 lattice of its corner pixel centres -> 2 triangles
+    Clearance (>= 128 vox exclusions, FL-09 halo): exact point-to-triangulated-surface distance (no sampling bound).
+    Same papyrus (fail-closed): a training segment is SAME as a window if EITHER
+      (a) nearest-vertex distances to the segment's surface densified 5 x 5 (literal form), OR
+      (b) point-to-triangulated-surface distances
+    give >= 1000 window points within 2 vox and count[0,1) >= 2 x count[2,3).
+    Limits (reported, not hidden): the triangulated surface is only as fine as the registry lattice (stagec: every 24 px;
+    tilegrid: tile corners only, 127 px apart); a sheet curving between lattice points is approximated by planes. For a
+    certificate that must hold at that scale, the checker is re-run on the segment mesh (registry keeps segment and
+    canvas box). Numbers only."""
+    from __future__ import annotations
+    
+    import numpy as np
+>   from scipy.spatial import cKDTree
+E   ModuleNotFoundError: No module named 'scipy'
+
+tools/sib/trainer/contam_check.py:19: ModuleNotFoundError
+_______________ test_same_papyrus_fail_closed_half_cell_retrace ________________
+
+    def test_same_papyrus_fail_closed_half_cell_retrace():
+        """Exact re-trace offset by half a dense cell: the vertex form alone may miss it, the surface form catches it;
+        a neighbouring sheet 5 vox away is NOT same."""
+>       import contam_check
+
+tests/sib_trainer_units_test.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    # Provenance: Project HERCULES | owner the owner | [id removed]
+    """Contamination checks on a D2 training-patch registry (patch_registry*.npz), per RULES.md CORR-RETRACE-RULE.
+    
+    Surfaces: every source's mesh points in the registry are triangulated.
+      grid       mesh_xyz (N, G, H, 3): each grid cell (quad) -> 2 triangles; cells with a NaN vertex are dropped
+      tilequads  mesh_xyz (N, Q, 2, 2, 3): per tile the 2 x 2 lattice of its corner pixel centres -> 2 triangles
+    Clearance (>= 128 vox exclusions, FL-09 halo): exact point-to-triangulated-surface distance (no sampling bound).
+    Same papyrus (fail-closed): a training segment is SAME as a window if EITHER
+      (a) nearest-vertex distances to the segment's surface densified 5 x 5 (literal form), OR
+      (b) point-to-triangulated-surface distances
+    give >= 1000 window points within 2 vox and count[0,1) >= 2 x count[2,3).
+    Limits (reported, not hidden): the triangulated surface is only as fine as the registry lattice (stagec: every 24 px;
+    tilegrid: tile corners only, 127 px apart); a sheet curving between lattice points is approximated by planes. For a
+    certificate that must hold at that scale, the checker is re-run on the segment mesh (registry keeps segment and
+    canvas box). Numbers only."""
+    from __future__ import annotations
+    
+    import numpy as np
+>   from scipy.spatial import cKDTree
+E   ModuleNotFoundError: No module named 'scipy'
+
+tools/sib/trainer/contam_check.py:19: ModuleNotFoundError
+_______________________ test_tilegrid_quads_triangulate ________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_tilegrid_quads_triangulat0')
+
+    def test_tilegrid_quads_triangulate(tmp_path):
+>       import contam_check
+
+tests/sib_trainer_units_test.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    # Provenance: Project HERCULES | owner the owner | [id removed]
+    """Contamination checks on a D2 training-patch registry (patch_registry*.npz), per RULES.md CORR-RETRACE-RULE.
+    
+    Surfaces: every source's mesh points in the registry are triangulated.
+      grid       mesh_xyz (N, G, H, 3): each grid cell (quad) -> 2 triangles; cells with a NaN vertex are dropped
+      tilequads  mesh_xyz (N, Q, 2, 2, 3): per tile the 2 x 2 lattice of its corner pixel centres -> 2 triangles
+    Clearance (>= 128 vox exclusions, FL-09 halo): exact point-to-triangulated-surface distance (no sampling bound).
+    Same papyrus (fail-closed): a training segment is SAME as a window if EITHER
+      (a) nearest-vertex distances to the segment's surface densified 5 x 5 (literal form), OR
+      (b) point-to-triangulated-surface distances
+    give >= 1000 window points within 2 vox and count[0,1) >= 2 x count[2,3).
+    Limits (reported, not hidden): the triangulated surface is only as fine as the registry lattice (stagec: every 24 px;
+    tilegrid: tile corners only, 127 px apart); a sheet curving between lattice points is approximated by planes. For a
+    certificate that must hold at that scale, the checker is re-run on the segment mesh (registry keeps segment and
+    canvas box). Numbers only."""
+    from __future__ import annotations
+    
+    import numpy as np
+>   from scipy.spatial import cKDTree
+E   ModuleNotFoundError: No module named 'scipy'
+
+tools/sib/trainer/contam_check.py:19: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/sib_trainer_units_test.py::test_patch_registry_and_clearance - M...
+FAILED tests/sib_trainer_units_test.py::test_point_triangle_distance_exact - ...
+FAILED tests/sib_trainer_units_test.py::test_same_papyrus_fail_closed_half_cell_retrace
+FAILED tests/sib_trainer_units_test.py::test_tilegrid_quads_triangulate - Mod...
+4 failed, 10 passed in 5.10s

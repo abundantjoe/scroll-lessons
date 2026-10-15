@@ -1,0 +1,139 @@
+.EE..EEE.EE.EE                                                           [100%]
+==================================== ERRORS ====================================
+________ ERROR at setup of test_synthetic_registry_roundtrip_and_tamper ________
+
+self = PosixPath('/work/sib/pt_units'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt_units'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_____________ ERROR at setup of test_patch_registry_and_clearance ______________
+
+self = PosixPath('/work/sib/pt_units'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt_units'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+______________ ERROR at setup of test_tilegrid_quads_triangulate _______________
+
+self = PosixPath('/work/sib/pt_units'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt_units'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+__________ ERROR at setup of test_shards_save_delete_restore_bitwise ___________
+
+self = PosixPath('/work/sib/pt_units'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt_units'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_________________ ERROR at setup of test_shard_cap_and_tamper __________________
+
+self = PosixPath('/work/sib/pt_units'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt_units'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_____________________ ERROR at setup of test_config_rules ______________________
+
+self = PosixPath('/work/sib/pt_units'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt_units'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+____________________ ERROR at setup of test_stagec_adapter _____________________
+
+self = PosixPath('/work/sib/pt_units'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt_units'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+______________ ERROR at setup of test_tilegrid_adapter_and_mosaic ______________
+
+self = PosixPath('/work/sib/pt_units'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt_units'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_________ ERROR at setup of test_tilegrid_label_rule_mismatch_refused __________
+
+self = PosixPath('/work/sib/pt_units'), mode = 448, parents = False
+exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/work/sib/pt_units'
+
+/usr/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+=========================== short test summary info ============================
+ERROR tests/sib_trainer_units_test.py::test_synthetic_registry_roundtrip_and_tamper
+ERROR tests/sib_trainer_units_test.py::test_patch_registry_and_clearance - Fi...
+ERROR tests/sib_trainer_units_test.py::test_tilegrid_quads_triangulate - File...
+ERROR tests/sib_trainer_units_test.py::test_shards_save_delete_restore_bitwise
+ERROR tests/sib_trainer_units_test.py::test_shard_cap_and_tamper - FileNotFou...
+ERROR tests/sib_trainer_units_test.py::test_config_rules - FileNotFoundError:...
+ERROR tests/sib_trainer_units_test.py::test_stagec_adapter - FileNotFoundErro...
+ERROR tests/sib_trainer_units_test.py::test_tilegrid_adapter_and_mosaic - Fil...
+ERROR tests/sib_trainer_units_test.py::test_tilegrid_label_rule_mismatch_refused
+5 passed, 9 errors in 4.93s

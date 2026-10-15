@@ -1,0 +1,21 @@
+{"config": "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pair_tiny/cfg_P384.json", "sha256": "fdbdf2b2a0c04d9580c8898412b71e7ab0ee946200abf15e4b878dfcc7288b87"}
+{"config": "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pair_tiny/cfg_REV.json", "sha256": "f51b70fbf5d0e667d71b9537eae59b1b22fb0511684c08f6091633c536233564"}
+Traceback (most recent call last):
+  File "/home/user/dominion/tools/sib/d2-rev/rev_pairing_check.py", line 147, in <module>
+    main()
+    ~~~~^^
+  File "/home/user/dominion/tools/sib/d2-rev/rev_pairing_check.py", line 106, in main
+    A = run("A_P384", copy.deepcopy(cfgs["P384"]), srcA, a.out, a.steps); del srcA
+  File "/home/user/dominion/tools/sib/d2-rev/rev_pairing_check.py", line 50, in run
+    tr = d2_train.Trainer(cfg, os.path.join(out, name), sources=sources)
+  File "/home/user/dominion/tools/sib/d2-rev/d2_train.py", line 211, in __init__
+    from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+    from vesuvius.ink_detection.training.dilation import (
+    ...<2 lines>...
+    )
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+    from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+  File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+    import cc3d
+ModuleNotFoundError: No module named 'cc3d'

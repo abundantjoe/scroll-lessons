@@ -1,0 +1,581 @@
+FFFFFFFFFFFF                                                             [100%]
+=================================== FAILURES ===================================
+________________ test_determinism_twice_identical[p128-flags0] _________________
+
+syn = {'r400': '/tmp/pytest-of-root/pytest-2/syn0/r400/registry.json', 'r560': '/tmp/pytest-of-root/pytest-2/syn0/r560/registry.json', 'd': PosixPath('/tmp/pytest-of-root/pytest-2/syn0')}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_determinism_twice_identic0')
+name = 'p128', flags = ['--arm', 'P128', '--batch', '2', '--steps', '3']
+
+    @pytest.mark.parametrize("name,flags", [
+        ("p128", ["--arm", "P128", "--batch", "2", "--steps", "3"]),
+        ("p384_null_micro", ["--arm", "NULL", "--batch", "2", "--micro-batch", "1", "--steps", "2"]),
+        ("p384_rev_stitched", ["--arm", "REV", "--batch", "1", "--steps", "2", "--forward", "stitched"]),
+    ])
+    def test_determinism_twice_identical(syn, tmp_path, name, flags):
+        src = syn["r560"] if "p384" in name else syn["r400"]
+        cfg = make_cfg(str(tmp_path / "c.json"), "--seed", "3", "--threads", "1", "--log-every", "1",
+                       "--source", f"syn=pairs:{src}", *flags)
+        a, b = str(tmp_path / "a"), str(tmp_path / "b")
+>       run([TR, "train", "--config", cfg, "--out", a])
+
+tests/sib_trainer_integration_test.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py'...t-2/test_determinism_twice_identic0/c.json', '--out', '/tmp/pytest-of-root/pytest-2/test_determinism_twice_identic0/a']
+threads = 1, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 727, in <module>
+E               sys.exit(main())
+E                        ~~~~^^
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 710, in main
+E               s = run_train(cfg, a.out, die_after=a.die_after, remote_url=a.remote_url, bare=a.bare)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 529, in run_train
+E               tr = Trainer(cfg, out)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 211, in __init__
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+___________ test_determinism_twice_identical[p384_null_micro-flags1] ___________
+
+syn = {'r400': '/tmp/pytest-of-root/pytest-2/syn0/r400/registry.json', 'r560': '/tmp/pytest-of-root/pytest-2/syn0/r560/registry.json', 'd': PosixPath('/tmp/pytest-of-root/pytest-2/syn0')}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_determinism_twice_identic1')
+name = 'p384_null_micro'
+flags = ['--arm', 'NULL', '--batch', '2', '--micro-batch', '1', ...]
+
+    @pytest.mark.parametrize("name,flags", [
+        ("p128", ["--arm", "P128", "--batch", "2", "--steps", "3"]),
+        ("p384_null_micro", ["--arm", "NULL", "--batch", "2", "--micro-batch", "1", "--steps", "2"]),
+        ("p384_rev_stitched", ["--arm", "REV", "--batch", "1", "--steps", "2", "--forward", "stitched"]),
+    ])
+    def test_determinism_twice_identical(syn, tmp_path, name, flags):
+        src = syn["r560"] if "p384" in name else syn["r400"]
+        cfg = make_cfg(str(tmp_path / "c.json"), "--seed", "3", "--threads", "1", "--log-every", "1",
+                       "--source", f"syn=pairs:{src}", *flags)
+        a, b = str(tmp_path / "a"), str(tmp_path / "b")
+>       run([TR, "train", "--config", cfg, "--out", a])
+
+tests/sib_trainer_integration_test.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py'...t-2/test_determinism_twice_identic1/c.json', '--out', '/tmp/pytest-of-root/pytest-2/test_determinism_twice_identic1/a']
+threads = 1, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 727, in <module>
+E               sys.exit(main())
+E                        ~~~~^^
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 710, in main
+E               s = run_train(cfg, a.out, die_after=a.die_after, remote_url=a.remote_url, bare=a.bare)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 529, in run_train
+E               tr = Trainer(cfg, out)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 211, in __init__
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+__________ test_determinism_twice_identical[p384_rev_stitched-flags2] __________
+
+syn = {'r400': '/tmp/pytest-of-root/pytest-2/syn0/r400/registry.json', 'r560': '/tmp/pytest-of-root/pytest-2/syn0/r560/registry.json', 'd': PosixPath('/tmp/pytest-of-root/pytest-2/syn0')}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_determinism_twice_identic2')
+name = 'p384_rev_stitched'
+flags = ['--arm', 'REV', '--batch', '1', '--steps', '2', ...]
+
+    @pytest.mark.parametrize("name,flags", [
+        ("p128", ["--arm", "P128", "--batch", "2", "--steps", "3"]),
+        ("p384_null_micro", ["--arm", "NULL", "--batch", "2", "--micro-batch", "1", "--steps", "2"]),
+        ("p384_rev_stitched", ["--arm", "REV", "--batch", "1", "--steps", "2", "--forward", "stitched"]),
+    ])
+    def test_determinism_twice_identical(syn, tmp_path, name, flags):
+        src = syn["r560"] if "p384" in name else syn["r400"]
+        cfg = make_cfg(str(tmp_path / "c.json"), "--seed", "3", "--threads", "1", "--log-every", "1",
+                       "--source", f"syn=pairs:{src}", *flags)
+        a, b = str(tmp_path / "a"), str(tmp_path / "b")
+>       run([TR, "train", "--config", cfg, "--out", a])
+
+tests/sib_trainer_integration_test.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py'...t-2/test_determinism_twice_identic2/c.json', '--out', '/tmp/pytest-of-root/pytest-2/test_determinism_twice_identic2/a']
+threads = 1, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 727, in <module>
+E               sys.exit(main())
+E                        ~~~~^^
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 710, in main
+E               s = run_train(cfg, a.out, die_after=a.die_after, remote_url=a.remote_url, bare=a.bare)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 529, in run_train
+E               tr = Trainer(cfg, out)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 211, in __init__
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+______________________ test_paired_sampling_p384_null_rev ______________________
+
+syn = {'r400': '/tmp/pytest-of-root/pytest-2/syn0/r400/registry.json', 'r560': '/tmp/pytest-of-root/pytest-2/syn0/r560/registry.json', 'd': PosixPath('/tmp/pytest-of-root/pytest-2/syn0')}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_paired_sampling_p384_null0')
+
+    def test_paired_sampling_p384_null_rev(syn, tmp_path):
+        """Same seed and pool: P384, NULL and REV draw the identical (patch, z offset, rotation) sequence."""
+        dig, los = {}, {}
+        for arm in ("P384", "NULL", "REV"):
+            cfg = make_cfg(str(tmp_path / f"{arm}.json"), "--arm", arm, "--seed", "7", "--threads", "1", "--batch", "2",
+                           "--steps", "2", "--log-every", "1", "--source", f"syn=pairs:{syn['r560']}")
+>           run([TR, "train", "--config", cfg, "--out", str(tmp_path / arm)])
+
+tests/sib_trainer_integration_test.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py'...st_paired_sampling_p384_null0/P384.json', '--out', '/tmp/pytest-of-root/pytest-2/test_paired_sampling_p384_null0/P384']
+threads = 1, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 727, in <module>
+E               sys.exit(main())
+E                        ~~~~^^
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 710, in main
+E               s = run_train(cfg, a.out, die_after=a.die_after, remote_url=a.remote_url, bare=a.bare)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 529, in run_train
+E               tr = Trainer(cfg, out)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 211, in __init__
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+________________________ test_subtile_p128_covers_grid _________________________
+
+syn = {'r400': '/tmp/pytest-of-root/pytest-2/syn0/r400/registry.json', 'r560': '/tmp/pytest-of-root/pytest-2/syn0/r560/registry.json', 'd': PosixPath('/tmp/pytest-of-root/pytest-2/syn0')}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_subtile_p128_covers_grid0')
+
+    def test_subtile_p128_covers_grid(syn, tmp_path):
+        """P128 with --subtile on 400 px patches: 9 sub-tiles per patch, every drawn index maps to a stored patch."""
+        cfg = make_cfg(str(tmp_path / "c.json"), "--arm", "P128", "--seed", "2", "--threads", "1", "--batch", "4",
+                       "--steps", "2", "--log-every", "1", "--subtile", "--source", f"syn=pairs:{syn['r400']}")
+        out = str(tmp_path / "o")
+>       run([TR, "train", "--config", cfg, "--out", out])
+
+tests/sib_trainer_integration_test.py:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py'...est-2/test_subtile_p128_covers_grid0/c.json', '--out', '/tmp/pytest-of-root/pytest-2/test_subtile_p128_covers_grid0/o']
+threads = 1, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 727, in <module>
+E               sys.exit(main())
+E                        ~~~~^^
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 710, in main
+E               s = run_train(cfg, a.out, die_after=a.die_after, remote_url=a.remote_url, bare=a.bare)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 529, in run_train
+E               tr = Trainer(cfg, out)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 211, in __init__
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+__________________________ test_seed_changes_the_run ___________________________
+
+syn = {'r400': '/tmp/pytest-of-root/pytest-2/syn0/r400/registry.json', 'r560': '/tmp/pytest-of-root/pytest-2/syn0/r560/registry.json', 'd': PosixPath('/tmp/pytest-of-root/pytest-2/syn0')}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_seed_changes_the_run0')
+
+    def test_seed_changes_the_run(syn, tmp_path):
+        outs = []
+        for s in ("3", "4"):
+            cfg = make_cfg(str(tmp_path / f"c{s}.json"), "--arm", "P128", "--seed", s, "--threads", "1", "--batch", "2",
+                           "--steps", "1", "--log-every", "1", "--source", f"syn=pairs:{syn['r400']}")
+>           run([TR, "train", "--config", cfg, "--out", str(tmp_path / s)])
+
+tests/sib_trainer_integration_test.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py'...oot/pytest-2/test_seed_changes_the_run0/c3.json', '--out', '/tmp/pytest-of-root/pytest-2/test_seed_changes_the_run0/3']
+threads = 1, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 727, in <module>
+E               sys.exit(main())
+E                        ~~~~^^
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 710, in main
+E               s = run_train(cfg, a.out, die_after=a.die_after, remote_url=a.remote_url, bare=a.bare)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 529, in run_train
+E               tr = Trainer(cfg, out)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 211, in __init__
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+_____________________ test_resume_local_and_remote_bitwise _____________________
+
+syn = {'r400': '/tmp/pytest-of-root/pytest-2/syn0/r400/registry.json', 'r560': '/tmp/pytest-of-root/pytest-2/syn0/r560/registry.json', 'd': PosixPath('/tmp/pytest-of-root/pytest-2/syn0')}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_resume_local_and_remote_b0')
+
+    def test_resume_local_and_remote_bitwise(syn, tmp_path):
+        remote = str(tmp_path / "remote.git")
+        subprocess.run(["git", "init", "-q", "--bare", remote], check=True)
+        ref = "refs/heads/test-ckpt"
+        common = ["--arm", "P128", "--seed", "5", "--threads", "1", "--batch", "2", "--steps", "5", "--log-every", "1",
+                  "--ckpt-every", "2", "--source", f"syn=pairs:{syn['r400']}"]
+        cfg_ref = make_cfg(str(tmp_path / "cref.json"), *common)
+        cfg_rem = make_cfg(str(tmp_path / "crem.json"), *common, "--remote-ref", ref)
+        ref_out = str(tmp_path / "ref")
+>       run([TR, "train", "--config", cfg_ref, "--out", ref_out])
+
+tests/sib_trainer_integration_test.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py'...est_resume_local_and_remote_b0/cref.json', '--out', '/tmp/pytest-of-root/pytest-2/test_resume_local_and_remote_b0/ref']
+threads = 1, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 727, in <module>
+E               sys.exit(main())
+E                        ~~~~^^
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 710, in main
+E               s = run_train(cfg, a.out, die_after=a.die_after, remote_url=a.remote_url, bare=a.bare)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 529, in run_train
+E               tr = Trainer(cfg, out)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 211, in __init__
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+__________________________ test_d3_equivalence[CTRL] ___________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_d3_equivalence_CTRL_0')
+arm = 'CTRL'
+
+    @pytest.mark.parametrize("arm", ["CTRL", "FA", "NULLA", "REVA"])
+    def test_d3_equivalence(tmp_path, arm):
+        fa = d2_data.write_synthetic_d3_pool(str(tmp_path / "fa"), 10, seed=21)
+        rp = d2_data.write_synthetic_d3_pool(str(tmp_path / "rp"), 12, seed=22)
+        d3 = _patched_d3(tmp_path, fa, rp)
+        steps = "3"
+        d3_out = str(tmp_path / "d3")
+>       run([d3, "--arm", arm, "--steps", steps, "--out", d3_out, "--log-every", "1", "--ckpt-every", "0"], threads=3)
+
+tests/sib_trainer_integration_test.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/pytest-of-root/pytest-2/test_d3_equivalence_CTRL_0/d3_train_synthetic_paths.py', '--arm', 'CTRL', '--steps', '3', '--out', ...]
+threads = 3, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/pytest-of-root/pytest-2/test_d3_equivalence_CTRL_0/d3_train_synthetic_paths.py", line 86, in <module>
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+___________________________ test_d3_equivalence[FA] ____________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_d3_equivalence_FA_0')
+arm = 'FA'
+
+    @pytest.mark.parametrize("arm", ["CTRL", "FA", "NULLA", "REVA"])
+    def test_d3_equivalence(tmp_path, arm):
+        fa = d2_data.write_synthetic_d3_pool(str(tmp_path / "fa"), 10, seed=21)
+        rp = d2_data.write_synthetic_d3_pool(str(tmp_path / "rp"), 12, seed=22)
+        d3 = _patched_d3(tmp_path, fa, rp)
+        steps = "3"
+        d3_out = str(tmp_path / "d3")
+>       run([d3, "--arm", arm, "--steps", steps, "--out", d3_out, "--log-every", "1", "--ckpt-every", "0"], threads=3)
+
+tests/sib_trainer_integration_test.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/pytest-of-root/pytest-2/test_d3_equivalence_FA_0/d3_train_synthetic_paths.py', '--arm', 'FA', '--steps', '3', '--out', ...]
+threads = 3, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/pytest-of-root/pytest-2/test_d3_equivalence_FA_0/d3_train_synthetic_paths.py", line 86, in <module>
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+__________________________ test_d3_equivalence[NULLA] __________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_d3_equivalence_NULLA_0')
+arm = 'NULLA'
+
+    @pytest.mark.parametrize("arm", ["CTRL", "FA", "NULLA", "REVA"])
+    def test_d3_equivalence(tmp_path, arm):
+        fa = d2_data.write_synthetic_d3_pool(str(tmp_path / "fa"), 10, seed=21)
+        rp = d2_data.write_synthetic_d3_pool(str(tmp_path / "rp"), 12, seed=22)
+        d3 = _patched_d3(tmp_path, fa, rp)
+        steps = "3"
+        d3_out = str(tmp_path / "d3")
+>       run([d3, "--arm", arm, "--steps", steps, "--out", d3_out, "--log-every", "1", "--ckpt-every", "0"], threads=3)
+
+tests/sib_trainer_integration_test.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/pytest-of-root/pytest-2/test_d3_equivalence_NULLA_0/d3_train_synthetic_paths.py', '--arm', 'NULLA', '--steps', '3', '--out', ...]
+threads = 3, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/pytest-of-root/pytest-2/test_d3_equivalence_NULLA_0/d3_train_synthetic_paths.py", line 86, in <module>
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+__________________________ test_d3_equivalence[REVA] ___________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_d3_equivalence_REVA_0')
+arm = 'REVA'
+
+    @pytest.mark.parametrize("arm", ["CTRL", "FA", "NULLA", "REVA"])
+    def test_d3_equivalence(tmp_path, arm):
+        fa = d2_data.write_synthetic_d3_pool(str(tmp_path / "fa"), 10, seed=21)
+        rp = d2_data.write_synthetic_d3_pool(str(tmp_path / "rp"), 12, seed=22)
+        d3 = _patched_d3(tmp_path, fa, rp)
+        steps = "3"
+        d3_out = str(tmp_path / "d3")
+>       run([d3, "--arm", arm, "--steps", steps, "--out", d3_out, "--log-every", "1", "--ckpt-every", "0"], threads=3)
+
+tests/sib_trainer_integration_test.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/pytest-of-root/pytest-2/test_d3_equivalence_REVA_0/d3_train_synthetic_paths.py', '--arm', 'REVA', '--steps', '3', '--out', ...]
+threads = 3, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/pytest-of-root/pytest-2/test_d3_equivalence_REVA_0/d3_train_synthetic_paths.py", line 86, in <module>
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+___________________ test_bf16_training_refused_without_gate ____________________
+
+syn = {'r400': '/tmp/pytest-of-root/pytest-2/syn0/r400/registry.json', 'r560': '/tmp/pytest-of-root/pytest-2/syn0/r560/registry.json', 'd': PosixPath('/tmp/pytest-of-root/pytest-2/syn0')}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_bf16_training_refused_wit0')
+
+    def test_bf16_training_refused_without_gate(syn, tmp_path):
+        cfg = make_cfg(str(tmp_path / "c.json"), "--arm", "P128", "--seed", "1", "--threads", "1", "--batch", "1",
+                       "--steps", "1", "--precision", "bf16", "--source", f"syn=pairs:{syn['r400']}")
+        r = run([TR, "train", "--config", cfg, "--out", str(tmp_path / "o")], check=False)
+        assert r.returncode != 0 and "bf16 training refused" in (r.stdout + r.stderr)
+        gate = tmp_path / "gate.json"
+        gate.write_text(json.dumps({"pass": False}))
+        cfg = make_cfg(str(tmp_path / "c2.json"), "--arm", "P128", "--seed", "1", "--threads", "1", "--batch", "1",
+                       "--steps", "1", "--precision", "bf16", "--amx-gate", str(gate), "--source", f"syn=pairs:{syn['r400']}")
+        r = run([TR, "train", "--config", cfg, "--out", str(tmp_path / "o2")], check=False)
+        assert r.returncode != 0 and "pass: true" in (r.stdout + r.stderr)
+        # the bench path (throughput only, no model written) runs bf16
+>       r = run([TR, "bench", "--config", cfg, "--out", str(tmp_path / "b"), "--steps", "1", "--warmup", "0"])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/sib_trainer_integration_test.py:211: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ['/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py'...st_bf16_training_refused_wit0/c2.json', '--out', '/tmp/pytest-of-root/pytest-2/test_bf16_training_refused_wit0/b', ...]
+threads = 1, check = True
+
+    def run(args, threads=1, check=True):
+        env = dict(os.environ, OMP_NUM_THREADS=str(threads), MKL_NUM_THREADS=str(threads))
+        r = subprocess.run([PY, *args], capture_output=True, text=True, env=env)
+        if check and r.returncode != 0:
+>           raise AssertionError(f"rc={r.returncode}\n{r.stdout[-3000:]}\n{r.stderr[-3000:]}")
+E           AssertionError: rc=1
+E           
+E           Traceback (most recent call last):
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 727, in <module>
+E               sys.exit(main())
+E                        ~~~~^^
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 713, in main
+E               r = run_bench(cfg, a.out, a.steps, a.warmup)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 638, in run_bench
+E               tr = Trainer(cfg, out, bench=True)
+E             File "/tmp/claude-0/-home-user-dominion/717b529a-d102-59b0-b424-723b4cada4fa/scratchpad/pin/tools/sib/trainer/d2_train.py", line 211, in __init__
+E               from vesuvius.ink_detection.training.train import prepare_model_input, prepare_loss_inputs
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/train.py", line 33, in <module>
+E               from vesuvius.ink_detection.training.dilation import (
+E               ...<2 lines>...
+E               )
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/training/dilation.py", line 10, in <module>
+E               from vesuvius.ink_detection.data.geometry import native_volume_downsample_factor
+E             File "/work/villa/vesuvius/src/vesuvius/ink_detection/data/geometry.py", line 5, in <module>
+E               import cc3d
+E           ModuleNotFoundError: No module named 'cc3d'
+
+tests/sib_trainer_integration_test.py:38: AssertionError
+=========================== short test summary info ============================
+FAILED tests/sib_trainer_integration_test.py::test_determinism_twice_identical[p128-flags0]
+FAILED tests/sib_trainer_integration_test.py::test_determinism_twice_identical[p384_null_micro-flags1]
+FAILED tests/sib_trainer_integration_test.py::test_determinism_twice_identical[p384_rev_stitched-flags2]
+FAILED tests/sib_trainer_integration_test.py::test_paired_sampling_p384_null_rev
+FAILED tests/sib_trainer_integration_test.py::test_subtile_p128_covers_grid
+FAILED tests/sib_trainer_integration_test.py::test_seed_changes_the_run - Ass...
+FAILED tests/sib_trainer_integration_test.py::test_resume_local_and_remote_bitwise
+FAILED tests/sib_trainer_integration_test.py::test_d3_equivalence[CTRL] - Ass...
+FAILED tests/sib_trainer_integration_test.py::test_d3_equivalence[FA] - Asser...
+FAILED tests/sib_trainer_integration_test.py::test_d3_equivalence[NULLA] - As...
+FAILED tests/sib_trainer_integration_test.py::test_d3_equivalence[REVA] - Ass...
+FAILED tests/sib_trainer_integration_test.py::test_bf16_training_refused_without_gate
+12 failed in 44.22s
