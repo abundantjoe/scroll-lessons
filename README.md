@@ -9,7 +9,7 @@ carbonized Herculaneum scrolls. It ran 387 experiments on 118 branches plus two 
 the 22 volumes of a First Letters push. We did not build a pipeline that reads every scroll. What we built is the record of what
 works, what fails and why, with the evidence for each answer.
 
-`MASTER_LESSONS.md` puts all of it in one file: 668 lessons, each a trap, its evidence and its fix (L657-L668 come from the follow-on Scroll Factory programme, October 2026), the verdict of every
+`MASTER_LESSONS.md` puts all of it in one file: 676 lessons, each a trap, its evidence and its fix (L657-L676 come from the follow-on Scroll Factory programme, October 2026), the verdict of every
 experiment, every claim we had to retract, a start-to-finish timeline, and where to pick up. Paste it into Claude or any other
 model before you start, and your session begins where we stopped instead of rediscovering our dead ends.
 
