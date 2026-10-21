@@ -3,7 +3,7 @@
 > Feed this file to your AI system as context before you start work on the Herculaneum scrolls. It holds what we
 > learned from every Dominion experiment, start to finish, so a new session can skip our dead ends.
 >
-> Size: about 168,246 words (roughly 301k tokens). The parts are ordered by value: if your model's context is smaller,
+> Size: about 172,000 words (roughly 308k tokens). The parts are ordered by value: if your model's context is smaller,
 > give it Parts 0-5 (rules, all lessons, retracted claims, where to pick up) and leave out the timeline and the register.
 >
 > Dominion was directed by Joseph Balmaceda and run by Claude research agents (Anthropic), September-October 2026.
@@ -17,6 +17,7 @@
   - [What this file is](#what-this-file-is)
   - [How to use it](#how-to-use-it)
   - [The state of the field as we left it (15 October 2026)](#the-state-of-the-field-as-we-left-it-15-october-2026)
+  - [Update, 21 October 2026 (Scroll Factory)](#update-21-october-2026-scroll-factory)
   - [The golden rules](#the-golden-rules)
 - [Part 1. Lessons: data, geometry and rendering](#part-1-lessons-data-geometry-and-rendering)
   - [L001. Read the prize rules section by section, with file and line](#l001-read-the-prize-rules-section-by-section-with-file-and-line)
@@ -213,6 +214,10 @@
   - [L536. Re-check a substitute input against the declared threshold](#l536-re-check-a-substitute-input-against-the-declared-threshold)
   - [L537. Check availability, near-duplicates and identifiers before planning](#l537-check-availability-near-duplicates-and-identifiers-before-planning)
   - [L538. Hash inputs and outputs, and state exactly what was verified](#l538-hash-inputs-and-outputs-and-state-exactly-what-was-verified)
+  - [L657. A CPU port of the renderer reproduces a published PHerc0343 render to one grey level, and the check pins the layer index](#l657-a-cpu-port-of-the-renderer-reproduces-a-published-pherc0343-render-to-one-grey-level-and-the-check-pins-the-layer-index)
+  - [L658. Snapping to m7 repairs a 4-8 voxel surface error and gives back the known letters; errors near half a sheet spacing should not be expected to snap back](#l658-snapping-to-m7-repairs-a-4-8-voxel-surface-error-and-gives-back-the-known-letters-errors-near-half-a-sheet-spacing-should-not-be-expected-to-snap-back)
+  - [L659. A known-good mesh scores only 0.58 on the ±2-voxel m7 on-sheet test, so anchor the bar on it](#l659-a-known-good-mesh-scores-only-058-on-the-2-voxel-m7-on-sheet-test-so-anchor-the-bar-on-it)
+  - [L660. The reading face follows from the sign of the mesh normal relative to the scroll axis, together with the render frame](#l660-the-reading-face-follows-from-the-sign-of-the-mesh-normal-relative-to-the-scroll-axis-together-with-the-render-frame)
 - [Part 2. Lessons: ink, validation and reading](#part-2-lessons-ink-validation-and-reading)
   - [L165. Hecate 9.6 um screened out on PHerc0841](#l165-hecate-96-um-screened-out-on-pherc0841)
   - [L166. Score depth order explicitly, because the wrong order drops every model toward chance](#l166-score-depth-order-explicitly-because-the-wrong-order-drops-every-model-toward-chance)
@@ -468,6 +473,10 @@
   - [L605. Reproduce a known-good recipe before inventing new ones](#l605-reproduce-a-known-good-recipe-before-inventing-new-ones)
   - [L606. A scale-limited reproduction limits what its negative result means](#l606-a-scale-limited-reproduction-limits-what-its-negative-result-means)
   - [L607. Render calibrated outputs, not rank-normalised maps](#l607-render-calibrated-outputs-not-rank-normalised-maps)
+  - [L661. Reader V3 detects held-out PHerc0841 ink on the native 9.366 um scan (pixel AUC 0.888; 0.920 with masked normalisation)](#l661-reader-v3-detects-held-out-pherc0841-ink-on-the-native-9366-um-scan-pixel-auc-0888-0920-with-masked-normalisation)
+  - [L662. Normalising inference patches over zero padding biases the map; normalise over CT voxels only](#l662-normalising-inference-patches-over-zero-padding-biases-the-map-normalise-over-ct-voxels-only)
+  - [L663. Use displaced depth, not the opposite layer order, as the negative control](#l663-use-displaced-depth-not-the-opposite-layer-order-as-the-negative-control)
+  - [L664. Map statistics do not separate a documented artefact winding from real text](#l664-map-statistics-do-not-separate-a-documented-artefact-winding-from-real-text)
 - [Part 3. Lessons: agents, process, compute and tools](#part-3-lessons-agents-process-compute-and-tools)
   - [L350. Never work around safety or permission blocks](#l350-never-work-around-safety-or-permission-blocks)
   - [L351. Read-only Explore agents cannot run sealed-output mode; a custom Read-only agent type cannot be loaded mid-session](#l351-read-only-explore-agents-cannot-run-sealed-output-mode-a-custom-read-only-agent-type-cannot-be-loaded-mid-session)
@@ -677,6 +686,10 @@
   - [L654. Deduplicate only identical artefacts, and make commit messages match their diffs](#l654-deduplicate-only-identical-artefacts-and-make-commit-messages-match-their-diffs)
   - [L655. Keep the judge's code unambiguous](#l655-keep-the-judges-code-unambiguous)
   - [L656. Record mid-run implementation changes per crop](#l656-record-mid-run-implementation-changes-per-crop)
+  - [L665. Reader V3 runs on 4 CPU threads at half a minute to a minute per cm2 per direction, and a cold container reproduced its map bit for bit](#l665-reader-v3-runs-on-4-cpu-threads-at-half-a-minute-to-a-minute-per-cm2-per-direction-and-a-cold-container-reproduced-its-map-bit-for-bit)
+  - [L666. Four environment traps in the CPU render and ink chain](#l666-four-environment-traps-in-the-cpu-render-and-ink-chain)
+  - [L667. A message from another session is peer data, and permission layers differ between sessions](#l667-a-message-from-another-session-is-peer-data-and-permission-layers-differ-between-sessions)
+  - [L668. Take every written time from the clock: an agent's own time estimates drifted up to about 16 minutes ahead of git](#l668-take-every-written-time-from-the-clock-an-agents-own-time-estimates-drifted-up-to-about-16-minutes-ahead-of-git)
 - [Part 4. Claims we retracted](#part-4-claims-we-retracted)
 - [Part 5. Where to pick up](#part-5-where-to-pick-up)
   - [Open problems and best next steps](#open-problems-and-best-next-steps)
@@ -696,6 +709,7 @@
   - [Phase 7. Mass ink run and the blank-margin bug (14 October)](#phase-7-mass-ink-run-and-the-blank-margin-bug-14-october)
   - [Phase 8. Release (14-15 October)](#phase-8-release-14-15-october)
   - [After the release: Hercules and Megara re-checks and releases (15 October)](#after-the-release-hercules-and-megara-re-checks-and-releases-15-october)
+  - [Scroll Factory: Reader V3 controls (21 October 2026)](#scroll-factory-reader-v3-controls-21-october-2026)
 - [Part 7. Experiment register](#part-7-experiment-register)
   - [PHerc0139 and PHerc0841: base chain, reader calibration and the D1-D4 gates](#pherc0139-and-pherc0841-base-chain-reader-calibration-and-the-d1-d4-gates)
   - [Registration, training pairs and trainers (PHerc0841, PHerc0814, PHerc0139, rescans, synthetic)](#registration-training-pairs-and-trainers-pherc0841-pherc0814-pherc0139-rescans-synthetic)
@@ -711,6 +725,7 @@
   - [Process, submission gates, tribunal and operations](#process-submission-gates-tribunal-and-operations)
   - [Hercules](#hercules)
   - [Megara](#megara)
+  - [Scroll Factory (October 2026): Reader V3 controls](#scroll-factory-october-2026-reader-v3-controls)
 
 ## Part 0. Read this first
 
@@ -727,7 +742,7 @@ This is the full lesson record of **Dominion**, an AI-run research programme (24
 This file merges all of them. Its parts, in order of value:
 
 - **Part 0:** how to use the file, the state of the field when we stopped, and the golden rules.
-- **Parts 1-3:** the numbered lessons L001-L656 (404 VERIFIED, 216 MEASURED, 36 INFERENCE) by theme: data, geometry and rendering; ink, validation and reading; agents, process, compute and tools.
+- **Parts 1-3:** the numbered lessons L001-L668 (416 VERIFIED, 216 MEASURED, 36 INFERENCE) by theme: data, geometry and rendering; ink, validation and reading; agents, process, compute and tools.
 - **Part 4:** the claims we retracted.
 - **Part 5:** open problems, data, models, tools and the glossary.
 - **Part 6:** the timeline, start to finish.
@@ -837,6 +852,28 @@ Every null we recorded is bounded by these two failures. Most of the lasting val
 - **First Letters** (read on 24 September 2026) pays $50,000 per eligible volume for 10 letters in a single 4 cm2 area, with a deadline of 25 June 2027. You must show the text is not hallucinated ([L001](#l001-read-the-prize-rules-section-by-section-with-file-and-line)).
 - 22 scrolls were eligible on 25 September 2026, after PHerc1447 was removed. The open-source condition covers code, data, weights and results. How it applies to CC BY-NC derived data is unresolved (OP37).
 - Packaging is covered in [L018](#l018-prize-packaging-name-the-official-mesh-licensed-instead-of-redistributing-it-and-build-the-image-in-code), [L374](#l374-submission-kits-must-leave-owner-only-fields-empty-and-contain-no-filing-path) and [L385](#l385-know-what-a-title-or-first-letters-submission-needs-before-the-evidence-exists). A form submission needs the owner's signed-in account ([L474](#l474-google-forms-prize-submission-requires-the-owners-signed-in-account)).
+
+### Update, 21 October 2026 (Scroll Factory)
+
+Scroll Factory is the follow-on programme (same owner, Claude research agents). Its first controls change one part of the
+picture above. On held-out 9.36 um / 113 keV text, pixel-level detection improved from about 0.73 to 0.888 (0.920 with
+masked normalisation). Legibility of these maps is untested, and geometry is still a gate.
+
+- **A public model now transfers to held-out text at 9 um.** Reader V3 (released 19 October 2026) reached pixel AUC 0.888
+  on official segment w00 of PHerc0841, a scroll outside its training data. With normalisation over CT voxels only, it
+  reached 0.920 ([L661](#l661-reader-v3-detects-held-out-pherc0841-ink-on-the-native-9366-um-scan-pixel-auc-0888-0920-with-masked-normalisation),
+  [L662](#l662-normalising-inference-patches-over-zero-padding-biases-the-map-normalise-over-ct-voxels-only)). This is
+  detection, not legibility: no blind calibrated read has been run on it yet.
+- **It runs on CPU.** About 0.5 min per cm2 per direction on 4 unloaded vCPU (about 1 min when shared), and a cold
+  container reproduced the PHerc0343 control bit for bit ([L665](#l665-reader-v3-runs-on-4-cpu-threads-at-half-a-minute-to-a-minute-per-cm2-per-direction-and-a-cold-container-reproduced-its-map-bit-for-bit)).
+- **The reading face can be fixed from geometry** (normal sign against the scroll axis, together with the render frame).
+  The rule was right on both calibration meshes ([L660](#l660-the-reading-face-follows-from-the-sign-of-the-mesh-normal-relative-to-the-scroll-axis-together-with-the-render-frame)).
+- **Geometry is still the gate.** A 4-8 voxel surface error removes most of the known-letter signal on PHerc0343. Snapping to
+  m7 gives most of it back ([L658](#l658-snapping-to-m7-repairs-a-4-8-voxel-surface-error-and-gives-back-the-known-letters-errors-near-half-a-sheet-spacing-should-not-be-expected-to-snap-back)).
+  Public atlas windings score O1 0.23-0.40 before snapping, against 0.58 for a known-good mesh ([L659](#l659-a-known-good-mesh-scores-only-058-on-the-2-voxel-m7-on-sheet-test-so-anchor-the-bar-on-it)).
+- **Rules (live page, 21 October 2026).** 21 volumes are eligible for First Letters and 13 for the Grand Prize. The deadline
+  is 25 June 2027, 23:59 Pacific.
+- Still no letter is claimed on any scroll.
 
 ### The golden rules
 
@@ -2041,6 +2078,33 @@ These 25 rules were drawn from the whole record. Each links to the lesson that p
 - **Evidence:** `results/input_manifest.json @ 412b7c7` — "verified_identical": true on 12 of 20 inputs (counted here); `results/reproducibility_check.json @ 412b7c7` — a single key, "20231005123336:held1"; `models/SHA256SUMS @ 412b7c7` — 4 lines; `tests/test_published.py @ d2564a7` — '"20231005123336", "derived", "held2"'; 'reason="full research data not on disk"'; `README.md @ e455383` — "The released weights regenerate the published v8, GP-R1 and E maps **bit for bit**"
 - **Fix:** Regeneration now covers all 7 evaluation crops (`results/reproducibility_check.json @ 0e040c1`), and the toolkit matches 65 of 65 published records on 13 crops (`results/toolkit_vs_records.json @ a16a6a2` — "failures": 0). CT chunks unhashed: **Open — not fixed**. [OPEN: partly: CT chunks unhashed]
 - **Label:** VERIFIED · **When:** 2026-09-16..2026-10-15 (approx.; git history squashed in release, commit dates unavailable) · **Sources:** megara:main:docs/LESSONS.md#41
+
+**Scroll Factory: data, geometry and rendering (L657-L660).** Lessons from the follow-on Scroll Factory programme (October 2026): render parity on CPU, snapping to m7, on-sheet bars and the reading face from geometry. The control records are public in [experiments/scroll-factory/README.md](experiments/scroll-factory/README.md).
+
+
+### L657. A CPU port of the renderer reproduces a published PHerc0343 render to one grey level, and the check pins the layer index
+- **Trap:** Trusting a CPU render because it looks right, or checking it at a neighbouring layer: an off-by-one layer looks just as plausible by eye.
+- **Evidence:** `render66.py` (AndreasHad04/villa-apple-silicon @8320e35) on Erwin's published PHerc0343 First Letters mesh, 66 × 2560 × 6720, 1,053 chunks, 123 s wall, 6.0 GB peak RSS on 4 vCPU. Our layer 34 against his published image: 0.99978 of 7,458,502 grey (non-ink) pixels within 1 grey level, maximum difference 2. The same test at layers 33 and 35 gives 0.136 each. The render is not bit-identical (area sha256 `2805106b…` against `df1a3e8d…`), as the renderer's author also reports.
+- **Fix:** Run the parity check before any inference, with the ±1-layer controls, and record both area hashes. Related: [L138](#l138-the-official-renderer-reproduces-the-organizer-surface-volume-essentially-exactly-when-called-correctly), [L401](#l401-a-cpu-port-is-a-research-port-until-it-reproduces-a-known-result), [L455](#l455-exact-reproduction-checks-against-published-artefacts-are-cheap-and-remove-a-whole-class-of-input-doubts-before-fitting).
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `experiments/E1_PC343_READER_V3/RESULT.md @ 5fe9036`; public record [experiments/scroll-factory/README.md](experiments/scroll-factory/README.md) (E1)
+
+### L658. Snapping to m7 repairs a 4-8 voxel surface error and gives back the known letters; errors near half a sheet spacing should not be expected to snap back
+- **Trap:** Assuming a snap either fixes a surface or does nothing. It moves each node to the nearest predicted sheet. That is the right sheet for small errors; by mechanism (untested here) it becomes the wrong sheet once the error approaches half the sheet spacing.
+- **Evidence:** Synthetic-truth control on PHerc0343: the known-good mesh was displaced by a smooth +4 to +8 voxel field along its normal (`displace_mesh.py`). Reader V3 box AUC on the 18 known letter boxes fell from 0.693 to 0.569; after `snap_meshes.py` with default settings onto the PHerc0343 m7 prediction it rose to 0.676 (strong-ink ratio 10.29 against 9.58 for the original). The median distance of snapped nodes to the original was 1.99 voxels (p90 8.48; 50.1 % within 2 voxels, 65.8 % within 4). About a third of the nodes did not come back: a neighbouring predicted sheet captured them.
+- **Fix:** Before trusting a snap on unknown surfaces, displace a known-good mesh of the same scan, snap it and measure both the node distance and the letter score. Use snap only for errors well under half the sheet spacing. Related: [L126](#l126-snapmeshespy-only-captures-offsets-of-about--3-voxels), [L242](#l242-run-the-half-spacing-displaced-control-first-in-any-surface-audit), [L245](#l245-proposed-snap-qa-thresholds-pass-a-half-winding-error).
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `experiments/E3_SNAP_TO_M7/RESULT.md @ cfef53c` (E3a); public record [experiments/scroll-factory/README.md](experiments/scroll-factory/README.md) (E3a)
+
+### L659. A known-good mesh scores only 0.58 on the ±2-voxel m7 on-sheet test, so anchor the bar on it
+- **Trap:** Declaring an on-sheet bar before scoring the reference under it. We declared O1 ≥ 0.8 for a metric "m7 > 0 within ±1 voxel along the normal". We then measured the reference with `snap_meshes.py`'s own statistic, "frac_already_on" (the fraction of mesh nodes whose nearest m7 sheet centre lies within ±2 voxels). Under it, even the known-good PHerc0343 mesh is far below 0.8.
+- **Evidence:** Known-good PHerc0343 mesh: O1 0.582. The same mesh displaced (L658): 0.108. Six public atlas windings on two eligible scrolls: 0.23 to 0.40 unsnapped, 0.51 to 0.69 after snapping. A normal-grid-grown mesh from the earlier programme: 0.593 unsnapped. The amendment, made before any target was measured, changed both the metric (to frac_already_on) and the bar (≥ 0.45 reference-like, < 0.25 off-sheet, the band between read both unsnapped and snapped). It gave a reason only for the bar change; the metric change was disclosed later. The originally declared metric was never computed.
+- **Fix:** Score the reference and a displaced copy under the exact metric first, then declare the metric and the bar together. Disclose any metric change in the amendment itself. Related: [L301](#l301-reproduce-archived-bar-values-under-your-written-metric-definition-before-declaring-the-bar), [L246](#l246-an-on-sheet-tile-gate-works-as-a-screen-but-cannot-certify-a-surface).
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `experiments/E3_SNAP_TO_M7/PREREGISTRATION.md` amendment 1 `@ fc75ed6` and its correction `@ b55e38f`, `RESULT.md @ cfef53c`
+
+### L660. The reading face follows from the sign of the mesh normal relative to the scroll axis, together with the render frame
+- **Trap:** Choosing a reader model's depth order by whichever map looks inkier, or by the word "reverse". Under masked normalisation the wrong order still gives a fairly strong map (L663), so "inkier" is not a safe test.
+- **Evidence:** The writing faces the scroll axis. For each mesh take n = normalise(dP/dcolumn × dP/drow) at every valid node (the renderer's convention) and the outward radial direction r from the axis at the node's z; f_out is the fraction of nodes with n·r > 0. Rule: with an unflipped render66 frame, an outward normal means read in reverse order; with the official `--flip-normals` frame, an outward normal means forward. Calibration on two meshes with labels: PHerc0343 (unflipped) f_out 0.997, median n·r 0.840 with the published umbilicus and 0.814 with an axis taken from the CT-mask centroid at pyramid level 4, so the rule predicts reverse; observed reverse (box AUC 0.693 against 0.569). PHerc0841 w00 official mesh (flipped) f_out 0.985, median 0.857, so the rule predicts forward; observed forward (pixel AUC 0.920 against 0.717). Of 24 further meshes, the 17 normal-grid-grown ones all had an unambiguous sign (some outward, some inward), while 4 of 7 public atlas windings were ambiguous (f_out 0.49 to 0.71) because their normal sign changes within the mesh.
+- **Fix:** Use the rule per mesh: read only the predicted order as the primary map and keep the other order as a twin. Read meshes with 0.2 < f_out < 0.8 both ways, flag them and inspect cross-sections. Our untested inference is that an ambiguous sign means the surface folds back or the axis estimate is poor. Use a per-node radius from the axis, not per-tile medians. Related: [L093](#l093-per-tile-median-radius-gives-the-wrong-outward-direction-on-strips-that-span-only-about-two-windings), [L135](#l135-name-the-depth-order-by-the-render-frame-never-by-the-word-reverse), [L136](#l136-decide-mirror-state-from-geometry-not-from-readers).
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `experiments/E5_RFACE_RULE/PREREGISTRATION.md @ 02a85f9` (declared after both observed directions were known, and after Erwin's sidecar had reported normal_dot_outward 0.84 for the PHerc0343 mesh: a consistency check on two known cases, not a blind prediction; no out-of-sample test with ground truth yet), `RESULT.md @ cfef53c`; public record [experiments/scroll-factory/README.md](experiments/scroll-factory/README.md) (E5)
 
 ## Part 2. Lessons: ink, validation and reading
 
@@ -3578,6 +3642,33 @@ These 25 rules were drawn from the whole record. Each links to the lesson that p
 - **Fix:** Not implemented; recorded as a limitation of R2. **Open — not fixed.** [OPEN: not implemented]
 - **Label:** VERIFIED · **When:** 2026-09-16..2026-10-15 (approx.; git history squashed in release, commit dates unavailable) · **Sources:** megara:main:docs/LESSONS.md#62
 
+**Scroll Factory: ink and validation (L661-L664).** Reader V3 on held-out 9 um text, patch normalisation, negative controls and artefact windings.
+
+
+### L661. Reader V3 detects held-out PHerc0841 ink on the native 9.366 um scan (pixel AUC 0.888; 0.920 with masked normalisation)
+- **Trap:** Carrying the October conclusion "public 9 um models do not transfer" (OP02, [L196](#l196-the-base-9-um-model-detects-unseen-scroll-ink-at-pixel-level-auc-073-but-its-maps-are-not-letter-legible)) over to newer models without re-testing; or testing a new model only on scrolls that are in its training data.
+- **Evidence:** Reader V3 (domenicor046/reader-v3 @aee1d64, sha256 `ea405417…84d8a`, released 19 October 2026). Its checkpoint training config lists PHerc0139, PHerc1667, Paris 4, PHerc0814, PHerc0009B, PHerc0500P2, PHerc0343P and PHerc0172, so PHerc0841 is held out. Material: official segment `20260220213127-w00`, official 28-plane surface volume (4220 × 4760, 12.65 cm2 valid). Labels: the team's 2.403 um ink labels resampled to the 9.366 um canvas (2.81 % of valid pixels ink), used for scoring only. Published recipe, forward order: pixel AUC 0.8881, background flagged at 80 % ink recall 0.154. Masked normalisation (L662): 0.9199 and 0.113. The opposite order: pixel AUC 0.5156 published / 0.7168 masked. By eye, the forward map shows the same rows and many of the same letterforms as the team's 2.4 um map of that papyrus.
+- **Fix:** Gate any new model on a held-out segment of the same scan protocol before screening targets. Pixel AUC is detection, not legibility: a blind calibrated read is still needed ([L196](#l196-the-base-9-um-model-detects-unseen-scroll-ink-at-pixel-level-auc-073-but-its-maps-are-not-letter-legible)). Labels from a higher-resolution scan may score a control, but they must not select regions or support a submission.
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `experiments/E2_READER_V3_ATLAS_SCREEN/RESULT_E2a.md @ 90e774c`, `registries/model_registry.json`; public record [experiments/scroll-factory/README.md](experiments/scroll-factory/README.md) (E2a)
+
+### L662. Normalising inference patches over zero padding biases the map; normalise over CT voxels only
+- **Trap:** The villa `koine_machines` inference normalises each 17 × 384 × 384 patch with robust median/MAD statistics computed over every voxel, including the zeros where the render has no data. Zero voxels are not confined to the canvas border: deeper layers leave the volume, so 20 of 45 interior-centred patches on the PHerc0343 render contained zeros although no interior column did.
+- **Evidence:** PHerc0343, reverse order, same render and window. Published normalisation: box AUC 0.693, strong-ink ratio 9.58. Normalisation over voxels > 0 (applied only when a patch contains zeros): 0.737 and 24.53. The strong-ink fraction outside the letter boxes fell at every distance from the nearest invalid pixel: 0.033 / 0.054 / 0.049 / 0.042 / 0.048 against 0.002 / 0.010 / 0.013 / 0.013 / 0.029 for 0-64 / 64-128 / 128-192 / 192-384 / > 384 px. On held-out PHerc0841 the AUC rose by 0.032 and the background flagged at 80 % recall fell by 4.1 points (L661). Adopted by a rule declared before the arm ran.
+- **Fix:** Pass a mask of voxels > 0 to the robust normaliser whenever a patch contains zeros. Re-check the gain on a held-out positive control before adopting it. Related: [L226](#l226-volume-edges-outside-the-control-domain-produce-artefact-hotspots).
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `experiments/E1_PC343_READER_V3/RESULT.md @ 745eb1d` (amendment-1 arm AM), `pipeline/ink/infer_masked_norm.py`
+
+### L663. Use displaced depth, not the opposite layer order, as the negative control
+- **Trap:** Treating the opposite layer order as a clean negative. With the published normalisation it nearly is (PHerc0841 AUC 0.516), but with masked normalisation it is not (0.717).
+- **Evidence:** PHerc0343, Reader V3, reading order: shifting the 17-layer window by +12 or −10 voxels dropped box AUC from 0.693 to 0.484 and 0.544. The −10 window still overlaps the ink-adjacent layers and keeps a weak response (8.3 % strong pixels in boxes against 38.8 %). PHerc0841: the opposite order gave 0.717 under masked normalisation.
+- **Fix:** Build hidden negatives for blind reads from displaced depth, blank papyrus and documented artefact windings. Do not use the opposite order as a negative. Fix the face from geometry (L660). Related: [L242](#l242-run-the-half-spacing-displaced-control-first-in-any-surface-audit), [L255](#l255-test-face-specificity-real-ink-sits-on-the-reading-face-texture-shows-on-both).
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `experiments/E1_PC343_READER_V3/RESULT.md @ 5fe9036`, `RESULT_E2a.md @ 90e774c`
+
+### L664. Map statistics do not separate a documented artefact winding from real text
+- **Trap:** Ranking or gating surfaces by a scalar statistic of the ink map, such as the strong-pixel fraction or P99.5 − P50.
+- **Evidence:** One public atlas winding is documented in the community archive as a false positive of two earlier 9 um models. Reader V3 with masked normalisation gave it a higher fraction of pixels ≥ 128 than the held-out PHerc0841 text segment (0.078 against 0.061), a similar fraction ≥ 160 (0.032 against 0.038) and a similar P99.5 − P50 (124 against 137), and the same label-free direction choice (forward). By eye (not a blind read) its map shows diffuse blobs and no strokes or rows.
+- **Fix:** Use scalar statistics only to order surfaces for review, never as evidence. Carry a known artefact winding through every screen as a hard negative at the same display scale. Related: [L248](#l248-ranking-strips-by-ink-pixel-fraction-surfaces-artifacts-first).
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `experiments/E2_READER_V3_ATLAS_SCREEN/results/PHerc0813__z12496_w060__stats.json @ 4788280`, `results/PHerc0841__w00__am__stats.json @ 90e774c`
+
 ## Part 3. Lessons: agents, process, compute and tools
 
 **Agents and process (L350-L401).** Running an AI orchestrator with a fleet of sibling sessions: permissions, handovers, owner orders, delegation, verification of claims and submission hygiene.
@@ -4836,6 +4927,33 @@ These 25 rules were drawn from the whole record. Each links to the lesson that p
 - **Fix:** Docstring note only. **Open — not fixed.** [OPEN: error bound unmeasured]
 - **Label:** VERIFIED · **When:** 2026-09-16..2026-10-15 (approx.; git history squashed in release, commit dates unavailable) · **Sources:** megara:main:docs/LESSONS.md#84
 
+**Scroll Factory: process, compute and tools (L665-L668).** CPU cost and cold reproduction, environment traps, working with sibling sessions, and record timestamps.
+
+
+### L665. Reader V3 runs on 4 CPU threads at half a minute to a minute per cm2 per direction, and a cold container reproduced its map bit for bit
+- **Trap:** Assuming a 68 M-parameter reader needs a GPU, or trusting a CPU chain that has only run in the container that built it.
+- **Evidence:** Reader V3 (68.18 M parameters, input 17 × 384 × 384), fp32, torch CPU, no compile, batch 1, 4 vCPU: about 30 s per cm2 per direction on an unloaded host (the cold run below: one direction in about 4 min for 8.0 cm2), and 48-64 s when the CPU was shared with other jobs (PHerc0343 8.0 cm2: 762 s for both directions; PHerc0841 12.65 cm2: 1,350 s masked and 1,632 s published, both directions). Peak RSS 3.57 GB. A fresh cloud session cloned the pinned repository, ran the setup script (132 s) and the E1 reproduction script (324 s) without edits, and produced the same parity score, box AUC (0.6929000366) and ink-map sha256 (`7c49d066…09e9c`).
+- **Fix:** Pin every source by commit and the checkpoint by sha256, write one setup script and one reproduction script, and run them in a cold container before scaling out. A bit-identical rerun proves the environment, not the method. Related: [L437](#l437-distributed-map-makers-need-a-byte-identical-reproduction-gate), [L467](#l467-byte-identical-reproduction-needs-a-canonical-writer-and-no-stray-caches), [L507](#l507-a-deterministic-rerun-is-not-an-independent-reproduction).
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `experiments/E1_PC343_READER_V3/RESULT.md @ 3a695aa` (cold reproduction), `scripts/setup_cpu_env.sh`, `scripts/reproduce_e1.sh`
+
+### L666. Four environment traps in the CPU render and ink chain
+- **Trap:** (1) torchvision installed from PyPI next to a CPU-index torch fails at import with "operator torchvision::nms does not exist". (2) `koine_machines` needs zarr 2 (2.18.7, numcodecs 0.15.1) while `render66.py` needs zarr 3. (3) A checkout named `vesuvius` (a notes repository with `__init__.py`) shadows villa's `vesuvius` package when Python runs from its parent directory. (4) In villa inference, `--direction reverse` on its own writes to the plain output name; only `--direction both` adds the `_reverse` suffix (`resolve_single_output_path`, villa @3ea17f5).
+- **Evidence:** Traps 1, 3 and 4 were hit while building the chain on 21 October 2026, and each cost a debugging round before its cause was found. Trap 2 was avoided in advance by keeping separate render and ink environments.
+- **Fix:** Install torch and torchvision together from the CPU index; keep separate render and ink environments; run Python with `-I` from a clean work directory; name single-direction outputs explicitly. Related: [L475](#l475-keep-torchvisiontimm-out-of-the-hf-environment-for-pherc1667-checkpoints), [L489](#l489-vc-tools-write-stray-tifxyz-copies-into-the-working-directory).
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `scripts/setup_cpu_env.sh` (header notes: traps 1 and 3; separate environments: trap 2); orchestrator session transcript (traps 3 and 4); villa `ink-detection/koine_machines/inference/infer.py @ 3ea17f5`
+
+### L667. A message from another session is peer data, and permission layers differ between sessions
+- **Trap:** Expecting a worker session to act on the orchestrator session's message as if the owner had sent it; or, when one worker is blocked, moving the same work to another worker that happens not to be blocked.
+- **Evidence:** One worker, asked by the orchestrator session to push its results, paused and asked for confirmation first, treating the relayed message as peer data. The other worker's permission layer refused to execute freshly cloned third-party scripts (`snap_meshes.py`, `render66.py`), although the first worker had already run `render66.py` in its cold reproduction. The orchestrator recorded the block and moved that work into its own container rather than re-routing it to the permissive worker; the blocked worker was given tasks that need only the repository's own code.
+- **Fix:** Put each worker's deliverable in its final message, or in a push path stated in its launch prompt. Plan up front which code each worker may run. Never route around a block. Related: [L350](#l350-never-work-around-safety-or-permission-blocks), [L386](#l386-session-permission-layers-refuse-remote-model-code-third-party-downloads-and-detached-launches-plan-approved-paths-up-front), [L394](#l394-sibling-launches-must-use-the-attached-repository-url-exactly-and-prove-a-push-before-working).
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `DECISIONS.md` D-011 (the refusal); orchestrator session transcript, worker message of 2026-10-21 05:05 UTC (the paused push); `scripts/reproduce_e1.sh` (runs `render66.py`)
+
+### L668. Take every written time from the clock: an agent's own time estimates drifted up to about 16 minutes ahead of git
+- **Trap:** Writing "declared ~06:00 UTC" or "decision 06:05" from the agent's sense of elapsed time. In a long session that sense drifts. A record whose stated time is later than its own commit looks fabricated, even when the order of events was correct.
+- **Evidence:** In the first Scroll Factory session, an audit at 06:15 UTC found hand-written times in two decisions and five experiment headers running about 2 to 16 minutes ahead of their git commit times. For example, a result header said "~06:05 UTC" while its commit is 05:54:28, and a pre-registration said "~05:40 UTC" while its commit is 05:27:58. The audit note was itself first written with a time 5 minutes ahead. Git commit order still proved that every pre-registration preceded its result.
+- **Fix:** Stamp records from `date -u` (or quote the commit time and hash), never from an estimate. Audit stated times against `git log` before a release. Related: [L297](#l297-declare-before-data-pin-code-by-hash-and-keep-an-append-only-hash-chained-log), [L646](#l646-do-not-announce-results-files-or-checks-before-they-exist).
+- **Label:** VERIFIED · **When:** 2026-10-21 · **Sources:** scroll-factory (private) `DECISIONS.md` timestamp note `@ a85b89d`; commits `47c9f35`, `cfef53c`, `d1837d1`
+
 ## Part 4. Claims we retracted
 
 256 claims that appeared in a draft, a log entry, a README or the earlier release and were later withdrawn or corrected. Every claim in the first column is RETRACTED: never reuse it as a fact. Use the correction, and check the source before relying on it.
@@ -5716,9 +5834,16 @@ Sources: RULES.md `#OWNER-ORDER-RELEASE-I10`, `-I10-A1`; `dominion:main:README.m
 - **2026-10-15** (Megara) C1 confirmation declared 46a4bfc (04:45 UTC) and run; prediction held. Public release 1.0.0 (inkeval toolkit, 84 lessons, 76 superseded claims). (megara:main:CHANGELOG.md; docs/RESULTS.md#5)
 - **2026-10-15** (Megara) Result: C1 confirmation, 6 untouched crops -> pass (megara:main:docs/RESULTS.md#1)
 
+### Scroll Factory: Reader V3 controls (21 October 2026)
+
+- **2026-10-21** (Scroll Factory) Rules re-read from the live pages: 21 First Letters volumes, 13 Grand Prize volumes, deadline 25 June 2027. (scroll-factory, private: DECISIONS.md D-002; page snapshot fetched 2026-10-21T03:15:46Z)
+- **2026-10-21** (Scroll Factory) E1 declared (fe140aa) and PASSED: the CPU chain with Reader V3 recovers the PHerc0343 known letters; displaced depths do not. E1-AM PASSED and adopted. A cold sibling session reproduced E1 bit for bit. (experiments/scroll-factory/README.md)
+- **2026-10-21** (Scroll Factory) E2a PASSED: Reader V3 detects held-out PHerc0841 text at 9.366 um (pixel AUC 0.920 masked). (experiments/scroll-factory/README.md)
+- **2026-10-21** (Scroll Factory) E3a PASSED (snap to m7 restores the displaced PHerc0343 letters) and E5 PASSED (the reading face follows from geometry). (experiments/scroll-factory/README.md)
+
 ## Part 7. Experiment register
 
-Every canon experiment (387 rows, including 78 from the earlier Hercules and Megara programmes), grouped by scroll or family; rows within a group are sorted by start date. Columns:
+Every canon experiment (394 rows, including 78 from the earlier Hercules and Megara programmes and 7 from Scroll Factory), grouped by scroll or family; rows within a group are sorted by start date. Columns:
 - **experiment**: register ID, title and aliases (aliases are the RULES.md section or lane names used in the sources).
 - **dates**: UTC dates as recorded; "(family period)" means the dates of the family, not of the single run.
 - **verdict**: PASSED (met its declared bar), FAILED (missed it), PARTIAL (some arms or bars met), NULL (ran correctly, found nothing), VOID (invalid run or uninformative by its own rules), OPEN (not finished when the programme stopped), WITHHELD (prize hold-out). The text after the verdict is the recorded result.
@@ -6212,3 +6337,17 @@ Rows marked WITHHELD concern First Letters or First Title prize candidates: a ca
 | **MG-30** v8 window count (exploratory, not pre-registered) | 2026-09-18 (from CHANGELOG research log) |  | **RECORD.** segment 20230929220926 supports no further window under the crop rule; 20231012184424 supports 7 more (labelled coverage 15.8 % → 39.3 %) | segment 20230929220926 supports no further window under the crop rule; 20231012184424 supports 7 more (labelled coverage 15.8 % → 39.3 %) |  | `megara:main`; megara:main:docs/RESULTS.md#6/#9 |
 | **MG-17** R2 reading run, E, same windows | 2026-09-19 (from CHANGELOG research log) | Pre-registered test: does R2 reading run, E, same windows meet: same? | **FAILED.** fail | E agreement with team 0.793-0.886 (N1 recomputation); no legible character [docs/RESULTS.md §7] | Treat AUC as a measure of detection only. A claim to have read text needs its own declared legibility measure and human review. | `megara:main`; megara:main:docs/RESULTS.md#1 |
 | **MG-18** C1 confirmation, 6 untouched crops | 2026-10-15 (from CHANGELOG research log) | Pre-registered test: does C1 confirmation, 6 untouched crops meet: E clears both bars on the C1 mean AND beats v7 on every C1 crop? | **PASSED.** held (E 0.830 / 0.928; ahead of v7 on 6/6 crops); v8 and GP-R1 alone fall below the pixel bar on C1 | E 0.8305 pixel / 0.9282 stroke, lower bounds 0.8002 / 0.9055; E above v7 6/6; shrinkage E pixel -0.0456 [-0.0885, -0.0055] [docs/RESULTS.md §5] | Keep an untouched, pre-registered labelled set. Spend it once, with frozen weights and both positive and negative controls, to measure the bias of the whole sequence. | `megara:main`; megara:main:docs/RESULTS.md#1 |
+
+### Scroll Factory (October 2026): Reader V3 controls
+
+7 experiments: 6 PASSED, 1 RECORD. From the follow-on Scroll Factory programme. Its working repository is private while target work is under review; the controls are published in [experiments/scroll-factory/README.md](experiments/scroll-factory/README.md). Target-scroll screens are not listed here until they are reviewed.
+
+| experiment | dates | question | verdict | key numbers | lesson | branch |
+|---|---|---|---|---|---|---|
+| **SF-E1** Reader V3 positive control on PHerc0343 (CPU chain) | 2026-10-21 | Pre-registered test (fe140aa): box AUC ≥ 0.65 in the better order D* (chosen on arm A, as declared), displaced ±~0.1 mm windows ≤ AUC − 0.10, strong-ink ratio ≥ 2? | **PASSED.** reverse order 0.6929 (forward 0.5686); displaced +12 / −10 vox 0.4842 / 0.5441; ratio 9.58 | render parity 0.99978 within 1 grey level (layers 33/35: 0.136); 762 s both directions, 3.57 GB | Check render parity with ±1-layer controls before inference. Related: [L657](#l657-a-cpu-port-of-the-renderer-reproduces-a-published-pherc0343-render-to-one-grey-level-and-the-check-pins-the-layer-index), [L663](#l663-use-displaced-depth-not-the-opposite-layer-order-as-the-negative-control) | `scroll-lessons:main`; experiments/scroll-factory/README.md |
+| **SF-E1-AM** masked robust normalisation | 2026-10-21 | Amendment 1 (0a98c20): adopt if box AUC ≥ published − 0.02 and the 0-128 px edge bins are not higher? | **PASSED.** adopted; box AUC 0.7368, ratio 24.53 | off-box strong fraction 0.002 / 0.010 / 0.013 / 0.013 / 0.029 against 0.033 / 0.054 / 0.049 / 0.042 / 0.048 | Normalise over CT voxels only. Related: [L662](#l662-normalising-inference-patches-over-zero-padding-biases-the-map-normalise-over-ct-voxels-only) | `scroll-lessons:main`; experiments/scroll-factory/README.md |
+| **SF-E1-REPRO** cold reproduction in a fresh session | 2026-10-21 | Does a cold session reproduce E1 from the pinned scripts alone? | **PASSED.** bit-identical ink map (sha256 7c49d066…09e9c) | setup 132 s, reproduction 324 s, no edits | Pin sources and checkpoint; prove the environment in a cold container. Related: [L665](#l665-reader-v3-runs-on-4-cpu-threads-at-half-a-minute-to-a-minute-per-cm2-per-direction-and-a-cold-container-reproduced-its-map-bit-for-bit) | `scroll-lessons:main`; experiments/scroll-factory/README.md |
+| **SF-E2a** held-out 9.366 um calibration on PHerc0841 w00 | 2026-10-21 | Pre-registered gate (d29e860): pixel AUC ≥ 0.75 in the label-free chosen order, and that order = the label-best order? | **PASSED.** forward 0.8881 published / 0.9199 masked; reverse 0.5156 / 0.7168 | background at 80 % recall 0.154 / 0.113; 53-64 s/cm2/direction (CPU partly shared) | Re-test transfer for each new model on a held-out segment of the target protocol. Related: [L661](#l661-reader-v3-detects-held-out-pherc0841-ink-on-the-native-9366-um-scan-pixel-auc-0888-0920-with-masked-normalisation) | `scroll-lessons:main`; experiments/scroll-factory/README.md |
+| **SF-E3a** snap-to-m7 synthetic-truth control (PHerc0343) | 2026-10-21 | Pre-registered (d169aa0): snapped AUC ≥ original − 0.05, displaced ≤ snapped − 0.05, median node distance ≤ 2 vox? | **PASSED.** original 0.6929, displaced 0.5687, snapped 0.6763 | median node distance 1.99 vox (p90 8.48; 65.8 % within 4) | A snap repairs errors well under half a sheet spacing. Related: [L658](#l658-snapping-to-m7-repairs-a-4-8-voxel-surface-error-and-gives-back-the-known-letters-errors-near-half-a-sheet-spacing-should-not-be-expected-to-snap-back) | `scroll-lessons:main`; experiments/scroll-factory/README.md |
+| **SF-E3-REF** on-sheet O1 of the known-good mesh | 2026-10-21 | (bookkeeping; measured before amendment fc75ed6, which changed the O1 metric and its bar) | **RECORD.** O1 0.582 known-good, 0.108 displaced; metric and bar re-anchored before targets | ±2-vox m7 test, snap_meshes defaults | Anchor bars on the reference's own score. Related: [L659](#l659-a-known-good-mesh-scores-only-058-on-the-2-voxel-m7-on-sheet-test-so-anchor-the-bar-on-it) | `scroll-lessons:main`; experiments/scroll-factory/README.md |
+| **SF-E5** R-FACE reading face from geometry | 2026-10-21 | Declared (02a85f9) after both outcomes were known: both calibration meshes unambiguous and both predicted orders = observed? | **PASSED** (consistency check, not blind). PHerc0343 f_out 0.997 → reverse ✔; PHerc0841 w00 f_out 0.985 → forward ✔ | median n·r 0.840 / 0.857 | Decide the face per mesh from normal sign and frame. Related: [L660](#l660-the-reading-face-follows-from-the-sign-of-the-mesh-normal-relative-to-the-scroll-axis-together-with-the-render-frame) | `scroll-lessons:main`; experiments/scroll-factory/README.md |

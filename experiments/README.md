@@ -127,3 +127,9 @@ every lesson is also in [MASTER_LESSONS.md](../MASTER_LESSONS.md).
 | [`sib-tribunal`](https://github.com/abundantjoe/scroll-lessons/tree/sib-tribunal) | Clearance re-check under the corrected re-trace rule | passed | Re-check clearances whenever the distance rule changes. |
 | [`hercules`](https://github.com/abundantjoe/scroll-lessons/tree/hercules) | Hercules: earlier programme (48 experiments) | see branch | lessons in MASTER_LESSONS.md |
 | [`megara`](https://github.com/abundantjoe/scroll-lessons/tree/megara) | Megara: earlier programme (30 experiments) | see branch | lessons in MASTER_LESSONS.md |
+
+## Records from the follow-on Scroll Factory programme
+
+| record | experiments | verdict | lesson |
+|---|---|---|---|
+| [`experiments/scroll-factory/README.md`](scroll-factory/README.md) | Reader V3 controls on CPU: PHerc0343 positive control (E1, E1-AM, cold reproduction), held-out PHerc0841 at 9.366 um (E2a), snap-to-m7 synthetic truth (E3a), reading face from geometry (E5) | 6 passed (E5 a consistency check), 1 record | A public reader now detects held-out 9 um text at pixel level (AUC 0.920 with masked normalisation, 0.888 with the published recipe); legibility is untested, and geometry is still a gate. |
