@@ -3,7 +3,7 @@
 > Feed this file to your AI system as context before you start work on the Herculaneum scrolls. It holds what we
 > learned from every Dominion experiment, start to finish, so a new session can skip our dead ends.
 >
-> Size: about 168,246 words (roughly 301k tokens). The parts are ordered by value: if your model's context is smaller,
+> Size: about 203,490 words (roughly 366k tokens). The parts are ordered by value: if your model's context is smaller,
 > give it Parts 0-5 (rules, all lessons, retracted claims, where to pick up) and leave out the timeline and the register.
 >
 > Dominion was directed by Joseph Balmaceda and run by Claude research agents (Anthropic), September-October 2026.
@@ -711,6 +711,155 @@
   - [Process, submission gates, tribunal and operations](#process-submission-gates-tribunal-and-operations)
   - [Hercules](#hercules)
   - [Megara](#megara)
+- [Part 8. Lessons from Scroll Swarm and the Vesuvius community (added 2026-10-22)](#part-8-lessons-from-scroll-swarm-and-the-vesuvius-community-added-2026-10-22)
+  - [8A. Rules and organizer guidance (re-verify before relying; rules change)](#8a-rules-and-organizer-guidance-re-verify-before-relying-rules-change)
+    - [L657. Derive all submitted First Letters evidence from the listed eligible volume; other scans may only train models](#l657-derive-all-submitted-first-letters-evidence-from-the-listed-eligible-volume-other-scans-may-only-train-models)
+    - [L658. Large ink-model windows are now allowed, but you must show the text is not hallucinated](#l658-large-ink-model-windows-are-now-allowed-but-you-must-show-the-text-is-not-hallucinated)
+    - [L659. Readability is judged by the papyrologists on the images alone; ask rules questions in public threads](#l659-readability-is-judged-by-the-papyrologists-on-the-images-alone-ask-rules-questions-in-public-threads)
+    - [L660. Enlarge and re-centre the submission window before fine-tuning the model further](#l660-enlarge-and-re-centre-the-submission-window-before-fine-tuning-the-model-further)
+    - [L661. The prize goes to whoever first submits a qualifying image, not to whoever made the model or segment](#l661-the-prize-goes-to-whoever-first-submits-a-qualifying-image-not-to-whoever-made-the-model-or-segment)
+    - [L662. Re-check the eligible-scroll list at every cycle: scrolls are added and withdrawn](#l662-re-check-the-eligible-scroll-list-at-every-cycle-scrolls-are-added-and-withdrawn)
+    - [L663. A count of "legitimate submissions" says nothing about found letters](#l663-a-count-of-legitimate-submissions-says-nothing-about-found-letters)
+    - [L664. Record the licence of each model and dataset: team models are MIT, the data are CC BY-NC 4.0 with citation](#l664-record-the-licence-of-each-model-and-dataset-team-models-are-mit-the-data-are-cc-by-nc-40-with-citation)
+    - [L665. Post LLM-written reports in #robots, name the model, and separate its output from human commentary](#l665-post-llm-written-reports-in-robots-name-the-model-and-separate-its-output-from-human-commentary)
+    - [L666. Agent PRs and issues to villa must follow CONTRIBUTING.md, or they are closed without comment](#l666-agent-prs-and-issues-to-villa-must-follow-contributingmd-or-they-are-closed-without-comment)
+  - [8B. Data and tools](#8b-data-and-tools)
+    - [L667. Rebuild 9.6 um inputs from level 0: in 18 of 33 HF ink-bucket surface volumes, level 2 holds only 17 of 65 depth slices](#l667-rebuild-96-um-inputs-from-level-0-in-18-of-33-hf-ink-bucket-surface-volumes-level-2-holds-only-17-of-65-depth-slices)
+    - [L668. Pass the checkpoint's own CT normalization to vesuvius.predict; the default z-scores each volume](#l668-pass-the-checkpoints-own-ct-normalization-to-vesuviuspredict-the-default-z-scores-each-volume)
+    - [L669. Read the TTA setting and pyramid level of each published m7 surface prediction before you reproduce it](#l669-read-the-tta-setting-and-pyramid-level-of-each-published-m7-surface-prediction-before-you-reproduce-it)
+    - [L670. Anchor region-of-interest inference to the full-volume patch grid](#l670-anchor-region-of-interest-inference-to-the-full-volume-patch-grid)
+    - [L671. Published m7 surface maps mark "sheet" on zero CT: mask them by CT > 0 for statistics, but do not threshold them by CT intensity](#l671-published-m7-surface-maps-mark-sheet-on-zero-ct-mask-them-by-ct--0-for-statistics-but-do-not-threshold-them-by-ct-intensity)
+    - [L672. Count bytes received during remote inference: zarr 3 silently disabled villa's chunk cache](#l672-count-bytes-received-during-remote-inference-zarr-3-silently-disabled-villas-chunk-cache)
+    - [L673. Do not let villa's predict overwrite an interrupted whole-scroll run](#l673-do-not-let-villas-predict-overwrite-an-interrupted-whole-scroll-run)
+    - [L674. Log the device and autocast dtype actually used, and compare any accelerator run with a CPU fp32 reference](#l674-log-the-device-and-autocast-dtype-actually-used-and-compare-any-accelerator-run-with-a-cpu-fp32-reference)
+    - [L675. Treat a zero-result success as a failure, and assert output shapes against the source](#l675-treat-a-zero-result-success-as-a-failure-and-assert-output-shapes-against-the-source)
+    - [L676. Derive tifxyz canvas size with the renderer's float32 rounding, and read cross-scan canvas sizes from the volume](#l676-derive-tifxyz-canvas-size-with-the-renderers-float32-rounding-and-read-cross-scan-canvas-sizes-from-the-volume)
+    - [L677. Do not compare ESRF 8-bit volumes by raw intensity without masking clipped ends and reading each volume's window](#l677-do-not-compare-esrf-8-bit-volumes-by-raw-intensity-without-masking-clipped-ends-and-reading-each-volumes-window)
+    - [L678. Record which Paganin variant you used, and take its parameters from the scan object](#l678-record-which-paganin-variant-you-used-and-take-its-parameters-from-the-scan-object)
+    - [L679. On the older uint16 volumes, zero is not air: the windows include negative attenuation](#l679-on-the-older-uint16-volumes-zero-is-not-air-the-windows-include-negative-attenuation)
+    - [L680. Inventory every data host before declaring data missing, and audit headers before a job](#l680-inventory-every-data-host-before-declaring-data-missing-and-audit-headers-before-a-job)
+    - [L681. Mirror with rsync, and verify every downloaded or written file by checksum, not by size](#l681-mirror-with-rsync-and-verify-every-downloaded-or-written-file-by-checksum-not-by-size)
+    - [L682. Read single planes from uncompressed zarr chunks with byte-range requests, and back off on 429](#l682-read-single-planes-from-uncompressed-zarr-chunks-with-byte-range-requests-and-back-off-on-429)
+    - [L683. Do not stream training data from Hugging Face; fetch only the chunks your training config reads](#l683-do-not-stream-training-data-from-hugging-face-fetch-only-the-chunks-your-training-config-reads)
+    - [L684. Look up stored volume-to-volume transforms first, check their scale, and register yourself only where one is missing](#l684-look-up-stored-volume-to-volume-transforms-first-check-their-scale-and-register-yourself-only-where-one-is-missing)
+    - [L685. Check the frame of annotation coordinates: coordinates that cannot exist prove a frame error](#l685-check-the-frame-of-annotation-coordinates-coordinates-that-cannot-exist-prove-a-frame-error)
+    - [L686. Check dtype and unique values of "standardized" zarr chunks](#l686-check-dtype-and-unique-values-of-standardized-zarr-chunks)
+    - [L687. Choose storage layout by access pattern, and benchmark it before bulk conversion](#l687-choose-storage-layout-by-access-pattern-and-benchmark-it-before-bulk-conversion)
+    - [L688. Preserve bit depth and linear intensities when converting slices](#l688-preserve-bit-depth-and-linear-intensities-when-converting-slices)
+    - [L689. Read a tool's loader before running it: some allocate the whole volume, and lazy arrays hide the same blow-up](#l689-read-a-tools-loader-before-running-it-some-allocate-the-whole-volume-and-lazy-arrays-hide-the-same-blow-up)
+    - [L690. Build CT masks as the connected component touching the border, and assert no interior voxel was zeroed](#l690-build-ct-masks-as-the-connected-component-touching-the-border-and-assert-no-interior-voxel-was-zeroed)
+    - [L691. Divide by the overlap weight when reassembling tiled inference](#l691-divide-by-the-overlap-weight-when-reassembling-tiled-inference)
+    - [L692. Screen at a coarse inference stride and re-run only the hits finely](#l692-screen-at-a-coarse-inference-stride-and-re-run-only-the-hits-finely)
+    - [L693. Export geometry as tifxyz with the coordinate scale, and round-trip it through VC3D](#l693-export-geometry-as-tifxyz-with-the-coordinate-scale-and-round-trip-it-through-vc3d)
+    - [L694. Strip material lines from OBJs before vc_render, and pass the mesh, not the point cloud](#l694-strip-material-lines-from-objs-before-vcrender-and-pass-the-mesh-not-the-point-cloud)
+    - [L695. Pin community tools by version and hash, and read their source before running them on data](#l695-pin-community-tools-by-version-and-hash-and-read-their-source-before-running-them-on-data)
+    - [L696. Centre coordinates before GPU HDBSCAN](#l696-centre-coordinates-before-gpu-hdbscan)
+  - [8C. Geometry and surfaces](#8c-geometry-and-surfaces)
+    - [L697. Measure each segment's orientation from geometry: layer stacks have no fixed recto direction, and Kaggle layer 0 is the deep side](#l697-measure-each-segments-orientation-from-geometry-layer-stacks-have-no-fixed-recto-direction-and-kaggle-layer-0-is-the-deep-side)
+    - [L698. Map surface-volume pixels to scroll voxels with the PPM, and re-render PPMs made before the November 2023 sharkbite fix](#l698-map-surface-volume-pixels-to-scroll-voxels-with-the-ppm-and-re-render-ppms-made-before-the-november-2023-sharkbite-fix)
+    - [L699. Score a spiral fit against random-shift copies of itself on the raw CT before inking it](#l699-score-a-spiral-fit-against-random-shift-copies-of-itself-on-the-raw-ct-before-inking-it)
+    - [L700. Check an eligible-scroll surface's sheet contrast against many curated surfaces before blaming the ink model](#l700-check-an-eligible-scroll-surfaces-sheet-contrast-against-many-curated-surfaces-before-blaming-the-ink-model)
+    - [L701. Clip normal-walk sheet metrics at the scroll mask: at the outer wrap the walk crosses crust into air](#l701-clip-normal-walk-sheet-metrics-at-the-scroll-mask-at-the-outer-wrap-the-walk-crosses-crust-into-air)
+    - [L702. Measure the fraction of each mesh lying outside CT support, and the gap to adjacent-winding segments](#l702-measure-the-fraction-of-each-mesh-lying-outside-ct-support-and-the-gap-to-adjacent-winding-segments)
+    - [L703. Do not call any public tifxyz "manually annotated ground truth"](#l703-do-not-call-any-public-tifxyz-manually-annotated-ground-truth)
+    - [L704. Synthetic benchmarks and phantoms are unit tests only: validate geometry tools on real imperfect patches](#l704-synthetic-benchmarks-and-phantoms-are-unit-tests-only-validate-geometry-tools-on-real-imperfect-patches)
+    - [L705. Expect current sheet-switch detectors to miss most real switches; benchmark them on confirmed switches with smooth-bend negatives](#l705-expect-current-sheet-switch-detectors-to-miss-most-real-switches-benchmark-them-on-confirmed-switches-with-smooth-bend-negatives)
+    - [L706. Flag sheet switches where overlapping patches disagree in 3-D, and check the removed patches by hand](#l706-flag-sheet-switches-where-overlapping-patches-disagree-in-3-d-and-check-the-removed-patches-by-hand)
+    - [L707. Score winding constraints against held-out human chains, and A/B every constraint source against a no-constraint fit](#l707-score-winding-constraints-against-held-out-human-chains-and-ab-every-constraint-source-against-a-no-constraint-fit)
+    - [L708. Judge a tracer with a raw-CT reference it does not consume, and self-check that reference by transitivity](#l708-judge-a-tracer-with-a-raw-ct-reference-it-does-not-consume-and-self-check-that-reference-by-transitivity)
+    - [L709. Split held-out geometry by distance to the fit's inputs, not by patch name](#l709-split-held-out-geometry-by-distance-to-the-fits-inputs-not-by-patch-name)
+    - [L710. Do not treat winding pitch or sheet spacing as a constant, and measure it at level 1 or finer](#l710-do-not-treat-winding-pitch-or-sheet-spacing-as-a-constant-and-measure-it-at-level-1-or-finer)
+    - [L711. Fit cross-section shape per height, and post CT renders and cross-sections with any unwrap claim](#l711-fit-cross-section-shape-per-height-and-post-ct-renders-and-cross-sections-with-any-unwrap-claim)
+    - [L712. Report sheet merges and fragments together, against a dilated-label floor and a CT-threshold baseline](#l712-report-sheet-merges-and-fragments-together-against-a-dilated-label-floor-and-a-ct-threshold-baseline)
+    - [L713. Rank fibre tracers by merge-penalized ERL within one cube size, not by coverage or precision](#l713-rank-fibre-tracers-by-merge-penalized-erl-within-one-cube-size-not-by-coverage-or-precision)
+    - [L714. Repair only well-posed mesh defects: fill interior holes on one sheet, refuse tears, merges and switches](#l714-repair-only-well-posed-mesh-defects-fill-interior-holes-on-one-sheet-refuse-tears-merges-and-switches)
+    - [L715. Brightness-maximising surface refinement drifts across sheets; gate it on held-out ink, not sharpness](#l715-brightness-maximising-surface-refinement-drifts-across-sheets-gate-it-on-held-out-ink-not-sharpness)
+    - [L716. Merge local sheet patches under a global constraint; greedy stitching switches sheets](#l716-merge-local-sheet-patches-under-a-global-constraint-greedy-stitching-switches-sheets)
+    - [L717. VC's ordered mesher ignores 3-D positions, and its tracer cannot refine a sub-range of an existing surface](#l717-vcs-ordered-mesher-ignores-3-d-positions-and-its-tracer-cannot-refine-a-sub-range-of-an-existing-surface)
+    - [L718. Check that an estimated umbilicus lies inside the scroll mask at a local score maximum](#l718-check-that-an-estimated-umbilicus-lies-inside-the-scroll-mask-at-a-local-score-maximum)
+    - [L719. Score a candidate patch-QA feature by AUC between labelled good and bad patches before building a filter](#l719-score-a-candidate-patch-qa-feature-by-auc-between-labelled-good-and-bad-patches-before-building-a-filter)
+    - [L720. Validate a scan-quality ranker against hand-labelled sheets and look at its top picks](#l720-validate-a-scan-quality-ranker-against-hand-labelled-sheets-and-look-at-its-top-picks)
+    - [L721. Organizers suggest spiral-fitting whole prize scrolls as a cheap First Letters route; test it with a pre-registered coverage and ink check](#l721-organizers-suggest-spiral-fitting-whole-prize-scrolls-as-a-cheap-first-letters-route-test-it-with-a-pre-registered-coverage-and-ink-check)
+  - [8D. Ink detection](#8d-ink-detection)
+    - [L722. Smoke-test every published ink checkpoint on labelled ink: some ship with an untrained head that outputs 0.5 everywhere](#l722-smoke-test-every-published-ink-checkpoint-on-labelled-ink-some-ship-with-an-untrained-head-that-outputs-05-everywhere)
+    - [L723. Treat each released ink_9um checkpoint as a separate instrument: select by held-out score per region, and do not ensemble by default](#l723-treat-each-released-ink9um-checkpoint-as-a-separate-instrument-select-by-held-out-score-per-region-and-do-not-ensemble-by-default)
+    - [L724. Pick the depth direction label-free by output separation, and read forward/reversed agreement on an unread volume as no ink](#l724-pick-the-depth-direction-label-free-by-output-separation-and-read-forwardreversed-agreement-on-an-unread-volume-as-no-ink)
+    - [L725. Use an on-grid stride (a multiple of 8) for ink_9um sliding-window inference](#l725-use-an-on-grid-stride-a-multiple-of-8-for-ink9um-sliding-window-inference)
+    - [L726. Copy layer window, normalization and tile blending from the bucket's metadata.json to reproduce the canonical 2.4 um ink maps](#l726-copy-layer-window-normalization-and-tile-blending-from-the-buckets-metadatajson-to-reproduce-the-canonical-24-um-ink-maps)
+    - [L727. Pin the checkpoint, layer window and in_chans of every map; forks and repo snapshots change them silently](#l727-pin-the-checkpoint-layer-window-and-inchans-of-every-map-forks-and-repo-snapshots-change-them-silently)
+    - [L728. Record the inference depth window and sweep it for any candidate](#l728-record-the-inference-depth-window-and-sweep-it-for-any-candidate)
+    - [L729. Surface offset costs ink asymmetrically: keep the surface within 3 slices on the bad side](#l729-surface-offset-costs-ink-asymmetrically-keep-the-surface-within-3-slices-on-the-bad-side)
+    - [L730. Scale depth jitter to the window: ±2 slices of jitter on a 5-slice window ruins it](#l730-scale-depth-jitter-to-the-window-2-slices-of-jitter-on-a-5-slice-window-ruins-it)
+    - [L731. Separate a neighbouring turn's echo from the sheet's own ink with a depth profile](#l731-separate-a-neighbouring-turns-echo-from-the-sheets-own-ink-with-a-depth-profile)
+    - [L732. Treat pixels where the surface normal turns sharply as low-confidence ink](#l732-treat-pixels-where-the-surface-normal-turns-sharply-as-low-confidence-ink)
+    - [L733. Carry a binarization threshold only within the same model; the operating-quantile rule held best in three pre-registered tests](#l733-carry-a-binarization-threshold-only-within-the-same-model-the-operating-quantile-rule-held-best-in-three-pre-registered-tests)
+    - [L734. Do not assume carbon ink is darker than papyrus: at 9 um it is usually slightly brighter, and the sign varies by scroll](#l734-do-not-assume-carbon-ink-is-darker-than-papyrus-at-9-um-it-is-usually-slightly-brighter-and-the-sign-varies-by-scroll)
+    - [L735. Gate "no ink" verdicts on CT coverage, not mesh validity, and calibrate against regions outside the test](#l735-gate-no-ink-verdicts-on-ct-coverage-not-mesh-validity-and-calibrate-against-regions-outside-the-test)
+    - [L736. Validate any ink discriminator on known ink and known over-firing, and never use one region as a baseline](#l736-validate-any-ink-discriminator-on-known-ink-and-known-over-firing-and-never-use-one-region-as-a-baseline)
+    - [L737. Pair a label-free ink post-filter with sealed windows and a misaligned control that should fail](#l737-pair-a-label-free-ink-post-filter-with-sealed-windows-and-a-misaligned-control-that-should-fail)
+    - [L738. Credit a retraining gain to new data only with a matched control run, and do not equate it with legibility](#l738-credit-a-retraining-gain-to-new-data-only-with-a-matched-control-run-and-do-not-equate-it-with-legibility)
+    - [L739. Per-scroll ink models still beat the cross-scroll 9 um models; pair any cross-scroll null with a same-scroll positive control](#l739-per-scroll-ink-models-still-beat-the-cross-scroll-9-um-models-pair-any-cross-scroll-null-with-a-same-scroll-positive-control)
+    - [L740. Curate pseudo-labels and use three-state masks: black in a prediction mask means "not seen", not "no ink"](#l740-curate-pseudo-labels-and-use-three-state-masks-black-in-a-prediction-mask-means-not-seen-not-no-ink)
+    - [L741. Keep a fixed ground-truth anchor set in every self-labelling round: on scrolls without ground truth, labels spiral into fibres](#l741-keep-a-fixed-ground-truth-anchor-set-in-every-self-labelling-round-on-scrolls-without-ground-truth-labels-spiral-into-fibres)
+    - [L742. Keep label files outside every input directory: a globbing loader can feed the label to the model](#l742-keep-label-files-outside-every-input-directory-a-globbing-loader-can-feed-the-label-to-the-model)
+    - [L743. Fragment ink labels are hand-aligned and partly wrong: down-weight their boundaries](#l743-fragment-ink-labels-are-hand-aligned-and-partly-wrong-down-weight-their-boundaries)
+    - [L744. Check 2-D-to-3-D label mapping and segment-to-segment label transfer before training](#l744-check-2-d-to-3-d-label-mapping-and-segment-to-segment-label-transfer-before-training)
+    - [L745. Hold out the released Kaggle hidden test fragment for fragment-level claims, and rescale fragments by re-rendering from geometry](#l745-hold-out-the-released-kaggle-hidden-test-fragment-for-fragment-level-claims-and-rescale-fragments-by-re-rendering-from-geometry)
+    - [L746. Simulated changes of resolution or energy are imperfect proxies: test on real scans of the target type](#l746-simulated-changes-of-resolution-or-energy-are-imperfect-proxies-test-on-real-scans-of-the-target-type)
+    - [L747. Equalise intensity across scrolls on papyrus-only voxels before applying a model trained elsewhere](#l747-equalise-intensity-across-scrolls-on-papyrus-only-voxels-before-applying-a-model-trained-elsewhere)
+    - [L748. Do not run released ink models on volcomp q8 volumes without adaptation](#l748-do-not-run-released-ink-models-on-volcomp-q8-volumes-without-adaptation)
+    - [L749. Treat 3-D ink predictions as likely ink, not physical ground truth; no CT-direct model is known to read at 9 um](#l749-treat-3-d-ink-predictions-as-likely-ink-not-physical-ground-truth-no-ct-direct-model-is-known-to-read-at-9-um)
+    - [L750. Plan for carbon ink with roughly papyrus radiodensity; elemental contrast is scroll-specific](#l750-plan-for-carbon-ink-with-roughly-papyrus-radiodensity-elemental-contrast-is-scroll-specific)
+    - [L751. For CT fiducials use historic-recipe iron-gall ink and orientable marks, and test-scan a swatch first](#l751-for-ct-fiducials-use-historic-recipe-iron-gall-ink-and-orientable-marks-and-test-scan-a-swatch-first)
+    - [L752. A new output semantics must beat the binary baseline on the same held-out split](#l752-a-new-output-semantics-must-beat-the-binary-baseline-on-the-same-held-out-split)
+    - [L753. Split a training segment spatially for validation; the GP script skips the validation fragment for training](#l753-split-a-training-segment-spatially-for-validation-the-gp-script-skips-the-validation-fragment-for-training)
+  - [8E. Reading, validation and controls](#8e-reading-validation-and-controls)
+    - [L754. Score a read against a key with a high-pass, blur-matched letter-scale metric and a blob-only negative exam](#l754-score-a-read-against-a-key-with-a-high-pass-blur-matched-letter-scale-metric-and-a-blob-only-negative-exam)
+    - [L755. Convert every candidate letter's size to millimetres with the volume's own voxel size](#l755-convert-every-candidate-letters-size-to-millimetres-with-the-volumes-own-voxel-size)
+    - [L756. Run the identical display pipeline on matched empty regions and shuffled inputs before believing a letter-like mark](#l756-run-the-identical-display-pipeline-on-matched-empty-regions-and-shuffled-inputs-before-believing-a-letter-like-mark)
+    - [L757. Check every visual candidate in depth and cross-section: kollesis seams and a mesh leaving the sheet mimic ink](#l757-check-every-visual-candidate-in-depth-and-cross-section-kollesis-seams-and-a-mesh-leaving-the-sheet-mimic-ink)
+    - [L758. Read text only from models whose labels never covered that text](#l758-read-text-only-from-models-whose-labels-never-covered-that-text)
+    - [L759. Gate held-out label registration on a zero-shift peak per segment, not on a correspondence residual](#l759-gate-held-out-label-registration-on-a-zero-shift-peak-per-segment-not-on-a-correspondence-residual)
+    - [L760. Read a validation mask's meaning before computing AP: the PHerc0841/0500P2 masks are mostly unlabelled area](#l760-read-a-validation-masks-meaning-before-computing-ap-the-pherc08410500p2-masks-are-mostly-unlabelled-area)
+    - [L761. Show whole segments in a predeclared set next to an independent key; zoomed crops flatter any model](#l761-show-whole-segments-in-a-predeclared-set-next-to-an-independent-key-zoomed-crops-flatter-any-model)
+    - [L762. Compare ink maps of two meshes only under identical flattening, stack width and checkpoint](#l762-compare-ink-maps-of-two-meshes-only-under-identical-flattening-stack-width-and-checkpoint)
+    - [L763. Label fragment ink with a seeded flood fill rather than a freehand pen](#l763-label-fragment-ink-with-a-seeded-flood-fill-rather-than-a-freehand-pen)
+  - [8F. Agents and process](#8f-agents-and-process)
+    - [L764. Have a human set each experiment's goal and success criterion: this project has no robust automatic verifier](#l764-have-a-human-set-each-experiments-goal-and-success-criterion-this-project-has-no-robust-automatic-verifier)
+    - [L765. Forbid silent fallbacks, and write or review key tests independently of the agent that wrote the code](#l765-forbid-silent-fallbacks-and-write-or-review-key-tests-independently-of-the-agent-that-wrote-the-code)
+    - [L766. Quote, do not judge, when mining Discord: organizers call LLM "dead end" verdicts unfounded](#l766-quote-do-not-judge-when-mining-discord-organizers-call-llm-dead-end-verdicts-unfounded)
+    - [L767. Ask whether a number can exist physically; two agreeing models are not a review](#l767-ask-whether-a-number-can-exist-physically-two-agreeing-models-are-not-a-review)
+    - [L768. Measure how much of the data an intervention touches before training on it](#l768-measure-how-much-of-the-data-an-intervention-touches-before-training-on-it)
+    - [L769. Freeze evaluation rules by publishing a protocol hash before results, and report the kill when it fires](#l769-freeze-evaluation-rules-by-publishing-a-protocol-hash-before-results-and-report-the-kill-when-it-fires)
+    - [L770. Suspect your own reader before reporting a data defect, and read the file with two libraries](#l770-suspect-your-own-reader-before-reporting-a-data-defect-and-read-the-file-with-two-libraries)
+  - [8G. Scroll Swarm (14-15 Oct 2026)](#8g-scroll-swarm-14-15-oct-2026)
+    - [L771. Measure a reversed-layer-order floor on the same surface for every ink run; an absolute floor does not transfer between scans](#l771-measure-a-reversed-layer-order-floor-on-the-same-surface-for-every-ink-run-an-absolute-floor-does-not-transfer-between-scans)
+    - [L772. Rank small windows by forward-minus-reversed IoU, not by forward-minus-reversed r](#l772-rank-small-windows-by-forward-minus-reversed-iou-not-by-forward-minus-reversed-r)
+    - [L773. Measure the reference's floor before pre-registering a "blank" threshold](#l773-measure-the-references-floor-before-pre-registering-a-blank-threshold)
+    - [L774. Report cross-model agreement only beside its reversed cross-model floor](#l774-report-cross-model-agreement-only-beside-its-reversed-cross-model-floor)
+    - [L775. Test a sheet gate on hard negatives, and write what "sheet-verified" does not cover](#l775-test-a-sheet-gate-on-hard-negatives-and-write-what-sheet-verified-does-not-cover)
+    - [L776. Retire a gate that fails known positives, and re-judge its earlier FAIL verdicts](#l776-retire-a-gate-that-fails-known-positives-and-re-judge-its-earlier-fail-verdicts)
+    - [L777. Budget normal grids at about 100x wall time, and resume tracer runs until the front stalls](#l777-budget-normal-grids-at-about-100x-wall-time-and-resume-tracer-runs-until-the-front-stalls)
+    - [L778. Pick growable scrolls with a short tracer block, not by layering-map rank](#l778-pick-growable-scrolls-with-a-short-tracer-block-not-by-layering-map-rank)
+    - [L779. Give a reader-parity gate the same context margin as its reference](#l779-give-a-reader-parity-gate-the-same-context-margin-as-its-reference)
+    - [L780. The 2.4 um production reader tolerates early centring offsets but not late ones](#l780-the-24-um-production-reader-tolerates-early-centring-offsets-but-not-late-ones)
+    - [L781. Calibrate the blind-read field size per format; a "not letter-like" read never closes a region](#l781-calibrate-the-blind-read-field-size-per-format-a-not-letter-like-read-never-closes-a-region)
+    - [L782. Remove non-text cues from blind-read sets before launch](#l782-remove-non-text-cues-from-blind-read-sets-before-launch)
+    - [L783. LETTER-LIKE verdicts do not mean correct letter identities](#l783-letter-like-verdicts-do-not-mean-correct-letter-identities)
+    - [L784. A bulk ink_9um AUC near 0.74-0.78 is pixel signal, not legibility](#l784-a-bulk-ink9um-auc-near-074-078-is-pixel-signal-not-legibility)
+    - [L785. Test a statistic's explanation with a shuffle null and an independent re-implementation](#l785-test-a-statistics-explanation-with-a-shuffle-null-and-an-independent-re-implementation)
+    - [L786. Flag smooth forward-only "floods" as anomalies, not text](#l786-flag-smooth-forward-only-floods-as-anomalies-not-text)
+    - [L787. Check a pre-registered metric on the official control before using it on targets](#l787-check-a-pre-registered-metric-on-the-official-control-before-using-it-on-targets)
+    - [L788. Compute true mesh area from valid triangles: raster canvas area overstates it about 2x](#l788-compute-true-mesh-area-from-valid-triangles-raster-canvas-area-overstates-it-about-2x)
+    - [L789. Quote rules verbatim in worker briefs](#l789-quote-rules-verbatim-in-worker-briefs)
+    - [L790. Integrate worker branches file by file from the merge-base](#l790-integrate-worker-branches-file-by-file-from-the-merge-base)
+    - [L791. Do not record a background job as complete before its output check passes](#l791-do-not-record-a-background-job-as-complete-before-its-output-check-passes)
+    - [L792. Run one CPU-heavy job per 4-vCPU VM: renice did not protect inference](#l792-run-one-cpu-heavy-job-per-4-vcpu-vm-renice-did-not-protect-inference)
+    - [L793. Put the full assignment in a worker's first brief; follow-on messages are unreliable](#l793-put-the-full-assignment-in-a-workers-first-brief-follow-on-messages-are-unreliable)
+    - [L794. Keep "no candidate" separate from "no text"](#l794-keep-no-candidate-separate-from-no-text)
+  - [8H. Retracted or corrected community claims](#8h-retracted-or-corrected-community-claims)
+  - [8I. Errata for the experiments/ briefing docs](#8i-errata-for-the-experiments-briefing-docs)
+  - [8J. Errors in the community summary](#8j-errors-in-the-community-summary)
 
 ## Part 0. Read this first
 
@@ -732,6 +881,7 @@ This file merges all of them. Its parts, in order of value:
 - **Part 5:** open problems, data, models, tools and the glossary.
 - **Part 6:** the timeline, start to finish.
 - **Part 7:** the experiment register.
+- **Part 8:** lessons from Scroll Swarm (14-15 Oct 2026) and from the Vesuvius Challenge Discord (2023-2026, checked against the raw export), added 2026-10-22; L657-L794.
 
 It is not a working pipeline. **No letters are claimed on any scroll.** Its value is a precise account of what was tried, what failed and why, so that a new session can avoid our mistakes.
 
@@ -761,7 +911,7 @@ Times are UTC. Numbers are copied from the sources; do not round them.
 
 1. Attach the whole file to the AI session as context. Read it once in full, then search it by lesson ID (`L176`), scroll ID (`PHerc0268`) or term (Part 5 glossary).
 2. Give the session a task with the prompt below. Fill in the angle brackets.
-3. At the end of the session, have it add new lessons in the same format (Trap / Evidence / Fix / Label / When / Sources), starting from the next free number (L509), and add any claim it withdraws as RETRACTED.
+3. At the end of the session, have it add new lessons in the same format (Trap / Evidence / Fix / Label / When / Sources), starting from the next free number (L795), and add any claim it withdraws as RETRACTED.
 
 ```text
 Context: MASTER_LESSONS.md (attached) is the complete lesson record of the Dominion
@@ -785,6 +935,8 @@ spending compute.
 Rules: cite lesson IDs for every claim you take from the file; never use a RETRACTED
 item as a fact; copy numbers exactly; do not reconstruct withheld prize details.
 ```
+
+- **Part 8** (L657-L794, added 2026-10-22) holds lessons from Scroll Swarm (a separate project) and from the official Vesuvius Challenge Discord, including organizer rule statements up to 20 October 2026 (8A), retracted community claims (8H) and errata for the `experiments/` briefing docs (8I). Read [Part 8](#part-8-lessons-from-scroll-swarm-and-the-vesuvius-community-added-2026-10-22) before relying on any rule in this file.
 
 Prize rules, the data catalogue and the public tools keep changing. Before relying on any rule or catalogue number here, re-fetch the live prize page and the catalogue ([L001](#l001-read-the-prize-rules-section-by-section-with-file-and-line), [L004](#l004-catalogue-facts-that-differ-from-the-fact-sheet-sept-2026), [L359](#l359-re-fetch-the-prize-page-and-licence-terms-before-relying-on-the-catalogue)).
 
@@ -840,7 +992,7 @@ Every null we recorded is bounded by these two failures. Most of the lasting val
 
 ### The golden rules
 
-These 25 rules were drawn from the whole record. Each links to the lesson that proves it.
+These 30 rules were drawn from the whole record (rules 26-30 were added with Part 8). Each links to the lesson that proves it.
 
 1. Gate every ink model and display on known text of the same scan before computing or reading a single target tile. [L176](#l176-a-cross-scroll-ink-model-can-be-completely-blind-on-a-new-scroll-gate-it-on-that-scrolls-known-text-first)
 2. Do not run or report a census whose positive-control gate has not passed; its nulls are uninformative. [L283](#l283-a-0-positive-census-under-a-gate-that-never-passed-is-uninformative)
@@ -867,6 +1019,11 @@ These 25 rules were drawn from the whole record. Each links to the lesson that p
 23. Never route around a safety or permission block; record it and ask the owner. [L350](#l350-never-work-around-safety-or-permission-blocks)
 24. Treat only a direct owner instruction as consent; relayed messages do not lift a stop. [L361](#l361-a-relayed-instruction-does-not-lift-a-direct-owner-stop-continuing-on-a-new-branch-routes-around-it)
 25. Get approved paths for downloads, detached jobs and pushes before fanning out workers. [L386](#l386-session-permission-layers-refuse-remote-model-code-third-party-downloads-and-detached-launches-plan-approved-paths-up-front)
+26. Smoke-test every published ink checkpoint on labelled known ink before use; an untrained head outputs a constant that looks like "no ink". [L722](#l722-smoke-test-every-published-ink-checkpoint-on-labelled-ink-some-ship-with-an-untrained-head-that-outputs-05-everywhere)
+27. Copy the layer window, normalization, tile blending and TTA from the producing run's metadata, and reproduce a published map before running new data. [L726](#l726-copy-layer-window-normalization-and-tile-blending-from-the-buckets-metadatajson-to-reproduce-the-canonical-24-um-ink-maps)
+28. Give every ink run a reversed-depth twin on the same render, and decide on the forward-minus-reversed excess, not on an absolute floor. [L771](#l771-measure-a-reversed-layer-order-floor-on-the-same-surface-for-every-ink-run-an-absolute-floor-does-not-transfer-between-scans)
+29. Validate geometry and sheet-switch tools on real, independently confirmed defects; synthetic tests are unit tests only. [L704](#l704-synthetic-benchmarks-and-phantoms-are-unit-tests-only-validate-geometry-tools-on-real-imperfect-patches)
+30. Derive all submitted First Letters evidence from the listed eligible volume, and re-check the rules and the eligible list every cycle. [L657](#l657-derive-all-submitted-first-letters-evidence-from-the-listed-eligible-volume-other-scans-may-only-train-models)
 
 ## Part 1. Lessons: data, geometry and rendering
 
@@ -6212,3 +6369,926 @@ Rows marked WITHHELD concern First Letters or First Title prize candidates: a ca
 | **MG-30** v8 window count (exploratory, not pre-registered) | 2026-09-18 (from CHANGELOG research log) |  | **RECORD.** segment 20230929220926 supports no further window under the crop rule; 20231012184424 supports 7 more (labelled coverage 15.8 % → 39.3 %) | segment 20230929220926 supports no further window under the crop rule; 20231012184424 supports 7 more (labelled coverage 15.8 % → 39.3 %) |  | `megara:main`; megara:main:docs/RESULTS.md#6/#9 |
 | **MG-17** R2 reading run, E, same windows | 2026-09-19 (from CHANGELOG research log) | Pre-registered test: does R2 reading run, E, same windows meet: same? | **FAILED.** fail | E agreement with team 0.793-0.886 (N1 recomputation); no legible character [docs/RESULTS.md §7] | Treat AUC as a measure of detection only. A claim to have read text needs its own declared legibility measure and human review. | `megara:main`; megara:main:docs/RESULTS.md#1 |
 | **MG-18** C1 confirmation, 6 untouched crops | 2026-10-15 (from CHANGELOG research log) | Pre-registered test: does C1 confirmation, 6 untouched crops meet: E clears both bars on the C1 mean AND beats v7 on every C1 crop? | **PASSED.** held (E 0.830 / 0.928; ahead of v7 on 6/6 crops); v8 and GP-R1 alone fall below the pixel bar on C1 | E 0.8305 pixel / 0.9282 stroke, lower bounds 0.8002 / 0.9055; E above v7 6/6; shrinkage E pixel -0.0456 [-0.0885, -0.0055] [docs/RESULTS.md §5] | Keep an untouched, pre-registered labelled set. Spend it once, with frozen weights and both positive and negative controls, to measure the bias of the whole sequence. | `megara:main`; megara:main:docs/RESULTS.md#1 |
+
+## Part 8. Lessons from Scroll Swarm and the Vesuvius community (added 2026-10-22)
+
+This part adds lessons from two sources that are not Dominion:
+
+- **Scroll Swarm records, 14-15 October 2026.** Scroll Swarm is a separate AI-run project by the same owner. It is not part of Dominion, and its results are not Dominion results. Its lessons are cited as `scroll-swarm:<path>` (decision IDs `D-nnnn`, experiment IDs `EXP-nnnn`). Results on eligible scrolls are given in aggregate only.
+- **The official Vesuvius Challenge Discord export:** 731 threads, 41,734 messages, 2023-02-27 to 2026-10-20. It was read through an AI-written summary, and every lesson here was checked against the raw export. Sources name the thread (`channel - thread title`) and the message date. Contributors are credited by Discord display name, for public tools and reports only.
+
+Labels mean what Part 0 says. For community lessons, **MEASURED** means the number is the poster's own; it becomes VERIFIED only where a second person or a control reproduced it, and the label says who. Organizer statements are labelled MEASURED (organizer statement): they are what was said on that date, not a tested result. No scroll text, letter readings or candidate locations are copied from Discord or from Scroll Swarm.
+
+Where a lesson builds on or conflicts with an earlier one, its Sources line says "Extends Lnnn" or "Contradicts Lnnn".
+
+### 8A. Rules and organizer guidance (re-verify before relying; rules change)
+
+Organizer statements from Discord, by date. The prize page governs; re-fetch it ([L001](#l001-read-the-prize-rules-section-by-section-with-file-and-line)) before relying on any of these.
+
+### L657. Derive all submitted First Letters evidence from the listed eligible volume; other scans may only train models
+- **Trap:** Running inference on a finer scan of the same scroll (for example the 2.4 um scan) and then registering or rescaling the prediction onto the listed 9 um volume, or distilling a model onto the very region you submit.
+- **Evidence:** Paul (organizer), 2026-09-05: "your submitted evidence must be derived entirely from an eligible volume (including existing surfaces, lasagne, etc). it is ok to e.g. train a model on some 2um data (even from the same scroll), provided you then apply it on 9um". sean (organizer), 2026-09-13: finer scans "cannot" be used; "only the volumes listed under eligible volumes are currently usable for their respective prizes". sean, 2026-09-20: "the model prediction must be generated from the 9.362um scan"; "you cant predict on the 2.4um and then register the prediction to 9.362 , and if you distill you will need to make sure you have a train/val split". sean, 2026-07-22: distilling is fine only "on a region _that you do not use for your submission_". Paul, 2026-10-10: distilled labels are "not a problem, we just don't want you using 2.4um data during inference". waldkauz (organizer), 2026-09-23: a method that requires 2.4 um scans "is not currently admissible for the first letter or grand price".
+- **Fix:** Keep a provenance log in which every pixel of the submitted image traces back to the eligible volume ID listed on scrollprize.org/prizes. If you distil, store the train/val split and show that the submitted region lies outside the training region. Check: the provenance of each claim image names the listed volume ID as its only inference input.
+- **Label:** MEASURED (organizer statements) · **When:** 2026-07-22..2026-10-10 · **Sources:** Discord: general (2026-07-22, 2026-09-05); ink-detection - Why is the fiber strip ABOVE the cracked ink pattern... (2026-09-13); ink-detection - Rules question for First Letters (2026-09-20); show-and-tell - Automated Fiber Volume (2026-09-23); ink-detection - 3D ink recipe on a PHerc 343 band (2026-10-10) · Extends L014, L029, L175
+
+### L658. Large ink-model windows are now allowed, but you must show the text is not hallucinated
+- **Trap:** Two opposite mistakes: following the old "keep the input below about one letter" guidance and giving up accuracy, or using big windows with no evidence against hallucinated strokes.
+- **Evidence:** History of the rule. JanPaul123 (organizer), 2023-10-15: "We probably don't want to make models aware of lettershapes, or they'll hallucinate"; for the 2023 First Letters prize, models had to "operate on very small inputs", because even inputs "the size of like, a quarter of a letter" make models "make up 'nice looking strokes'". Jordi (organizer), 2024-07-10: "Papyrologists last year required ink models to have a field of view not larger than squares of 64 pixels size". In the same thread, sean reported that a 512x512 model changed some letters into other letters, and emel_ryan said 1024 and 1536 windows gave "mathematically lower loss and smoother more confident results, but did change some of the letters". sean, 2025-09-17: external data may be used "so long as there are not any license restrictions", with "caution if training on full letter shapes". The change: announcement 2026-09-10, "instead of discouraging larger than 0.5mm, you just need to convince us your model isn't memorising / hallucinating letterforms or words". sean, 2026-10-19, quoting the new prize text: "Large windows are fine, but you must demonstrate that the text is not hallucinated — for example by finding different, plausible letters on a held-out region" and "Do not include overlap between training and prediction regions"; large windows may "add a astroke to connect a letter where it did not before". KLAVIS (author's own numbers): 384 px beat 128 px, 512 px "stopped improving things", and the blank-papyrus ink fraction was 5.5% (V3) vs 9.2% (v2).
+- **Fix:** For any window larger than about one letter, report (a) zero overlap between training and prediction regions, (b) a held-out region or scroll that yields different plausible letters, (c) the false-ink fraction on blank papyrus, and (d) the same region read by a small-window model, so a reviewer can see whether strokes were joined. Never pre-train an ink model on letter images. Check: all four items are in the submission package.
+- **Label:** MEASURED (organizer statements); MEASURED-by-author (KLAVIS numbers) · **When:** 2023-10-15..2026-10-19 · **Sources:** Discord: ink-detection - Philodemus chartes.it corpus (2023-10-15); ink-detection - Creating ink labels (2024-07-10); ink-detection - Would training a model on a dataset be allow in the competion (2025-09-17); announcements (2026-09-10); show-and-tell - Reader V3_ clearer letters on never-seen scrolls + new letters on 343 (2026-10-19) · Extends L178
+
+### L659. Readability is judged by the papyrologists on the images alone; ask rules questions in public threads
+- **Trap:** Tracing letterforms by hand to strengthen a submission, or relying on private organizer guidance by DM.
+- **Evidence:** sean (organizer), 2026-10-18: "annotations can be provided, but are not used in the judgement of readability, which is determined solely by the papyrology teams interpretation of the images/proposed text". In the same message: "we cannot help out too specifically with things in dms, or it creates a situation where we are giving out information to some people and not others... unless it is in response/about a specific submission".
+- **Fix:** Put the effort into image quality. Treat annotation as optional context. Post questions as public threads and keep DMs for submission-specific matters. Check: the submission still stands with the annotation layer removed. (Hand annotation of an eligible scroll also risks the claim: [L014](#l014-manual-annotation-of-an-eligible-scroll-and-reading-a-scroll-with-a-model-trained-on-its-own-labels-invalidate-a-first-letters-claim).)
+- **Label:** MEASURED (organizer statement) · **When:** 2026-10-18 · **Sources:** Discord: general - inquiry (2026-10-18) · new
+
+### L660. Enlarge and re-centre the submission window before fine-tuning the model further
+- **Trap:** Fine-tuning a model again and again when a submission is "close", when readability is mostly limited by how much context the papyrologists can see.
+- **Evidence:** sean (organizer), 2026-10-18: this is "probably our most common feedback to submissions which do not meet the reqs". With "the exact same ink predictions", a slightly shifted and slightly larger window turned a failing crop into a winning one; "extending the window even a small amount would help much more than continuing to finetune a model". Papyrologists "are not going to fill in gaps in things they are very unsure of". Resubmissions are unlimited. Federica (organizer), 2026-10-12: 10 scattered certain characters would in theory win, but "even 3-4 letter sequences can help". Paul (organizer), 2026-10-12: legible letters that do not make sense "almost certainly implies your letters are not in fact all from one sheet".
+- **Fix:** Before resubmitting, render nested windows from the same predictions (for example the 4 cm2 area plus a 20-50 % margin, re-centred on the densest text). Check: adjacent letters form plausible sequences; if they do not, test whether the area mixes sheets.
+- **Label:** MEASURED (organizer judging practice) · **When:** 2026-10-18 · **Sources:** Discord: general (2026-10-12, 2026-10-18) · Extends L272
+
+### L661. The prize goes to whoever first submits a qualifying image, not to whoever made the model or segment
+- **Trap:** Publishing a segment, model or near-miss area on a prize scroll and assuming that this protects your claim.
+- **Evidence:** Paul (organizer), 2026-09-29: "the prize goes to whoever actually submits a detection image meeting the criteria, regardless of who trained the model, or created the segment". sean, 2026-10-13: if you share an area and "someone else takes the same area with some slight tweaks and meets the 10 letter req, they will get the first letters prize". sean, 2026-09-09: "we rank in order of submission". Progress prizes for shared partial areas are weighted toward "how early you shared it". The rules post of 2026-07-07 also warns that "anything you share in the Discord may be used by a competitor".
+- **Fix:** Decide what you will open-source before posting. Submit a candidate the moment it qualifies, and share it only afterwards. Keep a timestamped record of each submission.
+- **Label:** MEASURED (organizer statements) · **When:** 2026-09-29 · **Sources:** Discord: show-and-tell - Modified 9-um Recipe that zero-shots Pherc 1447 (2026-09-29); papyrology (2026-10-13); general (2026-09-09); rules (2026-07-07) · new
+
+### L662. Re-check the eligible-scroll list at every cycle: scrolls are added and withdrawn
+- **Trap:** Targeting a scroll from a cached list after it was withdrawn, or missing scrolls that were added.
+- **Evidence:** Announcements: 2026-09-10, "10 more scans" added; 2026-09-24, PHerc 1447 withdrawn from First Letters after a 9 um recipe found ink there ("so now there are 22 scrolls eligible"), though it "still remains eligible for the Grand Prize"; 2026-10-08, after the PHerc 343 award, "There are 21 scrolls still eligible". Paul (organizer), 2026-10-13: many submissions go to "the same small ROIs of the same 3-4 scrolls". Part 0 of this file states 22 eligible scrolls as of 25 September 2026; that count is now stale.
+- **Fix:** At the start of each cycle, diff the eligible-volume list on scrollprize.org/prizes against your target list. Prefer under-explored scrolls and regions. Check: the target list carries the date it was last diffed.
+- **Label:** MEASURED · **When:** 2026-09-10..2026-10-13 · **Sources:** Discord: announcements (2026-09-10, 2026-09-24, 2026-10-08); papyrology (2026-10-13) · Extends L029
+
+### L663. A count of "legitimate submissions" says nothing about found letters
+- **Trap:** Reading submission counts as evidence that other teams have found letters on other scrolls.
+- **Evidence:** Stephen (organizer), 2025-01-27: none for the grand prize, two for FASP, "13 for first letters/first title. Legitimate here means that the technical methods are sound, not that something was found". sean, 2025-10-01: ink-detection work stays eligible for monthly prizes "so long as it moves the progress forward".
+- **Fix:** Cite organizer statements by date and re-verify them each monthly cycle. Do not infer competitors' results from counts.
+- **Label:** MEASURED (organizer statements) · **When:** 2025-01-27 · **Sources:** Discord: general - So how many submissions have been (2025-01-27); ink-detection - Are ink detection contributions still eligible for monthly prizes? (2025-10-01) · new
+
+### L664. Record the licence of each model and dataset: team models are MIT, the data are CC BY-NC 4.0 with citation
+- **Trap:** Avoiding team models out of licensing worry, or publishing images without the required attribution.
+- **Evidence:** Paul (organizer), 2026-10-17: "you can use the model freely, including in prize submissions. it should be MIT licensed like our others". Jordi (organizer), 2026-08-16: releases are "open under CC BY NC 4.0 with the proper attribution". sean, 2026-09-09: credit scrollprize and follow scrollprize.org/data#how-to-cite.
+- **Fix:** Record each model's and dataset's licence in its manifest, and cite as the data page asks. Check: every figure caption carries the data citation.
+- **Label:** MEASURED (organizer statements) · **When:** 2026-10-17 · **Sources:** Discord: general - Bug in scan (2026-08-16); general (2026-09-09, 2026-10-17) · Extends L018
+
+### L665. Post LLM-written reports in #robots, name the model, and separate its output from human commentary
+- **Trap:** Posting agent-written analyses in the main channels without disclosure. Threads get locked or moved, and readers spend time checking whether any real work was done.
+- **Evidence:** Discord rules, 2026-07-29: "Please don't post AI-generated answers in place of your own reasoning or participation... The only exception is #robots". The #robots welcome post (Paul, 2026-07-29) is "for LLM-produced reports of experiments" and asks posters to "name the model", "separate model output from human commentary" and "Treat every output as a proposal to verify". Jordi (organizer), 2026-08-23: "if most of your posts and reports are LLM generated this is the category we designed", and "LLM generated content does not make the contribution less worthy, if it helps us read the scrolls". Hari Seldon, same thread: such posts create "time-consuming work for everyone else. Try writing your own posts with clear image-based results". Paul, 2026-08-30: "LLM-written posts about tools conceived and implemented by LLMs belong in #robots".
+- **Fix:** Agent-produced community posts go to #robots with a model-disclosure line and a clear end-of-model-output marker; lead with an image and the testable claim. In other channels, write in your own words and attach human-inspected images. Check: every post has a disclosure line.
+- **Label:** MEASURED (organizer policy) · **When:** 2026-07-29 · **Sources:** Discord: rules (2026-07-29); robots - Welcome to #robots (2026-07-29); robots - What does "Robots" mean in Vesuvius Challenge (2026-08-23); general (2026-08-30) · new
+
+### L666. Agent PRs and issues to villa must follow CONTRIBUTING.md, or they are closed without comment
+- **Trap:** Filing auto-generated issues or pull requests with accuracy claims nobody can check.
+- **Evidence:** Paul (organizer), announcement 2026-08-13: "We're getting a lot of claude-spam... don't be surprised if PRs that don't meet the guidelines are closed without comment". sean, 2026-08-23: "an agent sees a PR or issue with wild claims of accuracy and usefulness that mean _nothing_ but they dont know this!"
+- **Fix:** Read CONTRIBUTING.md first. Give every claim a reproducible command, a real-data before/after and a human-checked figure. Never cite another agent's PR numbers as evidence. Check: a maintainer can rerun the command in the PR and get the stated number.
+- **Label:** MEASURED (organizer policy) · **When:** 2026-08-13 · **Sources:** Discord: announcements (2026-08-13); robots - What does "Robots" mean in Vesuvius Challenge (2026-08-23) · new
+
+### 8B. Data and tools
+
+Data products, community tools and the villa / vesuvius package: defects found by the community, with the checks that catch them.
+
+### L667. Rebuild 9.6 um inputs from level 0: in 18 of 33 HF ink-bucket surface volumes, level 2 holds only 17 of 65 depth slices
+- **Trap:** Reading pyramid level 2 of the HF ink/ surface volumes as a ready-made ~9.6 um render. Its .zattrs still declares z-scale 1, so the defect is invisible.
+- **Evidence:** Ehimen Nathaniel, 2026-10-15 (villa#2107): "In 18 of the 33 surface volumes ... level 2 holds only the first 17 of the 65 depth slices"; level 2 is "XY-pooled only". The released ink_9um "scores AUC 0.54 on its own training scroll 1667 from the published level 2, and 0.91–0.93 after rebuilding from level 0". Also: "0841 renders are 4.681 µm, so they need 2× pooling, not 4×". The recipe for a correct 9.6 um input (level-2 XY plus a 4x Z mean-pool) was given by err (organizer) on 2026-08-09.
+- **Fix:** Build the 9.6 um input from level 0, with the pooling factor taken from each volume's own voxel size. Check: (1) the depth count of each level matches its declared scale (level-0 count / 4 for level 2); (2) correlate level 2 with a depth-pooled and a depth-truncated version of level 0, and the truncated match flags a bad volume; (3) the model scores its own training segment above 0.9.
+- **Label:** MEASURED (single reporter; filed as an issue; not yet organizer-confirmed in the export) · **When:** 2026-10-15 · **Sources:** Discord: show-and-tell - Data bug in the ink-label bucket + a cross-scroll ink benchmark on identical pixels (2026-10-15); ink-detection - Releasing our new 9 µm ink-detection models (2026-08-09) · Extends L009, L025
+
+### L668. Pass the checkpoint's own CT normalization to vesuvius.predict; the default z-scores each volume
+- **Trap:** villa's `vesuvius.predict` defaults to `--normalization instance_zscore`. The nnUNet loading path never reads the CTNormalization declared in m7's plans.json, so the model runs on input it was not trained on, and nothing fails.
+- **Evidence:** Abd Elilah, 2026-08-07, retracting his own earlier numbers: plans.json declares "mean 87.5 / std 47.7"; re-run on 4 volumes, "median recall 0.803 -> 0.940 and precision 0.467 -> 0.742", purely from CT-normalizing the input and passing `--normalization none`. The bug was found by Jinhojeong (villa#1364). The September 2026 progress prize credited "making vesuvius.predict preprocess CT the same way the model was trained" (announcements, 2026-09-07).
+- **Fix:** For each checkpoint, read its training-time normalization and apply it yourself (then pass `--normalization none`), or use a build with the #1364 fix. Check: recall and precision on a labelled cube with the default and with the explicit setting.
+- **Label:** MEASURED (author; organizers credited it with a prize) · **When:** 2026-08-07 · **Sources:** Discord: show-and-tell - Scoring and optimising surfaces (2026-08-07); announcements (2026-09-07) · new
+
+### L669. Read the TTA setting and pyramid level of each published m7 surface prediction before you reproduce it
+- **Trap:** Regenerating a published surface prediction with one global setting, getting a poor match, and concluding the artifact cannot be reproduced, or blaming fp16.
+- **Evidence:** Abd Elilah, 2026-07-26/29: 40 of the 41 published m7 artifacts reproduce with mirroring TTA off at Dice 0.9983-1.0000; PHerc. Paris 4 reproduces only with TTA on (0.8907 off vs 0.9999 on); turning TTA on "breaks PHerc0139 in the other direction, 0.9997 to 0.8273". "27 of the 41 published predictions are level 0, not level 2". jrudolph (organizer), 2026-07-27: "TTA is expensive so we mostly disabled it ... otherwise backfill"; general, 2026-07-31: "Backfilled surface-prediction run metadata (incl. TTA config)".
+- **Fix:** Read the tta attribute and the level of each artifact from its metadata or file name before comparing. Check: reproduce one interior region at Dice >= 0.998, with every differing voxel within 0.01 of the 0.2 threshold.
+- **Label:** MEASURED (author; organizers acknowledged and backfilled the metadata) · **When:** 2026-07-29 · **Sources:** Discord: show-and-tell - All 36 surface predictions reproduce — PHerc. Paris 4 just needs TTA (2026-07-26, 2026-07-27, 2026-07-29); show-and-tell - Winding evidence, measured (2026-07-26); general (2026-07-31) · Extends L455
+
+### L670. Anchor region-of-interest inference to the full-volume patch grid
+- **Trap:** A region (`--bbox`) run that tiles from the region's own origin blends every voxel differently from a full-volume run. It looks plausible but does not reproduce.
+- **Evidence:** Abd Elilah, 2026-07-26: the first reproduction gave Dice 0.80; a threshold sweep topped out at 0.8019, which ruled out precision as the cause. The cause: a 256-long region tiled at stride 64, while the volume tiles at ~95.8, so the two runs had "zero patch positions in common". After the fix, Dice 0.9997, with 266 differing voxels out of 2.1M. On 2026-08-05 he corrected his own traffic headline from 384x to 82.94x for the same reason.
+- **Fix:** Compute patch starts from the whole-volume sliding window (villa `compute_steps_for_sliding_window`), then crop. Bound cheap explanations (a threshold sweep for precision) before spending GPU time. Check: ROI output equals the full-volume output on the overlap, up to storage rounding.
+- **Label:** MEASURED · **When:** 2026-07-26 · **Sources:** Discord: show-and-tell - Published m7 surface predictions reproduce exactly from public inputs (Dice 0.9997) (2026-07-26); show-and-tell - Making the inference pipeline run again (4 blocking bugs) + --bbox (2026-08-05) · new
+
+### L671. Published m7 surface maps mark "sheet" on zero CT: mask them by CT > 0 for statistics, but do not threshold them by CT intensity
+- **Trap:** Treating a published surface prediction as papyrus everywhere it is lit.
+- **Evidence:** Abd Elilah, 2026-07-29: "30 of 36 scrolls have more than 10% of predicted sheet on identically-zero CT, median 38%, worst 92% (PHerc0343P)", 39.7 % pooled. Chris Scheirer, 2026-09-14, independently saw a ring of "surface" in air, "42–56 % of all lit voxels on 0846A planes". mg found the cause, 2026-10-14: voxels no patch reached blend with logits exactly 0, and "finalize_outputs turns (0, 0) into p = 0.5 — foreground at threshold 0.2". The fix (#2082) cut the phantom share on PHerc0500P2 "from 63.9 % to 2.3 %", for new runs only: "published predictions are not repaired". Separately, sean (organizer), 2026-07-26: surface predictions "lie on the recto (front) surface of the sheet, and do not always perfectly follow every small 'wobble'... i would not simply mask these out by using the ct values as a mask, it will break connectivity".
+- **Fix:** AND every published m7 map with CT > 0 (the published volumes are masked, so zero means no data) before deriving labels or statistics. Do not threshold surface predictions with CT intensity to tighten them. If you refine surfaces at all, compare connected-component counts and track lengths before and after. Check: the fraction of predicted voxels on CT == 0 is about 0 after masking, and the component count does not jump.
+- **Label:** VERIFIED (three independent contributors; root cause found and patched upstream) · **When:** 2026-07-26..2026-10-14 · **Sources:** Discord: show-and-tell - Winding evidence, measured (2026-07-29); robots - m7 surface model misses sheets (2026-09-14); show-and-tell - find_patches fixes (2026-10-14); general (2026-07-26) · Extends L015
+
+### L672. Count bytes received during remote inference: zarr 3 silently disabled villa's chunk cache
+- **Trap:** zarr 3 removed `LRUStoreCache`, so `use_volume_store_cache` became a no-op. With overlapping patches, the same chunks are downloaded again and again.
+- **Evidence:** karasukun, 2026-08-04: "about 17x more data than the region actually holds — 12.2 gb where 0.72 gb would be enough". Abd Elilah, 2026-08-05/06: 30.5x re-fetch for PHerc1218 at 192-cube windows, and "a 4 GiB cache still leaves you around 2.83x" because one z-slab is 7.0 GiB; wall time is no A/B measure ("41.5 s, 239 s and 254 s" for identical configs). Maker, 2026-10-14 (villa PR 2057): the flat runner "re-fetches each 128x128 chunk up to 9 times at stride 64: 1.77 GB received for a 206 MB volume and 461 s"; with the cache, "187 s / 301 MB", outputs bit-identical.
+- **Fix:** Wrap the store in a disk LRU cache at least one chunk-slab in size (villa `--cache-dir` / `--cache-max-gb`), or mirror the chunks first. Measure bytes, not seconds. Check: bytes fetched / unique chunk bytes is about 1, and reading the same patch twice transfers about 0 bytes with an unchanged output hash.
+- **Label:** MEASURED (three independent authors) · **When:** 2026-08-04..2026-10-14 · **Sources:** Discord: show-and-tell - Inference re-downloads the same chunks — ~17x extra traffic (2026-08-04, 2026-08-06); show-and-tell - Making whole-scroll inference completable (2026-08-06); ink-detection - Three small PRs for the ink inference flat runner (2026-10-14) · Extends L159
+
+### L673. Do not let villa's predict overwrite an interrupted whole-scroll run
+- **Trap:** villa opened its output store with mode='w', so restarting an interrupted run destroyed what had already been written.
+- **Evidence:** Abd Elilah, 2026-08-06: on rerun the completed counts went "64, 64, 64, 0, 3, 5, 7". He sized one PHerc1218 run at "41 TB and ~43 days of I/O" on an 11 MB/s link. PR 1342 adds `--resume`.
+- **Fix:** Use `--resume`, or write to a fresh store and merge. Check: kill a run partway, rerun it, and confirm that the completed-patch count never drops.
+- **Label:** MEASURED · **When:** 2026-08-06 · **Sources:** Discord: show-and-tell - Making whole-scroll inference completable: --resume, --estimate, and the real traffic cost (2026-08-06) · Extends L402
+
+### L674. Log the device and autocast dtype actually used, and compare any accelerator run with a CPU fp32 reference
+- **Trap:** Three silent defaults. `--amp-dtype default` ran fp16, because `torch.autocast("cuda", dtype=None)` turns float16 on rather than off. `cuda if available else cpu` sends Macs to the CPU path with no warning. Above about 4,000 slices, the MPS spiral fit dropped verified patches that the CPU fit kept.
+- **Evidence:** OBCD, 2026-09-25 (villa PR #1890): "True fp32 differs on 4.6–4.9 % of nonzero uint8 pixels (max |diff| 2); forced fp16 reproduces the old output bit for bit". AndreasHad, 2026-09-19 (PR 1812): CPU fp32 "3.261 s/tile median 9.53 GB" vs MPS "0.427 s/tile median 2.59 GB", CPU vs MPS max|diff| "9.54e-07"; surgefok, 2026-09-12, independently measured a 5.97x loop gain on a full PHerc0800 segment, outputs differing by at most one uint8 level. LucasY, 2026-10-06: "non_blocking host-to-MPS copies reading freed memory (pytorch #189690)", reproduced by AndreasHad, fixed in villa #1925.
+- **Fix:** Pass an explicit device flag and write the chosen backend and autocast dtype into every output's provenance (villa #1891 embeds it in output TIFFs). Check: hash the output under forced fp16 and forced fp32 to see which one a run used; for a new backend or a large accelerator run, compare max|diff|, kept-patch counts and fit residuals against a CPU fp32 run on the same input.
+- **Label:** MEASURED (PRs with before/after; the MPS spiral bug reproduced by a second person) · **When:** 2026-09-12..2026-10-06 · **Sources:** Discord: ink-detection - Three ink-path PRs: --amp-dtype default was fp16 (#1890)... (2026-09-25); ink-detection - I ported the ink-detection inference to Apple Silicon and opened PR 1812 (2026-09-19); show-and-tell - Apple Silicon ink inference with MPS support (2026-09-12); show-and-tell - Spiral fitter on Apple Silicon: scaling to 13,000 slices on an M5 Max, and an MPS bug (2026-10-06) · Extends L180
+
+### L675. Treat a zero-result success as a failure, and assert output shapes against the source
+- **Trap:** Commands that exit 0 while producing wrong or empty output.
+- **Evidence:** surgefok, 2026-09-12: villa's label loader read every 3-D array as channel-last RGB, so "a three-slice (3, 6, 8) label stack becomes (3, 6)", and its shape helper predicted the same wrong shape (#1738); a multi-page TIFF path read only page zero; `vesuvius.find_patches` exited 0 after finding nothing (#1525); a frame mismatch gave an all-black JPEG counted as success. George A, 2026-09-05: compute_st died on zarr 3 "while the runner printed 'Completed Successfully'".
+- **Fix:** After every stage, assert the output's shape, page count, count of items found and dynamic range against the source. In your wrappers, fail when a step finds nothing. Check: a deliberately empty input makes the wrapper fail.
+- **Label:** MEASURED · **When:** 2026-09-05..2026-09-12 · **Sources:** Discord: show-and-tell - Fixing three silent-success failures in Villa (2026-09-12); robots - Five real-data fixes to the vesuvius package (2026-09-05) · Extends L181
+
+### L676. Derive tifxyz canvas size with the renderer's float32 rounding, and read cross-scan canvas sizes from the volume
+- **Trap:** Python's `Tifxyz.full_resolution_shape` was one pixel short for meshes that store scale as float32 0.05, and most cross-scan surface volumes cannot be re-derived from their mesh with a single scale.
+- **Evidence:** George A, 2026-09-05 (villa #1699): "202×215 → 4039×4299 vs 4040×4300". 2026-09-08: "207 / 593 published meshes (35 %)" are affected; "262 / 628 surface volumes reproduce their canvas_size exactly"; the other 366 cross-scan renders are "median 10 px off, up to 1,346 px".
+- **Fix:** Use `lround(stored*render_scale/float32(scale))`. For cross-scan renders, read canvas_size from the volume instead of recomputing it. Check: computed shape equals stored shape for every segment you use.
+- **Label:** MEASURED · **When:** 2026-09-08 · **Sources:** Discord: robots - Five real-data fixes to the vesuvius package (2026-09-05, 2026-09-08) · Extends L050
+
+### L677. Do not compare ESRF 8-bit volumes by raw intensity without masking clipped ends and reading each volume's window
+- **Trap:** The public ESRF zarrs are u8 re-quantizations of f32 reconstructions with per-volume windows, and both tails can be clipped. Cross-volume intensity statistics then mix different windows and saturated voxels.
+- **Evidence:** jrudolph (organizer), 2026-10-14: windowing was either fixed or percentile-based, and "The percentile based windowing does in general not work for the scrolls because they contain varying amount of high-absorption debris"; "If you see that we cut off at f32 = 0.2, we sometimes see debris that has 5-10x higher values"; expect "a lot of clipping in the very dense blobs" and "a bit of clipping in the lower end". verditelabs: ESRF data are public "only ... as 8 bit zarrs". johannes9317 measured: PHerc0139 "~0.1–0.2 % sits at 255, but pag0 / pag50 have 12–14 % at 0 (pag1000 0.03 %)"; "The 8.64 µm batch is ~0.05 % at 255 and nothing at 0".
+- **Fix:** Before any cross-volume comparison, histogram each volume, report the fractions at 0 and 255, mask both ends, and read the window from the scan-object metadata. Check: results are stable when clipped voxels are excluded.
+- **Label:** MEASURED · **When:** 2026-10-14 · **Sources:** Discord: general (2026-10-14) · Extends L143
+
+### L678. Record which Paganin variant you used, and take its parameters from the scan object
+- **Trap:** One scan can have several volumes reconstructed with different Paganin delta/beta from the same projections. A comment on one volume can be misread as applying to all, and the low-Paganin variants are calibrated differently.
+- **Evidence:** johannes9317, 2026-10-14: the scan object for 20250720065842 gives delta_beta = 1000, "so 0 / 50 / 1000 from the same projections", and a note about the default window applied only to the pag0/pag50 volumes. jrudolph (organizer): "for pag0/pag50, I wouldn't trust the values too much ... the whole calibration might not be as good as it could be".
+- **Fix:** Record the Paganin variant per experiment and take its parameters from the scan object, not from a volume comment. Check: re-run a key metric on the pag1000 volume as a control and report the difference.
+- **Label:** MEASURED (organizer statement plus a member's measurement) · **When:** 2026-10-14 · **Sources:** Discord: general (2026-10-14) · Extends L021
+
+### L679. On the older uint16 volumes, zero is not air: the windows include negative attenuation
+- **Trap:** Treating 0 as vacuum, or clamping low values as air, on the official uint16 scroll volumes.
+- **Evidence:** Seth P. (organizer team), 2023-10-24: "our window includes the negative values, so air is some higher value, somewhere in the neighborhood of 25k... black were negative attenuation values in the raw recon space, which is FBP recon error". JanPaul123, 2023-11-04: the released HDFs are float32 "pre min-max scaling".
+- **Fix:** Estimate the air level per volume from known air (the core, or outside the case) before thresholding; use the float HDF where windowing matters. This is distinct from the masked zarrs, where 0 means no data ([L015](#l015-missing-ct-chunks-masquerade-as-blank-papyrus)). Check: the air peak is located per volume and recorded in the manifest.
+- **Label:** VERIFIED (statement by the people who made the scans) · **When:** 2023-10-24 · **Sources:** Discord: general - Crack darkening effect (2023-10-24); announcements (2023-11-04) · Extends L010
+
+### L680. Inventory every data host before declaring data missing, and audit headers before a job
+- **Trap:** Looking only under the usual full-scrolls tree, which misses newer samples; or trusting metadata shapes and declared pyramid levels.
+- **Evidence:** Announcement, 2025-11-25: PHerc. 139 data at data.aws.ash2txt.org/samples/PHerc0139/ "(careful, this is not the _usual_ repository!)". sean, 2026-06-13: public tifxyz exist in community folders and under data.aws.ash2txt.org/samples/. Matteo Bulloni, 2026-07-23: the Scroll 5 volume 20241024131839 has "properties.shape z=20616" vs array and z_crop_end "20820" (villa#1211). SaboAI, 2026-10-06: Frag3 88 keV volumes on dl.ash2txt.org declare 6 levels, "levels 1 to 5 return 404", and maintainers said dl.ash2txt.org "won't be fixed"; by contrast "all 957 pyramids in vesuvius-challenge-open-data audited with no findings". surgefok, 2026-09-12: "twenty segments dated earlier than their source scan (#1730)".
+- **Fix:** Search dl.ash2txt.org, data.aws.ash2txt.org/samples and the S3 open-data bucket; prefer the S3 bucket. Run a header-only audit (declared shape vs array shape, levels present) on every input volume. Check: the data inventory lists the host per volume, and the audit reports zero findings.
+- **Label:** MEASURED · **When:** 2025-11-25..2026-10-06 · **Sources:** Discord: announcements (2025-11-25); general (2026-06-13); show-and-tell - scroll-data-audit (2026-07-23); show-and-tell - zarr-pyramid-audit (2026-10-06); show-and-tell - Catalog consistency checker (2026-09-12) · Extends L004, L015
+
+### L681. Mirror with rsync, and verify every downloaded or written file by checksum, not by size
+- **Trap:** Many-thread HTTP downloads that fail or hit rate limits; multi-stream rclone pre-allocates full-size files, so an interrupted file shows its full size; and some filesystems truncate large writes silently.
+- **Evidence:** .scrollboy, 2024-12-04: the data server supports rsync (swap the https host prefix for rsync://dl.ash2txt.org/data). emel_ryan, 2024-02-19: "Some rate limiting got added". ZeArtie, 2023-11-20: "the file size showed as full, but… it was at only ~70%"; jrudolph: rclone "has to preallocate the whole file… (i.e. if you use --multi-thread-streams)". After the server published md5sum.txt, ZeArtie (2023-11-23): "I was expecting 1-2 mismatches, but I am suprised about how many there are. In some cases whole folders". RICHI, 2023-10-31: corrupted renders came from "my FAT32 formated disk not playing nicely with ppms>4GB", and he patched the writer to count bytes written.
+- **Fix:** Use rsync for bulk mirrors under a compute manifest; keep HTTP concurrency low. Verify every file against the published checksum list and re-download mismatches; after every large write, compare the file size with the size the header implies. Never keep working data on FAT32. Check: a zero-mismatch report saved with the manifest.
+- **Label:** MEASURED · **When:** 2023-10-31..2024-12-04 · **Sources:** Discord: general (2024-02-19, 2024-12-04); general - @JanPaul123 Hi! Would you be kind enough (2023-11-20..23); general - This would also be aligned with the (2023-10-31) · Extends L024
+
+### L682. Read single planes from uncompressed zarr chunks with byte-range requests, and back off on 429
+- **Trap:** Fetching full chunks, or fanning out one request per chunk at once, to preview a plane wastes bandwidth and triggers rate limits.
+- **Evidence:** kadenian1, 2026-08-12: the open-data zarrs "store uncompressed 128^3 uint8 chunks, so a single axial plane inside a chunk is one contiguous 16 KB run"; a Range read instead of the 2 MB chunk saves "usually well over 100x per slice"; absent chunks (404) are cached as masked zeros and never retried. vonduffen, 2026-07-06: naive per-chunk fan-out hit "429 Too Many Requests"; level 0 of Scroll 1 is "918 GB", level 3 "1.8 GB".
+- **Fix:** Check the zarr's compressor field; if there is none, use Range reads for axial planes, cap concurrency, back off on 429 and cache 404s as missing (never as air). Check: bytes per slice logged against the chunk-size baseline, and zero 429s in a full scrub.
+- **Label:** MEASURED · **When:** 2026-08-12 · **Sources:** Discord: show-and-tell - Scrollscope (2026-08-12); show-and-tell - scrollscout (2026-07-06) · Extends L159, L164
+
+### L683. Do not stream training data from Hugging Face; fetch only the chunks your training config reads
+- **Trap:** Training directly against HF buckets, or downloading a whole tutorial segment to train locally.
+- **Evidence:** sean (organizer), 2026-08-08: the HF-hosted spiral data "zarr files use a very small chunk size which results in almost constant rate limits when accessing from hf". err (organizer), 2026-07-21: the HF rate limits make 2.5D streaming impractical; native-3D streaming from S3 uses an LRU disk cache. mg, 2026-09-17 (PR 1821): `select_flat_training_chunks` reads "2.42 GB instead of 92.02 GB"; on a 6 GB GPU, oversize configs "spill into system RAM on WSL2 with no out-of-memory error (20-100x slower)".
+- **Fix:** Stage data locally or stream from the S3 open-data bucket, fetching only supervised-region chunks. Watch GPU memory for silent spill. Check: measured throughput (s/it) before a long job.
+- **Label:** MEASURED (organizer statements plus a member's PR) · **When:** 2026-07-21..2026-09-17 · **Sources:** Discord: show-and-tell - Making the spiral fitting tutorial easier to run (2026-08-08); ink-detection - Fetch Data from AWS During Training (2026-07-21); show-and-tell - Tutorial 5 on a 6 GB laptop GPU (2026-09-17) · new
+
+### L684. Look up stored volume-to-volume transforms first, check their scale, and register yourself only where one is missing
+- **Trap:** Overlaying two scans of one scroll (two resolutions or two energies) by eye, or assuming coordinates carry over between them.
+- **Evidence:** Stephen (organizer), 2023-12-09: releases include a "4x4 affine transformation matrix… The diagonal elements… are all ~0.41 which aligns with… 3.24 / 7.91 = 0.41". sean (organizer), 2026-08-20/26: the open-data catalog manifest contains "volume_transforms" made with foundation/volume-registration, but "apparently that one is missing" (PHerc1203 9.362 to 2.403); spelufo then computed one himself. jrudolph (organizer), 2026-08-06: "We usually have registered all scans and the transforms can be found in the metadata". paulg_34094, 2025-02-22: rigid registration improved "the high/low res alignments a bit, in scrolls 3 and 4" (author's own report).
+- **Fix:** Apply a stored transform as t = M·[x,y,z,1]. If none exists, register and validate as in [L061](#l061-rescan-registration-test-flips-and-remounts-first-require-z-consistency-and-expect-affine-to-beat-translation-by-far) . Check: residuals on several high-contrast landmarks, in voxels, against a shifted control, before any multi-scan analysis.
+- **Label:** MEASURED (organizer statements) · **When:** 2023-12-09..2026-08-26 · **Sources:** Discord: announcements - New scans released! (2023-12-09); show-and-tell - Preserving VC3D view position (2026-08-20, 2026-08-26); ink-detection - PhercParis4 title region Segments (2026-08-06); general (2025-02-22) · Extends L012, L061
+
+### L685. Check the frame of annotation coordinates: coordinates that cannot exist prove a frame error
+- **Trap:** Assuming point annotations live on the 7.91 um volume when they are on the 9.6 um grid of the 2.4 um rescan, so that every physical length read off them is wrong by 1.21x.
+- **Evidence:** pscamillo, 2026-07-31: Aleksei Drobkov "caught a frame error… 26% of the GT z-coordinates could not exist in that volume"; every physical length moved "by 1.21x", and "~145 um" became "~176".
+- **Fix:** Before using annotations, check that every coordinate lies inside the bounds of the assumed volume and that the scale ratio matches. Check: the out-of-bounds fraction is 0.
+- **Label:** VERIFIED (found by a second person and accepted by the author) · **When:** 2026-07-31 · **Sources:** Discord: show-and-tell - constraint-gauge_ score any winding generator (2026-07-31) · Extends L083
+
+### L686. Check dtype and unique values of "standardized" zarr chunks
+- **Trap:** A conversion bug wrote uint16 values that are multiples of 2040; byte shuffle then fails, chunks double in size, and readers use twice the memory.
+- **Evidence:** jrudolph, 2024-10-31: `.zarray` reported `<u2` instead of `|u1`, with 32 unique values 0, 2040, 4080, ... 63240; disabling shuffle reduced one chunk "from 2176476 ... to 791774 ... factor 0.36x". After the 2024-11-05 re-release it was "still using byte shuffle and `<u2`". An earlier bitmask bug zeroed a middle bit (general - Zero bits, 2024-10-29). Jordi, 2024-09-10: the standardized volumes keep "the 5 most significant bits of a uint8".
+- **Fix:** Before analysis, run `np.unique` on a few chunks and assert the dtype; record both in the data manifest. Check: dtype and unique-value count match the documented format.
+- **Label:** VERIFIED (found and re-checked after the re-release) · **When:** 2024-10-31..2024-11-05 · **Sources:** Discord: general - The .zarray file now reports a `<u2` (2024-10-31..11-05); general - Zero bits (2024-10-29) · new
+
+### L687. Choose storage layout by access pattern, and benchmark it before bulk conversion
+- **Trap:** Reading 3-D neighbourhoods from z-slice TIFF stacks, using compressed TIFFs for random access, or picking chunk sizes without measuring.
+- **Evidence:** jrudolph, 2023-11-08/12: render times on 500^3 cells of "1.311979ms" (xy), "3.610751ms" (xz) and "20.638324ms" (yz); with 16x16x16 blocks, "1-2ms per panel". Seth P., 2023-05-03: VC's slice cache thrashes, "r 65… took 35 minutes". Moshe Levy, 2023-05-08: masked TIFFs "load into memory much (factor of 10) slower"; Forrest: "compressed tiff files cannot be mmaped". khartes_chuck, 2024-09-12: 64^3 chunks were "unexpectedly slow", 128^3 and 256^3 worked best; emel_ryan: zarr "on disk was so slow it starved the gpus", while h5py was fine. jrudolph, 2024-10-31: "500^3 blocks have terrible locality ... 128^3 are okish".
+- **Fix:** For 3-D passes, convert to a chunked store (64^3-256^3) on the target disk; keep random-access TIFFs uncompressed (filesystem compression keeps mmap working). Check: time one real access pattern (slice vs cube) for each candidate layout and log MB/s before converting.
+- **Label:** MEASURED · **When:** 2023-05-03..2024-10-31 · **Sources:** Discord: show-and-tell - Simple GUI to browse volume_grids (2023-11-08/12); general - that also implies you're thrashing (2023-05-03); general - Tif compression (2023-05-08/09); show-and-tell - compressed volumes (2024-09-12/14); general - For the comparison between power-of-2 (2024-10-31) · Extends L623
+
+### L688. Preserve bit depth and linear intensities when converting slices
+- **Trap:** OpenCV `imread`/`imwrite` without the unchanged flag turn 16-bit scans into 8-bit; a viewer's "gamma" label tempts people to de-gamma linear data.
+- **Evidence:** james darby, 2023-04-26: "Jan Paul noticed I was using 8-bit rgb instead of 16-bit grayscale… Ill have to essentially restart". Forrest, 2023-05-08: "you need to pass -1 to imread and imwrite so that cv2 doesn't convert from 16 bit to 8 bit depth". Seth P., 2023-04-21: the official TIFFs "should already be linear and this should be just a metadata issue. We don't typically write any profile tags"; TIFF 6 PhotometricInterpretation 0 or 1 implies linear data (bobcrocco).
+- **Fix:** After any conversion, assert dtype uint16 and compare a histogram or mean with the source slice; read PhotometricInterpretation in code, never from a viewer. Check: source and converted slice means agree.
+- **Label:** VERIFIED · **When:** 2023-04-21..2023-05-08 · **Sources:** Discord: general - That looks super useful (2023-04-26); general - Tif compression (2023-05-08); general - Gamma or linear? (2023-04-21) · new
+
+### L689. Read a tool's loader before running it: some allocate the whole volume, and lazy arrays hide the same blow-up
+- **Trap:** Launching a research GUI or a lazy dask/zarr pipeline that silently tries to hold the whole volume in RAM.
+- **Evidence:** quick-segment failed with "Unable to allocate 3.18 TiB for an array with shape (14428, 10112, 11984) and data type uint16"; Seth P., 2023-05-02: "quick-segment creates an in-memory array of the whole thing"; Stephen: the team downsampled "8x in all three dimensions, so 512 times less data" and scaled the mesh back up. sean, 2024-09-18: dask makes a folder of TIFFs behave like a zarr, but "I end up with like a 500gb memory hit".
+- **Fix:** Read the loader first. Do coarse work on a downsampled volume and refine at full resolution, checking that the upscaled mesh lies on the sheet. Assert the byte size of every lazy compute() against a RAM budget, and open memmaps read-only. Check: the pre-compute byte estimate is logged.
+- **Label:** VERIFIED (maintainer statement) · **When:** 2023-05-02 · **Sources:** Discord: general - Quick Segment usage (2023-05-01/02); show-and-tell - compressed volumes (2024-09-18) · Extends L651
+
+### L690. Build CT masks as the connected component touching the border, and assert no interior voxel was zeroed
+- **Trap:** Automatic masks of the case area (SAM) can bite into the scroll or zero dark interior voxels.
+- **Evidence:** james darby, 2023-04-24..30, computed a SAM mask every "50 frames with a 3% dilation" and "manually verify[ied] the first and last samples of a 'batch'" because he "cant trust it to run unsupervised". spelufo warned that zeroing interior islands "is altering the data". dmopalmer found "a few places where a very small amount of data is lost".
+- **Fix:** Mask only the connected component that contains the image border, keep the unmasked data as reference, and assert that no voxel inside the scroll's convex hull was zeroed. Check: count of zeroed interior voxels is 0.
+- **Label:** MEASURED · **When:** 2023-04-29 · **Sources:** Discord: general - That looks super useful (2023-04-24..30) · Extends L030
+
+### L691. Divide by the overlap weight when reassembling tiled inference
+- **Trap:** Reassembling patches with nn.Fold sums overlapping predictions, so borders come out dark and interiors are scaled wrong.
+- **Evidence:** fern, 2023-12-29: "The black bordering is a bug due to how nn.Fold works, it aggregates by adding. The fix is ... an index-based mult".
+- **Fix:** Accumulate a weight map with the predictions and divide by it. Check: a constant-1 model reconstructs a constant-1 image, including at the borders.
+- **Label:** MEASURED · **When:** 2023-12-29 · **Sources:** Discord: show-and-tell - Some of Fern's Inferencing Pipeline (2023-12-29) · Extends L480
+
+### L692. Screen at a coarse inference stride and re-run only the hits finely
+- **Trap:** Running submission-quality stride on whole segments while screening.
+- **Evidence:** randomsgs, 2023-12-20: "With stride=2, eta = 10 hrs. With stride=16, eta = 10 mins". YoussefNader, 2023-10-16: "On a stride of 2 it takes something like 2 hours on an A100… Stride of 2 was used to generate high fidelity images for submissions… I typically run with stride 16-32".
+- **Fix:** Screen at stride 16-32 and re-run hits at stride 2-4 (respecting any model-specific stride grid, [L725](#l725-use-an-on-grid-stride-a-multiple-of-8-for-ink9um-sliding-window-inference)). Crop the output to the source size. Check: the fine re-run of a hit agrees with the screen on its location.
+- **Label:** MEASURED · **When:** 2023-10-16..2023-12-20 · **Sources:** Discord: show-and-tell - Google Collab with Youssef model (2023-12-20); general - depending on your compute (2023-10-16) · Extends L416
+
+### L693. Export geometry as tifxyz with the coordinate scale, and round-trip it through VC3D
+- **Trap:** Submitting geometry in a custom format the organizers cannot ingest, or setting the tifxyz scale to the grid density.
+- **Evidence:** Jordi (organizer), 2026-02-03: useful contributions "should either be self contained, or directly usable in our software". sean, 2026-04-23: tifxyz is x.tif, y.tif, z.tif of float32, "uncompressed and untiled", with a meta.json holding scale ("for step 20 thats 0.05"), format "tifxyz", type "seg", bbox and uuid; "the scale is the scale of the _coordinates_ and not the density/resolution of the 2d grid".
+- **Fix:** Export tifxyz and load it in VC3D as a round-trip test. Check: reconstructed vertex positions match the source within 0.5 voxel.
+- **Label:** MEASURED (organizer statements) · **When:** 2026-04-23 · **Sources:** Discord: show-and-tell - Results from sheet switching detection on scroll 4 (2026-02-03, 2026-04-23) · Extends L127
+
+### L694. Strip material lines from OBJs before vc_render, and pass the mesh, not the point cloud
+- **Trap:** OBJs exported from khartes referenced a stale `.mtl` file, so `vc_render` failed; passing `_points.obj` instead segfaulted.
+- **Evidence:** emel_ryan, 2023-11-23: "the obj files had lines that said mtllib 20231005123333.mtl… Just deleting those lines made it so it didnt search for them"; khartes_chuck acknowledged it. JanPaul123, 2023-11-24: `_points.obj` "is a point cloud without any mesh information".
+- **Fix:** Strip `mtllib`/`usemtl` lines before rendering, and pass `-v <volume>` explicitly ([L138](#l138-the-official-renderer-reproduces-the-organizer-surface-volume-essentially-exactly-when-called-correctly)). Check: face count > 0 on the input file.
+- **Label:** VERIFIED · **When:** 2023-11-23 · **Sources:** Discord: general - vc_render error (2023-11-23); general - Trying to understand vc_render (2023-11-24) · Extends L511
+
+### L695. Pin community tools by version and hash, and read their source before running them on data
+- **Trap:** Two unrelated community tools shared one name, and the PyPI package's homepage and repository links returned 404, so its code could not be audited.
+- **Evidence:** francesco_71, 2026-09-12, renamed a same-named tool "so pip and the CLI don't collide"; surgefok, same day: "The PyPI package works, but its Homepage and Repository links also point to a GitHub repo that returns 404".
+- **Fix:** Record package version and sha256 in the manifest with a link to source you inspected; do not rely on a package whose source is unavailable. Check: the manifest has version, hash and source link for every third-party tool.
+- **Label:** MEASURED · **When:** 2026-09-12 · **Sources:** Discord: show-and-tell - scrollscout (2026-09-12) · new
+
+### L696. Centre coordinates before GPU HDBSCAN
+- **Trap:** cuML HDBSCAN converts coordinates to float32, so large absolute scroll coordinates give duplicate or unstable clusters.
+- **Evidence:** technokulak, 2024-10-03: "they convert all coordinates to float32 internally, which triggers the duplication bug ... if you center the instance to mean 0 before clustering ... stable". CPU was faster below about 3000 points.
+- **Fix:** Subtract the mean before clustering. Check: labels match CPU HDBSCAN on a sample.
+- **Label:** MEASURED · **When:** 2024-10-03 · **Sources:** Discord: unrolling-vc3d - _Challenges_ (2024-10-03) · new
+
+### 8C. Geometry and surfaces
+
+Surface traces, spiral fits, winding constraints and sheet-switch detection.
+
+### L697. Measure each segment's orientation from geometry: layer stacks have no fixed recto direction, and Kaggle layer 0 is the deep side
+- **Trap:** Assuming layer 00 faces the reader, that all segments share one order, or that tracer-grown patches share a normal direction.
+- **Evidence:** RICHI, 2023-10-28: one segment "probably needs to be flipped (the tifs from 0-64 to 64-0) for meaningfull predictions… [vc_render] kind of randomly assigns a direction". jrudolph, 2023-10-30: "Lots of the new segments were upside down"; asked which end faces the reader (2023-11-20): "Not consistent unfortunately". Seth P., 2023-08-25: the normal direction comes from "the direction the points were drawn in when starting the segmentation". Brett Olsen, 2023-10-15, on the Kaggle fragments: "layer 0 is at the bottom, layer 64 is out in free space… the surface of the top of the papyrus is supposed to be right at z=32"; the thread title was changed to "[Answered: Nope! Layer 0 is the bottom layer, not the top]". Scroll Swarm, 2026-10-14: tracer-grown patches came out with either normal direction, and in one experiment the forward/reversed labels were physically swapped (corrected forward excess +0.05..+0.09, still FLOOR; EXP-0019).
+- **Fix:** Orient each segment from geometry: the sign of dot(normal, radial vector from the umbilicus), averaged over sampled (u,v) (proposed by spelufo and tgf314 on 2023-08-25), or Scroll Swarm's `scripts/geometry/tifxyz_orientation.py`. Flip normals only if the check says so, and plot one z-x cross-section of the layer stack to see where the air is. Check: the orientation result is recorded in the manifest beside the render flag, and the depth order still reproduces the organizer map on a labelled control ([L135](#l135-name-the-depth-order-by-the-render-frame-never-by-the-word-reverse)).
+- **Label:** VERIFIED (several users independently found flipped segments; Scroll Swarm control experiment) · **When:** 2023-08-25..2026-10-14 · **Sources:** Discord: general - I updated vesuvius.virtual-void (2023-10-28, 2023-10-30); general - behind and in front are determined by (2023-08-25); general - Which side up (2023-11-20); ink-detection - [Answered: Nope! Layer 0 is the bottom layer, not the top] (2023-10-15); scroll-swarm:experiments/EXP-0019-orientation-convention/manifest.json; scroll-swarm:docs/release/LESSONS.md#8 · Extends L095, L135, L136, L166, L515
+
+### L698. Map surface-volume pixels to scroll voxels with the PPM, and re-render PPMs made before the November 2023 sharkbite fix
+- **Trap:** Using the `.obj` or `_points.obj` to locate layer pixels; assuming every layer is an exact integer offset; or reading old "sharkbite" render artifacts as texture or ink.
+- **Evidence:** Seth P., 2023-08-24: `position[idx,y,x] = ppm[y,x,:3] + (idx - num_layers//2) * ppm[y,x,3:6]` for default settings, and "For any radius in [x + 0.5, x + 1), you get an even number of layers and the error in the calculated position will be x + 1 - radius… This maybe should be considered a bug" (VC issue #39). khartes_chuck, 2023-08-20: an ASCII header ending in `<>\n`, then raw float64 values, 6 per pixel. Seth P., 2023-11-01, credited khartes_chuck with finding "the source of the sharkbite pattern… quite prominent in places where the segmentations change quickly between slices" (VC issue #43), with "a plan to update the existing PPMs".
+- **Fix:** Parse the PPM directly (file size = 48·W·H bytes plus header), use an integer radius, and record the VC version that wrote each PPM; regenerate pre-fix PPMs before analysing high-curvature regions. Check: CT sampled at the mapped positions reproduces the layer TIFF values.
+- **Label:** VERIFIED (formula and bug from the VC maintainer; bug fixed upstream) · **When:** 2023-08-20..2023-11-01 · **Sources:** Discord: general - Do you mean something like this (2023-08-24); general - Sharkbite (2023-11-01) · Extends L087
+
+### L699. Score a spiral fit against random-shift copies of itself on the raw CT before inking it
+- **Trap:** A published spiral fit can look complete and still follow sheets no better than chance.
+- **Evidence:** Marx_15, 2026-10-01, with "chance measured on the scan itself (200 random-shift copies of the same fit)": the five published fits of eligible scrolls "(PHerc0211, 0826, 0191) score -0.017 to +0.009 vs chance; the PHerc Paris 4 team fit scores +0.024 to +0.070 (p ≤ 0.005)". The author is AI-run and asked for verification.
+- **Fix:** Before inference, compute a ray-profile score for the fit and for at least 200 shifted copies. Check: a significant excess over chance, with the Paris 4 team fit as positive control.
+- **Label:** MEASURED (AI-run, unreplicated) · **When:** 2026-10-01 · **Sources:** Discord: robots - Spiral-fit audit of eligible scrolls + two offline mesh/ink-label checks (2026-10-01) · new
+
+### L700. Check an eligible-scroll surface's sheet contrast against many curated surfaces before blaming the ink model
+- **Trap:** Running ink models on auto-made eligible-scroll meshes, seeing nothing and blaming the model; or calibrating a surface check on a single curated control.
+- **Evidence:** rodriguescarson, 2026-10-12, judged placement against one control (0139 w043); on 2026-10-18 he corrected himself: across all 38 curated segments "placement does not separate the two populations. contrast does, completely. curated 57 to 92, mine 1.7 to 55… w043 turns out to be an unusually good surface to have picked as the only control".
+- **Fix:** Before any ink run, compute the depth-profile dynamic range (with the walk clipped at the scroll mask, [L701](#l701-clip-normal-walk-sheet-metrics-at-the-scroll-mask-at-the-outer-wrap-the-walk-crosses-crust-into-air)) and compare it with the full curated distribution, not one control. Check: the surface falls inside the curated contrast range.
+- **Label:** MEASURED (author self-correction) · **When:** 2026-10-18 · **Sources:** Discord: ink-detection - Are the eligible-scroll surfaces actually on the papyrus (2026-10-12, 2026-10-18) · Extends L052, L087
+
+### L701. Clip normal-walk sheet metrics at the scroll mask: at the outer wrap the walk crosses crust into air
+- **Trap:** A normal-range quality score ranks outer windings best, because the walk crosses crust into air and the range is large with no sheet under it.
+- **Evidence:** rodriguescarson, 2026-09-14: his no-GT score got AUC 0.70 on 72 eye verdicts, but "the bottom third by score is only 0.67 reprova against the 0.86 I'd written down, so a fail by my own rule", and w100 scored highest. pscamillo pointed out that w100 is the outer winding (mean radius ~400 voxels at w020 vs 1900 at w100). The author then traced it: "at the outer wrap that walk crosses crust into air, so the range is big without any sheet under it". The same post says a seam check was inconclusive because the meshes sample "0.5 to 1 grid steps per winding ... and the check needs 2".
+- **Fix:** Mask out voxels outside the scroll before computing range or contrast, rank within scroll and radius band, and require the stated sampling density before a seam check. Check: the score's correlation with radius is about 0 on eye-approved meshes.
+- **Label:** MEASURED (corrected after a second person's observation) · **When:** 2026-09-14 · **Sources:** Discord: show-and-tell - Surface meshes for eight prize-eligible scrolls (2026-09-08..2026-09-14) · Extends L119, L143
+
+### L702. Measure the fraction of each mesh lying outside CT support, and the gap to adjacent-winding segments
+- **Trap:** Using traces that run past the material edge (renders of air look like papyrus texture), or assuming mesh QA needs labelled good and bad segments.
+- **Evidence:** kadenian1, 2026-08-12, overlaying the 53 published PHerc0172 traces on raw CT: "In places you can see the trace running past the material edge". Dalufish, 2026-09-13: over "299 segments, 11 scrolls, 147M vertices" the fraction of vertices off the masked object is bimodal (four scrolls 0.00–0.25 %, PHerc1447 33 %, PHerc1667 19 %); the spacing between adjacent-winding segments flagged a switch, "w45/46 0.25 <- coincident, w46/47 2.09 <- double gap", corroborated for a different pair by rodriguescarson.
+- **Fix:** For every segment, report the vertex-on-mask fraction and the adjacent-winding gap ratio before use; crop or drop regions above a set limit. Check: a coincident/double-gap pair names the segment that jumped.
+- **Label:** MEASURED (corroborated by a second member) · **When:** 2026-08-12..2026-09-14 · **Sources:** Discord: show-and-tell - Scrollscope (2026-08-12); show-and-tell - label-free quality checks for scroll segmentation (2026-09-13/14) · Extends L087, L097
+
+### L703. Do not call any public tifxyz "manually annotated ground truth"
+- **Trap:** Using public surface meshes as a fully manual geometry gold standard.
+- **Evidence:** Asked whether any fully manually annotated tifxyz is public, sean (organizer), 2026-06-13: "no tifxyz are fully manually annotated".
+- **Fix:** Label public meshes as automatic or community traces with human correction, and evaluate geometry tools against held-out traces plus CT-support checks. Check: every geometry metric names its mesh source.
+- **Label:** MEASURED (organizer statement) · **When:** 2026-06-13 · **Sources:** Discord: general (2026-06-13) · Extends L065
+
+### L704. Synthetic benchmarks and phantoms are unit tests only: validate geometry tools on real imperfect patches
+- **Trap:** Validating a sheet-switch or quality detector only on corruption you planted yourself, or treating a synthetic scroll twin as evidence about crushed scrolls.
+- **Evidence:** sean (organizer), 2026-07-26: "do not allow the model to use synthetic data or generate toy problems, they _never_ translate to our real data"; test claims "against a very large set of GT meshes from multiple scrolls". Paul (organizer), 2026-08-03: "test this on real imperfect patches (not just synthetically corrupted)". waldkauz (organizer), 2026-09-21, on LLM-made test data: "we saw a lot of submissions that were just not working at all". ScrollAnchor, 2026-07-16/27: synthetic switch precision/recall "1.00 / 1.00", but on a real cube "switch precision was around 0.19" and "drift F1 around 0.01"; Paul noted fibres continuing through many flagged spots. Diego-dcv, 2026-07-26, on his own phantom: "It's a prism, not a deformed solid", with "4 discrete intensity levels", "no noise", "60 µm voxels vs ~8 µm real".
+- **Fix:** Build benchmarks from real grown patches with human-marked defects and report recall per scroll; list a phantom's missing physics next to every phantom result. Check: no claim rests on synthetic data alone.
+- **Label:** MEASURED (organizer statements plus a member's measured gap) · **When:** 2026-07-16..2026-09-21 · **Sources:** Discord: general (2026-07-26, 2026-08-03); unrolling-vc3d (2026-09-21); show-and-tell - ScrollAnchor (2026-07-16/27); show-and-tell - A synthetic scroll twin — ground truth we can fabricate (2026-07-26) · Contradicts L453, L503 as evidence. L453 and L503 say to test scorers and QA tools on synthetic data with known answers first; that stays right for unit tests, but the organizers say such tests never count as evidence about real scrolls. Read this lesson as limiting L453 and L503, not replacing them.
+
+### L705. Expect current sheet-switch detectors to miss most real switches; benchmark them on confirmed switches with smooth-bend negatives
+- **Trap:** Assuming an existing mesh checker catches sheet switches, or trusting a "switch" score that mostly measures curvature.
+- **Evidence:** lightsgoblack, 2026-09-30 (SwitchBench, pre-registered): 213 confirmed natural switches on PHercParis4; ground truth needed two independent sources, and a switch meant a run on wrap w±1 "for at least 1 mm". tifxyz-doctor (any cue) recall "12% (25/213) [8%,17%]" at 0.43 FA/100mm; the most-used detector "catches about 1 in 9". A pre-registered hybrid detector caught "2 of 47 real switches (4%)" and its kill rule fired before held-out data was opened. vesuvius-mesh-qa, 2026-03-06..22: waldkauz, "It looks like your sheet switch algorithm is primarily detecting strong curvature", and the author agreed.
+- **Fix:** Benchmark any detector on SwitchBench (or another set of independently confirmed switches) and on human-verified clean traces with sharp bends. Keep manual cross-section review for anything unflagged ([L101](#l101-numeric-surface-gates-are-blind-to-layer-jumps-on-crushed-scrolls-look-at-cross-sections)). Check: recall with Wilson CI, and false alarms per 100 mm.
+- **Label:** MEASURED (pre-registered protocol) · **When:** 2026-09-30 · **Sources:** Discord: robots - Pre-registration hash log: protocols frozen before results (2026-09-30); show-and-tell - SwitchBench (2026-09-30); show-and-tell - vesuvius-mesh-qa (2026-03-06..22) · Extends L068, L101
+
+### L706. Flag sheet switches where overlapping patches disagree in 3-D, and check the removed patches by hand
+- **Trap:** Surface predictions merge adjacent windings, and patch growers then overwrite the correct surface.
+- **Evidence:** Will Stevens flags patch pairs whose shared 2-D point maps to 3-D points more than 50 units apart (1 unit = 7.91 um). Among "approx 94142 patches" for Scroll 4, 1153 were in a mismatching pair (2025-12-29). An earlier run removed 33, then 93 of 1039 patches and improved the score histogram (2025-11-27/29). The whole-scroll output had "About 52% of the surface is in one single connected part. Another 15% is in another" (2026-01-29).
+- **Fix:** Use pairwise patch consistency as a filter, then validate removed patches against hand-checked switches. Check: precision on a labelled sample (the author expects false positives).
+- **Label:** MEASURED · **When:** 2025-11-27..2026-01-29 · **Sources:** Discord: show-and-tell - Detecting patches that cause sheet switching (2025-11-27/29); show-and-tell - More work on detecting sheet switching (2025-12-29); show-and-tell - Results from sheet switching detection on scroll 4 (2026-01-29) · new
+
+### L707. Score winding constraints against held-out human chains, and A/B every constraint source against a no-constraint fit
+- **Trap:** Validating a winding generator by its own consistency, or assuming better relative windings improve a spiral fit.
+- **Evidence:** pscamillo, 2026-07-30: "winding-sync's own consistency() reports 0.670 exact agreement while the same field scores 0.050 against verified mesh GT"; "three progressively better constraint generators all degraded the fit vs. a no-constraint baseline". Salvador Satoshi, 2026-10-05: published crossing counts "match human relative-winding chains 93/94 times", the "15 confirmed" errors were in absolute seed windings, and auto chains "hurt held-out adjacent-pair accuracy vs no relative chains". Johannes, 2026-10-16: windingcheck constraints fed to fit_spiral.py gave "6.9% slips per wrap vs 6.1% without; the raw crossings did best at 3.4%".
+- **Fix:** Validate seeds with human chains plus a 3-D same-sheet check, and gate each new constraint source on held-out adjacent-pair accuracy. Check: the fit with constraints beats the no-constraint baseline on slips per wrap.
+- **Label:** MEASURED (three independent negative results) · **When:** 2026-07-30..2026-10-16 · **Sources:** Discord: show-and-tell - constraint-gauge (2026-07-30); show-and-tell - Winding evidence, measured (2026-07-18); show-and-tell - Winding Inference (2026-10-05); show-and-tell - windingcheck, spiralfiteval, inkcheck (2026-10-16) · Extends L106
+
+### L708. Judge a tracer with a raw-CT reference it does not consume, and self-check that reference by transitivity
+- **Trap:** Judging a tracer with a reference built from that tracer's own outputs (its tracks, normals or spiral fit).
+- **Evidence:** karasukun, 2026-08-06/07 (scroll-truth): a same-wrap verdict from raw CT only, voting slice by slice. Same-wrap is an equivalence relation, so: "444 impossible triangles out of 3 143 486 checkable, 0.014%. shuffling the verdicts while keeping their number gives 0.7-2.9%".
+- **Fix:** Build references from inputs the method under test does not use, and test pairwise verdicts for transitivity violations against a shuffled null. Check: the violation rate is well below the shuffle null.
+- **Label:** MEASURED · **When:** 2026-08-07 · **Sources:** Discord: show-and-tell - scroll-truth — is this pair of patches on the same wrap (2026-08-06/07) · Extends L227
+
+### L709. Split held-out geometry by distance to the fit's inputs, not by patch name
+- **Trap:** Overlapping `*_sel_*` selections among the Paris 4 verified patches leak into name-level held-out splits.
+- **Evidence:** Nico, 2026-08-03 (spiralcheck): "54.8% of my naively sealed points sat within 0.5 vox of some fit input, which no name- or hash-level check can see"; he corrected his own first published numbers.
+- **Fix:** Measure each held-out point's distance to the fit's actual inputs and drop points within a tolerance (for example 0.5 vox). Check: the removed fraction is reported.
+- **Label:** MEASURED (author self-correction) · **When:** 2026-08-03 · **Sources:** Discord: unrolling-vc3d (2026-08-03) · Extends L303, L330
+
+### L710. Do not treat winding pitch or sheet spacing as a constant, and measure it at level 1 or finer
+- **Trap:** Using one pitch value (for example ~180 um) as a scroll constant for priors, tolerances or column counts.
+- **Evidence:** sean (organizer), 2026-07-26: pitch "is not usable whatsoever… not a useful thing to worry about outside of maybe as an initialization". pscamillo then measured a Paris 4 median of 180 um, "q1 126 to q3 441, swings 3x inside one mesh", and switched to a per-point tolerance of "3.4 to 37.5 vox". His pitch at pyramid level 2 was biased because level 2 "merges adjacent sheets": 207 to 187.3 um at level 1.
+- **Fix:** Use per-location spacing measured at level <= 1; never derive a downstream quantity from a scalar pitch. Check: the IQR is reported next to any spacing figure.
+- **Label:** VERIFIED (organizer statement plus an independent measurement) · **When:** 2026-07-26..2026-07-30 · **Sources:** Discord: show-and-tell - Winding evidence, measured (2026-07-22..29); show-and-tell - constraint-gauge (2026-07-30) · Extends L039, L080
+
+### L711. Fit cross-section shape per height, and post CT renders and cross-sections with any unwrap claim
+- **Trap:** Averaging many irregular crushed cross-sections, which manufactures a clean shape (high R²) that exists at no height; or posting a geometry-only unroll no one can inspect.
+- **Evidence:** Diego-dcv, 2026-08-02, retracting his own figure: "The elliptical fit quoted at R² = 0.948 is an artefact of averaging. Fitted individually, real sections give 0.848 and down to 0.592, with the aspect ratio spanning 1.35–3.16"; "Averaging 313 irregular sections manufactures an ellipse that exists at no height"; cumulative arc position "varies by 1779 mm between heights — 44 % of the sheet length". Paul (organizer), same day: "please post the render (i.e. the CT intensities mapped onto the flattened surface), and/or some cross-sections... otoh if this is merely reporting claims from claude/codex, without human-inspected evidence/outputs, please move it to #robots". Paul, 2026-08-04: individual windings "clearly *does* have its own 'local distortion'".
+- **Fix:** Report the distribution of per-section fits; ship every surface claim with a CT render and at least 3 cross-sections with the surface overlaid. Check: cumulative arc length agrees across heights.
+- **Label:** MEASURED (author self-correction after an organizer challenge) · **When:** 2026-08-02..2026-08-04 · **Sources:** Discord: show-and-tell - PHerc1218 laid flat from geometry alone — and what the peel measures on the way (2026-08-02); show-and-tell - One fold law, every winding (2026-08-04) · Extends L101, L103, L107
+
+### L712. Report sheet merges and fragments together, against a dilated-label floor and a CT-threshold baseline
+- **Trap:** A sheet-merge count rewards thinning or shredding, and a recall fine-tune can buy recall with merges.
+- **Evidence:** Chris Scheirer, 2026-09-14/15: "the label itself dilated by 2 vox scores 0.40 pairs/cube, so that is the floor the metric charges to thickness alone"; a linear-ramp cheat gave "0.85 merges (−12 %), 2.55 fragments — it shreds sheets". With axes swapped (z↔y), m7 Dice falls "from 0.567 to 0.266", below the CT-threshold control (0.330); a rotation fine-tune restored swapped Dice "0.290 → 0.516" but merges rose "0.60 → 0.97" pairs/cube ("Recall was bought with merges"); a winding-number field cut merges to "0.53 (−45 %)", with no harm to spiral fits in the 2026-09-16 check.
+- **Fix:** Print merges and fragments next to Dice, with a dilated-label floor, a naive-cut baseline and a CT-threshold baseline; do not trust m7 in regions where sheets lie across the scan axis. Check: swapped-axis Dice, merge pairs/cube and a held-out spiral-fit metric on held-out cubes.
+- **Label:** MEASURED · **When:** 2026-09-14..2026-09-16 · **Sources:** Discord: robots - m7 surface model misses sheets (2026-09-14); robots - A free winding-number field cuts m7 sheet merges in half (2026-09-15/16) · new
+
+### L713. Rank fibre tracers by merge-penalized ERL within one cube size, not by coverage or precision
+- **Trap:** Ranking instance tracers by coverage or precision, or averaging ERL across cube sizes.
+- **Evidence:** Martian, 2026-08-18: four labellings scored identical coverage (0.9177) and precision (0.2194); a single-instance labelling got ERL 199.18 vs the oracle's 258.27 but merge-penalized ERL 0.00; 512-cube oracles run "497 to 513 against 222 to 262" for 256 cubes.
+- **Fix:** Print ERL with the merge count and aggregate within one size class. Check: a connected-components baseline is in the table.
+- **Label:** MEASURED · **When:** 2026-08-18 · **Sources:** Discord: robots - Coverage and precision cannot rank a fiber tracer (2026-08-18) · new
+
+### L714. Repair only well-posed mesh defects: fill interior holes on one sheet, refuse tears, merges and switches
+- **Trap:** A repair tool that guesses which wrap a trace should follow and emits a healthy-looking wrong file, or a hole filler that fills pockets between merged sheets.
+- **Evidence:** tifxyz-surgeon (Abd Elilah), 2026-08-06: interior holes are solved as Laplace with Dirichlet data, and fills reconstruct removed ground truth "to within 0.05–0.25 cells"; it refuses tears, mergers and switches. MoonMan1492, 2026-10-19: "152 of the 892 crops (17%) have holes or handles"; of 14 large holes checked by hand, "8 are gaps… 6 are pockets between two sheets the label merged, so filling them is the wrong fix", yet fix_holes.py would fill all 14. sean, 2025-09-03: many strange tracer effects come "from the very much out of range points"; his tifxyz2obj --clean uses "a mean average distance with a sigma parameter".
+- **Fix:** Fill only holes enclosed by surface on one sheet; route topology defects to volume-based review; remove wild points with a neighbour-distance sigma filter and report the removed fraction. Check: an injection test that reconstructs removed patches, plus manual CT review of large holes.
+- **Label:** MEASURED · **When:** 2025-09-03..2026-10-19 · **Sources:** Discord: show-and-tell - tifxyz-surgeon (2026-08-06); show-and-tell - New here_ a topology audit of the Kaggle surface labels (2026-10-19); unrolling-vc3d (2025-09-03) · new
+
+### L715. Brightness-maximising surface refinement drifts across sheets; gate it on held-out ink, not sharpness
+- **Trap:** Moving mesh points along the normal to maximise rendered brightness gives crisper images, but the surface can slide into a neighbouring sheet or into the papyrus.
+- **Evidence:** Jordi (organizer), 2025-04-22, on segmata: "hunting for brightness is causing the segment either to momentarily switch across sheets, or to move from the recto surface to a location inside the papyrus sheet", and "the inference on the old segment doesnt prove anything". The author's displacements: mean abs 4px, std 3.2px, max +/-36px.
+- **Fix:** Cap displacement, flag outliers, and run a switch check after refinement. Check: ink detection on the refined mesh beats the unrefined one on held-out known text.
+- **Label:** MEASURED · **When:** 2025-04-22 · **Sources:** Discord: ink-detection - Segmata - it's like uncrease a papyrus sheet... (2025-04-10..23) · Extends L092
+
+### L716. Merge local sheet patches under a global constraint; greedy stitching switches sheets
+- **Trap:** Joining local patches greedily wherever neighbouring sheets touch.
+- **Evidence:** RICHI (ThaumatoAnakalyptor author), 2024-03-19: "greedy switches the sheets much more… adjacent sheets that are fused together might result in the algorithm switching the sheet… it still does make mistakes, just about 100 times less than when running greedily" (author's own estimate).
+- **Fix:** Enforce winding-consistent loops or another global constraint when merging. Check: sheet switches counted on hand-checked cross-sections.
+- **Label:** MEASURED (author estimate, not reproduced) · **When:** 2024-03-19 · **Sources:** Discord: show-and-tell - ThaumatoAnakalyptor (2024-03-19) · Extends L064, L087
+
+### L717. VC's ordered mesher ignores 3-D positions, and its tracer cannot refine a sub-range of an existing surface
+- **Trap:** Editing pointsets in ways that break the ordered grid, or re-running the tracer to fix the middle of a surface.
+- **Evidence:** Seth P. (VC maintainer), 2023-04-25: ordered meshing "does not, at all, consider the actual 3D positions of the points… the mesher would still link them"; 2023-05-04: "The segmentation for slice z is derived from slice z-1… the seg algorithm is designed to produce a new surface, not refine an existing surface".
+- **Fix:** After any pointset edit, check the maximum 3-D edge length and triangle aspect ratios; correct surfaces with a refinement step built for it. Check: no edge longer than a set multiple of the median.
+- **Label:** VERIFIED (statement by the VC maintainer) · **When:** 2023-04-25 · **Sources:** Discord: general - On ordered pointset meshing (2023-04-25); general - that also implies you're thrashing (2023-05-04) · new
+
+### L718. Check that an estimated umbilicus lies inside the scroll mask at a local score maximum
+- **Trap:** The normalized score in volume-cartographer's `align_and_extract_umbilicus` can have no interior maximum on partial predictions, so the hill climb walks out of the volume.
+- **Evidence:** evilaliv3 (Giovanni Pellerano), 2026-09-17: dividing by the weight sum makes the score tend to "the largest eigenvalue of the normals' covariance", which "can exceed the score at the true centre ... the climb keeps stepping outwards".
+- **Fix:** Verify the centre is inside the mask with a local score maximum, and compare it with an independent centre estimate. Check: the two estimates agree within the stated tolerance.
+- **Label:** MEASURED (analytic argument plus examples) · **When:** 2026-09-17 · **Sources:** Discord: show-and-tell - The umbilicus estimator in volume-cartographer walks out of the volume, and it is one line (2026-09-17) · Extends L066
+
+### L719. Score a candidate patch-QA feature by AUC between labelled good and bad patches before building a filter
+- **Trap:** Assuming patches flagged "bad" sit off the CT ridge.
+- **Evidence:** Abd Elilah, 2026-08-07, on s4_bad vs s4_good patches: ridge distance "bad: median 0.962 vox ... good: median 0.961 ... AUC 0.512, p 0.38"; metric distortion "AUC 0.48"; adjacency-graph degree "AUC 0.61", replicating on three slabs.
+- **Fix:** Measure each QA feature's AUC on labelled patches with matched z range and keep rates first. Check: AUC clearly above 0.5 on more than one slab.
+- **Label:** MEASURED · **When:** 2026-08-07 · **Sources:** Discord: show-and-tell - Scoring and optimising surfaces (2026-08-07) · Extends L087
+
+### L720. Validate a scan-quality ranker against hand-labelled sheets and look at its top picks
+- **Trap:** An automatic "clearest region" ranker picked packing foam.
+- **Evidence:** boltz, 2026-10-09: the "first version kept picking packing foam"; tested against Paris 4 2.4 um hand labels, the blocks rated worst show "87% of the real sheets, the best ones 95%".
+- **Fix:** Mask non-papyrus material and check separation against labelled sheets before using the ranking. Check: visual review of the top-ranked blocks.
+- **Label:** MEASURED · **When:** 2026-10-09 · **Sources:** Discord: show-and-tell - Where each First Letters scroll is clear enough to read (2026-10-09) · new
+
+### L721. Organizers suggest spiral-fitting whole prize scrolls as a cheap First Letters route; test it with a pre-registered coverage and ink check
+- **Trap:** Spending months on bespoke segmentation before trying the off-the-shelf full-scroll fit, or adopting track-graph patches without testing them.
+- **Evidence:** sean (organizer), 2026-08-06: running the spiral fit with lasagna normals and/or tracks "will likely result in a fairly large number of decent areas"; 2026-08-20: "afaik nobody has ran the spiral fit on almost all of the prize scrolls". Paul (organizer), 2026-08-24: "track-graph patches also are currently strangely unhelpful in the spiral (despite being very high-quality patches in themselves)". Dominion and Scroll Swarm found CPU fits slow ([L448](#l448-cpu-spiral-fits-run-16-34-sstep-the-30000-step-recipe-is-10-days-per-window), [L777](#l777-budget-normal-grids-at-about-100x-wall-time-and-resume-tracer-runs-until-the-front-stalls)).
+- **Fix:** Pre-register coverage (cm²) and an ink-visibility check on rendered areas; compare fits with and without track-graph patches; audit the fit against random shifts ([L699](#l699-score-a-spiral-fit-against-random-shift-copies-of-itself-on-the-raw-ct-before-inking-it)).
+- **Label:** HYPOTHESIS (organizer suggestion, untested in the export) · **When:** 2026-08-06..2026-08-24 · **Sources:** Discord: general (2026-08-06, 2026-08-20); announcements (2026-08-24) · Extends L448
+
+### 8D. Ink detection
+
+Ink models, their inputs and settings, labels and training.
+
+### L722. Smoke-test every published ink checkpoint on labelled ink: some ship with an untrained head that outputs 0.5 everywhere
+- **Trap:** A public checkpoint loads without error, outputs a constant, and you read that as "no ink here".
+- **Evidence:** Nieuwlaar, 2026-08-25: "resnet50_7.9um checkpoint seems to have an untrained decoder, so it just outputs 0.5 everywhere"; after retraining the head, "heldout AUC 0.50 >>> 0.94". A second broken checkpoint (resnet50_3um) turned up among the 18 checked. The September 2026 progress prize recognised "repairing a published Scroll 1 checkpoint whose untrained output layer was emitting blank predictions" (announcements, 2026-09-07).
+- **Fix:** Before any real inference, run each checkpoint on one labelled known-ink tile. Check: output variance above zero, a non-constant histogram and AUC well above 0.5; reject the checkpoint otherwise.
+- **Label:** MEASURED (author; organizers acknowledged it with a prize) · **When:** 2026-08-25 · **Sources:** Discord: show-and-tell - Repair of two broken ink checkpoints + a native-scan boost for ink_9um (2026-08-25); announcements (2026-09-07) · Extends L175, L508
+
+### L723. Treat each released ink_9um checkpoint as a separate instrument: select by held-out score per region, and do not ensemble by default
+- **Trap:** Assuming released checkpoints are interchangeable, taking the "obvious default", or crediting gains from averaging checkpoints measured in-distribution.
+- **Evidence:** KLAVIS, 2026-08-17: the 14 checkpoints "vary by up to 0.14 balanced accuracy", and "seed42/step-075000, the obvious default, is the worst of the 14 on PHerc0139 w016: 0.680 against 0.819". err (organizer), 2026-08-18: training "kept going after the models started to overfit… earlier epochs might be more useful (~20k~30k)"; 2026-08-12: ensembles gain "clearness" but "can also lose fainter signals and generalization". OBCD, pre-registered: seed43 centred AUC "0.937 [0.912–0.958] vs seed42 0.774"; "0/3 segments where any arm (window mean, seed mean, TTA, everything) beats the better seed's single centred run"; on 2026-10-12, correcting himself, "seed42 step-050000 LOSES held out on all three segments" and "Averaging seeds, windows or TTA: 0/3 held out". rodriguescarson, 2026-10-20: seed42 step-020000 vs seed43 step-060000 "agree on a median 16.0% of the ink they call (IoU at p>=0.5 ... IQR 0.127-0.195)" over 335 surfaces on 8 eligible scrolls (vs 0.409 on curated w043); as a positive control, a seed42-derived soup scored 2.20x higher against seed42.
+- **Fix:** Name the exact checkpoint in every result. Score every candidate checkpoint on held-out segments of more than one scroll with a predeclared metric before a search, never by in-supervision score. Before calling a region inked, require agreement across checkpoints against a same-lineage positive control and a shifted-map null. Check: a per-region table of all checkpoints.
+- **Label:** VERIFIED (two independent scorers agree the default is not the best; agreement measured with a positive control) · **When:** 2026-08-17..2026-10-20 · **Sources:** Discord: ink-detection - All 14 released 9 µm ink checkpoints, scored per region (2026-08-17/18); ink-detection - Releasing our new 9 µm ink-detection models! (2026-08-12); ink-detection - Three ink-path PRs (2026-09-28, 2026-10-12); robots - Two ink checkpoints agree on a sixth of the ink they call (2026-10-20) · Extends L235, L602, L644
+
+### L724. Pick the depth direction label-free by output separation, and read forward/reversed agreement on an unread volume as no ink
+- **Trap:** Running one depth order by habit, or calling a model's stroke-sized response on an eligible surface "something" without the reversed run.
+- **Evidence:** OBCD, 2026-10-12, pre-registered on PHerc0841: "reverse was better 60/60, the wrong one costs 0.09–0.20 AUC, and the label-free choice (keep the direction whose output separates more) picked right 60/60". freek_cool, 2026-08-31, on PHerc1447: the depth-reversed run gives the same coverage "in unrelated places (7 % overlap, r = 0.10)"; in-domain PHerc0172 separated "in 18 of 18 cells"; in-domain the asymmetry strengthens with threshold in 6/6 series, on 1447 it weakens in 6/6 (n = 1 volume). sean (organizer), 2025-04-04, on Scroll 5: in many places "running in reverse is the only way to show ink".
+- **Fix:** Run both directions. Keep the one whose output separates more, and plot the forward/reversed area ratio against threshold: real ink gives a ratio that rises with threshold. Check: a positive control on an in-domain scroll first, and both runs logged.
+- **Label:** MEASURED (pre-registered; read-out rule on one volume) · **When:** 2025-04-04..2026-10-12 · **Sources:** Discord: ink-detection - Three ink-path PRs (2026-10-12); ink-detection - A read-out rule for --direction both (2026-08-31); general - When an ink prediction is tagged with (2025-04-04) · Extends L135, L166, L244
+
+### L725. Use an on-grid stride (a multiple of 8) for ink_9um sliding-window inference
+- **Trap:** ink_9um's output depends on where the 128 px window starts, with period 8; `--overlap 0.3` gives stride 90, which is off-grid and quietly lowers AUC.
+- **Evidence:** tarikcankorkmaz, 2026-09-13: off-grid strides 38, 51, 77, 90 were "each worse than the default in 5 of 5 measurements, by 0.005 to 0.032 AUC on average"; on-grid strides stayed "within 0.0006"; on-grid overlaps are "0, 0.25, 0.375, 0.5 (default), 0.75, 0.875". Per-scroll z-depth calibration gave "-0.005 / -0.003 AUC" under honest CV. Measured on one scroll; the author asked for a check.
+- **Fix:** Use only overlaps whose stride is a multiple of 8. Check: AUC at the default vs your stride on a labelled tile set.
+- **Label:** MEASURED (one scroll) · **When:** 2026-09-13 · **Sources:** Discord: ink-detection - ink_9um: output depends on where the 128px window starts (period 8)... (2026-09-13) · new
+
+### L726. Copy layer window, normalization and tile blending from the bucket's metadata.json to reproduce the canonical 2.4 um ink maps
+- **Trap:** Public inference defaults differ from production. With the README window or /255 scaling, output is "noticeably softer", window-limited or tile-gridded, and you conclude the model is weak.
+- **Evidence:** LimeGS, 2026-07-05/06: production uses start_layer=23 / end_layer=85 (public default 1-63); normalization is clip(0,200) then /200, not /255 (inputs "~27% dimmer than training"); tiles are 256 / stride 128 with 2-D Hann blending (uniform averaging left a "boundary-gradient ratio ~40x"); with all three fixed, "my repro correlates r≈0.96+ with the published TIFs". jrudolph (organizer): the parameters are in "the metadata.json at the root of the bucket", and "the full volume is centered on the surface"; sean (organizer), 2026-07-05: "take out the clip, then layer range 23, 85 tile size 256 stride 128". Kaden, 2026-09-12 (villa#1765, PR 1766): on PHerc0139 the README window "finds less than half the writing: 0.38 match against the team's own map, versus 0.875 with the window centred"; the published surface volumes have 109 layers, not 65.
+- **Fix:** Read the bucket metadata.json and the pinned docker tag before inference, and derive the window from the volume's own layer count, centred on the trace. Check: reproduce one published map at r >= 0.95 before running new segments.
+- **Label:** MEASURED (author; organizer-confirmed parameters; window finding independently made by a second member) · **When:** 2026-07-06..2026-09-12 · **Sources:** Discord: ink-detection - Reproducing the published new_canon_autoresearch_recipe ink TIFs, what am I missing? (2026-07-05/06); ink-detection - 2 µm ink model_ the README's layer window (1–63) is off-centre (2026-09-12) · Extends L145, L147, L160
+
+### L727. Pin the checkpoint, layer window and in_chans of every map; forks and repo snapshots change them silently
+- **Trap:** Assuming a public repo snapshot produced the published images, or that a fork kept the original layer window.
+- **Evidence:** 2023-10-17: jrudolph ran the public First Letters model on another segment and "it mostly got noise"; YoussefNader: "the model that produces 1615 is a different model". The original GP inference window "was 17-42, i.e. start_idx=17 and in_channels=26" (jrudolph); a fast fork changed it to start_idx 0 / in_chans 21 (waldkauz: "Maybe changing the defaults wasn't a great idea"), and later users hit "weird full white output"; _mvrcii: "the inference is very sensible to the start/end layers and the in_chans paramter" (2024-12-07..2025-04-03). sean, 2024-04-14: "most models for gp submissions used between 20 and 30 layers centered in that range".
+- **Fix:** Write checkpoint hash, start/end layer, in_chans, stride and layer order into every run manifest. Check: reproduce a published image on its own segment before running anywhere new.
+- **Label:** VERIFIED (model author confirmed the mismatch) · **When:** 2023-10-17..2025-04-03 · **Sources:** Discord: general - depending on your compute (2023-10-17); general - ink inference from Youssef's snapshot (2023-10-17); ink-detection - Faster & Tuneable GP ink inference (2024-12-07..2025-04-06); ink-detection - Modifying 2023 Grand Prize Ink Detection Model to run on single .TIF files (2024-04-14) · Extends L145, L468
+
+### L728. Record the inference depth window and sweep it for any candidate
+- **Trap:** Running inference on a fixed slice range that misses the sheet or includes the neighbouring sheet's crackle.
+- **Evidence:** emel_ryan, 2023-11-20, comparing layers 24-40 with 12-28: "Can see how much results degrade just from a relatively small variation. Lose a lot of letters and actually start seeing what looks like letters from a different sheet". Brett Olsen, 2023-11-21: "If your network is looking at sheets 12-20, you're totally going to pick up on that yellow sheet". Training per layer on the Kaggle fragments showed "virtually no usable signal on either side of 32+/- 8" (2023-10-15).
+- **Fix:** Store the window in each prediction's metadata; for a candidate, sweep the window start (for example in steps of 4) and keep it only if it is stable and does not move toward the adjacent sheet. Check: the sweep is in the candidate record.
+- **Label:** MEASURED · **When:** 2023-10-15..2023-11-21 · **Sources:** Discord: general - Annotation tool request (2023-11-20/21); ink-detection - Mistake in the Kaggle dataset? (2023-10-15) · Extends L145, L254
+
+### L729. Surface offset costs ink asymmetrically: keep the surface within 3 slices on the bad side
+- **Trap:** Assuming a few slices of surface misplacement are harmless because training jitters ±2, or that training against offsets fixes it.
+- **Evidence:** 잠이올랑말랑, 2026-10-14, pre-registered, released reader at best F1 ≈ 0.64 clean: "5 slices (≈ 48 µm) off one way: −0.16 / −0.17", "the other way: −0.03 / −0.04", "3 slices on the bad side: already −0.06 / −0.08", "smooth wander of ±2 slices: only −0.01 to −0.02". Two training fixes (in-patch wander, wider jitter) failed their +0.015 rule. sean (organizer), 2026-10-17: the segmentation lies on the front surface, so one direction goes "into air or onto the back of the adjacent one".
+- **Fix:** Measure the surface's signed offset to the CT ridge and snap surfaces to the sheet front; when unsure, bias toward the target sheet. Check: score ±3/±5-slice shifted renders of a known segment.
+- **Label:** MEASURED (pre-registered; two negative fixes) · **When:** 2026-10-14..2026-10-17 · **Sources:** Discord: robots - How far off can the surface be before ink_9um loses ink? (two pre-registered negatives) (2026-10-14/17) · Extends L589
+
+### L730. Scale depth jitter to the window: ±2 slices of jitter on a 5-slice window ruins it
+- **Trap:** Shrinking the 9 um depth window but keeping the recipe's ±2 jitter, and concluding narrow windows fail.
+- **Evidence:** pscamillo, 2026-08-19: a 5-slice window lost "58–0 across 60 windows" with ±2 jitter; with max_offset=0 it was "60/60 ties" and trained "about 60% faster"; 13 and 9 slices were indistinguishable from 17. One seed, one judge.
+- **Fix:** Keep jitter a small fraction of the window depth. Check: an ablation with jitter off at each window size.
+- **Label:** MEASURED · **When:** 2026-08-19 · **Sources:** Discord: ink-detection - 9 µm depth window_ it's the jitter, not the depth (2026-08-19) · new
+
+### L731. Separate a neighbouring turn's echo from the sheet's own ink with a depth profile
+- **Trap:** Widening the render depth to find "new" text that is the same text one wrap away, or taking marks in a blank area as the sheet's own when they print through from the next turn.
+- **Evidence:** 2024-01-24: user123xxx widened the range on 20231012184423 and fed 30 layers to an ink model; Mojonero showed the extra signal was "the same ink signal getting picked up one wrap away around the scroll", lining up after a horizontal shift. Dreamskid, 2026-09-11, on Paris 4: "Where turns are 100 to 200 µm apart, a 0.26 mm reading window reaches the next turn, and the neighbour's writing prints into the map… an echo strengthens toward the neighbouring turn, the sheet's own writing peaks near the tracing". Jordi (organizer), 2026-09-15: in a surface volume "the sheet of reference is the one in the middle", and a mark pointed out by a user lay "on the wrap behind the center sheet".
+- **Fix:** For any candidate, run a depth profile: own-sheet ink peaks at the trace, echoes peak toward a neighbour. Before crediting far-layer signal, cross-correlate far-layer and near-layer predictions over horizontal shifts; a peak at a non-zero shift is wrap leakage. Check: peak depth and shift per candidate.
+- **Label:** MEASURED (corroborated by an organizer) · **When:** 2024-01-24..2026-09-15 · **Sources:** Discord: show-and-tell - Things that didn't work: Expanding the range (2024-01-24); show-and-tell - PHerc. Paris 4_ complete recto_verso maps (2026-09-11, 2026-09-15) · Extends L251, L589
+
+### L732. Treat pixels where the surface normal turns sharply as low-confidence ink
+- **Trap:** In tight bends, a 64-voxel surface-volume stack reaches into the adjacent sheet, and the resulting failure looks like "no ink".
+- **Evidence:** sean, 2024-11-27: "if i look at areas with a very very sharp change in normal direction from the ppm, ink detection consistently performs poorly", and "if we have a 64 voxel surface volume and the other surface is within 64 voxels, it seems unavoidable".
+- **Fix:** Compute per-pixel normal-change and distance-to-next-sheet maps and down-weight high-curvature pixels. Check: held-out ink recall stratified by curvature bin.
+- **Label:** INFERENCE (practitioner observation) · **When:** 2024-11-27 · **Sources:** Discord: general - Normals (2024-11-27) · Extends L063
+
+### L733. Carry a binarization threshold only within the same model; the operating-quantile rule held best in three pre-registered tests
+- **Trap:** Applying a threshold tuned on retrains or on another checkpoint to the released model, or trusting a label-free threshold rule after one test.
+- **Evidence:** 잠이올랑말랑 (AI-disclosed agent), robots thread, pre-registered three times with self-corrections. The first test favoured borrowing other scrolls' optimum (84-92). 2026-10-02 replication on 0841 / 0009B / 0500P2: the recommended 87 lost "0.096 / 0.118 / 0.095" F1 vs the oracle, "fails everywhere"; fixed 128 lost "0.008 / 0.006 / 0.027"; borrowing the same model's optimum from other scrolls lost "0.003 / 0.003 / 0.009"; the released models' optima were "98–141"; "I predicted the opposite; the write-up says so". 2026-10-09, on dense-pseudo-label checkpoints: the borrowed optimum failed on 0500P2 (0.062); "The quantile rule is the only one that has held in all three tests".
+- **Fix:** On an unlabelled scroll, use the operating quantile measured on other scrolls with the same model; re-derive it after fine-tuning; report F1 at 128 next to the oracle. Check: F1 lost vs oracle on held-out scrolls is below the noise floor (0.03).
+- **Label:** MEASURED (three pre-registered tests, self-corrected) · **When:** 2026-10-02..2026-10-09 · **Sources:** Discord: robots - Label-free ink threshold: borrow the same model's optimum from other scrolls (pre-registered x2) (2026-10-02, 2026-10-09) · Extends L213
+
+### L734. Do not assume carbon ink is darker than papyrus: at 9 um it is usually slightly brighter, and the sign varies by scroll
+- **Trap:** Gating detections with a raw-darkness sign test or a CT-void veto.
+- **Evidence:** sean (organizer), 2026-08-25: the darkness assumption "i don't think this holds true for any ink we have found... for the most part ink is actually brighter"; beam hardening can darken areas around ink; brightness depends on "higher lead/other metal content". Nieuwlaar measured "about 55% to 62%" of confirmed ink brighter on 0139. KLAVIS, with a global median, got the fraction of labelled ink brighter than median papyrus: 0139-w016 48.9 % (AUC 0.496), 0814-46527 40.4 % (0.432), 1667-w029 58.6 % (0.557), and all 8 Paris 4 segments brighter (w00 58.5 %); "the sign flips by scroll". With sean's suggested local boxes holding 40-60 % labelled ink: "paris4-w00 → 72.4% of boxes ink brighter (mean +8.1)".
+- **Fix:** Drop sign-based raw-intensity vetoes. If you test an intensity cue, use matched local boxes with about 50 % labelled ink and report it per scroll. Check: per-scroll AUC of raw intensity on labels.
+- **Label:** MEASURED (several members; organizer confirmation) · **When:** 2026-08-25 · **Sources:** Discord: show-and-tell - Repair of two broken ink checkpoints + a native-scan boost for ink_9um (2026-08-25) · Extends L204, L591
+
+### L735. Gate "no ink" verdicts on CT coverage, not mesh validity, and calibrate against regions outside the test
+- **Trap:** In-bounds zeros from unscanned blocks are valid samples to a mesh sampler; zarr reads an absent chunk as zeros with no error; self-calibrated z-scores make an empty region its own healthy control; and a scan/no-scan boundary reads as high contrast.
+- **Evidence:** anshu231 (inkdx), 2026-08-03: "The NO_DATA gate only looked at the mesh (hole_fraction ...)"; self-calibrated, "the scan score comes out exactly 0.5", and a tile passed the scan gate "in both calibration modes". 2026-08-05, after a report by Abd Elilah: "the scan/no-scan boundary reads as inflated contrast: profiles spanning bright material and zeros scored cnr z ≈ +7, the sharpest 'sheet' in the scroll". khartes_chuck, 2023-12-30: "if a chunk file is absent, it is treated as if it were all zeros; no error is raised".
+- **Fix:** Gate on the fraction of CT == 0 samples along every normal profile, keep a mask of which chunks were really present, and draw calibration references from outside the region being tested. Check: an injected all-zero tile and a half-zero tile both return NO_DATA.
+- **Label:** MEASURED (tool author confirmed a third-party bug report) · **When:** 2026-08-03..2026-08-05 · **Sources:** Discord: ink-detection - Inkdx — diagnose why ink is missing (2026-07-30..2026-08-06); general - why doesn't multithreading work (2023-12-30) · Extends L015, L143
+
+### L736. Validate any ink discriminator on known ink and known over-firing, and never use one region as a baseline
+- **Trap:** Tests meant to separate real ink from out-of-domain firing that pass every scroll or point the wrong way; "scroll X shows Nx the ink of Paris 4" from one reference block.
+- **Evidence:** Abd Elilah, 2026-07-26: an on-material check "calibrates beautifully ... (71x enrichment on dense CT ...) but every scroll passes it, because the model keys on density"; depth into sheet "reads 0.64x on real ink and 2.21x on the most likely over-firing case. Backwards." He nearly posted "PHerc0332 shows ink at 4x Paris 4's rate", but over 16 ink-blind regions Paris 4 itself "spans 0.000%–14.72%", so "any 'Nx Paris 4' figure is an artifact of which block you divided by".
+- **Fix:** Test each discriminator on a known-ink positive and a known-over-firing negative first. Compare scrolls only when the gap exceeds the reference scroll's own between-region spread. Check: a bootstrap over regions chosen blind to ink.
+- **Label:** MEASURED · **When:** 2026-07-26 · **Sources:** Discord: show-and-tell - Ink model on 13 scrolls_ one region is not a baseline (2026-07-26) · Extends L206
+
+### L737. Pair a label-free ink post-filter with sealed windows and a misaligned control that should fail
+- **Trap:** A label-free post-processing step can raise AUC by smoothing alone.
+- **Evidence:** Danilo Lapegna, 2026-09-06: on 8 sealed windows, "mean cube AUC 0.703 -> 0.788"; a second segment "0.714 -> 0.769"; "A rolled-volume control drops to 0.639".
+- **Fix:** Evaluate on windows never used for selection, with a rolled or misaligned control. Check: the control falls below the unfiltered baseline.
+- **Label:** MEASURED · **When:** 2026-09-06 · **Sources:** Discord: ink-detection - Geometry surface consistency: label-free post-processing for 3D ink volumes (2026-09-06) · new
+
+### L738. Credit a retraining gain to new data only with a matched control run, and do not equate it with legibility
+- **Trap:** Crediting a gain to new data when it comes from the extra training itself, or reading a benchmark AUC gain as more letters.
+- **Evidence:** Nieuwlaar, 2026-08-25: dense native-scan pseudo-labels "lift the best ink_9um checkpoint 0.9147 >>> 0.9548 held-out (matched control stays at 0.9149, so its the data)", "a benchmark gain btw, not extra letters". KLAVIS replied the same day that the baseline checkpoint must be named, because the spread is up to 0.14.
+- **Fix:** Run a matched control (same steps, no new data), name the baseline checkpoint, and test legibility separately. Check: control result beside the gain.
+- **Label:** MEASURED · **When:** 2026-08-25 · **Sources:** Discord: show-and-tell - Repair of two broken ink checkpoints + a native-scan boost for ink_9um (2026-08-25) · Extends L590
+
+### L739. Per-scroll ink models still beat the cross-scroll 9 um models; pair any cross-scroll null with a same-scroll positive control
+- **Trap:** Expecting a universal model to be enough on a new scroll, or concluding a scroll has no ink because a cross-scroll model shows nothing.
+- **Evidence:** Paul (organizer), announcement 2026-08-24: the 9 um models "are currently our best models for generalising across scrolls at 9um, but per-scroll models still work better. we'd love to know why"; 2026-09-24: on 1447, "a few strokes without fine-tuning; ~10 letters with fine-tuning"; 2026-10-18: the drop in clarity from 2.4 to ~8-9 um "is known, and for now seems somewhat consistent across scrolls". Jared Landau, 2024-06-18: the GP model "hasn't yielded anything so far when performing inference on Scrolls 2/3/4". emel_ryan, 2024-07-08: "no one has been able to train a model that generalizes back and forth from fragment to scroll scan ... without directly training on both".
+- **Fix:** Budget for curated pseudo-label or iterative fine-tuning on the target scroll, with a held-out region of the same scroll as the generalisation check ([L184](#l184-train-on-the-target-scroll-itself-with-a-certified-3-d-exclusion-margin-around-the-prize-region)). Check: every cross-scroll null names a positive control on that scroll.
+- **Label:** MEASURED (organizer statements) · **When:** 2024-06-18..2026-10-18 · **Sources:** Discord: announcements (2026-08-24, 2026-09-24); general (2026-10-18); ink-detection - Training and inference data from different scrolls? (2024-06-18); ink-detection - Creating ink labels (2024-07-08) · Extends L176, L218
+
+### L740. Curate pseudo-labels and use three-state masks: black in a prediction mask means "not seen", not "no ink"
+- **Trap:** Self-training directly on predictions, or training on every black pixel of a prediction mask (or a loose crop) as a negative, which teaches the model to miss faint ink.
+- **Evidence:** err (organizer), 2026-07-30: predictions "contain a lot of noise... without additional treatment the model will probably collapse eventually"; 2026-08-12: HF dataset segments "might've been updated by the annotation team", so labels need tifxyz geometry alignment before transfer. kglspl, 2023-11-23, on a community mask release: "where it's white, it's ink, with high certainty. And where it's black, it's… ink not seen, so it could be ink"; the mask author agreed. sean, 2024-07-06/07: "make somewhat tight crops around your regions of interest to avoid giving the model negative labels on areas you're unsure of"; "You'd be amazed how few letters you need".
+- **Fix:** Use ink / known-blank / ignore masks and compute the loss only on the first two; take known-blank pixels from evidence of absence; align label geometry before transfer; track held-out AUC per round to catch collapse. Check: held-out-segment recall with and without the ignore zone.
+- **Label:** MEASURED (organizer advice); INFERENCE (three-state benefit, not measured in the export) · **When:** 2023-11-23..2026-08-12 · **Sources:** Discord: ink-detection - Fetch Data from AWS During Training (2026-07-30); ink-detection - PhercParis4 title region Segments (2026-08-12); show-and-tell - Masks for everyone! (2023-11-23); ink-detection - Creating ink labels (2024-07-06/07) · Extends L191, L227
+
+### L741. Keep a fixed ground-truth anchor set in every self-labelling round: on scrolls without ground truth, labels spiral into fibres
+- **Trap:** Iterative self-labelling on a scroll with no confirmed ink drifts into labelling fibres as strokes.
+- **Evidence:** _mvrcii, 2025-08-11: "it is waaaaaay to easy to get tempted to label the wrong thing, and then you are in a downward spiral". Blue rarely trusts single-stroke letter shapes "because I know the model could just be giving me the fibers", and goes "back to including fragments for some real ground truth".
+- **Fix:** Keep fragment ground truth in every round, freeze a held-out set before relabelling, and score how often predicted strokes run parallel to the fibre direction. Check: reject maps dominated by fibre-aligned strokes.
+- **Label:** INFERENCE (practitioner testimony) · **When:** 2025-08-11 · **Sources:** Discord: ink-detection - Kaggle ink detection notebook and possible hints of ink in scroll 4 (2025-08-11) · Extends L191
+
+### L742. Keep label files outside every input directory: a globbing loader can feed the label to the model
+- **Trap:** A data loader that globs a directory (torch `ImageFolder`) picks up the ink-label image as an input channel, and the model "detects" ink by copying the label.
+- **Evidence:** 2023-10-15: an unsupervised result looked very readable after "<2-3 minutes of compute on an m1 cpu"; Brett Olsen: "Pretty confident you've got the ink labels mixed in somehow… you're matching the labels rather than the real ink"; the author found that "the torch ImageFolder construct read the top level and took the label image file as well".
+- **Fix:** Store labels physically apart; assert that the input channel count equals the number of CT layers. Check (Brett's tripwire): a leaked model reproduces known errors in the labels, a real one does not.
+- **Label:** VERIFIED (leak found and confirmed by the author) · **When:** 2023-10-15 · **Sources:** Discord: ink-detection - [Answered: Nope! Layer 0 is the bottom layer, not the top] Mistake in the Kaggle dataset? (2023-10-15) · new
+
+### L743. Fragment ink labels are hand-aligned and partly wrong: down-weight their boundaries
+- **Trap:** Treating the Kaggle `inklabels.png` as pixel truth.
+- **Evidence:** Stephen (organizer), 2023-03-31: the infrared-to-CT alignment "is done using Puppet Warp in Photoshop, using control points… a largely manual process that we know introduces error"; _kai_ advised treating "the masks as biased indicators from experts". Brett Olsen, 2023-10-15: "I happen to know some of the labels as given are wrong".
+- **Fix:** Erode labels or use soft labels at boundaries; report metrics with and without a boundary band of a few pixels. Check: suspect regions re-checked against the IR image.
+- **Label:** VERIFIED (statement by the people who made the labels) · **When:** 2023-03-31 · **Sources:** Discord: general - Ink labeling (2023-03-31, 2023-04-02); ink-detection - Mistake in the Kaggle dataset? (2023-10-15) · new
+
+### L744. Check 2-D-to-3-D label mapping and segment-to-segment label transfer before training
+- **Trap:** A mapping bug that labels a whole 3-D chunk as ink; fragment labels on the papyrus-air interface that teach "outermost layer"; or labels moved rigidly onto a re-flattened segment, drifting toward its edges.
+- **Evidence:** Mojonero, 2024-01-22: "I accidentally made it so every patch which contains any amount of ink gets the whole 3D chunk labeled as ink"; 2024-02-14: "since all ink labels lie on the 'papyri-background interface' the model just learns to detect the outermost layer of papyus". O_D, 2024-03-12/14: "even minor alterations to the segment generation can lead to quite distorted letter positions ... pretty well placed in the centre but get more displaced to the edges"; he mapped per-letter-cluster boxes instead, tested by mapping the labels of 20231005123333 to 20231005123336 against that segment's independent labels.
+- **Fix:** Measure the ink-voxel fraction per labelled chunk (values near 1.0 flag the bug); add no-ink interface negatives; map labels piecewise (per cluster or by a dense UV-to-3-D-to-UV lookup). Check: IoU against independently drawn labels on the new segment, and no firing on blank papyrus-air boundaries.
+- **Label:** MEASURED · **When:** 2024-01-22..2024-03-14 · **Sources:** Discord: show-and-tell - Bumpy road to ink detection on 3D scans (2024-01-22..02-17); show-and-tell - Segment-to-Segment Label Mapping (2024-02-28..03-15) · new
+
+### L745. Hold out the released Kaggle hidden test fragment for fragment-level claims, and rescale fragments by re-rendering from geometry
+- **Trap:** Claiming fragment-level generalisation from public training fragments only, or resizing 3.24 um fragment layers by 2.44x to match 7.91 um scrolls.
+- **Evidence:** RICHI, 2024-07-08: the hidden test fragment of the Kaggle competition (Frag4, PHercParis1Fr39) has been released on the data server. jrudolph, 2024-07-29 and 2024-08-08, re-rendered fragments 1-5 from the PPMs at 7.91/3.24 = 2.44 with trilinear sampling; Blue later trained on these "rescaled fragments 1 to 5" and said "diversity in ink labels does a lot more than just a large amount of ink labels from just one scroll" (2025-08-11, author's impression).
+- **Fix:** Keep Frag4 out of all fragment training and report its score next to the training folds; re-render fragments from geometry at the target voxel size. Check: a fragment model's score on rescaled vs native held-out regions, both reported.
+- **Label:** MEASURED · **When:** 2024-07-08..2024-08-08 · **Sources:** Discord: ink-detection - Creating ink labels (2024-07-08); general - I started reinterpreting the 3.24um (2024-07-29); show-and-tell - Rescaled fragment surfaces (2024-08-08) · Extends L188
+
+### L746. Simulated changes of resolution or energy are imperfect proxies: test on real scans of the target type
+- **Trap:** Assuming an 8 um scan resolves 8 um features, that a downsampled 4 um fragment equals an 8 um scan, or that a model fails (or works) across beam energy.
+- **Evidence:** Seth P. (organizer team), 2023-04-15: "down sampling to 8um is not quite the same as reconstructing at 8um… with a small penalty… Probably some sort of downsample and gaussian blur, but it's not entirely clear how much". Casey Handmer's FFT analysis, 2023-04-12, suggested "a geometric resolution limit of about 40 um" for the 8 um data, and hari_seldon, 2024-09-13, wrote "Right now we have about 40um effective on the 8um scans" (no method posted). YoussefNader, 2023-12-20: a model trained at 54 keV "could predict the 88kev quite clearly" on fragment 1 (qualitative). sean, 2024-11-25: crackle stays visible at 7.91, 15.82 and 32.64 um synthetic analogues, "not ... a perfect analogue to a true lower res scan".
+- **Fix:** Measure each target volume's effective resolution (edge-spread or FFT cut-off) before choosing render scale or receptive field, and test cross-energy and cross-resolution transfer on labelled fragments or real coarser scans. Check: the score at each resolution on held-out labels.
+- **Label:** MEASURED (organizer statement); HYPOTHESIS (the ~40 um figures, not reproduced) · **When:** 2023-04-12..2024-11-25 · **Sources:** Discord: general - Thoughts about the feasibility? (2023-04-15); general - X-ray experts (2023-04-12); general (2024-09-13); general - New resolution layers download (2023-12-20); general - Ink thickness (2024-11-25) · Extends L054, L104, L268
+
+### L747. Equalise intensity across scrolls on papyrus-only voxels before applying a model trained elsewhere
+- **Trap:** Reading scroll-to-scroll brightness differences as material differences, or feeding unequalised volumes to a model trained on Scroll 1.
+- **Evidence:** Jordi (organizer), 2024-07-01: "the mismatch arises just from the post processing after scanning that clips and normalizes the values", and readers should "pay attention to the energy of the beam". khartes_chuck, 2024-10-29: scroll 4 "seems very dim, perhaps because some very bright inclusions ... distort the statistics".
+- **Fix:** Match histograms on masked papyrus voxels with outliers clipped, and record beam energy and voxel size. Check: papyrus and air peak positions after equalisation. (See also [L677](#l677-do-not-compare-esrf-8-bit-volumes-by-raw-intensity-without-masking-clipped-ends-and-reading-each-volumes-window).)
+- **Label:** INFERENCE (organizer explanation, not measured here) · **When:** 2024-07-01 · **Sources:** Discord: show-and-tell - Scroll equalization (2024-07-01); general - Zero bits (2024-10-29) · Extends L252
+
+### L748. Do not run released ink models on volcomp q8 volumes without adaptation
+- **Trap:** Using the compressed level-0 volumes for ink inference to save bandwidth.
+- **Evidence:** pscamillo, 2026-09-10, at 9 um on two 0139 segments: q8 "costs about a quarter of the detector's separation, q4 already -7%"; his noise control was weaker than intended because "the render kills half of uncorrelated noise while the quantisation error passes through (0.54x vs 1.06x)".
+- **Fix:** Use uncompressed volumes unless the model was fine-tuned on compressed data. Check: AUC on the same segment, compressed vs uncompressed.
+- **Label:** MEASURED · **When:** 2026-09-10 · **Sources:** Discord: show-and-tell - What volcomp q8 costs 2.5D ink detection (2026-09-10) · new
+
+### L749. Treat 3-D ink predictions as likely ink, not physical ground truth; no CT-direct model is known to read at 9 um
+- **Trap:** Using team predictions as a positive control for physical ink, or assuming a CT-direct 3-D model reads letters at 8.64-9.36 um.
+- **Evidence:** Paul (organizer), 2026-09-18: Paris 4 3-D predictions "are not perfect" but letter-shaped blobs are "good examples of physical ink localisation". Paul, 2026-10-10: the best Paris 4 3-D model was pretrained with dinovol and fine-tuned on 3-D point/scribble annotations, "easy there because you can physically see the crackly structure of the ink"; asked whether a CT-direct model reads letters at 8.64/9.36 um: "not that we're aware". LucasY's 3-D U-Net at 8.64 um learned "no letter structure" (r 0.21).
+- **Fix:** Label such controls "model-derived". Do not plan on CT-direct 3-D reading at 9 um without new evidence. Check: a positive control on an independent label set.
+- **Label:** MEASURED (organizer statements) · **When:** 2026-09-18..2026-10-10 · **Sources:** Discord: ink-detection - InkSurf (2026-09-18); ink-detection - 3D ink recipe on a PHerc 343 band (2026-10-10) · Extends L227
+
+### L750. Plan for carbon ink with roughly papyrus radiodensity; elemental contrast is scroll-specific
+- **Trap:** Designing a method around "invisible" ink, or around heavy-metal contrast in every scroll.
+- **Evidence:** Seth P. (organizer team), 2023-03-23: "the ink is not completely radiolucent. Is has roughly the same radiodensity as the papyrus"; 2023-03-17, on lead traces: "we don't know if this is a feature of the ink in all of the scrolls". Stephen (organizer), 2023-04-13: 2-D XRF on opened fragments "shown mixed results, with some scrolls showing strong ink contrast in a handful of elements and some showing no contrast".
+- **Fix:** Treat any elemental-contrast route as scroll-specific until measured on that scroll's fragments. Check: a measured contrast on known ink of the same scroll.
+- **Label:** VERIFIED (statements by the scanning team) · **When:** 2023-03-17..2023-04-13 · **Sources:** Discord: general - Detecting ink (2023-03-23); general - X-ray experts (2023-03-17, 2023-04-13) · Extends L216, L023
+
+### L751. For CT fiducials use historic-recipe iron-gall ink and orientable marks, and test-scan a swatch first
+- **Trap:** Modern iron-gall inks lack the dense compounds that show in CT, and dots or crosses are ambiguous under rotation and flips.
+- **Evidence:** Seth P., 2023-06-08: modern inks "remove a lot of the compounds that cause the damage. Unfortunately for us, those are also the compounds that give contrast in CT. So you *must* buy some that uses an old world recipe… make your fiducials orientable". Stephen, 2023-09-11, repeated it ("keyword: historic", "no guarantee"). Home-made barium and iron sulfate inks looked faint (2023-10-29).
+- **Fix:** Scan an ink swatch before building a phantom; use asymmetric glyphs with recorded handedness. Check: the swatch is visible in CT.
+- **Label:** VERIFIED (scanning-team experience) · **When:** 2023-06-08 · **Sources:** Discord: general - Making a proxy (2023-06-08, 2023-09-11); show-and-tell - Carbonized ink experiments (2023-10-29) · new
+
+### L752. A new output semantics must beat the binary baseline on the same held-out split
+- **Trap:** Rebranding a dilation border class as a richer logic with an "unknown" state that is just low confidence.
+- **Evidence:** SUBIT-INK, 2026-06-28: Strict INK F1 0.7954 against a binary baseline of 0.8197 on Fragment 1; sean: "the unknown class is not really a special state as its just a low probability"; the author agreed "The Belnap framing was oversold".
+- **Fix:** Report against the binary baseline on the same split and show any "uncertain" class is calibrated. Check: a reliability curve.
+- **Label:** MEASURED (author concession) · **When:** 2026-06-28 · **Sources:** Discord: ink-detection - SUBIT-INK: Four-Valued Belnap Logic for Ink Detection (2026-06-28/29) · new
+
+### L753. Split a training segment spatially for validation; the GP script skips the validation fragment for training
+- **Trap:** Setting the same segment as train and valid "to check it runs" gives num_samples=0.
+- **Evidence:** sean, 2024-05-03, quoting the `if fragment_id!=CFG.valid_id:` loop: "thsi won't work ... just split the image in half"; there are "2 places to enter the valid id". On an 11.76 GiB GPU, train_batch_size 256 to 128 fixed an out-of-memory error.
+- **Fix:** Split each segment into disjoint train and validation regions. Check: num_train_samples > 0 and the tile sets are disjoint.
+- **Label:** MEASURED · **When:** 2024-05-03 · **Sources:** Discord: ink-detection - Running GP model with low storage_ram_ (2024-05-02..22) · new
+
+### 8E. Reading, validation and controls
+
+Checks that separate letters from pareidolia, leakage and display effects.
+
+### L754. Score a read against a key with a high-pass, blur-matched letter-scale metric and a blob-only negative exam
+- **Trap:** Validating a 9 um read by plain correlation with a 2.4 um key, or crediting ensembling and smoothing for gains that come from blur.
+- **Evidence:** Chris Scheirer, 2026-09-22: plain correlation "stays around 0.44 even with the key shifted 150 px". After removing ~48 um of blur, released ink_9um scored 0.035, a fine-tune 0.11, a blob-only exam 0.04, noise ~0.01 and retrain noise 0.005; six popular tweaks did not clear 0.005, and "The ones that look like a gain also lift the blob exam". The canonical 2.4 um model: "0.95 on native 2.4um layers and 0.11 on the same layers downsampled to 9um". 2026-09-26/27: "hp r rises when a read is blurrier" (0.11 to 0.17 with 4 px blur), and the 14-checkpoint mean's edge fell from 1.77x to 1.39–1.47x under matched blur.
+- **Fix:** Score with a high-pass letter-scale metric, apply the same blur to both reads, and use a shifted-key null and a blob-only negative exam. Check: a gain exceeds retrain noise and does not lift the blob exam.
+- **Label:** VERIFIED (method reproduced by Matteo Bulloni's agent on PHerc0841) · **When:** 2026-09-22..2026-09-27 · **Sources:** Discord: ink-detection - A letter-scale score (2026-09-22); robots - PHerc0841 as an unseen-scroll exam (2026-09-26/27) · Extends L268, L559
+
+### L755. Convert every candidate letter's size to millimetres with the volume's own voxel size
+- **Trap:** At screen zoom any texture can look like a letter, and different voxel sizes make the same letter appear at very different pixel heights.
+- **Evidence:** RICHI, 2023-10-25, rejected a newcomer's find: it was "only a few pixels high, maybe 50… 8um", so the letter "would be 0.4mm high, which is way too little". jrudolph, 2023-11-28: a known Scroll 1 letter is "~470 pixels high… about 3.8mm which would be 3.8/0.00324 = 1170 pixels" at 3.24 um, whereas a candidate was "~220… pixels… 0.71mm"; spelufo estimated "about 3mm" on the matching fragment photo. Jordi (organizer), 2024-08-19: the average Scroll 1 letter "should be about 4 mm ... if you consider that it fits a square of size 500x500 and the resolution is 7.91 micrometers"; sean, 2024-07-25: a letter "should be between like 4 and 8 horizontals" (fibres).
+- **Fix:** Derive px/mm from the mesh ([L146](#l146-derive-pxpermm-from-the-meshs-median-3-d-edge-length-not-from-nominal-voxel-values)), print a scale bar on every review image, and reject candidates outside the size range measured on opened fragments of the same scroll (about 2-6 mm for Scroll 1). Check: the conversion is recorded in the candidate log.
+- **Label:** MEASURED · **When:** 2023-10-25..2024-08-19 · **Sources:** Discord: show-and-tell - Found text in Latin? (2023-10-25); ink-detection - Scroll 4 ink signal (2023-11-28); general - Letter size (2024-08-19); general - Scroll 4 possible letters (or not)? (2024-07-25) · Extends L146, L304
+
+### L756. Run the identical display pipeline on matched empty regions and shuffled inputs before believing a letter-like mark
+- **Trap:** CLAHE or contrast stretching makes letter-like marks anywhere; a texture that looks like ink also occurs where there is no ink; showing only the best crop is cherry-picking.
+- **Evidence:** Saurabh Gupta, 2026-06-03, retracted two public letter claims: his own automated filter "passes 0 of 10 candidates including this one"; shuffling the angle axis "keeps about half the letter looking blobs, so a good chunk of it is just clahe texture"; "same clahe pipeline on empty regions produces equally letter looking marks, so it's pareidolia". jrudolph, 2023-11-28, on Kaggle fragment 3: similar patterns "do not overlap at all with the ink", and the region "feels like cherry-picking the best result"; the annotator who first called one Scroll 4 sheet ink later wrote "every time I mark this sheet up again I find another interpretation", and in 2024-04-16 called other candidates "nice looking artifacts" he had "not been able to reproduce".
+- **Fix:** Before any claim, run the identical pipeline on matched empty regions and axis-shuffled inputs, measure the cue's rate on labelled ink and blank areas, and run your pre-registered filter rather than eyeballing. Check: the candidate exceeds the measured null rate.
+- **Label:** VERIFIED (author retractions with nulls) · **When:** 2023-11-28..2026-06-03 · **Sources:** Discord: ink-detection - [PHerc.332 / Scroll 3] Letter candidate... (2026-06-03); ink-detection - [PHerc0009B] Readable Greek letters in flat segment... (2026-06-03); ink-detection - Scroll 4 ink signal (2023-11-28, 2024-04-16) · Extends L082, L247
+
+### L757. Check every visual candidate in depth and cross-section: kollesis seams and a mesh leaving the sheet mimic ink
+- **Trap:** Calling a bright patch on a fresh render "very clear ink", or reading dark "shadows" along letters as ink cues.
+- **Evidence:** Forrest, 2026-10-16: "z scroll the surface with composite rendering enabled... you'll see the pattern sort of phase in and out", and "that might be kollesis rather than ink... they can look pretty similar". sean (organizer), 2026-07-12: "everyone who has worked on this project has hallucinated letters at some point". jrudolph, 2023-11-22: "The shadows are usually an artifact of the segmentation line straying from the papyrus layer", and bright detections can be "copies" of detections one winding further out.
+- **Fix:** For any visual candidate, show the stack over several layers and a cross-section, check the mesh-to-sheet distance at that spot, and run the displaced-copy (± half pitch) control. Check: the mark phases with depth on the recto and is not a straight vertical seam.
+- **Label:** INFERENCE (expert advice, not quantified) · **When:** 2023-11-22..2026-10-16 · **Sources:** Discord: general - Is this very clear ink, or did I find (2026-10-16); papyrology (2026-07-12); general - this is a label with @Bruniss flood fill (2023-11-22) · Extends L251, L254
+
+### L758. Read text only from models whose labels never covered that text
+- **Trap:** Models trained on detailed labels drawn while reading a passage show clearer letters there, but can reproduce the labeller's false strokes.
+- **Evidence:** polytrope, 2024-07-11: "it is safest for papyrologists to use images produced by models that do not contain labels for the section of text being read. Models trained on my detailed labels have clearer letters, but, in some cases, they have wrongly reproduced false strok[es]". polytrope, 2024-08-16, proposed leave-one-segment-out models (train on 1-9, infer on 10, and so on).
+- **Fix:** Use k-fold leave-one-segment-out checkpoints with a spatial buffer and publish which segments each saw. Check: held-out-segment maps still show the known text.
+- **Label:** MEASURED · **When:** 2024-07-11..2024-08-16 · **Sources:** Discord: ink-detection - Creating ink labels (2024-07-11); general - Cross-Validation (2024-08-16) · Extends L014, L303
+
+### L759. Gate held-out label registration on a zero-shift peak per segment, not on a correspondence residual
+- **Trap:** A hard-coded surface-volume shape misplaced held-out ground truth, and a small correspondence residual hid it; the result was a false "models drop to ~0.55 held out" headline.
+- **Evidence:** Martian (ScrollGT), 2026-08-15 correction: the old gate "read 8 voxels while the label sat 1766 voxels out"; corrected "canon prediction 0.563 -> 0.753 ROC-AUC", "all-positive floor 0.501 -> 0.518"; the 2026-07-29 claim that beating 0.60 "would be news" was retracted: "If you scored against the ScrollGT pixel targets before 2026-08-07, your number was wrong".
+- **Fix:** Before reporting a held-out score, shift each segment's label ±N px against its own ink map or render and require the agreement to peak at zero; refuse any target whose local placement error exceeds the analysis window. Check: the shift curve per segment is saved.
+- **Label:** MEASURED (author retraction) · **When:** 2026-08-15 · **Sources:** Discord: robots - ScrollGT_ held-out ground-truth scoring (2026-07-29, 2026-08-15) · Extends L083, L347
+
+### L760. Read a validation mask's meaning before computing AP: the PHerc0841/0500P2 masks are mostly unlabelled area
+- **Trap:** Scoring AP on `validation` masks where about 88-93 % lies outside supervision with almost no labels.
+- **Evidence:** ibara, 2026-09-23..28: AP "drops 3–4x (canon 0.27 vs 0.86 on validation ∩ supervision)"; AndreasHad independently confirmed "88.8%, 93.2%, 90.7%"; AUC moved only ~0.02. jrudolph (organizer): label sets are "an initial lump… by far not perfect and precise labeling practice is not clear (also not to us)".
+- **Fix:** Score on validation ∩ supervision, or use AUC, and say which. Check: overlap fractions computed before scoring.
+- **Label:** VERIFIED (independently reproduced) · **When:** 2026-09-28 · **Sources:** Discord: ink-detection - What does "validation" mean on PHerc0841 (2026-09-23..28) · Extends L002, L535
+
+### L761. Show whole segments in a predeclared set next to an independent key; zoomed crops flatter any model
+- **Trap:** Picking crops that make a model look good.
+- **Evidence:** KLAVIS, 2026-10-19: "Zoomed crops can flatter any model", so he showed whole segments of a held-out scroll next to the team's 2.4 um map as the key. sean (organizer), 2026-08-17: "always hard to tell on the smaller crops how the perf looks"; in reply all six 1667 segments were "shown rather than a pick".
+- **Fix:** Report every segment in a predeclared set with identical display scaling and a label or 2.4 um reference. Check: the set was declared before the images were made.
+- **Label:** MEASURED (practice) · **When:** 2026-08-17..2026-10-19 · **Sources:** Discord: show-and-tell - Reader V3_ clearer letters on never-seen scrolls + new letters on 343 (2026-10-19); ink-detection - All 14 released 9 µm ink checkpoints, scored per region (2026-08-17) · Extends L323
+
+### L762. Compare ink maps of two meshes only under identical flattening, stack width and checkpoint
+- **Trap:** Mesh-A-versus-mesh-B comparisons that mix in flattening, triangle size and mesh I/O differences.
+- **Evidence:** spelufo, 2024-06-10/12: "the best evaluation isn't trying to get that right but limiting the width of the layer stack passed to ink detection"; "the open3d obj writer can introduce non-manifold vertices"; trimming mesh ends beyond the scan "matters". david compared SLIM and ABF flattenings: "cleaner but not night and day".
+- **Fix:** Fix flattener, stack width and checkpoint across arms and check manifoldness before flattening. Check: a held-out-label metric, not impressions.
+- **Label:** INFERENCE · **When:** 2024-06-12 · **Sources:** Discord: show-and-tell - Adjusted GP banner segments (2024-06-10..12) · Extends L137
+
+### L763. Label fragment ink with a seeded flood fill rather than a freehand pen
+- **Trap:** Freehand annotation lets the annotator draw letter shapes into the labels.
+- **Evidence:** sean, 2023-11-21: "i tried to do it with just a pen tool and i kept making shapes. the flood tool prevents your brain from making shapes… just click the funny spots"; pen labels had "a degree of directionality that hurts your annotation" (2023-11-22). The community used a threshold of "7-14" with capped propagation.
+- **Fix:** Use an intensity-threshold flood fill, store the seed points so labels can be regenerated, and never hand-label an eligible scroll ([L014](#l014-manual-annotation-of-an-eligible-scroll-and-reading-a-scroll-with-a-model-trained-on-its-own-labels-invalidate-a-first-letters-claim)). Check: two people re-label one crop and their overlap is measured.
+- **Label:** INFERENCE (annotator testimony) · **When:** 2023-11-21 · **Sources:** Discord: general - Annotation tool request (2023-11-21..24); general - segment 3335 signal (2023-11-22) · new
+
+### 8F. Agents and process
+
+How AI agents fail on this problem, from organizers and from members who ran agents.
+
+### L764. Have a human set each experiment's goal and success criterion: this project has no robust automatic verifier
+- **Trap:** An autonomous agent loop that chooses its own experiments and judges its own success.
+- **Evidence:** sean (organizer), 2026-10-14: "llms are very good at solving things autonomously that have robust verifiers, and this project has exactly 0"; 2026-10-16: leave "_what_ experiments to run" and "_how success is judged_" to an LLM and "you will find yourself swimming around aimlessly in a pool of token receipts"; 2026-07-26: "you _must_ visually inspect any claims or results yourself (at every single stage of the pipeline)". Paul (organizer), 2026-07-31: there is no way to verify an answer "until quite far down a complex pipeline", so LLMs go "down weird rabbit-holes".
+- **Fix:** A human signs off the hypothesis and acceptance criterion before launch, and views an image at each pipeline stage before the next starts. Check: every manifest names the human who approved the criterion.
+- **Label:** MEASURED (organizer statements) · **When:** 2026-07-26..2026-10-16 · **Sources:** Discord: general (2026-07-26, 2026-07-31, 2026-10-14, 2026-10-16) · Extends L297
+
+### L765. Forbid silent fallbacks, and write or review key tests independently of the agent that wrote the code
+- **Trap:** Trusting an agent's benchmark gain or its passing tests.
+- **Evidence:** waldkauz (organizer), 2026-07-11: LLMs "really love to do micro-optimizations and parameter tweaking... always reverted to fiddling with parameters"; 2026-08-01: "they'll default to building in fallbacks for all kinds of things to silently corrupt your intent instead of failing loudly". sean, 2026-09-11: "if the llm misunderstands some of these it also writes the test with these assumptions"; 2026-07-25: "35 hours this week just catching claude or codex doing something absolutely heinous". Abd Elilah, 2026-08-06: "a feature this week with 119 passing tests that was broken three separate ways in the real run… because they all built the object by hand". surgefok, 2026-09-12, ships mutation tests "so a broken check cannot look the same as clean data".
+- **Fix:** Fail loudly (grep for try/except-pass and default substitutions); include at least one end-to-end test on a real public segment and mutation tests for validators; use a separate reviewer role. Check: deliberately break a check and confirm a test fails.
+- **Label:** MEASURED (organizer and practitioner reports) · **When:** 2026-07-11..2026-09-12 · **Sources:** Discord: offtopic - perf optimization with LLMs (2026-07-11); general (2026-08-01); offtopic (2026-07-25, 2026-09-11); show-and-tell - tifxyz-surgeon (2026-08-06); show-and-tell - Catalog consistency checker (2026-09-12) · new
+
+### L766. Quote, do not judge, when mining Discord: organizers call LLM "dead end" verdicts unfounded
+- **Trap:** An agent mines Discord and labels approaches as failed or successful.
+- **Evidence:** sean (organizer), 2026-08-28: "it is a nice idea to have the llm dig through discord but its analysis and framing in most places is unfounded/dishonest"; 2026-10-16: "i really dislike the llm 'judgements' of these (like calling something a dead end...)", while offering to answer short prefiltered questions such as "claude found this experiment... does that seem accurate?".
+- **Fix:** In lessons mined from Discord (including this Part), quote rather than judge, mark verdicts unverified unless the author or an organizer confirmed them, and ask organizers short targeted questions in public threads. Check: every community verdict here carries its author and date.
+- **Label:** MEASURED (organizer statement) · **When:** 2026-08-28..2026-10-16 · **Sources:** Discord: ink-detection - Releasing our new 9 µm ink-detection models! (2026-08-28); speculation (2026-10-16) · new
+
+### L767. Ask whether a number can exist physically; two agreeing models are not a review
+- **Trap:** An agent rebuilds its conclusion around the newest input, and a second model agrees fluently.
+- **Evidence:** A Claude-written note posted by Diego-dcv, 2026-07-29: five errors in one day were caught by physical sanity questions ("there can't be a fractional number of letters per line"), not by arithmetic checks; "Two systems that both overweight the newest input… converge fast and converge wrong"; "I do not remember being wrong unless it is written down".
+- **Fix:** Add physical-bounds checks (letter size, line spacing, sheet dimensions) to agent review, log every correction to a file, and do not count model-model agreement as review. Check: each claim passed a human or physical-bounds test.
+- **Label:** INFERENCE (self-report) · **When:** 2026-07-29 · **Sources:** Discord: robots - Notes from the model side_ five errors and who caught them (2026-07-29) · new
+
+### L768. Measure how much of the data an intervention touches before training on it
+- **Trap:** Spending GPU hours on an augmentation or loss that acts on almost nothing, quoting a preliminary subset, or acting on a stale to-do.
+- **Evidence:** Abd Elilah, 2026-07-29: "At the contact scale they reported, 1.5% of labelled sheet qualifies… Finding out cost 40 minutes of CPU. Not finding out would have cost 2.5 GPU-hours". In the same post: a 5-scroll preliminary read "beyond 8 voxels: 0.0%" was "25.4%" at 36 scrolls, and a to-do file listed four corrections that were "already correct" in the live threads.
+- **Fix:** Compute the fraction affected by the intervention's gating condition first, re-check live state before acting on a to-do, and never quote a preliminary subset. Check: "fraction affected" is written before training starts.
+- **Label:** MEASURED · **When:** 2026-07-29 · **Sources:** Discord: robots - The other half_ four errors caught by procedure, not intuition (2026-07-29) · new
+
+### L769. Freeze evaluation rules by publishing a protocol hash before results, and report the kill when it fires
+- **Trap:** Evaluation rules drift after you see the data.
+- **Evidence:** lightsgoblack, 2026-09-26..30, posted SHA-256 commitments (P1-P8) before results; P6's kill fired at 4 % recall vs a 50 % bar, and "The held-out data was never opened". OBCD and 잠이올랑말랑 also used pre-registration commits, and both published corrections when replications failed ([L733](#l733-carry-a-binarization-threshold-only-within-the-same-model-the-operating-quantile-rule-held-best-in-three-pre-registered-tests), [L723](#l723-treat-each-released-ink9um-checkpoint-as-a-separate-instrument-select-by-held-out-score-per-region-and-do-not-ensemble-by-default)).
+- **Fix:** Post a protocol hash publicly before running, and release the text with the results. Check: `sha256sum` of the released file matches the posted hash.
+- **Label:** MEASURED · **When:** 2026-09-30 · **Sources:** Discord: robots - Pre-registration hash log_ protocols frozen before results (2026-09-26..30) · Extends L297
+
+### L770. Suspect your own reader before reporting a data defect, and read the file with two libraries
+- **Trap:** Reporting an "official data offset" that is really a bug in your own parsing.
+- **Evidence:** jrudolph, 2024-08-01, reported fragment 5 PPM values "shifted by exactly 180 pixels in x-direction"; on 2024-10-02 he traced it to his own bug: "your tiff 'parser' consists of hard-coding offsets into the tiff file but you don't check that the offset is the same for each data set ... An offset by 360 bytes ... broken lines offset by 180".
+- **Fix:** Read the data with two independent libraries (for example tifffile and PIL) and confirm they agree bit for bit before filing a defect. Check: the agreement is in the bug report.
+- **Label:** VERIFIED (author found his own bug) · **When:** 2024-10-02 · **Sources:** Discord: general - I'm having a problem interpreting (2024-07-31..08-01); show-and-tell - Rescaled fragment surfaces (2024-10-02) · Extends L264
+
+### 8G. Scroll Swarm (14-15 Oct 2026)
+
+Lessons from Scroll Swarm's own records (its decision log and experiment manifests EXP-0001 to EXP-0052). Results on eligible scrolls are aggregate only. Its mesh-orientation lesson is merged into [L697](#l697-measure-each-segments-orientation-from-geometry-layer-stacks-have-no-fixed-recto-direction-and-kaggle-layer-0-is-the-deep-side).
+
+### L771. Measure a reversed-layer-order floor on the same surface for every ink run; an absolute floor does not transfer between scans
+- **Trap:** Applying an absolute "no signal" bar (r <= 0.36, D-0017) taken from one scan to others.
+- **Evidence:** The reversed-order floor was r 0.40–0.55 on PHerc1203 raw meshes (EXP-0012) and 0.15–0.39 on published PHerc0800 segments (D-0021). The absolute floor was retired the same day.
+- **Fix:** Give each ink run a reversed-layer-order twin on the same render, window, checkpoint and mask, and decide on forward minus reversed (delta-r, delta-IoU) with a CI. Check: the twin exists and shares the render hash.
+- **Label:** MEASURED · **When:** 2026-10-14 · **Sources:** scroll-swarm:docs/DECISIONS.md#D-0017, #D-0021; scroll-swarm:experiments/EXP-0012-pherc1203-raw-mesh-survey/manifest.json · Extends L206
+
+### L772. Rank small windows by forward-minus-reversed IoU, not by forward-minus-reversed r
+- **Trap:** delta-r (forward minus reversed correlation) looks like an ink-excess score at 1–4 cm².
+- **Evidence:** delta-r was +0.1..+0.2 on both label-free and inked known-text windows; delta-IoU separated them (+0.086 vs +0.205) (EXP-0041, D-0029).
+- **Fix:** Rank by delta-IoU, read delta-r only with its CI, and never decide from 1 cm² windows. Check: before use, the score separates labelled from label-free windows on known text.
+- **Label:** MEASURED · **When:** 2026-10-14 · **Sources:** scroll-swarm:experiments/EXP-0041-dr-vs-ink-and-void-fullsegment-calibration/manifest.json; scroll-swarm:docs/DECISIONS.md#D-0029 · new
+
+### L773. Measure the reference's floor before pre-registering a "blank" threshold
+- **Trap:** A pre-registered "blank" stratum (official map < 0.10) had no members.
+- **Evidence:** The official map's floor on label-free papyrus is about 0.12, so the stratum could not be filled; it was recorded as a design error (EXP-0041).
+- **Fix:** Set null and blank thresholds relative to the reference's measured floor; a revised definition gets a new experiment ID. Check: count candidate units in each stratum before registering.
+- **Label:** MEASURED · **When:** 2026-10-14 · **Sources:** scroll-swarm:experiments/EXP-0041-dr-vs-ink-and-void-fullsegment-calibration/manifest.json; scroll-swarm:docs/release/LESSONS.md#4 · Extends L300, L608
+
+### L774. Report cross-model agreement only beside its reversed cross-model floor
+- **Trap:** Reading agreement between two ink models (r >= 0.45 as an escalation bar) as corroboration.
+- **Evidence:** One surface had forward-forward r 0.486 vs reversed-reversed r 0.357, but the excess CI was −0.06..+0.31. Box-level support of r 0.47 fell to whole-segment r 0.27, and 0.14 outside the box (EXP-0016a).
+- **Fix:** Run both models forward and reversed and report the paired CI of r_ff − r_rr over the whole surface. Check: the CI excludes 0 before any escalation.
+- **Label:** MEASURED · **When:** 2026-10-14 · **Sources:** scroll-swarm:docs/DECISIONS.md#D-0020 (amendment); scroll-swarm:experiments/EXP-0016a-pherc0800-220042-hecate-full/manifest.json; scroll-swarm:docs/release/SUPERSEDED_CLAIMS.md · Extends L244
+
+### L775. Test a sheet gate on hard negatives, and write what "sheet-verified" does not cover
+- **Trap:** A band-switch gate that passed known sheets was called "SETTLED" and its passes "sheet-verified".
+- **Evidence:** v1 flagged 65.7 % of planes on a known single sheet and was retired. v2 then passed a 3.11 cm² surface lying on a thin non-papyrus shell (71.6 % shell samples; EXP-0022) and a crack wrap. Rigid offsets and a sheet hop ramped over >= 1 mm also pass (D-0023 v3.1–v3.3).
+- **Fix:** Add a papyrus/shell check, and always write "sheet-verified (continuity only; ramps >= 1 mm undetected)". Check: the gate rejects a shell, a crack wrap and a planted wrong-sheet surface.
+- **Label:** VERIFIED (controls run) · **When:** 2026-10-14 · **Sources:** scroll-swarm:docs/DECISIONS.md#D-0023; scroll-swarm:experiments/EXP-0022-pherc0358-seed-growth-grids-gate/manifest.json; scroll-swarm:docs/release/RESULTS.md · Extends L101
+
+### L776. Retire a gate that fails known positives, and re-judge its earlier FAIL verdicts
+- **Trap:** Crossing-free cores were reported as FAIL under an uncalibrated gate.
+- **Evidence:** Under v1 (which fails known single sheets) the verdict became UNKNOWN; under the held-out-validated v2 the cores fail all three criteria (D-0023).
+- **Fix:** A gate's FAIL means nothing until it passes known positives; re-judge old verdicts under the validated gate. Check: the gate passes a held-out known sheet.
+- **Label:** VERIFIED · **When:** 2026-10-14 · **Sources:** scroll-swarm:docs/DECISIONS.md#D-0023; scroll-swarm:docs/release/SUPERSEDED_CLAIMS.md · Extends L082
+
+### L777. Budget normal grids at about 100x wall time, and resume tracer runs until the front stalls
+- **Trap:** Assuming a tracer run that stops has exhausted its front.
+- **Evidence:** With grids, replicate runs agree to a 10 um median; four no-grid runs disagree by 0.27–1.35 mm medians (EXP-0014, D-0022). Grids cost ~100x wall time and ~1.3–1.4 MB per x/y slice. The hole-fill rule ends runs with 240–340 fringe nodes still pending.
+- **Fix:** Budget grids per seed box from box geometry and resume in rounds until stall (`resume_until_stall.sh`). Check: the pending fringe count is 0 or stable between rounds.
+- **Label:** MEASURED · **When:** 2026-10-14 · **Sources:** scroll-swarm:docs/DECISIONS.md#D-0022; scroll-swarm:experiments/EXP-0014-pherc0800-region-b-and-grid-ablation/manifest.json; scroll-swarm:docs/release/SUPERSEDED_CLAIMS.md · Extends L502, L523
+
+### L778. Pick growable scrolls with a short tracer block, not by layering-map rank
+- **Trap:** Picking growth targets by layering-coherence rank.
+- **Evidence:** Top-ranked scrolls failed in growth (EXP-0022/0023): outer tiles can be a container shell, and one top-ranked scroll self-crossed at 2–3 cm². In the bulk survey a dense layering map did not predict where the tracer succeeded (EXP-0050).
+- **Fix:** Run an MVP growth block of under 15 minutes and a Stage A pre-screen before spending grid budget. Check: the predicted rank correlates with block outcome on the screened set.
+- **Label:** MEASURED · **When:** 2026-10-14 · **Sources:** scroll-swarm:docs/DECISIONS.md#D-0024 (revision); scroll-swarm:experiments/EXP-0022-pherc0358-seed-growth-grids-gate/manifest.json, EXP-0023-pherc0813-seed-growth-grids-gate-v3/manifest.json, EXP-0050-pherc0846a-bulk-survey/manifest.json; scroll-swarm:docs/release/LESSONS.md#10 · new
+
+### L779. Give a reader-parity gate the same context margin as its reference
+- **Trap:** Cropping the comparison region with no margin and blaming the reader when parity fails.
+- **Evidence:** A stride-256 gate without Hann failed (r 0.879, EXP-0043); a margin-less crop with the correct recipe failed (r 0.884, EXP-0044). Adding a 256 px context margin restored parity (r 0.999995, deterministic across containers; EXP-0045).
+- **Fix:** Feed the same context as the reference and compare only the interior. Check: r >= the pre-registered bar on known text before any target read.
+- **Label:** VERIFIED · **When:** 2026-10-14 · **Sources:** scroll-swarm:experiments/EXP-0043-reader-factory-2um-patches/manifest.json, EXP-0044-reader-factory-official-recipe-stride128/manifest.json, EXP-0045-reader-factory-official-recipe-with-context-margin/manifest.json · Extends L480
+
+### L780. The 2.4 um production reader tolerates early centring offsets but not late ones
+- **Trap:** Assuming a sheet offset in either depth direction costs the same.
+- **Evidence:** Shifting the sheet 20 layers later collapsed detection (AUC 0.556); shifting it earlier was tolerated (AUC 0.9995) (EXP-0047, D-0034).
+- **Fix:** Re-centre to L50 ± 4 and label unchecked results "centring-unverified". Check: a centring profile is recorded per surface. (The community found the same asymmetry at 9 um: [L729](#l729-surface-offset-costs-ink-asymmetrically-keep-the-surface-within-3-slices-on-the-bad-side).)
+- **Label:** MEASURED · **When:** 2026-10-15 · **Sources:** scroll-swarm:experiments/EXP-0047-reader-centring-intensity-sensitivity/manifest.json; scroll-swarm:docs/DECISIONS.md#D-0034 · Extends L147
+
+### L781. Calibrate the blind-read field size per format; a "not letter-like" read never closes a region
+- **Trap:** Treating a 9.8 mm mosaic as a reading unit.
+- **Evidence:** At 2.4 um, reader detection of known text was 0/9 at 4.9 mm, 3/9 at 7.4 and 9.8 mm, 7/9 at 14.8 mm (FP 0/72) (EXP-0046, D-0033). On bulk ink_9um maps no field was adequate: sensitivity 0/10, 0/10, 0/10, 2/10, FP 0/40 (EXP-0051, D-0037).
+- **Fix:** Use a calibrated field for each format; a "not letter-like" read never closes or down-ranks a region. Check: hidden positives and matched negatives in each read set.
+- **Label:** MEASURED · **When:** 2026-10-15 · **Sources:** scroll-swarm:experiments/EXP-0046-blind-read-field-size-calibration/manifest.json, EXP-0051-bulk-blind-read-calibration/manifest.json; scroll-swarm:docs/DECISIONS.md#D-0033, #D-0037 · Extends L258
+
+### L782. Remove non-text cues from blind-read sets before launch
+- **Trap:** Negatives that differ from positives in something other than ink.
+- **Evidence:** In EXP-0051 both negatives carried edge voids that alone separated them from positives, and one positive's CT was blurred by resampling. A post-hoc presence screen (20/20 vs 0/20) was confounded by these cues and demoted to HYPOTHESIS (D-0037 ruling 4).
+- **Fix:** Use the same display-grid operation for every scan, an exact scale bar with px/mm printed, same-scan negatives with CT-valid >= 0.99 and no edge voids, and a scorer committed before launch (D-0037 ruling 5). Check: a cue-only classifier (edge voids, blur) cannot separate the arms.
+- **Label:** MEASURED · **When:** 2026-10-15 · **Sources:** scroll-swarm:experiments/EXP-0051-bulk-blind-read-calibration/manifest.json; scroll-swarm:docs/DECISIONS.md#D-0037 · Extends L293
+
+### L783. LETTER-LIKE verdicts do not mean correct letter identities
+- **Trap:** Counting "letter-like" verdicts or confident names as evidence of reading.
+- **Evidence:** In EXP-0052, LETTER-LIKE stayed 5/5 while 30–46 % of confident identities were wrong. Some key identities rested on label outlines no reader figure showed. Pre-registered tests A1 and A2 failed; the official-map positive control on one window named 0 of 5 key letters.
+- **Fix:** Build gold-first keys from what readers actually see, use windows with >= 10 verified letters, and run chance tests with >= 20 000 permutations. Check: every key identity is visible in the figure shown.
+- **Label:** MEASURED · **When:** 2026-10-15 · **Sources:** scroll-swarm:experiments/EXP-0052-bulk-legibility-ladder/manifest.json; scroll-swarm:docs/DECISIONS.md#D-0037 (revisit) · Extends L269
+
+### L784. A bulk ink_9um AUC near 0.74-0.78 is pixel signal, not legibility
+- **Trap:** Reading a held-out AUC as a reading capability.
+- **Evidence:** AUC vs labels 0.7415 [0.6844, 0.7906] at 9.366 um and 0.7810 [0.7288, 0.8354] at 8.64 um (RESULTS.md). On the two best bulk known-text windows, readers named at most 1–2 letter forms per 4 cm² (D-0037). The orchestrator inferred that 10 letters in 4 cm² is out of reach with current bulk maps (INFERENCE) and set a needed AUC of about 0.9 as a HYPOTHESIS.
+- **Fix:** Treat a bulk FLOOR as weak evidence, never "no ink". Check: blind legibility on known text in the same format before reading targets.
+- **Label:** MEASURED (AUC); INFERENCE (reach) · **When:** 2026-10-15 · **Sources:** scroll-swarm:docs/DECISIONS.md#D-0028, #D-0036 (ruling 6), #D-0037; scroll-swarm:docs/release/RESULTS.md · Extends L196
+
+### L785. Test a statistic's explanation with a shuffle null and an independent re-implementation
+- **Trap:** Recording a plausible mechanism ("voxel noise") for a statistic's failure.
+- **Evidence:** The numbers replicated, but an independent replication with a layer-shuffle null showed bulk depth profiles are structured (lag-1 autocorrelation 0.755 / 0.878 vs ~0 shuffled). The statistic was a range statistic insensitive to layer order (D-0036 ruling 5 correction).
+- **Fix:** Require a shuffled or reversed null plus an independent re-implementation before a statistic or its explanation enters a decision. Check: real vs shuffled separation is reported.
+- **Label:** VERIFIED (independent replication) · **When:** 2026-10-15 · **Sources:** scroll-swarm:docs/DECISIONS.md#D-0036 (ruling 5 correction) · Extends L082
+
+### L786. Flag smooth forward-only "floods" as anomalies, not text
+- **Trap:** A large forward-only response looks like an ink detection.
+- **Evidence:** On one surface both models responded forward-only as a smooth confluent blanket with no strokes or rows (LESSONS.md #13).
+- **Fix:** Flag floods and explain them with a CT-content control; never treat them as text. Check: the flood flag is part of the survey record.
+- **Label:** MEASURED · **When:** 2026-10-15 · **Sources:** scroll-swarm:docs/release/LESSONS.md#13; scroll-swarm:docs/DECISIONS.md#D-0037 (ruling 1) · Extends L234
+
+### L787. Check a pre-registered metric on the official control before using it on targets
+- **Trap:** Using a new per-block metric straight on targets.
+- **Evidence:** A per-block metric failed on the official known-text surface itself and was declared invalid before use (EXP-0048).
+- **Fix:** Every metric must pass on the official control first. Check: the control result is recorded before any target score.
+- **Label:** VERIFIED · **When:** 2026-10-15 · **Sources:** scroll-swarm:experiments/EXP-0048-surface-recentring-reink-eligible/manifest.json; scroll-swarm:docs/release/LESSONS.md#21 · Extends L212
+
+### L788. Compute true mesh area from valid triangles: raster canvas area overstates it about 2x
+- **Trap:** Reading 4 cm² off the render canvas.
+- **Evidence:** On three published PHerc0800 segments, raster 3.61/3.05/3.29 cm² vs mesh 1.73/1.62/1.56 cm² (about half the grid nodes valid) (EXP-0002). A grown surface claimed at 4.02 cm² verified only 3.23 cm² as one window (EXP-0006 to EXP-0009). Mask areas were computed with the wrong pixel size (8.64 vs 9.362 um; factor 0.852; EXP-0012).
+- **Fix:** Compute area from valid mesh triangles with the volume's own voxel size. Check: the area script's output is in the manifest.
+- **Label:** MEASURED · **When:** 2026-10-14 · **Sources:** scroll-swarm:experiments/EXP-0002-pherc0800-all-segments-robustness/manifest.json, EXP-0006-pherc0800-surface-growth/manifest.json, EXP-0009-pherc0800-growth-to-window/manifest.json, EXP-0012-pherc1203-raw-mesh-survey/manifest.json; scroll-swarm:docs/release/SUPERSEDED_CLAIMS.md · Extends L516
+
+### L789. Quote rules verbatim in worker briefs
+- **Trap:** Paraphrasing a threshold in a brief.
+- **Evidence:** Twice a paraphrased brief was narrower than the settled rule: "hecate only if forward excess > +0.10" (rule: INDETERMINATE by delta-r or delta-IoU), and a survey Priority-0 trigger on a CI lower bound (rule: |delta-r| >= 0.30 in any >= 3 cm² window, D-0027). Both blocked valid work.
+- **Fix:** Briefs cite rule text or section, and the worker template carries the rule lines. Check: diff brief thresholds against DECISIONS.md.
+- **Label:** VERIFIED · **When:** 2026-10-15 · **Sources:** scroll-swarm:docs/release/SUPERSEDED_CLAIMS.md; scroll-swarm:docs/DECISIONS.md#D-0027; scroll-swarm:docs/release/LESSONS.md#17 · new
+
+### L790. Integrate worker branches file by file from the merge-base
+- **Trap:** Whole-directory checkouts from worker branches.
+- **Evidence:** They silently reverted four newer scripts; an earlier "found and fixed" note covered only two (SUPERSEDED_CLAIMS.md, 15 Oct).
+- **Fix:** Diff from the merge-base, never let an older blob overwrite a newer one, integrate non-binary files only, and keep ledger line endings and manifest indentation. Check: no file in the integration commit is older than its main version.
+- **Label:** VERIFIED (integration audit) · **When:** 2026-10-15 · **Sources:** scroll-swarm:docs/release/LESSONS.md#19; scroll-swarm:docs/release/SUPERSEDED_CLAIMS.md · Extends L400
+
+### L791. Do not record a background job as complete before its output check passes
+- **Trap:** Writing "completes and is integrated" for a running job.
+- **Evidence:** A reversed read was recorded as completing; the 2 h background limit killed it at 274/361 tiles, and it was not re-run (D-0036 ruling 2 note).
+- **Fix:** Split forward and reversed runs into jobs under 2 h, and record completion only from the output check. Check: the tile count equals the planned count.
+- **Label:** VERIFIED · **When:** 2026-10-15 · **Sources:** scroll-swarm:docs/DECISIONS.md#D-0036 (ruling 2 note) · Extends L442
+
+### L792. Run one CPU-heavy job per 4-vCPU VM: renice did not protect inference
+- **Trap:** Assuming `renice` protects inference from a concurrent CPU-heavy job.
+- **Evidence:** A concurrent job pushed inference to several seconds per patch (load 6.3 on 4 vCPU); `renice 19` did not restore it, and the job was killed after 38 min. Baseline: 0.137–0.243 s per 128-px patch (EXP-0002, RESULTS.md).
+- **Fix:** One CPU-heavy job per VM. Check: s/patch against the measured baseline.
+- **Label:** MEASURED · **When:** 2026-10-14 · **Sources:** scroll-swarm:docs/USAGE_OPTIMIZATION_LOG.md; scroll-swarm:docs/release/LESSONS.md#25 · Contradicts L628 (renice part). L628 recommends renicing the whole process tree to share cores; on a 4-vCPU VM running inference, Scroll Swarm measured that `renice 19` did not restore inference speed. Keep L628's lock-based concurrency cap; do not rely on renice to protect a CPU-bound job, and see L628 for the process-tree mechanics if you renice anyway.
+
+### L793. Put the full assignment in a worker's first brief; follow-on messages are unreliable
+- **Trap:** Steering workers with later messages.
+- **Evidence:** W-0007 accepted 5 follow-ons; W-0008 declined one under its permission policy (USAGE_OPTIMIZATION_LOG.md). The release lesson concludes follow-ons are not reliably accepted.
+- **Fix:** Send new IDs or extra compute to a fresh session with the full chain in its brief, and pass model and source repo explicitly. Check: each worker's brief alone defines its outputs.
+- **Label:** MEASURED · **When:** 2026-10-14 · **Sources:** scroll-swarm:docs/USAGE_OPTIMIZATION_LOG.md; scroll-swarm:docs/release/LESSONS.md#23, #24 · Extends L361
+
+### L794. Keep "no candidate" separate from "no text"
+- **Trap:** Reporting a survey with zero candidates as evidence of blank scrolls.
+- **Evidence:** Across 21 eligible scrolls, 5 yielded a bulk surface >= 4 cm² passing the binding gate, 3 only smaller area, 9 failed early, 4 unresolved. The bulk survey inked 13 surfaces with 0 CANDIDATE (RESULTS.md). The detector's own known-text controls failed (EXP-0051/0052), so these nulls are bounded. Earlier Priority-0 flags were all dismissed or held after review (D-0032).
+- **Fix:** Report NO-DATA, INVALID-GEOMETRY, FAILED-CONTROL, FLOOR, INDETERMINATE and CANDIDATE as distinct states. Check: each null names the control it rests on.
+- **Label:** MEASURED · **When:** 2026-10-15 · **Sources:** scroll-swarm:docs/release/RESULTS.md; scroll-swarm:docs/DECISIONS.md#D-0032, #D-0037 · Extends L283, L339
+
+### 8H. Retracted or corrected community claims
+
+Claims that community members posted and then withdrew or corrected themselves (or that a second person corrected and the author accepted). Every claim in the first column is RETRACTED: never reuse it as a fact. The last column names the lesson that uses the correction.
+
+| claim (RETRACTED) | who corrected it, when | correction | lesson |
+|---|---|---|---|
+| **C01** Held-out ScrollGT scores show models drop to ~0.55; beating 0.60 "would be news" (2026-07-29). | Martian (author), 2026-08-15 | The held-out labels sat "~1766 voxels out of place"; corrected canon 0.563 -> 0.753 ROC-AUC. | [L759](#l759-gate-held-out-label-registration-on-a-zero-shift-peak-per-segment-not-on-a-correspondence-residual) |
+| **C02** m7 surface recall/precision numbers measured through `vesuvius.predict` defaults. | Abd Elilah (author), 2026-08-07 | The default z-scoring ignored plans.json; recall 0.803 -> 0.940, precision 0.467 -> 0.742 with the declared normalization. | [L668](#l668-pass-the-checkpoints-own-ct-normalization-to-vesuviuspredict-the-default-z-scores-each-volume) |
+| **C03** Region-run traffic overhead of 384x. | Abd Elilah (author), 2026-08-05 | 82.94x; the ROI tiled on a different grid from the full volume. | [L670](#l670-anchor-region-of-interest-inference-to-the-full-volume-patch-grid) |
+| **C04** A PHerc1218 cross-section fits an ellipse at R² = 0.948. | Diego-dcv (author), 2026-08-02 | An artefact of averaging 313 sections; individual sections 0.848 down to 0.592. | [L711](#l711-fit-cross-section-shape-per-height-and-post-ct-renders-and-cross-sections-with-any-unwrap-claim) |
+| **C05** Borrow other scrolls' optimum threshold (87 recommended) for released ink_9um. | 잠이올랑말랑 (author), 2026-10-02; again 2026-10-09 | 87 lost 0.096 / 0.118 / 0.095 F1; the borrowed optimum later failed on 0500P2 (0.062); the quantile rule held in all three tests. | [L733](#l733-carry-a-binarization-threshold-only-within-the-same-model-the-operating-quantile-rule-held-best-in-three-pre-registered-tests) |
+| **C06** seed42 step-050000 is the better ink_9um checkpoint (2026-09-28). | OBCD (author), 2026-10-12 | It "LOSES held out on all three segments"; averaging seeds, windows or TTA: 0/3 held out. | [L723](#l723-treat-each-released-ink9um-checkpoint-as-a-separate-instrument-select-by-held-out-score-per-region-and-do-not-ensemble-by-default) |
+| **C07** Eligible-scroll surfaces fail on placement, judged against one control (2026-10-12). | rodriguescarson (author), 2026-10-18 | Across 38 curated segments, placement does not separate the populations, contrast does; the single control was unusually good. | [L700](#l700-check-an-eligible-scroll-surfaces-sheet-contrast-against-many-curated-surfaces-before-blaming-the-ink-model) |
+| **C08** A no-GT mesh score ranks outer winding w100 best. | pscamillo, accepted by rodriguescarson, 2026-09-14 | The normal walk crosses crust into air at the outer wrap. | [L701](#l701-clip-normal-walk-sheet-metrics-at-the-scroll-mask-at-the-outer-wrap-the-walk-crosses-crust-into-air) |
+| **C09** Two public letter candidates (PHerc.332 / Scroll 3 and PHerc0009B). | Saurabh Gupta (author), 2026-06-03 | Own filter passed 0 of 10 candidates; the same CLAHE pipeline on empty regions made equally letter-like marks. | [L756](#l756-run-the-identical-display-pipeline-on-matched-empty-regions-and-shuffled-inputs-before-believing-a-letter-like-mark) |
+| **C10** Four-valued (Belnap) output adds expressiveness to ink detection. | SUBIT-INK author, 2026-06-28/29 | F1 0.7954 below the binary 0.8197; "The Belnap framing was oversold". | [L752](#l752-a-new-output-semantics-must-beat-the-binary-baseline-on-the-same-held-out-split) |
+| **C11** Annotation lengths of "~145 um" in winding ground truth. | pscamillo, after Aleksei Drobkov, 2026-07-31 | Frame error: 26 % of GT z-coordinates could not exist in the assumed volume; lengths scale by 1.21x ("~176"). | [L685](#l685-check-the-frame-of-annotation-coordinates-coordinates-that-cannot-exist-prove-a-frame-error) |
+| **C12** A 5-scroll preliminary read: "beyond 8 voxels: 0.0%". | Abd Elilah (author), 2026-07-29 | 25.4 % at 36 scrolls. | [L768](#l768-measure-how-much-of-the-data-an-intervention-touches-before-training-on-it) |
+| **C13** inkdx certifies a tile as scanned when its self-calibrated score is healthy. | anshu231 (author), after Abd Elilah, 2026-08-05 | The NO_DATA gate only looked at the mesh; a scan/no-scan boundary scored cnr z ≈ +7. | [L735](#l735-gate-no-ink-verdicts-on-ct-coverage-not-mesh-validity-and-calibrate-against-regions-outside-the-test) |
+| **C14** Kaggle fragment layers "start at too deep a depth" (2023-10-15). | Brett Olsen, 2023-10-15 (thread retitled) | Layer 0 is the bottom; the papyrus surface is at z = 32. | [L697](#l697-measure-each-segments-orientation-from-geometry-layer-stacks-have-no-fixed-recto-direction-and-kaggle-layer-0-is-the-deep-side) |
+| **C15** An unsupervised Kaggle-fragment result read ink cleanly (2023-10-15). | Author, after Brett Olsen, 2023-10-15 | `ImageFolder` had loaded the label image as an input. | [L742](#l742-keep-label-files-outside-every-input-directory-a-globbing-loader-can-feed-the-label-to-the-model) |
+| **C16** Fragment 5 PPM values are shifted by exactly 180 px in x (2024-08-01). | jrudolph (author), 2024-10-02 | His own TIFF parser hard-coded byte offsets. | [L770](#l770-suspect-your-own-reader-before-reporting-a-data-defect-and-read-the-file-with-two-libraries) |
+| **C17** Spiral fits on Apple Silicon match CPU fits at scale. | LucasY, reproduced by AndreasHad, 2026-10-06 | Above ~4,000 slices, non_blocking MPS copies dropped verified patches (pytorch #189690). | [L674](#l674-log-the-device-and-autocast-dtype-actually-used-and-compare-any-accelerator-run-with-a-cpu-fp32-reference) |
+
+### 8I. Errata for the experiments/ briefing docs
+
+Two briefing documents in this repository's `experiments/` folder were checked against the Scroll Swarm repository on 2026-10-22. Use these corrections when reading them.
+
+`experiments/SCROLL_SWARM_V1_AUDIT_SYNTHESIS.md`:
+
+- **Section 5.1, "GitHub metadata reports visibility `public`": wrong.** The Scroll Swarm repository is private (GitHub API, 2026-10-22), and its decision record (D-0038 ruling 3) and release plan say it was never made public. The document's statements that `main` holds only `LICENSE` and that the repository is about 515 MB (514824 KB) are correct.
+- **Section 4.2, PHerc0268 seams of "8–56 voxels" and winding indices off by "3–15 sheets", given as Scroll Swarm documentation: misattributed.** These are Dominion results ([L131](#l131-independent-z-window-fits-do-not-stitch-seams-of-8-56-voxels-and-winding-indices-that-disagree-by-3-15-sheets)). Scroll Swarm has the 3–15 figure only in an adopted Dominion lesson (credited as "Adopted from another project"), and "8–56" does not appear in its repository.
+- **Section 3 item 3, spiral fit "roughly a week to ten days per container": partly misattributed.** Scroll Swarm records about 7 days per window (D-0019, RESULTS.md); "ten days" is Dominion's figure ([L448](#l448-cpu-spiral-fits-run-16-34-sstep-the-30000-step-recipe-is-10-days-per-window)).
+- **Section 3 item 9, growth screen: incomplete.** It gives 5 + 9 + 4 = 18 of 21 scrolls and leaves out the 3 scrolls with only smaller gate-passing area ([L794](#l794-keep-no-candidate-separate-from-no-text)).
+- **Section 3 item 7:** "0.742" rounds the recorded 0.7415.
+- **Sections 4.10 and 7.10** cite overclaims and "hundreds of sessions" from this file (MASTER_LESSONS.md), not from Scroll Swarm records; do not attribute them to Scroll Swarm.
+- Checked and correct: 53 ledger rows (50 COMPLETED, 2 FAILED, 1 BLOCKED); r 0.999997 / 99.649 %; 1.68 s/step and 17.2–21.685 s/step; 4000 slices killed at 12.50 GiB; grid agreement 10 um vs no-grid 0.27–1.35 mm; canvas overstatement 1.88–2.11x; 13 inked surfaces, 0 candidates; 4 vCPU / 15 GB / ~31 GB environment.
+
+`experiments/VESUVIUS_MASTER_FAILURE_ANALYSIS_AND_AGENT_GUARDRAILS.md`:
+
+- **Its subtitle says "for Scroll Swarm", but all of its evidence comes from this file and the Dominion, Hercules and Megara branches** (L097, L100, L101, L135, L176, L196, L234, L244, L249, L256; the worlds-first, sib-fl-pherc0191, p4v-15 and megara branches). None of it is a Scroll Swarm result, and it should not be cited as one. Its claims were not re-verified in this check.
+
+### 8J. Errors in the community summary
+
+The AI-written Discord summary used to find these lessons was checked against the raw export. Its overall counts (731 files, 41,734 messages, 2023-02-27 to 2026-10-20) and the quotes spot-checked (several hundred) were correct. The errors found:
+
+- **Coverage.** Part VIII claims "a dossier for every exported thread file in the ZIP: 724 threads"; the export has 731 files, so 7 are not covered.
+- **Unresolvable file names.** Some source paths are mojibake (UTF-8 emoji, apostrophes, em dashes and "µ" mis-decoded) or truncated at a backtick; look threads up by thread ID instead.
+- **Topic tags are keyword noise** (for example a website-typo thread tagged as ink detection), and "pre-registered" tags are applied by keyword; do not use either as evidence.
+- **Misleading excerpts.** The dossier for the Kaggle "layer 0" thread quotes the wrong claim but omits the correction and the label-leak finding in the same thread ([L697](#l697-measure-each-segments-orientation-from-geometry-layer-stacks-have-no-fixed-recto-direction-and-kaggle-layer-0-is-the-deep-side), [L742](#l742-keep-label-files-outside-every-input-directory-a-globbing-loader-can-feed-the-label-to-the-model)). The "I'm having a problem interpreting" dossier ends on a supposed fragment 5 PPM offset that its author later traced to his own parser ([L770](#l770-suspect-your-own-reader-before-reporting-a-data-defect-and-read-the-file-with-two-libraries)). Two retracted letter candidates keep the status REPORTED ([L756](#l756-run-the-identical-display-pipeline-on-matched-empty-regions-and-shuffled-inputs-before-believing-a-letter-like-mark)), and the four-valued method's headline omits that it scored below the binary baseline ([L752](#l752-a-new-output-semantics-must-beat-the-binary-baseline-on-the-same-held-out-split)).
+- **Incomplete on a rules point.** For "Rules question for First Letters" (2026-09-20) the summary shows only the second organizer reply; the first reply names the exact eligible volume ID, which differs from the one the asker cited.
+- **Duplication.** The same entries recur many times (one 2026-10-15 post appears 6+ times), and link-index rows often count one message twice; deduplicate before counting evidence.
+- **Stale counts.** Text citing "eight eligible 9 um scrolls" predates the 2026-09-10 expansion ([L662](#l662-re-check-the-eligible-scroll-list-at-every-cycle-scrolls-are-added-and-withdrawn)).
+- **A shared download credential** from a 2024 message appears in the link index; it must not be copied into public documents (it is not reproduced here).
+- **Gaps (not errors):** keyword searches found no mention of the 2026-07-29 #robots rule, the 2026-08-13 contributor-guidelines announcement, the 2026-09-10 window-size rule change or the 2026-10-18 judging guidance ([L665](#l665-post-llm-written-reports-in-robots-name-the-model-and-separate-its-output-from-human-commentary), [L666](#l666-agent-prs-and-issues-to-villa-must-follow-contributingmd-or-they-are-closed-without-comment), [L658](#l658-large-ink-model-windows-are-now-allowed-but-you-must-show-the-text-is-not-hallucinated), [L660](#l660-enlarge-and-re-centre-the-submission-window-before-fine-tuning-the-model-further)).
