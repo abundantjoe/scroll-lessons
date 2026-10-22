@@ -31,7 +31,7 @@ model before you start, and your session begins where we stopped instead of redi
 |---|---|
 | [`MASTER_LESSONS.md`](MASTER_LESSONS.md) | every lesson, verdict, retracted claim and open problem, with a table of contents |
 | [`worlds-first/`](worlds-first/README.md) | 3,971 never-before-published ink-model images of scroll areas that have never been read |
-| [`community/`](community/VESUVIUS_COMMUNITY_PROGRESS_AND_NOTES.md) | AI review of ~42k Vesuvius Discord messages (redacted; unverified as a whole) |
+| [`community/`](community/COMMUNITY_DIGEST.md) | readable digest of ~42k Vesuvius Discord messages, plus the full redacted AI review (unverified as a whole) |
 | [`experiments/`](experiments/README.md) | one page per experiment branch: question, verdict, lesson, link to its branch and quick-start |
 | branch `dominion-release` | the October 2026 Progress Prize release: the stripqc finding (blank render margins corrupt villa ink inference on thin strips), its code, tests and one-command reproduction |
 | branch `research-log` | the hash-chained decision log of the whole programme |
@@ -46,9 +46,13 @@ strips is a rendering artifact, and **no letters are claimed**. A small number o
 
 ## Community review: 42,000 Discord messages in one file
 
-<p align="center"><a href="community/VESUVIUS_COMMUNITY_PROGRESS_AND_NOTES.md"><img src="figures/discord_review_banner.png" alt="Community review: an AI review of about 42,000 Vesuvius Challenge Discord messages in one file" width="100%"></a></p>
+<p align="center"><a href="community/COMMUNITY_DIGEST.md"><img src="figures/discord_review_banner.png" alt="Community review: an AI review of about 42,000 Vesuvius Challenge Discord messages in one file" width="100%"></a></p>
 
-[`community/VESUVIUS_COMMUNITY_PROGRESS_AND_NOTES.md`](community/VESUVIUS_COMMUNITY_PROGRESS_AND_NOTES.md) is an AI-written review of
+**Start with [`community/COMMUNITY_DIGEST.md`](community/COMMUNITY_DIGEST.md)**: a readable digest (about 12,000 words) of
+what the community learned: state of play, timeline, topic-by-topic findings, current rules, top traps, retracted claims and
+rules for AI agents, each finding linked to its checked lesson.
+
+The full archive, [`community/VESUVIUS_COMMUNITY_PROGRESS_AND_NOTES.md`](community/VESUVIUS_COMMUNITY_PROGRESS_AND_NOTES.md) is a large (2.8 MB) AI-written review of
 the official Vesuvius Challenge Discord: 731 threads and 41,734 messages, February 2023 to 20 October 2026. It covers what the
 community tried, measured, fixed and retracted, by year and by topic, with a dossier per thread. Use it to find where a topic was
 discussed, then read the original thread.
